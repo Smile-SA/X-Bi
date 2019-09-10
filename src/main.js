@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
+import store from './store'
 
 import VueRangedatePicker from 'vue-rangedate-picker'
 import VueContext from 'vue-context'
@@ -17,4 +18,3 @@ Vue.config.productionTip = false
     render: h => h(App)
   }).$mount('#app')
 })()
-  
