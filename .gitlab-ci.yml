@@ -11,15 +11,15 @@ stages:
 - lint-test
 - build
 
-run-lint:
-  stage: test
+lint:
+  stage: lint-test
   image: node:8.16.1-alpine
   script:
   - yarn install
   - yarn run lint
 
-run-tests:
-  stage: test
+tests:
+  stage: lint-test
   image: node:8.16.1-alpine
   script:
   - yarn install
