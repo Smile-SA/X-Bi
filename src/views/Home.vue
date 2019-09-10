@@ -1,7 +1,7 @@
 <template>
   <!-- Main content -->
   <section class="content">
-    <div class="form-group col-xs-2">
+    <div id="app" class="form-group col-xs-2">
       <h4>Select a date</h4>
       <VueRangedatePicker  id="rangeDatePicker" v-model="date" i18n="EN" @selected="getDate"/>
     </div>
@@ -70,7 +70,7 @@
 
 import Chart from 'chart.js'
 
-const api = process.env.RATING_API_URL
+const api = "http://localhost:5012"
 
 export default {
   data() {

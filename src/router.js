@@ -1,6 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import DashLayout from './components/DashLayout.vue'
+
 import HomeView from './views/Home.vue'
 import NodesView from './views/Nodes.vue'
 import NamespacesView from './views/Namespaces.vue'
@@ -14,10 +16,14 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Overall',
-      meta: { description: 'Global infrastructure view', requiresAuth: false },
-      component: HomeView,
+      component: DashLayout,
       children: [
+        {
+          path: 'home',
+          component: HomeView,
+          name: 'Overall',
+          meta: { description: 'Global infrastructure view', requiresAuth: false },
+        },
         {
           path: 'namespaces',
           component: NamespacesView,

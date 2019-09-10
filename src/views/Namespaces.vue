@@ -69,7 +69,7 @@
 <script>
 import Chart from 'chart.js'
 
-const api = process.env.RATING_API_URL
+const api = "http://localhost:5012"
 
 export default {
   data () {
