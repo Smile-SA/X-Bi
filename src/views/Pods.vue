@@ -63,10 +63,6 @@
       </div>
     </div>
     <!-- /.row -->
-
-    <!-- Main row -->
-    </div>
-    <!-- /.row -->
   </section>
   <!-- /.content -->
 </template>
