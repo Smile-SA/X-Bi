@@ -12,7 +12,7 @@ COPY . .
 
 COPY entrypoint.sh /
 
-RUN && yarn run build
+RUN yarn run build
 
 EXPOSE 8082
 
