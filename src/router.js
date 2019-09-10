@@ -18,6 +18,7 @@ export default new Router({
       children: [
         {
           path: 'home',
+          alias: '',
           component: HomeView,
           name: 'Overall',
           meta: { description: 'Global infrastructure view', requiresAuth: false },

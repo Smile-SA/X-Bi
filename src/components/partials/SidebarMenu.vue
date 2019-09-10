@@ -1,7 +1,7 @@
 <template>
   <ul class="sidebar-menu">
     <li class="header">MENU</li>
-    <router-link tag="li" class="pageLink" to="/">
+    <router-link tag="li" class="pageLink" to="/home">
       <a>
         <i class="fa fa-columns"></i>
         <span class="pages">Overall</span>

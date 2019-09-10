@@ -3,7 +3,7 @@
     <header class="main-header">
 	<span class="logo-mini">
 		<a href="/" class="logo">
-      <img src="/static/img/5GBiller_-_logo_7_.png" alt="Logo">
+      <img src="static/img/5GBiller_-_logo_7_.png" alt="Logo">
     </a>
 	</span>
       <!-- Header Navbar -->
@@ -66,9 +66,9 @@ export default {
     }
   },
   methods: {
-    // changeloading () {
-    //   this.$store.commit('TOGGLE_SEARCHING')
-    // }
+    changeloading () {
+      this.$store.commit('TOGGLE_SEARCHING')
+    }
   }
 }
 </script>
