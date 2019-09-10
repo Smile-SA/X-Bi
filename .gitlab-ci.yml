@@ -8,14 +8,19 @@ services:
   echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
 
 stages:
-- test
+- lint-test
 - build
+
+run-lint:
+  stage: test
+  image: node:8.16.1-alpine
+  script:
+  - yarn run lint
 
 run-tests:
   stage: test
   image: node:8.16.1-alpine
   script:
-  - yarn run lint
   - yarn run test
 
 build-master:
