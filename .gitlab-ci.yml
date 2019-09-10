@@ -15,6 +15,7 @@ run-lint:
   stage: test
   image: node:8.16.1-alpine
   script:
+  - yarn add @vue/cli
   - yarn run lint
 
 run-tests:
