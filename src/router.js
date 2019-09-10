@@ -2,6 +2,12 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Home from './views/Home.vue'
 
+import DashLayout from './components/DashLayout.vue'
+import HomeView from './components/Home.vue'
+import NodesView from './components/Nodes.vue'
+import NamespacesView from './components/Namespaces.vue'
+import PodsView from './components/Pods.vue'
+
 Vue.use(Router)
 
 export default new Router({
@@ -10,8 +16,34 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'dash',
+      component: DashLayout,
+      children: [
+        {
+          path: 'home',
+          component: HomeView,
+          name: 'Overall',
+          meta: { description: 'Global infrastructure view', requiresAuth: false }
+        },
+        {
+          path: 'namespaces',
+          component: NamespacesView,
+          name: 'Namespaces',
+          meta: { description: 'Detailled view of namespaces', requiresAuth: false }
+        },
+        {
+          path: 'nodes',
+          component: NodesView,
+          name: 'Nodes',
+          meta: { description: 'Detailled view of nodes', requiresAuth: false }
+        },
+        {
+          path: 'pods',
+          component: PodsView,
+          name: 'Pods',
+          meta: { description: 'Detailled view of pods', requiresAuth: false }
+        }
+      ]
     },
     {
       path: '/about',
