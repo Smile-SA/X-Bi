@@ -11,7 +11,7 @@
           <div class="box-header">
             <div class="row">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards">
+              <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
 
