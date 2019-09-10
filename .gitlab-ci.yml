@@ -23,7 +23,8 @@ tests:
   image: node:8.16.1-alpine
   script:
   - yarn install
-  - yarn run test
+  - yarn run test:unit
+  - yarn run test:e2e
 
 build-master:
   stage: build
