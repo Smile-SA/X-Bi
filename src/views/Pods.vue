@@ -6,7 +6,7 @@
         <h4>Select a pod</h4>
         <select class="form-control" v-on:change="getPods">
           <option selected disabled> -- Select a Pod -- </option>
-          <option v-for="option in selectForm" v-bind:value="option">{{option}}</option>
+          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
       <div v-if="showDatePicker()" class="form-group col-xs-2">
@@ -25,7 +25,7 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards">
+              <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
                   <div class="info-box-content" @click="redirectCard(card)">
@@ -45,7 +45,7 @@
                   <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics" height="80%"></canvas>
                 </div>
               </div>
-              <div class="col-md-6 col-sm-6 col-xs-12" v-for="card in timeCards">
+              <div class="col-md-6 col-sm-6 col-xs-12" v-for="card in timeCards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
                   <div class="info-box-content" @click="redirectCard(card)">
