@@ -1,12 +1,10 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
 
-import DashLayout from './components/DashLayout.vue'
-import HomeView from './components/Home.vue'
-import NodesView from './components/Nodes.vue'
-import NamespacesView from './components/Namespaces.vue'
-import PodsView from './components/Pods.vue'
+import HomeView from './views/Home.vue'
+import NodesView from './views/Nodes.vue'
+import NamespacesView from './views/Namespaces.vue'
+import PodsView from './views/Pods.vue'
 
 Vue.use(Router)
 
@@ -16,15 +14,10 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'dash',
-      component: DashLayout,
+      name: 'Overall',
+      meta: { description: 'Global infrastructure view', requiresAuth: false },
+      component: HomeView,
       children: [
-        {
-          path: 'home',
-          component: HomeView,
-          name: 'Overall',
-          meta: { description: 'Global infrastructure view', requiresAuth: false }
-        },
         {
           path: 'namespaces',
           component: NamespacesView,

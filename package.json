@@ -12,7 +12,10 @@
     "core-js": "^2.6.5",
     "downloadjs": "^1.4.7",
     "hideseek": "^0.8.0",
+    "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
+    "vue-context": "^4.0.3",
+    "vue-rangedate-picker": "^1.0.0",
     "vue-router": "^3.0.3"
   },
   "devDependencies": {
