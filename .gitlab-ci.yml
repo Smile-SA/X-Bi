@@ -1,0 +1,46 @@
+---
+image: docker:stable
+
+services:
+- docker:dind
+
+.docker_login: &docker_login |
+  echo "$CI_REGISTRY_PASSWORD" | docker login -u "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
+
+stages:
+- lint-test
+- build
+
+lint:
+  stage: lint-test
+  image: node:8.16.1-alpine
+  script:
+  - yarn install
+  - yarn run lint
+
+tests:
+  stage: lint-test
+  image: node:8.16.1-alpine
+  script:
+  - yarn install
+  - yarn run test
+
+build-master:
+  stage: build
+  script:
+  - *docker_login
+  - docker build --pull -t "$CI_REGISTRY_IMAGE" .
+  - docker push "$CI_REGISTRY_IMAGE"
+  only:
+    refs:
+    - master
+
+build:
+  stage: build
+  script:
+  - *docker_login
+  - docker build --pull -t "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME" .
+  - docker push "$CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME"
+  except:
+    refs:
+    - master
