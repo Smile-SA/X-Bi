@@ -40,7 +40,7 @@
 
     <!-- Main Footer -->
     <footer class="main-footer">
-      <strong>Copyright &copy; <a href="https://www.alterway.fr/">Alterway</a>.</strong> All rights reserved.
+      <strong>Copyright &copy; <a href="https://www.alterway.fr/">Alter Way</a>.</strong> All rights reserved.
     </footer>
   </div>
   <!-- ./wrapper -->
