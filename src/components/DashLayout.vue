@@ -22,15 +22,15 @@
       <!-- Content Header (Page header) -->
       <section class="content-header">
         <h1>
-          <!-- {{$route.name.toUpperCase() }}
-          <small>{{ $route.meta.description }}</small> -->
+          {{$route.name.toUpperCase() }}
+          <small>{{ $route.meta.description }}</small>
         </h1>
         <ol class="breadcrumb">
           <li>
             <a href="/">
               <i class="fa fa-home"></i>Home</a>
           </li>
-          <!-- <li class="active">{{$route.name.toUpperCase()}}</li> -->
+          <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
       </section>
 
