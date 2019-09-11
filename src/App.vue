@@ -23,7 +23,7 @@
   color: #2c3e50;
 }
 .svg-inline--fa {
-  margin-right: 10px;
+  margin-right: .4em;
 }
 #nav {
   padding: 30px;
