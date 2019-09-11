@@ -1,17 +1,16 @@
-FROM node:8.16.1-alpine
-
-WORKDIR /app
-
-COPY package*.json ./
-
-RUN yarn install && yarn add http-server
+FROM node:12.10.0-alpine as builder
 
 ENV NODE_ENV=production
 
-COPY . .
+WORKDIR /app
 
+COPY package*.json yarn.lock ./
+RUN yarn install
+COPY . .
 RUN yarn run build
 
-EXPOSE 8082
-
-CMD ["http-server", "dist", "-p", "8082"]
+# production stage
+FROM nginx:1.17.3-alpine as serve
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
