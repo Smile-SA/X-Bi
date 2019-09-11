@@ -9,9 +9,11 @@
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
+        <!--
         <a href="javascript:;" class="sidebar-toggle fa fa-bars" data-toggle="offcanvas" role="button">
           <span class="sr-only">Toggle navigation</span>
         </a>
+        -->
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
