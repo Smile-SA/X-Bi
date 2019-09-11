@@ -18,13 +18,19 @@ lint:
   - yarn install
   - yarn run lint
 
-tests:
+test-unit:
   stage: lint-test
   image: node:8.16.1-alpine
   script:
   - yarn install
   - yarn run test:unit
-  - yarn run test:e2e
+
+# test-e2e:
+#   stage: lint-test
+#   image: cypress/base:12.6.0
+#   script:
+#   - yarn install
+#   - yarn run test:e2e
 
 build-master:
   stage: build
