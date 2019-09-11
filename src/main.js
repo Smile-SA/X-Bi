@@ -12,6 +12,7 @@ Vue.config.productionTip = false
 Vue.component('VueContext', VueContext)
 Vue.component('VueRangedatePicker', VueRangedatePicker)
 window.jQuery = require('jquery')
+window.$ = require('jquery')
 
 // eslint-disable-next-line no-unexpected-multiline
 new Vue({
