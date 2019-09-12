@@ -445,7 +445,6 @@ export default {
     },
     async getNamespaces() {
       let url = `${api}/namespaces`
-      console.log(url)
       let results = await fetch(url)
       let json = await results.json()
       return json.results
