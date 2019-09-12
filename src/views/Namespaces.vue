@@ -65,7 +65,7 @@
 <script>
 import Chart from 'chart.js'
 
-const api = "http://localhost:5012"
+const api = `${window.location.href.split('#')[0]}/api`
 
 export default {
   data () {

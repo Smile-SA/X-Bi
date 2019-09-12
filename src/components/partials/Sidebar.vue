@@ -34,8 +34,6 @@ export default {
   mounted: function() {
     window
       .jQuery('[data-toggle="hideseek"]')
-      // .off()
-      // .hideseek()
   }
 }
 </script>
