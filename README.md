@@ -1,39 +1,19 @@
-# rating-overhaul
+# **rating-frontend**
+Front-end for the rating stack, it is powered by vueJS and chartJS.
+Fed by our [API](https://git.rnd.alterway.fr/overboard/5gbiller/rating-api/tree/master), it is used as a lightweight vizualisation solution to follow the evolution of the rating of your metrics.
 
-## Project setup
-```
-yarn install
-```
+## Usage
 
-### Compiles and hot-reloads for development
-```
-yarn run serve
-```
+The frontend can be exposed with the following command:
 
-### Compiles and minifies for production
 ```
-yarn run build
+# Expose the frontend
+podname=$(kubectl get pods -l app.kubernetes.io/name=rating,app.kubernetes.io/component=frontend -o name | cut -d/ -f2 | head -1)
+kubectl port-forward "$podname" 8080:8080 --v=10
 ```
 
-### Run your tests
-```
-yarn run test
-```
+After running these commands, access it at `localhost:8080`
 
-### Lints and fixes files
-```
-yarn run lint
-```
+You can also expose the app via `kubectl proxy`, the url will then be:
 
-### Run your end-to-end tests
-```
-yarn run test:e2e
-```
-
-### Run your unit tests
-```
-yarn run test:unit
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+`http://localhost:8001/api/v1/namespaces/<yourNamespace>/services/<podName>:80/proxy/`
