@@ -65,12 +65,12 @@
   </section>
   <!-- /.content -->
 </template>
-
 <script>
 
 import Chart from 'chart.js'
+import { generateAPIUrl } from '../variables'
 
-const api = `${window.location.href.split('#')[0]}/api`
+const api = generateAPIUrl()
 
 export default {
   data() {
@@ -445,6 +445,7 @@ export default {
     },
     async getNamespaces() {
       let url = `${api}/namespaces`
+      console.log(url)
       let results = await fetch(url)
       let json = await results.json()
       return json.results

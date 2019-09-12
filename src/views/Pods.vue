@@ -69,8 +69,9 @@
 
 <script>
 import Chart from 'chart.js'
+import { generateAPIUrl } from '../variables'
 
-const api = `${window.location.href.split('#')[0]}/api`
+const api = generateAPIUrl()
 
 export default {
   data () {
