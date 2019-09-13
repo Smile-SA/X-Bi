@@ -76,6 +76,7 @@ const api = generateAPIUrl()
 export default {
   data() {
     return {
+      date: null,
       lineChartNodes: null,
       lineChartDataNodes: null,
       lineChartNamespaces: null,
