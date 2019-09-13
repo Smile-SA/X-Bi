@@ -76,16 +76,12 @@ const api = generateAPIUrl()
 export default {
   data() {
     return {
-      date: null,
       lineChartNodes: null,
       lineChartDataNodes: null,
       lineChartNamespaces: null,
       lineChartDataNamespaces: null,
       colors: {},
       cards: [],
-      loading: true,
-      errored: false,
-      hostNumbers: 0,
       to: new Date().toISOString(),
       from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
       selected: null,

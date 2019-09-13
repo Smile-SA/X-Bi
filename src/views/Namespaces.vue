@@ -79,8 +79,6 @@ export default {
       selectForm: null,
       activeNamespace: null,
       cards: [],
-      loading: true,
-      errored: false,
       colors: {},
       to: new Date().toISOString(),
       from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),

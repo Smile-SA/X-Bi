@@ -73,17 +73,11 @@ export default {
     return {
       lineChartNamespaces: null,
       lineChartDataNamespaces: null,
-      lineChartMetrics: null,
-      lineChartDataMetrics: null,
       barChartMetrics: null,
       barChartDataMetrics: null,
       selectForm: null,
       activeNode: null,
-      pieChartPodCost: null,
-      pieChartDataPodCost: null,
       cards: [],
-      loading: true,
-      errored: false,
       colors: {},
       to: new Date().toISOString(),
       from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
@@ -307,76 +301,6 @@ export default {
     async drawGraphs() {
       this.drawBarChartMetrics()
       this.drawLineChartNamespaces()
-    },
-    async drawHorizontalBarChart(c) {
-      let data = {
-        datasets: [],
-        labels: []
-      }
-
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return null
-      }
-
-      Object.keys(utils.groupBy(results, c.sort)).forEach(type => {
-        let values = utils.where(results, {[c.sort]: type}).map(value => value[c.unit])
-        let color = (c.color !== null) ? c.color : this.colors[type]
-        data.datasets.push({
-          label: type,
-          data: values,
-          backgroundColor: color,
-          borderWidth: 0.7
-        })
-      })
-
-      data.labels = Object.keys(utils.groupBy(results, 'service'))
-
-      let ctx = document.getElementById(c.id).getContext('2d')
-      let config = {
-        type: 'horizontalBar',
-        data: {
-          datasets: data.datasets,
-          labels: data.labels
-        },
-        options: {
-          title: {
-            display: true,
-            text: c.labels.title
-          },
-          scales: {
-            xAxes: [{
-              stacked: true,
-              ticks: {
-                beginAtZero: true
-              }
-            }],
-            yAxes: [{
-              stacked: true,
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.labels.yLabel
-              }
-            }]
-          },
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            position: 'top',
-            display: true
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      return new Chart(ctx, config)
     },
     async getNodes (node) {
       let url = `${api}/nodes`
