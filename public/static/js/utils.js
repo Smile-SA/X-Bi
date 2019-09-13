@@ -26,8 +26,8 @@ export async function fetchTotal(url, that) {
   return json.total
 }
 
-export async function fetchData(url) {
-  let queryDate = convertURLDateParameter()
+export async function fetchData(url, that) {
+  let queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
   const response = await fetch(url, {})
   const json = await response.json()
