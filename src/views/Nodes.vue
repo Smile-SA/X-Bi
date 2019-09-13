@@ -421,13 +421,6 @@ export default {
         icon: 'cube'
       })
     },
-    async fetchTotal(url) {
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.total
-    },
     async cardTotalRating() {
       let url = `${api}/nodes/${this.activeNode}/total_rating`
       let response = await utils.fetchDataAsJSON(url, this)
@@ -458,11 +451,6 @@ export default {
       let results = await utils.fetchData(url, this)
       return results
     },
-    async fetchResults(url) {
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.results
-    }
   },
   async mounted () {
     await this.generateColor()

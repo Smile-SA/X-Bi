@@ -70,6 +70,7 @@
 <script>
 import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
+import * as utils from  '../../public/static/js/utils'
 
 const api = generateAPIUrl()
 
@@ -101,36 +102,6 @@ export default {
     }
   },
   methods: {
-    convertURLDateParameter() {
-      let from = (this.from !== null) ? this.from : new Date(new Date().setDate(new Date().getDate() - 3)).toISOString()
-      let to = (this.to !== null) ? this.to : new Date().toISOString()
-      from = from.replace('T', ' ')
-      to = to.replace('T', ' ')
-      return `?start=${from}&end=${to}`
-    },
-    clicked(data) {
-      this.selected = data.target.id
-    },
-    JSONToCSV(json) {
-      const replacer = (key, value) => value === null ? '' : value
-      const header = Object.keys(json[0])
-      let csv = json.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-      csv.unshift(header.join(','))
-      return csv.join('\r\n')
-    },
-    async downloadFile(url, filename, type) {
-      let results = await this.fetchResults(url)
-      let content
-      let mime
-      if (type === 'JSON') {
-        content = await JSON.stringify(results)
-        mime = 'application/json'
-      } else if (type === 'CSV') {
-        content = this.JSONToCSV(results)
-        mime = 'text/csv'
-      }
-      require('downloadjs')(content, filename, mime)
-    },
     getPeriod(url) {
       let broken = url.split('/')
       let l = broken.length
@@ -140,7 +111,7 @@ export default {
       let option = data.target.innerText
       let url = this.queryArray[this.selected]
       let filename = this.activePod + '_' + this.selected + this.getPeriod(url) + '.' + option.toLowerCase()
-      this.downloadFile(url, filename, option)
+      utils.downloadFile(url, filename, option)
     },
     refreshDate(date) {
       if (date !== null) {
@@ -156,155 +127,6 @@ export default {
       this.drawCards()
       this.drawGraphs()
     },
-    redirectCard(data) {
-      if (data.link !== '/') {
-        this.$router.push(data.link)
-      }
-    },
-    getRandomColor () {
-      var chartColors = [
-        '#001f3f',
-        '#10375E',
-        '#173A5E',
-        '#173D5E',
-        '#164F87',
-        '#32415c',
-        '#2C3C5B',
-        '#4D6087',
-        '#324C63',
-        '#4F6B84',
-        '#3b898d',
-        '#377275',
-        '#2E5B50',
-        '#265149',
-        '#538389',
-        '#2D5459',
-        '#4b93b0',
-        '#66A0B7',
-        '#385C6B',
-        '#1C4D60',
-        '#1F4B6B',
-        '#1F6B5E',
-        '#d2d6de',
-        '#b5bbc8',
-        '#a70446',
-        '#7C123D',
-        '#960A42',
-        '#77143C',
-        '#771458',
-        '#771914',
-        '#701611',
-        '#511714',
-        '#93231D',
-        '#6D1A42',
-        '#490B29',
-        '#842D57',
-        '#84512D',
-        '#7F441A',
-        '#a83d48',
-        '#8E3039',
-        '#842932',
-        '#601F26',
-        '#CC7B41',
-        '#9E511A',
-        '#9E351A',
-        '#c26929'
-      ]
-
-      return chartColors[Math.floor(Math.random() * chartColors.length)]
-    },
-    groupBy(objectArray, property) {
-      return objectArray.reduce(function (acc, obj) {
-        let key = obj[property]
-        if (!acc[key]) {
-          acc[key] = []
-        }
-        acc[key].push(obj)
-        return acc
-      }, {})
-    },
-    where(collection, constraint) {
-      return collection.filter(collectionItem =>
-        Object.keys(constraint).every(key =>
-         collectionItem.hasOwnProperty(key) && constraint[key] === collectionItem[key]))
-    },
-    async fetchDataAsJSON(url) {
-      let queryDate = this.convertURLDateParameter()
-
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      if (json.total === 0) {
-        return {total: 0, results: null}
-      }
-      return {total: json.total, results: json.results}
-    },
-    generateGraph(response, sort, element, c) {
-      let graph = []
-      let dataset = this.groupBy(response, sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.value])
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          borderColor: color,
-          pointBackgroundColor: color,
-          backgroundColor: 'rgba(0, 0, 0, 0)',
-          data: obj
-        })
-      })
-
-      var ctx = document.getElementById(element).getContext('2d')
-      var config = {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: graph
-        },
-        options: {
-          scales: {
-            xAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.xLabel
-              }
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.yLabel
-              }
-            }]
-          },
-          title: {
-            display: true,
-            text: c.title
-          },
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            position: 'top',
-            display: true
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      return {ctx: ctx, config: config} // eslint-disable-line no-new
-    },
     showDatePicker() {
       return this.activePod !== null
     },
@@ -313,17 +135,17 @@ export default {
         c.graph.destroy()
       }
 
-      let {total, results} = await this.fetchDataAsJSON(c.url)
+      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
       if (total === 0) {
         return c.graph
       }
 
-      let queryDate = this.convertURLDateParameter()
+      let queryDate = utils.convertURLDateParameter(this.from, this.to)
 
       let ctx = document.getElementById(c.id).getContext('2d')
 
       let graph = []
-      let dataset = this.groupBy(results, c.sort)
+      let dataset = utils.groupBy(results, c.sort)
       let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
       labels.forEach((item, count) => {
@@ -387,35 +209,7 @@ export default {
       this.queryArray[c.id] = `${c.url}${queryDate}`
       return new Chart(ctx, config)
     },
-    async drawLineChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-      let {total, results} = await this.fetchDataAsJSON(c.url)
-      if (total === 0) {
-        return
-      }
-      let {ctx, config} = await this.generateGraph(results, c.sort, c.id, c.labels)
-      let queryDate = this.convertURLDateParameter()
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
-    async drawLineChartNamespaces() {
-      this.lineChartNamespaces = await this.drawLineChart({
-        url: `${api}/pods/${this.activePod}/namespaces/rating`,
-        graph: this.lineChartNamespaces,
-        id: 'lineChartNamespaces',
-        sort: 'namespace',
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          xLabel: 'Time',
-          yLabel: 'Rating',
-          title: 'Namespaces'
-        }
-      })
-    },
-    async drawBarChartMetrics() {
+      async drawBarChartMetrics() {
       this.barChartMetrics = await this.drawBarChart({
         url: `${api}/pods/${this.activePod}/rating`,
         graph: this.barChartMetrics,
@@ -441,32 +235,32 @@ export default {
         this.activePod = pod.target.value
         this.refreshDate(null)
       }
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
 
       this.selectForm = response.results.map(item => item.pod)
     },
     async generateColor() {
       let res = await this.getMetrics()
       res.forEach(item => {
-        this.colors[item['metric']] = this.getRandomColor()
+        this.colors[item['metric']] = utils.getRandomColor()
       })
       res = await this.getNamespaces()
       res.forEach(item => {
-        this.colors[item['namespace']] = this.getRandomColor()
+        this.colors[item['namespace']] = utils.getRandomColor()
       })
       res = await this.getNodes()
       res.forEach(item => {
-        this.colors[item['node']] = this.getRandomColor()
+        this.colors[item['node']] = utils.getRandomColor()
       })
     },
     async getNodes() {
       let url = `${api}/nodes`
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
       return results
     },
     async cardNamespace() {
       let url = `${api}/pods/${this.activePod}/namespace`
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results[0].namespace,
         link: '/namespaces',
@@ -477,7 +271,7 @@ export default {
     },
     async cardNode() {
       let url = `${api}/pods/${this.activePod}/node`
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results[0].node,
         link: '/nodes',
@@ -488,7 +282,7 @@ export default {
     },
     async cardLifetime() {
       let url = `${api}/pods/${this.activePod}/lifetime`
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
       let start = response.results[0].start
       let end = response.results[0].end
       this.timeCards.push({
@@ -505,16 +299,9 @@ export default {
         icon: 'hourglass-end'
       })
     },
-    async fetchTotal(url) {
-      let queryDate = this.convertURLDateParameter()
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.total
-    },
     async cardTotalRating() {
       let url = `${api}/pods/${this.activePod}/total_rating`
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5),
         link: '/',
@@ -531,18 +318,13 @@ export default {
     },
     async getMetrics() {
       let url = `${api}/metrics`
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
       return results
     },
     async getNamespaces() {
       let url = `${api}/namespaces`
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
       return results
-    },
-    async fetchResults(url) {
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.results
     }
   },
   async mounted () {
