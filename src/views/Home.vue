@@ -69,6 +69,7 @@
 
 import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
+import * as utils from  '../../public/static/js/utils'
 
 const api = generateAPIUrl()
 
@@ -97,131 +98,26 @@ export default {
     }
   },
   methods: {
-    convertURLDateParameter() {
-      let from = (this.from !== null) ? this.from : new Date(new Date().setDate(new Date().getDate() - 3)).toISOString()
-      let to = (this.to !== null) ? this.to : new Date().toISOString()
-      from = from.replace('T', ' ')
-      to = to.replace('T', ' ')
-      return `?start=${from}&end=${to}`
-    },
-    clicked(data) {
-      this.selected = data.target.id
-    },
-    JSONToCSV(json) {
-      const replacer = (key, value) => value === null ? '' : value
-      const header = Object.keys(json[0])
-      let csv = json.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-      csv.unshift(header.join(','))
-      csv = csv.join('\r\n')
-      return csv
-    },
-    async downloadFile(url, filename, type) {
-      const response = await fetch(url, {})
-      const json = await response.json()
-      let content
-      let mime
-      if (type === 'JSON') {
-        content = await JSON.stringify(json.results)
-        mime = 'application/json'
-      } else if (type === 'CSV') {
-        content = this.JSONToCSV(json.results)
-        mime = 'text/csv'
-      }
-      require('downloadjs')(content, filename, mime)
-    },
-    getPeriod(url) {
-      let broken = url.split('?')[1].split('&')
-      let from = broken[0].split('=')[1]
-      let to = broken[1].split('=')[1]
-      return `_${from}-${to}`
-    },
     getURL(data) {
       let option = data.target.innerText
       let url = this.queryArray[this.selected]
-      let filename = this.selected + this.getPeriod(url) + '.' + option.toLowerCase()
-      this.downloadFile(url, filename, option)
+      let filename = this.selected + utils.getPeriod(url) + '.' + option.toLowerCase()
+      utils.downloadFile(url, filename, option)
     },
     getDate(date) {
       this.from = date.start.toISOString().split('.')[0] + 'Z'
       if (date.end === null || date.start === date.end) {
-        date.end = new Date(this.from)
-        date.end.setDate(date.end.getDate() + 1)
+          date.end = new Date(this.from)
+          date.end.setDate(date.end.getDate() + 1)
       }
       this.to = date.end.toISOString().split('.')[0] + 'Z'
       this.cards = []
       this.drawCards()
       this.generateGraphs()
     },
-    getRandomColor() {
-      var chartColors = [
-        '#001f3f',
-        '#10375E',
-        '#173A5E',
-        '#173D5E',
-        '#164F87',
-        '#32415c',
-        '#2C3C5B',
-        '#4D6087',
-        '#324C63',
-        '#4F6B84',
-        '#3b898d',
-        '#377275',
-        '#2E5B50',
-        '#265149',
-        '#538389',
-        '#2D5459',
-        '#4b93b0',
-        '#66A0B7',
-        '#385C6B',
-        '#1C4D60',
-        '#1F4B6B',
-        '#1F6B5E',
-        '#d2d6de',
-        '#b5bbc8',
-        '#a70446',
-        '#7C123D',
-        '#960A42',
-        '#77143C',
-        '#771458',
-        '#771914',
-        '#701611',
-        '#511714',
-        '#93231D',
-        '#6D1A42',
-        '#490B29',
-        '#842D57',
-        '#84512D',
-        '#7F441A',
-        '#a83d48',
-        '#8E3039',
-        '#842932',
-        '#601F26',
-        '#CC7B41',
-        '#9E511A',
-        '#9E351A',
-        '#c26929'
-      ]
-
-      return chartColors[Math.floor(Math.random() * chartColors.length)]
-    },
-    groupBy(objectArray, property) {
-      return objectArray.reduce(function(acc, obj) {
-        let key = obj[property]
-        if (!acc[key]) {
-          acc[key] = []
-        }
-        acc[key].push(obj)
-        return acc
-      }, {})
-    },
-    redirectCard(data) {
-      if (data.link !== '/') {
-        this.$router.push(data.link)
-      }
-    },
     generateGraph(response, sort, element, c) {
       let graph = []
-      let dataset = this.groupBy(response, sort)
+      let dataset = utils.groupBy(response, sort)
       let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.time])
 
       labels.forEach((item, count) => {
@@ -316,88 +212,18 @@ export default {
         }
       })
     },
-    async fetchTotal(url) {
-      let queryDate = this.convertURLDateParameter()
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.total
-    },
-    async fetchData(url) {
-      let queryDate = this.convertURLDateParameter()
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.results
-    },
-    async fetchDataAsJSON(url) {
-      let queryDate = this.convertURLDateParameter()
-
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      if (json.total === 0) {
-        return {total: 0, results: null}
-      }
-      return {total: json.total, results: json.results}
-    },
     async drawLineChart(c) {
       if (c.graph !== null) {
         c.graph.destroy()
       }
-      let {total, results} = await this.fetchDataAsJSON(c.url)
+      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
       if (total === 0) {
         return c.graph
       }
       let {ctx, config} = await this.generateGraph(results, c.sort, c.id, c.labels)
-      let queryDate = this.convertURLDateParameter()
+      let queryDate = utils.convertURLDateParameter(this.from, this.to) 
       this.queryArray[c.id] = `${c.url}${queryDate}`
       return new Chart(ctx, config)
-    },
-    async drawBarChart(labels, url, element) {
-      let {total, results} = await this.fetchDataAsJSON(url) // eslint-disable-line
-      let datasets = []
-
-      labels = [labels]
-      results.forEach(item => {
-        datasets.push({
-          label: item.service,
-          data: [item.price.toFixed(5)],
-          backgroundColor: this.getRandomColor()
-        })
-      })
-
-      let ctx = document.getElementById(element).getContext('2d')
-      let config = {
-        type: 'bar',
-        data: {
-          labels: labels,
-          datasets: datasets
-        },
-        options: {
-          animation: false,
-          legend: {
-            display: false
-          },
-          title: {
-            display: true
-          },
-          scales: {
-            xAxes: [{
-              stacked: true,
-              barThickness: 70
-            }],
-            yAxes: [{
-              stacked: true,
-              scaleLabel: {
-                display: true
-              }
-            }]
-          }
-        }
-      }
-      this.queryArray[element] = url
-      return {ctx, config}
     },
     async generateGraphs() {
       this.drawLineChartNodesRating()
@@ -406,7 +232,7 @@ export default {
     async namespacesCard() {
       let url = `${api}/namespaces`
       this.cards.push({
-        value: await this.fetchTotal(url),
+        value: await utils.fetchTotal(url, this),
         link: '/namespaces',
         label: 'Namespaces',
         color: 'purple',
@@ -416,7 +242,7 @@ export default {
     async nodesCard() {
       let url = `${api}/nodes`
       this.cards.push({
-        value: await this.fetchTotal(url),
+        value: await utils.fetchTotal(url, this),
         link: '/nodes',
         label: 'Nodes',
         color: 'red',
@@ -426,7 +252,7 @@ export default {
     async podsCard() {
       let url = `${api}/pods`
       this.cards.push({
-        value: await this.fetchTotal(url),
+        value: await utils.fetchTotal(url, this),
         link: '/pods',
         label: 'Pods',
         color: 'blue',
@@ -437,11 +263,6 @@ export default {
       this.namespacesCard()
       this.nodesCard()
       this.podsCard()
-    },
-    async getTotal(url) {
-      let results = await fetch(url)
-      let json = await results.json()
-      return json.total
     },
     async getNamespaces() {
       let url = `${api}/namespaces`
@@ -457,12 +278,12 @@ export default {
     },
     async generateColorSet() {
       let res = await this.getNamespaces()
-      res.forEach(item => {
-        this.colors[item['namespace']] = this.getRandomColor()
+      res.forEach(item => { 
+        this.colors[item['namespace']] = utils.getRandomColor()
       })
       res = await this.getNodes()
       res.forEach(item => {
-        this.colors[item['node']] = this.getRandomColor()
+        this.colors[item['node']] = utils.getRandomColor()
       })
     }
   },
