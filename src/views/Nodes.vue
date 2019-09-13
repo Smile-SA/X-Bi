@@ -64,6 +64,7 @@
 <script>
 import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
+import * as utils from  '../../public/static/js/utils'
 
 const api = generateAPIUrl()
 
@@ -96,46 +97,11 @@ export default {
     }
   },
   methods: {
-    convertURLDateParameter() {
-      let from = (this.from !== null) ? this.from : new Date(new Date().setDate(new Date().getDate() - 3)).toISOString()
-      let to = (this.to !== null) ? this.to : new Date().toISOString()
-      from = from.replace('T', ' ')
-      to = to.replace('T', ' ')
-      return `?start=${from}&end=${to}`
-    },
-    clicked(data) {
-      this.selected = data.target.id
-    },
-    JSONToCSV(json) {
-      const replacer = (key, value) => value === null ? '' : value
-      const header = Object.keys(json[0])
-      let csv = json.map(row => header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(','))
-      csv.unshift(header.join(','))
-      return csv.join('\r\n')
-    },
-    async downloadFile(url, filename, type) {
-      let results = await this.fetchResults(url)
-      let content
-      let mime
-      if (type === 'JSON') {
-        content = await JSON.stringify(results)
-        mime = 'application/json'
-      } else if (type === 'CSV') {
-        content = this.JSONToCSV(results)
-        mime = 'text/csv'
-      }
-      require('downloadjs')(content, filename, mime)
-    },
-    getPeriod(url) {
-      let broken = url.split('/')
-      let l = broken.length
-      return '_' + broken[l - 2] + '/' + broken[l - 1]
-    },
     getURL(data) {
       let option = data.target.innerText
       let url = this.queryArray[this.selected]
       let filename = this.activeNode + '_' + this.selected + this.getPeriod(url) + '.' + option.toLowerCase()
-      this.downloadFile(url, filename, option)
+      utils.downloadFile(url, filename, option)
     },
     refreshDate(date) {
       if (date !== null) {
@@ -150,92 +116,9 @@ export default {
       this.drawCards()
       this.drawGraphs()
     },
-    redirectCard(data) {
-      if (data.link !== '/') {
-        this.$router.push(data.link)
-      }
-    },
-    getRandomColor () {
-      var chartColors = [
-        '#001f3f',
-        '#10375E',
-        '#173A5E',
-        '#173D5E',
-        '#164F87',
-        '#32415c',
-        '#2C3C5B',
-        '#4D6087',
-        '#324C63',
-        '#4F6B84',
-        '#3b898d',
-        '#377275',
-        '#2E5B50',
-        '#265149',
-        '#538389',
-        '#2D5459',
-        '#4b93b0',
-        '#66A0B7',
-        '#385C6B',
-        '#1C4D60',
-        '#1F4B6B',
-        '#1F6B5E',
-        '#d2d6de',
-        '#b5bbc8',
-        '#a70446',
-        '#7C123D',
-        '#960A42',
-        '#77143C',
-        '#771458',
-        '#771914',
-        '#701611',
-        '#511714',
-        '#93231D',
-        '#6D1A42',
-        '#490B29',
-        '#842D57',
-        '#84512D',
-        '#7F441A',
-        '#a83d48',
-        '#8E3039',
-        '#842932',
-        '#601F26',
-        '#CC7B41',
-        '#9E511A',
-        '#9E351A',
-        '#c26929'
-      ]
-
-      return chartColors[Math.floor(Math.random() * chartColors.length)]
-    },
-    groupBy(objectArray, property) {
-      return objectArray.reduce(function (acc, obj) {
-        let key = obj[property]
-        if (!acc[key]) {
-          acc[key] = []
-        }
-        acc[key].push(obj)
-        return acc
-      }, {})
-    },
-    where(collection, constraint) {
-      return collection.filter(collectionItem =>
-        Object.keys(constraint).every(key =>
-         collectionItem.hasOwnProperty(key) && constraint[key] === collectionItem[key]))
-    },
-    async fetchDataAsJSON(url) {
-      let queryDate = this.convertURLDateParameter()
-
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      if (json.total === 0) {
-        return {total: 0, results: null}
-      }
-      return {total: json.total, results: json.results}
-    },
     generateGraph(response, sort, element, c) {
       let graph = []
-      let dataset = this.groupBy(response, sort)
+      let dataset = utils.groupBy(response, sort)
       let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.time])
 
       labels.forEach((item, count) => {
@@ -307,17 +190,17 @@ export default {
         c.graph.destroy()
       }
 
-      let {total, results} = await this.fetchDataAsJSON(c.url)
+      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
       if (total === 0) {
         return null
       }
 
-      let queryDate = this.convertURLDateParameter()
+      let queryDate = utils.convertURLDateParameter(this.from, this.to)
 
       let ctx = document.getElementById(c.id).getContext('2d')
 
       let graph = []
-      let dataset = this.groupBy(results, c.sort)
+      let dataset = utils.groupBy(results, c.sort)
       let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
       labels.forEach((item, count) => {
@@ -384,12 +267,12 @@ export default {
       if (c.graph !== null) {
         c.graph.destroy()
       }
-      let {total, results} = await this.fetchDataAsJSON(c.url)
+      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
       if (total === 0) {
         return null
       }
       let {ctx, config} = await this.generateGraph(results, c.sort, c.id, c.labels)
-      let queryDate = this.convertURLDateParameter()
+      let queryDate = utils.convertURLDateParameter(this.from, this.to)
       this.queryArray[c.id] = `${c.url}${queryDate}`
       return new Chart(ctx, config)
     },
@@ -435,13 +318,13 @@ export default {
         c.graph.destroy()
       }
 
-      let {total, results} = await this.fetchDataAsJSON(c.url)
+      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
       if (total === 0) {
         return null
       }
 
-      Object.keys(this.groupBy(results, c.sort)).forEach(type => {
-        let values = this.where(results, {[c.sort]: type}).map(value => value[c.unit])
+      Object.keys(utils.groupBy(results, c.sort)).forEach(type => {
+        let values = utils.where(results, {[c.sort]: type}).map(value => value[c.unit])
         let color = (c.color !== null) ? c.color : this.colors[type]
         data.datasets.push({
           label: type,
@@ -451,7 +334,7 @@ export default {
         })
       })
 
-      data.labels = Object.keys(this.groupBy(results, 'service'))
+      data.labels = Object.keys(utils.groupBy(results, 'service'))
 
       let ctx = document.getElementById(c.id).getContext('2d')
       let config = {
@@ -504,24 +387,24 @@ export default {
         this.refreshDate(null)
       }
 
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
 
       this.selectForm = results.map(item => item.node)
     },
     async generateColor() {
       let res = await this.getMetrics()
       res.forEach(item => {
-        this.colors[item['metric']] = this.getRandomColor()
+        this.colors[item['metric']] = utils.getRandomColor()
       })
       res = await this.getNamespaces()
       res.forEach(item => {
-        this.colors[item['namespace']] = this.getRandomColor()
+        this.colors[item['namespace']] = utils.getRandomColor()
       })
     },
     async cardPods() {
       let url = `${api}/nodes/${this.activeNode}/pods`
       this.cards.push({
-        value: await this.fetchTotal(url),
+        value: await utils.fetchTotal(url, this),
         link: '/pods',
         label: 'Pods',
         color: 'blue',
@@ -531,7 +414,7 @@ export default {
     async cardNamespaces() {
       let url = `${api}/nodes/${this.activeNode}/namespaces`
       this.cards.push({
-        value: await this.fetchTotal(url),
+        value: await utils.fetchTotal(url, this),
         link: '/namespaces',
         label: 'Namespaces',
         color: 'purple',
@@ -539,7 +422,7 @@ export default {
       })
     },
     async fetchTotal(url) {
-      let queryDate = this.convertURLDateParameter()
+      let queryDate = utils.convertURLDateParameter(this.from, this.to)
       url = url + queryDate
       const response = await fetch(url, {})
       const json = await response.json()
@@ -547,7 +430,7 @@ export default {
     },
     async cardTotalRating() {
       let url = `${api}/nodes/${this.activeNode}/total_rating`
-      let response = await this.fetchDataAsJSON(url)
+      let response = await utils.fetchDataAsJSON(url, this)
       let total = 0
       if (response.total > 0) {
         total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
@@ -567,12 +450,12 @@ export default {
     },
     async getMetrics() {
       let url = `${api}/metrics`
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
       return results
     },
     async getNamespaces() {
       let url = `${api}/namespaces`
-      let results = await this.fetchResults(url)
+      let results = await utils.fetchData(url, this)
       return results
     },
     async fetchResults(url) {
