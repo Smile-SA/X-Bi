@@ -5,10 +5,6 @@ export function convertURLDateParameter(from, to) {
   to = to.replace('T', ' ')
   return `?start=${from}&end=${to}`
 }
-  
-export function clicked(data) {
-  this.selected = data.target.id
-}
 
 export function JSONToCSV(json) {
   const replacer = (key, value) => value === null ? '' : value
@@ -135,4 +131,25 @@ export function redirectCard(data, that) {
   if (data.link !== '/') {
     that.$router.push(data.link)
   }
+}
+
+export function getURL(data, that) {
+  let option = data.target.innerText
+  let url = that.queryArray[that.selected]
+  let filename = that.selected + this.getPeriod(url) + '.' + option.toLowerCase()
+  this.downloadFile(url, filename, option)
+}
+
+export function refreshDate(date, that) {
+  if (date !== null) {
+    that.from = date.start.toISOString().split('.')[0] + 'Z'
+    if (date.end === null || date.start === date.end) {
+      date.end = new Date(that.from)
+      date.end.setDate(date.end.getDate() + 1)
+    }
+    that.to = date.end.toISOString().split('.')[0] + 'Z'
   }
+  that.cards = []
+  that.drawCards()
+  that.drawGraphs()
+}

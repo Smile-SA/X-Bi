@@ -95,23 +95,10 @@ export default {
       utils.redirectCard(data, this)
     },
     getURL(data) {
-      let option = data.target.innerText
-      let url = this.queryArray[this.selected]
-      let filename = this.activeNode + '_' + this.selected + this.getPeriod(url) + '.' + option.toLowerCase()
-      utils.downloadFile(url, filename, option)
+      utils.getURL(data, this)
     },
     refreshDate(date) {
-      if (date !== null) {
-        this.from = date.start.toISOString().split('.')[0] + 'Z'
-        if (date.end === null || date.start === date.end) {
-          date.end = new Date(this.from)
-          date.end.setDate(date.end.getDate() + 1)
-        }
-        this.to = date.end.toISOString().split('.')[0] + 'Z'
-      }
-      this.cards = []
-      this.drawCards()
-      this.drawGraphs()
+      utils.refreshDate(date, this)
     },
     showDatePicker() {
       return this.activeNode !== null
@@ -150,28 +137,10 @@ export default {
       this.drawBarChartMetrics()
       this.drawLineChartNamespaces()
     },
-    async getNodes (node) {
-      let url = `${api}/nodes`
-
-      if (node !== undefined) {
-        this.cards = []
-        this.activeNode = node.target.value
-        this.refreshDate(null)
-      }
-
-      let results = await utils.fetchData(url, this)
-
-      this.selectForm = results.map(item => item.node)
-    },
-    async generateColor() {
-      let res = await this.getMetrics()
-      res.forEach(item => {
-        this.colors[item['metric']] = utils.getRandomColor()
-      })
-      res = await this.getNamespaces()
-      res.forEach(item => {
-        this.colors[item['namespace']] = utils.getRandomColor()
-      })
+    async drawCards() {
+      this.cardNamespaces()
+      this.cardPods()
+      this.cardTotalRating()
     },
     async cardPods() {
       let url = `${api}/nodes/${this.activeNode}/pods`
@@ -208,20 +177,22 @@ export default {
         icon: 'euro-sign'
       })
     },
-    async drawCards() {
-      await this.cardNamespaces()
-      await this.cardPods()
-      await this.cardTotalRating()
-    },
-    async getMetrics() {
-      let url = `${api}/metrics`
+    async getNodes (node) {
+      let url = `${api}/nodes`
+
+      if (node !== undefined) {
+        this.cards = []
+        this.activeNode = node.target.value
+        this.refreshDate(null)
+      }
       let results = await utils.fetchData(url, this)
-      return results
+      this.selectForm = results.map(item => item.node)
     },
-    async getNamespaces() {
-      let url = `${api}/namespaces`
-      let results = await utils.fetchData(url, this)
-      return results
+    async generateColor() {
+      await (await utils.fetchData(`${api}/namespaces`, this))
+      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
+      await (await utils.fetchData(`${api}/metrics`, this))
+      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
     },
   },
   async mounted () {

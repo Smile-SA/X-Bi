@@ -3,7 +3,7 @@
   <section class="content">
     <div id="app" class="form-group col-xs-2">
       <h4>Select a date</h4>
-      <VueRangedatePicker  id="rangeDatePicker" v-model="date" i18n="EN" @selected="getDate"/>
+      <VueRangedatePicker  id="rangeDatePicker" v-model="date" i18n="EN" @selected="refreshDate"/>
     </div>
     <div class="row">
       <div class="col-xs-12">
@@ -95,25 +95,17 @@ export default {
     }
   },
   methods: {
+    clicked(data) {
+      this.selected = data.target.id
+    },
     redirect(data) {
       utils.redirectCard(data, this)
     },
     getURL(data) {
-      let option = data.target.innerText
-      let url = this.queryArray[this.selected]
-      let filename = this.selected + utils.getPeriod(url) + '.' + option.toLowerCase()
-      utils.downloadFile(url, filename, option)
+      utils.getURL(data, this)
     },
-    getDate(date) {
-      this.from = date.start.toISOString().split('.')[0] + 'Z'
-      if (date.end === null || date.start === date.end) {
-          date.end = new Date(this.from)
-          date.end.setDate(date.end.getDate() + 1)
-      }
-      this.to = date.end.toISOString().split('.')[0] + 'Z'
-      this.cards = []
-      this.drawCards()
-      this.generateGraphs()
+    refreshDate(date) {
+      utils.refreshDate(date, this)
     },
     async drawLineChartNodesRating() {
       this.lineChartNodes = await graph.drawLineChart({
@@ -145,9 +137,14 @@ export default {
         }
       })
     },
-    async generateGraphs() {
+    async drawGraphs() {
       this.drawLineChartNodesRating()
       this.drawLineChartNamespaceRating()
+    },
+    async drawCards() {
+      this.namespacesCard()
+      this.nodesCard()
+      this.podsCard()
     },
     async namespacesCard() {
       let url = `${api}/namespaces`
@@ -179,38 +176,17 @@ export default {
         icon: 'boxes'
       })
     },
-    async drawCards() {
-      this.namespacesCard()
-      this.nodesCard()
-      this.podsCard()
-    },
-    async getNamespaces() {
-      let url = `${api}/namespaces`
-      let results = await fetch(url)
-      let json = await results.json()
-      return json.results
-    },
-    async getNodes() {
-      let url = `${api}/nodes`
-      let results = await fetch(url)
-      let json = await results.json()
-      return json.results
-    },
     async generateColorSet() {
-      let res = await this.getNamespaces()
-      res.forEach(item => { 
-        this.colors[item['namespace']] = utils.getRandomColor()
-      })
-      res = await this.getNodes()
-      res.forEach(item => {
-        this.colors[item['node']] = utils.getRandomColor()
-      })
+      await (await utils.fetchData(`${api}/namespaces`, this))
+      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
+      await (await utils.fetchData(`${api}/nodes`, this))
+      .forEach(item => this.colors[item['node']] = utils.getRandomColor())
     }
   },
   async mounted() {
     await this.generateColorSet()
     this.drawCards()
-    this.generateGraphs()
+    this.drawGraphs()
   }
 }
 </script>
