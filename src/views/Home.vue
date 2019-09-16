@@ -70,6 +70,7 @@
 import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../../public/static/js/utils'
+import * as graph from '../../public/static/js/graph'
 
 const api = generateAPIUrl()
 
@@ -112,81 +113,13 @@ export default {
       this.drawCards()
       this.generateGraphs()
     },
-    generateGraph(response, sort, element, c) {
-      let graph = []
-      let dataset = utils.groupBy(response, sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.value].toFixed(5))
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          borderColor: color,
-          pointBackgroundColor: color,
-          backgroundColor: 'rgba(0, 0, 0, 0)',
-          data: obj
-        })
-      })
-
-      var ctx = document.getElementById(element).getContext('2d')
-      var config = {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: graph
-        },
-        options: {
-          animation: false,
-          scales: {
-            xAxes: [{
-              ticks: {
-                maxTicksLimit: 10
-              },
-              display: true,
-              scaleLabel: {
-                display: true
-              }
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.yLabel
-              }
-            }]
-          },
-          title: {
-            display: true,
-            text: c.title
-          },
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            position: 'top',
-            display: true
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      return {ctx: ctx, config: config} // eslint-disable-line no-new
-    },
     async drawLineChartNodesRating() {
-      this.lineChartNodes = await this.drawLineChart({
+      this.lineChartNodes = await graph.drawLineChart({
         url: `${api}/nodes/rating`,
         graph: this.lineChartNodes,
         id: 'lineChartNodes',
         sort: 'node',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -196,11 +129,12 @@ export default {
       })
     },
     async drawLineChartNamespaceRating() {
-      this.lineChartNamespaces = await this.drawLineChart({
+      this.lineChartNamespaces = await graph.drawLineChart({
         url: `${api}/namespaces/rating`,
         graph: this.lineChartNamespaces,
         id: 'lineChartNamespaces',
         sort: 'namespace',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -208,19 +142,6 @@ export default {
           title: 'Namespaces'
         }
       })
-    },
-    async drawLineChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return c.graph
-      }
-      let {ctx, config} = await this.generateGraph(results, c.sort, c.id, c.labels)
-      let queryDate = utils.convertURLDateParameter(this.from, this.to) 
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
     },
     async generateGraphs() {
       this.drawLineChartNodesRating()
