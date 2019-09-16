@@ -62,9 +62,9 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../../public/static/js/utils'
+import * as graph from '../../public/static/js/graph'
 
 const api = generateAPIUrl()
 
@@ -110,172 +110,16 @@ export default {
       this.drawCards()
       this.drawGraphs()
     },
-    generateGraph(response, sort, element, c) {
-      let graph = []
-      let dataset = utils.groupBy(response, sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.value].toFixed(5))
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          borderColor: color,
-          pointBackgroundColor: color,
-          backgroundColor: 'rgba(0, 0, 0, 0)',
-          data: obj
-        })
-      })
-
-      var ctx = document.getElementById(element).getContext('2d')
-      var config = {
-        type: 'line',
-        data: {
-          labels: labels,
-          datasets: graph
-        },
-        options: {
-          animation: false,
-          scales: {
-            xAxes: [{
-              ticks: {
-                maxTicksLimit: 10
-              },
-              display: true
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.yLabel
-              }
-            }]
-          },
-          title: {
-            display: true,
-            text: c.title
-          },
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            position: 'top',
-            display: true
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      return {ctx: ctx, config: config} // eslint-disable-line no-new
-    },
     showDatePicker() {
       return this.activeNode !== null
     },
-    async drawBarChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return null
-      }
-
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-
-      let ctx = document.getElementById(c.id).getContext('2d')
-
-      let graph = []
-      let dataset = utils.groupBy(results, c.sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.labels.value].toFixed(5))
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          backgroundColor: color,
-          data: obj
-        })
-      })
-      let config = {
-        type: 'bar',
-        data: {
-          datasets: graph,
-          labels: labels
-        },
-        options: {
-          title: {
-            display: true,
-            text: c.labels.title
-          },
-          scales: {
-            xAxes: [{
-              ticks: {
-                maxTicksLimit: 10
-              },
-              display: true,
-              scaleLabel: {
-                display: true
-              }
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.labels.yLabel
-              }
-            }]
-          },
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            display: false
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
-    async drawLineChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return null
-      }
-      let {ctx, config} = await this.generateGraph(results, c.sort, c.id, c.labels)
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
     async drawLineChartNamespaces() {
-      this.lineChartNamespaces = await this.drawLineChart({
+      this.lineChartNamespaces = await graph.drawLineChart({
         url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
         graph: this.lineChartNamespaces,
         id: 'lineChartNamespaces',
         sort: 'namespace',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -285,11 +129,12 @@ export default {
       })
     },
     async drawBarChartMetrics() {
-      this.barChartMetrics = await this.drawBarChart({
+      this.barChartMetrics = await graph.drawBarChart({
         url: `${api}/nodes/${this.activeNode}/rating`,
         graph: this.barChartMetrics,
         id: 'barChartMetrics',
         sort: 'metric',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',

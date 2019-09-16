@@ -63,9 +63,9 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../../public/static/js/utils'
+import * as graph from '../../public/static/js/graph'
 
 const api = generateAPIUrl()
 
@@ -120,11 +120,12 @@ export default {
       return this.activeNamespace !== null
     },
     async drawPieNodesPods() {
-      this.pieChartNodesPods = await this.drawPieChart({
+      this.pieChartNodesPods = await graph.drawPieChart({
         url: `${api}/namespaces/${this.activeNamespace}/nodes/pods`,
         graph: this.pieChartNodesPods,
         id: 'pieChartNodesPods',
         sort: 'node',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -132,135 +133,13 @@ export default {
         }
       })
     },
-    async drawPieChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return c.graph
-      }
-
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-
-      let dataset = utils.groupBy(results, c.sort)
-      let labels = [...Object.keys(dataset)]
-      let colors = [...Object.keys(dataset)].map((item) => this.colors[item])
-      dataset = [...Object.values(dataset)].map((item) => item.length)
-
-      let ctx = document.getElementById(c.id).getContext('2d')
-      let config = {
-        type: 'doughnut',
-        data: {
-          datasets: [{
-            data: dataset,
-            backgroundColor: colors
-          }],
-          labels: labels
-        },
-        options: {
-          title: {
-            display: true,
-            text: c.labels.title
-          },
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            display: false
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
-    async drawBarChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return c.graph
-      }
-
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-      let ctx = document.getElementById(c.id).getContext('2d')
-
-      let graph = []
-      let dataset = utils.groupBy(results, c.sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.labels.value].toFixed(5))
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          backgroundColor: color,
-          data: obj
-        })
-      })
-      let config = {
-        type: 'bar',
-        data: {
-          datasets: graph,
-          labels: labels
-        },
-        options: {
-          title: {
-            display: true,
-            text: c.labels.title
-          },
-          scales: {
-            xAxes: [{
-              ticks: {
-                maxTicksLimit: 10
-              },
-              display: true,
-              scaleLabel: {
-                display: true
-              }
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.labels.yLabel
-              }
-            }]
-          },
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            display: false
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
     async drawBarChartMetrics() {
-      this.barChartMetrics = await this.drawBarChart({
+      this.barChartMetrics = await graph.drawBarChart({
         url: `${api}/namespaces/${this.activeNamespace}/rating`,
         graph: this.barChartMetrics,
         id: 'barChartMetrics',
         sort: 'metric',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -321,13 +200,6 @@ export default {
         color: 'red',
         icon: 'server'
       })
-    },
-    async fetchTotal(url) {
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-      url = url + queryDate
-      const response = await fetch(url, {})
-      const json = await response.json()
-      return json.total
     },
     async cardTotalRating() {
       let url = `${api}/namespaces/${this.activeNamespace}/total_rating`

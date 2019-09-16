@@ -67,7 +67,6 @@
 </template>
 <script>
 
-import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../../public/static/js/utils'
 import * as graph from '../../public/static/js/graph'
