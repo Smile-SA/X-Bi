@@ -131,8 +131,8 @@ export function groupBy(objectArray, property) {
   }, {})
 }
   
-export function redirectCard(data) {
+export function redirectCard(data, that) {
   if (data.link !== '/') {
-    this.$router.push(data.link)
+    that.$router.push(data.link)
   }
   }

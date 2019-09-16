@@ -28,7 +28,7 @@
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
-                  <div class="info-box-content" @click="redirectCard(card)">
+                  <div class="info-box-content" @click="redirect(card)">
                     <div style="text-align: center;">
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
@@ -48,7 +48,7 @@
               <div class="col-md-6 col-sm-6 col-xs-12" v-for="card in timeCards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
-                  <div class="info-box-content" @click="redirectCard(card)">
+                  <div class="info-box-content" @click="redirect(card)">
                     <div style="text-align: center;">
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
@@ -68,9 +68,9 @@
 </template>
 
 <script>
-import Chart from 'chart.js'
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../../public/static/js/utils'
+import * as graph from '../../public/static/js/graph'
 
 const api = generateAPIUrl()
 
@@ -96,6 +96,9 @@ export default {
     }
   },
   methods: {
+    redirect(data) {
+      utils.redirectCard(data, this)
+    },
     getPeriod(url) {
       let broken = url.split('/')
       let l = broken.length
@@ -124,91 +127,13 @@ export default {
     showDatePicker() {
       return this.activePod !== null
     },
-    async drawBarChart(c) {
-      if (c.graph !== null) {
-        c.graph.destroy()
-      }
-
-      let {total, results} = await utils.fetchDataAsJSON(c.url, this)
-      if (total === 0) {
-        return c.graph
-      }
-
-      let queryDate = utils.convertURLDateParameter(this.from, this.to)
-
-      let ctx = document.getElementById(c.id).getContext('2d')
-
-      let graph = []
-      let dataset = utils.groupBy(results, c.sort)
-      let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
-
-      labels.forEach((item, count) => {
-        labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
-      })
-
-      Object.keys(dataset).forEach(item => {
-        let obj = []
-        let color = this.colors[item]
-        Object.values(dataset[item]).forEach(subItem => {
-          obj.push(subItem[c.labels.value].toFixed(5))
-        })
-        graph.push({
-          label: item,
-          fill: true,
-          backgroundColor: color,
-          data: obj
-        })
-      })
-      let config = {
-        type: 'bar',
-        data: {
-          datasets: graph,
-          labels: labels
-        },
-        options: {
-          title: {
-            display: true,
-            text: c.labels.title
-          },
-          scales: {
-            animation: false,
-            xAxes: [{
-              ticks: {
-                maxTicksLimit: 10
-              },
-              display: true,
-              scaleLabel: {
-                display: true
-              }
-            }],
-            yAxes: [{
-              display: true,
-              scaleLabel: {
-                display: true,
-                labelString: c.labels.yLabel
-              }
-            }]
-          },
-          responsive: true,
-          maintainAspectRatio: !this.isMobile,
-          legend: {
-            display: false
-          },
-          tooltips: {
-            intersect: false,
-            mode: 'label'
-          }
-        }
-      }
-      this.queryArray[c.id] = `${c.url}${queryDate}`
-      return new Chart(ctx, config)
-    },
       async drawBarChartMetrics() {
-      this.barChartMetrics = await this.drawBarChart({
+      this.barChartMetrics = await graph.drawBarChart({
         url: `${api}/pods/${this.activePod}/rating`,
         graph: this.barChartMetrics,
         id: 'barChartMetrics',
         sort: 'metric',
+        context: this,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
