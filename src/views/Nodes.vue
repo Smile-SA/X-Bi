@@ -91,6 +91,9 @@ export default {
     }
   },
   methods: {
+    clicked(data) {
+      this.selected = data.target.id
+    },
     redirect(data) {
       utils.redirectCard(data, this)
     },
