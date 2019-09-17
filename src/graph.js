@@ -198,7 +198,7 @@ export async function drawBarChart(c) {
       responsive: true,
       maintainAspectRatio: !c.context.isMobile,
       legend: {
-        display: false
+        display: true
       },
       tooltips: {
         intersect: false,
