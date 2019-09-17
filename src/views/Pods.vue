@@ -106,6 +106,7 @@ export default {
       utils.getURL(data, this)
     },
     refreshDate(date) {
+      this.timeCards = []
       utils.refreshDate(date, this)
     },
     showDatePicker() {
