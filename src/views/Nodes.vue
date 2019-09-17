@@ -63,8 +63,8 @@
 
 <script>
 import { generateAPIUrl } from '../variables'
-import * as utils from  '../../public/static/js/utils'
-import * as graph from '../../public/static/js/graph'
+import * as utils from  '../utils'
+import * as graph from '../graph'
 
 const api = generateAPIUrl()
 

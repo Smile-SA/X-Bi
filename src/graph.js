@@ -79,12 +79,11 @@ export async function drawLineChart(c) {
   if (total === 0) {
     return c.graph
   }
-  let {ctx, config} = await this.generateLineGraph(results, c)
+  let {ctx, config} = await generateLineGraph(results, c)
   let queryDate = utils.convertURLDateParameter(c.context.from, c.context.to) 
   c.context.queryArray[c.id] = `${c.url}${queryDate}`
   return new Chart(ctx, config)
 }
-
 
 export async function drawPieChart(c) {
   if (c.graph !== null) {

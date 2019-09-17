@@ -136,8 +136,8 @@ export function redirectCard(data, that) {
 export function getURL(data, that) {
   let option = data.target.innerText
   let url = that.queryArray[that.selected]
-  let filename = that.selected + this.getPeriod(url) + '.' + option.toLowerCase()
-  this.downloadFile(url, filename, option)
+  let filename = that.selected + getPeriod(url) + '.' + option.toLowerCase()
+  downloadFile(url, filename, option)
 }
 
 export function refreshDate(date, that) {
