@@ -25,6 +25,12 @@
         <span class="pages">Services</span>
       </a>
     </router-link>
+    <router-link tag="li" class="pageLink" to="/metrics">
+      <a>
+        <i class="fa fa-diaspora"></i>
+        <span class="pages">Metrics</span>
+      </a>
+    </router-link>
   </ul>
 </template>
 <script>
