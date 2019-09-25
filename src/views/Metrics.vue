@@ -30,9 +30,18 @@
         </div>
       </div>
     </div>
-    <div class="input-area">
+    <div class="input-area" v-if="showYaml">
+      <p>metrics.yaml</p>
       <highlight-code lang="yaml">
         {{ metrics }}
+      </highlight-code>
+      <p>nodes.yaml</p>
+      <highlight-code lang="yaml">
+        {{ nodes }}
+      </highlight-code>
+      <p>rules.yaml</p>
+      <highlight-code lang="yaml">
+        {{ rules }}
       </highlight-code>
     </div>
   </section>
@@ -49,6 +58,8 @@ export default {
     return {
       cards: [],
       metrics: null,
+      nodes: null,
+      rules: null,
       metricsObject: null,
       selectForm: [],
       activeVersion: 0,
@@ -61,44 +72,31 @@ export default {
     redirect(data) {
       utils.redirectCard(data, this)
     },
+    showYaml() {
+      return this.metrics !== null
+    },
+    async drawYaml() {
+      let url = `${api}/rating/config/${this.activeVersion}` 
+
+      let data = await utils.fetchDataAsJSON(url, this)
+      this.metrics = data.results.metrics
+      this.nodes = data.results.nodes
+      this.rules = data.results.rules
+    },
     async getVersion(version) {
-      // let url = `${api}/rating/versions`
+      let url = `${api}/rating/configs/list`
       
       if (version !== undefined) {
         this.cards = []
         this.activeVersion = version.target.value
         this.drawCards()
+        this.drawYaml()
       }
-      // let results = await utils.fetchData(url, this)
-      this.selectForm = ['1.0', '2.0', '3.0', '4.0']
-      // this.selectForm = results.map(item => item.version)
-    },
-    // parseYaml(content) {
-      // const loaded = require('js-yaml').safeLoad(this.metrics)
-
-    // }
-    async versionsCard() { // List number of version
-      let url = `${api}/rating/versions`
-      this.cards.push({
-        value: this.selectForm.length,
-        link: '/',
-        label: 'Available versions',
-        color: 'purple',
-        icon: 'diaspora'
-      })
-    },
-    async metricsCard() {
-      let url = `${api}/rating/metrics`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/',
-        label: 'Rated metrics',
-        color: 'red',
-        icon: 'server'
-      })
+      let results = await utils.fetchData(url, this)
+      this.selectForm = results.map(item => item)
     },
     async versionMetricsCard() {
-      if (this.activeVersion === 0) {
+      if (this.activeVersion === null   ) {
         return
       }
       this.cards.push({
@@ -110,63 +108,11 @@ export default {
       })
     },
     drawCards() {
-      this.metricsCard()
-      this.versionsCard()
       this.versionMetricsCard()
     }
   },
   mounted() {
-    this.metrics = `
-    ruleset:
-      metadata:
-        version: "1.0"
-        validity:
-          start: "2019-09-15T17:39:10Z"
-          end: "2019-09-18T17:39:10Z"
-      rules_storage:
-        node_type: hdd
-        rules:
-        -
-          metric: request_cpu
-          price: 0.00075
-          unit: core-hours
-        -
-          metric: usage_cpu
-          price: 0.0015
-          unit: core-hours
-        -
-          metric: request_memory
-          price: 0.0007
-          unit: GiB-hours
-        -
-          metric: usage_memory
-          price: 0.0014
-          unit: GiB-hours
-      rules_default:
-        node_type: default
-        rules:
-        -
-          metric: request_cpu
-          price: 0.005
-          unit: core-hours
-        -
-          metric: usage_cpu
-          price: 0.015
-          unit: core-hours
-        -
-          metric: request_memory
-          price: 0.004
-          unit: GiB-hours
-        -
-          metric: usage_memory
-          price: 0.012
-          unit: GiB-hours
-    `
-    // let meta = this.metricsObject.ruleset.metadata
-    // console.log(meta.version, meta.validity.start, meta.validity.end)
-    // this.parseYaml(this.metrics)
     this.getVersion()
-    this.drawCards()
   }
 }
 
