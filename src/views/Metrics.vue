@@ -1,11 +1,16 @@
 <template>
   <section class="content">
-    <div class="form-group col-xs-2">
-      <h4>Select a version</h4>
-      <select class="form-control" v-on:change="getVersion">
-        <option selected disabled> -- Select a version -- </option>
-        <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
-      </select>
+    <div class="row">
+      <div class="form-group col-xs-2">
+        <h4>Select a version</h4>
+        <select class="form-control" v-on:change="getVersion">
+          <option selected disabled> -- Select a version -- </option>
+          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
+        </select>
+      </div>
+      <div>
+        <button @click="newConfig()">  NEW </button>
+      </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
@@ -74,6 +79,17 @@ export default {
     },
     showYaml() {
       return this.metrics !== null
+    },
+    newConfig() {
+      const formData = new FormData();
+      formData.append('metrics', JSON.stringify(this.metrics))
+      formData.append('nodes', JSON.stringify(this.nodes))
+      formData.append('rules', JSON.stringify(this.rules))
+      let url = `${api}/rating/config/new`
+      fetch(url, {
+        method: 'POST',
+        body: formData
+      })
     },
     async drawYaml() {
       let url = `${api}/rating/config/${this.activeVersion}` 
