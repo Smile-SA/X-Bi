@@ -27,8 +27,8 @@ export default new Router({
         {
           path: 'namespaces',
           component: NamespacesView,
-          name: 'Namespaces',
-          meta: { description: 'Detailled view of namespaces', requiresAuth: false }
+          name: 'Slices',
+          meta: { description: 'Detailled view of slices', requiresAuth: false }
         },
         {
           path: 'nodes',
@@ -39,8 +39,8 @@ export default new Router({
         {
           path: 'pods',
           component: PodsView,
-          name: 'Pods',
-          meta: { description: 'Detailled view of pods', requiresAuth: false }
+          name: 'Services',
+          meta: { description: 'Detailled view of services', requiresAuth: false }
         }
       ]
     },

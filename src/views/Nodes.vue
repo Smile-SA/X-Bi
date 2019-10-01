@@ -117,7 +117,7 @@ export default {
           time: 'frame_begin',
           value: 'frame_price',
           yLabel: 'Rate',
-          title: 'Namespaces'
+          title: 'Slices'
         }
       })
     },
@@ -150,7 +150,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
-        label: 'Pods',
+        label: 'Services',
         color: 'blue',
         icon: 'boxes'
       })
@@ -160,7 +160,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
-        label: 'Namespaces',
+        label: 'Slices',
         color: 'purple',
         icon: 'cube'
       })

@@ -143,7 +143,7 @@ export default {
       this.cards.push({
         value: response.results[0].namespace,
         link: '/namespaces',
-        label: 'Namespace',
+        label: 'Slice',
         color: 'purple',
         icon: 'cube'
       })
