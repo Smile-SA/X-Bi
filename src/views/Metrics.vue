@@ -35,18 +35,18 @@
         </div>
       </div>
     </div>
-    <div class="input-area" v-if="showYaml">
-      <p>metrics.yaml</p>
+    <div class="input-area" v-if="showYaml()">
+      <p><b>metrics.yaml</b></p>
       <highlight-code lang="yaml">
-        {{ metrics }}
+        {{ transformJSONtoYAML(metrics) }}
       </highlight-code>
-      <p>nodes.yaml</p>
+      <p><b>nodes.yaml</b></p>
       <highlight-code lang="yaml">
-        {{ nodes }}
+        {{ transformJSONtoYAML(nodes) }}
       </highlight-code>
-      <p>rules.yaml</p>
+      <p><b>rules.yaml</b></p>
       <highlight-code lang="yaml">
-        {{ rules }}
+        {{ transformJSONtoYAML(rules) }}
       </highlight-code>
     </div>
   </section>
@@ -79,6 +79,9 @@ export default {
     },
     showYaml() {
       return this.metrics !== null
+    },
+    transformJSONtoYAML(thing) {
+      return YAML.stringify(thing)
     },
     newConfig() {
       const formData = new FormData();
@@ -118,7 +121,7 @@ export default {
       this.cards.push({
         value: this.activeVersion,
         link: '/',
-        label: 'Version',
+        label: 'Selected version',
         color: 'green',
         icon: 'diaspora'
       })
