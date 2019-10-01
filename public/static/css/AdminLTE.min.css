@@ -2082,8 +2082,12 @@ a:focus {
   font-size: 45px;
   line-height: 90px;
   background: rgba(0, 0, 0, 0.2);
-  padding-left: 4%;
 }
+
+.info-box-icon .svg-inline--fa {
+  margin-right: 0;
+}
+  
 .info-box-icon > img {
   max-width: 100%;
 }
