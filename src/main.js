@@ -9,9 +9,11 @@ import VueRangedatePicker from 'vue-rangedate-picker'
 import { VueContext } from 'vue-context'
 
 import VueHighlightJS from 'vue-highlight.js';
-import yaml from 'highlight.js/lib/languages/yaml.js';
+import yaml_highlight from 'highlight.js/lib/languages/yaml.js';
+import YAML from 'yamljs'
 
-Vue.use(VueHighlightJS, {languages: {yaml}})
+Vue.use(YAML)
+Vue.use(VueHighlightJS, {languages: {yaml_highlight}})
 Vue.config.productionTip = false
 
 Vue.component('VueContext', VueContext)
