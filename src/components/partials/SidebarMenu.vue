@@ -9,19 +9,19 @@
     </router-link>
     <router-link tag="li" class="pageLink" to="/namespaces">
       <a>
-        <i class="fa fa-sitemap"></i>
+        <i class="slice-icon2 svg-inline--fa"></i>
         <span class="pages">Slices</span>
       </a>
     </router-link>
     <router-link tag="li" class="pageLink" to="/nodes">
       <a>
-        <i class="fa fa-desktop"></i>
+        <i class="fa fa-server"></i>
         <span class="pages">Nodes</span>
       </a>
     </router-link>
     <router-link tag="li" class="pageLink" to="/pods">
       <a>
-        <i class="fa fa-sitemap"></i>
+        <i class="fa fa-boxes"></i>
         <span class="pages">Services</span>
       </a>
     </router-link>
@@ -38,6 +38,15 @@ export default {
   padding: 12px 15px 12px 15px;
 }
 
+.slice-icon2 {
+  background-image: url('../../../public/static/img/5G_Slices_-_logo_-_black_-_kube_only.svg');
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  padding-right: 1px;
+  float: left;
+  text-align: left;
+}
 .sidebar-menu li.active > a > .fa-angle-left,
 .sidebar-menu li.active > a > .pull-right-container > .fa-angle-left {
   animation-name: rotate;

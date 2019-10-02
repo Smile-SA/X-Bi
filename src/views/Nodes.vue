@@ -27,7 +27,7 @@
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
+                  <span class="info-box-icon"><i v-bind:class="'' + card.icon"></i></span>
                   <div class="info-box-content" @click="redirect(card)">
                     <div style="text-align: center;">
                       <p></p>
@@ -152,7 +152,7 @@ export default {
         link: '/pods',
         label: 'Services',
         color: 'blue',
-        icon: 'boxes'
+        icon: 'fa fa-boxes'
       })
     },
     async cardNamespaces() {
@@ -162,7 +162,7 @@ export default {
         link: '/namespaces',
         label: 'Slices',
         color: 'purple',
-        icon: 'cube'
+        icon: 'slice-icon svg-inline--fa .info-box-icon'
       })
     },
     async cardTotalRating() {
@@ -177,7 +177,7 @@ export default {
         link: '/',
         label: 'Rating',
         color: 'yellow',
-        icon: 'euro-sign'
+        icon: 'fa fa-euro-sign'
       })
     },
     async getNodes (node) {
@@ -206,6 +206,18 @@ export default {
 </script>
 
 <style>
+.slice-icon {
+  background-image: url('../../public/static/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
+  background-repeat: no-repeat;
+  border-top-left-radius: 2px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  border-bottom-left-radius: 2px;
+  width: 45px;
+  font-size: 45px;
+  text-align: center;
+}
+
 .info-box {
   cursor: pointer;
 }
