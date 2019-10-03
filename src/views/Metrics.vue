@@ -58,6 +58,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
+import YAML from 'yamljs'
 
 const api = generateAPIUrl()
 
