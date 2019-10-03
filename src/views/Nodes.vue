@@ -27,7 +27,7 @@
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><i v-bind:class="'' + card.icon"></i></span>
+                  <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
                   <div class="info-box-content" @click="redirect(card)">
                     <div style="text-align: center;">
                       <p></p>
@@ -162,7 +162,7 @@ export default {
         link: '/namespaces',
         label: 'Slices',
         color: 'purple',
-        icon: 'slice-icon svg-inline--fa .info-box-icon'
+        icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
     async cardTotalRating() {

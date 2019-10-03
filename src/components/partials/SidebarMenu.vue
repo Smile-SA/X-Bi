@@ -9,7 +9,7 @@
     </router-link>
     <router-link tag="li" class="pageLink" to="/namespaces">
       <a>
-        <i class="slice-icon2 svg-inline--fa"></i>
+        <svg class="slice-icon2 svg-inline--fa fa-w-32"></svg>
         <span class="pages">Slices</span>
       </a>
     </router-link>
