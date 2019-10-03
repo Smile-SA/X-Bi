@@ -35,6 +35,7 @@
     <div>
       <div v-if='showYaml()'>
         <a href="#" @click="newConfig()" class="export-button">EXPORT CONFIGURATION</a>
+        <a href="#" @click="deleteConfig()" class="export-button">DELETE CONFIGURATION</a>
       </div>
       <b></b>
       <div class="input-area" v-if="showYaml()">
@@ -88,6 +89,14 @@ export default {
     },
     transformJSONtoYAML(thing) {
       return YAML.stringify(thing, 4)
+    },
+    deleteConfig() {
+      if (this.activeVersion == 0) {
+        alert('Cannot remove the base config')
+        return
+      }
+      let url = `${api}/rating/config/delete/${this.activeVersion}`
+      fetch(url)
     },
     newConfig() {
       this.metrics = YAML.parse(document.getElementById('metric-display').innerText)
