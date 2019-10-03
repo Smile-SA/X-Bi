@@ -21,7 +21,7 @@
     </router-link>
     <router-link tag="li" class="pageLink" to="/pods">
       <a>
-        <i class="fa fa-boxes"></i>
+        <i class="fa fa-sitemap"></i>
         <span class="pages">Services</span>
       </a>
     </router-link>

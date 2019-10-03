@@ -173,7 +173,7 @@ export default {
         link: '/pods',
         label: 'Services',
         color: 'blue',
-        icon: 'fa fa-boxes'
+        icon: 'fa fa-sitemap'
       })
     },
     async generateColorSet() {

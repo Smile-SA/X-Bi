@@ -153,7 +153,7 @@ export default {
         link: '/pods',
         label: 'Services',
         color: 'blue',
-        icon: 'boxes'
+        icon: 'sitemap'
       })
     },
     async cardNodes() {
