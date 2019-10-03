@@ -89,7 +89,7 @@ export default {
       return YAML.stringify(thing, 4)
     },
     newConfig() {
-      const formData = new FormData();
+      const formData = new FormData()
       formData.append('metrics', JSON.stringify(this.metrics))
       formData.append('nodes', JSON.stringify(this.nodes))
       formData.append('rules', JSON.stringify(this.rules))
