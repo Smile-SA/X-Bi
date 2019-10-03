@@ -86,7 +86,6 @@ export default {
             this.rules !== null
     },
     transformJSONtoYAML(thing) {
-      console.log(thing)
       return YAML.stringify(thing, 4)
     },
     newConfig() {
