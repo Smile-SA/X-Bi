@@ -8,9 +8,6 @@
           <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
-      <div>
-        <button @click="newConfig()">  NEW </button>
-      </div>
     </div>
     <div class="row">
       <div class="col-xs-12">
@@ -35,19 +32,25 @@
         </div>
       </div>
     </div>
-    <div class="input-area" v-if="showYaml()">
-      <p><b>metrics.yaml</b></p>
-      <highlight-code lang="yaml">
-        {{ transformJSONtoYAML(metrics) }}
-      </highlight-code>
-      <p><b>nodes.yaml</b></p>
-      <highlight-code lang="yaml">
-        {{ transformJSONtoYAML(nodes) }}
-      </highlight-code>
-      <p><b>rules.yaml</b></p>
-      <highlight-code lang="yaml">
-        {{ transformJSONtoYAML(rules) }}
-      </highlight-code>
+    <div>
+      <div v-if='showYaml()'>
+        <a href="#" @click="newConfig()" class="export-button">EXPORT CONFIGURATION</a>
+      </div>
+      <b></b>
+      <div class="input-area" v-if="showYaml()">
+        <p><b>metrics.yaml</b></p>
+        <highlight-code lang="yaml">
+          {{ transformJSONtoYAML(metrics) }}
+        </highlight-code>
+        <p><b>nodes.yaml</b></p>
+        <highlight-code lang="yaml">
+          {{ transformJSONtoYAML(nodes) }}
+        </highlight-code>
+        <p><b>rules.yaml</b></p>
+        <highlight-code lang="yaml">
+          {{ transformJSONtoYAML(rules) }}
+        </highlight-code>
+      </div>
     </div>
   </section>
 </template>
@@ -78,10 +81,13 @@ export default {
       utils.redirectCard(data, this)
     },
     showYaml() {
-      return this.metrics !== null
+      return this.metrics !== null ||
+            this.nodes !== null ||
+            this.rules !== null
     },
     transformJSONtoYAML(thing) {
-      return YAML.stringify(thing)
+      console.log(thing)
+      return YAML.stringify(thing, 4)
     },
     newConfig() {
       const formData = new FormData();
@@ -138,4 +144,45 @@ export default {
 </script>
 
 <style>
+.export-button {
+	-moz-box-shadow: 0px 10px 14px -7px #276873;
+	-webkit-box-shadow: 0px 10px 14px -7px #276873;
+	box-shadow: 0px 10px 14px -7px #276873;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
+	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
+	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
+	background-color:#599bb3;
+	-moz-border-radius:8px;
+	-webkit-border-radius:8px;
+	border-radius:8px;
+	display:inline-block;
+	cursor:pointer;
+	color:#ffffff;
+	font-family:Arial;
+	font-size:14px;
+	font-weight:bold;
+	padding:13px 32px;
+	text-decoration:none;
+	text-shadow:0px 1px 0px #3d768a;
+  margin-bottom: 10px;
+}
+.export-button:hover {
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
+	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
+	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
+	background-color:#408c99;
+}
+.export-button:active {
+	position:relative;
+	top:1px;
+}
+
 </style>
