@@ -39,15 +39,15 @@
       <b></b>
       <div class="input-area" v-if="showYaml()">
         <p><b>metrics.yaml</b></p>
-        <highlight-code lang="yaml">
+        <highlight-code id="metric-display" contentEditable="true" lang="yaml">
           {{ transformJSONtoYAML(metrics) }}
         </highlight-code>
         <p><b>nodes.yaml</b></p>
-        <highlight-code lang="yaml">
+        <highlight-code id="nodes-display" contenteditable="true" lang="yaml">
           {{ transformJSONtoYAML(nodes) }}
         </highlight-code>
         <p><b>rules.yaml</b></p>
-        <highlight-code lang="yaml">
+        <highlight-code id="rules-display" contentEditable="true" lang="yaml">
           {{ transformJSONtoYAML(rules) }}
         </highlight-code>
       </div>
@@ -89,10 +89,14 @@ export default {
       return YAML.stringify(thing, 4)
     },
     newConfig() {
+      this.metrics = YAML.parse(document.getElementById('metric-display').innerText)
+      this.nodes = YAML.parse(document.getElementById('nodes-display').innerText)
+      this.rules = YAML.parse(document.getElementById('rules-display').innerText)
       const formData = new FormData()
       formData.append('metrics', JSON.stringify(this.metrics))
       formData.append('nodes', JSON.stringify(this.nodes))
       formData.append('rules', JSON.stringify(this.rules))
+
       let url = `${api}/rating/config/new`
       fetch(url, {
         method: 'POST',
