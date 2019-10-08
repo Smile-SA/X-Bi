@@ -35,6 +35,8 @@
     <div>
       <div v-if='showYaml()'>
         <a href="#" @click="newConfig()" class="export-button">EXPORT CONFIGURATION</a>
+      </div>
+      <div v-if='canDeleteConfig()'>
         <a href="#" @click="deleteConfig()" class="export-button">DELETE CONFIGURATION</a>
       </div>
       <b></b>
@@ -89,6 +91,9 @@ export default {
     },
     transformJSONtoYAML(thing) {
       return YAML.stringify(thing, 4)
+    },
+    canDeleteConfig() {
+      return this.activeVersion !== 0
     },
     deleteConfig() {
       if (this.activeVersion == 0) {
