@@ -8,7 +8,7 @@ import HomeView from './views/Home.vue'
 import NodesView from './views/Nodes.vue'
 import NamespacesView from './views/Namespaces.vue'
 import PodsView from './views/Pods.vue'
-import MetricsView from './views/Metrics.vue'
+import MetricsView from './views/Configuration.vue'
 
 Vue.use(Router)
 
@@ -44,9 +44,9 @@ export default new Router({
           meta: { description: 'Detailled view of services', requiresAuth: false }
         },
         {
-          path: 'metrics',
+          path: 'configuration',
           component: MetricsView,
-          name: 'Metrics',
+          name: 'Configuration',
           meta: { description: 'Detailled view of metrics and pricing rulesets', requiresAuth: false }
         }
       ]

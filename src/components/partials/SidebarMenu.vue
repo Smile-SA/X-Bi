@@ -25,10 +25,10 @@
         <span class="pages">Services</span>
       </a>
     </router-link>
-    <router-link tag="li" class="pageLink" to="/metrics">
+    <router-link tag="li" class="pageLink" to="/configuration">
       <a>
         <i class="fa fa-wrench"></i>
-        <span class="pages">Metrics</span>
+        <span class="pages">Configuration</span>
       </a>
     </router-link>
   </ul>

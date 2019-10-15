@@ -148,7 +148,7 @@ export default {
       this.cards.push({
         value: this.activeVersion,
         link: '/',
-        label: 'Selected version',
+        label: 'Selected configuration',
         color: 'green',
         icon: 'wrench'
       })
