@@ -95,13 +95,16 @@ export default {
     canDeleteConfig() {
       return this.activeVersion !== 0
     },
-    deleteConfig() {
+    async deleteConfig() {
       if (this.activeVersion == 0) {
         alert('Cannot remove the base config')
         return
       }
       let url = `${api}/rating/config/delete/${this.activeVersion}`
-      fetch(url)
+      const response = await fetch(url)
+      const json = await response.json()
+      let message = `Configuration ${json.results} deleted.`
+      alert(message)
     },
     newConfig() {
       this.metrics = YAML.parse(document.getElementById('metric-display').innerText)
@@ -147,7 +150,7 @@ export default {
         link: '/',
         label: 'Selected version',
         color: 'green',
-        icon: 'diaspora'
+        icon: 'wrench'
       })
     },
     drawCards() {

@@ -27,7 +27,7 @@
     </router-link>
     <router-link tag="li" class="pageLink" to="/metrics">
       <a>
-        <i class="fa fa-diaspora"></i>
+        <i class="fa fa-wrench"></i>
         <span class="pages">Metrics</span>
       </a>
     </router-link>
