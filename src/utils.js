@@ -17,9 +17,14 @@ export function JSONToCSV(json) {
 export async function fetchTotal(url, that) {
   let queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
-  const response = await fetch(url, {})
-  const json = await response.json()
-  return json.total
+  try {
+    const response = await fetch(url, {})
+    const json = await response.json()
+    return json.total
+  }
+  catch (error) {
+    return 0
+  }
 }
 
 export async function fetchData(url, that) {
@@ -49,18 +54,25 @@ export async function downloadFile(url, filename, type) {
   let mime
   if (type === 'JSON') {
     content = await JSON.stringify(json.results)
-    mime = 'application/json'
+    mime = 'text/json'
   } else if (type === 'CSV') {
     content = JSONToCSV(json.results)
     mime = 'text/csv'
   }
-  require('downloadjs')(content, filename, mime)
+  
+  let el = document.createElement('a')
+  el.setAttribute('href', `data:${mime};charset=utf-8,` + encodeURIComponent(content))
+  el.setAttribute('download', filename)
+  el.style.display = 'none'
+  document.body.appendChild(el)
+  el.click()
+  document.body.removeChild(el)
 }
 
 export function getPeriod(url) {
   let broken = url.split('?')[1].split('&')
-  let from = broken[0].split('=')[1]
-  let to = broken[1].split('=')[1]
+  let from = broken[0].split('=')[1].replace(' ', 'T')
+  let to = broken[1].split('=')[1].replace(' ', 'T')
   return `_${from}-${to}`
 }
 
@@ -142,12 +154,15 @@ export function getURL(data, that) {
 
 export function refreshDate(date, that) {
   if (date !== null) {
-    that.from = date.start.toISOString().split('.')[0] + 'Z'
+    that.from = date.start.toISOString().split('.')[0] + '.000Z'
     if (date.end === null || date.start === date.end) {
       date.end = new Date(that.from)
       date.end.setDate(date.end.getDate() + 1)
     }
-    that.to = date.end.toISOString().split('.')[0] + 'Z'
+    that.to = date.end.toISOString().split('.')[0] + '.000Z'
+    that.to = that.to.replace('T', ' ')
+    that.from = that.from.replace('T', ' ')
+    console.log(that.from, that.to)
   }
   that.cards = []
   that.drawCards()
