@@ -42,15 +42,15 @@
       <b></b>
       <div class="input-area" v-if="showYaml()">
         <p><b>metrics.yaml</b></p>
-        <highlight-code id="metric-display" contentEditable="true" lang="yaml">
+        <highlight-code id="metric-display" contentEditable="true" required lang="yaml">
           {{ transformJSONtoYAML(metrics) }}
         </highlight-code>
         <p><b>nodes.yaml</b></p>
-        <highlight-code id="nodes-display" contenteditable="true" lang="yaml">
+        <highlight-code id="nodes-display" contenteditable="true" required lang="yaml">
           {{ transformJSONtoYAML(nodes) }}
         </highlight-code>
         <p><b>rules.yaml</b></p>
-        <highlight-code id="rules-display" contentEditable="true" lang="yaml">
+        <highlight-code id="rules-display" contentEditable="true" required lang="yaml">
           {{ transformJSONtoYAML(rules) }}
         </highlight-code>
       </div>
@@ -61,7 +61,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import YAML from 'yamljs'
+import YAML from 'js-yaml'
 
 const api = generateAPIUrl()
 
@@ -90,7 +90,7 @@ export default {
             this.rules !== null
     },
     transformJSONtoYAML(thing) {
-      return YAML.stringify(thing, 4)
+      return YAML.dump(thing, 4)
     },
     canDeleteConfig() {
       return this.activeVersion !== 0
@@ -106,20 +106,24 @@ export default {
       let message = `Configuration ${json.results} deleted.`
       alert(message)
     },
-    newConfig() {
-      this.metrics = YAML.parse(document.getElementById('metric-display').innerText)
-      this.nodes = YAML.parse(document.getElementById('nodes-display').innerText)
-      this.rules = YAML.parse(document.getElementById('rules-display').innerText)
+    async newConfig() {
+      this.metrics = YAML.load(document.getElementById('metric-display').innerText)
+      this.nodes = YAML.load(document.getElementById('nodes-display').innerText)
+      this.rules = YAML.load(document.getElementById('rules-display').innerText)
       const formData = new FormData()
       formData.append('metrics', JSON.stringify(this.metrics))
       formData.append('nodes', JSON.stringify(this.nodes))
       formData.append('rules', JSON.stringify(this.rules))
 
       let url = `${api}/rating/config/new`
-      fetch(url, {
+      const response = await fetch(url, {
         method: 'POST',
         body: formData
       })
+      if (response.status === 400) {
+        alert(response.statusText)
+        return
+      }
     },
     async drawYaml() {
       let url = `${api}/rating/config/${this.activeVersion}` 

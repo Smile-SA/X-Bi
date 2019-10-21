@@ -63,12 +63,10 @@ export async function downloadFile(url, filename, type) {
   let el = document.createElement('a')
   el.setAttribute('href', `data:${mime};charset=utf-8,` + encodeURIComponent(content))
   el.setAttribute('download', filename)
-  console.log(filename)
   el.style.display = 'none'
   document.body.appendChild(el)
   el.click()
   document.body.removeChild(el)
-  // require('downloadjs')(content, filename, mime)
 }
 
 export function getPeriod(url) {
@@ -156,12 +154,15 @@ export function getURL(data, that) {
 
 export function refreshDate(date, that) {
   if (date !== null) {
-    that.from = date.start.toISOString().split('.')[0] + 'Z'
+    that.from = date.start.toISOString().split('.')[0] + '.000Z'
     if (date.end === null || date.start === date.end) {
       date.end = new Date(that.from)
       date.end.setDate(date.end.getDate() + 1)
     }
-    that.to = date.end.toISOString().split('.')[0] + 'Z'
+    that.to = date.end.toISOString().split('.')[0] + '.000Z'
+    that.to = that.to.replace('T', ' ')
+    that.from = that.from.replace('T', ' ')
+    console.log(that.from, that.to)
   }
   that.cards = []
   that.drawCards()

@@ -10,9 +10,9 @@ import { VueContext } from 'vue-context'
 
 import VueHighlightJS from 'vue-highlight.js';
 import yaml_highlight from 'highlight.js/lib/languages/yaml.js';
-import YAML from 'yamljs'
+import jsyaml from 'js-yaml'
 
-Vue.use(YAML)
+Vue.use(jsyaml)
 Vue.use(VueHighlightJS, {languages: {yaml_highlight}})
 Vue.config.productionTip = false
 
