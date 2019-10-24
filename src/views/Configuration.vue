@@ -121,8 +121,8 @@ export default {
         body: formData
       })
       if (response.status === 400) {
-        alert(response.statusText)
-        return
+        const json = await response.json()
+        alert(json.message)
       }
     },
     async drawYaml() {
