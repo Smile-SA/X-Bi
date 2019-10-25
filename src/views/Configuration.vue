@@ -42,17 +42,21 @@
       <b></b>
       <div class="input-area" v-if="showYaml()">
         <p><b>metrics.yaml</b></p>
-        <highlight-code id="metric-display" contentEditable="true" required lang="yaml">
-          {{ transformJSONtoYAML(metrics) }}
-        </highlight-code>
-        <p><b>nodes.yaml</b></p>
-        <highlight-code id="nodes-display" contenteditable="true" required lang="yaml">
-          {{ transformJSONtoYAML(nodes) }}
-        </highlight-code>
-        <p><b>rules.yaml</b></p>
-        <highlight-code id="rules-display" contentEditable="true" required lang="yaml">
-          {{ transformJSONtoYAML(rules) }}
-        </highlight-code>
+        <code id="metrics-display" class="lang-yaml">
+          <pre contenteditable required>
+{{ metricsYAML }}
+          </pre>
+        </code>
+        <code id="nodes-display" class="lang-yaml">
+          <pre contenteditable required>
+{{ nodesYAML }}
+          </pre>
+        </code>
+        <code id="rules-display" class="lang-yaml">
+          <pre contenteditable required>
+{{ rulesYAML }}
+          </pre>
+        </code>
       </div>
     </div>
   </section>
@@ -62,6 +66,7 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import YAML from 'js-yaml'
+import Prism from 'prismjs'
 
 const api = generateAPIUrl()
 
@@ -70,8 +75,11 @@ export default {
     return {
       cards: [],
       metrics: null,
+      metricsYAML: null,
       nodes: null,
+      nodesYAML: null,
       rules: null,
+      rulesYAML: null,
       metricsObject: null,
       selectForm: [],
       activeVersion: 0,
@@ -89,9 +97,6 @@ export default {
             this.nodes !== null ||
             this.rules !== null
     },
-    transformJSONtoYAML(thing) {
-      return YAML.dump(thing, 4)
-    },
     canDeleteConfig() {
       return this.activeVersion !== 0
     },
@@ -107,7 +112,7 @@ export default {
       alert(message)
     },
     async newConfig() {
-      this.metrics = YAML.load(document.getElementById('metric-display').innerText)
+      this.metrics = YAML.load(document.getElementById('metrics-display').innerText)
       this.nodes = YAML.load(document.getElementById('nodes-display').innerText)
       this.rules = YAML.load(document.getElementById('rules-display').innerText)
       const formData = new FormData()
@@ -120,18 +125,27 @@ export default {
         method: 'POST',
         body: formData
       })
+      const json = await response.json()
       if (response.status === 400) {
-        const json = await response.json()
         alert(json.message)
+      } else if (response.status === 200) {
+        alert(`Configuration ${json.results} created.`)
       }
     },
     async drawYaml() {
       let url = `${api}/rating/config/${this.activeVersion}` 
 
       let data = await utils.fetchDataAsJSON(url, this)
-      this.metrics = data.results.metrics
+
       this.nodes = data.results.nodes
+      this.nodesYAML = YAML.dump(this.nodes, 4)
+
       this.rules = data.results.rules
+      this.rulesYAML = YAML.dump(this.rules, 4)
+
+      this.metrics = data.results.metrics
+      this.metricsYAML = YAML.dump(this.metrics, 4)
+      Prism.highlightAll()
     },
     async getVersion(version) {
       let url = `${api}/rating/configs/list`
