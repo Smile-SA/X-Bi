@@ -47,11 +47,6 @@
 {{ metricsYAML }}
           </pre>
         </code>
-        <code id="nodes-display" class="lang-yaml">
-          <pre contenteditable required>
-{{ nodesYAML }}
-          </pre>
-        </code>
         <code id="rules-display" class="lang-yaml">
           <pre contenteditable required>
 {{ rulesYAML }}
@@ -76,8 +71,6 @@ export default {
       cards: [],
       metrics: null,
       metricsYAML: null,
-      nodes: null,
-      nodesYAML: null,
       rules: null,
       rulesYAML: null,
       metricsObject: null,
@@ -94,8 +87,7 @@ export default {
     },
     showYaml() {
       return this.metrics !== null ||
-            this.nodes !== null ||
-            this.rules !== null
+             this.rules !== null
     },
     canDeleteConfig() {
       return this.activeVersion !== 0
@@ -113,11 +105,9 @@ export default {
     },
     async newConfig() {
       this.metrics = YAML.load(document.getElementById('metrics-display').innerText)
-      this.nodes = YAML.load(document.getElementById('nodes-display').innerText)
       this.rules = YAML.load(document.getElementById('rules-display').innerText)
       const formData = new FormData()
       formData.append('metrics', JSON.stringify(this.metrics))
-      formData.append('nodes', JSON.stringify(this.nodes))
       formData.append('rules', JSON.stringify(this.rules))
 
       let url = `${api}/rating/config/new`
@@ -136,9 +126,6 @@ export default {
       let url = `${api}/rating/config/${this.activeVersion}` 
 
       let data = await utils.fetchDataAsJSON(url, this)
-
-      this.nodes = data.results.nodes
-      this.nodesYAML = YAML.dump(this.nodes, 4)
 
       this.rules = data.results.rules
       this.rulesYAML = YAML.dump(this.rules, 4)
