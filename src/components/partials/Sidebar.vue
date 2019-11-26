@@ -25,12 +25,10 @@
   </aside>
 </template>
 <script>
-import SidebarMenu from './SidebarMenu'
-
 export default {
   name: 'Sidebar',
   props: ['displayName', 'pictureUrl', 'email'],
-  components: { SidebarMenu },
+  components: { SidebarMenu: () => import('./SidebarMenu') },
   mounted: function() {
     window
       .jQuery('[data-toggle="hideseek"]')

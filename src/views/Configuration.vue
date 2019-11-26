@@ -61,7 +61,6 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import YAML from 'js-yaml'
-import Prism from 'prismjs'
 
 const api = generateAPIUrl()
 
@@ -132,7 +131,6 @@ export default {
 
       this.metrics = data.results.metrics
       this.metricsYAML = YAML.dump(this.metrics, 4)
-      Prism.highlightAll()
     },
     async getVersion(version) {
       let url = `${api}/rating/configs/list`

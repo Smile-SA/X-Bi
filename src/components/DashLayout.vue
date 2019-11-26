@@ -49,13 +49,11 @@
 </template>
 
 <script>
-import Sidebar from './partials/Sidebar'
-// import 'hideseek'
 
 export default {
   name: 'Dash',
   components: {
-    Sidebar
+    Sidebar: () => import('./partials/Sidebar')
   },
   data: function () {
     return {
