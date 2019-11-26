@@ -34,7 +34,21 @@ export function generateLineGraph(response, c) {
       datasets: graph
     },
     options: {
-      animation: false,
+      elements: {
+        line: {
+          tension: 0,
+          fill: false,
+          steppedLine: false,
+          borderDash: []
+        }
+      },
+      animation: {
+        duration: 0
+      },
+      hover: {
+        animationDuration: 0
+      },
+      responsiveAnimationDuration: 0,
       scales: {
         xAxes: [{
           ticks: {
