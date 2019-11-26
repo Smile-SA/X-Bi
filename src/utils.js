@@ -162,7 +162,6 @@ export function refreshDate(date, that) {
     that.to = date.end.toISOString().split('.')[0] + '.000Z'
     that.to = that.to.replace('T', ' ')
     that.from = that.from.replace('T', ' ')
-    console.log(that.from, that.to)
   }
   that.cards = []
   that.drawCards()
