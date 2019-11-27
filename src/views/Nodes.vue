@@ -146,7 +146,7 @@ export default {
       this.cardTotalRating()
     },
     async cardPods() {
-      let url = `${api}/nodes/${this.activeNode}/pods`
+      const url = `${api}/nodes/${this.activeNode}/pods`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
@@ -156,7 +156,7 @@ export default {
       })
     },
     async cardNamespaces() {
-      let url = `${api}/nodes/${this.activeNode}/namespaces`
+      const url = `${api}/nodes/${this.activeNode}/namespaces`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
@@ -166,8 +166,8 @@ export default {
       })
     },
     async cardTotalRating() {
-      let url = `${api}/nodes/${this.activeNode}/total_rating`
-      let response = await utils.fetchDataAsJSON(url, this)
+      const url = `${api}/nodes/${this.activeNode}/total_rating`
+      const response = await utils.fetchDataAsJSON(url, this)
       let total = 0
       if (response.total > 0) {
         total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
@@ -181,14 +181,14 @@ export default {
       })
     },
     async getNodes (node) {
-      let url = `${api}/nodes`
+      const url = `${api}/nodes`
 
       if (node !== undefined) {
         this.cards = []
         this.activeNode = node.target.value
         this.refreshDate(null)
       }
-      let results = await utils.fetchData(url, this)
+      const results = await utils.fetchData(url, this)
       this.selectForm = results.map(item => item.node)
     },
     async generateColor() {

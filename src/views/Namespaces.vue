@@ -147,7 +147,7 @@ export default {
       this.cardTotalRating()
     },
     async cardPods() {
-      let url = `${api}/namespaces/${this.activeNamespace}/pods`
+      const url = `${api}/namespaces/${this.activeNamespace}/pods`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
@@ -157,7 +157,7 @@ export default {
       })
     },
     async cardNodes() {
-      let url = `${api}/namespaces/${this.activeNamespace}/nodes`
+      const url = `${api}/namespaces/${this.activeNamespace}/nodes`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/nodes',
@@ -167,8 +167,8 @@ export default {
       })
     },
     async cardTotalRating() {
-      let url = `${api}/namespaces/${this.activeNamespace}/total_rating`
-      let response = await utils.fetchDataAsJSON(url, this)
+      const url = `${api}/namespaces/${this.activeNamespace}/total_rating`
+      const response = await utils.fetchDataAsJSON(url, this)
       let total = 0
       if (response.total > 0) {
         total = response.results.map(item => item.frame_price)
@@ -184,14 +184,14 @@ export default {
       })
     },
     async getNamespaces (namespace) {
-      let url = `${api}/namespaces`
+      const url = `${api}/namespaces`
 
       if (namespace !== undefined) {
         this.cards = []
         this.activeNamespace = namespace.target.value
         this.refreshDate(null)
       }
-      let results = await utils.fetchData(url, this)
+      const results = await utils.fetchData(url, this)
       this.selectForm = results.map(item => item.namespace)
     },
     async generateColor() {

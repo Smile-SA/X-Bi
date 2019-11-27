@@ -77,7 +77,7 @@ export function getPeriod(url) {
 }
 
 export function getRandomColor() {
-  var chartColors = [
+  const chartColors = [
     '#001f3f',
     '#10375E',
     '#173A5E',
@@ -130,7 +130,7 @@ export function getRandomColor() {
 
 export function groupBy(objectArray, property) {
   return objectArray.reduce(function(acc, obj) {
-    let key = obj[property]
+    const key = obj[property]
     if (!acc[key]) {
       acc[key] = []
     }
@@ -146,9 +146,9 @@ export function redirectCard(data, that) {
 }
 
 export function getURL(data, that) {
-  let option = data.target.innerText
-  let url = that.queryArray[that.selected]
-  let filename = that.selected + getPeriod(url) + '.' + option.toLowerCase()
+  const option = data.target.innerText
+  const url = that.queryArray[that.selected]
+  const filename = that.selected + getPeriod(url) + '.' + option.toLowerCase()
   downloadFile(url, filename, option)
 }
 

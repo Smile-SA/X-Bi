@@ -147,7 +147,7 @@ export default {
       this.podsCard()
     },
     async namespacesCard() {
-      let url = `${api}/namespaces`
+      const url = `${api}/namespaces`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
@@ -157,7 +157,7 @@ export default {
       })
     },
     async nodesCard() {
-      let url = `${api}/nodes`
+      const url = `${api}/nodes`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/nodes',
@@ -167,7 +167,7 @@ export default {
       })
     },
     async podsCard() {
-      let url = `${api}/pods`
+      const url = `${api}/pods`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',

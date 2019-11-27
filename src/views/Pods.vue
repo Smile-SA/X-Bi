@@ -138,8 +138,8 @@ export default {
       this.cardLifetime()
     },
     async cardNamespace() {
-      let url = `${api}/pods/${this.activePod}/namespace`
-      let response = await utils.fetchDataAsJSON(url, this)
+      const url = `${api}/pods/${this.activePod}/namespace`
+      const response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results[0].namespace,
         link: '/namespaces',
@@ -149,8 +149,8 @@ export default {
       })
     },
     async cardNode() {
-      let url = `${api}/pods/${this.activePod}/node`
-      let response = await utils.fetchDataAsJSON(url, this)
+      const url = `${api}/pods/${this.activePod}/node`
+      const response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results[0].node,
         link: '/nodes',
@@ -160,10 +160,10 @@ export default {
       })
     },
     async cardLifetime() {
-      let url = `${api}/pods/${this.activePod}/lifetime`
-      let response = await utils.fetchDataAsJSON(url, this)
-      let start = response.results[0].start
-      let end = response.results[0].end
+      const url = `${api}/pods/${this.activePod}/lifetime`
+      const response = await utils.fetchDataAsJSON(url, this)
+      const start = response.results[0].start
+      const end = response.results[0].end
       this.timeCards.push({
         value: start,
         label: 'Started at',
@@ -179,8 +179,8 @@ export default {
       })
     },
     async cardTotalRating() {
-      let url = `${api}/pods/${this.activePod}/total_rating`
-      let response = await utils.fetchDataAsJSON(url, this)
+      const url = `${api}/pods/${this.activePod}/total_rating`
+      const response = await utils.fetchDataAsJSON(url, this)
       this.cards.push({
         value: response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5),
         link: '/',
@@ -190,14 +190,14 @@ export default {
       })
     },
     async getPods (pod) {
-      let url = `${api}/pods`
+      const url = `${api}/pods`
 
       if (pod !== undefined) {
         this.cards = []
         this.activePod = pod.target.value
         this.refreshDate(null)
       }
-      let response = await utils.fetchDataAsJSON(url, this)
+      const response = await utils.fetchDataAsJSON(url, this)
       this.selectForm = response.results.map(item => item.pod)
     },
     async generateColor() {

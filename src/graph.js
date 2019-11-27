@@ -3,7 +3,7 @@ import Chart from 'chart.js'
 
 export function generateLineGraph(response, c) {
   let graph = []
-  let dataset = utils.groupBy(response, c.sort)
+  const dataset = utils.groupBy(response, c.sort)
   let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
@@ -12,7 +12,7 @@ export function generateLineGraph(response, c) {
 
   Object.keys(dataset).forEach(item => {
     let obj = []
-    let color = c.context.colors[item]
+    const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
       obj.push(subItem[c.labels.value].toFixed(5))
     })
@@ -26,8 +26,8 @@ export function generateLineGraph(response, c) {
     })
   })
 
-  var ctx = document.getElementById(c.id).getContext('2d')
-  var config = {
+  const ctx = document.getElementById(c.id).getContext('2d')
+  const config = {
     type: 'line',
     data: {
       labels: labels,
@@ -89,12 +89,12 @@ export async function drawLineChart(c) {
   if (c.graph !== null) {
     c.graph.destroy()
   }
-  let {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
+  const {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
   if (total === 0) {
     return c.graph
   }
-  let {ctx, config} = generateLineGraph(results, c)
-  let queryDate = utils.convertURLDateParameter(c.context.from, c.context.to) 
+  const {ctx, config} = generateLineGraph(results, c)
+  const queryDate = utils.convertURLDateParameter(c.context.from, c.context.to) 
   c.context.queryArray[c.id] = `${c.url}${queryDate}`
   return new Chart(ctx, config)
 }
@@ -104,20 +104,20 @@ export async function drawPieChart(c) {
     c.graph.destroy()
   }
 
-  let {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
+  const {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
   if (total === 0) {
     return c.graph
   }
 
-  let queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
+  const queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
 
   let dataset = utils.groupBy(results, c.sort)
-  let labels = [...Object.keys(dataset)]
-  let colors = [...Object.keys(dataset)].map((item) => c.context.colors[item])
+  const labels = [...Object.keys(dataset)]
+  const colors = [...Object.keys(dataset)].map((item) => c.context.colors[item])
   dataset = [...Object.values(dataset)].map((item) => item.length)
 
-  let ctx = document.getElementById(c.id).getContext('2d')
-  let config = {
+  const ctx = document.getElementById(c.id).getContext('2d')
+  const config = {
     type: 'doughnut',
     data: {
       datasets: [{
@@ -151,17 +151,17 @@ export async function drawBarChart(c) {
     c.graph.destroy()
   }
 
-  let {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
+  const {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
   if (total === 0) {
     return c.graph
   }
 
-  let queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
-  let ctx = document.getElementById(c.id).getContext('2d')
+  const queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
+  const ctx = document.getElementById(c.id).getContext('2d')
 
   let graph = []
-  let dataset = utils.groupBy(results, c.sort)
-  let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
+  const dataset = utils.groupBy(results, c.sort)
+  const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
     labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
@@ -169,7 +169,7 @@ export async function drawBarChart(c) {
 
   Object.keys(dataset).forEach(item => {
     let obj = []
-    let color = c.context.colors[item]
+    const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
       obj.push(subItem[c.labels.value].toFixed(5))
     })
@@ -180,7 +180,7 @@ export async function drawBarChart(c) {
       data: obj
     })
   })
-  let config = {
+  const config = {
     type: 'bar',
     data: {
       datasets: graph,

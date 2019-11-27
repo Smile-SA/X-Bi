@@ -96,10 +96,10 @@ export default {
         alert('Cannot remove the base config')
         return
       }
-      let url = `${api}/rating/config/delete/${this.activeVersion}`
+      const url = `${api}/rating/config/delete/${this.activeVersion}`
       const response = await fetch(url)
       const json = await response.json()
-      let message = `Configuration ${json.results} deleted.`
+      const message = `Configuration ${json.results} deleted.`
       alert(message)
     },
     async newConfig() {
@@ -109,7 +109,7 @@ export default {
       formData.append('metrics', JSON.stringify(this.metrics))
       formData.append('rules', JSON.stringify(this.rules))
 
-      let url = `${api}/rating/config/new`
+      const url = `${api}/rating/config/new`
       const response = await fetch(url, {
         method: 'POST',
         body: formData
@@ -122,9 +122,9 @@ export default {
       }
     },
     async drawYaml() {
-      let url = `${api}/rating/config/${this.activeVersion}` 
+      const url = `${api}/rating/config/${this.activeVersion}` 
 
-      let data = await utils.fetchDataAsJSON(url, this)
+      const data = await utils.fetchDataAsJSON(url, this)
 
       this.rules = data.results.rules
       this.rulesYAML = YAML.dump(this.rules, 4)
@@ -133,15 +133,15 @@ export default {
       this.metricsYAML = YAML.dump(this.metrics, 4)
     },
     async getVersion(version) {
-      let url = `${api}/rating/configs/list`
-      
+      const url = `${api}/rating/configs/list`
+
       if (version !== undefined) {
         this.cards = []
         this.activeVersion = version.target.value
         this.drawCards()
         this.drawYaml()
       }
-      let results = await utils.fetchData(url, this)
+      const results = await utils.fetchData(url, this)
       this.selectForm = results.map(item => item)
     },
     async versionMetricsCard() {
