@@ -77,8 +77,13 @@ export function generateLineGraph(response, c) {
         display: true
       },
       tooltips: {
-        intersect: false,
-        mode: 'label'
+        callbacks: {
+          label(tooltipItem, data) {
+            const label = data.datasets[tooltipItem.datasetIndex].label
+  
+            return `${label}: ${tooltipItem.yLabel}`
+          }
+        }
       }
     }
   }
