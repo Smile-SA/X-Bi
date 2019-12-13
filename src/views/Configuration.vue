@@ -145,7 +145,7 @@ export default {
       this.selectForm = results.map(item => item)
     },
     async versionMetricsCard() {
-      if (this.activeVersion === null   ) {
+      if (this.activeVersion === null) {
         return
       }
       this.cards.push({

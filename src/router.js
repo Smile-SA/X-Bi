@@ -39,6 +39,12 @@ export default new Router({
           component: () => import('./views/Configuration.vue'),
           name: 'Configuration',
           meta: { description: 'Detailled view of metrics and pricing rulesets', requiresAuth: false }
+        },
+        {
+          path: 'workflow',
+          component: () => import('./views/Workflow.vue'),
+          name: 'Workflow',
+          meta: { description: 'Workflow definition and consultation', requiresAuth: false }
         }
       ]
     },

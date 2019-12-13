@@ -165,6 +165,16 @@ export default {
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
+    async cardLabels() {
+      const url = `${api}/nodes/${this.activeNode}/labels`
+      this.cards.push({
+        value: await utils.fetchDataAsJSON(url, this),
+        link: '/',
+        label: 'Labels',
+        color: 'green',
+        icon: ''
+      })
+    },
     async cardTotalRating() {
       const url = `${api}/nodes/${this.activeNode}/total_rating`
       const response = await utils.fetchDataAsJSON(url, this)
