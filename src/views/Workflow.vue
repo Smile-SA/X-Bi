@@ -28,7 +28,7 @@
                   <!-- /.info-box-content -->
                 </div>
               </div>
-              <form v-if="!showButton()">
+              <form>
                 <legend>Step form</legend>
                 <p>
                   <input type="text" name="name" id="input-name">
@@ -51,12 +51,11 @@
                 <a href="#" @click="createStep()" class="export-button">Create</a>
               </div>
               <div v-if='showButton()'>
-                <a href="#" @click="deleteStep()" class="export-button">Delete</a>
-              </div>
-              <div v-if='showButton()'>
                 <a href="#" @click="updateStep()" class="export-button">Update</a>
               </div>
-
+              <div v-if='showButton()'>
+                <a href="#" @click="deleteStep()" class="export-button">Delete</a>
+              </div>
             </div>
           </div>
         </div>
@@ -95,6 +94,45 @@ export default {
         },
         async createStep() {
           const url = `${api}/step/create`
+          const create = this.createStepForm()
+          const response = await fetch(url, {
+            method: 'POST',
+            body: create
+          })
+          const json = await response.json()
+          if (response.status === 400) {
+            alert(json.message)
+          } else if (response.status === 200) {
+              if (json.results !== false) {
+                alert(`Step ${create.get('name').toString()} created.`)
+              } else {
+                alert(`A problem occured`)
+              }
+          }
+        },
+        async updateStep() {
+          const url = `${api}/step/update`
+          const update = this.createStepForm()
+          const name = document.getElementById('input-name').value
+          update.append('replace_name', name)
+          update.set('name', this.activeStep)
+
+          const response = await fetch(url, {
+            method: 'POST',
+            body: update
+          })
+          const json = await response.json()
+          if (response.status === 400) {
+            alert(json.message)
+          } else if (response.status === 200) {
+              if (json.results !== false) {
+                alert(`Step ${name} updated.`)
+              } else {
+                alert(`A problem occured`)
+              }
+          }
+        },
+        createStepForm() {
           const step = {
             name: document.getElementById('input-name').value,
             sources: document.getElementById('input-sources').value,
@@ -104,24 +142,11 @@ export default {
           const formData = new FormData()
           formData.append('name', step.name)
           formData.append('sources', step.sources)
-          formData.append('labels', JSON.stringify({}))
+          formData.append('labels', JSON.stringify(step.labels))
           formData.append('operation', step.operation)
-          const response = await fetch(url, {
-            method: 'POST',
-            body: formData
-          })
-          const json = await response.json()
-          if (response.status === 400) {
-            alert(json.message)
-          } else if (response.status === 200) {
-            alert(`Step ${json.results} created.`)
-          }
+          return formData
         },
-        async updateStep(step) {
-          console.log(step, 'updating step')
-        },
-        async deleteStep(step) {
-
+        async deleteStep() {
             const url = `${api}/step/${this.activeStep}/delete`
             const total = await utils.fetchTotal(url, this)
             return total
@@ -131,9 +156,7 @@ export default {
             const results = await utils.fetchDataAsJSON(url, this)
             return results.results[0]
         },
-        async refresh() {
-
-        },
+        async refresh() {},
         async getSteps(step) {
             const url = `${api}/steps/list`
 
