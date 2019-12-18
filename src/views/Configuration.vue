@@ -41,7 +41,6 @@
       </div>
       <b></b>
       <div class="input-area" v-if="showYaml()">
-        <p><b>metrics.yaml</b></p>
         <code id="metrics-display" class="lang-yaml">
           <pre contenteditable required>
 {{ metricsYAML }}
