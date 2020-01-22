@@ -1,5 +1,5 @@
 export function convertURLDateParameter(from, to) {
-  from = (from !== null) ? from : new Date(new Date().setDate(new Date().getDate() - 3)).toISOString()
+  from = (from !== null) ? from : new Date(new Date().setDate(new Date().getDate() - 1)).toISOString()
   to = (to !== null) ? to : new Date().toISOString()
   from = from.replace('T', ' ')
   to = to.replace('T', ' ')

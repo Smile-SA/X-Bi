@@ -84,7 +84,7 @@ export default {
       colors: {},
       cards: [],
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -117,8 +117,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Nodes'
+          title: 'Nodes rate (in Euros)'
         }
       })
     },
@@ -132,8 +131,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Slices'
+          title: 'Slices rate (in Euros)'
         }
       })
     },
@@ -142,9 +140,9 @@ export default {
       this.drawLineChartNamespaceRating()
     },
     async drawCards() {
-      this.namespacesCard()
-      this.nodesCard()
-      this.podsCard()
+      await this.namespacesCard()
+      await this.nodesCard()
+      await this.podsCard()
     },
     async namespacesCard() {
       const url = `${api}/namespaces`

@@ -80,7 +80,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -116,8 +116,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Slices'
+          title: 'Slices rates (in Euros)'
         }
       })
     },
@@ -131,8 +130,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Metrics'
+          title: 'Metrics rates (in Euros)'
         }
       })
     },
@@ -141,9 +139,9 @@ export default {
       this.drawLineChartNamespaces()
     },
     async drawCards() {
-      this.cardNamespaces()
-      this.cardPods()
-      this.cardTotalRating()
+      await this.cardNamespaces()
+      await this.cardPods()
+      await this.cardTotalRating()
     },
     async cardPods() {
       const url = `${api}/nodes/${this.activeNode}/pods`
