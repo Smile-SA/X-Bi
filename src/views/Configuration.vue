@@ -34,7 +34,7 @@
     </div>
     <div v-if='showYaml()'>
       <div>
-        <a href="#" @click="newConfig()" class="export-button">EXPORT CONFIGURATION</a>
+        <a href="#" @click="newConfig()" class="export-button">CREATE CONFIGURATION</a>
       </div>
       <div v-if='canDeleteConfig()'>
         <a href="#" @click="deleteConfig()" class="export-button">DELETE CONFIGURATION</a>

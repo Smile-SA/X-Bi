@@ -33,6 +33,7 @@
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
                       <span class="info-box-number">{{card.value}}</span>
+                      <span class="info-box-number-rating">{{card.message}}</span>
                     </div>
                   </div>
                 </div>
@@ -53,6 +54,7 @@
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
                       <span class="info-box-number">{{card.value}}</span>
+                      <span class="info-box-number-rating">{{card.message}}</span>
                     </div>
                   </div>
                 </div>
@@ -186,9 +188,10 @@ export default {
       const from = dateformat(this.from, 'dd/mm/yyyy')
       const to = dateformat(this.to, 'dd/mm/yyyy')
       this.cards.push({
-        value: `${total} from ${from} to ${to}`,
+        value: `${total}`,
         link: '/',
         label: 'Rating',
+        message: ` from ${from} to ${to}`,
         color: 'yellow',
         icon: 'fa fa-euro-sign'
       })

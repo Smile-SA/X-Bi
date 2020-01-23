@@ -33,6 +33,7 @@
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
                       <span class="info-box-number">{{card.value}}</span>
+                      <span class="info-box-number-rating">{{card.message}}</span>
                     </div>
                   </div>
                 </div>
@@ -174,9 +175,10 @@ export default {
         total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
       }
       this.cards.push({
-        value: `${total.toFixed(5)} from ${from} to ${to}`,
+        value: `${total.toFixed(5)}`,
         link: '/',
         label: 'Rating',
+        message: ` from ${from} to ${to}`,
         color: 'yellow',
         icon: 'fa fa-euro-sign'
       })

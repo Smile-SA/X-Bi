@@ -34,6 +34,7 @@
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
                       <span class="info-box-number">{{card.value}}</span>
+                      <span class="info-box-number-rating">{{card.message}}</span>
                     </div>
                   </div>
                 </div>
@@ -177,9 +178,10 @@ export default {
                                 .toFixed(5)
       }
       this.cards.push({
-        value: `${total} from ${from} to ${to}`,
+        value: `${total}`,
         link: '/',
         label: 'Rating',
+        message: ` from ${from} to ${to}`,
         color: 'yellow',
         icon: 'euro-sign'
       })
