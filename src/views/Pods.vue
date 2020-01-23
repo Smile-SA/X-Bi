@@ -3,9 +3,9 @@
   <section class="content">
     <div class="row">
       <div class="form-group col-xs-2">
-        <h4>Select a pod</h4>
+        <h4>Select a service</h4>
         <select class="form-control" v-on:change="getPods">
-          <option selected disabled> -- Select a Pod -- </option>
+          <option selected disabled> -- Select a service -- </option>
           <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
@@ -71,6 +71,7 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -85,7 +86,7 @@ export default {
       timeCards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -124,7 +125,7 @@ export default {
           value: 'frame_price',
           xLabel: 'Time',
           yLabel: 'Rate',
-          title: 'Metrics'
+          title: 'Metric rates (in Euros)'
         }
       })
     },
@@ -132,10 +133,10 @@ export default {
       this.drawBarChartMetrics()
     },
     async drawCards() {
-      this.cardNamespace()
-      this.cardNode()
-      this.cardTotalRating()
       this.cardLifetime()
+      await this.cardNamespace()
+      await this.cardNode()
+      await this.cardTotalRating()
     },
     async cardNamespace() {
       const url = `${api}/pods/${this.activePod}/namespace`
@@ -181,8 +182,11 @@ export default {
     async cardTotalRating() {
       const url = `${api}/pods/${this.activePod}/total_rating`
       const response = await utils.fetchDataAsJSON(url, this)
+      const total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5)
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
       this.cards.push({
-        value: response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5),
+        value: `${total} from ${from} to ${to}`,
         link: '/',
         label: 'Rating',
         color: 'yellow',

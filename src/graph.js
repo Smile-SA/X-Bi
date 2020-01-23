@@ -7,7 +7,7 @@ export function generateLineGraph(response, c) {
   let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
-    labels[count] =new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'}).split(' ')[1]
+    labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'}).split(' ')[1]
   })
 
   let min = 0
@@ -157,6 +157,7 @@ export async function drawPieChart(c) {
     },
     options: {
       title: {
+        fontSize: 20,
         display: true,
         text: c.labels.title
       },
@@ -228,6 +229,7 @@ export async function drawBarChart(c) {
     },
     options: {
       title: {
+        fontSize: 20,
         display: true,
         text: c.labels.title
       },

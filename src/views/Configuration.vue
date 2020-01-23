@@ -5,7 +5,7 @@
         <h4>Select a version</h4>
         <select class="form-control" v-on:change="getVersion">
           <option selected disabled> -- Select a version -- </option>
-          <option v-for="option in configList" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          <option v-for="option in configListIndexes" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
     </div>
@@ -73,6 +73,7 @@ export default {
       rulesYAML: null,
       metricsObject: null,
       configList: [],
+      configListIndexes: [],
       activeVersion: 0,
       activeVersionMetrics: 0,
       from: null,
@@ -138,12 +139,16 @@ export default {
 
       if (version !== undefined) {
         this.cards = []
-        this.activeVersion = version.target.value
+        this.activeVersion = this.configList[version.target.value]
         this.drawCards()
         this.drawYaml()
       }
       const results = await utils.fetchData(url, this)
       this.configList = results.map(item => new Date(item * 1000).toLocaleString('en-US'))
+      this.configListIndexes = []
+      for (let idx = 0; idx < this.configList.length; idx++) {
+        this.configListIndexes.push(idx)
+      }
     },
     timestampFromDate(date) {
       return Date.parse(date) / 1000
@@ -158,7 +163,7 @@ export default {
       })
     },
     async appliedFromToCard() {
-      const idx = this.configList.indexOf(this.activeVersion)
+      const idx = this.activeVersion
       let msg = ""
       if (idx < this.configList.length - 1) {
         msg = `From ${this.activeVersion} to ${this.configList[idx + 1]}`

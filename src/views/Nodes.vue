@@ -65,6 +65,7 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -166,12 +167,14 @@ export default {
     async cardTotalRating() {
       const url = `${api}/nodes/${this.activeNode}/total_rating`
       const response = await utils.fetchDataAsJSON(url, this)
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
       let total = 0
       if (response.total > 0) {
         total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
       }
       this.cards.push({
-        value: total.toFixed(5),
+        value: `${total.toFixed(5)} from ${from} to ${to}`,
         link: '/',
         label: 'Rating',
         color: 'yellow',
