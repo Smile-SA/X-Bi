@@ -33,6 +33,7 @@
                       <p></p>
                       <span class="info-box-text">{{card.label}}</span>
                       <span class="info-box-number">{{card.value}}</span>
+                      <span class="info-box-number-rating">{{card.message}}</span>
                     </div>
                   </div>
                 </div>
@@ -65,6 +66,7 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -80,7 +82,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -116,8 +118,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Slices'
+          title: 'Slices rates (in Euros)'
         }
       })
     },
@@ -131,8 +132,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          yLabel: 'Rate',
-          title: 'Metrics'
+          title: 'Metrics rates (in Euros)'
         }
       })
     },
@@ -141,9 +141,9 @@ export default {
       this.drawLineChartNamespaces()
     },
     async drawCards() {
-      this.cardNamespaces()
-      this.cardPods()
-      this.cardTotalRating()
+      await this.cardNamespaces()
+      await this.cardPods()
+      await this.cardTotalRating()
     },
     async cardPods() {
       const url = `${api}/nodes/${this.activeNode}/pods`
@@ -168,14 +168,17 @@ export default {
     async cardTotalRating() {
       const url = `${api}/nodes/${this.activeNode}/total_rating`
       const response = await utils.fetchDataAsJSON(url, this)
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
       let total = 0
       if (response.total > 0) {
         total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
       }
       this.cards.push({
-        value: total.toFixed(5),
+        value: `${total.toFixed(5)}`,
         link: '/',
         label: 'Rating',
+        message: ` from ${from} to ${to}`,
         color: 'yellow',
         icon: 'fa fa-euro-sign'
       })

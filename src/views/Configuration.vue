@@ -5,7 +5,7 @@
         <h4>Select a version</h4>
         <select class="form-control" v-on:change="getVersion">
           <option selected disabled> -- Select a version -- </option>
-          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          <option v-for="option in configListIndexes" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
     </div>
@@ -32,9 +32,9 @@
         </div>
       </div>
     </div>
-    <div>
-      <div v-if='showYaml()'>
-        <a href="#" @click="newConfig()" class="export-button">EXPORT CONFIGURATION</a>
+    <div v-if='showYaml()'>
+      <div>
+        <a href="#" @click="newConfig()" class="export-button">CREATE CONFIGURATION</a>
       </div>
       <div v-if='canDeleteConfig()'>
         <a href="#" @click="deleteConfig()" class="export-button">DELETE CONFIGURATION</a>
@@ -72,7 +72,8 @@ export default {
       rules: null,
       rulesYAML: null,
       metricsObject: null,
-      selectForm: [],
+      configList: [],
+      configListIndexes: [],
       activeVersion: 0,
       activeVersionMetrics: 0,
       from: null,
@@ -88,14 +89,15 @@ export default {
              this.rules !== null
     },
     canDeleteConfig() {
-      return this.activeVersion !== 0
+      return this.timestampFromDate(this.activeVersion) !== 0
     },
     async deleteConfig() {
-      if (this.activeVersion == 0) {
+      const active = this.timestampFromDate(this.activeVersion)
+      if (active === 0) {
         alert('Cannot remove the base config')
         return
       }
-      const url = `${api}/rating/config/delete/${this.activeVersion}`
+      const url = `${api}/rating/config/delete/${active}`
       const response = await fetch(url)
       const json = await response.json()
       const message = `Configuration ${json.results} deleted.`
@@ -121,7 +123,8 @@ export default {
       }
     },
     async drawYaml() {
-      const url = `${api}/rating/config/${this.activeVersion}` 
+      const active = this.timestampFromDate(this.activeVersion)
+      const url = `${api}/rating/config/${active}` 
 
       const data = await utils.fetchDataAsJSON(url, this)
 
@@ -136,27 +139,48 @@ export default {
 
       if (version !== undefined) {
         this.cards = []
-        this.activeVersion = version.target.value
+        this.activeVersion = this.configList[version.target.value]
         this.drawCards()
         this.drawYaml()
       }
       const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item)
+      this.configList = results.map(item => new Date(item * 1000).toLocaleString('en-US'))
+      this.configListIndexes = []
+      for (let idx = 0; idx < this.configList.length; idx++) {
+        this.configListIndexes.push(idx)
+      }
+    },
+    timestampFromDate(date) {
+      return Date.parse(date) / 1000
     },
     async versionMetricsCard() {
-      if (this.activeVersion === null   ) {
-        return
+      this.cards.push({
+        value: this.timestampFromDate(this.activeVersion),
+        link: '/',
+        label: 'Configuration timestamp',
+        color: 'green',
+        icon: 'wrench'
+      })
+    },
+    async appliedFromToCard() {
+      const idx = this.activeVersion
+      let msg = ""
+      if (idx < this.configList.length - 1) {
+        msg = `From ${this.activeVersion} to ${this.configList[idx + 1]}`
+      } else {
+        msg = `From ${this.activeVersion} to now`
       }
       this.cards.push({
-        value: this.activeVersion,
+        value: msg,
         link: '/',
-        label: 'Selected configuration',
-        color: 'green',
+        label: 'Timeframe',
+        color: 'blue',
         icon: 'wrench'
       })
     },
     drawCards() {
       this.versionMetricsCard()
+      this.appliedFromToCard()
     }
   },
   mounted() {

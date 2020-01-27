@@ -7,14 +7,25 @@ export function generateLineGraph(response, c) {
   let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
-    labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
+    labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'}).split(' ')[1]
   })
 
+  let min = 0
+  let max = 0
   Object.keys(dataset).forEach(item => {
     let obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-      obj.push(subItem[c.labels.value].toFixed(5))
+      let fixed = subItem[c.labels.value].toFixed(5)
+      let minTmp = Math.min(fixed)
+      let maxTmp = Math.max(fixed)
+      if (min === 0 || minTmp < min) {
+        min = minTmp
+      }
+      if (max === 0 || maxTmp > max) {
+        max = maxTmp
+      }
+      obj.push(fixed)
     })
     graph.push({
       label: item,
@@ -52,7 +63,8 @@ export function generateLineGraph(response, c) {
       scales: {
         xAxes: [{
           ticks: {
-            maxTicksLimit: 10
+            maxTicksLimit: 10,
+            fontSize: 15
           },
           display: true,
           scaleLabel: {
@@ -62,14 +74,27 @@ export function generateLineGraph(response, c) {
         yAxes: [{
           display: true,
           scaleLabel: {
-            display: true,
-            labelString: c.labels.yLabel
+            display: true
+          },
+          ticks: {
+            fontSize: 15,
+            min: min,
+            max: max,
+            callback: function(value, index, values) {
+              if (index === values.length - 1) return min.toFixed(5)
+              else if (index === Math.trunc(values.length / 2)) {
+                return ((max + min) / 2).toFixed(5)
+              }
+              else if (index === 0) return max.toFixed(5)
+              else return ''
+            }
           }
         }]
       },
       title: {
         display: true,
-        text: c.labels.title
+        text: c.labels.title,
+        fontSize: 20
       },
       maintainAspectRatio: !c.context.isMobile,
       legend: {
@@ -80,7 +105,6 @@ export function generateLineGraph(response, c) {
         callbacks: {
           label(tooltipItem, data) {
             const label = data.datasets[tooltipItem.datasetIndex].label
-  
             return `${label}: ${tooltipItem.yLabel}`
           }
         }
@@ -133,6 +157,7 @@ export async function drawPieChart(c) {
     },
     options: {
       title: {
+        fontSize: 20,
         display: true,
         text: c.labels.title
       },
@@ -169,14 +194,25 @@ export async function drawBarChart(c) {
   const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
-    labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'})
+    labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'}).split(' ')[1]
   })
 
+  let min = 0
+  let max = 0
   Object.keys(dataset).forEach(item => {
     let obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-      obj.push(subItem[c.labels.value].toFixed(5))
+      let fixed = subItem[c.labels.value].toFixed(5)
+      let minTmp = Math.min(fixed)
+      let maxTmp = Math.max(fixed)
+      if (min === 0 || minTmp < min) {
+        min = minTmp
+      }
+      if (max === 0 || maxTmp > max) {
+        max = maxTmp
+      }
+      obj.push(fixed)
     })
     graph.push({
       label: item,
@@ -193,6 +229,7 @@ export async function drawBarChart(c) {
     },
     options: {
       title: {
+        fontSize: 20,
         display: true,
         text: c.labels.title
       },
@@ -200,25 +237,27 @@ export async function drawBarChart(c) {
         xAxes: [{
           ticks: {
             maxTicksLimit: 10
-          },
-          display: true,
-          scaleLabel: {
-            display: true
           }
         }],
         yAxes: [{
           display: true,
           scaleLabel: {
-            display: true,
-            labelString: c.labels.yLabel
+            display: true
+          },
+          ticks: {
+            fontSize: 15,
+            callback: function(value, index, values) {
+              if (index === values.length - 1) return min.toFixed(5)
+              else if (index === Math.trunc(values.length / 2)) {
+                return ((max + min) / 2).toFixed(5)
+              }
+              else if (index === 0) return max.toFixed(5)
+              else return ''
+            }
           }
         }]
       },
       responsive: true,
-      maintainAspectRatio: !c.context.isMobile,
-      legend: {
-        display: true
-      },
       tooltips: {
         intersect: false,
         mode: 'label'
