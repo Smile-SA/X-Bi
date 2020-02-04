@@ -154,9 +154,15 @@ export default {
         async getStep(step) {
             const url = `${api}/step/${step}/get`
             const results = await utils.fetchDataAsJSON(url, this)
+            document.getElementById('input-name').value = results.results[0].name
+            document.getElementById('input-sources').value = results.results[0].sources.toString().replace(',', ' ')
+            document.getElementById('input-labels').value = JSON.stringify(results.results[0].labels)
+            document.getElementById('input-operation').value = results.results[0].operation
             return results.results[0]
         },
-        async refresh() {},
+        async refresh() {
+          this.getStep(this.activeStep)
+        },
         async getSteps(step) {
             const url = `${api}/steps/list`
 
