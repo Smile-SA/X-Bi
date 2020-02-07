@@ -2,9 +2,9 @@ import * as utils from './utils'
 import Chart from 'chart.js'
 
 export function generateLineGraph(response, c) {
-  let graph = []
+  const graph = []
   const dataset = utils.groupBy(response, c.sort)
-  let labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
+  const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
   labels.forEach((item, count) => {
     labels[count] = new Date(item).toLocaleString('en-GB', {timeZone: 'UTC'}).split(' ')[1]
@@ -13,12 +13,12 @@ export function generateLineGraph(response, c) {
   let min = 0
   let max = 0
   Object.keys(dataset).forEach(item => {
-    let obj = []
+    const obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-      let fixed = subItem[c.labels.value].toFixed(5)
-      let minTmp = Math.min(fixed)
-      let maxTmp = Math.max(fixed)
+      const fixed = subItem[c.labels.value].toFixed(5)
+      const minTmp = Math.min(fixed)
+      const maxTmp = Math.max(fixed)
       if (min === 0 || minTmp < min) {
         min = minTmp
       }
@@ -104,8 +104,7 @@ export function generateLineGraph(response, c) {
       tooltips: {
         callbacks: {
           label(tooltipItem, data) {
-            const label = data.datasets[tooltipItem.datasetIndex].label
-            return `${label}: ${tooltipItem.yLabel}`
+            return `${data.datasets[tooltipItem.datasetIndex].label}: ${tooltipItem.yLabel}`
           }
         }
       }
@@ -189,7 +188,7 @@ export async function drawBarChart(c) {
   const queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
   const ctx = document.getElementById(c.id).getContext('2d')
 
-  let graph = []
+  const graph = []
   const dataset = utils.groupBy(results, c.sort)
   const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
@@ -200,12 +199,12 @@ export async function drawBarChart(c) {
   let min = 0
   let max = 0
   Object.keys(dataset).forEach(item => {
-    let obj = []
+    const obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-      let fixed = subItem[c.labels.value].toFixed(5)
-      let minTmp = Math.min(fixed)
-      let maxTmp = Math.max(fixed)
+      const fixed = subItem[c.labels.value].toFixed(5)
+      const minTmp = Math.min(fixed)
+      const maxTmp = Math.max(fixed)
       if (min === 0 || minTmp < min) {
         min = minTmp
       }

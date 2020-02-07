@@ -15,7 +15,7 @@ export function JSONToCSV(json) {
 }
 
 export async function fetchTotal(url, that) {
-  let queryDate = convertURLDateParameter(that.from, that.to)
+  const queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
   try {
     const response = await fetch(url, {})
@@ -28,7 +28,7 @@ export async function fetchTotal(url, that) {
 }
 
 export async function fetchData(url, that) {
-  let queryDate = convertURLDateParameter(that.from, that.to)
+  const queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
   const response = await fetch(url, {})
   const json = await response.json()
@@ -36,7 +36,7 @@ export async function fetchData(url, that) {
 }
 
 export async function fetchDataAsJSON(url, that) {
-  let queryDate = convertURLDateParameter(that.from, that.to)
+  const queryDate = convertURLDateParameter(that.from, that.to)
 
   url = url + queryDate
   const response = await fetch(url, {})
@@ -60,7 +60,7 @@ export async function downloadFile(url, filename, type) {
     mime = 'text/csv'
   }
   
-  let el = document.createElement('a')
+  const el = document.createElement('a')
   el.setAttribute('href', `data:${mime};charset=utf-8,` + encodeURIComponent(content))
   el.setAttribute('download', filename)
   el.style.display = 'none'
@@ -71,10 +71,20 @@ export async function downloadFile(url, filename, type) {
 
 export function getPeriod(url) {
   let broken = url.split('?')[1].split('&')
-  let from = broken[0].split('=')[1].replace(' ', 'T')
-  let to = broken[1].split('=')[1].replace(' ', 'T')
+  const from = broken[0].split('=')[1].replace(' ', 'T')
+  const to = broken[1].split('=')[1].replace(' ', 'T')
   return `_${from}-${to}`
 }
+
+
+export async function generateColor(source, that) {
+  const colors = {}
+  for (const obj of source) {
+    (await fetchData(`${obj.endpoint}`, that)).forEach(item => colors[item[obj.key]] = getRandomColor())
+  }
+  return colors
+}
+
 
 export function getRandomColor() {
   const chartColors = [

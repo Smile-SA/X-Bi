@@ -164,7 +164,7 @@ export default {
           this.getStep(this.activeStep)
         },
         async getSteps(step) {
-            const url = `${api}/steps/list`
+            const url = `${api}/steps`
 
             if (step !== undefined) {
                 this.cards = []
@@ -172,7 +172,7 @@ export default {
                 this.refresh(null)
             }
             const results = await utils.fetchData(url, this)
-            this.stepsSelect = results.map(item => item.name)
+            this.stepsSelect = results.map(item => item.step)
         }
     },
     async mounted() {

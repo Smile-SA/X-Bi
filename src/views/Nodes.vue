@@ -205,10 +205,11 @@ export default {
       this.selectForm = results.map(item => item.node)
     },
     async generateColor() {
-      await (await utils.fetchData(`${api}/namespaces`, this))
-      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/metrics`, this))
-      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
+        {'endpoint': `${api}/metrics`, 'key': 'metric'},
+        {'endpoint': `${api}/steps`, 'key': 'step'}
+        ], this)
     },
   },
   async mounted () {
