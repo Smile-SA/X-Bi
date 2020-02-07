@@ -6,7 +6,7 @@
         <h4>Select a node</h4>
         <select class="form-control" v-on:change="getNodes">
           <option selected disabled> -- Select a Node -- </option>
-          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          <option v-for="option in selectNodes" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
       <div v-if="showDatePicker()" class="form-group col-xs-2">
@@ -41,13 +41,13 @@
               <div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
-                    <strong v-if="lineChartDataNamespaces">{{lineChartDataNamespaces.title}}</strong>
+                    <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
                   <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces"></canvas>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
-                    <strong v-if="barChartDataMetrics">{{barChartDataMetrics.title}}</strong>
+                    <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
                   </p>
                   <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
                 </div>
@@ -74,10 +74,8 @@ export default {
   data () {
     return {
       lineChartNamespaces: null,
-      lineChartDataNamespaces: null,
       barChartMetrics: null,
-      barChartDataMetrics: null,
-      selectForm: null,
+      selectNodes: null,
       activeNode: null,
       cards: [],
       colors: {},
@@ -201,8 +199,7 @@ export default {
         this.activeNode = node.target.value
         this.refreshDate(null)
       }
-      const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item.node)
+      this.selectNodes = (await utils.fetchData(url, this)).map(item => item.node)
     },
     async generateColor() {
       this.colors = await utils.generateColor([

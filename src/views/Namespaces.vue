@@ -194,8 +194,7 @@ export default {
         this.activeNamespace = namespace.target.value
         this.refreshDate(null)
       }
-      const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item.namespace)
+      this.selectForm = (await utils.fetchData(url, this)).map(item => item.namespace)
     },
     async generateColor() {
       this.colors = await utils.generateColor([
