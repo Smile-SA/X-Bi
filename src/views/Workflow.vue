@@ -2,13 +2,13 @@
   <!-- Main content -->
   <section class="content">
     <div class="row">
-        <div class="form-group col-xs-2">
-            <h4>Select a step</h4>
-            <select class="form-control" v-on:change="getSteps">
-                <option selected disabled> -- Select a step -- </option>
-                <option v-for="option in stepsSelect" v-bind:value="option" v-bind:key="option">{{option}}</option>
-            </select>
-        </div>
+      <div class="form-group col-xs-2">
+          <h4>Select a step</h4>
+          <select class="form-control" v-on:change="getSteps">
+              <option selected disabled> -- Select a step -- </option>
+              <option v-for="option in stepsSelect" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          </select>
+      </div>
       <div class="col-xs-12">
         <div class="box">
           <div class="box-header">
@@ -28,33 +28,36 @@
                   <!-- /.info-box-content -->
                 </div>
               </div>
-              <form>
-                <legend>Step form</legend>
-                <p>
-                  <input type="text" name="name" id="input-name">
-                  <label for="input-name">Name</label>
-                </p>
-                <p>
-                  <input type="text" name="sources" id="input-sources">
-                  <label for="input-sources">Sources</label>
-                </p>
-                <p>
-                  <input type="text" name="labels" id="input-labels">
-                  <label for="input-labels">Labels</label>
-                </p>
-                <p>
-                  <input type="text" name="operation" id="input-operation">
-                  <label for="input-operation">Operation</label>
-                </p>
-              </form>
-              <div v-if='!showButton()'>
-                <a href="#" @click="createStep()" class="export-button">Create</a>
-              </div>
-              <div v-if='showButton()'>
-                <a href="#" @click="updateStep()" class="export-button">Update</a>
-              </div>
-              <div v-if='showButton()'>
-                <a href="#" @click="deleteStep()" class="export-button">Delete</a>
+              <div class="form-center">
+                <form class="form-inline">
+                  <legend>Step form</legend>
+                  <p>
+                    <label for="input-name">Name</label>
+                    <input type="text" name="name" id="input-name">
+                  </p>
+                  <p>
+                    <label for="input-sources">Sources</label>
+                    <input type="text" name="sources" id="input-sources">
+                  </p>
+                  <p>
+                    <label for="input-labels">Labels</label>
+                    <input type="text" name="labels" id="input-labels">
+                  </p>
+                  <p>
+                    <label for="input-operation">Operation</label>
+                    <input type="text" name="operation" id="input-operation">
+                  </p>
+                  <!-- <button type="submit">Create</button> -->
+                  <div v-if='!showButton()'>
+                    <a href="#" @click="createStep()" class="button-valid">Create</a>
+                  </div>
+                  <div v-if='showButton()'>
+                    <a href="#" @click="updateStep()" class="button-valid">Update</a>
+                  </div>
+                  <div v-if='showButton()'>
+                    <a href="#" @click="deleteStep()" class="button-valid">Delete</a>
+                  </div>
+                </form>
               </div>
             </div>
           </div>
@@ -182,45 +185,67 @@ export default {
 </script>
 
 <style>
-.export-button {
-	-moz-box-shadow: 0px 10px 14px -7px #276873;
-	-webkit-box-shadow: 0px 10px 14px -7px #276873;
-	box-shadow: 0px 10px 14px -7px #276873;
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #599bb3), color-stop(1, #408c99));
-	background:-moz-linear-gradient(top, #599bb3 5%, #408c99 100%);
-	background:-webkit-linear-gradient(top, #599bb3 5%, #408c99 100%);
-	background:-o-linear-gradient(top, #599bb3 5%, #408c99 100%);
-	background:-ms-linear-gradient(top, #599bb3 5%, #408c99 100%);
-	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#599bb3', endColorstr='#408c99',GradientType=0);
-	background-color:#599bb3;
-	-moz-border-radius:8px;
-	-webkit-border-radius:8px;
-	border-radius:8px;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:14px;
-	font-weight:bold;
-	padding:13px 32px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #3d768a;
-  margin-bottom: 10px;
-}
-.export-button:hover {
-	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #408c99), color-stop(1, #599bb3));
-	background:-moz-linear-gradient(top, #408c99 5%, #599bb3 100%);
-	background:-webkit-linear-gradient(top, #408c99 5%, #599bb3 100%);
-	background:-o-linear-gradient(top, #408c99 5%, #599bb3 100%);
-	background:-ms-linear-gradient(top, #408c99 5%, #599bb3 100%);
-	background:linear-gradient(to bottom, #408c99 5%, #599bb3 100%);
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#408c99', endColorstr='#599bb3',GradientType=0);
-	background-color:#408c99;
-}
-.export-button:active {
-	position:relative;
-	top:1px;
+body {
+  font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+
+.form-center {
+  text-align: center;
+  display: flex;
 }
 
+.button-valid {
+  background:    #0c67a4;
+  border-radius: 2px;
+  padding:       8px 20px;
+  color:         #ffffff;
+  display:       inline-block;
+  font:          normal bold 20px/1 "Open Sans", sans-serif;
+  text-align:    center;
+  padding: 15px 40px;
+  outline: 2px solid white;
+  outline-offset: 2px;
+}
+
+.form-inline {  
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+}
+
+.form-inline label {
+  margin: 5px 10px 5px 0;
+}
+
+.form-inline input {
+  vertical-align: middle;
+  margin: 5px 10px 5px 0;
+  padding: 10px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+}
+
+.form-inline button {
+  padding: 10px 20px;
+  background-color: dodgerblue;
+  border: 1px solid #ddd;
+  color: white;
+  cursor: pointer;
+}
+
+.form-inline button:hover {
+  background-color: royalblue;
+}
+
+@media (max-width: 800px) {
+  .form-inline input {
+    margin: 10px 0;
+  }
+  
+  .form-inline {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
 </style>
