@@ -175,6 +175,7 @@ export async function drawPieChart(c) {
   return new Chart(ctx, config)
 }
 
+
 export async function drawBarChart(c) {
   if (c.graph !== null) {
     c.graph.destroy()
@@ -234,16 +235,19 @@ export async function drawBarChart(c) {
       },
       scales: {
         xAxes: [{
+          stacked: true,
           ticks: {
             maxTicksLimit: 10
           }
         }],
         yAxes: [{
+          stacked: true,
           display: true,
           scaleLabel: {
             display: true
           },
           ticks: {
+            beginAtZero: true,
             fontSize: 15,
             callback: function(value, index, values) {
               if (index === values.length - 1) return min.toFixed(5)

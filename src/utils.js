@@ -138,6 +138,15 @@ export function getRandomColor() {
   return chartColors[Math.floor(Math.random() * chartColors.length)]
 }
 
+export function hexToRgb(hex) {
+  const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+  return result ? {
+    r: parseInt(result[1], 16),
+    g: parseInt(result[2], 16),
+    b: parseInt(result[3], 16)
+  } : null;
+}
+
 export function groupBy(objectArray, property) {
   return objectArray.reduce(function(acc, obj) {
     const key = obj[property]
