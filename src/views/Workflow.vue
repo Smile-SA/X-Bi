@@ -30,7 +30,7 @@
               </div>
               <div class="form-center">
                 <form class="form-inline">
-                  <legend>Step form</legend>
+                  <legend>Configure step</legend>
                   <p>
                     <label for="input-name">Name</label>
                     <input type="text" name="name" id="input-name">
