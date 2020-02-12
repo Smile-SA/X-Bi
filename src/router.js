@@ -39,6 +39,12 @@ export default new Router({
           component: () => import('./views/Configuration.vue'),
           name: 'Configuration',
           meta: { description: 'Detailled view of metrics and pricing rulesets', requiresAuth: false }
+        },
+        {
+          path: 'monitoring',
+          component: () => import('./views/Monitoring.vue'),
+          name: 'Monitoring',
+          meta: { description: 'Graph view of prometheus query', requiresAuth: false }
         }
       ]
     },
