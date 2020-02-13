@@ -57,7 +57,6 @@
 <script>
 
 import { generatePromUrl } from '../variables'
-import * as utils from  '../utils'
 import * as graph from '../graph'
 import Chart from 'chart.js'
 
