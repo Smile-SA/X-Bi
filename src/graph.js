@@ -270,3 +270,90 @@ export async function drawBarChart(c) {
   c.context.queryArray[c.id] = `${c.url}${queryDate}`
   return new Chart(ctx, config)
 }
+
+export async function prometheusGraphLine(config) {
+  const url = `${config.url}?query=${encodeURIComponent(config.query)}&start=${config.start}&end=${config.end}&step=30s`
+  const response = await fetch(url, { method: 'GET' })
+  const json = await response.json()
+  const graph = []
+  let labels = null
+  for (let data of json.data.result) {
+    const color = utils.getRandomColor()
+    const l = []
+    const d = []
+    for (let iteration of data.values) {
+      l.push(new Date(iteration[0]*1000).toISOString().split('T')[1])
+      d.push(iteration[1])
+    }
+    const obj = {
+      data: d,
+      label: `{'namespace': ${data.metric.namespace}, 'node': ${data.metric.node}, 'pod': ${data.metric.pod}}`,
+      backgroundColor: color,
+      borderColor: color,
+      pointBackgroundColor: color,
+      fill: false
+    }
+    if (labels === null) {
+      labels = l
+    }
+    graph.push(obj)
+  }
+  const ctx = document.getElementById(config.id).getContext('2d')
+  const canvasConfig = {
+    type: 'line',
+    data: {
+      datasets: graph,
+      labels: labels
+    },
+    options: {
+      elements: {
+        point: {
+          radius: 1
+        },
+        line: {
+          tension: 0,
+          fill: false,
+          steppedLine: false,
+          borderDash: []
+        }
+      },
+      animation: {
+        duration: 0
+      },
+      hover: {
+        animationDuration: 0
+      },
+      responsiveAnimationDuration: 0,
+      title: {
+        fontSize: 20,
+        display: true,
+        text: config.title
+      },
+      scales: {
+        xAxes: [{
+          ticks: {
+            maxTicksLimit: 10
+          }
+        }],
+        yAxes: [{
+          display: true,
+          scaleLabel: {
+            display: true
+          },
+          ticks: {
+            fontSize: 15
+          }
+        }]
+      },
+      responsive: true,
+      legend: {
+        display: false
+      },
+      tooltips: {
+        intersect: false,
+        mode: 'label'
+      }
+    }
+  }
+  return new Chart(ctx, canvasConfig)
+}
