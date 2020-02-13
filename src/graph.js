@@ -286,6 +286,8 @@ export async function prometheusGraphLine(config) {
       data: d,
       label: `{'namespace': ${data.metric.namespace}, 'node': ${data.metric.node}, 'pod': ${data.metric.pod}}`,
       backgroundColor: color,
+      borderColor: color,
+      pointBackgroundColor: color,
       fill: false
     }
     if (labels === null) {
@@ -301,24 +303,24 @@ export async function prometheusGraphLine(config) {
       labels: labels
     },
     options: {
-      // elements: {
-      //   point: {
-      //     radius: 3
-      //   },
-      //   line: {
-      //     tension: 0,
-      //     fill: false,
-      //     steppedLine: false,
-      //     borderDash: []
-      //   }
-      // },
-      // animation: {
-      //   duration: 0
-      // },
-      // hover: {
-      //   animationDuration: 0
-      // },
-      // responsiveAnimationDuration: 0,
+      elements: {
+        point: {
+          radius: 1
+        },
+        line: {
+          tension: 0,
+          fill: false,
+          steppedLine: false,
+          borderDash: []
+        }
+      },
+      animation: {
+        duration: 0
+      },
+      hover: {
+        animationDuration: 0
+      },
+      responsiveAnimationDuration: 0,
       title: {
         fontSize: 20,
         display: true,
