@@ -46,6 +46,9 @@ export function generateLineGraph(response, c) {
     },
     options: {
       elements: {
+        point: {
+          radius: 2
+        },
         line: {
           tension: 0,
           fill: false,
