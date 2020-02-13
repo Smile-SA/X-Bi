@@ -271,9 +271,10 @@ export async function drawBarChart(c) {
   return new Chart(ctx, config)
 }
 
-export async function prometheusGraphLine(config) {
-  const url = `${config.url}?query=${encodeURIComponent(config.query)}&start=${config.start}&end=${config.end}&step=30s`
-  const response = await fetch(url, { method: 'GET' })
+export async function prometheusLineGraphConfig(config) {
+  const response = await fetch(
+    `${config.url}?query=${encodeURIComponent(config.query)}&start=${config.start}&end=${config.end}&step=30s`,
+    { method: 'GET' })
   const json = await response.json()
   const graph = []
   let labels = null
@@ -285,21 +286,19 @@ export async function prometheusGraphLine(config) {
       l.push(new Date(iteration[0]*1000).toISOString().split('T')[1])
       d.push(iteration[1])
     }
-    const obj = {
+    if (labels === null) {
+      labels = l
+    }
+    graph.push({
       data: d,
       label: `{'namespace': ${data.metric.namespace}, 'node': ${data.metric.node}, 'pod': ${data.metric.pod}}`,
       backgroundColor: color,
       borderColor: color,
       pointBackgroundColor: color,
       fill: false
-    }
-    if (labels === null) {
-      labels = l
-    }
-    graph.push(obj)
+    })
   }
-  const ctx = document.getElementById(config.id).getContext('2d')
-  const canvasConfig = {
+  return {
     type: 'line',
     data: {
       datasets: graph,
@@ -355,5 +354,4 @@ export async function prometheusGraphLine(config) {
       }
     }
   }
-  return new Chart(ctx, canvasConfig)
 }

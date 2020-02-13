@@ -12,7 +12,7 @@
             <div class="row">
             <h3 class="box-title"></h3>
               <div>
-                <div>
+                <div id="lineChartSpot">
                   <div class="col-sm-12">
                     <p class="text-center">
                       <strong v-if="lineChartRequestCpu">{{lineChartRequestCpu.title}}</strong>
@@ -59,6 +59,7 @@
 import { generatePromUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
+import Chart from 'chart.js'
 
 const api = generatePromUrl()
 
@@ -81,71 +82,61 @@ export default {
     }
   },
   methods: {
-    clicked(data) {
-      this.selected = data.target.id
-    },
-    redirect(data) {
-      utils.redirectCard(data, this)
-    },
-    getURL(data) {
-      utils.getURL(data, this)
-    },
-    refreshDate(date) {
-      utils.refreshDate(date, this)
-    },
     async drawLineChartRequestMemory() {
-      this.lineChartRequestMemory = await graph.prometheusGraphLine({
+      await this.addLineChart({
         url: `${api}/query_range`,
         query: 'sum(kube_pod_container_resource_requests_memory_bytes) by (pod, namespace, node) + on (node) group_left(label_beta_kubernetes_io_instance_type) (sum(kube_node_labels) by (node,label_beta_kubernetes_io_instance_type) * 0)',
         start: this.from,
         end: this.to,
-        graph: this.lineChartRequestMemory,
         id: 'lineChartRequestMemory',
         title: `Memory request since ${new Date(this.from*1000)}`
       })
     },
     async drawLineChartUsageMemory() {
-      this.lineChartUsageMemory = await graph.prometheusGraphLine({
+      await this.addLineChart({
         url: `${api}/query_range`,
         query: 'sum(container_memory_usage_bytes) by (pod, namespace) + on (pod, namespace) group_left(node) (sum(kube_pod_info{pod_ip!="",node!="",host_ip!=""}) by (pod, namespace, node) * 0) + on (node) group_left(label_beta_kubernetes_io_instance_type) (sum(kube_node_labels) by (node,label_beta_kubernetes_io_instance_type) * 0)',
         start: this.from,
         end: this.to,
-        graph: this.lineChartUsageMemory,
         id: 'lineChartUsageMemory',
         title: `Usage memory since ${new Date(this.from*1000)}`
       })
     },
     async drawLineChartRequestCPU() {
-      this.lineChartRequestCpu = await graph.prometheusGraphLine({
+      await this.addLineChart({
         url: `${api}/query_range`,
         query: 'sum(kube_pod_container_resource_requests_cpu_cores) by (pod, namespace, node) + on (node) group_left(label_beta_kubernetes_io_instance_type) (sum(kube_node_labels) by (node,label_beta_kubernetes_io_instance_type) * 0)',
         start: this.from,
         end: this.to,
-        graph: this.lineChartRequestCpu,
         id: 'lineChartRequestCpu',
         title: `CPU request since ${new Date(this.from*1000)}`
       })
     },
     async drawLineChartUsageCPU() {
-      this.lineChartUsageCPU = await graph.prometheusGraphLine({
+      await this.addLineChart({
         url: `${api}/query_range`,
         query: 'sum(rate(container_cpu_usage_seconds_total[1m])) BY (pod, namespace) + on (pod, namespace) group_left(node) (sum(kube_pod_info{pod_ip!="",node!="",host_ip!=""}) by (pod, namespace, node) * 0) + on (node) group_left(label_beta_kubernetes_io_instance_type) (sum(kube_node_labels) by (node,label_beta_kubernetes_io_instance_type) * 0)',
         start: this.from,
         end: this.to,
-        graph: this.lineChartUsageCPU,
         id: 'lineChartUsageCPU',
         title: `CPU Usage since ${new Date(this.from*1000)}`
       })
     },
-    async drawGraphs() {
-      await this.drawLineChartRequestMemory()
-      await this.drawLineChartRequestCPU()
-      await this.drawLineChartUsageCPU()
-      await this.drawLineChartUsageMemory()
+    async addLineChart(config) {
+      const div = document.getElementById('lineChartSpot')
+      const graphData = await graph.prometheusLineGraphConfig(config)
+      const canvas = document.createElement('canvas')
+      canvas.id = config.id
+      div.appendChild(canvas)
+      const ctx = document.getElementById(config.id)
+      return new Chart(ctx, graphData)
     },
   },
   async mounted() {
-    this.drawGraphs()
+    this.drawLineChartRequestMemory()
+    this.drawLineChartRequestCPU()
+    this.drawLineChartUsageCPU()
+    this.drawLineChartUsageMemory()
   }
 }
 </script>
