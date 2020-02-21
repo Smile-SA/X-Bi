@@ -206,7 +206,7 @@ export async function drawBarChart(c) {
     let obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-      let fixed = subItem[c.labels.value].toFixed(5)
+      let fixed = subItem[c.labels.value].toFixed(10)
       let minTmp = Math.min(fixed)
       let maxTmp = Math.max(fixed)
       if (min === 0 || minTmp < min) {
@@ -251,11 +251,11 @@ export async function drawBarChart(c) {
             fontSize: 15,
             beginAtZero: true,
             callback: function(value, index, values) {
-              if (index === values.length - 1) return min.toFixed(5)
+              if (index === values.length - 1) return min.toFixed(10)
               else if (index === Math.trunc(values.length / 2)) {
-                return ((max + min) / 2).toFixed(5)
+                return ((max + min) / 2).toFixed(10)
               }
-              else if (index === 0) return max.toFixed(5)
+              else if (index === 0) return max.toFixed(10)
               else return ''
             }
           }
