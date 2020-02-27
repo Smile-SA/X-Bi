@@ -252,7 +252,6 @@ export async function drawBarChart(c) {
           ticks: {
             beginAtZero: true,
             fontSize: 15,
-            beginAtZero: true,
             callback: function(value, index, values) {
               if (index === values.length - 1) return min.toFixed(5)
               else if (index === Math.trunc(values.length / 2)) {
