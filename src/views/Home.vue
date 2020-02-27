@@ -179,11 +179,12 @@ export default {
         ], this)
     }
   },
-  async mounted() {
+  async beforeMount() {
     await this.generateColorSet()
     this.drawCards()
     this.drawGraphs()
-  }
+  },
+  async mounted() {}
 }
 </script>
 

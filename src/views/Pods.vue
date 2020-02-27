@@ -216,8 +216,10 @@ export default {
         ], this)
     }
   },
-  async mounted () {
+  async beforeMount() {
     await this.generateColor()
+  },
+  async mounted () {
     this.getPods()
   }
 }

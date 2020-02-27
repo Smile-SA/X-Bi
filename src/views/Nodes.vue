@@ -192,14 +192,9 @@ export default {
       })
     },
     async getNodes (node) {
-      const url = `${api}/nodes`
-
-      if (node !== undefined) {
-        this.cards = []
-        this.activeNode = node.target.value
-        this.refreshDate(null)
-      }
-      this.selectNodes = (await utils.fetchData(url, this)).map(item => item.node)
+      this.cards = []
+      this.activeNode = node.target.value
+      this.refreshDate(null)
     },
     async generateColor() {
       this.colors = await utils.generateColor([
@@ -209,10 +204,11 @@ export default {
         ], this)
     },
   },
-  async mounted () {
+  async beforeMount() {
     await this.generateColor()
-    this.getNodes()
-  }
+    this.selectNodes = (await utils.fetchData(`${api}/nodes`, this)).map(item => item.node)
+  },
+  async mounted () {}
 }
 </script>
 

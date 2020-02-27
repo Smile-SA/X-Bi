@@ -40,18 +40,18 @@ export default new Router({
           name: 'Configuration',
           meta: { description: 'Detailled view of metrics and pricing rulesets', requiresAuth: false }
         },
-        {
-          path: 'workflow',
-          component: () => import('./views/Workflow.vue'),
-          name: 'Workflow',
-          meta: { description: 'Workflow configuration', requiresAuth: false }
-        },
-        {
-          path: 'monitoring',
-          component: () => import('./views/Monitoring.vue'),
-          name: 'Monitoring',
-          meta: { description: 'Graph view of prometheus query', requiresAuth: false }
-        }
+        // {
+        //   path: 'workflow',
+        //   component: () => import('./views/Workflow.vue'),
+        //   name: 'Workflow',
+        //   meta: { description: 'Workflow configuration', requiresAuth: false }
+        // },
+        // {
+        //   path: 'monitoring',
+        //   component: () => import('./views/Monitoring.vue'),
+        //   name: 'Monitoring',
+        //   meta: { description: 'Graph view of prometheus query', requiresAuth: false }
+        // }
       ]
     },
     {
