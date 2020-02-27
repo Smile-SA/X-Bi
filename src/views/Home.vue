@@ -37,13 +37,13 @@
                   </VueContext>
                   <div class="col-sm-12">
                     <p class="text-center">
-                      <strong v-if="lineChartDataNodes">{{lineChartDataNodes.title}}</strong>
+                      <strong v-if="lineChartNodes">{{lineChartNodes.title}}</strong>
                     </p>
                     <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNodes" height="80%"></canvas>
                   </div>
                   <div class="col-sm-12">
                     <p class="text-center">
-                      <strong v-if="lineChartDataNamespaces">{{lineChartDataNamespaces.title}}</strong>
+                      <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                     </p>
                     <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces" height="80%"></canvas>
                   </div>
@@ -78,9 +78,7 @@ export default {
     return {
       date: null,
       lineChartNodes: null,
-      lineChartDataNodes: null,
       lineChartNamespaces: null,
-      lineChartDataNamespaces: null,
       colors: {},
       cards: [],
       to: new Date().toISOString(),
@@ -175,10 +173,10 @@ export default {
       })
     },
     async generateColorSet() {
-      await (await utils.fetchData(`${api}/namespaces`, this))
-      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/nodes`, this))
-      .forEach(item => this.colors[item['node']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
+        {'endpoint': `${api}/nodes`, 'key': 'node'},
+        ], this)
     }
   },
   async mounted() {

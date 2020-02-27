@@ -6,7 +6,7 @@
         <h4>Select a node</h4>
         <select class="form-control" v-on:change="getNodes">
           <option selected disabled> -- Select a Node -- </option>
-          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          <option v-for="option in selectNodes" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
       <div v-if="showDatePicker()" class="form-group col-xs-2">
@@ -41,13 +41,13 @@
               <div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
-                    <strong v-if="lineChartDataNamespaces">{{lineChartDataNamespaces.title}}</strong>
+                    <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
                   <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces"></canvas>
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
-                    <strong v-if="barChartDataMetrics">{{barChartDataMetrics.title}}</strong>
+                    <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
                   </p>
                   <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
                 </div>
@@ -74,10 +74,8 @@ export default {
   data () {
     return {
       lineChartNamespaces: null,
-      lineChartDataNamespaces: null,
       barChartMetrics: null,
-      barChartDataMetrics: null,
-      selectForm: null,
+      selectNodes: null,
       activeNode: null,
       cards: [],
       colors: {},
@@ -165,6 +163,16 @@ export default {
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
+    async cardLabels() {
+      const url = `${api}/nodes/${this.activeNode}/labels`
+      this.cards.push({
+        value: await utils.fetchDataAsJSON(url, this),
+        link: '/',
+        label: 'Labels',
+        color: 'green',
+        icon: ''
+      })
+    },
     async cardTotalRating() {
       const url = `${api}/nodes/${this.activeNode}/total_rating`
       const response = await utils.fetchDataAsJSON(url, this)
@@ -191,14 +199,14 @@ export default {
         this.activeNode = node.target.value
         this.refreshDate(null)
       }
-      const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item.node)
+      this.selectNodes = (await utils.fetchData(url, this)).map(item => item.node)
     },
     async generateColor() {
-      await (await utils.fetchData(`${api}/namespaces`, this))
-      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/metrics`, this))
-      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
+        {'endpoint': `${api}/metrics`, 'key': 'metric'},
+        {'endpoint': `${api}/steps`, 'key': 'step'}
+        ], this)
     },
   },
   async mounted () {

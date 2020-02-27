@@ -194,14 +194,14 @@ export default {
         this.activeNamespace = namespace.target.value
         this.refreshDate(null)
       }
-      const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item.namespace)
+      this.selectForm = (await utils.fetchData(url, this)).map(item => item.namespace)
     },
     async generateColor() {
-      await (await utils.fetchData(`${api}/metrics`, this))
-      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/nodes`, this))
-      .forEach(item => this.colors[item['node']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/metrics`, 'key': 'metric'},
+        {'endpoint': `${api}/nodes`, 'key': 'node'},
+        {'endpoint': `${api}/steps`, 'key': 'step'}
+        ], this)
     },
   },
   async mounted () {

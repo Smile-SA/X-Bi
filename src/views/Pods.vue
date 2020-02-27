@@ -6,7 +6,7 @@
         <h4>Select a service</h4>
         <select class="form-control" v-on:change="getPods">
           <option selected disabled> -- Select a service -- </option>
-          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
+          <option v-for="option in selectPods" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
       <div v-if="showDatePicker()" class="form-group col-xs-2">
@@ -82,7 +82,7 @@ export default {
     return {
       barChartMetrics: null,
       barChartDataMetrics: null,
-      selectForm: null,
+      selectPods: null,
       activePod: null,
       cards: [],
       timeCards: [],
@@ -205,15 +205,15 @@ export default {
         this.refreshDate(null)
       }
       const response = await utils.fetchDataAsJSON(url, this)
-      this.selectForm = response.results.map(item => item.pod)
+      this.selectPods = response.results.map(item => item.pod)
     },
     async generateColor() {
-      await (await utils.fetchData(`${api}/namespaces`, this))
-      .forEach(item => this.colors[item['namespace']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/nodes`, this))
-      .forEach(item => this.colors[item['node']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/metrics`, this))
-      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
+        {'endpoint': `${api}/metrics`, 'key': 'metric'},
+        {'endpoint': `${api}/nodes`, 'key': 'node'},
+        {'endpoint': `${api}/steps`, 'key': 'step'}
+        ], this)
     }
   },
   async mounted () {

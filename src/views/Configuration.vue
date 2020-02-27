@@ -71,11 +71,9 @@ export default {
       metricsYAML: null,
       rules: null,
       rulesYAML: null,
-      metricsObject: null,
       configList: [],
       configListIndexes: [],
       activeVersion: 0,
-      activeVersionMetrics: 0,
       from: null,
       to: null
     }
