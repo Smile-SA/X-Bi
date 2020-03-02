@@ -206,15 +206,9 @@ export async function drawBarChart(c) {
     const obj = []
     const color = c.context.colors[item]
     Object.values(dataset[item]).forEach(subItem => {
-<<<<<<< HEAD
-      let fixed = subItem[c.labels.value].toFixed(10)
-      let minTmp = Math.min(fixed)
-      let maxTmp = Math.max(fixed)
-=======
       const fixed = subItem[c.labels.value].toFixed(5)
       const minTmp = Math.min(fixed)
       const maxTmp = Math.max(fixed)
->>>>>>> 775ec2e9614d2f445649e04f6ee4eeeb847fdd8a
       if (min === 0 || minTmp < min) {
         min = minTmp
       }
