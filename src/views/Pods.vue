@@ -197,15 +197,9 @@ export default {
       })
     },
     async getPods (pod) {
-      const url = `${api}/pods`
-
-      if (pod !== undefined) {
-        this.cards = []
-        this.activePod = pod.target.value
-        this.refreshDate(null)
-      }
-      const response = await utils.fetchDataAsJSON(url, this)
-      this.selectPods = response.results.map(item => item.pod)
+      this.cards = []
+      this.activePod = pod.target.value
+      this.refreshDate(null)
     },
     async generateColor() {
       this.colors = await utils.generateColor([
@@ -218,10 +212,9 @@ export default {
   },
   async beforeMount() {
     await this.generateColor()
+    this.selectPods = (await utils.fetchData(`${api}/pods`, this)).map(item => item.pod)
   },
-  async mounted () {
-    this.getPods()
-  }
+  async mounted () {}
 }
 </script>
 

@@ -200,14 +200,8 @@ export default {
     },
   },
   async beforeMount() {
-    const excluded = ['rating', 'metering', 'boinc', 'rook-ceph', 'default', 'monitoring', 'kube-system', 'euro-event']
     await this.generateColor()
-    this.selectForm = (await utils.fetchData(`${api}/namespaces`, this)).filter(item => {
-      if (excluded.includes(item.namespace)) {
-        return false
-      }
-      return true
-    }).map(item => item.namespace)
+    this.selectForm = (await utils.fetchData(`${api}/namespaces`, this)).map(item => item.namespace)
   },
   async mounted () {}
 }
