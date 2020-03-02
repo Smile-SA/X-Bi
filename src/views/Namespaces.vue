@@ -187,27 +187,23 @@ export default {
       })
     },
     async getNamespaces (namespace) {
-      const url = `${api}/namespaces`
-
-      if (namespace !== undefined) {
-        this.cards = []
-        this.activeNamespace = namespace.target.value
-        this.refreshDate(null)
-      }
-      const results = await utils.fetchData(url, this)
-      this.selectForm = results.map(item => item.namespace)
+      this.cards = []
+      this.activeNamespace = namespace.target.value
+      this.refreshDate(null)
     },
     async generateColor() {
-      await (await utils.fetchData(`${api}/metrics`, this))
-      .forEach(item => this.colors[item['metric']] = utils.getRandomColor())
-      await (await utils.fetchData(`${api}/nodes`, this))
-      .forEach(item => this.colors[item['node']] = utils.getRandomColor())
+      this.colors = await utils.generateColor([
+        {'endpoint': `${api}/metrics`, 'key': 'metric'},
+        {'endpoint': `${api}/nodes`, 'key': 'node'},
+        {'endpoint': `${api}/steps`, 'key': 'step'}
+        ], this)
     },
   },
-  async mounted () {
+  async beforeMount() {
     await this.generateColor()
-    this.getNamespaces()
-  }
+    this.selectForm = (await utils.fetchData(`${api}/namespaces`, this)).map(item => item.namespace)
+  },
+  async mounted () {}
 }
 </script>
 
