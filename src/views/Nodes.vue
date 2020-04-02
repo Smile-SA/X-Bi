@@ -199,8 +199,8 @@ export default {
     async generateColor() {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
-        {'endpoint': `${api}/metrics`, 'key': 'metric'},
-        {'endpoint': `${api}/steps`, 'key': 'step'}
+        {'endpoint': `${api}/metrics`, 'key': 'metric'}
+        // {'endpoint': `${api}/steps`, 'key': 'step'}
         ], this)
     },
   },

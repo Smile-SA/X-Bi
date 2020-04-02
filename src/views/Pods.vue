@@ -205,8 +205,9 @@ export default {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
         {'endpoint': `${api}/metrics`, 'key': 'metric'},
-        {'endpoint': `${api}/nodes`, 'key': 'node'},
-        {'endpoint': `${api}/steps`, 'key': 'step'}
+        {'endpoint': `${api}/nodes`, 'key': 'node'}
+        // ,
+        // {'endpoint': `${api}/steps`, 'key': 'step'}
         ], this)
     }
   },

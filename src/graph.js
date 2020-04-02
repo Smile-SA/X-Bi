@@ -1,6 +1,7 @@
 import * as utils from './utils'
 import Chart from 'chart.js'
 
+
 export function generateLineGraph(response, c) {
   const graph = []
   const dataset = utils.groupBy(response, c.sort)

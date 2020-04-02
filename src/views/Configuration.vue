@@ -161,7 +161,7 @@ export default {
       })
     },
     async appliedFromToCard() {
-      const idx = this.activeVersion
+      const idx = this.configList.findIndex((item) => item == this.activeVersion)
       let msg = ""
       if (idx < this.configList.length - 1) {
         msg = `From ${this.activeVersion} to ${this.configList[idx + 1]}`
