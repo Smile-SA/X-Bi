@@ -9,12 +9,7 @@
         <div class="pull-left image">
           <img :src="pictureUrl" />
         </div>
-        <div class="pull-left info">
-          <div>
-            <p class="white">{{ displayName }}</p>
-          </div>
-          <span class="text-muted">{{ email }}</span>
-        </div>
+        <contact-label :display-name="'Admin'" :email="'rnd@alterway.fr'"/>
       </div>
 
       <!-- Sidebar Menu -->
@@ -25,10 +20,14 @@
   </aside>
 </template>
 <script>
+
 export default {
   name: 'Sidebar',
   props: ['displayName', 'pictureUrl', 'email'],
-  components: { SidebarMenu: () => import('./SidebarMenu') },
+  components: {
+    SidebarMenu: () => import('./SidebarMenu'),
+    ContactLabel:  () => import('./ContactLabel')
+  },
   mounted: function() {
     window
       .jQuery('[data-toggle="hideseek"]')
