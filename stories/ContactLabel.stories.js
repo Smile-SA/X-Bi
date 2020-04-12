@@ -22,5 +22,5 @@ export const Label = () => ({
             default: text('mail', 'rnd@alterway.fr'),
         },
     },
-    template: '<contact-label :displayName="name" :email="mail" />',
+    template: '<contact-label :display-name="name" :email="mail" />',
 });

@@ -17,7 +17,7 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <sidebar style="text-centered" :display-name="'Admin'" :email="'rnd@alterway.fr'" />
+    <sidebar style="text-centered" :display-name="compDisplayName" :email="compEmail" />
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -55,6 +55,7 @@ export default {
   components: {
     Sidebar: () => import('./partials/Sidebar')
   },
+  props: ['displayName', 'email'],
   data: function () {
     return {
       user: null,
@@ -62,7 +63,15 @@ export default {
         fixed_layout: false,
         hide_logo: false
       },
-      error: ''
+      error: '',
+    }
+  },
+  computed: {
+    compDisplayName: function () {
+      return this.$route.matched[0] && this.$route.matched[0].name ? this.$route.matched[0].name : this.displayName;
+    },
+    compEmail: function() {
+      return this.$route.matched[0] && this.$route.matched[0].meta.email ? this.$route.matched[0].meta.email : this.email;
     }
   },
   methods: {

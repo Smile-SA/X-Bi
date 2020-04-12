@@ -8,6 +8,8 @@ export default new Router({
     {
       path: '/',
       component: () => import('./components/DashLayout.vue'),
+      name: 'Admin',
+      meta: { email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: false },
       children: [
         {
           path: 'home',

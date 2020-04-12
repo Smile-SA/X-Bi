@@ -1,16 +1,40 @@
 import { action } from '@storybook/addon-actions';
-//import { linkTo } from '@storybook/addon-links';
+import StoryRouter from 'storybook-vue-router';
 
 import Sidebar from '../src/components/partials/Sidebar';
+import {routes} from "./routes";
+import {text, withKnobs} from "@storybook/addon-knobs";
 
 export default {
     title: 'sidebar',
     component: Sidebar,
+    decorators: [withKnobs, StoryRouter(
+        {},
+        {
+            routes: [
+                {
+                    path: '/',
+                    name: 'Admin',
+                    meta: { email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: false },
+                    children: routes
+                }
+            ]}
+    )]
 };
 
 export const Side = () => ({
     components: { Sidebar },
-    template: '<sidebar @click="action" style="text-centered" :display-name="\'Admin\'" :email="\'rnd@alterway.fr\'" />',
-    methods: { action: action('clicked') },
+    template: '<div><sidebar @click="action" style="text-centered" :display-name="name" :email="mail" />' +
+        '<router-view/></div>',
+    props: {
+        name: {
+            type: String,
+            default: text('name', 'Name'),
+        },
+        mail: {
+            type: String,
+            default: text('mail', 'mail@alterway.fr'),
+        },
+    },
 });
 
