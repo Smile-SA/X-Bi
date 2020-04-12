@@ -9,7 +9,7 @@
         <div class="pull-left image">
           <img :src="pictureUrl" />
         </div>
-        <contact-label :display-name="'Admin'" :email="'rnd@alterway.fr'"/>
+        <contact-label :display-name="displayName" :email="email"/>
       </div>
 
       <!-- Sidebar Menu -->

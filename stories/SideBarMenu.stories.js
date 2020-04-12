@@ -1,16 +1,32 @@
 import { action } from '@storybook/addon-actions';
-// import { linkTo } from '@storybook/addon-links';
-window.jQuery = require('jquery')
-window.$ = require('jquery')
+window.jQuery = require('jquery');
+window.$ = require('jquery');
 import SidebarMenu from '../src/components/partials/SidebarMenu';
+import StoryRouter from "storybook-vue-router";
+import {routes} from "./routes";
 
 export default {
     title: 'SidebarMenu',
     component: SidebarMenu,
+    decorators: [StoryRouter(
+        {},
+        {
+            routes: [
+                {
+                    path: '/',
+                    name: 'Admin',
+                    meta: { email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: false },
+                    children: routes
+                }
+            ]}
+    )]
 };
 
 export const Side = () => ({
     components: { SidebarMenu },
-    template: '<SidebarMenu @click="action"></SidebarMenu>',
+    template: '<div>' +
+        '<SidebarMenu @click="action"></SidebarMenu>' +
+        '<router-view/>' +
+        '</div>',
     methods: { action: action('clicked') },
 });
