@@ -141,18 +141,6 @@ export default {
 </script>
 
 <style>
-
-.slice-icon {
-  background-image: url('../../public/static/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-  background-repeat: no-repeat;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  width: 45px;
-  font-size: 45px;
-  text-align: center;
-}
 .info-box {
   cursor: pointer;
 }

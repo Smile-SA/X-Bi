@@ -15,18 +15,7 @@
             <div class="row">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
-
-                  <div class="info-box-content" @click="redirect(card)">
-                    <div style="text-align: center;">
-                      <p></p>
-                      <span class="info-box-text">{{card.label}}</span>
-                      <span class="info-box-number">{{card.value}}</span>
-                    </div>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
+                <card :card="card"/>
               </div>
               <div class="form-center">
                 <form class="form-inline">
@@ -80,6 +69,9 @@ import * as utils from  '../utils'
 const api = generateAPIUrl()
 
 export default {
+  components: {
+    Card: import('../components/Card')
+  },
   data () {
     return {
       cards: [],
@@ -208,7 +200,7 @@ body {
   outline-offset: 2px;
 }
 
-.form-inline {  
+.form-inline {
   display: flex;
   flex-flow: row wrap;
   align-items: center;
@@ -242,7 +234,7 @@ body {
   .form-inline input {
     margin: 10px 0;
   }
-  
+
   .form-inline {
     flex-direction: column;
     align-items: stretch;

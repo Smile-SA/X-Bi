@@ -26,17 +26,7 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
-                  <div class="info-box-content" @click="redirect(card)">
-                    <div style="text-align: center;">
-                      <p></p>
-                      <span class="info-box-text">{{card.label}}</span>
-                      <span class="info-box-number">{{card.value}}</span>
-                      <span class="info-box-number-rating">{{card.message}}</span>
-                    </div>
-                  </div>
-                </div>
+                <card :card="card"/>
               </div>
               <div>
                 <div class="col-sm-6 col-xs-12">
@@ -71,6 +61,9 @@ import dateformat from 'dateformat'
 const api = generateAPIUrl()
 
 export default {
+  components: {
+    Card: import('../components/Card')
+  },
   data () {
     return {
       lineChartNamespaces: null,
@@ -93,9 +86,6 @@ export default {
   methods: {
     clicked(data) {
       this.selected = data.target.id
-    },
-    redirect(data) {
-      utils.redirectCard(data, this)
     },
     getURL(data) {
       utils.getURL(data, this)
@@ -213,18 +203,6 @@ export default {
 </script>
 
 <style>
-.slice-icon {
-  background-image: url('../../public/static/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-  background-repeat: no-repeat;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  width: 45px;
-  font-size: 45px;
-  text-align: center;
-}
-
 .info-box {
   cursor: pointer;
 }

@@ -59,7 +59,7 @@ export async function downloadFile(url, filename, type) {
     content = JSONToCSV(json.results)
     mime = 'text/csv'
   }
-  
+
   const el = document.createElement('a')
   el.setAttribute('href', `data:${mime};charset=utf-8,` + encodeURIComponent(content))
   el.setAttribute('download', filename)
@@ -156,12 +156,6 @@ export function groupBy(objectArray, property) {
     acc[key].push(obj)
     return acc
   }, {})
-}
-  
-export function redirectCard(data, that) {
-  if (data.link !== '/') {
-    that.$router.push(data.link)
-  }
 }
 
 export function getURL(data, that) {
