@@ -6,7 +6,7 @@ import {routes} from "./routes";
 import {text, withKnobs} from "@storybook/addon-knobs";
 
 export default {
-    title: 'sidebar',
+    title: 'Navigation',
     component: Sidebar,
     decorators: [withKnobs, StoryRouter(
         {},

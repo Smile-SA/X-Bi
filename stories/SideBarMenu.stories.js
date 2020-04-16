@@ -6,7 +6,7 @@ import StoryRouter from "storybook-vue-router";
 import {routes} from "./routes";
 
 export default {
-    title: 'SidebarMenu',
+    title: 'Navigation',
     component: SidebarMenu,
     decorators: [StoryRouter(
         {},
@@ -22,7 +22,7 @@ export default {
     )]
 };
 
-export const Side = () => ({
+export const SideBar = () => ({
     components: { SidebarMenu },
     template: '<div>' +
         '<SidebarMenu @click="action"></SidebarMenu>' +

@@ -8,7 +8,7 @@ import {
 import {routes} from "./routes";
 
 export default {
-    title: 'Navigation menu',
+    title: 'Navigation',
     component: DashLayout,
     decorators: [withKnobs, StoryRouter(
         {},
