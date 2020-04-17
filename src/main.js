@@ -11,6 +11,11 @@ import { VueContext } from 'vue-context'
 import VueHighlightJS from 'vue-highlight.js';
 import yaml_highlight from 'highlight.js/lib/languages/yaml.js';
 import jsyaml from 'js-yaml'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faFontAwesome } from '@fortawesome/free-brands-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
+
+library.add(faFontAwesome);
 
 Vue.use(jsyaml)
 Vue.use(VueHighlightJS, {languages: {yaml_highlight}})
@@ -18,6 +23,7 @@ Vue.config.productionTip = false
 
 Vue.component('VueContext', VueContext)
 Vue.component('VueRangedatePicker', VueRangedatePicker)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 window.jQuery = require('jquery')
 window.$ = require('jquery')
 
