@@ -16,6 +16,7 @@
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
                 <card :card="card"/>
+              </div>
               <div>
             </div>
           </div>
