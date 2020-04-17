@@ -21,13 +21,8 @@
     export default {
         name: "Card",
         props: {card: Object},
-        created: function () {
-            console.log(this.card);
-            // => { message: "goodbye", foo: "abc", bar: "def" }
-        },
         methods: {
             redirectCard() {
-                consl
                 if (this.card.link !== '/') {
                     this.$router.push(this.card.link);
                 }
