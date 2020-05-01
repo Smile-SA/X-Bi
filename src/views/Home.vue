@@ -24,16 +24,10 @@
                     </ul>
                   </VueContext>
                   <div class="col-sm-12">
-                    <p class="text-center">
-                      <strong v-if="lineChartNodes">{{lineChartNodes.title}}</strong>
-                    </p>
-                    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNodes" height="80%"></canvas>
+                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dateRange=dateRange  />
                   </div>
                   <div class="col-sm-12">
-                    <p class="text-center">
-                      <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
-                    </p>
-                    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces" height="80%"></canvas>
+                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dateRange=dateRange  />
                   </div>
 
                 </div>
@@ -57,27 +51,50 @@
 
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import * as graph from '../graph'
 
 const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: () => import('../components/Card')
+    Card: () => import('../components/Card'),
+    LineChart: () => import ('../components/charts/LineChart')
   },
-  data() {
-    return {
-      date: null,
-      lineChartNodes: null,
-      lineChartNamespaces: null,
-      colors: {},
-      cards: [],
-      to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
-      selected: null,
-      queryArray: {}
-    }
-  },
+    data() {
+        return {
+            date: null,
+            lineChartNodes: null,
+            lineChartNamespaces: null,
+            dateRange: null,
+            confLineChartNameSpace: {
+                url: `${api}/namespaces/rating`,
+                id: 'lineChartNamespaces',
+                sort: 'namespace',
+                context: this,
+                labels: {
+                    time: 'frame_begin',
+                    value: 'frame_price',
+                    title: 'Slices rate (in Euros)'
+                }
+            },
+            confLineChartNodes: {
+                url: `${api}/nodes/rating`,
+                id: 'lineChartNodes',
+                sort: 'node',
+                context: this,
+                labels: {
+                    time: 'frame_begin',
+                    value: 'frame_price',
+                    title: 'Nodes rate (in Euros)'
+                }
+            },
+            colors: {},
+            cards: [],
+            to: new Date().toISOString(),
+            from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+            selected: null,
+            queryArray: {}
+        }
+    },
   computed: {
     isMobile() {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
@@ -91,39 +108,8 @@ export default {
       utils.getURL(data, this)
     },
     refreshDate(date) {
+      this.dateRange = date;
       utils.refreshDate(date, this)
-    },
-    async drawLineChartNodesRating() {
-      this.lineChartNodes = await graph.drawLineChart({
-        url: `${api}/nodes/rating`,
-        graph: this.lineChartNodes,
-        id: 'lineChartNodes',
-        sort: 'node',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Nodes rate (in Euros)'
-        }
-      })
-    },
-    async drawLineChartNamespaceRating() {
-      this.lineChartNamespaces = await graph.drawLineChart({
-        url: `${api}/namespaces/rating`,
-        graph: this.lineChartNamespaces,
-        id: 'lineChartNamespaces',
-        sort: 'namespace',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Slices rate (in Euros)'
-        }
-      })
-    },
-    async drawGraphs() {
-      this.drawLineChartNodesRating()
-      this.drawLineChartNamespaceRating()
     },
     async drawCards() {
       await this.namespacesCard()
@@ -170,7 +156,6 @@ export default {
   async beforeMount() {
     await this.generateColorSet()
     this.drawCards()
-    this.drawGraphs()
   },
   async mounted() {}
 }

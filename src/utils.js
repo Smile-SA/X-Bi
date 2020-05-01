@@ -178,5 +178,4 @@ export function refreshDate(date, that) {
   }
   that.cards = []
   that.drawCards()
-  that.drawGraphs()
 }

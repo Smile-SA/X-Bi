@@ -33,7 +33,7 @@
                   <p class="text-center">
                     <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces"></canvas>
+                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dateRange=dateRange  />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
@@ -62,10 +62,12 @@ const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: import('../components/Card')
+    Card: import('../components/Card'),
+    LineChart: () => import ('../components/charts/LineChart')
   },
   data () {
     return {
+      dateRange: null,
       lineChartNamespaces: null,
       barChartMetrics: null,
       selectNodes: null,
@@ -81,6 +83,24 @@ export default {
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
+    },
+    confLineChartNameSpace () {
+      if (!api || !this.activeNode) {
+        return;
+      }
+      const c = {
+        url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
+        id: 'lineChartNamespaces',
+        sort: 'namespace',
+        context: this,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Slices rates (in Euros)'
+        }
+      };
+
+      return c;
     }
   },
   methods: {
@@ -91,24 +111,14 @@ export default {
       utils.getURL(data, this)
     },
     refreshDate(date) {
+      if (date) {
+        this.dateRange = date;
+      }
       utils.refreshDate(date, this)
+      this.drawGraphs()
     },
     showDatePicker() {
       return this.activeNode !== null
-    },
-    async drawLineChartNamespaces() {
-      this.lineChartNamespaces = await graph.drawLineChart({
-        url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
-        graph: this.lineChartNamespaces,
-        id: 'lineChartNamespaces',
-        sort: 'namespace',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Slices rates (in Euros)'
-        }
-      })
     },
     async drawBarChartMetrics() {
       this.barChartMetrics = await graph.drawBarChart({
@@ -126,7 +136,6 @@ export default {
     },
     async drawGraphs() {
       this.drawBarChartMetrics()
-      this.drawLineChartNamespaces()
     },
     async drawCards() {
       await this.cardNamespaces()
