@@ -24,10 +24,10 @@
                     </ul>
                   </VueContext>
                   <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dateRange=dateRange  />
+                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dateRange=dateRange :getData=this.getNodes />
                   </div>
                   <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dateRange=dateRange  />
+                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dateRange=dateRange :getData=this.getNamespaces />
                   </div>
 
                 </div>
@@ -101,6 +101,13 @@ export default {
     }
   },
   methods: {
+
+    async getNodes() {
+      return await utils.fetchDataAsJSON(this.confLineChartNodes.url, this);
+    },
+    async getNamespaces() {
+      return await utils.fetchDataAsJSON(this.confLineChartNameSpace.url, this);
+    },
     clicked(data) {
       this.selected = data.target.id
     },

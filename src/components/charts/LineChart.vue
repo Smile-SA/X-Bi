@@ -8,7 +8,7 @@
 
     export default {
         name: "LineChart",
-        props: ['idL', 'height', 'configuration', 'dateRange'],
+        props: ['idL', 'height', 'configuration', 'dateRange', 'getData'],
         data() {
             return {
                 chart: null,
@@ -180,13 +180,12 @@
                     return;
                 }
 
-                const {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
+                const {total, results} = await this.getData();
                 if (total === 0) {
                     return this.chart
                 }
                 const {ctx, config} = this.generateLineGraph(results, c)
-                const queryDate = utils.convertURLDateParameter(c.context.from, c.context.to)
-                c.context.queryArray[c.id] = `${c.url}${queryDate}`
+
                 this.chart = new Chart(ctx, config)
             }
         }

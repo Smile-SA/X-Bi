@@ -33,7 +33,7 @@
                   <p class="text-center">
                     <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
-                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dateRange=dateRange  />
+                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dateRange=dateRange :getData=this.getNamespaces />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
@@ -109,6 +109,9 @@ export default {
     },
     getURL(data) {
       utils.getURL(data, this)
+    },
+    async getNamespaces() {
+      return await utils.fetchDataAsJSON(this.confLineChartNameSpace.url, this);
     },
     refreshDate(date) {
       if (date) {
