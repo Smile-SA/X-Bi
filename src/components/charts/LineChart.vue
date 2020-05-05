@@ -1,5 +1,5 @@
 <template>
-    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :dump="JSON.stringify(currentDateRange)"></canvas>
+    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :title=dataS.toString()></canvas>
 </template>
 
 <script>
@@ -8,50 +8,22 @@
 
     export default {
         name: "LineChart",
-        props: ['idL', 'height', 'configuration', 'dateRange', 'getData'],
+        props: ['idL', 'height', 'configuration', 'dataS'],
         data() {
             return {
                 chart: null,
-                to: new Date().toISOString(),
-                from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
-                oldDateRange: null,
+                currentData: {total: 0, results: []}
             }
         },
         async mounted() {
-            const date = this.currentDateRange;
-            if (date !== null) {
-                this.from = date.start.toISOString().split('.')[0] + '.000Z'
-                if (date.end === null || date.start === date.end) {
-                    date.end = new Date(this.from)
-                    date.end.setDate(date.end.getDate() + 1)
-                }
-                this.to = date.end.toISOString().split('.')[0] + '.000Z'
-                this.to = this.to.replace('T', ' ')
-                this.from = this.from.replace('T', ' ')
-            }
             this.drawLineChart(this.configuration);
         },
         beforeUpdate() {
-          if (this.oldDateRange == this.dateRange) {
-              return;
-          }
-            const date = this.currentDateRange;
-            if (date !== null) {
-                this.from = date.start.toISOString().split('.')[0] + '.000Z'
-                if (date.end === null || date.start === date.end) {
-                    date.end = new Date(this.from)
-                    date.end.setDate(date.end.getDate() + 1)
-                }
-                this.to = date.end.toISOString().split('.')[0] + '.000Z'
-                this.to = this.to.replace('T', ' ')
-                this.from = this.from.replace('T', ' ')
-            }
             this.drawLineChart(this.configuration);
         },
-        computed: {
-             currentDateRange() {
-                 this.oldDateRange = this.oldDateRange;
-                return this.dateRange;
+        watch: {
+            currentData: (n) => {
+                return n;
             }
         },
         methods: {
@@ -60,6 +32,7 @@
             },
             generateLineGraph(response, c) {
                 const graph = []
+
                 const dataset = utils.groupBy(response, c.sort)
                 const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
@@ -71,7 +44,7 @@
                 let max = 0
                 Object.keys(dataset).forEach(item => {
                     const obj = []
-                    const color = c.context.colors[item]
+                    const color = c.colors[item]
                     Object.values(dataset[item]).forEach(subItem => {
                         const fixed = subItem[c.labels.value].toFixed(5)
                         const minTmp = Math.min(fixed)
@@ -156,7 +129,7 @@
                             text: c.labels.title,
                             fontSize: 20
                         },
-                        maintainAspectRatio: !c.context.isMobile,
+                        maintainAspectRatio: !c.isMobile,
                         legend: {
                             position: 'top',
                             display: true
@@ -172,21 +145,20 @@
                 }
                 return {ctx: ctx, config: config} // eslint-disable-line no-new
             },
-            async drawLineChart(c) {
-                if (this.chart !== null) {
-                    this.chart.destroy()
-                }
-                if (!c || !c.url) {
-                    return;
-                }
+            drawLineChart(c) {
+                this.dataS.then((d => {
+                    if (this.chart !== null) {
+                        this.chart.destroy()
+                    }
 
-                const {total, results} = await this.getData();
-                if (total === 0) {
-                    return this.chart
-                }
-                const {ctx, config} = this.generateLineGraph(results, c)
+                    this.currentData = d;
+                    if (this.currentData.total === 0) {
+                        return this.chart
+                    }
+                    const {ctx, config} = this.generateLineGraph(this.currentData.results, c)
 
-                this.chart = new Chart(ctx, config)
+                    this.chart = new Chart(ctx, config)
+                }).bind(this));
             }
         }
     }

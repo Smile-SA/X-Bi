@@ -24,10 +24,10 @@
                     </ul>
                   </VueContext>
                   <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dateRange=dateRange :getData=this.getNodes />
+                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dataS=this.getNodes() />
                   </div>
                   <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dateRange=dateRange :getData=this.getNamespaces />
+                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dataS=this.getNamespaces() />
                   </div>
 
                 </div>
@@ -65,28 +65,6 @@ export default {
             lineChartNodes: null,
             lineChartNamespaces: null,
             dateRange: null,
-            confLineChartNameSpace: {
-                url: `${api}/namespaces/rating`,
-                id: 'lineChartNamespaces',
-                sort: 'namespace',
-                context: this,
-                labels: {
-                    time: 'frame_begin',
-                    value: 'frame_price',
-                    title: 'Slices rate (in Euros)'
-                }
-            },
-            confLineChartNodes: {
-                url: `${api}/nodes/rating`,
-                id: 'lineChartNodes',
-                sort: 'node',
-                context: this,
-                labels: {
-                    time: 'frame_begin',
-                    value: 'frame_price',
-                    title: 'Nodes rate (in Euros)'
-                }
-            },
             colors: {},
             cards: [],
             to: new Date().toISOString(),
@@ -98,15 +76,44 @@ export default {
   computed: {
     isMobile() {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
+    },
+    confLineChartNameSpace() {
+      return {
+
+        id: 'lineChartNamespaces',
+        sort: 'namespace',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Slices rate (in Euros)'
+        }
+      }
+    },
+    confLineChartNodes() {
+      return {
+        id: 'lineChartNodes',
+        sort: 'node',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Nodes rate (in Euros)'
+        }
+      }
     }
   },
   methods: {
 
     async getNodes() {
-      return await utils.fetchDataAsJSON(this.confLineChartNodes.url, this);
+      let url = `${api}/nodes/rating`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     async getNamespaces() {
-      return await utils.fetchDataAsJSON(this.confLineChartNameSpace.url, this);
+      let url = `${api}/namespaces/rating`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     clicked(data) {
       this.selected = data.target.id

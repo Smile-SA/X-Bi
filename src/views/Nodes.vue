@@ -33,7 +33,7 @@
                   <p class="text-center">
                     <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
-                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dateRange=dateRange :getData=this.getNamespaces />
+                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
@@ -92,7 +92,8 @@ export default {
         url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
         id: 'lineChartNamespaces',
         sort: 'namespace',
-        context: this,
+        colors: this.colors,
+        isMobile: this.isMobile,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
@@ -101,6 +102,9 @@ export default {
       };
 
       return c;
+    },
+    nameSpaceData() {
+      return this.getNamespaces();
     }
   },
   methods: {
@@ -111,7 +115,11 @@ export default {
       utils.getURL(data, this)
     },
     async getNamespaces() {
-      return await utils.fetchDataAsJSON(this.confLineChartNameSpace.url, this);
+      if (!this.activeNode) {
+        return {total: 0, results: []}
+      }
+      let url = `${api}/nodes/${this.activeNode}/namespaces/rating`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     refreshDate(date) {
       if (date) {

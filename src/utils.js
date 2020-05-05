@@ -165,7 +165,7 @@ export function getURL(data, that) {
   downloadFile(url, filename, option)
 }
 
-export function refreshDate(date, that) {
+export async function refreshDate(date, that) {
   if (date !== null) {
     that.from = date.start.toISOString().split('.')[0] + '.000Z'
     if (date.end === null || date.start === date.end) {
@@ -177,5 +177,5 @@ export function refreshDate(date, that) {
     that.from = that.from.replace('T', ' ')
   }
   that.cards = []
-  that.drawCards()
+  await that.drawCards()
 }
