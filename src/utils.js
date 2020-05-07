@@ -177,5 +177,11 @@ export async function refreshDate(date, that) {
     that.from = that.from.replace('T', ' ')
   }
   that.cards = []
-  await that.drawCards()
+  if (that.drawCards) {
+   await that.drawCards()
+  }
+  if (that.drawGraphs) {
+    await that.drawGraphs()
+  }
+
 }

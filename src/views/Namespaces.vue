@@ -32,10 +32,7 @@
               </div>
               <div>
                 <div class="col-sm-6 col-xs-12">
-                  <p class="text-center">
-                    <strong v-if="barChartDataMetrics">{{barChartDataMetrics.title}}</strong>
-                  </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
+                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
@@ -58,11 +55,13 @@ import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
 import dateformat from 'dateformat'
+import BarChart from "../components/charts/BarChart";
 
 const api = generateAPIUrl()
 
 export default {
   components: {
+    BarChart : () => import('../components/charts/BarChart'),
     Card: import('../components/Card')
   },
   data () {
@@ -84,11 +83,28 @@ export default {
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
-    }
+    },
+    confBarChartMetrics() {
+      return {
+        graph: this.barChartMetrics,
+        id: 'barChartMetrics',
+        sort: 'metric',
+        colors: this.colors,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Metrics rate (in Euros)'
+        }
+      }
+    },
   },
   methods: {
     clicked(data) {
       this.selected = data.target.id
+    },
+    async getMetrics() {
+      let url = `${api}/namespaces/${this.activeNamespace}/rating`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     getURL(data) {
       utils.getURL(data, this)
@@ -113,22 +129,7 @@ export default {
         }
       })
     },
-    async drawBarChartMetrics() {
-      this.barChartMetrics = await graph.drawBarChart({
-        url: `${api}/namespaces/${this.activeNamespace}/rating`,
-        graph: this.barChartMetrics,
-        id: 'barChartMetrics',
-        sort: 'metric',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Metrics rate (in Euros)'
-        }
-      })
-    },
     async drawGraphs() {
-      this.drawBarChartMetrics()
       this.drawPieNodesPods()
     },
     async drawCards() {

@@ -39,7 +39,8 @@
                   <p class="text-center">
                     <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
+<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>-->
+                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
               </div>
             </div>
@@ -63,7 +64,8 @@ const api = generateAPIUrl()
 export default {
   components: {
     Card: import('../components/Card'),
-    LineChart: () => import ('../components/charts/LineChart')
+    LineChart: () => import ('../components/charts/LineChart'),
+    BarChart: () => import ('../components/charts/BarChart'),
   },
   data () {
     return {
@@ -83,6 +85,19 @@ export default {
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
+    },
+    confBarChartMetrics() {
+      return {
+        graph: this.barChartMetrics,
+        id: 'barChartMetrics',
+        sort: 'metric',
+        colors: this.colors,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Metrics rate (in Euros)'
+        }
+      }
     },
     confLineChartNameSpace () {
       if (!api || !this.activeNode) {
@@ -111,6 +126,10 @@ export default {
     clicked(data) {
       this.selected = data.target.id
     },
+    async getMetrics() {
+      let url = `${api}/nodes/${this.activeNode}/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
     getURL(data) {
       utils.getURL(data, this)
     },
@@ -126,27 +145,9 @@ export default {
         this.dateRange = date;
       }
       utils.refreshDate(date, this)
-      this.drawGraphs()
     },
     showDatePicker() {
       return this.activeNode !== null
-    },
-    async drawBarChartMetrics() {
-      this.barChartMetrics = await graph.drawBarChart({
-        url: `${api}/nodes/${this.activeNode}/rating`,
-        graph: this.barChartMetrics,
-        id: 'barChartMetrics',
-        sort: 'metric',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Metrics rates (in Euros)'
-        }
-      })
-    },
-    async drawGraphs() {
-      this.drawBarChartMetrics()
     },
     async drawCards() {
       await this.cardNamespaces()
