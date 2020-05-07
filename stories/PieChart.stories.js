@@ -1,4 +1,4 @@
-import LineChart from '../src/components/charts/LineChart';
+import PieChart from '../src/components/charts/PieChart';
 import {
     withKnobs,
     object,
@@ -8,12 +8,12 @@ import {generateData} from "./data";
 
 export default {
     title: 'Chart',
-    component: LineChart,
+    component: PieChart,
     decorators: [withKnobs],
 };
 
 const defaultConfig = {
-    id: 'lineChart',
+    id: 'pieChart',
     sort: 'anonymous',
     colors: [],
     isMobile: () => false,
@@ -24,8 +24,8 @@ const defaultConfig = {
     }
 };
 
-export const Line = () => ({
-    components: { LineChart },
+export const Pie = () => ({
+    components: { PieChart },
     props: {
         configuration: {
             type: Object,
@@ -41,5 +41,5 @@ export const Line = () => ({
             });
         },
     },
-    template: '<line-chart class="pointer" :configuration=configuration :idL="\'lineChart\'"  :height=100 :dataS=this.getAsyncData() />',
+    template: '<pie-chart class="pointer" :configuration=configuration :idL="\'pieChart\'"  :height=100 :dataS=this.getAsyncData() />',
 });

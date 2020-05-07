@@ -1,4 +1,4 @@
-import LineChart from '../src/components/charts/LineChart';
+import BarChart from '../src/components/charts/BarChart';
 import {
     withKnobs,
     object,
@@ -8,12 +8,12 @@ import {generateData} from "./data";
 
 export default {
     title: 'Chart',
-    component: LineChart,
+    component: BarChart,
     decorators: [withKnobs],
 };
 
 const defaultConfig = {
-    id: 'lineChart',
+    id: 'barChart',
     sort: 'anonymous',
     colors: [],
     isMobile: () => false,
@@ -24,8 +24,8 @@ const defaultConfig = {
     }
 };
 
-export const Line = () => ({
-    components: { LineChart },
+export const Bar = () => ({
+    components: { BarChart },
     props: {
         configuration: {
             type: Object,
@@ -41,5 +41,5 @@ export const Line = () => ({
             });
         },
     },
-    template: '<line-chart class="pointer" :configuration=configuration :idL="\'lineChart\'"  :height=100 :dataS=this.getAsyncData() />',
+    template: '<bar-chart class="pointer" :configuration=configuration :idL="\'barChart\'"  :height=100 :dataS=this.getAsyncData() />',
 });
