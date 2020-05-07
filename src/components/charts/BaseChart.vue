@@ -1,5 +1,5 @@
 <template>
-    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :title=dataS.toString()></canvas>
+    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :titre=dataS.toString()></canvas>
 </template>
 
 <script>

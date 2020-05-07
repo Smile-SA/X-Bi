@@ -38,7 +38,8 @@
                   <p class="text-center">
                     <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>
+<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>-->
+                  <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.gtNodePods() />
                 </div>
               </div>
             </div>
@@ -62,6 +63,7 @@ const api = generateAPIUrl()
 export default {
   components: {
     BarChart : () => import('../components/charts/BarChart'),
+    PieChart : () => import('../components/charts/PieChart'),
     Card: import('../components/Card')
   },
   data () {
@@ -97,6 +99,20 @@ export default {
         }
       }
     },
+    confPieChartNodesPods() {
+      return {
+        graph: this.pieChartNodesPods,
+        id: 'pieChartNodesPods',
+        sort: 'node',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Services repartition by nodes'
+        }
+      }
+    },
   },
   methods: {
     clicked(data) {
@@ -104,6 +120,10 @@ export default {
     },
     async getMetrics() {
       let url = `${api}/namespaces/${this.activeNamespace}/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
+    async gtNodePods() {
+      let url = `${api}/namespaces/${this.activeNamespace}/nodes/pods`;
       return await utils.fetchDataAsJSON(url, this);
     },
     getURL(data) {
@@ -114,23 +134,6 @@ export default {
     },
     showDatePicker() {
       return this.activeNamespace !== null
-    },
-    async drawPieNodesPods() {
-      this.pieChartNodesPods = await graph.drawPieChart({
-        url: `${api}/namespaces/${this.activeNamespace}/nodes/pods`,
-        graph: this.pieChartNodesPods,
-        id: 'pieChartNodesPods',
-        sort: 'node',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Services repartition by nodes'
-        }
-      })
-    },
-    async drawGraphs() {
-      this.drawPieNodesPods()
     },
     async drawCards() {
       await this.cardNodes()
