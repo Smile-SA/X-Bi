@@ -18,7 +18,9 @@ export async function fetchTotal(url, that) {
   const queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
   try {
-    const response = await fetch(url, {})
+    const response = await fetch(url, {
+      credentials: 'include'
+    })
     const json = await response.json()
     return json.total
   }
@@ -30,7 +32,9 @@ export async function fetchTotal(url, that) {
 export async function fetchData(url, that) {
   const queryDate = convertURLDateParameter(that.from, that.to)
   url = url + queryDate
-  const response = await fetch(url, {})
+  const response = await fetch(url, {
+    credentials: 'include'
+  })
   const json = await response.json()
   return json.results
 }
@@ -39,7 +43,9 @@ export async function fetchDataAsJSON(url, that) {
   const queryDate = convertURLDateParameter(that.from, that.to)
 
   url = url + queryDate
-  const response = await fetch(url, {})
+  const response = await fetch(url, {
+    credentials: 'include'
+  })
   const json = await response.json()
   if (json.total === 0) {
     return {total: 0, results: null}
@@ -48,7 +54,9 @@ export async function fetchDataAsJSON(url, that) {
 }
 
 export async function downloadFile(url, filename, type) {
-  const response = await fetch(url, {})
+  const response = await fetch(url, {
+    credentials: 'include'
+  })
   const json = await response.json()
   let content
   let mime
