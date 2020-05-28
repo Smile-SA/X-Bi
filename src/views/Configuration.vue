@@ -122,7 +122,7 @@ export default {
     },
     async drawYaml() {
       const active = this.timestampFromDate(this.activeVersion)
-      const url = `${api}/rating/config/${active}` 
+      const url = `${api}/rating/configs/${active}` 
 
       const data = await utils.fetchDataAsJSON(url, this)
 
