@@ -17,7 +17,7 @@
       </nav>
     </header>
     <!-- Left side column. contains the logo and sidebar -->
-    <sidebar style="text-centered" :display-name="'Admin'" :email="'rnd@alterway.fr'" />
+    <sidebar style="text-centered" :display-name="this.user" :email="'rnd@alterway.fr'" />  
 
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
@@ -49,15 +49,21 @@
 </template>
 
 <script>
+import { generateAPIUrl } from '../variables'
+import * as utils from  '../utils'
+
+const api = generateAPIUrl()
 
 export default {
   name: 'Dash',
   components: {
     Sidebar: () => import('./partials/Sidebar')
   },
-  data: function () {
+  data () {
     return {
-      user: null,
+      to: new Date().toISOString(),
+      from: new Date(new Date().setDate(new Date().getDate() - 3)).toISOString(),
+      user: 'Default',
       classes: {
         fixed_layout: false,
         hide_logo: false
@@ -68,7 +74,14 @@ export default {
   methods: {
     changeloading () {
       this.$store.commit('TOGGLE_SEARCHING')
+    },
+    async getTenant () {
+      const url = `${api}/current`
+      this.user = await utils.fetchData(url, this)
     }
+  },
+  mounted () {
+    this.getTenant()
   }
 }
 </script>
