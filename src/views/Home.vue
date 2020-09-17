@@ -14,7 +14,7 @@
               <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
                 <div v-bind:class="'info-box bg-' + card.color">
                   <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
-
+                  
                   <div class="info-box-content" @click="redirect(card)">
                     <div style="text-align: center;">
                       <p></p>
@@ -129,7 +129,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          title: 'Slices rate (in Euros)'
+          title: 'Namespaces rate (in Euros)'
         }
       })
     },
@@ -147,12 +147,12 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
-        label: 'Slices',
+        label: 'Namespaces',
         color: 'purple',
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
-    async nodesCard() {
+   async nodesCard() {
       const url = `${api}/nodes`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
@@ -167,7 +167,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
-        label: 'Services',
+        label: 'Pods',
         color: 'blue',
         icon: 'fa fa-sitemap'
       })

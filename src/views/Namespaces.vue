@@ -4,9 +4,9 @@
   <!-- <meta charset="utf-8"> -->
     <div class="row">
       <div class="form-group col-xs-2">
-        <h4>Select a slice</h4>
+        <h4>Select a Namespace</h4>
         <select class="form-control" v-on:change="getNamespaces">
-          <option selected disabled> -- Select a Slice -- </option>
+          <option selected disabled> -- Select a Namespace -- </option>
           <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>

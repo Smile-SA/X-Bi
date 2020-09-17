@@ -19,9 +19,10 @@ export default new Router({
         {
           path: 'namespaces',
           component: () => import('./views/Namespaces.vue'),
-          name: 'Slices',
-          meta: { description: 'Detailled view of slices', requiresAuth: false }
+          name: 'Namespaces',
+          meta: { description: 'Detailled view of namespaces', requiresAuth: false }
         },
+       
         {
           path: 'nodes',
           component: () => import('./views/Nodes.vue'),
@@ -31,8 +32,8 @@ export default new Router({
         {
           path: 'pods',
           component: () => import('./views/Pods.vue'),
-          name: 'Services',
-          meta: { description: 'Detailled view of services', requiresAuth: false }
+          name: 'pods',
+          meta: { description: 'Detailled view of pods', requiresAuth: false }
         },
         {
           path: 'configuration',
@@ -54,9 +55,15 @@ export default new Router({
         }
       ]
     },
+   
     {
       path: '*',
       component: () => import('./components/404Layout.vue'),
-    }
-  ]
+    },   
+    
+    {
+          path: '/login',
+          component: () => import('./views/login.vue'),
+                 }
+]
 })

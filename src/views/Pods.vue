@@ -3,9 +3,9 @@
   <section class="content">
     <div class="row">
       <div class="form-group col-xs-2">
-        <h4>Select a service</h4>
+        <h4>Select a pod</h4>
         <select class="form-control" v-on:change="getPods">
-          <option selected disabled> -- Select a service -- </option>
+          <option selected disabled> -- Select a pod -- </option>
           <option v-for="option in selectPods" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
@@ -131,6 +131,8 @@ export default {
         }
       })
     },
+  
+    
     async drawGraphs() {
       this.drawBarChartMetrics()
     },
@@ -151,6 +153,7 @@ export default {
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
+ 
     async cardNode() {
       const url = `${api}/pods/${this.activePod}/node`
       const response = await utils.fetchDataAsJSON(url, this)

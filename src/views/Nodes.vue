@@ -116,7 +116,7 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          title: 'Slices rates (in Euros)'
+          title: 'Namespaces rates (in Euros)'
         }
       })
     },
@@ -148,9 +148,20 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
-        label: 'Services',
+        label: 'Pods',
         color: 'blue',
-        icon: 'fa fa-sitemap'
+        icon: 'fab fa-cloudversify'
+      })
+    },
+    async cardCo2() {
+      const url = `${api}/pods/${this.activePod}/namespace`
+      const response = await utils.fetchDataAsJSON(url, this)
+      this.cards.push({
+        value: response.results[0].namespace,
+        link: '/',
+        label: 'Co2',
+        color: 'blue',
+        icon: 'fab fa-cloudversify'
       })
     },
     async cardNamespaces() {
@@ -158,7 +169,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
-        label: 'Slices',
+        label: 'Namespaces',
         color: 'purple',
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })

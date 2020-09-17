@@ -18,7 +18,6 @@
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <sidebar style="text-centered" :display-name="this.user" :email="'rnd@alterway.fr'" />  
-
     <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
       <!-- Content Header (Page header) -->
@@ -34,6 +33,14 @@
           </li>
           <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
+         <!--<router-link tag="li" class="pageLink" to="/login">-->
+             <button @click="$router.push('login')" class="button" type="button">Login</button>
+         <!-- </router-link> -->    
+        
+      <a href="http://localhost:5012/logout">
+       <button class="button2" type="button">Logout</button>
+     </a>
+
       </section>
 
       <router-view></router-view>
@@ -51,6 +58,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
+
 
 const api = generateAPIUrl()
 
@@ -139,5 +147,17 @@ hr.visible-xs-block {
 
 .main-header .sidebar-toggle {
   line-height: inherit;
+}
+.button {
+    position: absolute;
+    top: 90%;
+    left: 91%;
+ 
+}
+.button2 {
+    position: absolute;
+    top: 90%;
+    left: 94.2%;
+ 
 }
 </style>
