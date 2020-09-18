@@ -27,37 +27,25 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
-                  <div style="text-align: center;" class="info-box-content" @click="redirect(card)">
-                    <div style="text-align: center;">
-                      <p></p>
-                      <span class="info-box-text">{{card.label}}</span>
-                      <span class="info-box-number">{{card.value}}</span>
-                      <span class="info-box-number-rating">{{card.message}}</span>
-                    </div>
-                  </div>
-                </div>
+                <card :card="card"/>
+              </div>
               </div>
               <div>
                 <div class="col-sm-6 col-xs-12">
-                  <p class="text-center">
-                    <strong v-if="barChartDataMetrics">{{barChartDataMetrics.title}}</strong>
-                  </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
+                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
                     <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>
+<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>-->
+                  <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.gtNodePods() />
                 </div>
               </div>
             </div>
           <!-- </div> -->
         </div>
       </div>
-    </div>
     <!-- /.row -->
   </section>
   <!-- /.content -->
@@ -68,10 +56,16 @@ import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 import * as graph from '../graph'
 import dateformat from 'dateformat'
+import BarChart from "../components/charts/BarChart";
 
 const api = generateAPIUrl()
 
 export default {
+  components: {
+    BarChart : () => import('../components/charts/BarChart'),
+    PieChart : () => import('../components/charts/PieChart'),
+    Card: import('../components/Card')
+  },
   data () {
     return {
       barChartMetrics: null,
@@ -91,14 +85,46 @@ export default {
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
-    }
+    },
+    confBarChartMetrics() {
+      return {
+        graph: this.barChartMetrics,
+        id: 'barChartMetrics',
+        sort: 'metric',
+        colors: this.colors,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Metrics rate (in Euros)'
+        }
+      }
+    },
+    confPieChartNodesPods() {
+      return {
+        graph: this.pieChartNodesPods,
+        id: 'pieChartNodesPods',
+        sort: 'node',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Services repartition by nodes'
+        }
+      }
+    },
   },
   methods: {
     clicked(data) {
       this.selected = data.target.id
     },
-    redirect(data) {
-      utils.redirectCard(data, this)
+    async getMetrics() {
+      let url = `${api}/namespaces/${this.activeNamespace}/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
+    async gtNodePods() {
+      let url = `${api}/namespaces/${this.activeNamespace}/nodes/pods`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     getURL(data) {
       utils.getURL(data, this)
@@ -108,38 +134,6 @@ export default {
     },
     showDatePicker() {
       return this.activeNamespace !== null
-    },
-    async drawPieNodesPods() {
-      this.pieChartNodesPods = await graph.drawPieChart({
-        url: `${api}/namespaces/${this.activeNamespace}/nodes/pods`,
-        graph: this.pieChartNodesPods,
-        id: 'pieChartNodesPods',
-        sort: 'node',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Services repartition by nodes'
-        }
-      })
-    },
-    async drawBarChartMetrics() {
-      this.barChartMetrics = await graph.drawBarChart({
-        url: `${api}/namespaces/${this.activeNamespace}/rating`,
-        graph: this.barChartMetrics,
-        id: 'barChartMetrics',
-        sort: 'metric',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Metrics rate (in Euros)'
-        }
-      })
-    },
-    async drawGraphs() {
-      this.drawBarChartMetrics()
-      this.drawPieNodesPods()
     },
     async drawCards() {
       await this.cardNodes()

@@ -67,7 +67,7 @@ export async function downloadFile(url, filename, type) {
     content = JSONToCSV(json.results)
     mime = 'text/csv'
   }
-  
+
   const el = document.createElement('a')
   el.setAttribute('href', `data:${mime};charset=utf-8,` + encodeURIComponent(content))
   el.setAttribute('download', filename)
@@ -165,12 +165,6 @@ export function groupBy(objectArray, property) {
     return acc
   }, {})
 }
-  
-export function redirectCard(data, that) {
-  if (data.link !== '/') {
-    that.$router.push(data.link)
-  }
-}
 
 export function getURL(data, that) {
   const option = data.target.innerText
@@ -179,7 +173,7 @@ export function getURL(data, that) {
   downloadFile(url, filename, option)
 }
 
-export function refreshDate(date, that) {
+export async function refreshDate(date, that) {
   if (date !== null) {
     that.from = date.start.toISOString().split('.')[0] + '.000Z'
     if (date.end === null || date.start === date.end) {
@@ -191,6 +185,11 @@ export function refreshDate(date, that) {
     that.from = that.from.replace('T', ' ')
   }
   that.cards = []
-  that.drawCards()
-  that.drawGraphs()
+  if (that.drawCards) {
+   await that.drawCards()
+  }
+  if (that.drawGraphs) {
+    await that.drawGraphs()
+  }
+
 }

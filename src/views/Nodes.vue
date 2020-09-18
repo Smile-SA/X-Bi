@@ -26,30 +26,21 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
-                  <div class="info-box-content" @click="redirect(card)">
-                    <div style="text-align: center;">
-                      <p></p>
-                      <span class="info-box-text">{{card.label}}</span>
-                      <span class="info-box-number">{{card.value}}</span>
-                      <span class="info-box-number-rating">{{card.message}}</span>
-                    </div>
-                  </div>
-                </div>
+                <card :card="card"/>
               </div>
               <div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
                     <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces"></canvas>
+                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
                 <div class="col-sm-6 col-xs-12">
                   <p class="text-center">
                     <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
                   </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>
+<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>-->
+                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
               </div>
             </div>
@@ -71,8 +62,14 @@ import dateformat from 'dateformat'
 const api = generateAPIUrl()
 
 export default {
+  components: {
+    Card: import('../components/Card'),
+    LineChart: () => import ('../components/charts/LineChart'),
+    BarChart: () => import ('../components/charts/BarChart'),
+  },
   data () {
     return {
+      dateRange: null,
       lineChartNamespaces: null,
       barChartMetrics: null,
       selectNodes: null,
@@ -88,55 +85,69 @@ export default {
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
+    },
+    confBarChartMetrics() {
+      return {
+        graph: this.barChartMetrics,
+        id: 'barChartMetrics',
+        sort: 'metric',
+        colors: this.colors,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Metrics rate (in Euros)'
+        }
+      }
+    },
+    confLineChartNameSpace () {
+      if (!api || !this.activeNode) {
+        return;
+      }
+      const c = {
+        url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
+        id: 'lineChartNamespaces',
+        sort: 'namespace',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Slices rates (in Euros)'
+        }
+      };
+
+      return c;
+    },
+    nameSpaceData() {
+      return this.getNamespaces();
     }
   },
   methods: {
     clicked(data) {
       this.selected = data.target.id
     },
-    redirect(data) {
-      utils.redirectCard(data, this)
+    async getMetrics() {
+      let url = `${api}/nodes/${this.activeNode}/rating`;
+      return await utils.fetchDataAsJSON(url, this);
     },
     getURL(data) {
       utils.getURL(data, this)
     },
+    async getNamespaces() {
+      if (!this.activeNode) {
+        return {total: 0, results: []}
+      }
+      let url = `${api}/nodes/${this.activeNode}/namespaces/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
     refreshDate(date) {
+      if (date) {
+        this.dateRange = date;
+      }
       utils.refreshDate(date, this)
     },
     showDatePicker() {
       return this.activeNode !== null
-    },
-    async drawLineChartNamespaces() {
-      this.lineChartNamespaces = await graph.drawLineChart({
-        url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
-        graph: this.lineChartNamespaces,
-        id: 'lineChartNamespaces',
-        sort: 'namespace',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Slices rates (in Euros)'
-        }
-      })
-    },
-    async drawBarChartMetrics() {
-      this.barChartMetrics = await graph.drawBarChart({
-        url: `${api}/nodes/${this.activeNode}/rating`,
-        graph: this.barChartMetrics,
-        id: 'barChartMetrics',
-        sort: 'metric',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Metrics rates (in Euros)'
-        }
-      })
-    },
-    async drawGraphs() {
-      this.drawBarChartMetrics()
-      this.drawLineChartNamespaces()
     },
     async drawCards() {
       await this.cardNamespaces()
@@ -213,18 +224,6 @@ export default {
 </script>
 
 <style>
-.slice-icon {
-  background-image: url('../../public/static/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-  background-repeat: no-repeat;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  width: 45px;
-  font-size: 45px;
-  text-align: center;
-}
-
 .info-box {
   cursor: pointer;
 }

@@ -65,7 +65,9 @@ export default {
   animation-duration: 0.2s;
   animation-fill-mode: forwards;
 }
-
+.router-link-exact-active {
+  background-color: #bdc0c5;
+}
 .treeview-title {
   z-index: 1;
 }

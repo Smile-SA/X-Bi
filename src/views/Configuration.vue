@@ -15,17 +15,8 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><i v-bind:class="'fa fa-' + card.icon"></i></span>
-                    <div style="text-align: center;" class="info-box-content" @click="redirect(card)">
-                      <div style="text-align: center;">
-                        <p></p>
-                        <span class="info-box-text">{{card.label}}</span>
-                        <span class="info-box-number">{{card.value}}</span>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <card :card="card"/>
+              </div>
               <div>
             </div>
           </div>
@@ -64,6 +55,9 @@ import YAML from 'js-yaml'
 const api = generateAPIUrl()
 
 export default {
+  components: {
+    Card: import('../components/Card')
+  },
   data () {
     return {
       cards: [],
@@ -79,9 +73,6 @@ export default {
     }
   },
   methods: {
-    redirect(data) {
-      utils.redirectCard(data, this)
-    },
     showYaml() {
       return this.metrics !== null ||
              this.rules !== null

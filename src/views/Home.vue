@@ -12,20 +12,8 @@
             <div class="row">
             <h3 class="box-title"></h3>
               <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
-                <div v-bind:class="'info-box bg-' + card.color">
-                  <span class="info-box-icon"><svg v-bind:class="'' + card.icon"></svg></span>
-
-                  <div class="info-box-content" @click="redirect(card)">
-                    <div style="text-align: center;">
-                      <p></p>
-                      <span class="info-box-text">{{card.label}}</span>
-                      <span class="info-box-number">{{card.value}}</span>
-                    </div>
-                  </div>
-                  <!-- /.info-box-content -->
-                </div>
+                <Card :card="card"/>
               </div>
-
               <!-- For each hosts -->
               <div>
                 <div>
@@ -36,16 +24,10 @@
                     </ul>
                   </VueContext>
                   <div class="col-sm-12">
-                    <p class="text-center">
-                      <strong v-if="lineChartNodes">{{lineChartNodes.title}}</strong>
-                    </p>
-                    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNodes" height="80%"></canvas>
+                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dataS=this.getNodes() />
                   </div>
                   <div class="col-sm-12">
-                    <p class="text-center">
-                      <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
-                    </p>
-                    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="lineChartNamespaces" height="80%"></canvas>
+                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dataS=this.getNamespaces() />
                   </div>
 
                 </div>
@@ -69,73 +51,79 @@
 
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import * as graph from '../graph'
 
 const api = generateAPIUrl()
 
 export default {
-  data() {
-    return {
-      date: null,
-      lineChartNodes: null,
-      lineChartNamespaces: null,
-      colors: {},
-      cards: [],
-      to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
-      selected: null,
-      queryArray: {}
-    }
+  components: {
+    Card: () => import('../components/Card'),
+    LineChart: () => import ('../components/charts/LineChart')
   },
+    data() {
+        return {
+            date: null,
+            lineChartNodes: null,
+            lineChartNamespaces: null,
+            dateRange: null,
+            colors: {},
+            cards: [],
+            to: new Date().toISOString(),
+            from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+            selected: null,
+            queryArray: {}
+        }
+    },
   computed: {
     isMobile() {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
-    }
-  },
-  methods: {
-    clicked(data) {
-      this.selected = data.target.id
     },
-    redirect(data) {
-      utils.redirectCard(data, this)
-    },
-    getURL(data) {
-      utils.getURL(data, this)
-    },
-    refreshDate(date) {
-      utils.refreshDate(date, this)
-    },
-    async drawLineChartNodesRating() {
-      this.lineChartNodes = await graph.drawLineChart({
-        url: `${api}/nodes/rating`,
-        graph: this.lineChartNodes,
-        id: 'lineChartNodes',
-        sort: 'node',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          title: 'Nodes rate (in Euros)'
-        }
-      })
-    },
-    async drawLineChartNamespaceRating() {
-      this.lineChartNamespaces = await graph.drawLineChart({
-        url: `${api}/namespaces/rating`,
-        graph: this.lineChartNamespaces,
+    confLineChartNameSpace() {
+      return {
+
         id: 'lineChartNamespaces',
         sort: 'namespace',
-        context: this,
+        colors: this.colors,
+        isMobile: this.isMobile,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
           title: 'Slices rate (in Euros)'
         }
-      })
+      }
     },
-    async drawGraphs() {
-      this.drawLineChartNodesRating()
-      this.drawLineChartNamespaceRating()
+    confLineChartNodes() {
+      return {
+        id: 'lineChartNodes',
+        sort: 'node',
+        colors: this.colors,
+        isMobile: this.isMobile,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Nodes rate (in Euros)'
+        }
+      }
+    }
+  },
+  methods: {
+
+    async getNodes() {
+      let url = `${api}/nodes/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
+    async getNamespaces() {
+      let url = `${api}/namespaces/rating`;
+      return await utils.fetchDataAsJSON(url, this);
+    },
+    clicked(data) {
+      this.selected = data.target.id
+    },
+    getURL(data) {
+      utils.getURL(data, this)
+    },
+    refreshDate(date) {
+      this.dateRange = date;
+      utils.refreshDate(date, this)
     },
     async drawCards() {
       await this.namespacesCard()
@@ -182,7 +170,6 @@ export default {
   async beforeMount() {
     await this.generateColorSet()
     this.drawCards()
-    this.drawGraphs()
   },
   async mounted() {}
 }
@@ -190,17 +177,6 @@ export default {
 
 <style>
 
-.slice-icon {
-  background-image: url('../../public/static/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-  background-repeat: no-repeat;
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  width: 45px;
-  font-size: 45px;
-  text-align: center;
-}
 .info-box {
   cursor: pointer;
 }
