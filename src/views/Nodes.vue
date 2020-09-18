@@ -77,7 +77,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
       selected: null,
       queryArray: {}
     }

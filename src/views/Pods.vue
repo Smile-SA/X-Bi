@@ -71,7 +71,7 @@ export default {
       timeCards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -186,8 +186,6 @@ export default {
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
         {'endpoint': `${api}/metrics`, 'key': 'metric'},
         {'endpoint': `${api}/nodes`, 'key': 'node'}
-        // ,
-        // {'endpoint': `${api}/steps`, 'key': 'step'}
         ], this)
     }
   },

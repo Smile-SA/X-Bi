@@ -39,7 +39,7 @@
                     <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
                   </p>
 <!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>-->
-                  <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.gtNodePods() />
+                  <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
                 </div>
               </div>
             </div>
@@ -77,7 +77,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getDate() - 1)).toISOString(),
+      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -122,7 +122,7 @@ export default {
       let url = `${api}/namespaces/${this.activeNamespace}/rating`;
       return await utils.fetchDataAsJSON(url, this);
     },
-    async gtNodePods() {
+    async getNodePods() {
       let url = `${api}/namespaces/${this.activeNamespace}/nodes/pods`;
       return await utils.fetchDataAsJSON(url, this);
     },
