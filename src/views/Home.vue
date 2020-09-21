@@ -145,31 +145,38 @@ export default {
     async namespacesCard() {
       const url = `${api}/namespaces`
       this.cards.push({
-        value: await utils.fetchTotal(url, this),
+        value: await utils.fetchTotal(url, this)+' kw/h',
         link: '/namespaces',
-        label: 'Namespaces',
-        color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16'
+        //label: 'Namespaces',
+        label: 'Consomation WATT globale',
+        color: 'green',
+        //icon: 'slice-icon svg-inline--fa fa-w-16'
+        icon: 'far fa-lightbulb'
       })
     },
    async nodesCard() {
       const url = `${api}/nodes`
       this.cards.push({
-        value: await utils.fetchTotal(url, this),
+        value: await utils.fetchTotal(url, this)+'  kg Co2',
         link: '/nodes',
-        label: 'Nodes',
-        color: 'red',
-        icon: 'fa fa-server'
+        //label: 'Nodes',
+        label: 'Emission Co2',
+         color: 'green',
+        //icon: 'fa fa-server'
+        icon: 'fas fa-cloud'
       })
     },
     async podsCard() {
       const url = `${api}/pods`
       this.cards.push({
-        value: await utils.fetchTotal(url, this),
+        value: await utils.fetchTotal(url, this)+'',
         link: '/pods',
-        label: 'Pods',
-        color: 'blue',
-        icon: 'fa fa-sitemap'
+        //label: 'Pods',
+        label: 'Indice énergétique',
+        color: 'green',
+        //icon: 'fa fa-sitemap'
+        icon: 'fas fa-cloud-meatball'
+        
       })
     },
     async generateColorSet() {

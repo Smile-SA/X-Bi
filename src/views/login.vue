@@ -22,10 +22,12 @@
     <label>
       <input type="checkbox" checked="checked" name="remember"> Remember me
     </label>
+      <p id="output"></p>
   </div>
 
   <div class="container" style="background-color:#f1f1f1">
     <button type="button" @click="$router.push('home')"  class="cancelbtn">Cancel</button>
+      <span class="psw" > <a href="http://localhost:5012/signup"> Create User</a></span>
     <span class="psw" >Forgot <a href="http://localhost:5012/password">password?</a></span>
   </div>
 </form>

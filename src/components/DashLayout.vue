@@ -36,10 +36,15 @@
          <!--<router-link tag="li" class="pageLink" to="/login">-->
              <button @click="$router.push('login')" class="button" type="button">Login</button>
          <!-- </router-link> -->    
-        
-      <a href="http://localhost:5012/logout">
-       <button class="button2" type="button">Logout</button>
-     </a>
+      
+      <!--<a href="http://localhost:5012/logout"> -->
+       
+       <form method="POST" action= 'http://localhost:5012/logout'>
+       <input type="hidden">
+       <button class="button2" type="submit">Logout</button>
+       </form>
+      
+     <!-- </a> -->
 
       </section>
 
