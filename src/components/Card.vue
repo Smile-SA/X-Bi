@@ -1,16 +1,20 @@
 <template>
-    <div v-bind:class="'info-box bg-' + card.color">
-        <span class="info-box-icon"><i v-bind:class="card.icon"></i></span>
-        <div style="text-align: center;" class="info-box-content" @click="redirectCard(card)">
-            <div style="text-align: center;">
-                <p></p>
-                <span class="info-box-text">{{card.label}}</span>
-                <span class="info-box-number">{{card.value}}</span>
+    <div class="col-md-4 col-sm-6 col-xs-12 column">
+        <div v-bind:class="'info-box bg-' + card.color">
+            <span class="info-box-icon"><svg v-bind:class="card.icon"></svg></span>
+            <div style="text-align: center;" class="info-box-content" @click="redirectCard(card)">
+                <div style="text-align: center;">
+                    <p></p>
+                    <span class="info-box-text">{{card.label}}</span>
+                    <span class="info-box-number">{{this.value}}</span>
+                </div>
             </div>
         </div>
     </div>
 </template>
 <script>
+    import * as utils from  '../utils'
+
     // class CardModel {
     //     public label: String;
     //     public value: Number;
@@ -20,11 +24,31 @@
     // }
     export default {
         name: "Card",
-        props: {card: Object},
+        props: {
+            card: Object
+        },
+        data() {
+            return {
+                value: 0
+            }
+        },
+        created () {
+            this.fetchValue()
+        },
         methods: {
-            redirectCard() {
-                if (this.card.link !== '/') {
-                    this.$router.push(this.card.link);
+            fetchValue() {
+                const queryDate = utils.convertURLDateParameter(this.card.from, this.card.to)
+                fetch(this.card.url + queryDate, {credentials: 'include'})
+                .then(response => {
+                    response.json().then(r => {
+                        this.value = r.total
+                    }
+                )})
+                this.$forceUpdate()
+            },
+            redirectCard(card) {
+                if (card.link !== '/') {
+                    this.$router.push(card.link);
                 }
             }
         }

@@ -4,9 +4,9 @@
   <!-- <meta charset="utf-8"> -->
     <div class="row">
       <div class="form-group col-xs-2">
-        <h4>Select a slice</h4>
+        <h4>Select a Namespace</h4>
         <select class="form-control" v-on:change="getNamespaces">
-          <option selected disabled> -- Select a Slice -- </option>
+          <option selected disabled> -- Select a Namespace -- </option>
           <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
@@ -26,27 +26,26 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <card :card="card"/>
-              </div>
-              </div>
+            <div v-if='this.activeNamespace !== null'>
               <div>
-                <div class="col-sm-6 col-xs-12">
-                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                  <p class="text-center">
-                    <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
-                  </p>
-<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="pieChartNodesPods"></canvas>-->
-                  <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
-                </div>
+                <Card :card=confCardNodes></Card>
+                <Card :card=confCardPods></Card>
+              <!-- <Card :card=confCardTotalRating></Card> -->
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
+              </div>
+              <div class="col-sm-6 col-xs-12">
+                <p class="text-center">
+                  <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
+                </p>
+                <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
               </div>
             </div>
-          <!-- </div> -->
+          </div>
         </div>
       </div>
-    <!-- /.row -->
+    </div>
   </section>
   <!-- /.content -->
 </template>
@@ -54,9 +53,6 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import * as graph from '../graph'
-import dateformat from 'dateformat'
-import BarChart from "../components/charts/BarChart";
 
 const api = generateAPIUrl()
 
@@ -64,7 +60,7 @@ export default {
   components: {
     BarChart : () => import('../components/charts/BarChart'),
     PieChart : () => import('../components/charts/PieChart'),
-    Card: import('../components/Card')
+    Card : () => import('../components/Card'),
   },
   data () {
     return {
@@ -77,7 +73,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
+      from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -113,6 +109,49 @@ export default {
         }
       }
     },
+    confCardNodes() {
+      return {
+        url: `${api}/namespaces/${this.activeNamespace}/nodes`,
+        from: this.from,
+        to: this.to,
+        link: '/nodes',
+        label: 'Nodes',
+        color: 'red',
+        icon: 'far fa-lightbulb'
+      }
+    },
+    confCardPods() {
+      return {
+        url: `${api}/namespaces/${this.activeNamespace}/pods`,
+        from: this.from,
+        to: this.to,
+        link: '/pods',
+        label: 'Pods',
+        color: 'blue',
+        icon: 'far fa-sitemap'
+      }
+    }
+    // ,
+    // confCardTotalRating() {
+    //   const url = `${api}/namespaces/${this.activeNamespace}/total_rating`
+    //   const response = utils.fetchDataAsJSON(url, this)
+    //   const from = dateformat(this.from, 'dd/mm/yyyy')
+    //   const to = dateformat(this.to, 'dd/mm/yyyy')
+    //   let total = 0
+    //   if (response.total > 0) {
+    //     total = response.results.map(item => item.frame_price)
+    //                             .reduce((a, b) => a + b, 0)
+    //                             .toFixed(5)
+    //   }
+    //   return {
+    //     value: `${total}`,
+    //     link: '/',
+    //     label: 'Rating',
+    //     message: ` from ${from} to ${to}`,
+    //     color: 'yellow',
+    //     icon: 'euro-sign'
+    //   }
+    // }
   },
   methods: {
     clicked(data) {
@@ -135,51 +174,6 @@ export default {
     showDatePicker() {
       return this.activeNamespace !== null
     },
-    async drawCards() {
-      await this.cardNodes()
-      await this.cardPods()
-      await this.cardTotalRating()
-    },
-    async cardPods() {
-      const url = `${api}/namespaces/${this.activeNamespace}/pods`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/pods',
-        label: 'Services',
-        color: 'blue',
-        icon: 'sitemap'
-      })
-    },
-    async cardNodes() {
-      const url = `${api}/namespaces/${this.activeNamespace}/nodes`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/nodes',
-        label: 'Nodes',
-        color: 'red',
-        icon: 'server'
-      })
-    },
-    async cardTotalRating() {
-      const url = `${api}/namespaces/${this.activeNamespace}/total_rating`
-      const response = await utils.fetchDataAsJSON(url, this)
-      const from = dateformat(this.from, 'dd/mm/yyyy')
-      const to = dateformat(this.to, 'dd/mm/yyyy')
-      let total = 0
-      if (response.total > 0) {
-        total = response.results.map(item => item.frame_price)
-                                .reduce((a, b) => a + b, 0)
-                                .toFixed(5)
-      }
-      this.cards.push({
-        value: `${total}`,
-        link: '/',
-        label: 'Rating',
-        message: ` from ${from} to ${to}`,
-        color: 'yellow',
-        icon: 'euro-sign'
-      })
-    },
     async getNamespaces (namespace) {
       this.cards = []
       this.activeNamespace = namespace.target.value
@@ -189,8 +183,6 @@ export default {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/metrics`, 'key': 'metric'},
         {'endpoint': `${api}/nodes`, 'key': 'node'}
-        // ,
-        // {'endpoint': `${api}/steps`, 'key': 'step'}
         ], this)
     },
   },

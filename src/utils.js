@@ -1,5 +1,8 @@
+import { generateAPIUrl } from './variables'
+
+
 export function convertURLDateParameter(from, to) {
-  from = (from !== null) ? from : new Date(new Date().setDate(new Date().getHours() - 3)).toISOString()
+  from = (from !== null) ? from : new Date(new Date().setHours(new Date().getHours() - 1)).toISOString()
   to = (to !== null) ? to : new Date().toISOString()
   from = from.replace('T', ' ')
   to = to.replace('T', ' ')
@@ -192,4 +195,12 @@ export async function refreshDate(date, that) {
     await that.drawGraphs()
   }
 
+}
+
+export async function isAuth() {
+    const api = generateAPIUrl()
+    const url = `${api}/current`
+    const response = await fetch(url)
+    const json = await response.json()
+    return json.results !== 'Default'
 }

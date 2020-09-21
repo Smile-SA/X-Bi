@@ -39,7 +39,6 @@
                   <p class="text-center">
                     <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
                   </p>
-<!--                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics"></canvas>-->
                   <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
               </div>
@@ -56,7 +55,6 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import * as graph from '../graph'
 import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
@@ -77,7 +75,7 @@ export default {
       cards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
+      from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -159,9 +157,20 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
-        label: 'Services',
+        label: 'Pods',
         color: 'blue',
-        icon: 'fa fa-sitemap'
+        icon: 'fab fa-cloudversify'
+      })
+    },
+    async cardCo2() {
+      const url = `${api}/pods/${this.activePod}/namespace`
+      const response = await utils.fetchDataAsJSON(url, this)
+      this.cards.push({
+        value: response.results[0].namespace,
+        link: '/',
+        label: 'Co2',
+        color: 'blue',
+        icon: 'fab fa-cloudversify'
       })
     },
     async cardNamespaces() {
@@ -169,7 +178,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
-        label: 'Slices',
+        label: 'Namespaces',
         color: 'purple',
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })

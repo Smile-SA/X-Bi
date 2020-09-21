@@ -68,7 +68,7 @@ export default {
             colors: {},
             cards: [],
             to: new Date().toISOString(),
-            from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
+            from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
             selected: null,
             queryArray: {}
         }
@@ -126,21 +126,21 @@ export default {
       utils.refreshDate(date, this)
     },
     async drawCards() {
-      await this.namespacesCard()
-      await this.nodesCard()
-      await this.podsCard()
+      this.namespacesCard()
+      this.nodesCard()
+      this.podsCard()
     },
     async namespacesCard() {
       const url = `${api}/namespaces`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/namespaces',
-        label: 'Slices',
+        label: 'Namespaces',
         color: 'purple',
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
-    async nodesCard() {
+   async nodesCard() {
       const url = `${api}/nodes`
       this.cards.push({
         value: await utils.fetchTotal(url, this),
@@ -155,7 +155,7 @@ export default {
       this.cards.push({
         value: await utils.fetchTotal(url, this),
         link: '/pods',
-        label: 'Services',
+        label: 'Pods',
         color: 'blue',
         icon: 'fa fa-sitemap'
       })

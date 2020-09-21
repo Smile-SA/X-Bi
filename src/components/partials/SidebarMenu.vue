@@ -10,9 +10,9 @@
     <router-link tag="li" class="pageLink" to="/namespaces">
       <a>
         <svg class="slice-icon2 svg-inline--fa fa-w-32"></svg>
-        <span class="pages">Slices</span>
+        <span class="pages">Namespaces</span>
       </a>
-    </router-link>
+    </router-link> 
     <router-link tag="li" class="pageLink" to="/nodes">
       <a>
         <i class="fa fa-server"></i>
@@ -22,7 +22,7 @@
     <router-link tag="li" class="pageLink" to="/pods">
       <a>
         <i class="fa fa-sitemap"></i>
-        <span class="pages">Services</span>
+        <span class="pages">Pods</span>
       </a>
     </router-link>
     <router-link tag="li" class="pageLink" to="/configuration">

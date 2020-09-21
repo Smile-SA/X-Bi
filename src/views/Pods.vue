@@ -3,9 +3,9 @@
   <section class="content">
     <div class="row">
       <div class="form-group col-xs-2">
-        <h4>Select a service</h4>
+        <h4>Select a pod</h4>
         <select class="form-control" v-on:change="getPods">
-          <option selected disabled> -- Select a service -- </option>
+          <option selected disabled> -- Select a pod -- </option>
           <option v-for="option in selectPods" v-bind:value="option" v-bind:key="option">{{option}}</option>
         </select>
       </div>
@@ -71,7 +71,7 @@ export default {
       timeCards: [],
       colors: {},
       to: new Date().toISOString(),
-      from: new Date(new Date().setDate(new Date().getHours() - 3)).toISOString(),
+      from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
       selected: null,
       queryArray: {}
     }
@@ -111,6 +111,8 @@ export default {
         }
       })
     },
+  
+    
     async drawGraphs() {
       this.drawBarChartMetrics()
     },
@@ -131,6 +133,7 @@ export default {
         icon: 'slice-icon svg-inline--fa fa-w-16'
       })
     },
+ 
     async cardNode() {
       const url = `${api}/pods/${this.activePod}/node`
       const response = await utils.fetchDataAsJSON(url, this)
@@ -193,7 +196,9 @@ export default {
     await this.generateColor()
     this.selectPods = (await utils.fetchData(`${api}/pods`, this)).map(item => item.pod)
   },
-  async mounted () {}
+  async mounted () {
+    this.drawCards()
+  }
 }
 </script>
 
