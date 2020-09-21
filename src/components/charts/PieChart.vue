@@ -1,5 +1,10 @@
 <template>
-    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :titre=dataS.toString()></canvas>
+    <div>
+        <p class="text-center">
+            <strong v-if='this.dataS.length > 0'>{{configuration.labels.title}}</strong>
+        </p>
+        <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :titre=dataS.toString()></canvas>
+    </div>
 </template>
 
 <script>

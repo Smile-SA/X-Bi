@@ -25,21 +25,14 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <card :card="card"/>
-              </div>
-              <div>
+              <div v-if='this.activeNode !== null'>
+                <Card :card=confCardNamespaces></Card>
+                <Card :card=confCardPods></Card>
                 <div class="col-sm-6 col-xs-12">
-                  <p class="text-center">
-                    <strong v-if="lineChartNamespaces">{{lineChartNamespaces.title}}</strong>
-                  </p>
-                  <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
+                  <LineChart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                  <p class="text-center">
-                    <strong v-if="barChartMetrics">{{barChartMetrics.title}}</strong>
-                  </p>
-                  <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
+                  <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
               </div>
             </div>
@@ -55,13 +48,12 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: import('../components/Card'),
+    Card: () => import('../components/Card'),
     LineChart: () => import ('../components/charts/LineChart'),
     BarChart: () => import ('../components/charts/BarChart'),
   },
@@ -72,12 +64,9 @@ export default {
       barChartMetrics: null,
       selectNodes: null,
       activeNode: null,
-      cards: [],
       colors: {},
       to: new Date().toISOString(),
       from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
-      selected: null,
-      queryArray: {}
     }
   },
   computed: {
@@ -116,27 +105,44 @@ export default {
 
       return c;
     },
+    confCardNamespaces() {
+      return {
+        url: `${api}/nodes/${this.activeNode}/namespaces`,
+        from: this.from,
+        to: this.to,
+        link: '/namespaces',
+        label: 'Namespaces',
+        color: 'purple',
+        icon: 'slice-icon svg-inline--fa fa-w-16'
+      }
+    },
+    confCardPods() {
+      return {
+        url: `${api}/nodes/${this.activeNode}/pods`,
+        from: this.from,
+        to: this.to,
+        link: '/pods',
+        label: 'Pods',
+        color: 'blue',
+        icon: 'fab fa-cloudversify'
+      }
+    },
     nameSpaceData() {
       return this.getNamespaces();
     }
   },
   methods: {
-    clicked(data) {
-      this.selected = data.target.id
-    },
-    async getMetrics() {
-      let url = `${api}/nodes/${this.activeNode}/rating`;
-      return await utils.fetchDataAsJSON(url, this);
-    },
     getURL(data) {
       utils.getURL(data, this)
+    },
+    async getMetrics() {
+      return await utils.get(`${api}/nodes/${this.activeNode}/rating`, this);
     },
     async getNamespaces() {
       if (!this.activeNode) {
         return {total: 0, results: []}
       }
-      let url = `${api}/nodes/${this.activeNode}/namespaces/rating`;
-      return await utils.fetchDataAsJSON(url, this);
+      return await utils.get(`${api}/nodes/${this.activeNode}/namespaces/rating`, this)
     },
     refreshDate(date) {
       if (date) {
@@ -147,72 +153,25 @@ export default {
     showDatePicker() {
       return this.activeNode !== null
     },
-    async drawCards() {
-      await this.cardNamespaces()
-      await this.cardPods()
-      await this.cardTotalRating()
-    },
-    async cardPods() {
-      const url = `${api}/nodes/${this.activeNode}/pods`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/pods',
-        label: 'Pods',
-        color: 'blue',
-        icon: 'fab fa-cloudversify'
-      })
-    },
-    async cardCo2() {
-      const url = `${api}/pods/${this.activePod}/namespace`
-      const response = await utils.fetchDataAsJSON(url, this)
-      this.cards.push({
-        value: response.results[0].namespace,
-        link: '/',
-        label: 'Co2',
-        color: 'blue',
-        icon: 'fab fa-cloudversify'
-      })
-    },
-    async cardNamespaces() {
-      const url = `${api}/nodes/${this.activeNode}/namespaces`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/namespaces',
-        label: 'Namespaces',
-        color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16'
-      })
-    },
-    async cardLabels() {
-      const url = `${api}/nodes/${this.activeNode}/labels`
-      this.cards.push({
-        value: await utils.fetchDataAsJSON(url, this),
-        link: '/',
-        label: 'Labels',
-        color: 'green',
-        icon: ''
-      })
-    },
-    async cardTotalRating() {
-      const url = `${api}/nodes/${this.activeNode}/total_rating`
-      const response = await utils.fetchDataAsJSON(url, this)
-      const from = dateformat(this.from, 'dd/mm/yyyy')
-      const to = dateformat(this.to, 'dd/mm/yyyy')
-      let total = 0
-      if (response.total > 0) {
-        total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
-      }
-      this.cards.push({
-        value: `${total.toFixed(5)}`,
-        link: '/',
-        label: 'Rating',
-        message: ` from ${from} to ${to}`,
-        color: 'yellow',
-        icon: 'fa fa-euro-sign'
-      })
-    },
+    // async cardTotalRating() {
+    //   const url = `${api}/nodes/${this.activeNode}/total_rating`
+    //   const response = await utils.fetchDataAsJSON(url, this)
+    //   const from = dateformat(this.from, 'dd/mm/yyyy')
+    //   const to = dateformat(this.to, 'dd/mm/yyyy')
+    //   let total = 0
+    //   if (response.total > 0) {
+    //     total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0)
+    //   }
+    //   this.cards.push({
+    //     value: `${total.toFixed(5)}`,
+    //     link: '/',
+    //     label: 'Rating',
+    //     message: ` from ${from} to ${to}`,
+    //     color: 'yellow',
+    //     icon: 'fa fa-euro-sign'
+    //   })
+    // },
     async getNodes (node) {
-      this.cards = []
       this.activeNode = node.target.value
       this.refreshDate(null)
     },
@@ -220,7 +179,6 @@ export default {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
         {'endpoint': `${api}/metrics`, 'key': 'metric'}
-        // {'endpoint': `${api}/steps`, 'key': 'step'}
         ], this)
     },
   },

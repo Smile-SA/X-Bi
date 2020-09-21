@@ -1,9 +1,13 @@
 <template>
-    <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :titre=dataS.toString()></canvas>
+    <div>
+        <p class="text-center">
+            <strong v-if='this.dataS.length > 0'>{{configuration.labels.title}}</strong>
+        </p>
+        <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" :id="idL" :height="height" :titre=dataS.toString()></canvas>
+    </div>
 </template>
 
 <script>
-    import * as utils from "../../utils";
     import Chart from "chart.js";
 
     export default {
@@ -31,9 +35,7 @@
                 this.selected = data.target.id
             },
             // eslint-disable-next-line no-unused-vars
-            graphConfiguration(response, c) {
-
-            },
+            graphConfiguration(response, c) {},
             drawChart(c) {
                 this.dataS.then((d => {
                     if (!!this.chart) {

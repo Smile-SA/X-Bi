@@ -44,6 +44,7 @@
                         this.value = r.total
                     }
                 )})
+                this.value = this.card.value
                 this.$forceUpdate()
             },
             redirectCard(card) {
