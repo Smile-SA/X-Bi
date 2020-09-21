@@ -33,13 +33,10 @@
               <!-- <Card :card=confCardTotalRating></Card> -->
               </div>
               <div class="col-sm-6 col-xs-12">
-                <bar-chart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
+                <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
               </div>
               <div class="col-sm-6 col-xs-12">
-                <p class="text-center">
-                  <strong v-if="pieChartDataNodesPods">{{pieChartDataNodesPods.title}}</strong>
-                </p>
-                <pie-chart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
+                <PieChart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
               </div>
             </div>
           </div>
@@ -65,17 +62,12 @@ export default {
   data () {
     return {
       barChartMetrics: null,
-      barChartDataMetrics: null,
       pieChartNodesPods: null,
-      pieChartDataNodesPods: null,
       selectForm: null,
       activeNamespace: null,
-      cards: [],
       colors: {},
       to: new Date().toISOString(),
       from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
-      selected: null,
-      queryArray: {}
     }
   },
   computed: {
@@ -128,7 +120,7 @@ export default {
         link: '/pods',
         label: 'Pods',
         color: 'blue',
-        icon: 'far fa-sitemap'
+        icon: 'fa-sitemap'
       }
     }
     // ,
@@ -154,16 +146,11 @@ export default {
     // }
   },
   methods: {
-    clicked(data) {
-      this.selected = data.target.id
-    },
     async getMetrics() {
-      let url = `${api}/namespaces/${this.activeNamespace}/rating`;
-      return await utils.fetchDataAsJSON(url, this);
+      return await utils.get(`${api}/namespaces/${this.activeNamespace}/rating`, this)
     },
     async getNodePods() {
-      let url = `${api}/namespaces/${this.activeNamespace}/nodes/pods`;
-      return await utils.fetchDataAsJSON(url, this);
+      return await utils.get(`${api}/namespaces/${this.activeNamespace}/nodes/pods`, this)
     },
     getURL(data) {
       utils.getURL(data, this)
@@ -175,7 +162,6 @@ export default {
       return this.activeNamespace !== null
     },
     async getNamespaces (namespace) {
-      this.cards = []
       this.activeNamespace = namespace.target.value
       this.refreshDate(null)
     },

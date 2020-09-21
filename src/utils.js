@@ -204,3 +204,7 @@ export async function isAuth() {
     const json = await response.json()
     return json.results !== 'Default'
 }
+
+export async function get(url, that) {
+  return await fetchDataAsJSON(url, that);
+}
