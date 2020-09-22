@@ -28,9 +28,8 @@
             <h3 class="box-title"></h3>
             <div v-if='this.activeNamespace !== null'>
               <div>
-                <Card :card=confCardNodes></Card>
-                <Card :card=confCardPods></Card>
-              <!-- <Card :card=confCardTotalRating></Card> -->
+                <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
+                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
@@ -50,6 +49,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
+// import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -103,7 +103,6 @@ export default {
     },
     confCardNodes() {
       return {
-        url: `${api}/namespaces/${this.activeNamespace}/nodes`,
         from: this.from,
         to: this.to,
         link: '/nodes',
@@ -114,7 +113,6 @@ export default {
     },
     confCardPods() {
       return {
-        url: `${api}/namespaces/${this.activeNamespace}/pods`,
         from: this.from,
         to: this.to,
         link: '/pods',
@@ -152,6 +150,12 @@ export default {
     async getNodePods() {
       return await utils.get(`${api}/namespaces/${this.activeNamespace}/nodes/pods`, this)
     },
+    getCardNodesUrl() {
+      return `${api}/namespaces/${this.activeNamespace}/nodes`
+    },
+    getCardPodsUrl() {
+      return `${api}/namespaces/${this.activeNamespace}/pods`
+    },
     getURL(data) {
       utils.getURL(data, this)
     },
@@ -164,6 +168,7 @@ export default {
     async getNamespaces (namespace) {
       this.activeNamespace = namespace.target.value
       this.refreshDate(null)
+      this.test = 1;
     },
     async generateColor() {
       this.colors = await utils.generateColor([
