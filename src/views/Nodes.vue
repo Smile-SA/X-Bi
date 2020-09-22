@@ -26,13 +26,13 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div v-if='this.activeNode !== null'>
-                <Card :card=confCardNamespaces></Card>
-                <Card :card=confCardPods></Card>
+                <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
                 <div class="col-sm-6 col-xs-12">
-                  <LineChart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
+                  <LineChart :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
                 <div class="col-sm-6 col-xs-12">
-                  <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
+                  <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
                 </div>
               </div>
             </div>
@@ -107,7 +107,6 @@ export default {
     },
     confCardNamespaces() {
       return {
-        url: `${api}/nodes/${this.activeNode}/namespaces`,
         from: this.from,
         to: this.to,
         link: '/namespaces',
@@ -118,7 +117,6 @@ export default {
     },
     confCardPods() {
       return {
-        url: `${api}/nodes/${this.activeNode}/pods`,
         from: this.from,
         to: this.to,
         link: '/pods',
@@ -134,6 +132,12 @@ export default {
   methods: {
     getURL(data) {
       utils.getURL(data, this)
+    },
+    getCardNamespacesUrl() {
+      return `${api}/nodes/${this.activeNode}/namespaces`
+    },
+    getCardPodsUrl() {
+      return `${api}/nodes/${this.activeNode}/pods`
     },
     async getMetrics() {
       return await utils.get(`${api}/nodes/${this.activeNode}/rating`, this);
