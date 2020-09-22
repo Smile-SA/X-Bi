@@ -108,7 +108,8 @@ export default {
         link: '/nodes',
         label: 'Nodes',
         color: 'red',
-        icon: 'far fa-lightbulb'
+        icon: 'far fa-lightbulb',
+        type: 'number'
       }
     },
     confCardPods() {
@@ -118,7 +119,8 @@ export default {
         link: '/pods',
         label: 'Pods',
         color: 'blue',
-        icon: 'fa-sitemap'
+        icon: 'fa-sitemap',
+        type: 'number'
       }
     }
     // ,

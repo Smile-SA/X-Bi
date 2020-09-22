@@ -25,19 +25,17 @@
         <div class="box">
           <div class="box-header">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
-                <card :card="card"/>
-              </div>
-              <div>
-                <div class="col-sm-12">
-                  <p class="text-center">
-                    <strong v-if="barChartDataMetrics">{{barChartDataMetrics.title}}</strong>
-                  </p>
-                  <canvas class="pointer" @contextmenu.prevent="$refs.menu.open" @click.right="clicked" id="barChartMetrics" height="80%"></canvas>
+              <div v-if='this.activePod !== null'>
+                <Card :configuration=confCardNamespace :url=this.getCardNamespaceUrl()></Card>
+                <Card :configuration=confCardNode :url=this.getCardNodeUrl()></Card>
+                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
+                <div>
+                  <div class="col-sm-12">
+                    <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'" :dataS=this.getMetrics()></BarChart>
+                  </div>
                 </div>
-              </div>
-              <div class="col-md-6 col-sm-6 col-xs-12" v-for="card in timeCards" v-bind:key="card.label">
-                <card :card="card"/>
+                <Card :configuration=confCardStart :url=this.getCardLifetimeUrl()></Card>
+                <Card :configuration=confCardEnd :url=this.getCardLifetimeUrl()></Card>
               </div>
             </div>
           <!-- </div> -->
@@ -52,132 +50,129 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import * as graph from '../graph'
 import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: import('../components/Card')
+    Card: () => import('../components/Card'),
+    BarChart: () => import ('../components/charts/BarChart'),
   },
   data () {
     return {
       barChartMetrics: null,
-      barChartDataMetrics: null,
       selectPods: null,
       activePod: null,
-      cards: [],
-      timeCards: [],
       colors: {},
       to: new Date().toISOString(),
       from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
-      selected: null,
-      queryArray: {}
     }
   },
   computed: {
     isMobile () {
       return (window.innerWidth <= 800 && window.innerHeight <= 600)
-    }
+    },
+    confBarChartMetrics() {
+      return {
+        graph: this.barChartMetrics,
+        id: 'barChartMetrics',
+        sort: 'metric',
+        colors: this.colors,
+        labels: {
+          time: 'frame_begin',
+          value: 'frame_price',
+          title: 'Metrics rate (in Euros)'
+        }
+      }
+    },
+    confCardNamespace() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/namespaces',
+        label: 'Namespace',
+        color: 'purple',
+        icon: 'slice-icon svg-inline--fa fa-w-16',
+        type: 'string',
+        key: 'namespace'
+      }
+    },
+    confCardNode() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/nodes',
+        label: 'Node',
+        color: 'red',
+        icon: 'fa fa-server',
+        type: 'string',
+        key: 'node'
+      }
+    },
+    confCardRating() {
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Rating',
+        color: 'yellow',
+        icon: 'fa fa-euro-sign',
+        message: ` from ${from} to ${to}`,
+        type: 'sum'
+      }
+    },
+    confCardStart() {
+      return {
+        from: this.from,
+        to: this.to,
+        label: 'Started at',
+        link: '/',
+        color: 'green',
+        icon: 'fa fa-hourglass-start',
+        type: 'string',
+        key: 'start'
+      }
+    },
+    confCardEnd() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Last update',
+        color: 'red',
+        icon: 'fa fa-hourglass-end',
+        type: 'string',
+        key: 'end'
+      }
+    },
   },
   methods: {
-    clicked(data) {
-      this.selected = data.target.id
-    },
     getURL(data) {
       utils.getURL(data, this)
     },
+    getCardNamespaceUrl() {
+      return `${api}/pods/${this.activePod}/namespace`
+    },
+    getCardNodeUrl() {
+      return `${api}/pods/${this.activePod}/node`
+    },
+    getCardRatingUrl() {
+      return `${api}/pods/${this.activePod}/total_rating`
+    },
+    getCardLifetimeUrl() {
+      return `${api}/pods/${this.activePod}/lifetime`
+    },
+    async getMetrics() {
+      return await utils.get(`${api}/pods/${this.activePod}/rating`, this)
+    },
     refreshDate(date) {
-      this.timeCards = []
       utils.refreshDate(date, this)
     },
     showDatePicker() {
       return this.activePod !== null
-    },
-    async drawBarChartMetrics() {
-      this.barChartMetrics = await graph.drawBarChart({
-        url: `${api}/pods/${this.activePod}/rating`,
-        graph: this.barChartMetrics,
-        id: 'barChartMetrics',
-        sort: 'metric',
-        context: this,
-        labels: {
-          time: 'frame_begin',
-          value: 'frame_price',
-          xLabel: 'Time',
-          yLabel: 'Rate',
-          title: 'Metric rates (in Euros)'
-        }
-      })
-    },
-  
-    
-    async drawGraphs() {
-      this.drawBarChartMetrics()
-    },
-    async drawCards() {
-      this.cardLifetime()
-      await this.cardNamespace()
-      await this.cardNode()
-      await this.cardTotalRating()
-    },
-    async cardNamespace() {
-      const url = `${api}/pods/${this.activePod}/namespace`
-      const response = await utils.fetchDataAsJSON(url, this)
-      this.cards.push({
-        value: response.results[0].namespace,
-        link: '/namespaces',
-        label: 'Slice',
-        color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16'
-      })
-    },
- 
-    async cardNode() {
-      const url = `${api}/pods/${this.activePod}/node`
-      const response = await utils.fetchDataAsJSON(url, this)
-      this.cards.push({
-        value: response.results[0].node,
-        link: '/nodes',
-        label: 'Node',
-        color: 'red',
-        icon: 'fa fa-server'
-      })
-    },
-    async cardLifetime() {
-      const url = `${api}/pods/${this.activePod}/lifetime`
-      const response = await utils.fetchDataAsJSON(url, this)
-      const start = response.results[0].start
-      const end = response.results[0].end
-      this.timeCards.push({
-        value: start,
-        label: 'Started at',
-        link: '/',
-        color: 'green',
-        icon: 'fa fa-hourglass-start'
-      }, {
-        value: end,
-        link: '/',
-        label: 'Last update',
-        color: 'red',
-        icon: 'fa fa-hourglass-end'
-      })
-    },
-    async cardTotalRating() {
-      const url = `${api}/pods/${this.activePod}/total_rating`
-      const response = await utils.fetchDataAsJSON(url, this)
-      const total = response.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5)
-      const from = dateformat(this.from, 'dd/mm/yyyy')
-      const to = dateformat(this.to, 'dd/mm/yyyy')
-      this.cards.push({
-        value: `${total}`,
-        link: '/',
-        label: 'Rating',
-        message: ` from ${from} to ${to}`,
-        color: 'yellow',
-        icon: 'fa fa-euro-sign'
-      })
     },
     async getPods (pod) {
       this.cards = []
@@ -196,9 +191,7 @@ export default {
     await this.generateColor()
     this.selectPods = (await utils.fetchData(`${api}/pods`, this)).map(item => item.pod)
   },
-  async mounted () {
-    this.drawCards()
-  }
+  async mounted () {}
 }
 </script>
 

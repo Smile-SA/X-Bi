@@ -7,6 +7,8 @@
                     <p></p>
                     <span class="info-box-text">{{configuration.label}}</span>
                     <span class="info-box-number">{{this.value}}</span>
+                    <!-- <span v-if="this.fixedValue !== undefined" class="info-box-number">{{this.fixedValue}}</span> -->
+                    <span v-if="this.configuration.message !== undefined" class="info-box-number-rating">{{this.configuration.message}}</span>
                 </div>
             </div>
         </div>
@@ -19,11 +21,12 @@
         name: "Card",
         props: {
             configuration: Object,
-            url: String
+            url: String,
+            fixedValue: String
         },
         watch: {
             url() {
-                this.fetchValue()
+                this.fetchNumber()
             }
         },
         data() {
@@ -33,16 +36,35 @@
             }
         },
         created () {
-            this.fetchValue()
-            this.timer = setInterval(this.fetchValue, 10000)
+            let choosen
+            switch (this.configuration.type) {
+                case "number": choosen = this.fetchNumber; break;
+                case "string": choosen = this.fetchString; break;
+                case "sum": choosen = this.fetchSum; break;
+            }
+            choosen()
+            this.timer = setInterval(choosen, 10000)
         },
         methods: {
-            fetchValue() {
+            fetchNumber() {
                 const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
                 fetch(this.url + queryDate, {credentials: 'include'})
                 .then(response => response.json()
                 .then(r => this.value = r.total))
                 this.$forceUpdate()
+            },
+            fetchString() {
+                const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
+                fetch(this.url + queryDate, {credentials: 'include'})
+                .then(response => response.json())
+                .then(r => this.value = r.results[0][this.configuration.key])
+                this.$forceUpdate()
+            },
+            fetchSum() {
+                const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
+                fetch(this.url + queryDate, {credentials: 'include'})
+                .then(response => response.json())
+                .then(r => this.value = r.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5))
             },
             redirectCard() {
                 if (this.configuration.link !== '/') {

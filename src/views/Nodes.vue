@@ -112,7 +112,8 @@ export default {
         link: '/namespaces',
         label: 'Namespaces',
         color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16'
+        icon: 'slice-icon svg-inline--fa fa-w-16',
+        type: 'number'
       }
     },
     confCardPods() {
@@ -122,7 +123,8 @@ export default {
         link: '/pods',
         label: 'Pods',
         color: 'blue',
-        icon: 'fab fa-cloudversify'
+        icon: 'fab fa-cloudversify',
+        type: 'number'
       }
     },
     nameSpaceData() {
