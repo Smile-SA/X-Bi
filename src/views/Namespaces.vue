@@ -30,6 +30,7 @@
               <div>
                 <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
                 <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
@@ -49,7 +50,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-// import dateformat from 'dateformat'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -122,28 +123,21 @@ export default {
         icon: 'fa-sitemap',
         type: 'number'
       }
-    }
-    // ,
-    // confCardTotalRating() {
-    //   const url = `${api}/namespaces/${this.activeNamespace}/total_rating`
-    //   const response = utils.fetchDataAsJSON(url, this)
-    //   const from = dateformat(this.from, 'dd/mm/yyyy')
-    //   const to = dateformat(this.to, 'dd/mm/yyyy')
-    //   let total = 0
-    //   if (response.total > 0) {
-    //     total = response.results.map(item => item.frame_price)
-    //                             .reduce((a, b) => a + b, 0)
-    //                             .toFixed(5)
-    //   }
-    //   return {
-    //     value: `${total}`,
-    //     link: '/',
-    //     label: 'Rating',
-    //     message: ` from ${from} to ${to}`,
-    //     color: 'yellow',
-    //     icon: 'euro-sign'
-    //   }
-    // }
+    },
+    confCardRating() {
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Rating',
+        color: 'yellow',
+        icon: 'euro-sign',
+        message: ` from ${from} to ${to}`,
+        type: 'sum'
+      }
+    },
   },
   methods: {
     async getMetrics() {
@@ -151,6 +145,9 @@ export default {
     },
     async getNodePods() {
       return await utils.get(`${api}/namespaces/${this.activeNamespace}/nodes/pods`, this)
+    },
+    getCardRatingUrl() {
+      return `${api}/namespaces/${this.activeNamespace}/total_rating`
     },
     getCardNodesUrl() {
       return `${api}/namespaces/${this.activeNamespace}/nodes`

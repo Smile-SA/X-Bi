@@ -64,7 +64,14 @@
                 const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
                 fetch(this.url + queryDate, {credentials: 'include'})
                 .then(response => response.json())
-                .then(r => this.value = r.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5))
+                .then(r => {
+                    if (r.results.length === 1) {
+                        this.value = r.results[0].frame_price
+                    } else {
+                        this.value = r.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5)
+                    }
+                this.$forceUpdate()
+                })
             },
             redirectCard() {
                 if (this.configuration.link !== '/') {

@@ -1,5 +1,4 @@
 <template>
-  <!-- Main content -->
   <section class="content">
     <div class="row">
       <div class="form-group col-xs-2">
@@ -38,13 +37,10 @@
                 <Card :configuration=confCardEnd :url=this.getCardLifetimeUrl()></Card>
               </div>
             </div>
-          <!-- </div> -->
         </div>
       </div>
     </div>
-    <!-- /.row -->
   </section>
-  <!-- /.content -->
 </template>
 
 <script>

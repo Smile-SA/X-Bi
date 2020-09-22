@@ -28,6 +28,7 @@
               <div v-if='this.activeNode !== null'>
                 <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
                 <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
                 <div class="col-sm-6 col-xs-12">
                   <LineChart :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
@@ -48,6 +49,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -127,6 +129,20 @@ export default {
         type: 'number'
       }
     },
+    confCardRating() {
+      const from = dateformat(this.from, 'dd/mm/yyyy')
+      const to = dateformat(this.to, 'dd/mm/yyyy')
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Rating',
+        color: 'yellow',
+        icon: 'euro-sign',
+        message: ` from ${from} to ${to}`,
+        type: 'sum'
+      }
+    },
     nameSpaceData() {
       return this.getNamespaces();
     }
@@ -140,6 +156,9 @@ export default {
     },
     getCardPodsUrl() {
       return `${api}/nodes/${this.activeNode}/pods`
+    },
+    getCardRatingUrl() {
+      return `${api}/nodes/${this.activeNode}/total_rating`
     },
     async getMetrics() {
       return await utils.get(`${api}/nodes/${this.activeNode}/rating`, this);
