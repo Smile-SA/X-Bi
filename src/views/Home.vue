@@ -92,10 +92,11 @@ export default {
         from: this.from,
         to: this.to,
         link: '/namespaces',
-        label: 'Namespaces',
-        color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16',
-        type: 'number'
+        label: 'Consomation WATT globale',
+        color: 'green',
+        icon: 'far fa-lightbulb',
+        type: 'number',
+        message: 'kW/h'
       }
     },
     confCardPods() {
@@ -103,10 +104,10 @@ export default {
         from: this.from,
         to: this.to,
         link: '/pods',
-        label: 'Pods',
-        color: 'blue',
-        icon: 'fa fa-sitemap',
-        type: 'number'
+        label: 'Indice énergétique',
+        color: 'green',
+        icon: 'fas fa-cloud-meatball',
+        type: 'number',
       }
     },
     confCardNodes() {
@@ -114,15 +115,15 @@ export default {
         from: this.from,
         to: this.to,
         link: '/nodes',
-        label: 'Nodes',
-        color: 'red',
-        icon: 'fa fa-server',
-        type: 'number'
+        label: 'Generation Co2',
+        color: 'green',
+        icon: 'fas fa-cloud',
+        type: 'number',
+        message: 'kg'
       }
     },
   },
   methods: {
-
     async getNodes() {
       return await utils.fetchDataAsJSON(`${api}/nodes/rating`, this);
     },
@@ -157,7 +158,6 @@ export default {
   },
   async beforeMount() {
     await this.generateColor()
-    this.drawCards()
   },
   async mounted() {}
 }
