@@ -1,5 +1,4 @@
 <template>
-  <!-- Main content -->
   <section class="content">
     <div id="app" class="form-group col-xs-2">
       <h4>Select a date</h4>
@@ -11,10 +10,9 @@
           <div class="box-header">
             <div class="row">
             <h3 class="box-title"></h3>
-              <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
-                <Card :card="card"/>
-              </div>
-              <!-- For each hosts -->
+              <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+              <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
+              <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
               <div>
                 <div>
                   <VueContext ref="menu">
@@ -23,30 +21,18 @@
                       <li @click="getURL">CSV</li>
                     </ul>
                   </VueContext>
-                  <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dataS=this.getNodes() />
-                  </div>
-                  <div class="col-sm-12">
-                    <line-chart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dataS=this.getNamespaces() />
-                  </div>
-
+                    <LineChart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80 :dataS=this.getNodes() />
+                    <LineChart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=80 :dataS=this.getNamespaces() />
                 </div>
               </div>
-
-              <!-- <hr class="visible-xs-block"> -->
-
             </div>
           </div>
         </div>
       </div>
     </div>
-    <!-- /.row -->
-
-    <!-- Main row -->
-    <!-- /.row -->
   </section>
-  <!-- /.content -->
 </template>
+
 <script>
 
 import { generateAPIUrl } from '../variables'
@@ -66,11 +52,8 @@ export default {
             lineChartNamespaces: null,
             dateRange: null,
             colors: {},
-            cards: [],
             to: new Date().toISOString(),
             from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
-            selected: null,
-            queryArray: {}
         }
     },
   computed: {
@@ -103,17 +86,57 @@ export default {
           title: 'Nodes rate (in Euros)'
         }
       }
-    }
+    },
+    confCardNamespaces() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/namespaces',
+        label: 'Namespaces',
+        color: 'purple',
+        icon: 'slice-icon svg-inline--fa fa-w-16',
+        type: 'number'
+      }
+    },
+    confCardPods() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/pods',
+        label: 'Pods',
+        color: 'blue',
+        icon: 'fa fa-sitemap',
+        type: 'number'
+      }
+    },
+    confCardNodes() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/nodes',
+        label: 'Nodes',
+        color: 'red',
+        icon: 'fa fa-server',
+        type: 'number'
+      }
+    },
   },
   methods: {
 
     async getNodes() {
-      let url = `${api}/nodes/rating`;
-      return await utils.fetchDataAsJSON(url, this);
+      return await utils.fetchDataAsJSON(`${api}/nodes/rating`, this);
     },
     async getNamespaces() {
-      let url = `${api}/namespaces/rating`;
-      return await utils.fetchDataAsJSON(url, this);
+      return await utils.fetchDataAsJSON(`${api}/namespaces/rating`, this);
+    },
+    getCardNamespacesUrl() {
+      return `${api}/namespaces`
+    },
+    getCardPodsUrl() {
+      return `${api}/pods`
+    },
+    getCardNodesUrl() {
+      return `${api}/nodes`
     },
     clicked(data) {
       this.selected = data.target.id
@@ -125,42 +148,7 @@ export default {
       this.dateRange = date;
       utils.refreshDate(date, this)
     },
-    async drawCards() {
-      this.namespacesCard()
-      this.nodesCard()
-      this.podsCard()
-    },
-    async namespacesCard() {
-      const url = `${api}/namespaces`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/namespaces',
-        label: 'Namespaces',
-        color: 'purple',
-        icon: 'slice-icon svg-inline--fa fa-w-16'
-      })
-    },
-   async nodesCard() {
-      const url = `${api}/nodes`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/nodes',
-        label: 'Nodes',
-        color: 'red',
-        icon: 'fa fa-server'
-      })
-    },
-    async podsCard() {
-      const url = `${api}/pods`
-      this.cards.push({
-        value: await utils.fetchTotal(url, this),
-        link: '/pods',
-        label: 'Pods',
-        color: 'blue',
-        icon: 'fa fa-sitemap'
-      })
-    },
-    async generateColorSet() {
+    async generateColor() {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
         {'endpoint': `${api}/nodes`, 'key': 'node'},
@@ -168,7 +156,7 @@ export default {
     }
   },
   async beforeMount() {
-    await this.generateColorSet()
+    await this.generateColor()
     this.drawCards()
   },
   async mounted() {}

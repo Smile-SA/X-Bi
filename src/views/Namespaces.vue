@@ -94,7 +94,6 @@ export default {
         id: 'pieChartNodesPods',
         sort: 'node',
         colors: this.colors,
-        isMobile: this.isMobile,
         labels: {
           time: 'frame_begin',
           value: 'frame_price',

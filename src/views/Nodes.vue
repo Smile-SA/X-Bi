@@ -89,10 +89,7 @@ export default {
       }
     },
     confLineChartNameSpace () {
-      if (!api || !this.activeNode) {
-        return;
-      }
-      const c = {
+      return {
         url: `${api}/nodes/${this.activeNode}/namespaces/rating`,
         id: 'lineChartNamespaces',
         sort: 'namespace',
@@ -103,9 +100,7 @@ export default {
           value: 'frame_price',
           title: 'Slices rates (in Euros)'
         }
-      };
-
-      return c;
+      }
     },
     confCardNamespaces() {
       return {
@@ -130,8 +125,6 @@ export default {
       }
     },
     confCardRating() {
-      const from = dateformat(this.from, 'dd/mm/yyyy')
-      const to = dateformat(this.to, 'dd/mm/yyyy')
       return {
         from: this.from,
         to: this.to,
@@ -139,7 +132,7 @@ export default {
         label: 'Rating',
         color: 'yellow',
         icon: 'euro-sign',
-        message: ` from ${from} to ${to}`,
+        message: ` from ${dateformat(this.from, 'dd/mm/yyyy')} to ${dateformat(this.to, 'dd/mm/yyyy')}`,
         type: 'sum'
       }
     },
