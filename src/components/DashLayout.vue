@@ -34,13 +34,6 @@
           </li>
           <li class="active">{{$route.name.toUpperCase()}}</li>
         </ol>
-         <!--<router-link tag="li" class="pageLink" to="/login">-->
-             <button @click="$router.push('login')" class="button" type="button">Login</button>
-         <!-- </router-link> -->    
-        
-      <a href="http://localhost:5012/logout">
-       <button class="button2" type="button">Logout</button>
-     </a>
 
       </section>
 
