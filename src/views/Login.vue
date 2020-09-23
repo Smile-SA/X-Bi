@@ -16,7 +16,7 @@
       </div>
       <div class="container" style="background-color:#f1f1f1">
         <!-- <button type="button" @click="$router.push('home')"  class="cancelbtn">Cancel</button> -->
-        <span class="psw" >  <a v-bind:href='this.signup()'> Create user  </a></span>
+        <span class="psw" >  <a v-bind:href='this.signup()'> Create user  </a></span><a/>
         <span class="psw" >Forgot <a v-bind:href='this.password()'>password?</a></span> 
       </div>
     </form>
