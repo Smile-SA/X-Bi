@@ -1,13 +1,17 @@
 <template>
   <aside class="main-sidebar">
     <section class="sidebar">
-      <Profile :tenant=this.getTenant() :email=email :image=this.fakeImage()></Profile>
+      <Profile :tenant= getTenant() :email=email :image=this.fakeImage()></Profile>
       <SidebarMenu/>
     </section>
   </aside>
 </template>
 <script>
 
+import { generateAPIUrl } from '../../variables'
+import * as utils from  '../../utils'
+
+const api = generateAPIUrl()
 export default {
   name: 'Sidebar',
   props: ['displayName', 'pictureUrl', 'email'],
@@ -20,9 +24,11 @@ export default {
       .jQuery('[data-toggle="hideseek"]')
   },
   methods: {
-    getTenant() {
-      return 'Default'
+     getTenant () {
+      const url = `${api}/current`
+      this.user =  utils.fetchData(url, this)
     },
+     
     getEmail() {
       return 'rnd@alterway.fr'
     },

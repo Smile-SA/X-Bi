@@ -8,37 +8,36 @@
                 <p class="white">{{ tenant }}</p>
             </div>
             <span class="text-muted">{{ email }}</span>
-            <a >
-                <a href="#" @click="logoutUser()" class="export-button">Logout</a>
-                <!-- <button class="button2" type="button">Logout</button> -->
-            </a>
+            <form method="POST" v-bind:action='this.logoutUser()'>
+                <input type="hidden">
+                <button class="button2" type="submit">Logout</button>
+            </form>
+
         </div>
     </div>
 </template>
 
 <script>
 import { generateAPIUrl } from '../variables'
-
-const api = generateAPIUrl()
-
 export default {
     name: 'Profile',
     props: ['email', 'image'],
     watch: {},
     data() {
         return {
-            tenant: ''
+            tenant: '',
+            api: generateAPIUrl()
         }
     },
     created() {
-        fetch(`${api}/current`, {credentials: 'include'})
+        fetch(`${this.api}/current`, {credentials: 'include'})
         .then(response => response.json())
         .then(r => this.tenant = r.results)
     },
     methods: {
         logoutUser() {
-            fetch(`${api}/logout`, {credentials: 'include', method: 'POST'})
-        }
+            return(`${this.api}/logout`)
+        },
     }
 }
 </script>

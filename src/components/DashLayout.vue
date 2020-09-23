@@ -1,11 +1,11 @@
 <template>
   <div :class="['wrapper', classes]">
     <header class="main-header">
-	<span class="logo-mini">
+	<span class="logo-mini"> 
 		<a href="/" class="logo">
-      <img src="static/img/5GBiller_-_logo_7_.png" alt="Logo">
+      <img src="static/img/CO2_Biller_-_logo.png"  alt="Logo">
     </a>
-	</span>
+	 </span> 
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->
