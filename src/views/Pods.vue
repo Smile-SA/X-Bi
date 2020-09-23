@@ -40,7 +40,6 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
