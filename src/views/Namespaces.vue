@@ -15,12 +15,6 @@
         <VueRangedatePicker i18n="EN" @selected="refreshDate"></VueRangedatePicker>
       </div>
     </div>
-    <VueContext ref="menu">
-      <ul>
-        <li @click="getURL">JSON</li>
-        <li @click="getURL">CSV</li>
-      </ul>
-    </VueContext>
     <div class="row">
       <div class="col-xs-12">
         <div class="box">
@@ -28,9 +22,9 @@
             <h3 class="box-title"></h3>
             <div v-if='this.activeNamespace !== null'>
               <div>
-                <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
-                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
-                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
+                <Card :configuration=confCardKwh :url=this.getCardKwhUrl()></Card>
+                <Card :configuration=confCardCo2 :url=this.getCardCo2Url()></Card>
+                <Card :configuration=confCardEnergeticEfficiency :url=this.getCardEnergeticEfficiencyUrl()></Card>
               </div>
               <div class="col-sm-6 col-xs-12">
                 <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
@@ -50,7 +44,6 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
-import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -97,44 +90,45 @@ export default {
         labels: {
           time: 'frame_begin',
           value: 'frame_price',
-          title: 'Services repartition by nodes'
+          title: 'Pods repartition per nodes'
         }
       }
     },
-    confCardNodes() {
-      return {
-        from: this.from,
-        to: this.to,
-        link: '/nodes',
-        label: 'Nodes',
-        color: 'red',
-        icon: 'far fa-lightbulb',
-        type: 'number'
-      }
-    },
-    confCardPods() {
-      return {
-        from: this.from,
-        to: this.to,
-        link: '/pods',
-        label: 'Pods',
-        color: 'blue',
-        icon: 'fa-sitemap',
-        type: 'number'
-      }
-    },
-    confCardRating() {
-      const from = dateformat(this.from, 'dd/mm/yyyy')
-      const to = dateformat(this.to, 'dd/mm/yyyy')
+    confCardKwh() {
       return {
         from: this.from,
         to: this.to,
         link: '/',
-        label: 'Rating',
-        color: 'yellow',
-        icon: 'euro-sign',
-        message: ` from ${from} to ${to}`,
+        label: 'Namespace consumption',
+        color: 'green',
+        icon: 'far fa-lightbulb',
         type: 'sum',
+        message: 'W/h',
+        key: 'frame_price'
+      }
+    },
+    confCardCo2() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Co2 Generation',
+        color: 'green',
+        icon: 'fas fa-cloud',
+        type: 'sum',
+        message: 'kg',
+        key: 'frame_price'
+      }
+    },
+    confCardEnergeticEfficiency() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/',
+        label: 'Energy efficiency',
+        color: 'green',
+        icon: 'fas fa-cloud-meatball',
+        type: 'avg',
         key: 'frame_price'
       }
     },
@@ -146,14 +140,14 @@ export default {
     async getNodePods() {
       return await utils.get(`${api}/namespaces/${this.activeNamespace}/nodes/pods`, this)
     },
-    getCardRatingUrl() {
-      return `${api}/namespaces/${this.activeNamespace}/total_rating`
+    getCardEnergeticEfficiencyUrl() {
+      return `${api}/namespaces/${this.activeNamespace}/metrics/energetic_efficiency/rating`
     },
-    getCardNodesUrl() {
-      return `${api}/namespaces/${this.activeNamespace}/nodes`
+    getCardKwhUrl() {
+      return `${api}/namespaces/${this.activeNamespace}/metrics/watt/rating`
     },
-    getCardPodsUrl() {
-      return `${api}/namespaces/${this.activeNamespace}/pods`
+    getCardCo2Url() {
+      return `${api}/namespaces/${this.activeNamespace}/metrics/co2/rating`
     },
     getURL(data) {
       utils.getURL(data, this)

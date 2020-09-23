@@ -17,8 +17,8 @@ export const routes =   [
                 {
                     path: 'namespaces',
                     component: routeTarget,
-                    name: 'Slices',
-                    meta: { description: 'Detailled view of slices', requiresAuth: false }
+                    name: 'Namespaces',
+                    meta: { description: 'Detailled view of Namespaces', requiresAuth: false }
                 },
                 {
                     path: 'nodes',
@@ -29,8 +29,8 @@ export const routes =   [
                 {
                     path: 'pods',
                     component: routeTarget,
-                    name: 'Services',
-                    meta: { description: 'Detailled view of services', requiresAuth: false }
+                    name: 'Pods',
+                    meta: { description: 'Detailled view of Pods', requiresAuth: false }
                 },
                 {
                     path: 'configuration',

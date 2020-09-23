@@ -92,7 +92,7 @@ export default {
         from: this.from,
         to: this.to,
         link: '/',
-        label: 'Global WATT consumption',
+        label: 'Global consumption',
         color: 'green',
         icon: 'far fa-lightbulb',
         type: 'sum',
@@ -108,7 +108,7 @@ export default {
         label: 'Energy efficiency',
         color: 'green',
         icon: 'fas fa-cloud-meatball',
-        type: 'sum',
+        type: 'avg',
         key: 'price'
       }
     },

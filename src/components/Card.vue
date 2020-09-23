@@ -39,37 +39,38 @@
                 case "number": choosen = this.fetchNumber; break;
                 case "string": choosen = this.fetchString; break;
                 case "sum": choosen = this.fetchSum; break;
+                case "avg": choosen = this.fetchAverrage; break;
             }
             choosen()
             this.timer = setInterval(choosen, 15000)
         },
         methods: {
-            fetchNumber() {
+            cardFetch() {
                 const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
-                fetch(this.url + queryDate, {credentials: 'include'})
-                .then(response => response.json()
-                .then(r => this.value = r.total))
+                return fetch(this.url + queryDate, {credentials: 'include'}).then(response => response.json())
+            },
+            fetchNumber() {
+                this.cardFetch().then(r => this.value = r.total)
                 this.$forceUpdate()
             },
             fetchString() {
-                const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
-                fetch(this.url + queryDate, {credentials: 'include'})
-                .then(response => response.json())
-                .then(r => this.value = r.results[0][this.configuration.key])
+                this.cardFetch().then(r => this.value = r.results[0][this.configuration.key])
                 this.$forceUpdate()
             },
             fetchSum() {
-                const queryDate = utils.convertURLDateParameter(this.configuration.from, this.configuration.to)
-                fetch(this.url + queryDate, {credentials: 'include'})
-                .then(response => response.json())
-                .then(r => {
-                    if (r.results.length === 1) {
-                        this.value = r.results[0][this.configuration.key]
-                    } else {
-                        this.value = r.results.map(item => item[this.configuration.key]).reduce((a, b) => a + b, 0)
-                    }
-                this.value = this.value.toFixed(2)
-                this.$forceUpdate()
+                this.cardFetch().then(r => {
+                    this.value = (r.results.length === 1) ?
+                     r.results[0][this.configuration.key].toFixed(2) : 
+                     r.results.map(item => item[this.configuration.key]).reduce((a, b) => a + b, 0).toFixed(2)
+                    this.$forceUpdate()
+                })
+            },
+            fetchAverrage() {
+                this.cardFetch().then(r => {
+                    this.value = (r.results.map(item => item[this.configuration.key])
+                                          .reduce((a, b) => a + b) / r.results.length)
+                                          .toFixed(2)
+                    this.$forceUpdate()
                 })
             },
             redirectCard() {
