@@ -80,11 +80,11 @@
                                     beginAtZero: true,
                                     fontSize: 15,
                                     callback: function(value, index, values) {
-                                        if (index === values.length - 1) return min.toFixed(10)
+                                        if (index === values.length - 1) return min.toFixed(5)
                                         else if (index === Math.trunc(values.length / 2)) {
-                                            return ((max + min) / 2).toFixed(10)
+                                            return ((max + min) / 2).toFixed(5)
                                         }
-                                        else if (index === 0) return max.toFixed(10)
+                                        else if (index === 0) return max.toFixed(5)
                                         else return ''
                                     }
                                 }

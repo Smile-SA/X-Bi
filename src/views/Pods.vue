@@ -117,7 +117,8 @@ export default {
         color: 'yellow',
         icon: 'fa fa-euro-sign',
         message: ` from ${from} to ${to}`,
-        type: 'sum'
+        type: 'sum',
+        key: 'frame_price'
       }
     },
     confCardStart() {

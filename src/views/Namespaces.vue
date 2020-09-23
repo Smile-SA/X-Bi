@@ -134,7 +134,8 @@ export default {
         color: 'yellow',
         icon: 'euro-sign',
         message: ` from ${from} to ${to}`,
-        type: 'sum'
+        type: 'sum',
+        key: 'frame_price'
       }
     },
   },

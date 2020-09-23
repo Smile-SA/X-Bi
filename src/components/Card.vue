@@ -30,7 +30,7 @@
         data() {
             return {
                 timer: '',
-                value: 0
+                value: '-'
             }
         },
         created () {
@@ -41,7 +41,7 @@
                 case "sum": choosen = this.fetchSum; break;
             }
             choosen()
-            this.timer = setInterval(choosen, 10000)
+            this.timer = setInterval(choosen, 15000)
         },
         methods: {
             fetchNumber() {
@@ -64,10 +64,11 @@
                 .then(response => response.json())
                 .then(r => {
                     if (r.results.length === 1) {
-                        this.value = r.results[0].frame_price
+                        this.value = r.results[0][this.configuration.key]
                     } else {
-                        this.value = r.results.map(item => item.frame_price).reduce((a, b) => a + b, 0).toFixed(5)
+                        this.value = r.results.map(item => item[this.configuration.key]).reduce((a, b) => a + b, 0)
                     }
+                this.value = this.value.toFixed(2)
                 this.$forceUpdate()
                 })
             },

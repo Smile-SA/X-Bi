@@ -133,7 +133,8 @@ export default {
         color: 'yellow',
         icon: 'euro-sign',
         message: ` from ${dateformat(this.from, 'dd/mm/yyyy')} to ${dateformat(this.to, 'dd/mm/yyyy')}`,
-        type: 'sum'
+        type: 'sum',
+        key: 'frame_price'
       }
     },
     nameSpaceData() {
