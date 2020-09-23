@@ -8,23 +8,33 @@
                 <p class="white">{{ tenant }}</p>
             </div>
             <span class="text-muted">{{ email }}</span>
-            <a v-if='this.tenant !== "Default"' href="http://localhost:5012/logout">
-                <button class="button2" type="button">Logout</button>
-            </a>
+         
+                 <form v-if='this.tenant !== "Default"' method="POST" v-bind:action='this.logout_user()'>
+                <input type="hidden">
+                <button class="button2" type="submit">Logout</button>
+                </form>
+
         </div>
     </div>
 </template>
 
 <script>
+import { generateAPIUrl } from '../variables'
 export default {
     name: 'Profile',
     props: ['email', 'tenant', 'image'],
     watch: {},
     data() {
-        return {}
+       return {
+         api: generateAPIUrl()
+    }
     },
     created() {},
-    methods: {}
+    methods: { 
+    logout_user: function() {
+     return(`${this.api}/logout`)
+    },
+    }
 }
 </script>
 

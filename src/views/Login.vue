@@ -2,7 +2,7 @@
   <section class="content">
   <form method="POST" v-bind:action="this.login_user()"> 
         <div class="imgcontainer">
-        <img src="static/img/5GBiller_-_logo_7_.png" width="550" height="300" alt="Avatar" class="avatar">
+        <img src="static/img/CO2_Biller_-_logo.png" width="550" height="300" alt="Avatar" class="avatar">
       </div>
       <div class="container">
         <label for="tenant"><b>Username</b></label>
@@ -15,7 +15,7 @@
         </label>  
       </div>
       <div class="container" style="background-color:#f1f1f1">
-        <button type="button" @click="$router.push('home')"  class="cancelbtn">Cancel</button>
+        <!-- <button type="button" @click="$router.push('home')"  class="cancelbtn">Cancel</button> -->
         <span class="psw" >  <a v-bind:href='this.signup()'> Create user  </a></span>
         <span class="psw" >Forgot <a v-bind:href='this.password()'>password?</a></span> 
       </div>
@@ -98,6 +98,7 @@ img.avatar {
 
 .container {
   padding: 16px;
+  width:25%;
 }
 
 span.psw {
