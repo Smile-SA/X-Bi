@@ -39,10 +39,10 @@ export default {
      return(`${this.api}/login_user`)
     },
     password: function() {
-      return(`${this.api}/password`      )
+      return(`${this.api}/password`)
     },
     signup: function() {
-      return(`${this.api}/signup`      )
+      return(`${this.api}/signup`)
     }
   },
   
