@@ -1,31 +1,27 @@
 <template>
   <section class="content">
-    <form method="POST" action='#' onsubmit="return this.login_user()">
-      <div class="imgcontainer">
+  <form method="POST" v-bind:action="this.login_user()"> 
+        <div class="imgcontainer">
         <img src="static/img/5GBiller_-_logo_7_.png" width="550" height="300" alt="Avatar" class="avatar">
       </div>
-
       <div class="container">
         <label for="tenant"><b>Username</b></label>
         <input type="text" placeholder="Enter Username" name="tenant" required>
-
         <label for="password"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="password" required>
-          
+        <input type="password" placeholder="Enter Password" name="password" required> 
         <button type="submit">Login</button>
         <label>
           <input type="checkbox" checked="checked" name="remember"> Remember me
-        </label>
+        </label>  
       </div>
-
       <div class="container" style="background-color:#f1f1f1">
         <button type="button" @click="$router.push('home')"  class="cancelbtn">Cancel</button>
-        <span class="psw" >Forgot <a href="" @click='password()'>password?</a></span>
+        <span class="psw" >  <a v-bind:href='this.signup()'> Create user  </a></span>
+        <span class="psw" >Forgot <a v-bind:href='this.password()'>password?</a></span> 
       </div>
     </form>
   </section>
 </template>
-
 <script>
 import { generateAPIUrl } from '../variables'
 
@@ -36,15 +32,22 @@ export default {
       api: generateAPIUrl()
     }
   },
+  
   methods: {
-    login_user() {
-      return `${this.api}/login_user`
+  
+    login_user: function() {
+     return(`${this.api}/login_user`)
     },
-    password() {
-      return `${this.api}/password`      
+    password: function() {
+      return(`${this.api}/password`      )
+    },
+    signup: function() {
+      return(`${this.api}/signup`      )
     }
-  }
+  },
+  
 }
+
 </script>
 
 <style>
