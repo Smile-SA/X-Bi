@@ -41,7 +41,6 @@
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
 
-
 const api = generateAPIUrl()
 
 export default {

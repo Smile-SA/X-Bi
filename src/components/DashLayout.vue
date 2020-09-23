@@ -4,8 +4,8 @@
 	<span class="logo-mini"> 
 		<a href="/" class="logo">
       <img src="static/img/CO2_Biller_-_logo.png"  alt="Logo">
-    </a> 
-    </span> 
+    </a>
+  </span>
       <!-- Header Navbar -->
       <nav class="navbar navbar-static-top" role="navigation">
         <!-- Sidebar toggle button-->

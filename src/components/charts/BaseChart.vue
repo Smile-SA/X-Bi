@@ -38,7 +38,7 @@
             graphConfiguration(response, c) {},
             drawChart(c) {
                 this.dataS.then((d => {
-                    if (!!this.chart) {
+                    if (this.chart) {
                         this.chart.destroy()
                     }
 

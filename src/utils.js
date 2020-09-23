@@ -202,7 +202,10 @@ export async function isAuth() {
     const url = `${api}/current`
     const response = await fetch(url)
     const json = await response.json()
-    return json.results !== 'Default'
+    if (json.results !== 'default')  {
+      return true
+    }
+    return false
 }
 
 export async function get(url, that) {
