@@ -524,8 +524,7 @@ a:focus {
   clear: both;
 }
 .user-panel > .image > img {
-  width: 100%;
-  max-width: 45px;
+  width: 25%;
   height: auto;
 }
 .user-panel > .info {
@@ -2096,10 +2095,17 @@ a:focus {
   margin-left: 90px;
 }
 .info-box-number {
-  display: block;
+  display: inline-block;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 2em;
 }
+.info-box-number-rating    
+{
+font-weight: bold;
+font-size: 1.5em;
+margin-left: 0.25em;
+}
+
 .progress-description,
 .info-box-text {
   display: block;
