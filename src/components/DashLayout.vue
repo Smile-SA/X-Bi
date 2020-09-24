@@ -3,7 +3,7 @@
     <header class="main-header">
 	<span class="logo-mini"> 
 		<a href="/" class="logo">
-      <img src="static/img/CO2_Biller_-_logo.png"  alt="Logo">
+      <img src="static/img/X-Bi_-_logo.png"  alt="Logo">
     </a>
   </span>
       <!-- Header Navbar -->

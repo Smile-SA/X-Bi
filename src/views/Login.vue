@@ -2,7 +2,7 @@
   <section class="content">
   <form method="POST" v-bind:action="this.login_user()"> 
         <div class="imgcontainer">
-        <img src="static/img/CO2_Biller_-_logo.png" width="550" height="300" alt="Avatar" class="avatar">
+        <img src="static/img/X-Bi_-_logo.png" width="550" height="300" alt="Avatar" class="avatar">
       </div>
       <div class="container">
         <label for="tenant"><b>Username</b></label>
