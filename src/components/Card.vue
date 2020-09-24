@@ -7,8 +7,9 @@
                     <p></p>
                     <span class="info-box-text">{{configuration.label}}</span>
                     <span class="info-box-number">{{this.value}}</span>
-                    <span v-if="this.configuration.message !== undefined" class="info-box-number-rating">{{this.configuration.message}}</span>
+                    <a></a>
                 </div>
+                <span v-if="this.configuration.message !== undefined" class="info-box-number-rating">{{this.configuration.message}}</span>
             </div>
         </div>
     </div>

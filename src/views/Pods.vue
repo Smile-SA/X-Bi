@@ -24,7 +24,7 @@
                 <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
                 <div>
                   <div class="col-sm-12">
-                    <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'" :dataS=this.getMetrics()></BarChart>
+                    <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'" :dataS=this.getMetrics() :height=80></BarChart>
                   </div>
                 </div>
                 <Card :configuration=confCardStart :url=this.getCardLifetimeUrl()></Card>
