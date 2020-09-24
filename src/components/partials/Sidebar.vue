@@ -40,7 +40,7 @@ export default {
 </script>
 <style scope="local">
 .user-panel .image img {
-  border-radius: 50%;
+  border-radius: 0;
 }
 #searchForm {
   padding-left: 0em;
@@ -58,4 +58,8 @@ export default {
 #search-btn {
   width: 20%;
 }
+.pull-left.info p {
+    margin: 0 0 0px;
+}
+
 </style>

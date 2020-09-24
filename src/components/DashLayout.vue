@@ -7,7 +7,7 @@
     </a>
   </span>
       <!-- Header Navbar -->
-      <nav class="navbar navbar-static-top" role="navigation">
+      <!-- <nav class="navbar navbar-static-top" role="navigation"> -->
         <!-- Sidebar toggle button-->
         <!--
         <a href="javascript:;" class="sidebar-toggle fa fa-bars" data-toggle="offcanvas" role="button">
@@ -130,10 +130,10 @@ export default {
 
   img {
     display: block;
-    height: auto;
-    max-height: 100%;
-    width: auto;
-    max-width: 100%;
+    //height: auto;
+    //max-height: 100%;
+    width: 33%;
+    //max-width: 100%;
   }
 }
 
@@ -158,9 +158,9 @@ hr.visible-xs-block {
  
 }
 .button2 {
-    position: absolute;
-    top: 90%;
-    left: 94.2%;
+    //position: absolute;
+    //top: 90%;
+    //left: 94.2%;
  
 }
 </style>
