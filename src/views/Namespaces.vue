@@ -113,7 +113,7 @@ export default {
         link: '/pods',
         label: 'Pods',
         color: 'blue',
-        icon: 'fa-sitemap',
+        icon: 'fab fa-cloudversify',
         type: 'number'
       }
     },
