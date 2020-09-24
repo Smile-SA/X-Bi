@@ -197,15 +197,12 @@ export async function refreshDate(date, that) {
 
 }
 
-export async function isAuth() {
+export async function needAuth() {
     const api = generateAPIUrl()
     const url = `${api}/current`
-    const response = await fetch(url)
+    return fetch(url, {credentials: 'include'}).then(response => response.json())
     const json = await response.json()
-    if (json.results !== 'default')  {
-      return true
-    }
-    return false
+    return json.results === ''
 }
 
 export async function get(url, that) {

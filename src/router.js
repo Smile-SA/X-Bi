@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import { isAuth } from './utils'
+import { needAuth } from './utils'
 
 const routes = [
   {
@@ -65,14 +65,18 @@ const router = new Router({
 
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
-    if (isAuth()) {
-      next({
-        path: '/login',
-        query: { redirect: to.fullPath }
-      })
-    } else {
-      next()
-    }
+    needAuth().then(r => {
+      console.log('auth? -> ', r)
+      const auth = r.results === ''
+      if (auth) {
+        next({
+          path: '/login',
+          query: { redirect: to.fullPath }
+        })
+      } else {
+        next()
+      }
+    })
   } else {
     next()
   }
