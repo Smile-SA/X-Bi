@@ -66,9 +66,7 @@ const router = new Router({
 router.beforeEach((to, from, next) => {
   if (to.matched.some(record => record.meta.requiresAuth)) {
     needAuth().then(r => {
-      console.log('auth? -> ', r)
-      const auth = r.results === ''
-      if (auth) {
+      if (r.results === '') { // User is not logged in
         next({
           path: '/login',
           query: { redirect: to.fullPath }
