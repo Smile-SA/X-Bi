@@ -20,9 +20,9 @@
           <div class="box-header">
             <h3 class="box-title"></h3>
               <div v-if='this.activeNode !== null'>
-                <Card :configuration=confCardKwh :url=this.getCardKwhUrl()></Card>
-                <Card :configuration=confCardCo2 :url=this.getCardCo2Url()></Card>
-                <Card :configuration=confCardEnergeticEfficency :url=this.getCardEnergeticEfficiencyUrl()></Card>
+                <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
                 <div class="col-sm-6 col-xs-12">
                   <LineChart :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
                 </div>
@@ -43,6 +43,7 @@
 <script>
 import { generateAPIUrl } from '../variables'
 import * as utils from  '../utils'
+import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
@@ -95,57 +96,55 @@ export default {
         }
       }
     },
-    confCardKwh() {
+    confCardNamespaces() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/namespaces',
+        label: 'Namespaces',
+        color: 'purple',
+        icon: 'slice-icon svg-inline--fa fa-w-16',
+        type: 'number'
+      }
+    },
+    confCardPods() {
+      return {
+        from: this.from,
+        to: this.to,
+        link: '/pods',
+        label: 'Pods',
+        color: 'blue',
+        icon: 'fab fa-cloudversify',
+        type: 'number'
+      }
+    },
+    confCardRating() {
       return {
         from: this.from,
         to: this.to,
         link: '/',
-        label: 'Node consumption',
-        color: 'green',
-        icon: 'far fa-lightbulb',
+        label: 'Rating',
+        color: 'yellow',
+        icon: 'fa fa-euro-sign',
+        message: ` from ${dateformat(this.from, 'dd/mm/yyyy')} to ${dateformat(this.to, 'dd/mm/yyyy')}`,
         type: 'sum',
-        message: 'W/h',
         key: 'frame_price'
       }
     },
-    confCardCo2() {
-      return {
-        from: this.from,
-        to: this.to,
-        link: '/',
-        label: 'Co2 Generation',
-        color: 'green',
-        icon: 'fas fa-cloud',
-        message: 'kg',
-        type: 'sum',
-        key: 'frame_price'
-      }
-    },
-    confCardEnergeticEfficency() {
-      return {
-        from: this.from,
-        to: this.to,
-        link: '/',
-        label: 'Energy efficiency',
-        color: 'green',
-        icon: 'fas fa-cloud-meatball',
-        type: 'avg',
-        key: 'frame_price'
-      }
-    },
+
     nameSpaceData() {
       return this.getNamespaces();
     }
   },
   methods: {
-    getCardKwhUrl() {
-      return `${api}/nodes/${this.activeNode}/metrics/watt/rating`
+    getCardNamespacesUrl() {
+      return `${api}/nodes/${this.activeNode}/namespaces`
     },
-    getCardCo2Url() {
-      return `${api}/nodes/${this.activeNode}/metrics/co2/rating`
+    getCardPodsUrl() {
+      return `${api}/nodes/${this.activeNode}/pods`
     },
-    getCardEnergeticEfficiencyUrl() {
-      return `${api}/nodes/${this.activeNode}/metrics/energetic_efficiency/rating`
+    getCardRatingUrl() {
+      return `${api}/nodes/${this.activeNode}/total_rating`
     },
     async getMetrics() {
       return await utils.get(`${api}/nodes/${this.activeNode}/rating`, this);

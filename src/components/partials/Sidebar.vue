@@ -1,7 +1,7 @@
 <template>
   <aside class="main-sidebar">
     <section class="sidebar">
-      <Profile :tenant= getTenant() :email=email :image=this.fakeImage()></Profile>
+      <Profile :tenant=getTenant() :email=email :image=this.fakeImage()></Profile>
       <SidebarMenu/>
     </section>
   </aside>
@@ -9,7 +9,6 @@
 <script>
 
 import { generateAPIUrl } from '../../variables'
-import * as utils from  '../../utils'
 
 const api = generateAPIUrl()
 export default {
@@ -25,10 +24,10 @@ export default {
   },
   methods: {
      getTenant () {
-      const url = `${api}/current`
-      this.user =  utils.fetchData(url, this)
+      fetch(`${api}/current`, {credentials: 'include'})
+      .then(response => response.json())
+      .then(r => this.user = r.results)
     },
-     
     getEmail() {
       return 'rnd@alterway.fr'
     },

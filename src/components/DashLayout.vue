@@ -14,7 +14,7 @@
           <span class="sr-only">Toggle navigation</span>
         </a>
         -->
-      </nav>
+      <!-- </nav> -->
     </header>
     <!-- Left side column. contains the logo and sidebar -->
     <sidebar style="text-centered" :display-name="compDisplayName" :email="compEmail" />

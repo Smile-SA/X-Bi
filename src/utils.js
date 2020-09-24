@@ -201,8 +201,6 @@ export async function needAuth() {
     const api = generateAPIUrl()
     const url = `${api}/current`
     return fetch(url, {credentials: 'include'}).then(response => response.json())
-    const json = await response.json()
-    return json.results === ''
 }
 
 export async function get(url, that) {

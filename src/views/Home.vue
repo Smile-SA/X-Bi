@@ -10,9 +10,10 @@
           <div class="box-header">
             <div class="row">
             <h3 class="box-title"></h3>
-              <Card :configuration=confCardKwh :url=this.getCardKwhUrl()></Card>
-              <Card :configuration=confCardCo2 :url=this.getCardCO2Url()></Card>
-              <Card :configuration=confCardEnergeticEfficiency :url=this.getCardEnergyEfficency()></Card>
+              <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+              <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
+              <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+
               <div>
                 <div>
                   <VueContext ref="menu">
@@ -87,42 +88,37 @@ export default {
         }
       }
     },
-    confCardKwh() {
+    confCardNamespaces() {
       return {
         from: this.from,
         to: this.to,
-        link: '/',
-        label: 'Global consumption',
-        color: 'green',
-        icon: 'far fa-lightbulb',
-        type: 'sum',
-        message: 'W/h',
-        key: 'price'
+        link: '/namespaces',
+        label: 'Namespaces',
+        color: 'purple',
+        icon: 'slice-icon svg-inline--fa fa-w-16',
+        type: 'number'
       }
     },
-    confCardEnergeticEfficiency() {
+    confCardPods() {
       return {
         from: this.from,
         to: this.to,
-        link: '/',
-        label: 'Energy efficiency',
-        color: 'green',
-        icon: 'fas fa-cloud-meatball',
-        type: 'avg',
-        key: 'price'
+        link: '/pods',
+        label: 'Pods',
+        color: 'blue',
+        icon: 'fa fa-sitemap',
+        type: 'number'
       }
     },
-    confCardCo2() {
+    confCardNodes() {
       return {
         from: this.from,
         to: this.to,
-        link: '/',
-        label: 'Co2 Generation',
-        color: 'green',
-        icon: 'fas fa-cloud',
-        type: 'sum',
-        message: 'kg',
-        key: 'price'
+        link: '/nodes',
+        label: 'Nodes',
+        color: 'red',
+        icon: 'fa fa-server',
+        type: 'number'
       }
     },
   },
@@ -133,14 +129,14 @@ export default {
     async getNamespaces() {
       return await utils.fetchDataAsJSON(`${api}/namespaces/rating`, this);
     },
-    getCardKwhUrl() {
-      return `${api}/metrics/watt/rating`
+    getCardNamespacesUrl() {
+      return `${api}/namespaces`
     },
-    getCardEnergyEfficency() {
-      return `${api}/metrics/energetic_efficiency/rating`
+    getCardPodsUrl() {
+      return `${api}/pods`
     },
-    getCardCO2Url() {
-      return `${api}/metrics/co2/rating`
+    getCardNodesUrl() {
+      return `${api}/nodes`
     },
     clicked(data) {
       this.selected = data.target.id
