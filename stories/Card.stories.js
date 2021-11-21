@@ -1,4 +1,4 @@
-import Card from '../src/components/Card';
+import Card from '../src/components/card/index.vue';
 import {
     withKnobs,
     object,
@@ -38,13 +38,13 @@ const defaultCardValue = {
 export const CardComponent = () => ({
     components: { Card },
     props: {
-        card: {
+        configuration: {
             type: Object,
-            default: object('card', defaultCardValue),
+            default: object('configuration', defaultCardValue),
         },
     },
     template: '<div>' +
-        '<card :card="card" />' +
+        '<card :configuration="configuration" />' +
         '<router-view/>' +
         '</div>',
 });

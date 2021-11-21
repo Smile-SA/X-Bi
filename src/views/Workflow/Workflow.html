@@ -1,0 +1,60 @@
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="form-group col-xs-2">
+            <h4>Select a step</h4>
+            <select class="form-control" v-on:change="getSteps">
+                <option selected disabled> -- Select a step -- </option>
+                <option v-for="option in stepsSelect" v-bind:value="option" v-bind:key="option">{{option}}</option>
+            </select>
+        </div>
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <div class="row">
+                        <h3 class="box-title"></h3>
+                        <div class="col-md-4 col-sm-6 col-xs-12 column" v-for="card in cards" v-bind:key="card.label">
+                            <card :card="card"/>
+                        </div>
+                        <div class="form-center">
+                            <form class="form-inline">
+                                <legend>Configure step</legend>
+                                <p>
+                                    <label for="input-name">Name</label>
+                                    <input type="text" name="name" id="input-name">
+                                </p>
+                                <p>
+                                    <label for="input-sources">Sources</label>
+                                    <input type="text" name="sources" id="input-sources">
+                                </p>
+                                <p>
+                                    <label for="input-labels">Labels</label>
+                                    <input type="text" name="labels" id="input-labels">
+                                </p>
+                                <p>
+                                    <label for="input-operation">Operation</label>
+                                    <input type="text" name="operation" id="input-operation">
+                                </p>
+                                <!-- <button type="submit">Create</button> -->
+                                <div v-if='!showButton()'>
+                                    <a href="#" @click="createStep()" class="button-valid">Create</a>
+                                </div>
+                                <div v-if='showButton()'>
+                                    <a href="#" @click="updateStep()" class="button-valid">Update</a>
+                                </div>
+                                <div v-if='showButton()'>
+                                    <a href="#" @click="deleteStep()" class="button-valid">Delete</a>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+
+    <!-- Main row -->
+    <!-- /.row -->
+</section>
+<!-- /.content -->

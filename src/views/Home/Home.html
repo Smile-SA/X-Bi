@@ -1,0 +1,30 @@
+<section class="content">
+    <div id="app" class="form-group col-xs-2">
+        <h4>Select a date</h4>
+        <VueRangedatePicker id="rangeDatePicker" v-model="date" i18n="EN" @selected="refreshDate"/>
+    </div>
+    <div class="row">
+        <div class="col-xs-12 col-md-12 col-sm-12">
+            <div class="box">
+                <div class="row">
+                    <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+                    <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
+                    <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+                </div>
+                <div>
+                    <VueContext ref="menu">
+                        <ul>
+                            <li @click="getURL">JSON</li>
+                            <li @click="getURL">CSV</li>
+                        </ul>
+                    </VueContext>
+                    <apex-charts :chartOptions="apexChartOptions" :chartSeries="this.getNamespacesApex()" ></apex-charts>
+                    <LineChart class="pointer" :configuration=confLineChartNodes :idL="'lineChartNodes'" :height=80
+                               :dataS=this.getNodes()></LineChart>
+                    <LineChart class="pointer" :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'"
+                               :height=80 :dataS=this.getNamespaces()></LineChart>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,5 +1,5 @@
 export const generateAPIUrl = () => {
-    if (window._env_.RATING_API_URL === undefined) {
+    if (window._env_===undefined || window._env_.RATING_API_URL === undefined) {
         return 'http://localhost:5012'
     } else if (window._env_.RATING_API_URL.startsWith('http')) {
         return window._env_.RATING_API_URL
@@ -11,7 +11,7 @@ export const generateAPIUrl = () => {
 }
 
 export const generatePromUrl = () => {
-    if (window._env_.PROMETHEUS_API_URL === undefined) {
+    if (window._env_===undefined || window._env_.PROMETHEUS_API_URL === undefined) {
         return 'http://localhost:9090/api/v1'
     } else if (window._env_.PROMETHEUS_API_URL.startsWith('http')) {
         return `${window._env_.PROMETHEUS_API_URL}/api/v1`

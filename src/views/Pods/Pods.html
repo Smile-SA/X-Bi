@@ -1,0 +1,36 @@
+<section class="content">
+    <div class="row">
+        <div class="form-group col-xs-2">
+            <h4>Select a pod</h4>
+            <select class="form-control" v-on:change="getPods">
+                <option selected disabled> -- Select a pod -- </option>
+                <option v-for="option in selectPods" v-bind:value="option" v-bind:key="option">{{option}}</option>
+            </select>
+        </div>
+        <div v-if="showDatePicker()" class="form-group col-xs-2">
+            <h4>Select a date</h4>
+            <VueRangedatePicker i18n="EN" @selected="refreshDate"></VueRangedatePicker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                    <div v-if='this.activePod !== null'>
+                        <Card :configuration=confCardNamespace :url=this.getCardNamespaceUrl()></Card>
+                        <Card :configuration=confCardNode :url=this.getCardNodeUrl()></Card>
+                        <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
+                        <div>
+                            <div class="col-sm-12">
+                                <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'" :dataS=this.getMetrics() :height=80></BarChart>
+                            </div>
+                        </div>
+                        <Card :configuration=confCardStart :url=this.getCardLifetimeUrl()></Card>
+                        <Card :configuration=confCardEnd :url=this.getCardLifetimeUrl()></Card>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,58 +1,14 @@
-<template>
-  <!-- Main content -->
-  <section class="content">
-  <!-- <meta charset="utf-8"> -->
-    <div class="row">
-      <div class="form-group col-xs-2">
-        <h4>Select a Namespace</h4>
-        <select class="form-control" v-on:change="getNamespaces">
-          <option selected disabled> -- Select a Namespace -- </option>
-          <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{option}}</option>
-        </select>
-      </div>
-      <div v-if="showDatePicker()" class="form-group col-xs-2">
-        <h4>Select a date</h4>
-        <VueRangedatePicker i18n="EN" @selected="refreshDate"></VueRangedatePicker>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title"></h3>
-            <div v-if='this.activeNamespace !== null'>
-              <div>
-                <Card :configuration=confCardNodes :url=this.getCardNodesUrl()></Card>
-                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
-                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
-              </div>
-              <div class="col-sm-6 col-xs-12">
-                <BarChart class="pointer" :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
-              </div>
-              <div class="col-sm-6 col-xs-12">
-                <PieChart class="pointer" :configuration=confPieChartNodesPods :idL="'pieChartNodesPods'"  :dataS=this.getNodePods() />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- /.content -->
-</template>
-
-<script>
-import { generateAPIUrl } from '../variables'
-import * as utils from  '../utils'
+import { generateAPIUrl } from '../../variables'
+import * as utils from  '../../utils'
 import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
 export default {
   components: {
-    BarChart : () => import('../components/charts/BarChart'),
-    PieChart : () => import('../components/charts/PieChart'),
-    Card : () => import('../components/Card'),
+    BarChart : () => import('../../components/charts/BarChart'),
+    PieChart : () => import('../../components/charts/PieChart'),
+    Card : () => import('../../components/card/index.vue'),
   },
   data () {
     return {
@@ -168,7 +124,7 @@ export default {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/metrics`, 'key': 'metric'},
         {'endpoint': `${api}/nodes`, 'key': 'node'}
-        ], this)
+      ], this)
     },
   },
   async beforeMount() {
@@ -177,29 +133,3 @@ export default {
   },
   async mounted () {}
 }
-</script>
-
-<style>
-.info-box {
-  cursor: pointer;
-}
-.info-box-content {
-  text-align: center;
-  vertical-align: middle;
-  display: inherit;
-}
-.fullCanvas {
-  width: 100%;
-}
-
-.pointer {
-  cursor: pointer;
-}
-
-.centered-text {
-  display: inline-grid;
-  grid-auto-flow: column;
-  align-items: center;
-  justify-content: center;
-}
-</style>

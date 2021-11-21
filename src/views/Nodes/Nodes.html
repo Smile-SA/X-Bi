@@ -1,0 +1,39 @@
+<!-- Main content -->
+<section class="content">
+    <div class="row">
+        <div class="form-group col-xs-2">
+            <h4>Select a node</h4>
+            <select class="form-control" v-on:change="getNodes">
+                <option selected disabled> -- Select a Node -- </option>
+                <option v-for="option in selectNodes" v-bind:value="option" v-bind:key="option">{{option}}</option>
+            </select>
+        </div>
+        <div v-if="showDatePicker()" class="form-group col-xs-2">
+            <h4>Select a date</h4>
+            <VueRangedatePicker i18n="EN" @selected="refreshDate"></VueRangedatePicker>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-12">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title"></h3>
+                    <div v-if='this.activeNode !== null'>
+                        <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
+                        <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
+                        <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
+                        <div class="col-sm-6 col-xs-12">
+                            <LineChart :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
+                        </div>
+                        <div class="col-sm-6 col-xs-12">
+                            <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
+                        </div>
+                    </div>
+                </div>
+                <!-- </div> -->
+            </div>
+        </div>
+    </div>
+    <!-- /.row -->
+</section>
+<!-- /.content -->

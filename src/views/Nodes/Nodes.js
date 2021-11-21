@@ -1,57 +1,14 @@
-<template>
-  <!-- Main content -->
-  <section class="content">
-    <div class="row">
-      <div class="form-group col-xs-2">
-        <h4>Select a node</h4>
-        <select class="form-control" v-on:change="getNodes">
-          <option selected disabled> -- Select a Node -- </option>
-          <option v-for="option in selectNodes" v-bind:value="option" v-bind:key="option">{{option}}</option>
-        </select>
-      </div>
-      <div v-if="showDatePicker()" class="form-group col-xs-2">
-        <h4>Select a date</h4>
-        <VueRangedatePicker i18n="EN" @selected="refreshDate"></VueRangedatePicker>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="box">
-          <div class="box-header">
-            <h3 class="box-title"></h3>
-              <div v-if='this.activeNode !== null'>
-                <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
-                <Card :configuration=confCardPods :url=this.getCardPodsUrl()></Card>
-                <Card :configuration=confCardRating :url=this.getCardRatingUrl()></Card>
-                <div class="col-sm-6 col-xs-12">
-                  <LineChart :configuration=confLineChartNameSpace :idL="'lineChartNamespaces'" :height=150 :dataS=this.nameSpaceData />
-                </div>
-                <div class="col-sm-6 col-xs-12">
-                  <BarChart :configuration=confBarChartMetrics :idL="'barChartMetrics'"  :dataS=this.getMetrics() />
-                </div>
-              </div>
-            </div>
-          <!-- </div> -->
-        </div>
-      </div>
-    </div>
-    <!-- /.row -->
-  </section>
-  <!-- /.content -->
-</template>
-
-<script>
-import { generateAPIUrl } from '../variables'
-import * as utils from  '../utils'
+import { generateAPIUrl } from '../../variables'
+import * as utils from  '../../utils'
 import dateformat from 'dateformat'
 
 const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: () => import('../components/Card'),
-    LineChart: () => import ('../components/charts/LineChart'),
-    BarChart: () => import ('../components/charts/BarChart'),
+    Card: () => import('../../components/card/index.vue'),
+    LineChart: () => import ('../../components/charts/LineChart'),
+    BarChart: () => import ('../../components/charts/BarChart'),
   },
   data () {
     return {
@@ -172,7 +129,7 @@ export default {
       this.colors = await utils.generateColor([
         {'endpoint': `${api}/namespaces`, 'key': 'namespace'},
         {'endpoint': `${api}/metrics`, 'key': 'metric'}
-        ], this)
+      ], this)
     },
   },
   async beforeMount() {
@@ -181,18 +138,3 @@ export default {
   },
   async mounted () {}
 }
-</script>
-
-<style>
-.info-box {
-  cursor: pointer;
-}
-.info-box-content {
-  text-align: center;
-  vertical-align: middle;
-  display: inherit;
-}
-.fullCanvas {
-  width: 100%;
-}
-</style>

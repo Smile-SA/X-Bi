@@ -4,7 +4,7 @@
     <router-link tag="li" class="pageLink" to="/home">
       <a>
         <i class="fa fa-columns"></i>
-        <span class="pages">Overall</span>
+        <span class="pages">Home</span>
       </a>
     </router-link>
     <router-link tag="li" class="pageLink" to="/namespaces">
@@ -31,12 +31,12 @@
         <span class="pages">Configuration</span>
       </a>
     </router-link>
-    <!-- <router-link tag="li" class="pageLink" to="/workflow">
+    <router-link tag="li" class="pageLink" to="/workflow">
       <a>
         <i class="fa fa-stream"></i>
         <span class="pages">Workflow</span>
       </a>
-    </router-link> -->
+    </router-link>
   </ul>
 </template>
 <script>
