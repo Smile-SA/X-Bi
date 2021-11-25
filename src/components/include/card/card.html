@@ -1,0 +1,9 @@
+<div class="col-md-12" v-if="this.configuration !== undefined">
+    <div v-bind:class="' card-counter info-box bg-' + configuration.color" @click="redirectCard()">
+        <span class="info-box-icon"><svg v-bind:class="configuration.icon"></svg></span>
+        <span class="count-numbers">{{ this.value }}</span>
+        <span class="count-name">{{ configuration.label }}</span>
+    </div>
+    <span v-if="this.configuration.message !== undefined"
+          class="info-box-number-rating">{{ this.configuration.message }}</span>
+</div>

@@ -8,10 +8,15 @@ export default {
   components: {
     BarChart : () => import('../../components/charts/BarChart'),
     PieChart : () => import('../../components/charts/PieChart'),
-    Card : () => import('../../components/card/index.vue'),
+    Card : () => import('../../components/include/card/index.vue'),
+    ApexCharts: () => import ('../../components/apexCharts/index.vue'),
   },
   data () {
     return {
+      metricsSeries: null,
+      metricsOptions: null,
+      metricsHeight: 0,
+
       barChartMetrics: null,
       pieChartNodesPods: null,
       selectForm: null,
@@ -109,8 +114,12 @@ export default {
     getURL(data) {
       utils.getURL(data, this)
     },
+    refreshMetrics(){
+
+    },
     refreshDate(date) {
-      utils.refreshDate(date, this)
+      utils.refreshDate(date, this);
+      this.refreshMetrics()
     },
     showDatePicker() {
       return this.activeNamespace !== null

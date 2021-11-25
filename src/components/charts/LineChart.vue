@@ -20,6 +20,7 @@
                 const graph = []
 
                 const dataset = utils.groupBy(response, c.sort)
+
                 const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
                 labels.forEach((item, count) => {

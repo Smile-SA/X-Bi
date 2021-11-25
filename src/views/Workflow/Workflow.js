@@ -5,7 +5,7 @@ const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: import('../../components/card/index.vue')
+    Card: import('../../components/include/card/index.vue')
   },
   data () {
     return {

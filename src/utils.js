@@ -45,47 +45,39 @@ export async function fetchDataAsJSONNamespace(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
 
     url = url + queryDate
-    console.log('url : ' + url)
     const response = await fetch(url, {
         credentials: 'include'
     })
     const json = await response.json()
     if (json.total === 0) {
-        return {total: 0, results: null}
+        return null
     } else {
-        var series = [];
+        var series = [], isName=false;
         const seriesClass = {
             name: String,
             data: [],
         };
         for (let i = 0; i < 10; i++) {
-            if (series.length <= 0) {
-                let newSeries = Object.create(seriesClass);
-                newSeries.name = json.results[i]['namespace'];
-                newSeries.data = [json.results[i]['frame_price']];
-                series = [newSeries];
-            } else {
                 for (let s = 0; s < series.length; s++) {
                     if (series[s]['name'] === json.results[i]['namespace']) {
                         series[s]['data'].push(json.results[i]['frame_price'])
-                    } else {
-                        let newSeries = Object.create(seriesClass);
-                        newSeries.name = json.results[i]['namespace'];
-                        newSeries.data = [json.results[i]['frame_price']];
-                        series.push(newSeries);
+                        isName = true;
                     }
                 }
-            }
+                if(isName === false ){
+                    let newSeries = Object.create(seriesClass);
+                    newSeries.name = json.results[i]['namespace'];
+                    newSeries.data = [json.results[i]['frame_price']];
+                    series.push(newSeries);
+                }
+                isName = false
         }
     }
-    console.log(series[0]);
     return series;
-    //return {total: json.total, results: json.results}
 }
 
 export async function fetchDataAsJSON(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
-
     url = url + queryDate
     const response = await fetch(url, {
         credentials: 'include'
@@ -94,7 +86,6 @@ export async function fetchDataAsJSON(url, that) {
     if (json.total === 0) {
         return {total: 0, results: null}
     }
-
     return {total: json.total, results: json.results}
 }
 
@@ -207,7 +198,7 @@ export function groupBy(objectArray, property) {
         if (!acc[key]) {
             acc[key] = []
         }
-        acc[key].push(obj)
+        acc[key].push(obj);
         return acc
     }, {})
 }

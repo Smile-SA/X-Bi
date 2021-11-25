@@ -1,0 +1,25 @@
+<div class="row header">
+    <nav class="navbar navbar-static-top bg-white border-bottom-header" role="navigation" style="margin-bottom: 0">
+        <div class="navbar-header">
+            <a class="navbar-minimalize minimalize-styl-2 btn btn-white" href="#">
+                <i class="fa fa-bars text-success"></i>
+            </a>
+        </div>
+        <ul class="nav navbar-top-links navbar-right">
+            <li>
+                <span class="m-r-sm  welcome-message"><span style="text-transform:capitalize"></span>Welcome to 5GBiller </span>
+            </li>
+            <li class="dropdown" v-if='this.tenant !== ""'>
+                <a class="right-sidebar-toggle" data-toggle="dropdown" href="#">
+                    <i v-if='this.image == ""' class="fa fa-user"></i>
+                    <img v-if='this.image !== ""' :src="image" class="user-logo"/>
+                </a>
+                <ul class="dropdown-menu animated fadeInRight m-t-xs ">
+                    <li><a>Signed in as<strong>{{ " " + tenant }}</strong><br><small>{{ email }}</small></a></li>
+                    <li class="divider"></li>
+                    <li><a :href='this.logoutUser()'>Sign out</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+</div>

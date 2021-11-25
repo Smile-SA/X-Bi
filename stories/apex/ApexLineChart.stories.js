@@ -44,9 +44,12 @@ export const Line = () => ({
             this.chartSeries = [{
                 name: 'Vue Chart',
                 data: newData
+            },{
+                name: 'Vue hi',
+                data: newData
             }];
             return this.chartSeries;
         }
     },
-    template: '<apex-charts-component :chartOptions="chartOptions" :chartSeries="updateChart()" />',
+    template: '<apex-charts-component  :chartSeries="updateChart()" :chartOptions="chartOptions"/>',
 });

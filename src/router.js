@@ -5,7 +5,7 @@ import { needAuth } from './utils'
 const routes = [
   {
     path: '/',
-    component: () => import('./components/DashLayout.vue'),
+    component: () => import('./components/include/dashLayout/index.vue'),
     name: 'Default',
     meta: { email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: true },
     children: [
@@ -50,20 +50,20 @@ const routes = [
       {
         path: 'workflow',
         component: () => import('./views/Workflow/index.vue'),
-        name: 'Xorkflow',
+        name: 'workflow',
         meta: { description: 'Graph view of workflow query', requiresAuth: true }
       },
       {
         path: 'card',
-        component: () => import('./components/card/index.vue'),
-        name: 'Xorkflow',
+        component: () => import('./components/include/card/index.vue'),
+        name: 'card',
         meta: { description: 'Graph view of workflow query', requiresAuth: true }
       }
     ]
   },
   {
     path: '*',
-    component: () => import('./components/404Layout.vue'),
+    component: () => import('./views/error404/index.vue'),
   },   
   {
     path: '/login',

@@ -6,7 +6,7 @@ const api = generateAPIUrl()
 
 export default {
   components: {
-    Card: () => import('../../components/card/index.vue'),
+    Card: () => import('../../components/include/card/index.vue'),
     LineChart: () => import ('../../components/charts/LineChart'),
     BarChart: () => import ('../../components/charts/BarChart'),
   },
