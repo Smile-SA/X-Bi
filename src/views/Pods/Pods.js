@@ -42,7 +42,7 @@ export default {
         to: this.to,
         link: '/namespaces',
         label: 'Namespace',
-        color: 'purple',
+        color: 'primary',
         icon: 'slice-icon svg-inline--fa fa-w-16',
         type: 'string',
         key: 'namespace'
@@ -54,7 +54,7 @@ export default {
         to: this.to,
         link: '/nodes',
         label: 'Node',
-        color: 'red',
+        color: 'success',
         icon: 'fa fa-server',
         type: 'string',
         key: 'node'
@@ -68,7 +68,7 @@ export default {
         to: this.to,
         link: '/',
         label: 'Rating',
-        color: 'yellow',
+        color: 'warning',
         icon: 'fa fa-euro-sign',
         message: ` from ${from} to ${to}`,
         type: 'sum',

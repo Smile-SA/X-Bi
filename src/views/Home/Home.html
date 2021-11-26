@@ -9,10 +9,10 @@
             </div>
         </div>
     </div>
-    <div class="apex-box m-b">
+    <div class="apex-box m-b" v-if="donutHeight>0">
         <div class="row">
-            <div class="col-lg-4 col-md-4" v-if="donutSeries!=null">
-<!--                <apex-charts :chartOptions="donutOptions" :chartSeries="donutSeries"></apex-charts>-->
+            <div class="col-lg-4 col-md-4" >
+                <apex-charts :chartOptions="donutOptions" :height="donutHeight" :chartSeries="donutSeries"></apex-charts>
             </div>
             <div class="col-lg-8 col-md-8" v-if="this.from!=null && this.to!=null">
                 <Card :configuration=confCardNamespaces :url=this.getCardNamespacesUrl()></Card>
@@ -24,17 +24,15 @@
     <div class="apex-box m-b" v-if="nodeHeight>0">
         <div class=" row">
             <div class="col-lg-12">
-                <apexcharts :configuration="confLineChartNodes" :response="getNodes()"></apexcharts>
-
-<!--                <apex-charts :chartOptions="nodeOptions" :height="nodeHeight" :chartSeries="nodeSeries"></apex-charts>-->
+                <apex-charts :chartOptions="nodeOptions" :height="nodeHeight" :chartSeries="nodeSeries"></apex-charts>
             </div>
         </div>
     </div>
-<!--    <div class="apex-box m-b" v-if="nameSpaceHeight>0">-->
-<!--        <div class=" row">-->
-<!--            <div class="col-lg-12">-->
-<!--                <apex-charts :chartOptions="nameSpaceOptions" :height="nameSpaceHeight" :chartSeries="nameSpaceSeries"></apex-charts>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <div class="apex-box m-b" v-if="nameSpaceHeight>0">
+        <div class=" row">
+            <div class="col-lg-12">
+                <apex-charts :chartOptions="nameSpaceOptions" :height="nameSpaceHeight" :chartSeries="nameSpaceSeries"></apex-charts>
+            </div>
+        </div>
+    </div>
 </div>

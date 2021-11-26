@@ -6,7 +6,7 @@ const api = generateAPIUrl()
 export default {
     components: {
         Card: () => import('../../components/include/card/index.vue'),
-        apexcharts: () => import ('../../components/apexCharts/index.vue'),
+        ApexCharts: () => import ('../../components/apexCharts/index.vue'),
     },
     data() {
         return {
@@ -14,7 +14,7 @@ export default {
             lineChartNodes: null,
             donutSeries: null,
             donutOptions: null,
-            chartSeries: null,
+            donutHeight: 0,
             apexChartOptions: {
                 chart: {
                     id: 'vuechart-example', type: "line",
@@ -109,7 +109,7 @@ export default {
             utils.refreshDate(date, this)
             await this.getPieData();
             await this.getNodesToApex();
-            //await this.getNamespacesToApex();
+            // this.getNamespacesToApex();
         },
         async generateColor() {
             this.colors = await utils.generateColor([
@@ -145,6 +145,7 @@ export default {
                     show: false
                 }
             };
+            this.donutHeight = 280
         },
          getNodesToApex() {
             this.nodeSeries = []
