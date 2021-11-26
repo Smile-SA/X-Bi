@@ -66,7 +66,7 @@ $gray: rgba($black, 0.6);
 $light-gray: rgba($black, 0.4);
 $lighter-gray: rgba($black, 0.2);
 $white: #FFFFFF;
-$accent: #078989;
+$accent: #1eaae1;
 
 // Form Settings
 $max-width: 600px;
@@ -79,7 +79,7 @@ html {
 }
 
 body {
-  background: linear-gradient(45deg,  rgba(66, 183, 245,0.8) 0%,rgba(66, 245, 189,0.4) 100%);
+  background: linear-gradient(45deg,  rgba(30, 170, 225, 0.84) 0%,rgba(66, 245, 189,0.4) 100%);
   color: $gray;
   font-family: $base-font-family;
   font-size: $base-font-size;
