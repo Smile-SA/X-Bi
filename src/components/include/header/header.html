@@ -1,25 +1,47 @@
-<div class="row header">
-    <nav class="navbar navbar-static-top bg-white border-bottom-header" role="navigation" style="margin-bottom: 0">
-        <div class="navbar-header">
-            <a class="navbar-minimalize minimalize-styl-2 btn btn-white" href="#">
-                <i class="fa fa-bars text-success"></i>
-            </a>
-        </div>
-        <ul class="nav navbar-top-links navbar-right">
-            <li>
-                <span class="m-r-sm  welcome-message"><span style="text-transform:capitalize"></span>Welcome to 5GBiller </span>
-            </li>
-            <li class="dropdown" v-if='this.tenant !== ""'>
-                <a class="right-sidebar-toggle" data-toggle="dropdown" href="#">
-                    <i v-if='this.image == ""' class="fa fa-user"></i>
-                    <img v-if='this.image !== ""' :src="image" class="user-logo"/>
-                </a>
-                <ul class="dropdown-menu animated fadeInRight m-t-xs ">
-                    <li><a>Signed in as<strong>{{ " " + tenant }}</strong><br><small>{{ email }}</small></a></li>
-                    <li class="divider"></li>
-                    <li><a :href='this.logoutUser()'>Sign out</a></li>
+<div>
+    <div class=" header m-b">
+        <div class="row">
+            <nav class="navbar navbar-static-top border-bottom-header blue-bg" role="navigation" style="margin-bottom: 0">
+                <!--                <div class="navbar-header">-->
+                <!--                    <a class="navbar-minimalize minimalize-styl-2 btn btn-outline-white" href="#">-->
+                <!--                        <i class="fa fa-bars "></i>-->
+                <!--                    </a>-->
+                <!--                </div>-->
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm  welcome-message text-white">Welcome to 5GBiller</span>
+                    </li>
+                    <li class="dropdown" v-if='this.tenant !== ""'>
+                        <a class="right-sidebar-toggle" data-toggle="dropdown" href="#">
+                            <i v-if='this.image == ""' class="fa fa-user"></i>
+                            <img v-if='this.image !== ""' :src="image" class="user-logo"/>
+                        </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs ">
+                            <li><a>Signed in as<strong>{{ " " + tenant }}</strong><br><small>{{ email }}</small></a>
+                            </li>
+                            <li class="divider"></li>
+                            <li><a v-on:click="logoutUser">Sign out</a></li>
+                        </ul>
+                    </li>
                 </ul>
-            </li>
-        </ul>
-    </nav>
+            </nav>
+        </div>
+    </div>
+    <div class="wrapper-content p-lg-4 pb-0 pt-0">
+        <div class="row border-bottom-head-title m-b">
+            <div class="row">
+                <div class="col-lg-8 col-md-8">
+                    <p> {{ $route.meta.description }}</p>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <ol class="breadcrumb" style="text-align: end;">
+                        <li>
+                            <a href="/"><i class="fa fa-home"> </i> Home</a>
+                        </li>
+                        <li class="active">{{ $route.name }}</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

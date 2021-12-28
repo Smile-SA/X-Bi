@@ -1,27 +1,11 @@
-<div>
+<div id="wrapper">
     <sidebar></sidebar>
     <div id="page-wrapper" class="gray-bg">
         <Header></Header>
-        <div class="row wrapper border-bottom border-bottom-head-title">
-            <div class="col-lg-8 col-md-8">
-                <h2>{{ $route.name.toUpperCase() }} <small>{{ $route.meta.description }}</small></h2>
-            </div>
-            <div class="col-lg-4 col-md-4">
-                <h2></h2>
-                <ol class="breadcrumb" style="text-align: end;">
-                    <li>
-                        <a href="/">
-                            <i class="fa fa-home"></i>Home</a>
-                    </li>
-                    <li class="active">{{ $route.name.toUpperCase() }}</li>
-                </ol>
-            </div>
-        </div>
         <router-view></router-view>
     </div>
-
     <!-- Main Footer -->
-    <footer class="main-footer">
-        <strong>Copyright &copy; <a href="https://www.alterway.fr/">Alter Way</a>.</strong> All rights reserved.
-    </footer>
+    <!--    <footer class="main-footer">-->
+    <!--        <strong>Copyright &copy; <a href="https://www.alterway.fr/">Alter Way</a>.</strong> All rights reserved.-->
+    <!--    </footer>-->
 </div>
