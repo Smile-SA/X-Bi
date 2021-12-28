@@ -17,6 +17,6 @@ Vue.config.productionTip = false
 Vue.config.devtools = false
 Vue.component('VueRangedatePicker', VueRangedatePicker);
 new Vue({
-  router,
-  render: h => h(AppComponent)
+    router,
+    render: h => h(AppComponent)
 }).$mount('#app');
