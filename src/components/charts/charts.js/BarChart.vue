@@ -9,18 +9,18 @@
 
 <script>
     import BaseChart from "./BaseChart";
-    import * as utils from "../../utils";
+    import * as utils from "../../../settings/utils";
 
     export default {
-        name: "LineChart",
+        name: "BarChart",
         extends: BaseChart,
         props: ['idL', 'height', 'configuration', 'dataS'],
         methods: {
             graphConfiguration(response, c) {
+                const ctx = document.getElementById(c.id).getContext('2d')
+
                 const graph = []
-
                 const dataset = utils.groupBy(response, c.sort)
-
                 const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
                 labels.forEach((item, count) => {
@@ -47,60 +47,38 @@
                     graph.push({
                         label: item,
                         fill: true,
-                        borderColor: color,
-                        pointBackgroundColor: color,
-                        backgroundColor: 'rgba(0, 0, 0, 0)',
+                        backgroundColor: color,
                         data: obj
                     })
                 })
-
-                const ctx = document.getElementById(c.id).getContext('2d')
-
                 const config = {
-                    type: 'line',
+                    type: 'bar',
                     data: {
-                        labels: labels,
-                        datasets: graph
+                        datasets: graph,
+                        labels: labels
                     },
                     options: {
-                        elements: {
-                            point: {
-                                radius: 2
-                            },
-                            line: {
-                                tension: 0,
-                                fill: false,
-                                steppedLine: false,
-                                borderDash: []
-                            }
+                        title: {
+                            fontSize: 20,
+                            display: true,
+                            text: c.labels.title
                         },
-                        animation: {
-                            duration: 0
-                        },
-                        hover: {
-                            animationDuration: 0
-                        },
-                        responsiveAnimationDuration: 0,
                         scales: {
                             xAxes: [{
+                                stacked: true,
                                 ticks: {
-                                    maxTicksLimit: 10,
-                                    fontSize: 15
-                                },
-                                display: true,
-                                scaleLabel: {
-                                    display: true
+                                    maxTicksLimit: 10
                                 }
                             }],
                             yAxes: [{
+                                stacked: true,
                                 display: true,
                                 scaleLabel: {
                                     display: true
                                 },
                                 ticks: {
+                                    beginAtZero: true,
                                     fontSize: 15,
-                                    min: min,
-                                    max: max,
                                     callback: function(value, index, values) {
                                         if (index === values.length - 1) return min.toFixed(5)
                                         else if (index === Math.trunc(values.length / 2)) {
@@ -112,26 +90,13 @@
                                 }
                             }]
                         },
-                        title: {
-                            display: true,
-                            text: c.labels.title,
-                            fontSize: 20
-                        },
-                        maintainAspectRatio: !c.isMobile,
-                        legend: {
-                            position: 'top',
-                            display: true
-                        },
+                        responsive: true,
                         tooltips: {
-                            callbacks: {
-                                label(tooltipItem, data) {
-                                    return `${data.datasets[tooltipItem.datasetIndex].label}: ${tooltipItem.yLabel}`
-                                }
-                            }
+                            intersect: false,
+                            mode: 'label'
                         }
                     }
                 }
-
                 return {ctx: ctx, config: config} // eslint-disable-line no-new
             },
         }

@@ -1,0 +1,104 @@
+.slice-icon {
+  background-image: url('../../../../public/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
+
+  background-repeat: no-repeat;
+  width: 34px;
+  height: 34px;
+  padding-right: 1px;
+  float: left;
+  text-align: left;
+}
+
+.order-card {
+  color: #fff;
+}
+
+.bg-c-primary {
+  background: linear-gradient(45deg, #0096d9, #71d0fb);
+}
+
+.bg-c-primary:hover {
+  background: linear-gradient(0deg, #0096d9, #0096d9);
+}
+
+.bg-c-info {
+  background: linear-gradient(45deg, #360966, #9e53ee);
+}
+
+.bg-c-info:hover {
+  background: linear-gradient(0deg, #360966, #360966);
+}
+
+.bg-c-success {
+  background: linear-gradient(45deg, #00cb86, #58e0b2);
+}
+
+.bg-c-success:hover {
+  background: linear-gradient(0deg, #00cb86, #00cb86);
+}
+
+.bg-c-warning {
+  background: linear-gradient(45deg, #FFB64D, #ffcb80);
+}
+
+.bg-c-warning:hover {
+  background: linear-gradient(0deg, #FFB64D, #FFB64D);
+}
+
+.bg-c-danger {
+  background: linear-gradient(45deg, #a90c3a, #ee336a);
+}
+
+.bg-c-danger:hover {
+  background: linear-gradient(0deg, #640c26, #640c26);
+}
+
+.bg-c-gray {
+  background: linear-gradient(45deg, #6c757d, #85909a);
+}
+
+.bg-c-gray:hover {
+  background: linear-gradient(45deg, #6c757d, #6c757d);
+}
+
+.card {
+  border-radius: 5px;
+  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
+  border: none;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+.card .card-block {
+  padding: 30px;
+}
+
+.card i, .card svg, {
+  font-size: 30px;
+  opacity: 0.5;
+}
+
+.order-card .name, {
+  opacity: 0.7;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+.card :hover {
+  cursor: pointer;
+}
+
+.card :hover .number {
+  opacity: 0.8;
+}
+
+.card:hover i, .card:hover .name, .card:hover svg {
+  opacity: 1;
+}

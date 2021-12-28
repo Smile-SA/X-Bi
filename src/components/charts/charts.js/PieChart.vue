@@ -9,7 +9,7 @@
 
 <script>
     import BaseChart from "./BaseChart";
-    import * as utils from "../../utils";
+    import * as utils from "../../../settings/utils";
     import Chart from "chart.js";
 
     export default {
