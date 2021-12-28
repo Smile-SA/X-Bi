@@ -21,6 +21,7 @@
  * For details please refer to: http://www.datatables.net
  */
 
+// eslint-disable-next-line no-shadow-restricted-names,no-unused-vars
 (function(window, document, undefined) {
 
 
@@ -264,6 +265,7 @@
             _classLogic: function ()
             {
                 var that = this;
+                // eslint-disable-next-line no-unused-vars
                 var calc = {};
                 var breakpoints = this.c.breakpoints;
                 var columns = this.s.dt.columns().eq(0).map( function (i) {
@@ -408,6 +410,7 @@
                 var selector = typeof target === 'string' ? target : 'td';
 
                 // Click handler to show / hide the details rows when they are available
+                // eslint-disable-next-line no-unused-vars
                 $( dt.table().body() ).on( 'click', selector, function (e) {
                     // If the table is not collapsed (i.e. there is no hidden columns)
                     // then take no action
@@ -581,7 +584,9 @@
                 }
 
                 // Clone the table with the current data in it
+                // eslint-disable-next-line no-unused-vars
                 var tableWidth   = dt.table().node().offsetWidth;
+                // eslint-disable-next-line no-unused-vars
                 var columnWidths = dt.columns;
                 var clonedTable  = dt.table().node().cloneNode( false );
                 var clonedHeader = $( dt.table().header().cloneNode( false ) ).appendTo( clonedTable );
@@ -765,6 +770,7 @@
 
 // Attach a listener to the document which listens for DataTables initialisation
 // events so we can automatically initialise
+        // eslint-disable-next-line no-unused-vars
         $(document).on( 'init.dt.dtr', function (e, settings, json) {
             if ( $(settings.nTable).hasClass( 'responsive' ) ||
                 $(settings.nTable).hasClass( 'dt-responsive' ) ||
@@ -784,7 +790,9 @@
 
 
 // Define as an AMD module if possible
+    // eslint-disable-next-line no-undef
     if ( typeof define === 'function' && define.amd ) {
+        // eslint-disable-next-line no-undef
         define( ['jquery', 'datatables'], factory );
     }
     else if ( typeof exports === 'object' ) {
