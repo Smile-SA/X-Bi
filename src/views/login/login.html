@@ -1,0 +1,44 @@
+<section class="content">
+    <div class="form">
+        <div class="form-toggle"></div>
+        <div class="form-panel one">
+            <center>
+                <div class="img container">
+                    <img src="/img/X-Bi_-_logo.png" alt="Avatar" class="avatar">
+                </div>
+            </center>
+            <div class="form-header">
+                <h1>Account Login</h1>
+            </div>
+            <div class="form-content">
+<!--                <form method="POST" v-bind:action="this.login()">-->
+                    <form ref="form" v-on:submit="loginUser">
+                        <div class="form-group">
+                            <label for="tenant">Username</label>
+                            <input type="text" id="tenant" name="tenant" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required="required">
+                        </div>
+                        <div class="form-group" v-if="showError" >
+                            <label class="error">{{message}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-remember">
+                                <input type="checkbox" name="remember" id="remember">Remember Me
+                            </label> <a class="form-recovery" v-bind:href='this.password()'>Forgot Password?</a>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </form>
+
+            </div>
+            <div class=" pt-4">
+                <span class="psw">  Don't have an account yet ?"<a v-bind:href='this.signup()'> Create user  </a></span><a/>
+            </div>
+        </div>
+        <!--        <div class="form-panel two"></div>-->
+    </div>
+</section>

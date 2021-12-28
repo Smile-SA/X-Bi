@@ -1,0 +1,71 @@
+<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
+    <div class="row">
+
+        <div class="col-lg-3 col-md-3 col-xs-12 p-0 m-b ">
+            <div class="apex-box">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4">
+                        <label class="p-2">Select a date</label>
+                    </div>
+                    <VueRangedatePicker class="col-md-8 col-lg-8" v-model="date" i18n="EN" @selected="refreshDate"></VueRangedatePicker>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-3 col-xs-12 p-0 m-b ps-3">
+            <div class="apex-box">
+                <div class="row">
+                    <div class="col-md-4 col-lg-4">
+                        <label class="p-2">Group by</label>
+                    </div>
+                    <div class="col-md-8 col-lg-8">
+                        <select class=" form-control" v-on:change="refreshOptions">
+                            <option selected disabled> -- Select a group --</option>
+                            <option v-for="option in groupOptions" v-bind:value="option" v-bind:key="option">{{
+                                    option
+                                }}
+                            </option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-12 col-md-12 col-xs-12 p-0 m-b" >
+            <div class="apex-box" v-if="donuts.height!=undefined && this.from!=null && this.to!=null"  >
+                <div class="row pb-0">
+                    <div class="col-lg-2 col-md-2 col-xl-2 " v-if="donuts.height!=undefined">
+                        <apex-charts :chartOptions="donuts.options" :height="donuts.height" :chartSeries="donuts.series"></apex-charts>
+                    </div>
+                    <div v-bind:class="donuts.height>0 ? 'col-lg-10 col-md-10 col-xl-10 pb-0' : 'col-lg-12 col-md-12 col-xl-12 pb-0'">
+                        <div class="row pb-0" v-if="this.from!=null && this.to!=null">
+                            <Card class="col-md-4 col-xl-4 pb-0" :configuration=confCardPods></Card>
+                            <Card class="col-md-4 col-xl-4 pb-0" :configuration=confCardNamespaces></Card>
+                            <Card class="col-md-4 col-xl-4 pb-0" :configuration=confCardNodes></Card>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 pt-0 pb-0 ps-0 pe-1  m-b" v-if="node.height!=undefined">
+            <div class="apex-box">
+                <div class=" row">
+                    <div class="col-lg-12">
+                        <apex-charts :chartOptions="node.options" :id="node.options.chart.id" :height="node.height"
+                                     :chartSeries="node.series"></apex-charts>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 col-md-6 col-xs-6 pt-0 pb-0 pe-0 m-b" v-if="nameSpace.height!=undefined">
+            <div class="apex-box ">
+                <div class=" row">
+                    <div class="col-lg-12">
+                        <apex-charts :chartOptions="nameSpace.options" :height="nameSpace.height"
+                                     :chartSeries="nameSpace.series"></apex-charts>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

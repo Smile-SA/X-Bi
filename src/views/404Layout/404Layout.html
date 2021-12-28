@@ -1,0 +1,58 @@
+<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
+    <div class="row">
+        <div class="col-lg-12 col-md-12 col-xs-12 p-0 m-b ">
+            <div class="box search-box ">
+                <div class="row">
+                    <div class="col-lg-4 col-md-4 col-xs-12 ">
+                        <label class="col-md-4 col-lg-3">Select a version</label>
+                        <div class="col-md-8 col-lg-9">
+                            <select class=" form-control" v-on:change="getVersion">
+                                <option selected disabled> -- Select a version --</option>
+                                <option v-for="option in configListIndexes" v-bind:value="option" v-bind:key="option">{{option }}
+                                </option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12" v-if="showYaml()">
+                        <button @click="newConfig()" class=" col-md-12 btn btn-outline-info">CREATE CONFIGURATION</button>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-xs-12" v-if="showYaml()">
+                        <button v-if='canDeleteConfig()' @click="deleteConfig()" class=" col-md-12 btn btn-outline-info">DELETE CONFIGURATION</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 p-0 m-b" v-if='(this.cards).length>0'>
+            <div class="apex-box">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12" v-for="card in cards" v-bind:key="card.label">
+                        <card :card="card"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 p-0 m-b" v-if="showYaml()">
+            <div class="apex-box">
+                <div class="row">
+                    <code id="metrics-display" class="lang-yaml">
+                      <pre contenteditable required>
+                        {{ metricsYAML }}
+                      </pre>
+                    </code>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-xs-12 p-0 m-b" v-if="showYaml()">
+            <div class="apex-box">
+                <div class="row">
+                    <code id="rules-display" class="lang-yaml">
+                          <pre contenteditable required>
+                            {{ rulesYAML }}
+                          </pre>
+                    </code>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

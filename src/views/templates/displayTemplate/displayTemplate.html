@@ -1,0 +1,29 @@
+<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
+    <div class="row">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <p class="m-b-md text-capitalize">{{id+' '+'template display'}}
+                    <router-link to="/templates" custom v-slot="{ navigate }" class="pull-right ">
+                        <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-list"></i> Templates list</a>
+                    </router-link>
+                    <router-link to="/templates/create" custom v-slot="{ navigate }" class="pull-right ">
+                        <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-plus"></i> Create template</a>
+                    </router-link>
+                </p>
+            </div>
+            <div class="ibox-content">
+                <div class="form-horizontal">
+                    <div class="row">
+                        <textarea readonly v-model="value" id="value" name="value" class="form-control"></textarea>
+                        <div class="col-md-12" v-if="message.length>0">
+                            <div  class="alert alert-danger" role="alert">
+                                {{ message }}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

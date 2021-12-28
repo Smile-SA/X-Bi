@@ -1,0 +1,34 @@
+<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
+    <div class="row">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <p class="m-b-md text-capitalize">List of templates
+                    <router-link to="/templates/create" custom v-slot="{ navigate }" class="pull-right ">
+                        <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-plus"></i> Create template</a>
+                    </router-link>
+                </p>
+            </div>
+            <div class="ibox-content project-list table-responsive table-responsive">
+                <table class="table table-striped table-bordered table-hover dataTables-example">
+                    <thead>
+                    <tr>
+                        <th>Template</th>
+                        <th>actions</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr v-for="item in templatesList">
+                        <td>{{ item }}</td>
+                        <td >
+                            <table-action :isDisplay=true :isUpdate=false :isDelete=true :id="item.replace('rating-rule-template-','')" :deleteParam="'query_name'" :colspan=2 :deleteTagIndex=7 :url="'/templates'" ></table-action>
+                        </td>
+                    </tr>
+                    <tr v-if="templatesNb<=0">
+                        <td colspan="2">No record found</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

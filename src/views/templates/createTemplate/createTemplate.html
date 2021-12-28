@@ -1,0 +1,75 @@
+<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
+    <div class="row">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <p class="m-b-md text-capitalize">Template creation form. <small>(<span class="text-danger">* </span>is required fields)</small>
+                    <router-link to="/templates" custom v-slot="{ navigate }" class="pull-right ">
+                        <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-list"></i> Templates list</a>
+                    </router-link>
+                </p>
+            </div>
+            <div class="ibox-content">
+                <form class="form-horizontal" v-on:submit="submitForm" v-on:reset="resetForm">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div v-bind:class="[errors.name ? 'form-group has-error' : 'form-group ']">
+                                <label class="col-sm-2 control-label">Name <small class="text-danger">*</small></label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="name" name="name" v-on:input="checkName" v-model="name"
+                                           class="form-control" placeholder="Enter the template name">
+                                    <span class="help-block m-b-none">{{ errors.name }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div v-bind:class="[errors.group ? 'form-group has-error' : 'form-group ']">
+                                <label class="col-sm-2 control-label ">Group <small class="text-danger">*</small></label>
+                                <div class="col-sm-10">
+                                    <input type="text" id="group" v-on:input="checkGroup" name="group" v-model="group"
+                                           class="form-control" placeholder="Enter the group name">
+                                    <span class="help-block m-b-none">{{ errors.group }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div v-bind:class="[errors.query ? 'form-group has-error' : 'form-group ']">
+                                <label class="col-sm-2 control-label ">Query <small class="text-danger">*</small></label>
+                                <div class="col-sm-10">
+                                    <textarea id="query" name="query" v-on:input="checkQuery" v-model="query"
+                                              class="form-control"
+                                              placeholder="Enter the template query"></textarea>
+                                    <span class="help-block m-b-none">{{ errors.query }}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="col-sm-2 control-label ">Variables</label>
+                                <div class="col-sm-10">
+                                    <textarea id="variables" name="variables" v-model="variables" class="form-control"
+                                              placeholder="Enter the query variables"></textarea>
+                                    <span class="help-block m-b-none"></span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-12" v-if="message.length>0">
+                        <div  v-bind:class="[errors.submit ? 'alert alert-danger' : 'alert alert-success', 'desable']" role="alert">
+                            {{ message }}
+                        </div>
+                    </div>
+                    <div class="col-md-12">
+                        <div class="hr-line-dashed"></div>
+                    </div>
+                    <div class="form-group">
+                        <div class="col-md-offset-1">
+                            <button class="btn btn-cancel m-r-lg" type="reset">Annuler</button>
+                            <button class="btn btn-primary " type="submit">Enregistrer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
