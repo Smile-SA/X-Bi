@@ -25,7 +25,8 @@ export default {
             confChartNodes: {
                 id: 'lineChartNodes',
                 type: 'line',
-                height: 400,
+                height: 500,
+                fontSize: '16px',
                 sort: 'node',
                 xaxis: {
                     type: 'datetime'
@@ -39,8 +40,8 @@ export default {
             confChartNameSpace: {
                 id: 'lineChartNamespaces',
                 type: 'area',
-                height: 400,
-                fontSize: '20px',
+                height: 500,
+                fontSize: '16px',
                 sort: 'namespace',
                 xaxis: {
                     type: 'datetime'
@@ -56,7 +57,7 @@ export default {
                 to: this.to,
                 link: '/namespaces',
                 label: 'Namespaces',
-                colorLabel: 'primary',
+                colorLabel: 'info',
                 svg: 'slice-icon',
                 type: 'number',
                 color: '#008ffb',
@@ -125,7 +126,7 @@ export default {
                         show: false
                     }
                 };
-                this.donut.height = 120;
+                this.donut.height = 150;
                 this.donuts = this.donut;
             }
         },

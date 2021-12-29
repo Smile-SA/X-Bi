@@ -1,42 +1,79 @@
-<nav class="navbar-default navbar-static-side" role="navigation">
-    <div class="sidebar-collapse">
-        <ul class="nav" id="side-menu">
-            <li class="nav-header ">
-                <div class="dropdown profile-element">
-                <span class="">
-                  <img src="../../../../public/img/X-Bi_-_logo.png" class="img-responsive"
-                       style=" max-height: 61.25px;display: block;margin: auto">
-                </span>
-                </div>
-                <div class="logo-element" style="height: 60px">
-                    <img src="../../../../public/img/X-Bi_-_logo.png" class="img-responsive">
-                </div>
+<nav class="sidebar sidebar-offcanvas" id="sidebar">
+    <ul class="nav">
+        <router-link to="/home" custom v-slot="{ navigate }">
+            <li class="nav-item">
+                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                    <span class="menu-title">Home</span>
+                    <i class="mdi mdi-home menu-icon"></i>
+                </a>
             </li>
-            <router-link to="/home" custom v-slot="{ navigate }">
-                <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-home"></i> Home</a></li>
-            </router-link>
-            <router-link to="/namespaces" custom v-slot="{ navigate }">
-                <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><svg class="slice-icon2 svg-inline--fa fa-w-32" color="white"></svg> Namespaces</a></li>
-            </router-link>
-            <router-link to="/nodes" custom v-slot="{ navigate }">
-                <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-server"></i> Nodes</a></li>
-            </router-link>
-            <router-link to="/pods" custom v-slot="{ navigate }">
-                <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-sitemap"></i> Pods</a></li>
-            </router-link>
-            <li>
-                <a href="#"><i class="fa fa-wrench"></i> <span class="nav-label">Configuration  </span><span class="fa arrow"></span></a>
-                <ul class="nav nav-second-level">
+        </router-link>
+        <router-link to="/namespaces" custom v-slot="{ navigate }">
+            <li class="nav-item">
+                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                    <span class="menu-title">Namespaces</span>
+                    <i class="mdi slice-icon2 svg-inline--fa fa-w-32 menu-icon" color="white"></i>
+                </a>
+            </li>
+        </router-link>
+        <router-link to="/nodes" custom v-slot="{ navigate }">
+            <li class="nav-item">
+                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                    <span class="menu-title">Nodes</span>
+                    <i class="mdi mdi-server-network menu-icon"></i>
+                </a>
+            </li>
+        </router-link>
+        <router-link to="/pods" custom v-slot="{ navigate }">
+            <li class="nav-item">
+                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                    <span class="menu-title">Pods</span>
+                    <i class="mdi mdi-sitemap menu-icon"></i>
+                </a>
+            </li>
+        </router-link>
+        <li class="nav-item">
+            <a class="nav-link" data-bs-toggle="collapse" href="#ui-basic" aria-expanded="false"
+               aria-controls="ui-basic">
+                <span class="menu-title">KPIs Configurations</span>
+                <i class="menu-arrow"></i>
+                <i class="mdi mdi-settings menu-icon"></i>
+            </a>
+            <div class="collapse" id="ui-basic">
+                <ul class="nav flex-column sub-menu">
                     <router-link to="/templates" custom v-slot="{ navigate }">
-                        <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-stream"></i> Templates</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                                <i class="mdi mdi-chevron-right float-right"></i>Templates
+                            </a>
+                        </li>
                     </router-link>
-                </ul>
-                <ul class="nav nav-second-level">
                     <router-link to="/instances" custom v-slot="{ navigate }">
-                        <li class="pageLink" > <a @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-stream"></i> Instances</a></li>
+                        <li class="nav-item">
+                            <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                                <i class="mdi mdi-chevron-right float-right"></i> Instances
+                            </a>
+                        </li>
                     </router-link>
                 </ul>
-            </li>
-        </ul>
-    </div>
+            </div>
+        </li>
+<!--        <li class="nav-item sidebar-actions">-->
+<!--              <span class="nav-link">-->
+<!--                <div class="border-bottom">-->
+<!--                  <h6 class="font-weight-normal mb-3">Projects</h6>-->
+<!--                </div>-->
+<!--                <button class="btn btn-block btn-lg btn-gradient-primary mt-4">+ Add a project</button>-->
+<!--                <div class="mt-4">-->
+<!--                  <div class="border-bottom">-->
+<!--                    <p class="text-secondary">Categories</p>-->
+<!--                  </div>-->
+<!--                  <ul class="gradient-bullet-list mt-4">-->
+<!--                    <li>Free</li>-->
+<!--                    <li>Pro</li>-->
+<!--                  </ul>-->
+<!--                </div>-->
+<!--              </span>-->
+<!--        </li>-->
+    </ul>
 </nav>

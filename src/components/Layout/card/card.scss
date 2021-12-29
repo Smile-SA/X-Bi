@@ -1,6 +1,5 @@
 .slice-icon {
   background-image: url('../../../../public/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-
   background-repeat: no-repeat;
   width: 34px;
   height: 34px;
@@ -11,54 +10,6 @@
 
 .order-card {
   color: #fff;
-}
-
-.bg-c-primary {
-  background: linear-gradient(45deg, #0096d9, #71d0fb);
-}
-
-.bg-c-primary:hover {
-  background: linear-gradient(0deg, #0096d9, #0096d9);
-}
-
-.bg-c-info {
-  background: linear-gradient(45deg, #360966, #9e53ee);
-}
-
-.bg-c-info:hover {
-  background: linear-gradient(0deg, #360966, #360966);
-}
-
-.bg-c-success {
-  background: linear-gradient(45deg, #00cb86, #58e0b2);
-}
-
-.bg-c-success:hover {
-  background: linear-gradient(0deg, #00cb86, #00cb86);
-}
-
-.bg-c-warning {
-  background: linear-gradient(45deg, #FFB64D, #ffcb80);
-}
-
-.bg-c-warning:hover {
-  background: linear-gradient(0deg, #FFB64D, #FFB64D);
-}
-
-.bg-c-danger {
-  background: linear-gradient(45deg, #a90c3a, #ee336a);
-}
-
-.bg-c-danger:hover {
-  background: linear-gradient(0deg, #640c26, #640c26);
-}
-
-.bg-c-gray {
-  background: linear-gradient(45deg, #6c757d, #85909a);
-}
-
-.bg-c-gray:hover {
-  background: linear-gradient(45deg, #6c757d, #6c757d);
 }
 
 .card {
