@@ -4,30 +4,12 @@
             <div class="page-header card-header mb-0">
                 <h3 class="page-title">List of instances</h3>
                 <router-link to="/instances/create" custom v-slot="{ navigate }" class="pull-right ">
-                    <a class="btn btn-sm btn-outline-info" @click="navigate" @keypress.enter="navigate" role="link"><i class="mdi mdi-plus-box"></i> Create instance</a>
+                    <a class="btn btn-sm btn-outline-primary" @click="navigate" @keypress.enter="navigate" role="link"><i class="mdi mdi-plus-box"></i> Create instance</a>
                 </router-link>
             </div>
             <div class="card-body">
                 <div class="table-responsive">
-                    <table class="table">
-                        <thead>
-                        <tr>
-                            <th> Instance name </th>
-                            <th> actions </th>
-                        </tr>
-                        </thead>
-                        <tbody>
-                        <tr v-for="item in instancesList.slice().reverse()">
-                            <td>{{item.replace('rating-rule-instance-','')}}</td>
-                            <td width="200">
-                                <table-action :isDisplay=true :isUpdate=false :isDelete=true :id="item.replace('rating-rule-instance-','')" :deleteParam="'metric_name'" :colspan=2 :deleteTagIndex=4 :url="'/instances'" ></table-action>
-                            </td>
-                        </tr>
-                        <tr v-if="instanceNb<=0">
-                            <td colspan="2">No record found</td>
-                        </tr>
-                        </tbody>
-                    </table>
+                    <data-table v-bind="bindings" />
                 </div>
             </div>
         </div>

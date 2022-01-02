@@ -4,7 +4,6 @@ import {goTo} from "../../../settings/utils";
 export default {
     name: 'list-instances',
     components: {
-        TableAction: () => import('../../../components/Layout/tableAction/index')
     },
     props: [],
     data() {
@@ -13,7 +12,24 @@ export default {
             instanceNb: 0,
         }
     },
-    computed: {},
+    computed: {
+        bindings() {
+            return {
+                data: this.instancesList,
+                showDownloadButton:false,
+                columns: [
+                    {
+                        key: "name",
+                        title: "Instance name"
+                    },
+                    {
+                        key: "Actions",
+                        component: () => import('../../../components/Layout/tableAction/index')
+                    }
+                ]
+            }
+        }
+    },
     mounted() {
     },
     async beforeMount(){
@@ -23,7 +39,19 @@ export default {
         Instances() {
             getInstances().then((data) => {
                 this.instanceNb = data.total;
-                this.instancesList = data.results;
+                Object.keys(data.results).map((item) => {
+                    this.instancesList.push({
+                        'name': data.results[item],
+                        'url':'/instances',
+                        'deleteTagIndex':4,
+                        'colspan':2,
+                        'deleteParam':'query_name',
+                        'id': data.results[item].replace('rating-rule-instance-',''),
+                        'isDisplay':true ,
+                        'isUpdate':false ,
+                        'isDelete':true
+                    })
+                });
             });
         },
         go(route) {

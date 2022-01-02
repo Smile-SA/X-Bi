@@ -38,7 +38,7 @@ export default {
         to: this.to,
         link: '/',
         label: 'Pods',
-        colorLabel: 'info',
+        colorLabel: 'primary',
         icon: 'mdi mdi-sitemap',
         type: 'number',
         color: '#1eaae1',

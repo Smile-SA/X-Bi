@@ -4,20 +4,19 @@ import {goTo} from "../../../settings/utils";
 export default {
     name: 'list-templates',
     components: {
-        TableAction: () => import('../../../components/Layout/tableAction/index')
     },
     props: [],
     data() {
         return {
             templatesList: [],
             templatesNb: 0,
-            text: '',
         }
     },
     computed: {
         bindings() {
             return {
                 data: this.templatesList,
+                showDownloadButton:false,
                 columns: [
                     {
                         key: "name",
