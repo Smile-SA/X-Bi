@@ -1,9 +1,8 @@
-import {generalDelete} from "../../../controller/genaralController";
-
+import * as general from "../../../controller/genaralController";
 export default {
     name: 'table-action',
     components: {},
-    props: ['id', 'deleteParam', 'url', 'deleteTagIndex', 'colspan', 'isDisplay', 'isUpdate', 'isDelete',],
+    props: ['data'],
     data() {
         return {}
     },
@@ -14,30 +13,39 @@ export default {
     methods: {
         submitDeleteForm(e) {
             e.preventDefault();
-            let tbody = e.composedPath()[this.deleteTagIndex + 1];
-            let tr = e.composedPath()[this.deleteTagIndex];
+            let tbody = e.composedPath()[this.data.deleteTagIndex + 1];
+            let tr = e.composedPath()[this.data.deleteTagIndex];
             let children = tbody.children.length;
-            generalDelete(this.url + '/delete', this.deleteParam, this.id).then((r) => {
-                if (r === true) {
-                    tr.remove();
-                    let body = document.querySelector("body");
-                    body.classList.remove("modal-open");
-                    body.style.paddingRight = null;
-                    this.removeElementsByClass("modal-backdrop in");
-                    if (children <= 1) {
-                        tbody.innerHTML = '<tr><td colspan=' + this.colspan + '>No record found</td></tr>';
-                    }
+            this.$swal({
+                title: 'Are you sure?',
+                text: 'You can\'t revert your action',
+                type: 'error',
+                showCancelButton: true,
+                cancelButtonText: 'No, Keep it!',
+                confirmButtonClass:'btn btn-danger',
+                confirmButtonText: 'Yes Delete it!',
+                showCloseButton: true,
+                showLoaderOnConfirm: true
+            }).then((result) => {
+                if(result.value) {
+                    general.generalDelete(this.data.url + '/delete', this.data.deleteParam, this.data.id).then((r) => {
+                        if (r === true) {
+                            tr.remove();
+                            if (children <= 1) {
+                                tbody.innerHTML = '<tr><td colspan=' + this.data.colspan + '>No record found</td></tr>';
+                            }
+                        }
+                    });
+                    this.$swal('Deleted', 'You successfully deleted this file', 'success')
+                } else {
+                    this.$swal('Cancelled', 'Your file is still intact', 'info')
                 }
-            });
-
+            })
         },
-        removeElementsByClass(className) {
-            const elements = document.getElementsByClassName(className);
-            while (elements.length > 0) {
-                elements[0].parentNode.removeChild(elements[0]);
-            }
-        }
     }
 }
+
+
+
 
 

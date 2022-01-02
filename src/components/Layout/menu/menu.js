@@ -5,7 +5,7 @@ export default {
   props: [],
   data () {
     return {
-
+      isActive : false,
     }
   },
   computed: {
@@ -15,6 +15,9 @@ export default {
 
   },
   methods: {
+    menuDeroulant(){
+      console.log(this.isActive);
+    }
 
   }
 }

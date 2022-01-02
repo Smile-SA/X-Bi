@@ -8,7 +8,7 @@
                 </div>
             </center>
             <div class="form-header">
-                <h1>Account Login</h1>
+                <h1 class="text-center">Account Login</h1>
             </div>
             <div class="form-content">
 <!--                <form method="POST" v-bind:action="this.login()">-->
@@ -22,7 +22,7 @@
                             <input type="password" id="password" name="password" required="required">
                         </div>
                         <div class="form-group" v-if="showError" >
-                            <label class="error">{{message}}</label>
+                            <label class="text-danger">{{message}}</label>
                         </div>
                         <div class="form-group">
                             <label class="form-remember">
@@ -33,7 +33,6 @@
                             <button type="submit">Log In</button>
                         </div>
                     </form>
-
             </div>
             <div class=" pt-4">
                 <span class="psw">  Don't have an account yet ?"<a v-bind:href='this.signup()'> Create user  </a></span><a/>

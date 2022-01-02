@@ -1,103 +1,100 @@
-<div class="wrapper wrapper-content pt-0 pl-0 animated fadeInRight">
-    <div class="row">
-        <div class="ibox float-e-margins">
-            <div class="ibox-title">
-                <p class="m-b-md text-capitalize">Instance creation form. <small>(<span class="text-danger">* </span>is required fields)</small>
-                    <router-link to="/instances" custom v-slot="{ navigate }" class="pull-right ">
-                        <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="fa fa-list"></i> Instances list</a>
-                    </router-link>
-                </p>
+<div class="row">
+    <div class="col-12 grid-margin">
+        <form class="form-horizontal" v-on:submit="submitForm" v-on:reset="resetForm">
+        <div class="card">
+            <div class="page-header card-header mb-0">
+                <h3 class="page-title">Instance creation form. <small>(<span class="text-danger">* </span>is required fields)</small></h3>
+                <router-link to="/instances" custom v-slot="{ navigate }" class="pull-right ">
+                    <a class="btn btn-sm btn-outline-info m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
+                        <i class="mdi mdi-format-list-triangle"></i> Instances list</a>
+                </router-link>
             </div>
-            <div class="ibox-content">
-                <form class="form-horizontal" v-on:submit="submitForm" v-on:reset="resetForm">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.name ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label">Name <small class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="name" name="name" v-on:input="checkName" v-model="name"
-                                           class="form-control" placeholder="Enter the instance name">
-                                    <span class="help-block m-b-none">{{ errors.name }}</span>
+            <div class="card-body pb-0">
+                <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.name ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3">Name <small class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <input type="text" id="name" name="name" v-on:input="checkName" v-model="name"
+                                               class="form-control" placeholder="Enter the instance name">
+                                        <span class="help-block m-b-none text-danger">{{ errors.name }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.template ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 pe-0">Template <small class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <select class="form-control" v-model="template" name="template" id="template">
+                                            <option selected disabled> Select a template</option>
+                                            <option v-for="option in templatesList" v-bind:value="option" v-bind:key="option">{{
+                                                    option.replace('rating-rule-template-','')
+                                                }}
+                                            </option>
+                                        </select>
+                                        <span class="help-block m-b-none text-danger">{{ errors.template }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.cpu ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3">Cpu <small
+                                            class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <input type="text" id="cpu" v-on:input="checkCpu" name="cpu" v-model="cpu"
+                                               class="form-control" placeholder="Enter the CPU value">
+                                        <span class="help-block m-b-none text-danger">{{ errors.cpu }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.memory ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 pe-0">Memory <small
+                                            class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <input type="text" id="memory" v-on:input="checkMemory" name="cpu" v-model="memory"
+                                               class="form-control" placeholder="Enter the memory value">
+                                        <span class="help-block m-b-none text-danger">{{ errors.memory }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pb-0 ">
+                                <div v-bind:class="[errors.price ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 ">Price <small
+                                            class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10 ">
+                                        <input type="text" id="price" v-on:input="checkPrice" name="cpu" v-model="price"
+                                               class="form-control" placeholder="Enter the price value">
+                                        <span class="help-block m-b-none text-danger">{{ errors.price }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 pb-0 ">
+                                <div v-bind:class="[errors.timeframe ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label  pt-3 pe-0">Time <small class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10 ">
+                                        <input type="text" id="timeframe" v-on:input="checkTimeframe" name="cpu" v-model="timeframe"
+                                               class="form-control" placeholder="Enter the timeframe value">
+                                        <span class="help-block m-b-none text-danger">{{ errors.timeframe }}</span>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.template ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label ">Template <small class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <select class=" form-control" v-model="template" name="template" id="template">
-                                        <option selected disabled> Select a template</option>
-                                        <option v-for="option in templatesList" v-bind:value="option" v-bind:key="option">{{
-                                                option.replace('rating-rule-template-','')
-                                            }}
-                                        </option>
-                                    </select>
-                                    <span class="help-block m-b-none">{{ errors.template }}</span>
-                                </div>
+                        <div class="col-md-12" v-if="message.length>0">
+                            <div  v-bind:class="[errors.submit ? 'alert alert-danger' : 'alert alert-success', 'desable']" role="alert">
+                                {{ message }}
                             </div>
                         </div>
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.cpu ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label ">Cpu <small
-                                        class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="cpu" v-on:input="checkCpu" name="cpu" v-model="cpu"
-                                           class="form-control" placeholder="Enter the CPU value">
-                                    <span class="help-block m-b-none">{{ errors.cpu }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.memory ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label ">Memory <small
-                                        class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="memory" v-on:input="checkMemory" name="cpu" v-model="memory"
-                                           class="form-control" placeholder="Enter the memory value">
-                                    <span class="help-block m-b-none">{{ errors.memory }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.price ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label ">Price <small
-                                        class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="price" v-on:input="checkPrice" name="cpu" v-model="price"
-                                           class="form-control" placeholder="Enter the price value">
-                                    <span class="help-block m-b-none">{{ errors.price }}</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6">
-                            <div v-bind:class="[errors.timeframe ? 'form-group has-error' : 'form-group ']">
-                                <label class="col-sm-2 control-label ">Timeframe <small
-                                        class="text-danger">*</small></label>
-                                <div class="col-sm-10">
-                                    <input type="text" id="timeframe" v-on:input="checkTimeframe" name="cpu" v-model="timeframe"
-                                           class="form-control" placeholder="Enter the timeframe value">
-                                    <span class="help-block m-b-none">{{ errors.timeframe }}</span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-12" v-if="message.length>0">
-                        <div  v-bind:class="[errors.submit ? 'alert alert-danger' : 'alert alert-success', 'desable']" role="alert">
-                            {{ message }}
-                        </div>
-                    </div>
-                    <div class="col-md-12">
-                        <div class="hr-line-dashed"></div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-md-offset-1">
-                            <button class="btn btn-cancel m-r-lg" type="reset">Annuler</button>
-                            <button class="btn btn-primary " type="submit">Enregistrer</button>
-                        </div>
-                    </div>
-                </form>
+                </div>
+            </div>
+            <div class="page-header card-footer mb-0">
+                <button class="btn btn-secondary m-r-lg pull-left" type="reset">Annuler</button>
+                <button class="btn btn-info pull-right" type="submit">Enregistrer</button>
             </div>
         </div>
+        </form>
+
     </div>
 </div>
 

@@ -22,7 +22,7 @@ export default {
     methods: {
         Instances() {
             getInstances().then((data) => {
-                this.instancesNb = data.total;
+                this.instanceNb = data.total;
                 this.instancesList = data.results;
             });
         },

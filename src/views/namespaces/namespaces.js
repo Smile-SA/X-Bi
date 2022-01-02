@@ -25,10 +25,10 @@ export default {
                 to: this.to,
                 link: '/nodes',
                 label: 'Nodes',
-                colorLabel: 'primary',
-                svg: 'slice-icon',
+                colorLabel: 'warning',
+                icon: 'mdi mdi-server',
                 type: 'number',
-                color: '#008ffb',
+                color: '#fed60a',
                 value: 0,
             },
             confCardPods: {
@@ -36,10 +36,10 @@ export default {
                 to: this.to,
                 link: '/pods',
                 label: 'Pods',
-                colorLabel: 'success',
-                icon: 'fa fa-sitemap',
+                colorLabel: 'info',
+                icon: 'mdi mdi-sitemap',
                 type: 'number',
-                color: '#00e396',
+                color: '#1eaae1',
                 value: 0
             },
             confCardRating: {
@@ -47,10 +47,10 @@ export default {
                 to: this.to,
                 link: '/',
                 label: 'Rating',
-                colorLabel: 'warning',
-                color: '#feb019',
+                colorLabel: 'danger',
+                color: '#fe7c96',
                 value: 0,
-                icon: 'fa fa-euro',
+                icon: 'mdi mdi-currency-eur',
                 type: 'sum',
                 key: 'frame_price'
             },
@@ -68,7 +68,7 @@ export default {
             return {
                 id: 'barChartMetrics',
                 type: 'area',
-                height: 350,
+                height: 450,
                 fontSize: '20px',
                 sort: 'metric',
                 xaxis: {

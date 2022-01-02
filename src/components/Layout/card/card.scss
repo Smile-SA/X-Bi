@@ -1,19 +1,9 @@
-.slice-icon {
-  background-image: url('../../../../public/img/5GBiller_-__Slices_-_logo_-_whiteV2.svg');
-  background-repeat: no-repeat;
-  width: 34px;
-  height: 34px;
-  padding-right: 1px;
-  float: left;
-  text-align: left;
-}
-
 .order-card {
   color: #fff;
 }
 
 .card {
-  border-radius: 5px;
+  border-radius: 0.15rem;
   -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
   box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
   border: none;
@@ -23,9 +13,11 @@
 
 .card .card-block {
   padding: 30px;
+  display: grid;
 }
 
-.card i, .card svg, {
+
+.card i, {
   font-size: 30px;
   opacity: 0.5;
 }
@@ -50,6 +42,6 @@
   opacity: 0.8;
 }
 
-.card:hover i, .card:hover .name, .card:hover svg {
+.card:hover i, .card:hover .name, {
   opacity: 1;
 }

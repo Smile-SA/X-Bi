@@ -1,9 +1,33 @@
-<div id="notFound">
-    <img src="static/img/5GBiller_-_logo_7_.png" class="center-block logo">
-
-    <div class="text-center col-sm-12">
-        <h1>You are lost.</h1>
-        <h4>This page doesn't exist.</h4>
-        <router-link to="/" class="vertical-5p lead">Take me home.</router-link>
+<div class="container-scroller">
+    <div class="container-fluid page-body-wrapper full-page-wrapper">
+        <div class="content-wrapper d-flex align-items-center text-center error-page bg-info">
+            <div class="row flex-grow">
+                <div class="col-lg-7 mx-auto text-white">
+                    <div class="row align-items-center d-flex flex-row">
+                        <div class="col-lg-6 text-lg-right pr-lg-4">
+                            <h1 class="display-1 mb-0">404</h1>
+                        </div>
+                        <div class="col-lg-6 error-page-divider text-lg-left pl-lg-4">
+                            <h2>SORRY!</h2>
+                            <h3 class="font-weight-light">The page you’re looking for was not found.</h3>
+                        </div>
+                    </div>
+                    <div class="row mt-5">
+                        <h4 class="col-12 text-center mt-xl-2 ">
+                            <router-link class="pointer" to="/" custom v-slot="{ navigate }">
+                                    <a class="text-white font-weight-medium " @click="navigate" @keypress.enter="navigate" role="link">
+                                        <i class="mdi mdi-home float-right"></i>Take me home
+                                    </a>
+                            </router-link>
+                        </h4>
+                    </div>
+                    <div class="row mt-5">
+                        <div class="col-12 mt-xl-2">
+                            <p class="text-white font-weight-medium text-center">Copyright &copy; <a href="https://www.alterway.fr/"><strong class="text-white">Alter Way</strong></a>. All rights reserved.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -1,39 +1,16 @@
 <div>
-    <center :ref="id">
-        <router-link v-if="isDisplay===true" :to="url+'/display/'+id" custom v-slot="{ navigate }">
-            <a class="btn btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
-                    class="fa fa-eye"></i> Display</a>
+    <center :ref="data.id">
+        <router-link v-if="data.isDisplay===true" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
+            <a class="btn btn-sm btn-outline-info m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
+                    class="mdi mdi-eye"></i> Display</a>
         </router-link>
-        <router-link v-if="isUpdate===true" :to="url+'/update/'+id" custom v-slot="{ navigate }">
-            <a class="btn btn-outline-secondary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
-                    class="fa fa-edit"></i> Update</a>
+        <router-link v-if="data.isUpdate===true" :to="data.url+'/update/'+data.id" custom v-slot="{ navigate }">
+            <a class="btn btn-sm btn-outline-secondary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
+                    class="mdi mdi-edit"></i> Update</a>
         </router-link>
-        <button v-if="isDelete===true" type="button" class="btn btn-outline-danger " data-toggle="modal"
-                :data-target="'#'+id"><i class="fa fa-trash-o"></i> Delete
+        <button v-if="data.isDelete===true" v-on:click="submitDeleteForm" type="button" class="btn btn-sm btn-outline-danger "><i class="mdi mdi-trash-can"></i> Delete
         </button>
     </center>
-    <div v-if="isDelete===true" class="modal in" :id="id" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="modal-dialog">
-            <div class="modal-content animated flipInY">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span
-                            class="sr-only">Close</span></button>
-                    <h4 class="modal-title">Delete</h4>
-                </div>
-                <div class="modal-body">
-                    <p><strong>Are you sure you want to delete {{id}} ?</strong></p>
-                </div>
-                <div class="modal-footer">
-                    <form method="post" v-on:submit="submitDeleteForm($event)">
-                        <input type="hidden" name="_method" value="DELETE">
-                        <input type="hidden" :name="deleteParam" :value="id">
-                        <button type="button" class="btn btn-white" data-dismiss="modal">No</button>
-                        <button type="submit" class="btn btn-danger">Yes</button>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </div>
 </div>
 
 

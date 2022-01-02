@@ -1,6 +1,6 @@
 import {generateAPIUrl} from '../../settings/variables'
 import * as utils from '../../settings/utils'
-import * as genaralController from "../../controller/genaralController";
+import * as general from "../../controller/genaralController";
 
 const api = generateAPIUrl()
 export default {
@@ -25,7 +25,7 @@ export default {
             confChartNodes: {
                 id: 'lineChartNodes',
                 type: 'line',
-                height: 500,
+                height: 450,
                 fontSize: '16px',
                 sort: 'node',
                 xaxis: {
@@ -40,7 +40,7 @@ export default {
             confChartNameSpace: {
                 id: 'lineChartNamespaces',
                 type: 'area',
-                height: 500,
+                height: 450,
                 fontSize: '16px',
                 sort: 'namespace',
                 xaxis: {
@@ -57,10 +57,10 @@ export default {
                 to: this.to,
                 link: '/namespaces',
                 label: 'Namespaces',
-                colorLabel: 'info',
-                svg: 'slice-icon',
+                colorLabel: 'success',
+                icon: 'mdi mdi-share-variant',
                 type: 'number',
-                color: '#008ffb',
+                color: '#0cceb0',
                 value: 0,
             },
             confCardPods: {
@@ -68,10 +68,10 @@ export default {
                 to: this.to,
                 link: '/pods',
                 label: 'Pods',
-                colorLabel: 'success',
-                icon: 'fa fa-sitemap',
+                colorLabel: 'info',
+                icon: 'mdi mdi-sitemap',
                 type: 'number',
-                color: '#00e396',
+                color: '#1eaae1',
                 value: 0
             },
             confCardNodes: {
@@ -80,9 +80,9 @@ export default {
                 link: '/nodes',
                 label: 'Nodes',
                 colorLabel: 'warning',
-                icon: 'fa fa-server',
+                icon: 'mdi mdi-server',
                 type: 'number',
-                color: '#feb019',
+                color: '#fed60a',
                 value: 0
             },
         }
@@ -91,7 +91,7 @@ export default {
     methods: {
         getNodesToApex() {
             this.node.height = undefined;
-            genaralController.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this).then(async (r) => {
+            general.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this).then(async (r) => {
                 if (r.total > 0) {
                     this.node = r;
                 }
@@ -99,7 +99,7 @@ export default {
         },
         getNamespacesToApex() {
             this.nameSpace.height = undefined;
-            genaralController.getJsonDataToApex(`${api}/namespaces/rating`, this.confChartNameSpace, this).then(async (r) => {
+            general.getJsonDataToApex(`${api}/namespaces/rating`, this.confChartNameSpace, this).then(async (r) => {
                 if (r.total > 0) {
                     this.nameSpace = r;
                 }
@@ -147,19 +147,19 @@ export default {
             this.refreshDate(this.date);
         },
         async drawCards() {
-            await genaralController.getJsonData('/namespaces' + this.setQueryData()).then(async (r) => {
+            await general.getJsonData('/namespaces' + this.setQueryData()).then(async (r) => {
                 if (r.total > 0) {
                     this.confCardNamespaces.value = r.total;
                     this.$forceUpdate()
                 }
             });
-            await genaralController.getJsonData('/nodes' + this.setQueryData()).then(async (r) => {
+            await general.getJsonData('/nodes' + this.setQueryData()).then(async (r) => {
                 if (r.total > 0) {
                     this.confCardNodes.value = r.total;
                     this.$forceUpdate()
                 }
             });
-            await genaralController.getJsonData('/pods' + this.setQueryData()).then(async (r) => {
+            await general.getJsonData('/pods' + this.setQueryData()).then(async (r) => {
                 if (r.total > 0) {
                     this.confCardPods.value = r.total;
                     this.$forceUpdate();
@@ -175,7 +175,7 @@ export default {
             await setInterval(() => {
                 if (this.node.header > 0) {
                     console.log('-- updateloop --');
-                    genaralController.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this,).then(async (r) => {
+                    general.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this,).then(async (r) => {
                         if (r.total > 0) {
                             this.node.series = r.series;
                         }
