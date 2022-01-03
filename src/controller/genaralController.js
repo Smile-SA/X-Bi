@@ -19,7 +19,6 @@ export async function getJsonDataToApex(url, c, that) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     url = url + queryDate;
     return axios.get(url).then(async (r) => {
-        console.log(r)
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {

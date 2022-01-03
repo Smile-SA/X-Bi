@@ -36,8 +36,8 @@
                 </div>
                 <div class="col-md-7 col-lg-7 ps-0">
                     <select class=" form-control" v-on:change="refreshOptions">
-                        <option selected disabled> -- Select a group --</option>
-                        <option v-for="option in groupOptions" v-bind:value="option" v-bind:key="option">{{
+                        <option disabled> -- Select a group --</option>
+                        <option v-for="option in groupOptions" v-bind:value="option" v-bind:key="option" :selected="option=='Day'">{{
                                 option
                             }}
                         </option>

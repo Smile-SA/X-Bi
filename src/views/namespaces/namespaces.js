@@ -105,7 +105,6 @@ export default {
         async getNamespaces(namespace) {
             this.activeNamespace = namespace.target.value
             this.refreshDate(this.date)
-            this.test = 1;
         },
         async drawCards() {
             await genaralController.getJsonData('/namespaces/' + this.activeNamespace + '/total_rating').then(async (r) => {

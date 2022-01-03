@@ -16,6 +16,12 @@ const routes = [
         meta: { description: 'Global infrastructure view', requiresAuth: true },
       },
       {
+        path: 'monitoring',
+        component: () => import('../views/monitoring/index.vue'),
+        name: 'Monitoring',
+        meta: { description: 'Graph view of prometheus query', requiresAuth: false }
+      },
+      {
         path: 'namespaces',
         component: () => import('../views/namespaces/index.vue'),
         name: 'Namespaces',

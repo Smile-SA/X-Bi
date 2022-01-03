@@ -114,7 +114,7 @@ export default {
         },
         getPodsMetricsToApex() {
             this.podsMetrics.height = undefined;
-            genaralController.getJsonDataToApex(`${api}/pods/${this.activeNode}/rating`, this.confChartPodsMetrics, this).then(async (r) => {
+            genaralController.getJsonDataToApex(`${api}/pods/${this.activePod}/rating`, this.confChartPodsMetrics, this).then(async (r) => {
                 if (r.total > 0) {
                     this.podsMetrics = r;
                 }
@@ -136,7 +136,7 @@ export default {
         },
         async getPods(pod) {
             this.activePod = pod.target.value
-            this.refreshDate(null)
+            this.refreshDate(this.date)
         },
         async drawCards() {
             await genaralController.getJsonData('/pods/' + this.activePod + '/total_rating').then(async (r) => {
@@ -155,7 +155,7 @@ export default {
             });
         },
         async drawGraphs() {
-            //wait this.getPodsMetricsToApex();
+            await this.getPodsMetricsToApex();
         },
     },
     async beforeMount() {
