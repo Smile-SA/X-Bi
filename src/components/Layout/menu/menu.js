@@ -5,7 +5,10 @@ export default {
   props: [],
   data () {
     return {
-
+      isActive : {
+        kpis : false,
+        ui :false
+      }
     }
   },
   computed: {

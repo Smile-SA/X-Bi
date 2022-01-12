@@ -19,7 +19,6 @@ export async function getJsonDataToApex(url, c, that) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     url = url + queryDate;
     return axios.get(url).then(async (r) => {
-        console.log(r)
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
@@ -67,7 +66,8 @@ export async function getJsonDataToApex(url, c, that) {
                 Object.keys(datas[item]).map((subItem) => {
                     Object.keys(datas[item][subItem]).map((subSubItem) => {
                         const fixed = datas[item][subItem][subSubItem][c.labels.value].toFixed(5)
-                        const date = new Date(datas[item][subItem][subSubItem][c.labels.time]).getTime();
+                        let date = new Date(datas[item][subItem][subSubItem][c.labels.time]);
+                         date =  new Date(date).getTime();
                         const minTmp = Math.min(fixed)
                         const maxTmp = Math.max(fixed)
                         if (min === 0 || minTmp < min) {
@@ -89,7 +89,7 @@ export async function getJsonDataToApex(url, c, that) {
                     id: c.id, type: c.type
                 },
                 xaxis: {
-                    type: c.xaxis.type,
+                    type: 'datetime',
                     style: {
                         fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                         fontWeight: 0,

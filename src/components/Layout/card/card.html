@@ -1,14 +1,11 @@
 <div v-if="configuration !== undefined">
-    <div :class="'card bg-c-'+configuration.colorLabel+' order-card'" @click="redirectCard()">
-        <div class="card-block">
-            <h2 class="text-right mt-0">
-                <svg v-if="configuration.svg!=undefined" v-bind:class="configuration.svg+' f-left'"></svg>
-                <i v-if="configuration.icon!=undefined" v-bind:class="configuration.icon+' f-left'"></i>
-                <strong class="number">{{ configuration.value }}</strong>
-            </h2>
-            <p class="m-b-0 ">
-                <span v-if="configuration.message !== undefined" class="info-box-number-rating f-left ">{{ configuration.message }}</span>
-                <strong class="f-right name ">{{ configuration.label }}</strong></p>
+    <div :class="'stat-card bg-gradient-'+configuration.colorLabel+' pointer'" @click="redirectCard()">
+        <div class="icon">
+            <i v-if="configuration.icon!=undefined" v-bind:class="'fa ' + configuration.icon+' f-left'"></i>
+        </div>
+        <div class="content">
+            <h2><strong class="number f-right">{{ configuration.value }}</strong></h2>
+            <p class="mb-1 name"><strong>{{ configuration.label }}</strong></p>
         </div>
     </div>
 </div>
