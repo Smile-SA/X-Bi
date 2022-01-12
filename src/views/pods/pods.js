@@ -7,9 +7,9 @@ const api = generateAPIUrl()
 
 export default {
     components: {
-        Card: () => import('../../components/Layout/card/index.vue'),
+        Card: () => import('../../components/Layout/card'),
         BarChart: () => import ('../../components/charts/charts.js/BarChart'),
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts/index.vue'),
+        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
     },
     data() {
         return {

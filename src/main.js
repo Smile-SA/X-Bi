@@ -6,11 +6,11 @@ import VueRangedatePicker from 'vue-rangedate-picker';
 import AppComponent from './app/index.vue';
 
 
-Vue.component("data-table", DataTable);
+Vue.component("DataTable", DataTable);
 Vue.use(VueSweetalert2);
 Vue.config.productionTip = false
 Vue.config.devtools = false
-Vue.component('VueRangedatePicker', VueRangedatePicker);
+Vue.component('DatePicker', VueRangedatePicker);
 new Vue({
     router,
     render: h => h(AppComponent)

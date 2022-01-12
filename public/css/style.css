@@ -2895,7 +2895,7 @@ progress {
 }
 
 .row {
-    --bs-gutter-x: 35px;
+    --bs-gutter-x: 1rem;
     --bs-gutter-y: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15925,10 +15925,9 @@ code {
 
 /* Footer */
 .footer {
-    background: #f2edf3;
-    color: color(dark);
-    border-top: 1px solid #e7dee9;
-    padding: 30px 1rem;
+    background: #f5f6f8;
+    border-top: 0.5px solid #e7dee9;
+    padding: 1rem 1rem;
     transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
     -webkit-transition: all 0.25s ease;
@@ -15938,8 +15937,9 @@ code {
 }
 
 .footer a {
-    color: #1bcfb4;
+    color: #1eaae1;
     font-size: inherit;
+    text-decoration: none;
 }
 
 @media (max-width: 991px) {
@@ -20564,7 +20564,7 @@ dl li {
     -webkit-box-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
     box-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
     background-color: #fff;
-    padding: 10px;
+    padding: 1rem;
     border-radius: 0.15rem;
 }
 
@@ -20825,7 +20825,7 @@ dl li {
 }
 
 .m-b {
-    margin-bottom: 15px !important;
+    margin-bottom: 1rem !important;
 }
 
 .m-b-md {
@@ -22502,4 +22502,49 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
     right: 0;
     bottom: 0;
     left: auto
+}
+
+/*checkbox input*/
+
+   input[type="checkbox"]{
+       -webkit-appearance: none;
+       -moz-appearance: none;
+       appearance: none;
+       width: 3.5em;
+       height: 1.5em;
+       background: #ddd;
+       border-radius: 3em;
+       position: relative;
+       cursor: pointer;
+       outline: none;
+       -webkit-transition: all .2s ease-in-out;
+       transition: all .2s ease-in-out;
+   }
+
+input[type="checkbox"].primary:checked{
+    background: #1eaae1;
+}
+
+input[type="checkbox"]:after{
+    position: absolute;
+    content: "";
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+    background: #fff;
+    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-transform: scale(.7);
+    transform: scale(.7);
+    left: 0;
+    -webkit-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+input[type="checkbox"]:checked:after{
+    left: calc(100% - 1.5em);
+}
+
+.apexcharts-toolbar {
+    z-index: 0!important;
 }

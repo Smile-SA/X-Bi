@@ -5,27 +5,30 @@ import * as general from "../../controller/genaralController";
 const api = generateAPIUrl()
 export default {
     components: {
-        Card: () => import('../../components/Layout/card/index.vue'),
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts/index.vue'),
+        Card: () => import('../../components/Layout/card'),
+        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
     },
     data() {
         return {
-            date: this.setDefaultDate(),
+            date: this.setDefaultDate(1),
             lineChartNodes: null,
             donut: {},
             donuts: {},
             nameSpace: {},
             node: {},
             lineChartNamespaces: null,
-            dateRange: null,
+            dateRange: {
+                start: new Date(2018, 5, 1),
+                end: new Date(2018, 5, 31)
+            },
             to: null,
             from: null,
-            groupOptions: ['Hour','Day','Month','Year'],
-            group: 'Day',
+            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
+            group: 'Hour',
             confChartNodes: {
                 id: 'lineChartNodes',
                 type: 'line',
-                height: 450,
+                height: 470,
                 fontSize: '16px',
                 sort: 'node',
                 xaxis: {
@@ -40,7 +43,7 @@ export default {
             confChartNameSpace: {
                 id: 'lineChartNamespaces',
                 type: 'area',
-                height: 450,
+                height: 470,
                 fontSize: '16px',
                 sort: 'namespace',
                 xaxis: {
@@ -120,30 +123,47 @@ export default {
                             fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                             fontWeight: 0,
                             color: '#ffffff',
-                        }
+                        },
                     },
                     legend: {
                         show: false
                     }
                 };
-                this.donut.height = 150;
+                this.donut.height = 130;
                 this.donuts = this.donut;
             }
         },
         setQueryData() {
             return utils.convertURLDateParameter(this.from, this.to)
         },
-        setDefaultDate() {
-            var e = new Date, n = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate() - 6)),
-                a = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()));
+        setDefaultDate(jour, month, year) {
+            var e = new Date,n, a = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()));
+            if(jour>0){
+                n = new Date(Date.UTC(e.getFullYear() , e.getMonth() , e.getDate() - jour))
+            }
+            if(month>0){
+                n = new Date(Date.UTC(e.getFullYear() , e.getMonth() - month, e.getDate() ))
+            }
+            if(year>0){
+                n = new Date(Date.UTC(e.getFullYear() -year , e.getMonth() , e.getDate() ))
+            }
             return {start: n, end: a}
         },
         refreshDate(date) {
-            this.dateRange = date;
             utils.refreshDate(date, this);
         },
         refreshOptions(event) {
             this.group = event.target.value;
+            // if (this.group === 'Hour') {
+            //     this.date = this.date = this.setDefaultDate(1, 0, 0)
+            // }
+            // else if (this.group === 'Day') {
+            //     this.date = this.date = this.setDefaultDate(6, 0, 0)
+            // } else if (this.group === 'Month') {
+            //     this.date = this.date = this.setDefaultDate(0, 6, 0)
+            // } else if (this.group === 'Year') {
+            //     this.date = this.date = this.setDefaultDate(0, 0, 1)
+            // }
             this.refreshDate(this.date);
         },
         async drawCards() {
@@ -188,6 +208,8 @@ export default {
 
     },
     async beforeMount() {
+
+
         this.refreshDate(this.date);
     },
     async mounted() {

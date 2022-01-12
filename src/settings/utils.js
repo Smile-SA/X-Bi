@@ -160,6 +160,16 @@ export function groupBy(objectArray, property) {
     }, {})
 }
 
+export function getUnique(array) {
+        var uniqueArray = [];
+        // Loop through array values
+        for(var value of array){
+            if(uniqueArray.indexOf(value) === -1){
+                uniqueArray.push(value);
+            }
+        }
+        return uniqueArray;
+}
 export function getURL(data, that) {
     const option = data.target.innerText
     const url = that.queryArray[that.selected]
@@ -194,3 +204,4 @@ export async function get(url, that) {
 export function goTo(route,that){
     that.$router.push(route);
 }
+

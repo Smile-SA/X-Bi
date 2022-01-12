@@ -1,47 +1,37 @@
-.order-card {
-  color: #fff;
+.stat-card {
+  width:100%;
+  color:#ffffff;
+  padding: 1rem;
+  border-radius: .25rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-between;
+  transition: all 0.2s;
 }
-
-.card {
-  border-radius: 0.15rem;
-  -webkit-box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
-  box-shadow: 0 1px 2.94px 0.06px rgba(4, 26, 55, 0.16);
-  border: none;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
+.stat-card :hover {
+  cursor: pointer;
 }
-
-.card .card-block {
-  padding: 30px;
-  display: grid;
+.stat-card .number{
+  font-size: 2.25rem;
+  opacity: 1;
 }
-
-
-.card i, {
-  font-size: 30px;
-  opacity: 0.5;
-}
-
-.order-card .name, {
+.stat-card .name{
+  font-size: 1rem;
   opacity: 0.7;
 }
-
+.stat-card i, {
+  font-size: 3.5rem;
+  opacity: 0.7;
+}
+.stat-card:hover i, .stat-card:hover .name {
+  opacity: 1;
+}
+.stat-card:hover .number {
+  opacity: 0.7;
+}
 .f-left {
   float: left;
 }
-
 .f-right {
   float: right;
-}
-
-.card :hover {
-  cursor: pointer;
-}
-
-.card :hover .number {
-  opacity: 0.8;
-}
-
-.card:hover i, .card:hover .name, {
-  opacity: 1;
 }

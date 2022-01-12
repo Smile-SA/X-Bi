@@ -1,11 +1,11 @@
 <div class="row">
-    <div class="col-lg-3 col-md-3 col-xs-12  m-b ">
+    <div class="col-lg-3 col-md-3 col-xs-12 m-b">
         <div class="apex-box">
             <div class="row">
                 <div class="col-md-5 col-lg-5">
                     <label class="p-2">Select a node</label>
                 </div>
-                <div class="col-md-7 col-lg-7 ps-0">
+                <div class="col-md-7 col-lg-7 ">
                     <select class=" form-control" v-on:change="getNodes">
                         <option selected disabled> -- Select a node --</option>
                         <option v-for="option in selectNodes" v-bind:value="option" v-bind:key="option" >{{
@@ -17,24 +17,24 @@
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-12  m-b ps-0" v-if="showDatePicker()">
+    <div class="col-lg-4 col-md-4 col-xs-12 m-b" v-if="showDatePicker()">
         <div class="apex-box">
             <div class="row">
-                <div class="col-md-5 col-lg-5">
+                <div class="col-md-4 col-lg-4">
                     <label class="p-2">Select a date</label>
                 </div>
-                <VueRangedatePicker class="col-md-7 col-lg-7 ps-0" i18n="EN" v-model="date"
-                                    @selected="refreshDate"></VueRangedatePicker>
+                <date-picker class="col-md-8 col-lg-8 " i18n="EN" v-model="date"
+                                    @selected="refreshDate"></date-picker>
             </div>
         </div>
     </div>
-    <div class="col-lg-3 col-md-3 col-xs-12  m-b ps-0" v-if="showDatePicker()">
+    <div class="col-lg-3 col-md-3 col-xs-12 m-b" v-if="showDatePicker()">
         <div class="apex-box">
             <div class="row">
                 <div class="col-md-4 col-lg-4">
                     <label class="p-2">Group by</label>
                 </div>
-                <div class="col-md-8 col-lg-8 ps-0">
+                <div class="col-md-8 col-lg-8 ">
                     <select class=" form-control" v-on:change="refreshOptions">
                         <option disabled> -- Select a group --</option>
                         <option v-for="option in groupOptions" v-bind:value="option" v-bind:key="option" :selected="option=='Day'">{{
@@ -50,8 +50,8 @@
         <div class="apex-box">
             <div class="row">
                 <Card class="col-md-4" :configuration=confCardNamespaces></Card>
-                <Card class="col-md-4 ps-0" :configuration=confCardPods></Card>
-                <Card class="col-md-4 ps-0" :configuration=confCardRating></Card>
+                <Card class="col-md-4 " :configuration=confCardPods></Card>
+                <Card class="col-md-4 " :configuration=confCardRating></Card>
             </div>
         </div>
     </div>

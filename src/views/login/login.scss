@@ -148,14 +148,10 @@ $gutters: 24px;
     }
 
     input {
-      outline: none;
-      display: block;
       background: rgba($black, 0.1);
-      width: 100%;
       border: 0;
       border-radius: 4px;
       box-sizing: border-box;
-      padding: 12px 20px;
       color: $gray;
       font-family: inherit;
       font-size: inherit;
@@ -204,9 +200,26 @@ $gutters: 24px;
       text-transform: none;
 
       input[type='checkbox'] {
-        display: inline-block;
-        width: auto;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+        width: 3.5em;
+        height: 1.5em;
+        background: #ddd;
+        border-radius: 3em;
+        position: relative;
+        top: 2px;
+        cursor: pointer;
+        outline: none;
+        -webkit-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
         margin: 0 10px 0 0;
+      }
+      input[type='checkbox']:checked:after {
+        left: calc(100% - 1.5em);
+      }
+      input[type="checkbox"].primary:checked{
+        background: #1eaae1;
       }
     }
 

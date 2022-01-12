@@ -2,9 +2,9 @@ import * as utils from './utils'
 import Chart from 'chart.js'
 
 export async function drawPieChart(c) {
-  if (c.graph !== null) {
-    c.graph.destroy()
-  }
+  // if (c.graph !== null) {
+  //   c.graph.destroy()
+  // }
 
   const {total, results} = await utils.fetchDataAsJSON(c.url, c.context)
   if (total === 0) {

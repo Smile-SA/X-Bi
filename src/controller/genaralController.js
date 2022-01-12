@@ -66,7 +66,8 @@ export async function getJsonDataToApex(url, c, that) {
                 Object.keys(datas[item]).map((subItem) => {
                     Object.keys(datas[item][subItem]).map((subSubItem) => {
                         const fixed = datas[item][subItem][subSubItem][c.labels.value].toFixed(5)
-                        const date = new Date(datas[item][subItem][subSubItem][c.labels.time]).getTime();
+                        let date = new Date(datas[item][subItem][subSubItem][c.labels.time]);
+                         date =  new Date(date).getTime();
                         const minTmp = Math.min(fixed)
                         const maxTmp = Math.max(fixed)
                         if (min === 0 || minTmp < min) {
@@ -88,7 +89,7 @@ export async function getJsonDataToApex(url, c, that) {
                     id: c.id, type: c.type
                 },
                 xaxis: {
-                    type: c.xaxis.type,
+                    type: 'datetime',
                     style: {
                         fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                         fontWeight: 0,

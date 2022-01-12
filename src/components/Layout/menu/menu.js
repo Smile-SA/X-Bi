@@ -5,7 +5,10 @@ export default {
   props: [],
   data () {
     return {
-      isActive : false,
+      isActive : {
+        kpis : false,
+        ui :false
+      }
     }
   },
   computed: {
@@ -15,9 +18,6 @@ export default {
 
   },
   methods: {
-    menuDeroulant(){
-      console.log(this.isActive);
-    }
 
   }
 }

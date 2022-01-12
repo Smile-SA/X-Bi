@@ -1,4 +1,4 @@
-
+import * as utils from '../../../settings/utils'
 export default {
   name: 'header-info',
   components: {},
@@ -15,7 +15,9 @@ export default {
 
   },
   methods: {
-
+    go(link){
+      utils.goTo(link,this)
+    }
   }
 }
 

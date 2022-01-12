@@ -1,23 +1,20 @@
 import {generateAPIUrl} from '../../settings/variables'
 import * as utils from '../../settings/utils'
-import * as genaralController from "../../controller/genaralController";
-
+import * as controller from "../../controller/genaralController";
 const api = generateAPIUrl()
 
 export default {
     components: {
-        Card: () => import('../../components/Layout/card/index.vue'),
+        Card: () => import('../../components/Layout/card'),
         BarChart: () => import ('../../components/charts/charts.js/BarChart'),
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts/index.vue'),
+        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
     },
     data() {
         return {
             groupOptions: ['Hour', 'Day', 'Month', 'Year'],
             group: 'Day',
             date:null,
-            metrics: {},
-            barChartMetrics: null,
-            pieChartNodesPods: null,
+            barChartMetrics: {},
             selectForm: null,
             activeNamespace: null,
             confCardNodes: {
@@ -81,13 +78,30 @@ export default {
                 }
             }
         },
+        confChartNodesPods() {
+            return {
+                id: 'pieChartNodesPods',
+                type: 'donut',
+                height: 450,
+                fontSize: '20px',
+                sort: 'node',
+                xaxis: {
+                    type: 'datetime'
+                },
+                labels: {
+                    time: 'frame_begin',
+                    value: 'frame_price',
+                    title: 'Services repartition by nodes'
+                }
+            }
+        },
     },
     methods: {
-        getMetricsToApex() {
-            this.metrics.height = undefined;
-            genaralController.getJsonDataToApex(`${api}/namespaces/${this.activeNamespace}/rating`, this.confChartMetrics, this).then(async (r) => {
+        getBarChartMetrics() {
+            this.barChartMetrics.height = undefined;
+            controller.getJsonDataToApex(`${api}/namespaces/${this.activeNamespace}/rating`, this.confChartMetrics, this).then(async (r) => {
                 if (r.total > 0) {
-                    this.metrics = r;
+                    this.barChartMetrics = r;
                 }
             });
         },
@@ -107,20 +121,20 @@ export default {
             this.refreshDate(this.date)
         },
         async drawCards() {
-            await genaralController.getJsonData('/namespaces/' + this.activeNamespace + '/total_rating').then(async (r) => {
+            await controller.getJsonData('/namespaces/' + this.activeNamespace + '/total_rating').then(async (r) => {
                 this.confCardRating.value = (r.results.length === 1) ?
                     r.results[0][this.confCardRating.key].toFixed(2) :
                     r.results.map(item => item[this.confCardRating.key]).reduce((a, b) => a + b, 0).toFixed(2)
             });
-            await genaralController.getJsonData('/namespaces/' + this.activeNamespace + '/pods').then(async (r) => {
+            await controller.getJsonData('/namespaces/' + this.activeNamespace + '/pods').then(async (r) => {
                 this.confCardPods.value = r.total;
             });
-            await genaralController.getJsonData('/namespaces/' + this.activeNamespace + '/nodes').then(async (r) => {
+            await controller.getJsonData('/namespaces/' + this.activeNamespace + '/nodes').then(async (r) => {
                 this.confCardNodes.value = r.total;
             });
         },
         async drawGraphs() {
-            await this.getMetricsToApex()
+            await this.getBarChartMetrics()
         },
     },
     async beforeMount() {

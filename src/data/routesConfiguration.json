@@ -1,0 +1,120 @@
+{
+  "default" : {
+    "id": "default",
+    "path": "/",
+    "component": "Layout/container/index.vue",
+    "name": "Default",
+    "description": "Global infrastructure view",
+    "requiresAuth": true
+  },
+  "children": {
+    "home": {
+      "component": "views/home/index.vue",
+      "description": "Global infrastructure view",
+      "display": true,
+      "id": "home",
+      "name": "Overall",
+      "path": "home",
+      "requiresAuth": true
+    },
+    "nameSpaces": {
+      "component": "views/namespaces/index.vue",
+      "description": "Detailed view of namespaces",
+      "display": true,
+      "id": "nameSpaces",
+      "name": "Namespaces",
+      "path": "namespaces",
+      "requiresAuth": true
+    },
+    "nodes": {
+      "component": "views/nodes/index.vue",
+      "description": "Detailed view of nodes",
+      "display": true,
+      "id": "nodes",
+      "name": "Nodes",
+      "path": "nodes",
+      "requiresAuth": true
+    },
+    "pods": {
+      "component": "views/pods/index.vue",
+      "description": "Detailed view of pods",
+      "display": true,
+      "id": "pods",
+      "name": "Pods",
+      "path": "pods",
+      "requiresAuth": true
+    },
+    "templates": {
+      "component": "views/kpisConfiguration/templates/listTemplates/index.vue",
+      "description": "View of templates",
+      "display": true,
+      "id": "templates",
+      "name": "Templates list",
+      "path": "templates",
+      "requiresAuth": true
+    },
+    "createTemplates": {
+      "component": "views/kpisConfiguration/templates/createTemplate/index.vue",
+      "description": "View of template creation",
+      "display": true,
+      "id": "createTemplates",
+      "name": "Create template",
+      "path": "templates/create",
+      "requiresAuth": true
+    },
+    "displayTemplates": {
+      "component": "views/kpisConfiguration/templates/displayTemplate/index.vue",
+      "description": "Detailed of template",
+      "display": true,
+      "id": "displayTemplates",
+      "name": "Display template",
+      "path": "templates/display/:id",
+      "requiresAuth": true
+    },
+    "instances": {
+      "component": "views/kpisConfiguration/instances/listInstances/index.vue",
+      "description": "View of instances",
+      "display": true,
+      "id": "instances",
+      "name": "Instances list",
+      "path": "instances",
+      "requiresAuth": true
+    },
+    "createInstances": {
+      "component": "views/kpisConfiguration/instances/createInstance/index.vue",
+      "description": "View of instance creation",
+      "display": true,
+      "id": "createInstances",
+      "name": "Create instance",
+      "path": "instances/create",
+      "requiresAuth": true
+    },
+    "displayInstances": {
+      "component": "views/kpisConfiguration/instances/displayInstance/index.vue",
+      "description": "Detailed of instance",
+      "display": true,
+      "id": "displayInstances",
+      "name": "Display instance",
+      "path": "instances/display/:id",
+      "requiresAuth": true
+    },
+    "example": {
+      "component": "views/uiConfiguration/example/index.vue",
+      "description": "Router configuration",
+      "display": true,
+      "id": "router",
+      "name": "router ",
+      "path": "router",
+      "requiresAuth": true
+    },
+    "monitoring": {
+      "component": "views/monitoring/index.vue",
+      "description": "Graph view of prometheus query",
+      "display": true,
+      "id": "monitoring",
+      "name": "Monitoring ",
+      "path": "Monitoring",
+      "requiresAuth": true
+    }
+  }
+}
