@@ -13,20 +13,17 @@ export function getInstances() {
     });
 }
 
-export function addInstance(metric_name,template_name,cpu,memory,price,timeframe) {
+export function addInstance(values) {
     const Params = new FormData();
-    Params.append("metric_name", metric_name);
-    Params.append("template_name", template_name);
-    Params.append("cpu", cpu);
-    Params.append("memory", memory);
-    Params.append("price", price);
-    Params.append("timeframe", timeframe);
+    Object.keys(values).map((item) => {
+        Params.append(values[item].name, values[item].value)
+    })
 
     return axios.post(generateAPIUrl() + '/instances/add',Params).then(async (r) => {
-            return {
-                errors :false,
-                message : r.data
-            }
+        return {
+            errors :false,
+            message : r.data
+        }
     }).catch(errors => {
         return {
             errors : true,

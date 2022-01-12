@@ -161,15 +161,18 @@ export function groupBy(objectArray, property) {
 }
 
 export function getUnique(array) {
-        var uniqueArray = [];
-        // Loop through array values
-        for(var value of array){
-            if(uniqueArray.indexOf(value) === -1){
+    var uniqueArray = [];
+    // Loop through array values
+    if (array !== null) {
+        for (var value of array) {
+            if (uniqueArray.indexOf(value) === -1) {
                 uniqueArray.push(value);
             }
         }
-        return uniqueArray;
+    }
+    return uniqueArray;
 }
+
 export function getURL(data, that) {
     const option = data.target.innerText
     const url = that.queryArray[that.selected]
@@ -201,7 +204,7 @@ export async function get(url, that) {
     return await fetchDataAsJSON(url, that);
 }
 
-export function goTo(route,that){
+export function goTo(route, that) {
     that.$router.push(route);
 }
 

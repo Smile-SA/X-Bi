@@ -13,7 +13,11 @@ export default {
             name: '',
             template: '',
             templatesList: [],
-            dynamicValues: null,
+            dynamicValues: [{
+                'name': 'timeframe',
+                'value': '5',
+                'error': '',
+            }],
             templatesNb: 0,
         }
     },
@@ -25,21 +29,26 @@ export default {
         this.getTemplates();
     },
     methods: {
-        getDynamicValues(options) {
+        async getDynamicValues(options) {
             let value = options.target.value;
-            template.getTemplate(value).then((r) => {
+            this.dynamicValues = [];
+            await template.getTemplate(value).then((r) => {
                 if (r.data.total > 0) {
-                    this.dynamicValues=[];
                     let valuesInit = utils.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
                     Object.keys(valuesInit).map((item) => {
                         this.dynamicValues.push({
-                                'name':valuesInit[item],
-                                'value':'',
-                                'error':'',
+                                'name': valuesInit[item],
+                                'value': '',
+                                'error': '',
                             }
                         )
-                    })
+                    });
                 }
+            });
+            this.dynamicValues.push({
+                'name': 'timeframe',
+                'value': '5',
+                'error': '',
             });
         },
         getTemplates() {
@@ -51,10 +60,9 @@ export default {
         checkValues(e) {
             if ((e.target.value).trim() === '') {
                 Object.keys(this.dynamicValues).map((item) => {
-                    if(this.dynamicValues[item].name === e.target.name){
-                        this.dynamicValues[item].error = this.errors[this.dynamicValues[item].name] = 'Instance '+ this.dynamicValues[item].name +' is required';
-                    }
-                    else {
+                    if (this.dynamicValues[item].name === e.target.name) {
+                        this.dynamicValues[item].error = this.errors[this.dynamicValues[item].name] = 'Instance ' + this.dynamicValues[item].name + ' is required';
+                    } else {
                         this.dynamicValues[item].error = '';
                         delete this.errors[this.dynamicValues[item].name];
                     }
@@ -62,17 +70,16 @@ export default {
             }
         },
         checkAllValues() {
-                if(this.dynamicValues!==null){
-                    Object.keys(this.dynamicValues).map((item) => {
-                        if( (this.dynamicValues[item].value).trim() === ''){
-                            this.dynamicValues[item].error = this.errors[this.dynamicValues[item].name] = 'Instance '+ this.dynamicValues[item].name +' is required';
-                        }
-                        else {
-                            this.dynamicValues[item].error = '';
-                            delete this.errors[this.dynamicValues[item].name];
-                        }
-                    })
-                }
+            if (this.dynamicValues !== null) {
+                Object.keys(this.dynamicValues).map((item) => {
+                    if ((this.dynamicValues[item].value).trim() === '') {
+                        this.dynamicValues[item].error = this.errors[this.dynamicValues[item].name] = 'Instance ' + this.dynamicValues[item].name + ' is required';
+                    } else {
+                        this.dynamicValues[item].error = '';
+                        delete this.errors[this.dynamicValues[item].name];
+                    }
+                })
+            }
         },
         checkName() {
             if ((this.name).trim() === '') {
@@ -96,16 +103,25 @@ export default {
         resetForm() {
             this.errors = {};
             this.name = this.message = '';
-            this.dynamicValues=[];
+            this.dynamicValues = [];
         },
-        submitForm(e) {
+        async submitForm(e) {
             e.preventDefault();
             this.message = ''
             this.errors = {};
             this.checkAllForm();
             if (Object.keys(this.errors).length === 0) {
                 this.errors = {};
-                instance.addInstance(this.name, (this.template).replace('rating-rule-template-', ''), this.cpu, this.memory, this.price, this.timeframe).then((r) => {
+                let values = this.dynamicValues
+                values.push({
+                    'name': 'metric_name',
+                    'value': this.name
+                })
+                values.push({
+                    'name': 'template_name',
+                    'value': (this.template).replace('rating-rule-template-', '')
+                })
+                instance.addInstance(values).then((r) => {
                     if (r.errors) {
                         this.errors.submit = true
                     } else {
