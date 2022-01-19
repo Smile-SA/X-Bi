@@ -1,7 +1,7 @@
 {
   "default" : {
     "id": "default",
-    "path": "/",
+    "path": "",
     "component": "Layout/container/index.vue",
     "name": "Default",
     "description": "Global infrastructure view",
@@ -14,7 +14,7 @@
       "display": true,
       "id": "home",
       "name": "Overall",
-      "path": "home",
+      "path": "Overall",
       "requiresAuth": true
     },
     "nameSpaces": {
@@ -49,7 +49,7 @@
       "description": "View of templates",
       "display": true,
       "id": "templates",
-      "name": "Templates list",
+      "name": "Templates",
       "path": "templates",
       "requiresAuth": true
     },
@@ -76,7 +76,7 @@
       "description": "View of instances",
       "display": true,
       "id": "instances",
-      "name": "Instances list",
+      "name": "Instances",
       "path": "instances",
       "requiresAuth": true
     },
@@ -103,7 +103,7 @@
       "description": "Router configuration",
       "display": true,
       "id": "router",
-      "name": "router ",
+      "name": "router",
       "path": "router",
       "requiresAuth": true
     },
@@ -112,7 +112,7 @@
       "description": "Graph view of prometheus query",
       "display": true,
       "id": "monitoring",
-      "name": "Monitoring ",
+      "name": "Monitoring",
       "path": "Monitoring",
       "requiresAuth": true
     }

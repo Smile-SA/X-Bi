@@ -1,52 +1,8 @@
 <div class="row">
-    <div class="col-lg-3 col-md-3 m-b">
-        <div class="apex-box">
-            <div class="row">
-                <div class="col-md-5 col-lg-5">
-                    <label class="p-2">Select a node</label>
-                </div>
-                <div class="col-md-7 col-lg-7 ">
-                    <select class=" form-control" v-on:change="getNamespaces">
-                        <option selected disabled> -- Select a node --</option>
-                        <option v-for="option in selectForm" v-bind:value="option" v-bind:key="option">{{
-                                option
-                            }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4 col-md-4 m-b" v-if="showDatePicker()">
-        <div class="apex-box">
-            <div class="row">
-                <div class="col-md-4 col-lg-4">
-                    <label class="p-2">Select a date</label>
-                </div>
-                <date-picker class="col-md-8 col-lg-8 " i18n="EN" v-model="date"
-                                    @selected="refreshDate"></date-picker>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-3 col-md-3 m-b" v-if="showDatePicker()">
-        <div class="apex-box">
-            <div class="row">
-                <div class="col-md-5 col-lg-5">
-                    <label class="p-2">Group by</label>
-                </div>
-                <div class="col-md-7 col-lg-7 ">
-                    <select class=" form-control" v-on:change="refreshOptions">
-                        <option disabled> -- Select a group --</option>
-                        <option v-for="option in groupOptions" v-bind:value="option" v-bind:key="option"
-                                :selected="option=='Day'">{{
-                                option
-                            }}
-                        </option>
-                    </select>
-                </div>
-            </div>
-        </div>
-    </div>
+    <select-option class="col-lg-4 col-md-4 m-b" :label="'Namespace'" :placeholder="'Select a namespace'"
+                   :selectFunction="this.setNamespaces" :selectData="namespaces"></select-option>
+    <date-picker class="col-lg-4 col-md-4 m-b" v-if="showDatePicker()" :that="this"></date-picker>
+    <group-by class="col-lg-4 col-md-4 m-b" v-if="showGroup()" :that="this"></group-by>
     <div class="col-lg-12 col-md-12" v-if='this.activeNamespace != null'>
         <div class="apex-box">
             <div class="row">

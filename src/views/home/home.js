@@ -1,29 +1,22 @@
-import {generateAPIUrl} from '../../settings/variables'
 import * as utils from '../../settings/utils'
 import * as general from "../../controller/genaralController";
 
-const api = generateAPIUrl()
 export default {
     components: {
         Card: () => import('../../components/Layout/card'),
         ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
+        GroupBy: () => import ('../../components/Layout/group/index'),
+        DatePicker: () => import ('../../components/Layout/datePicker/index'),
     },
     data() {
         return {
-            date: this.setDefaultDate(1),
+            date: null,
             lineChartNodes: null,
-            donut: {},
-            donuts: {},
             nameSpace: {},
             node: {},
             lineChartNamespaces: null,
-            dateRange: {
-                start: new Date(2018, 5, 1),
-                end: new Date(2018, 5, 31)
-            },
             to: null,
             from: null,
-            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
             group: 'Hour',
             confChartNodes: {
                 id: 'lineChartNodes',
@@ -92,9 +85,12 @@ export default {
     },
     computed: {},
     methods: {
+        showGroup() {
+            return this.date !== null
+        },
         getNodesToApex() {
             this.node.height = undefined;
-            general.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this).then(async (r) => {
+            general.getDataByVariableAndDateToApex('nodes/rating', this.confChartNodes, this).then(async (r) => {
                 if (r.total > 0) {
                     this.node = r;
                 }
@@ -102,69 +98,31 @@ export default {
         },
         getNamespacesToApex() {
             this.nameSpace.height = undefined;
-            general.getJsonDataToApex(`${api}/namespaces/rating`, this.confChartNameSpace, this).then(async (r) => {
+            general.getDataByVariableAndDateToApex('/namespaces/rating', this.confChartNameSpace, this).then(async (r) => {
                 if (r.total > 0) {
                     this.nameSpace = r;
                 }
             });
         },
-        getPieDataToApex() {
-            this.donut.height = 0;
-            if (this.confCardNamespaces.value !== 0 || this.confCardNodes.value !== 0 || this.confCardPods.value !== 0) {
-                this.donut.series = [this.confCardNamespaces.value, this.confCardNodes.value, this.confCardPods.value];
-                this.donut.options = {
-                    chart: {
-                        type: 'donut',
-                    },
-                    colors: [this.confCardNamespaces.color, this.confCardNodes.color, this.confCardPods.color],
-                    labels: [this.confCardNamespaces.label, this.confCardNodes.label, this.confCardPods.label],
-                    dataLabels: {
-                        style: {
-                            fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                            fontWeight: 0,
-                            color: '#ffffff',
-                        },
-                    },
-                    legend: {
-                        show: false
-                    }
-                };
-                this.donut.height = 130;
-                this.donuts = this.donut;
-            }
-        },
         setQueryData() {
             return utils.convertURLDateParameter(this.from, this.to)
         },
         setDefaultDate(jour, month, year) {
-            var e = new Date,n, a = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()));
-            if(jour>0){
-                n = new Date(Date.UTC(e.getFullYear() , e.getMonth() , e.getDate() - jour))
+            var e = new Date, n, a = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()));
+            if (jour > 0) {
+                n = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate() - jour))
             }
-            if(month>0){
-                n = new Date(Date.UTC(e.getFullYear() , e.getMonth() - month, e.getDate() ))
+            if (month > 0) {
+                n = new Date(Date.UTC(e.getFullYear(), e.getMonth() - month, e.getDate()))
             }
-            if(year>0){
-                n = new Date(Date.UTC(e.getFullYear() -year , e.getMonth() , e.getDate() ))
+            if (year > 0) {
+                n = new Date(Date.UTC(e.getFullYear() - year, e.getMonth(), e.getDate()))
             }
             return {start: n, end: a}
         },
-        refreshDate(date) {
-            utils.refreshDate(date, this);
-        },
-        refreshOptions(event) {
-            this.group = event.target.value;
-            // if (this.group === 'Hour') {
-            //     this.date = this.date = this.setDefaultDate(1, 0, 0)
-            // }
-            // else if (this.group === 'Day') {
-            //     this.date = this.date = this.setDefaultDate(6, 0, 0)
-            // } else if (this.group === 'Month') {
-            //     this.date = this.date = this.setDefaultDate(0, 6, 0)
-            // } else if (this.group === 'Year') {
-            //     this.date = this.date = this.setDefaultDate(0, 0, 1)
-            // }
-            this.refreshDate(this.date);
+        setDate(date){
+                this.date = date
+                utils.refreshDate(this.date, this);
         },
         async drawCards() {
             await general.getJsonData('/namespaces' + this.setQueryData()).then(async (r) => {
@@ -187,15 +145,13 @@ export default {
             });
         },
         async drawGraphs() {
-            await this.getPieDataToApex();
             await this.getNodesToApex();
             await this.getNamespacesToApex();
         },
         async callUpdateFunction() {
             await setInterval(() => {
                 if (this.node.header > 0) {
-                    console.log('-- updateloop --');
-                    general.getJsonDataToApex(`${api}/nodes/rating`, this.confChartNodes, this,).then(async (r) => {
+                    general.getJsonDataToApex('/nodes/rating', this.confChartNodes, this,).then(async (r) => {
                         if (r.total > 0) {
                             this.node.series = r.series;
                         }
@@ -208,11 +164,10 @@ export default {
 
     },
     async beforeMount() {
-
-
-        this.refreshDate(this.date);
+        this.date = this.setDefaultDate(1)
+        this.setDate(this.date);
     },
     async mounted() {
-        // await this.callUpdateFunction();
+         //await this.callUpdateFunction();
     }
 }

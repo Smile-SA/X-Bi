@@ -26,7 +26,7 @@ export default {
                     if (data.login){
                         this.$refs.form.tenant.value = '';
                         this.$refs.form.password.value = '';
-                        goTo('home',this);
+                        goTo('Overall',this);
                     }else{
                         this.message = data.message;
                         this.showError = true;

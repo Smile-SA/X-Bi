@@ -1,6 +1,4 @@
-import {generateAPIUrl} from '../../../settings/variables'
 import * as utils from '../../../settings/utils'
-const api = generateAPIUrl()
 
 export default {
   name: 'container',
@@ -35,7 +33,7 @@ export default {
       this.$store.commit('TOGGLE_SEARCHING')
     },
     async getTenant() {
-      const url = `${api}/current`
+      const url = `/current`
       this.user = await utils.fetchData(url)
     }
   },

@@ -1,3 +1,7 @@
+import {generateAPIUrl} from "./variables";
+
+const api = generateAPIUrl();
+
 export function convertURLDateParameter(from, to) {
     from = (from !== null) ? from : new Date(new Date().setHours(new Date().getHours() - 1)).toISOString()
     to = (to !== null) ? to : new Date().toISOString()
@@ -16,7 +20,7 @@ export function JSONToCSV(json) {
 
 export async function fetchTotal(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
-    url = url + queryDate
+    url = api + url + queryDate
     try {
         const response = await fetch(url, {
             credentials: 'include'
@@ -29,7 +33,7 @@ export async function fetchTotal(url, that) {
 }
 
 export async function fetchData(url) {
-    const response = await fetch(url, {
+    const response = await fetch(api + url, {
         credentials: 'include'
     })
     const json = await response.json()
@@ -38,7 +42,7 @@ export async function fetchData(url) {
 
 export async function fetchDataAsJSON(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
-    url = url + queryDate
+    url = api + url + queryDate
     const response = await fetch(url, {
         credentials: 'include'
     })
@@ -50,7 +54,7 @@ export async function fetchDataAsJSON(url, that) {
 }
 
 export async function downloadFile(url, filename, type) {
-    const response = await fetch(url, {
+    const response = await fetch(api + url, {
         credentials: 'include'
     })
     const json = await response.json()
@@ -74,7 +78,7 @@ export async function downloadFile(url, filename, type) {
 }
 
 export function getPeriod(url) {
-    let broken = url.split('?')[1].split('&')
+    let broken = api + url.split('?')[1].split('&')
     const from = broken[0].split('=')[1].replace(' ', 'T')
     const to = broken[1].split('=')[1].replace(' ', 'T')
     return `_${from}-${to}`
@@ -173,6 +177,25 @@ export function getUnique(array) {
     return uniqueArray;
 }
 
+export function groupByDate(array, group) {
+    return array.reduce((groups, r) => {
+        let date = r.frame_begin;
+        let da = date.split(', ')[1].split(' ');
+        if (group === 'Day') {
+            date = da[0] + ' ' + da[1] + ' ' + da[2];
+        } else if (group === 'Month') {
+            date = da[1] + ' ' + da[2];
+        } else if (group === 'Year') {
+            date = da[2];
+        }
+        if (!groups[date]) {
+            groups[date] = [];
+        }
+        groups[date].push(r);
+        return groups;
+    }, {});
+}
+
 export function getURL(data, that) {
     const option = data.target.innerText
     const url = that.queryArray[that.selected]
@@ -197,14 +220,117 @@ export async function refreshDate(date, that) {
     if (that.drawGraphs) {
         await that.drawGraphs()
     }
-
 }
 
 export async function get(url, that) {
-    return await fetchDataAsJSON(url, that);
+    return await fetchDataAsJSON(api + url, that);
 }
 
 export function goTo(route, that) {
     that.$router.push(route);
 }
 
+export function createSerie(data,config,serieName,boucle){
+    let min = 0, max = 0,series = [],lastDate=0,obj = []
+    if(boucle===1){
+        Object.keys(data).map((item) => {
+            let date = new Date(data[item][config.labels.time]).getTime();
+            if(date > lastDate){
+                lastDate = date
+            }
+            const fixed = data[item][config.labels.value].toFixed(5),
+                minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
+            if (min === 0 || minTmp < min) {
+                min = minTmp
+            }
+            if (max === 0 || maxTmp > max) {
+                max = maxTmp
+            }
+            obj.push([date, fixed])
+        });
+        series.push({
+            name: serieName,
+            data: obj
+        });
+    }
+    if(boucle >=3){
+        Object.keys(data).map(item => {
+            let obj = []
+            Object.keys(data[item]).map((subItem) => {
+                Object.keys(data[item][subItem]).map((subSubItem) => {
+                    let date = new Date(data[item][subItem][subSubItem][config.labels.time]).getTime();
+                    if(date > lastDate){
+                        lastDate = date
+                    }
+                    const fixed = data[item][subItem][subSubItem][config.labels.value].toFixed(5),
+                        minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
+                    if (min === 0 || minTmp < min) {
+                        min = minTmp
+                    }
+                    if (max === 0 || maxTmp > max) {
+                        max = maxTmp
+                    }
+                    obj.push([date, fixed])
+                });
+            });
+            series.push({
+                name: item,
+                data: obj
+            });
+        })
+    }
+    return {'series':series,'lastDate':lastDate};
+
+}
+export function createOption(config){
+    return {
+        chart: {
+            id: config.id, type: config.type
+        },
+        xaxis: {
+            type: 'datetime',
+            style: {
+                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 0,
+                color: '#676a6c',
+            },
+        },
+        yaxis: {
+            labels: {
+                style: {
+                    fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                    fontWeight: 0,
+                    color: '#676a6c',
+                    fontSize: '12px'
+                },
+            },
+        },
+        labels: {
+            style: {
+                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 0,
+                color: '#676a6c',
+            },
+        },
+        dataLabels: {
+            enabled: false
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        title: {
+            text: config.labels.title,
+            style: {
+                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 0,
+                color: '#676a6c',
+            },
+        },
+        legend: {
+            fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+            fontWeight: 0,
+            color: '#676a6c',
+            fontSize: '14px',
+        }
+    }
+}

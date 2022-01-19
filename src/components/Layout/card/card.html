@@ -4,8 +4,8 @@
             <i v-if="configuration.icon!=undefined" v-bind:class="'fa ' + configuration.icon+' f-left'"></i>
         </div>
         <div class="content">
-            <h2><strong class="number f-right">{{ configuration.value }}</strong></h2>
-            <p class="mb-1 name"><strong>{{ configuration.label }}</strong></p>
+            <h2><strong v-bind:class="configuration.type+' f-right'">{{ configuration.value }}</strong></h2>
+            <p class="mb-1 name f-right"><strong>{{ configuration.label }}</strong></p>
         </div>
     </div>
 </div>

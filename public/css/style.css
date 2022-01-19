@@ -19443,7 +19443,7 @@ dl li {
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    width: 235.75px;
+    width: 195.73px;
     height: 60px;
 }
 
@@ -20037,7 +20037,7 @@ dl li {
     min-height: calc(100vh - 60px);
     background: #ffffff;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 0;
+    padding: 0 10px 0 10px;
     z-index: 11;
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -20057,7 +20057,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item {
-    padding: 0 2.25rem;
+    padding: 0 1.25rem;
     -webkit-transition-duration: 0.25s;
     transition-duration: 0.25s;
     transition-property: background;
@@ -20076,7 +20076,7 @@ dl li {
     -ms-flex-align: center;
     align-items: center;
     white-space: nowrap;
-    padding: 1.125rem 0 1.125rem 0;
+    padding: .75rem 0 .75rem 0;
     color: var(--bs-body-color);
     -webkit-transition-duration: 0.45s;
     transition-duration: 0.45s;
@@ -20089,7 +20089,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item .nav-link i.menu-icon {
-    font-size: 1.125rem;
+    font-size: 1.375rem;
     line-height: 1;
     margin-left: auto;
     color: var(--bs-body-color);
@@ -20106,7 +20106,6 @@ dl li {
 
 .sidebar .nav .nav-item .nav-link i.mdi {
     line-height: 1;
-    font-size: 1.375rem;
     margin-left: auto;
     color: #9e9da0;
 }
@@ -20161,13 +20160,20 @@ dl li {
 }
 
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
-    color: #b66dff;
+    color: #1eaae1;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .sidebar .nav .nav-item.active > .nav-link i {
-    color: #b66dff;
+    color: #1eaae1!important;
 }
+
+.sidebar .nav .nav-item.active > .nav-link .sub-menu-title {
+    color: #1eaae1;
+    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+
 
 .sidebar .nav .nav-item:hover {
     background: #fcfcfc;
@@ -20233,7 +20239,7 @@ dl li {
 }
 
 .sidebar .nav.sub-menu {
-    margin-bottom: 20px;
+    margin-bottom: 0;
     margin-top: 0;
     list-style: none;
 }
@@ -20283,7 +20289,7 @@ dl li {
 }
 
 .sidebar .nav.sub-menu .nav-item .nav-link.active {
-    color: #b66dff;
+    color: #1eaae1;
     background: transparent;
 }
 
@@ -20534,7 +20540,7 @@ dl li {
     -webkit-transition: width 0.25s ease, margin 0.25s ease;
     transition: width 0.25s ease, margin 0.25s ease;
     min-height: calc(100vh - 70px);
-    width: calc(100% - 235.73px);
+    width: calc(100% - 219.73px);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;

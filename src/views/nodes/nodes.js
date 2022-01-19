@@ -1,8 +1,5 @@
-import { generateAPIUrl } from '../../settings/variables'
 import * as utils from '../../settings/utils'
 import * as genaralController from "../../controller/genaralController";
-
-const api = generateAPIUrl()
 
 export default {
   components: {
@@ -10,17 +7,19 @@ export default {
     LineChart: () => import ('../../components/charts/charts.js/LineChart'),
     BarChart: () => import ('../../components/charts/charts.js/BarChart'),
     ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
+    GroupBy: () => import ('../../components/Layout/group/index'),
+    DatePicker: () => import ('../../components/Layout/datePicker/index'),
+    SelectOption: () => import ('../../components/Layout/selectOption/index'),
   },
   data() {
     return {
       nodeMetrics: {},
       nameSpaceMetrics: {},
-      groupOptions:['Hour','Day', 'Month', 'Year'],
-      group:'Day',
+      group:'Hour',
       date: null,
       lineChartNamespaces: null,
       barChartMetrics: null,
-      selectNodes: null,
+      nodes: null,
       activeNode: null,
       confCardNamespaces: {
         from: this.from,
@@ -104,7 +103,7 @@ export default {
   methods: {
     getNodesMetricsToApex() {
       this.nodeMetrics.height=undefined;
-      genaralController.getJsonDataToApex(`${api}/nodes/${this.activeNode}/rating`, this.confChartNodesMetrics, this).then(async (r) => {
+      genaralController.getDataByVariableAndDateToApex('/nodes/'+this.activeNode+'/rating', this.confChartNodesMetrics, this).then(async (r) => {
         if (r.total > 0) {
           this.nodeMetrics = r;
         }
@@ -112,27 +111,28 @@ export default {
     },
     getNamespacesMetricsToApex() {
       this.nameSpaceMetrics.height=undefined;
-      genaralController.getJsonDataToApex(`${api}/nodes/${this.activeNode}/namespaces/rating`, this.confChartNameSpaceMetrics, this).then(async (r) => {
+      genaralController.getDataByVariableAndDateToApex('/nodes/'+this.activeNode+'/namespaces/rating', this.confChartNameSpaceMetrics, this).then(async (r) => {
         if (r.total > 0) {
           this.nameSpaceMetrics = r;
         }
       });
     },
-    refreshDate(date) {
-      this.date = date;
-      utils.refreshDate(date, this);
+    setDate(date) {
+      if(date!==null){
+        this.date = date;
+        utils.refreshDate(date, this);
+      }
     },
-    refreshOptions(event) {
-      this.group = event.target.value;
-      this.refreshDate(this.date)
+    showGroup() {
+      return this.activeNode !== null && this.date !== null
     },
     showDatePicker() {
       return this.activeNode !== null
     },
-    async getNodes (node) {
+    async setNode (node) {
       this.cards = []
       this.activeNode = node.target.value
-      this.refreshDate(null)
+      this.setDate(this.date)
     },
     async drawCards() {
       await genaralController.getJsonData('/nodes/' + this.activeNode + '/total_rating').then(async (r) => {
@@ -154,7 +154,7 @@ export default {
 
   },
   async beforeMount() {
-    this.selectNodes = (await utils.fetchData(`${api}/nodes`)).map(item => item.node)
+    this.nodes = (await utils.fetchData('/nodes')).map(item => item.node)
   },
   async mounted() {
   }

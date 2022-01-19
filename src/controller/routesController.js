@@ -1,4 +1,4 @@
-import * as routes from "@/data/routesConfiguration.json"
+import * as routes from "@/router/routesConfiguration.json"
 export function loadView(view) {
     return () => import(/* webpackChunkName: "view-[request]" */ `@/${view}`)
 }

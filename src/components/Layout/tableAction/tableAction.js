@@ -1,4 +1,5 @@
 import * as general from "../../../controller/genaralController";
+
 export default {
     name: 'table-action',
     components: {},
@@ -22,12 +23,12 @@ export default {
                 type: 'error',
                 showCancelButton: true,
                 cancelButtonText: 'No, Keep it!',
-                confirmButtonClass:'btn btn-danger',
+                confirmButtonClass: 'btn btn-danger',
                 confirmButtonText: 'Yes Delete it!',
                 showCloseButton: true,
                 showLoaderOnConfirm: true
             }).then((result) => {
-                if(result.value) {
+                if (result.value) {
                     general.generalDelete(this.data.url + '/delete', this.data.deleteParam, this.data.id).then((r) => {
                         if (r === true) {
                             tr.remove();
