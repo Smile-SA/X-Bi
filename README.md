@@ -1,19 +1,47 @@
-# **rating-frontend**
-Front-end for the rating stack, it is powered by vueJS and chartJS.
-Fed by our [API](https://git.rnd.alterway.fr/overboard/5gbiller/rating-api/tree/master), it is used as a lightweight vizualisation solution to follow the evolution of the rating of your metrics.
+# X-BI
+X-BI allows its users to access BI informations they can customise and interact with.
 
-## Usage
-
-The frontend can be exposed with the following command:
-
+## Tech/framework used
+Project is created with:
 ```
-# Expose the frontend
-podname=$(kubectl get pods -l app.kubernetes.io/name=rating,app.kubernetes.io/component=frontend -o name | cut -d/ -f2 | head -1)
-kubectl port-forward "$podname" 8080:8080 --v=10
+ - Vue.js
+ - Storybook
+```
+## X-BI installation steps
+
+### Before installation X-BI install your API
+    Api is used as the communication interface between the components, you need a data source to feed x-bi
+    For the example you can use the rating-operator API, follow this link to install it : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api
+
+
+### 1 - Access project file
+There are three ways to access the project file on git :
+```
+- Clone with SSH (link : git@git.rnd.alterway.fr:overboard/5gbiller/rating-operator-api.git)
+- Clone with HTTPS (link : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api.git)
+- Or download on git (link : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api)
 ```
 
-After running these commands, access it at `localhost:8080`
+### 2 - Install dependencies
+Open a command prompt from the main directory of the clone folder and write this command
+```
+yarn install
+```
 
-You can also expose the app via `kubectl proxy`, the url will then be:
+### 3 - Connect API to X-BI
+Open the file ```src/settings/variables.js```, in the function ```generateAPIUrl``` at line 3 you can set your api url, by default you have a ```http://localhost:5012```
+```
+![](public/images/documentation/generateAPIUrl.png)
+```
 
-`http://localhost:8001/api/v1/namespaces/<yourNamespace>/services/<podName>:80/proxy/`
+### 4 - run the project 
+```
+yarn serve
+```
+
+Alternatively, you can build the project in static directory for production :
+```
+yarn build
+```
+
+
