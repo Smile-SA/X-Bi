@@ -20037,7 +20037,6 @@ dl li {
     min-height: calc(100vh - 60px);
     background: #ffffff;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    padding: 0 10px 0 10px;
     z-index: 11;
     transition: width 0.25s ease, background 0.25s ease;
     -webkit-transition: width 0.25s ease, background 0.25s ease;
@@ -20057,7 +20056,7 @@ dl li {
 }
 
 .sidebar .nav .nav-item {
-    padding: 0 1.25rem;
+    padding: 0 1.75rem 0 1.75rem;
     -webkit-transition-duration: 0.25s;
     transition-duration: 0.25s;
     transition-property: background;
@@ -20156,27 +20155,26 @@ dl li {
 }
 
 .sidebar .nav .nav-item.active {
-    background: #ffffff;
+    background:#6fbfdf;
 }
 
 .sidebar .nav .nav-item.active > .nav-link .menu-title {
-    color: #1eaae1;
+    color: #ffffff;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 .sidebar .nav .nav-item.active > .nav-link i {
-    color: #1eaae1!important;
+    color: #ffffff!important;
 }
 
 .sidebar .nav .nav-item.active > .nav-link .sub-menu-title {
-    color: #1eaae1;
+    color: #ffffff;
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
 
-
 .sidebar .nav .nav-item:hover {
-    background: #fcfcfc;
+    background: #eeeeee;
 }
 
 .sidebar .nav .nav-item.nav-profile .nav-link {
@@ -20540,7 +20538,7 @@ dl li {
     -webkit-transition: width 0.25s ease, margin 0.25s ease;
     transition: width 0.25s ease, margin 0.25s ease;
     min-height: calc(100vh - 70px);
-    width: calc(100% - 219.73px);
+    width: calc(100% - 215.73px);
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
