@@ -3,8 +3,7 @@ import tableAction from "../../../../components/Layout/tableAction";
 
 export default {
     name: 'list-templates',
-    components: {
-    },
+    components: {},
     props: [],
     data() {
         return {
@@ -16,7 +15,7 @@ export default {
         bindings() {
             return {
                 data: this.templatesList,
-                showDownloadButton:false,
+                showDownloadButton: false,
                 columns: [
                     {
                         key: "name",
@@ -37,23 +36,30 @@ export default {
         this.Templates();
     },
     methods: {
-
-        Templates() {
-            template.getTemplates().then((data) => {
-                this.templatesNb = data.total;
-                Object.keys(data.results).map((item) => {
-                    this.templatesList.push({
-                        'name': data.results[item],
-                        'url':'/templates',
-                        'deleteTagIndex':4,
-                        'colspan':2,
-                        'deleteParam':'query_name',
-                        'id': data.results[item].replace('rating-rule-template-',''),
-                        'isDisplay':true ,
-                        'isUpdate':false ,
-                        'isDelete':true
-                    })
+        async getDefaultValue(d){
+             await template.defaultValue(d.id).then(async (r) => {
+                 d.isDelete = r
+            })
+        },
+        Templates: async function () {
+            await template.getTemplates().then((r) => {
+                this.templatesNb = r.total;
+                let data = [];
+                 Object.keys(r.results).map((item) => {
+                     let d = {
+                         'name': r.results[item],
+                         'url': '/templates',
+                         'deleteTagIndex': 4,
+                         'colspan': 2,
+                         'deleteParam': 'query_name',
+                         'id': r.results[item].replace('rating-rule-template-', ''),
+                         'isDisplay': true,
+                         'isUpdate': false,
+                     }
+                     this.getDefaultValue(d);
+                     data.push(d)
                 });
+                this.templatesList= data;
             });
         },
 

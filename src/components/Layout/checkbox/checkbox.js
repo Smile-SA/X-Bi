@@ -1,4 +1,4 @@
-import * as router from "../../../controller/routesController";
+import * as router from "../../../controller/routerController";
 export default {
   name: 'checkbox',
   components: {},

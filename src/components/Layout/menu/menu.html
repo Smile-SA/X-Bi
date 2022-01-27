@@ -1,92 +1,34 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
-        <router-link class="pointer"  to="/Overall" custom v-slot="{ navigate }">
-            <li v-bind:class="$route.name=='Overall' ? 'nav-item active' : 'nav-item '">
-                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                    <span class="menu-title">Overall</span>
-                    <i class="mdi mdi-home menu-icon"></i>
+        <div v-for="item in menus">
+            <li v-if="item.children" class="nav-item pointer">
+                <a class="nav-link " data-bs-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic"
+                   v-on:click="isActive[item.id] === true ? isActive[item.id] = false : isActive[item.id] = true">
+                    <span class="menu-title">{{item.name}}</span>
+                    <i v-bind:class="isActive[item.id] === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-left'"></i>
+                    <i :class="'mdi '+item.icon+' menu-icon'"></i>
                 </a>
+                <div class="collapse" v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'display-block' : 'display-none'">
+                    <ul class="nav flex-column sub-menu">
+                        <router-link v-for="subItem in item.children"  class="pointer" :to="subItem.path" custom v-slot="{ navigate }">
+                            <li v-bind:class="$route.name==subItem.name ? 'nav-item active' : 'nav-item '">
+                                <a  class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                                    <i :class="'mdi '+subItem.icon+' float-right'"></i>
+                                    <span class="sub-menu-title">{{ subItem.name }}</span>
+                                </a>
+                            </li>
+                        </router-link>
+                    </ul>
+                </div>
             </li>
-        </router-link>
-        <router-link class="pointer" to="/namespaces" custom v-slot="{ navigate }">
-            <li v-bind:class="$route.name=='Namespaces' ? 'nav-item active' : 'nav-item '">
-                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                    <span class="menu-title">Namespaces</span>
-                    <i class="mdi mdi-share-variant menu-icon"></i>
-                </a>
-            </li>
-        </router-link>
-        <router-link class="pointer" to="/nodes" custom v-slot="{ navigate }">
-            <li v-bind:class="$route.name=='Nodes' ? 'nav-item active' : 'nav-item '">
-                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                    <span class="menu-title">Nodes</span>
-                    <i class="mdi mdi-server-network menu-icon"></i>
-                </a>
-            </li>
-        </router-link>
-        <router-link class="pointer" to="/pods" custom v-slot="{ navigate }" >
-            <li v-bind:class="$route.name=='Pods' ? 'nav-item active' : 'nav-item '">
-                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                    <span class="menu-title">Pods</span>
-                    <i class="mdi mdi-sitemap menu-icon"></i>
-                </a>
-            </li>
-        </router-link>
-        <router-link class="pointer" to="/monitoring" custom v-slot="{ navigate }" >
-            <li v-bind:class="$route.name=='Monitoring' ? 'nav-item active' : 'nav-item'">
-                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                    <span class="menu-title">Monitoring</span>
-                    <i class="mdi mdi-sitemap menu-icon"></i>
-                </a>
-            </li>
-        </router-link>
-        <li class="nav-item pointer">
-            <a class="nav-link " data-bs-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic"
-               v-on:click="isActive.kpis === true? isActive.kpis = false :isActive.kpis = true;">
-                <span class="menu-title">KPIs Configurations</span>
-                <i v-bind:class="isActive.kpis === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-left'"></i>
-                <i class="mdi mdi-settings menu-icon"></i>
-            </a>
-            <div class="collapse" v-bind:class="isActive.kpis === true || $route.name=='Templates' || $route.name=='Instances' ? 'display-block' : 'display-none'" >
-                <ul class="nav flex-column sub-menu">
-                    <router-link class="pointer" to="/templates" custom v-slot="{ navigate }">
-                        <li v-bind:class="$route.name=='Templates' ? 'nav-item active' : 'nav-item '">
-                            <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                                <i class="mdi mdi-chevron-right float-right"></i>
-                                <span class="sub-menu-title">Templates</span>
-                            </a>
-                        </li>
-                    </router-link>
-                    <router-link class="pointer" to="/instances" custom v-slot="{ navigate }">
-                        <li v-bind:class="$route.name=='Instances' ? 'nav-item active' : 'nav-item '">
-                            <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                                <i class="mdi mdi-chevron-right float-right"></i>
-                                <span class="sub-menu-title">Instances</span>
-                            </a>
-                        </li>
-                    </router-link>
-                </ul>
-            </div>
-        </li>
-        <li class="nav-item pointer">
-            <a class="nav-link " data-bs-toggle="collapse"  aria-expanded="false"
-               aria-controls="ui-basic" v-on:click="isActive.ui === true? isActive.ui = false :isActive.ui = true;">
-                <span class="menu-title">UI Configuration</span>
-                <i v-bind:class="isActive.ui === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-left'"></i>
-                <i class="mdi mdi-settings menu-icon"></i>
-            </a>
-            <div class="collapse" v-bind:class="isActive.ui === true ? 'display-block' : 'display-none'" >
-                <ul class="nav flex-column sub-menu">
-                    <router-link class="pointer" to="/router" custom v-slot="{ navigate }">
-                        <li class="nav-item">
-                            <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                                <i class="mdi mdi-chevron-right float-right"></i>
-                                <span class="sub-menu-title">Router</span>
-                            </a>
-                        </li>
-                    </router-link>
-                </ul>
-            </div>
-        </li>
+            <router-link v-else  class="pointer"  :to="item.path" custom v-slot="{ navigate }">
+                <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item '">
+                    <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                        <span class="menu-title">{{ item.name }}</span>
+                        <i :class="'mdi '+item.icon+' menu-icon'"></i>
+                    </a>
+                </li>
+            </router-link>
+        </div>
     </ul>
 </nav>

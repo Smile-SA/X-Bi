@@ -90,7 +90,7 @@ export default {
         },
         getNodesToApex() {
             this.node.height = undefined;
-            general.getDataByVariableAndDateToApex('nodes/rating', this.confChartNodes, this).then(async (r) => {
+            general.getDataByVariableAndDateToApex('/nodes/rating', this.confChartNodes, this).then(async (r) => {
                 if (r.total > 0) {
                     this.node = r;
                 }

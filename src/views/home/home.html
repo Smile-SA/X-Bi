@@ -4,20 +4,17 @@
     <div class="col-lg-12 col-md-12 col-xs-12 m-b ">
         <div class="apex-box" v-if=" this.from!==null && this.to!==null">
             <div class="row">
-                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4"
-                      :configuration=confCardNodes></Card>
-                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4"
-                      :configuration=confCardNamespaces></Card>
-                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4"
-                      :configuration=confCardPods></Card>
+                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4" :configuration=confCardNodes></Card>
+                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4" :configuration=confCardNamespaces></Card>
+                <Card v-if="this.from!==null && this.to!==null" class="col-lg-4 col-md-4 col-xl-4" :configuration=confCardPods></Card>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-md-12  " v-if="node.height!==undefined">
+    <div class="col-lg-6 col-md-6 m-b " v-if="node.height!==undefined">
         <apex-charts :chartOptions="node.options" :id="node.options.chart.id" :height="node.height"
                      :chartSeries="node.series"></apex-charts>
     </div>
-    <div class="col-lg-12 col-md-12 " v-if="nameSpace.height!==undefined">
+    <div class="col-lg-6 col-md-6 m-b" v-if="nameSpace.height!==undefined">
         <apex-charts :chartOptions="nameSpace.options" :height="nameSpace.height"
                      :chartSeries="nameSpace.series"></apex-charts>
     </div>
