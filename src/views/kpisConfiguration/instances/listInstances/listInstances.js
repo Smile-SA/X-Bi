@@ -44,7 +44,7 @@ export default {
                         'url':'/instances',
                         'deleteTagIndex':4,
                         'colspan':2,
-                        'deleteParam':'query_name',
+                        'deleteParam':'metric_name',
                         'id': data.results[item].replace('rating-rule-instance-',''),
                         'isDisplay':true ,
                         'isUpdate':false ,

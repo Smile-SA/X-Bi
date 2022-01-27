@@ -1,21 +1,21 @@
-import {generateAPIUrl} from '../../settings/variables'
 import * as utils from '../../settings/utils'
 import * as controller from "../../controller/genaralController";
-const api = generateAPIUrl()
 
 export default {
     components: {
         Card: () => import('../../components/Layout/card'),
         BarChart: () => import ('../../components/charts/charts.js/BarChart'),
         ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
+        GroupBy: () => import ('../../components/Layout/group/index'),
+        DatePicker: () => import ('../../components/Layout/datePicker/index'),
+        SelectOption: () => import ('../../components/Layout/selectOption/index'),
     },
     data() {
         return {
-            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
-            group: 'Day',
-            date:null,
+            group: 'Hour',
+            date: null,
             barChartMetrics: {},
-            selectForm: null,
+            namespaces: null,
             activeNamespace: null,
             confCardNodes: {
                 from: this.from,
@@ -48,7 +48,7 @@ export default {
                 color: '#fe7c96',
                 value: 0,
                 icon: 'mdi mdi-currency-eur',
-                type: 'sum',
+                type: 'number',
                 key: 'frame_price'
             },
             colors: {},
@@ -99,26 +99,27 @@ export default {
     methods: {
         getBarChartMetrics() {
             this.barChartMetrics.height = undefined;
-            controller.getJsonDataToApex(`${api}/namespaces/${this.activeNamespace}/rating`, this.confChartMetrics, this).then(async (r) => {
+            controller.getDataByVariableAndDateToApex(`/namespaces/${this.activeNamespace}/rating`, this.confChartMetrics, this).then(async (r) => {
                 if (r.total > 0) {
                     this.barChartMetrics = r;
                 }
             });
         },
-        refreshDate(date) {
-            this.date = date;
-            utils.refreshDate(date, this);
-        },
-        refreshOptions(event) {
-            this.group = event.target.value;
-            this.refreshDate(this.date)
+        setDate(date) {
+            if (date!== null) {
+                this.date = date;
+                utils.refreshDate(date, this);
+            }
         },
         showDatePicker() {
             return this.activeNamespace !== null
         },
-        async getNamespaces(namespace) {
+        showGroup() {
+            return this.activeNamespace !== null && this.date
+        },
+        async setNamespaces(namespace) {
             this.activeNamespace = namespace.target.value
-            this.refreshDate(this.date)
+            this.setDate(this.date)
         },
         async drawCards() {
             await controller.getJsonData('/namespaces/' + this.activeNamespace + '/total_rating').then(async (r) => {
@@ -138,7 +139,7 @@ export default {
         },
     },
     async beforeMount() {
-        this.selectForm = (await utils.fetchData(`${api}/namespaces`)).map(item => item.namespace);
+        this.namespaces = (await utils.fetchData(`/namespaces`)).map(item => item.namespace);
     },
     async mounted() {
     }

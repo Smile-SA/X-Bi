@@ -1,0 +1,27 @@
+{
+  "overall": {
+    "title": "view-title",
+    "type": "user",
+    "select": {
+      "dataSelect": {
+        "size": "4",
+        "display": true
+      },
+      "groupBy": {
+        "display": true,
+        "size": "4"
+      }
+    },
+    "card": {
+      "displayByLine": 3
+    },
+    "chart": {
+      "type": [
+        "area",
+        "line",
+        "bar"
+      ],
+      "displayByLine": 2
+    }
+  }
+}

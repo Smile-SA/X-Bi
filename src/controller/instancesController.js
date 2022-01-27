@@ -1,8 +1,8 @@
 import axios from "axios";
 import {generateAPIUrl} from "../settings/variables";
-
+const api = generateAPIUrl();
 export function getInstances() {
-    return axios.get(generateAPIUrl() + '/instances/list').then(async (r) => {
+    return axios.get(api + '/instances/list').then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
@@ -19,7 +19,7 @@ export function addInstance(values) {
         Params.append(values[item].name, values[item].value)
     })
 
-    return axios.post(generateAPIUrl() + '/instances/add',Params).then(async (r) => {
+    return axios.post(api + '/instances/add',Params).then(async (r) => {
         return {
             errors :false,
             message : r.data
@@ -33,7 +33,7 @@ export function addInstance(values) {
 }
 
 export function getInstance(metric_name) {
-    return axios.get(generateAPIUrl() + '/instances/get?metric_name='+metric_name).then(async (r) => {
+    return axios.get(api + '/instances/get?metric_name='+metric_name).then(async (r) => {
         return {
             errors :false,
             data : r.data
@@ -49,7 +49,7 @@ export function getInstance(metric_name) {
 export function deleteInstance(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.post(generateAPIUrl() + '/instances/delete',Params).then(async (r) => {
+    return axios.post(api + '/instances/delete',Params).then(async (r) => {
         return {
             errors :false,
             message : !!r.data

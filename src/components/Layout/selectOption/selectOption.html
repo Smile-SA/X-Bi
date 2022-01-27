@@ -1,0 +1,18 @@
+<div class="col-md-12">
+    <div class="apex-box">
+        <div class="row">
+            <div class="col-md-3 col-lg-3">
+                <label class="p-2">{{ label }}</label>
+            </div>
+            <div class="col-md-9 col-lg-9">
+                <select class=" form-control" v-on:change="selectFunction">
+                    <option selected disabled> -- {{ placeholder }} --</option>
+                    <option v-for="option in selectData" v-bind:value="option.replace(replace,by)" v-bind:key="option.replace(replace,by)">{{
+                            option.replace(replace,by)
+                        }}
+                    </option>
+                </select>
+            </div>
+        </div>
+    </div>
+</div>

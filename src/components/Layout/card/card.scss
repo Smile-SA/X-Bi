@@ -15,6 +15,10 @@
   font-size: 2.25rem;
   opacity: 1;
 }
+.stat-card .date{
+  font-size: 1.25rem;
+  opacity: 1;
+}
 .stat-card .name{
   font-size: 1rem;
   opacity: 0.7;
@@ -26,7 +30,7 @@
 .stat-card:hover i, .stat-card:hover .name {
   opacity: 1;
 }
-.stat-card:hover .number {
+.stat-card:hover .number, .stat-card:hover .date{
   opacity: 0.7;
 }
 .f-left {
