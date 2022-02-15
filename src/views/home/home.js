@@ -1,5 +1,5 @@
 import * as utils from '../../settings/utils'
-import * as general from "../../controller/genaralController";
+import * as configurationsController from "../../controller/configurationsController";
 
 export default {
     components: {
@@ -14,73 +14,15 @@ export default {
             lineChartNodes: null,
             nameSpace: {},
             node: {},
+            setQuery: '',
             lineChartNamespaces: null,
             to: null,
             from: null,
             group: 'Hour',
-            confChartNodes: {
-                id: 'lineChartNodes',
-                type: 'line',
-                height: 470,
-                fontSize: '16px',
-                sort: 'node',
-                xaxis: {
-                    type: 'datetime'
-                },
-                labels: {
-                    time: 'frame_begin',
-                    value: 'frame_price',
-                    title: 'Nodes rate (in Euros)'
-                }
-            },
-            confChartNameSpace: {
-                id: 'lineChartNamespaces',
-                type: 'area',
-                height: 470,
-                fontSize: '16px',
-                sort: 'namespace',
-                xaxis: {
-                    type: 'datetime'
-                },
-                labels: {
-                    time: 'frame_begin',
-                    value: 'frame_price',
-                    title: 'Namespaces Energy Efficiency'
-                },
-            },
-            confCardNamespaces: {
-                from: this.from,
-                to: this.to,
-                link: '/namespaces',
-                label: 'Namespaces',
-                colorLabel: 'success',
-                icon: 'mdi mdi-share-variant',
-                type: 'number',
-                color: '#0cceb0',
-                value: 0,
-            },
-            confCardPods: {
-                from: this.from,
-                to: this.to,
-                link: '/pods',
-                label: 'Pods',
-                colorLabel: 'primary',
-                icon: 'mdi mdi-sitemap',
-                type: 'number',
-                color: '#1eaae1',
-                value: 0
-            },
-            confCardNodes: {
-                from: this.from,
-                to: this.to,
-                link: '/nodes',
-                label: 'Nodes',
-                colorLabel: 'warning',
-                icon: 'mdi mdi-server',
-                type: 'number',
-                color: '#fed60a',
-                value: 0
-            },
+            cardModels: {},
+            chartModels: {},
+            chartStyle: {},
+            cardStyle: {},
         }
     },
     computed: {},
@@ -88,24 +30,31 @@ export default {
         showGroup() {
             return this.date !== null
         },
-        getNodesToApex() {
-            this.node.height = undefined;
-            general.getDataByVariableAndDateToApex('/nodes/rating', this.confChartNodes, this).then(async (r) => {
-                if (r.total > 0) {
-                    this.node = r;
+
+        async drawCards() {
+            let r = configurationsController.getCardModels(this.$route.name)
+            if (r.data.errors !== true) {
+                if (r.data.total > 0) {
+                    this.cardModels = r.data.results;
                 }
-            });
+            } else {
+                this.cardModels = {};
+            }
         },
-        getNamespacesToApex() {
-            this.nameSpace.height = undefined;
-            general.getDataByVariableAndDateToApex('/namespaces/rating', this.confChartNameSpace, this).then(async (r) => {
-                if (r.total > 0) {
-                    this.nameSpace = r;
+        async drawCharts() {
+            let r = configurationsController.getChartModels(this.$route.name)
+            if (r.data.errors !== true) {
+                if (r.data.total > 0) {
+                    this.chartModels = r.data.results;
+                    let style = configurationsController.getChartStyles(this.$route.name)
+                    if (style.data.errors !== true) {
+                        this.chartStyle = null
+                        this.chartStyle = style.data.results;
+                    }
                 }
-            });
-        },
-        setQueryData() {
-            return utils.convertURLDateParameter(this.from, this.to)
+            } else {
+                this.chartModels = {};
+            }
         },
         setDefaultDate(jour, month, year) {
             var e = new Date, n, a = new Date(Date.UTC(e.getFullYear(), e.getMonth(), e.getDate()));
@@ -120,54 +69,14 @@ export default {
             }
             return {start: n, end: a}
         },
-        setDate(date){
-                this.date = date
-                utils.refreshDate(this.date, this);
+        async setDate(date) {
+            this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
+            this.date = date
+            await utils.refreshDate(this.date, this);
         },
-        async drawCards() {
-            await general.getJsonData('/namespaces' + this.setQueryData()).then(async (r) => {
-                if (r.total > 0) {
-                    this.confCardNamespaces.value = r.total;
-                    this.$forceUpdate()
-                }
-            });
-            await general.getJsonData('/nodes' + this.setQueryData()).then(async (r) => {
-                if (r.total > 0) {
-                    this.confCardNodes.value = r.total;
-                    this.$forceUpdate()
-                }
-            });
-            await general.getJsonData('/pods' + this.setQueryData()).then(async (r) => {
-                if (r.total > 0) {
-                    this.confCardPods.value = r.total;
-                    this.$forceUpdate();
-                }
-            });
-        },
-        async drawGraphs() {
-            await this.getNodesToApex();
-            await this.getNamespacesToApex();
-        },
-        async callUpdateFunction() {
-            await setInterval(() => {
-                if (this.node.header > 0) {
-                    general.getJsonDataToApex('/nodes/rating', this.confChartNodes, this,).then(async (r) => {
-                        if (r.total > 0) {
-                            this.node.series = r.series;
-                        }
-                    });
-                }
-            }, 10000);
-        },
-    },
-    async update() {
-
     },
     async beforeMount() {
         this.date = this.setDefaultDate(1)
         this.setDate(this.date);
     },
-    async mounted() {
-         //await this.callUpdateFunction();
-    }
 }

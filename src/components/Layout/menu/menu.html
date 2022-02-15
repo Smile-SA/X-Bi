@@ -4,8 +4,8 @@
             <li v-if="item.children" class="nav-item pointer">
                 <a class="nav-link " data-bs-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic"
                    v-on:click="isActive[item.id] === true ? isActive[item.id] = false : isActive[item.id] = true">
+                    <i v-bind:class="isActive[item.id] === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-right'"></i>
                     <span class="menu-title">{{item.name}}</span>
-                    <i v-bind:class="isActive[item.id] === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-left'"></i>
                     <i :class="'mdi '+item.icon+' menu-icon'"></i>
                 </a>
                 <div class="collapse" v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'display-block' : 'display-none'">

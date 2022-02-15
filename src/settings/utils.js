@@ -213,12 +213,13 @@ export async function refreshDate(date, that) {
         that.to = date.end.toISOString().split('.')[0] + '.000Z'
         that.to = that.to.replace('T', ' ')
         that.from = that.from.replace('T', ' ')
+
     }
     if (that.drawCards) {
-        await that.drawCards()
+        await that.drawCards();
     }
-    if (that.drawGraphs) {
-        await that.drawGraphs()
+    if (that.drawCharts) {
+        await that.drawCharts();
     }
 }
 
@@ -234,11 +235,11 @@ export function createSerie(data,config,serieName,boucle){
     let min = 0, max = 0,series = [],lastDate=0,obj = []
     if(boucle===1){
         Object.keys(data).map((item) => {
-            let date = new Date(data[item][config.labels.time]).getTime();
+            let date = new Date(data[item][config.time_id]).getTime();
             if(date > lastDate){
                 lastDate = date
             }
-            const fixed = data[item][config.labels.value].toFixed(5),
+            const fixed = data[item][config.value_id].toFixed(5),
                 minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
             if (min === 0 || minTmp < min) {
                 min = minTmp
@@ -258,11 +259,11 @@ export function createSerie(data,config,serieName,boucle){
             let obj = []
             Object.keys(data[item]).map((subItem) => {
                 Object.keys(data[item][subItem]).map((subSubItem) => {
-                    let date = new Date(data[item][subItem][subSubItem][config.labels.time]).getTime();
+                    let date = new Date(data[item][subItem][subSubItem][config.time_id]).getTime();
                     if(date > lastDate){
                         lastDate = date
                     }
-                    const fixed = data[item][subItem][subSubItem][config.labels.value].toFixed(5),
+                    const fixed = data[item][subItem][subSubItem][config.value_id].toFixed(5),
                         minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
                     if (min === 0 || minTmp < min) {
                         min = minTmp
@@ -319,7 +320,7 @@ export function createOption(config){
             curve: 'smooth'
         },
         title: {
-            text: config.labels.title,
+            text: config.title,
             style: {
                 fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                 fontWeight: 0,

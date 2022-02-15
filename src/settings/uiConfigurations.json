@@ -1,0 +1,536 @@
+{
+  "views": {
+    "Overall": {
+      "title": "Overall",
+      "type": "admin",
+      "structure":{
+        "card": {
+          "models": [
+            {
+              "name": "Namespaces",
+              "icon": "mdi mdi-share-variant",
+              "color": "success",
+              "type": "count",
+              "query": "/namespaces",
+              "redirect": "/namespaces",
+              "value": "",
+              "key": ""
+            },
+            {
+              "name": "Pods",
+              "icon": "mdi mdi-sitemap",
+              "color": "primary",
+              "type": "count",
+              "query": "/pods",
+              "redirect": "/pods",
+              "value": "",
+              "key": ""
+            },
+            {
+              "name": "Nodes",
+              "icon": "mdi mdi-server",
+              "color": "warning",
+              "type": "count",
+              "query": "/nodes",
+              "redirect": "/nodes",
+              "value": "",
+              "key": ""
+            }
+          ],
+          "styles": {}
+        },
+        "chart": {
+          "models": [
+            {
+              "type": "line",
+              "title": "Nodes rate (in Euros)",
+              "query": "/nodes/rating",
+              "sort_id": "node",
+              "time_id": "frame_begin",
+              "value_id": "frame_price",
+              "axis_type": "datetime",
+              "is_monitoring": "true"
+            },
+            {
+              "type": "area",
+              "title": "Namespaces Energy Efficiency",
+              "query": "/namespaces/rating",
+              "sort_id": "namespace",
+              "time_id": "frame_begin",
+              "value_id": "frame_price",
+              "axis_type": "datetime",
+              "is_monitoring": "true"
+            }
+          ],
+          "styles": {
+            "height": "400",
+            "font_size": "20px"
+          }
+        }
+      }
+    },
+
+    "Namespaces": {
+      "title": "Namespaces",
+      "type": "admin",
+      "structure":{
+        "card": {
+          "models": [
+            {
+              "name": "Rating",
+              "icon": "mdi mdi-currency-eur",
+              "color": "danger",
+              "type": "sum",
+              "query": "/total_rating",
+              "redirect": "",
+              "value": "",
+              "key": "frame_price"
+            },
+            {
+              "name": "Pods",
+              "icon": "mdi mdi-sitemap",
+              "color": "primary",
+              "type": "count",
+              "query": "/pods",
+              "redirect": "/pods",
+              "value": "",
+              "key": ""
+            },
+            {
+              "name": "Nodes",
+              "icon": "mdi mdi-server",
+              "color": "warning",
+              "type": "count",
+              "query": "/nodes",
+              "redirect": "/nodes",
+              "value": "",
+              "key": ""
+            }
+          ],
+          "styles": {}
+        },
+        "chart": {
+          "models": [
+            {
+              "type": "area",
+              "title": "Metrics rate (in Euros)",
+              "query": "/rating",
+              "sort_id": "metric",
+              "time_id": "frame_begin",
+              "value_id": "frame_price",
+              "axis_type": "datetime",
+              "is_monitoring": "true"
+            }
+          ],
+          "styles": {
+            "height": "400",
+            "font_size": "20px"
+          }
+        }
+      }
+    },
+    "Nodes": {
+      "title": "Nodes",
+      "type": "admin",
+      "structure":{
+        "card": {
+          "models": [
+            {
+              "name": "Rating",
+              "icon": "mdi mdi-currency-eur",
+              "color": "danger",
+              "type": "sum",
+              "query": "/total_rating",
+              "redirect": "",
+              "value": "",
+              "key": "frame_price"
+            },
+            {
+              "name": "Pods",
+              "icon": "mdi mdi-sitemap",
+              "color": "primary",
+              "type": "count",
+              "query": "/pods",
+              "redirect": "",
+              "value": "",
+              "key": ""
+            },
+            {
+              "name": "Namespaces",
+              "icon": "mdi mdi-share-variant",
+              "color": "success",
+              "type": "count",
+              "query": "/namespaces",
+              "redirect": "",
+              "value": "",
+              "key": ""
+            }
+          ],
+          "styles": {}
+        },
+        "chart": {
+          "models": [
+            {
+              "type": "bar",
+              "title": "Nodes metrics rate (in Euros)",
+              "query": "/rating",
+              "sort_id": "metric",
+              "time_id": "frame_begin",
+              "value_id": "frame_price",
+              "axis_type": "datetime",
+              "is_monitoring": "true"
+            }
+          ],
+          "styles": {
+            "height": "400",
+            "font_size": "20px"
+          }
+        }
+      }
+    },
+    "Pods": {
+      "title": "Pods",
+      "type": "admin",
+      "structure":{
+        "card": {
+          "models": [
+            {
+              "name": "Rating",
+              "icon": "mdi mdi-currency-eur",
+              "color": "danger",
+              "type": "sum",
+              "query": "/total_rating",
+              "redirect": "",
+              "value": "",
+              "key": "frame_price"
+            },
+            {
+              "name": "Nodes",
+              "icon": "mdi mdi-server",
+              "color": "warning",
+              "type": "count",
+              "query": "/nodes",
+              "redirect": "",
+              "value": "",
+              "key": ""
+            },
+            {
+              "name": "Namespaces",
+              "icon": "mdi mdi-share-variant",
+              "color": "success",
+              "type": "count",
+              "query": "/namespaces",
+              "redirect": "",
+              "value": "",
+              "key": ""
+            }
+          ],
+          "styles": {}
+        },
+        "chart": {
+          "models": [
+            {
+              "type": "line",
+              "title": "Pod metrics rate (in Euros)",
+              "query": "/rating",
+              "sort_id": "metric",
+              "time_id": "frame_begin",
+              "value_id": "frame_price",
+              "axis_type": "datetime",
+              "is_monitoring": "false"
+            }
+          ],
+          "styles": {
+            "height": "400",
+            "font_size": "20px"
+          }
+        }
+      }
+    },
+    "Monitoring": {
+      "title": "Monitoring",
+      "type": "admin",
+      "structure":{
+        "card": {
+          "models": [],
+          "styles": {}
+        },
+        "chart": {
+          "models": [
+            {
+              "type": "area",
+              "title": "Nodes rate (in Euros)",
+              "query": "/rating",
+              "sort_id": "instance",
+              "time_id": "frame_begin",
+              "value_id": "price",
+              "axis_type": "datetime",
+              "is_monitoring": "true"
+            }
+          ],
+          "styles": {
+            "height": "400",
+            "font_size": "20px"
+          }
+        }
+      }
+    }
+  },
+  "controls": {
+    "chart": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "area",
+              "bar",
+              "bubble",
+              "candlestick",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "pie",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          "title": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string"
+          },
+          "sort_id": {
+            "type": "string"
+          },
+          "time_id": {
+            "type": "string"
+          },
+          "value_id": {
+            "type": "string"
+          },
+          "axis_type": {
+            "type": "string",
+            "enum": [
+              "datetime",
+              ""
+            ]
+          },
+          "is_monitoring": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "sort_id",
+          "time_id",
+          "value_id",
+          "axis_type",
+          "is_monitoring"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart type",
+            "values": [
+              "area",
+              "bar",
+              "bubble",
+              "candlestick",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "pie",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart title"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart query link"
+          },
+          {
+            "model": "sort_id",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart sort id"
+          },
+          {
+            "model": "time_id",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart time id"
+          },
+          {
+            "model": "value_id",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart value id"
+          },
+          {
+            "model": "axis_type",
+            "type": "select",
+            "required": false,
+            "placeholder": "Chart type",
+            "values": [
+              "datetime"
+            ]
+          },
+          {
+            "model": "is_monitoring",
+            "type": "switch",
+            "required": false,
+            "placeholder": "Chart monitoring",
+            "default": false,
+            "textOn": "Active",
+            "textOff": "Inactive"
+          }
+        ]
+      }
+    },
+    "card": {
+      "schema": {
+        "description": "Card configuration check",
+        "properties": {
+          "name": {
+            "description": "Card name",
+            "type": "string"
+          },
+          "icon": {
+            "description": "Card icon class",
+            "type": "string"
+          },
+          "color": {
+            "description": "Card color",
+            "type": "string",
+            "enum": [
+              "primary",
+              "success",
+              "warning",
+              "danger",
+              "dark"
+            ]
+          },
+          "type": {
+            "description": "Card type",
+            "type": "string",
+            "enum": [
+              "count",
+              "sum",
+              "avg"
+            ]
+          },
+          "key": {
+            "description": "Card value calculation key",
+            "type": "string"
+          },
+          "query": {
+            "description": "Card query link",
+            "type": "string"
+          },
+          "redirect": {
+            "description": "Card redirect link",
+            "type": "string"
+          }
+        },
+        "required": [
+          "name",
+          "color",
+          "type",
+          "icon",
+          "query"
+        ]
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "name",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card name"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card icon"
+          },
+          {
+            "model": "color",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card color",
+            "values": [
+              "primary",
+              "success",
+              "warning",
+              "danger",
+              "dark"
+            ]
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "count",
+              "sum",
+              "avg",
+              "date"
+            ]
+          },
+          {
+            "model": "key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card value calculation key"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card query link"
+          },
+          {
+            "model": "redirect",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card redirect link"
+          }
+        ]
+      }
+    }
+  }
+}

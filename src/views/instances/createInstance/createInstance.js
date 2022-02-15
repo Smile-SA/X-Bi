@@ -1,6 +1,6 @@
-import * as instance from "../../../../controller/instancesController";
-import * as template from "../../../../controller/templatesController";
-import * as utils from "../../../../settings/utils";
+import * as instance from "@/controller/instancesController";
+import * as template from "@/controller/templatesController";
+import * as utils from "@/settings/utils";
 
 export default {
     name: 'create-instance',
@@ -12,7 +12,7 @@ export default {
             message: '',
             name: '',
             template: '',
-            templatesList: [],
+            templatesList: {},
             dynamicValues: [{
                 'name': 'timeframe',
                 'value': '5',
@@ -39,7 +39,7 @@ export default {
                         this.dynamicValues.push({
                                 'name': valuesInit[item],
                                 'value': '',
-                                'error': '',
+                                'error': ''
                             }
                         )
                     });
@@ -52,9 +52,12 @@ export default {
             });
         },
         getTemplates() {
-            template.getTemplates().then((data) => {
-                this.templatesNb = data.total;
-                this.templatesList = data.results;
+            this.templatesList = {}
+            template.getTemplates().then((r) => {
+                this.templatesNb = r.total;
+                if(r.total>0){
+                    this.templatesList = r.results;
+                }
             });
         },
         checkValues(e) {

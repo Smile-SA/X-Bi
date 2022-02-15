@@ -4,7 +4,6 @@
     "path": "/",
     "icon": "mdi-home",
     "component": "Layout/container/index.vue",
-    "name": "Default",
     "description": "Global infrastructure view",
     "requiresAuth": true
   },
@@ -64,7 +63,6 @@
       "displayInMenu": true,
       "requiresAuth": true
     },
-
     "kpisConfigurations": {
       "id": "kpisConfigurations",
       "name": "KPIs Configurations",
@@ -77,7 +75,7 @@
           "name": "Templates",
           "path": "/templates",
           "icon": "mdi-chevron-right",
-          "component": "views/kpisConfiguration/templates/listTemplates/index.vue",
+          "component": "views/templates/listTemplates/index.vue",
           "description": "View of templates",
           "display": true,
           "displayInMenu": true,
@@ -88,7 +86,7 @@
           "name": "Instances",
           "path": "/instances",
           "icon": "mdi-chevron-right",
-          "component": "views/kpisConfiguration/instances/listInstances/index.vue",
+          "component": "views/instances/listInstances/index.vue",
           "description": "View of instances",
           "display": true,
           "displayInMenu": true,
@@ -113,12 +111,22 @@
           "display": true,
           "displayInMenu": true,
           "requiresAuth": true
+        },
+        "views": {
+          "id": "vews",
+          "name": "vews",
+          "path": "/vews",
+          "icon": "mdi-chevron-right",
+          "component": "views/uiConfiguration/views/index.vue",
+          "description": "Views configuration",
+          "display": true,
+          "displayInMenu": true,
+          "requiresAuth": true
         }
       }
     },
-
     "createInstances": {
-      "component": "views/kpisConfiguration/instances/createInstance/index.vue",
+      "component": "views/instances/createInstance/index.vue",
       "description": "View of instance creation",
       "id": "createInstances",
       "name": "Create instance",
@@ -128,7 +136,7 @@
       "requiresAuth": true
     },
     "displayInstances": {
-      "component": "views/kpisConfiguration/instances/displayInstance/index.vue",
+      "component": "views/instances/displayInstance/index.vue",
       "description": "Detailed of instance",
       "id": "displayInstances",
       "name": "Display instance",
@@ -138,7 +146,7 @@
       "requiresAuth": true
     },
     "createTemplates": {
-      "component": "views/kpisConfiguration/templates/createTemplate/index.vue",
+      "component": "views/templates/createTemplate/index.vue",
       "description": "View of template creation",
       "id": "createTemplates",
       "name": "Create template",
@@ -148,7 +156,7 @@
       "requiresAuth": true
     },
     "displayTemplates": {
-      "component": "views/kpisConfiguration/templates/displayTemplate/index.vue",
+      "component": "views/templates/displayTemplate/index.vue",
       "description": "Detailed of template",
       "id": "displayTemplates",
       "name": "Display template",

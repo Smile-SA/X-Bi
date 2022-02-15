@@ -1,5 +1,5 @@
 import * as CodeMirror from "codemirror";
-import * as template from "../../../../controller/templatesController";
+import * as template from "@/controller/templatesController";
 export default {
     name: 'display-template',
     components: {},

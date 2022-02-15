@@ -6,9 +6,9 @@ import VueRangedatePicker from 'vue-rangedate-picker';
 import AppComponent from './app/index.vue';
 Vue.component("DataTable", DataTable);
 Vue.use(VueSweetalert2);
+Vue.component('Picker', VueRangedatePicker);
 Vue.config.productionTip = false
 Vue.config.devtools = false
-Vue.component('Picker', VueRangedatePicker);
 new Vue({
     router,
     render: h => h(AppComponent)
@@ -20,6 +20,5 @@ import "@andresouzaabreu/vue-data-table/dist/DataTable.css";
 import '../public/vendors/mdi/css/materialdesignicons.min.css';
 import '../public/vendors/css/vendor.bundle.base.css';
 import '../public/css/style.css';
-
 import 'codemirror/mode/javascript/javascript.js';
 

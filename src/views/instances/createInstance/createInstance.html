@@ -28,8 +28,8 @@
                                     <div class="col-md-10 col-lg-10">
                                         <select class="form-control" v-model="template" name="template" id="template" v-on:change="getDynamicValues">
                                             <option selected disabled> Select a template</option>
-                                            <option v-for="option in templatesList" v-bind:value="option.replace('rating-rule-template-','')" v-bind:key="option">{{
-                                                    option.replace('rating-rule-template-','')
+                                            <option v-for="option in templatesList" v-bind:value="(option.template_name).replace('rating-rule-template-','')" v-bind:key="option.template_name">{{
+                                                    (option.template_name).replace('rating-rule-template-','')
                                                 }}
                                             </option>
                                         </select>

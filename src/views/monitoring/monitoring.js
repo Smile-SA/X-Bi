@@ -80,6 +80,7 @@ export default {
             general.getDataByDateToApex('/metrics/' + this.activeInstance + '/rating', this.from, this.to, this.activeInstance, this.group, this.confChartInstances).then(async (r) => {
                 if (r.total!==undefined && r.total > 0) {
                     this.instances = r;
+                    console.log(r)
                 }
             });
         },
@@ -97,7 +98,7 @@ export default {
                 }
             }, 1000);
         },
-        drawGraphs() {
+        drawCharts() {
             this.updateCharts()
         },
     }

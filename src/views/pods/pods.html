@@ -2,23 +2,19 @@
     <select-option class="col-lg-4 col-md-4 m-b" :label="'Select a pod'" :placeholder="'Select a pod'" :selectFunction="this.setPod" :selectData="pods" ></select-option>
     <date-picker class="col-lg-4 col-md-4 m-b" v-if="showDatePicker()" :that="this"></date-picker>
     <group-by class="col-lg-4 col-md-4 m-b" v-if="showGroup()" :that="this"></group-by>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='this.activePod !== null && this.date!==null'>
-        <div class="apex-box">
+    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if="Object.keys(this.cardModels).length>0">
+        <div class="apex-box pb-0">
             <div class="row">
-                <Card class="col-md-4" :configuration=confCardNameSpaces></Card>
-                <Card class="col-md-4 " :configuration=confCardNodes></Card>
-                <Card class="col-md-4 " :configuration=confCardRatings></Card>
+                <div class="col-lg-4 col-md-4 col-xl-4 m-b" v-for="item in this.cardModels">
+                    <Card :configuration="item" :from="from" :to="to"></Card>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='this.podsMetrics.height!==undefined'>
-        <apex-charts :chartOptions="podsMetrics.options" :height="podsMetrics.height" :chartSeries="podsMetrics.series"></apex-charts>
-    </div>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='this.activePod != null && this.date!==null'>
-        <div class="apex-box">
-            <div class="row">
-                <Card class="col-md-6" :configuration=confCardStart></Card>
-                <Card class="col-md-6" :configuration=confCardEnd></Card>
+    <div class="col-lg-12 col-md-12 col-xs-12" v-if="Object.keys(this.chartModels).length>0">
+        <div class="row">
+            <div class="m-b " v-for="item in this.chartModels">
+                <apex-charts :configuration="item" :from="from" :styles="chartStyle" :to="to" :group="group"></apex-charts>
             </div>
         </div>
     </div>

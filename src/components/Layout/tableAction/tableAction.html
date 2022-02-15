@@ -1,14 +1,14 @@
 <div>
     <center :ref="data.id">
-        <router-link v-if="data.isDisplay===true" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
+        <router-link v-if="data.isDisplayed" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
             <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
                     class="mdi mdi-eye"></i> Display</a>
         </router-link>
-        <router-link v-if="data.isUpdate===true" :to="data.url+'/update/'+data.id" custom v-slot="{ navigate }">
+        <router-link v-if="data.isUpdated" :to="data.url+'/update/'+data.id" custom v-slot="{ navigate }">
             <a class="btn btn-sm btn-outline-secondary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
                     class="mdi mdi-edit"></i> Update</a>
         </router-link>
-        <button v-if="data.isDelete===true" v-on:click="submitDeleteForm" type="button" class="btn btn-sm btn-outline-danger "><i class="mdi mdi-trash-can"></i> Delete
+        <button v-if="data.isDeleted" v-on:click="submitDeleteForm" type="button" class="btn btn-sm btn-outline-danger "><i class="mdi mdi-trash-can"></i> Delete
         </button>
     </center>
 </div>

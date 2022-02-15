@@ -1,9 +1,9 @@
-import * as instance from "../../../../controller/instancesController";
-import tableAction from "../../../../components/Layout/tableAction";
+import * as instance from "@/controller/instancesController";
+import tableAction from "../../../components/Layout/tableAction";
+
 export default {
     name: 'list-instances',
-    components: {
-    },
+    components: {},
     props: [],
     data() {
         return {
@@ -15,7 +15,7 @@ export default {
         bindings() {
             return {
                 data: this.instancesList,
-                showDownloadButton:false,
+                showDownloadButton: false,
                 columns: [
                     {
                         key: "name",
@@ -31,7 +31,7 @@ export default {
     },
     mounted() {
     },
-    async beforeMount(){
+    async beforeMount() {
         this.Instances();
     },
     methods: {
@@ -41,14 +41,15 @@ export default {
                 Object.keys(data.results).map((item) => {
                     this.instancesList.push({
                         'name': data.results[item],
-                        'url':'/instances',
-                        'deleteTagIndex':4,
-                        'colspan':2,
-                        'deleteParam':'metric_name',
-                        'id': data.results[item].replace('rating-rule-instance-',''),
-                        'isDisplay':true ,
-                        'isUpdate':false ,
-                        'isDelete':true
+                        'url': '/instances',
+                        'deleteTagIndex': 4,
+                        'colspan': 2,
+                        'deleteParam': 'metric_name',
+                        'id': data.results[item].replace('rating-rule-instance-', ''),
+                        'isDisplayed': true,
+                        'isUpdateed': false,
+                        'isDeleted': true
+
                     })
                 });
             });

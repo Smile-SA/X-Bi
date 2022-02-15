@@ -1,5 +1,6 @@
 import {generateAPIUrl} from "../settings/variables";
 import axios from "axios";
+import * as uiConfigurations from "../settings/uiConfigurations.json"
 
 export async function checkConnectionWithAPI(){
     // eslint-disable-next-line no-unused-vars
@@ -18,6 +19,7 @@ export async function logIn(tenant,password){
             window.sessionStorage.setItem('isLogin', r.data.login);
             window.sessionStorage.setItem('tenant', tenant);
             window.sessionStorage.setItem('timestamp', Date.now());
+            window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
             return r.data;
         }else{
             deleteSession();

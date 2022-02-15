@@ -2,20 +2,21 @@
     <select-option class="col-lg-4 col-md-4 m-b" :label="'Select a node'" :placeholder="'Select a node'" :selectFunction="this.setNode" :selectData="nodes" ></select-option>
     <date-picker class="col-lg-4 col-md-4 m-b" v-if="showDatePicker()" :that="this"></date-picker>
     <group-by class="col-lg-4 col-md-4 m-b" v-if="showGroup()" :that="this"></group-by>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='this.activeNode != null && this.date!==null'>
-        <div class="apex-box">
+    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if="Object.keys(this.cardModels).length>0">
+        <div class="apex-box pb-0">
             <div class="row">
-                <Card class="col-md-4" :configuration=confCardNamespaces></Card>
-                <Card class="col-md-4 " :configuration=confCardPods></Card>
-                <Card class="col-md-4 " :configuration=confCardRating></Card>
+                <div class="col-lg-4 col-md-4 col-xl-4 m-b" v-for="item in this.cardModels">
+                    <Card :configuration="item" :from="from" :to="to"></Card>
+                </div>
             </div>
         </div>
     </div>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='nodeMetrics.height!==undefined'>
-        <apex-charts :chartOptions="nodeMetrics.options" :height="nodeMetrics.height" :chartSeries="nodeMetrics.series"></apex-charts>
-    </div>
-    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if='this.nameSpaceMetrics.height!==undefined'>
-        <apex-charts :chartOptions="nameSpaceMetrics.options" :height="nameSpaceMetrics.height" :chartSeries="nameSpaceMetrics.series"></apex-charts>
+    <div class="col-lg-12 col-md-12 col-xs-12" v-if="Object.keys(this.chartModels).length>0">
+        <div class="row">
+            <div class="m-b " v-for="item in this.chartModels">
+                <apex-charts :configuration="item" :from="from" :styles="chartStyle" :to="to" :group="group"></apex-charts>
+            </div>
+        </div>
     </div>
 </div>
 
