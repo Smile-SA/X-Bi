@@ -1,21 +1,20 @@
 <div class="row">
-    <date-picker class="col-lg-4 col-md-4 m-b" :that="this"></date-picker>
-    <group-by class="col-lg-4 col-md-4 m-b" v-if="showGroup()" :that="this"></group-by>
-<!--    <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if="Object.keys(this.cardModels).length>0">-->
-<!--        <div class="apex-box pb-0">-->
-<!--            <div class="row">-->
-<!--                <div class="col-lg-4 col-md-4 col-xl-4 m-b" v-for="item in this.cardModels">-->
-<!--                    <Card :configuration="item" :from="from" :to="to"></Card>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
-<!--    <div class="col-lg-12 col-md-12 col-xs-12" v-if="Object.keys(this.chartModels).length>0">-->
-<!--        <div class="row">-->
-<!--            <div class="col-lg-6 col-md-6 m-b " v-for="item in this.chartModels">-->
-<!--                <apex-charts :configuration="item" :from="from" :styles="chartStyle" :to="to"-->
-<!--                             :group="group"></apex-charts>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
+    <select-option class="col-lg-4 col-md-4 m-b" :type="'date'" :label="'Select a date'" :selectFunction="setDate" :selectData="date"></select-option>
+    <select-option class="col-lg-4 col-md-4 m-b" :type="'group'" :label="'Group data by'" :placeholder="'Select a group'" :defaultData="group" :selectFunction="setGroup" :selectData="groupOptions"></select-option>
+    <div class=" m-b" v-if="Object.keys(this.cardModels).length>0">
+        <div class="apex-box pb-0">
+            <div class="row">
+                <div class="col-lg-4 col-md-4 col-xl-4 m-b" v-for="item in this.cardModels">
+                    <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"></Card>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-md-12 col-xs-12" v-if="Object.keys(this.chartModels).length>0">
+        <div class="row">
+            <div class="col-lg-6 col-md-6 m-b " v-for="item in this.chartModels">
+                <apex-charts :configuration="item" :queryBegin="queryBegin" :from="from" :styles="chartStyle" :to="to" :group="group"></apex-charts>
+            </div>
+        </div>
+    </div>
 </div>

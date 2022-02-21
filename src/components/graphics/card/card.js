@@ -5,7 +5,7 @@ import * as utils from "../../../settings/utils";
 
 export default {
     name: "Card",
-    props: ['configuration', 'from', 'to'],
+    props: ['configuration', 'from', 'to','queryBegin'],
     watch: {},
     data() {
         return {
@@ -34,11 +34,7 @@ export default {
             await execute();
         },
         async doTheCount() {
-            let queryBegin="";
-            if(this.configuration.queryBegin!==undefined){
-                queryBegin = this.configuration.queryBegin;
-            }
-            await general.getJsonData(queryBegin + this.configuration.query + this.setQuery).then((r) => {
+            await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then((r) => {
                 if (r.total > 0) {
                     this.configuration.value = r.total;
                     this.$forceUpdate()
@@ -49,11 +45,7 @@ export default {
             })
         },
         async doTheSum() {
-            let queryBegin="";
-            if(this.configuration.queryBegin!==undefined){
-                queryBegin = this.configuration.queryBegin;
-            }
-            await general.getJsonData(queryBegin + this.configuration.query + this.setQuery).then( (r) => {
+            await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then( (r) => {
                 if (r.total > 0) {
                     this.configuration.value = (r.results.length === 1) ?
                         r.results[0][this.configuration.key].toFixed(2) :

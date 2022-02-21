@@ -18,11 +18,7 @@ export function generalDelete(deleteUrl, name, id) {
 
 export async function getDataByVariableAndDateToApex(config, that) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
-    let queryBegin = "";
-    if (config.queryBegin !== undefined) {
-        queryBegin = config.queryBegin;
-    }
-    let url = api + queryBegin + config.query + queryDate;
+    let url = api + that.queryBegin + config.query + queryDate;
     return axios.get(url).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
@@ -60,34 +56,31 @@ export async function getDataByVariableAndDateToApex(config, that) {
         return false
     });
 }
-
-export async function getDataByDateToApex(url, from, to, name, group, config) {
-    const queryDate = utils.convertURLDateParameter(from, to)
-    url = api + url + queryDate;
-
-    return axios.get(url).then(async (r) => {
+// eslint-disable-next-line no-unused-vars
+export async function getDataByDateToApex(config, that,name) {
+    const queryDate = utils.convertURLDateParameter(that.from, that.to)
+    let url = api + that.queryBegin + config.query + queryDate;
+    return await axios.get(url).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
-            let data = utils.groupByDate(r.data.results, group);
-
+            let data = utils.groupByDate(r.data.results, that.group);
             Object.keys(data).map((item) => {
                 data[item] = data[item].reduce(function (r, a) {
-                    if (r.label === undefined) {
-                        r = {[config.labels.value]: 0, length: 0};
+                    if (r[config.value_id] === undefined) {
+                        r = {[config.value_id]: 0, length: 0};
                     }
-                    r[config.labels.value] += a[config.labels.value];
-                    r.frame_begin = item;
+                    r[config.value_id] += a[config.value_id];
+                    r[config.time_id] = item;
                     r.length += +1;
                     return r;
                 }, Object.create(null));
             });
-
             let cs = utils.createSerie(data, config, name, 1)
-            r.data.series = cs.series;
-            r.data.lastDate = cs.lastDate;
+            r.data.series = cs.series
+            r.data.lastDate = cs.lastDate
             r.data.options = utils.createOption(config);
-            r.data.height = config.height;
+            r.data.height = that.styles.height;
             delete r.data.results;
             return r.data;
         }
@@ -95,11 +88,6 @@ export async function getDataByDateToApex(url, from, to, name, group, config) {
     }).catch(errors => {
         return false
     });
-}
-
-// eslint-disable-next-line no-unused-vars
-export async function getNewDataByDateToApex(url, from, to, name, group, config, lastDate) {
-    return getDataByDateToApex(url, from, to, name, group, config)
 }
 
 export async function getJsonData(url) {

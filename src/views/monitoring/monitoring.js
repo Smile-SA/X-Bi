@@ -1,40 +1,24 @@
 import * as instance from "../../controller/instancesController";
-import * as general from "../../controller/genaralController";
-import * as utils from "../../settings/utils";
+
+import * as utils from '@/settings/utils'
+import * as configurationsController from "@/controller/configurationsController";
 
 export default {
     name: 'monitoring',
     components: {
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
-        GroupBy: () => import ('../../components/Layout/group/index'),
-        DatePicker: () => import ('../../components/Layout/datePicker/index'),
-        SelectOption: () => import ('../../components/Layout/selectOption/index'),
     },
     props: [],
     data() {
         return {
-            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
             group: 'Hour',
+            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
             activeGroup: null,
-            instancesList: null,
+            list: null,
             date: null,
-            instances: {},
-            activeInstance: null,
-            confChartInstances: {
-                id: 'lineChart',
-                type: 'area',
-                height: 470,
-                fontSize: '16px',
-                sort: 'instance',
-                xaxis: {
-                    type: 'datetime'
-                },
-                labels: {
-                    time: 'frame_begin',
-                    value: 'price',
-                    title: 'Nodes rate (in Euros)'
-                }
-            },
+            queryBegin:"",
+            chartStyle:{},
+            active: null,
+            chartModels:{},
             to: new Date().toISOString(),
             from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
         }
@@ -44,13 +28,13 @@ export default {
         this.getInstances();
     },
     async mounted() {
-        await this.refreshChart();
+         //await this.refreshChart();
     },
     methods: {
         async getInstances() {
             await instance.getInstances().then((data) => {
                 if (data.total > 0) {
-                    this.instancesList = data.results;
+                    this.list = data.results;
                 }
             });
         },
@@ -59,47 +43,37 @@ export default {
             this.date = date;
             utils.refreshDate(date, this);
         },
-        setGroup(group) {
-            this.group = group.target.value;
-            this.setDate(this.date);
+        async setGroup(event){
+            this.group = event.target.value;
+            this.setDate(this.date)
         },
         setInstance(instance) {
-            this.activeInstance = instance.target.value;
+            this.active = instance.target.value;
+            this.queryBegin = '/metrics/' + this.active;
             if (this.date !== null) {
                 this.setDate(this.date)
             }
         },
         showDatePicker() {
-            return this.activeInstance !== null
+            return this.active !== null
         },
         showGroup() {
             return this.activeGroup !== null
         },
-        updateCharts() {
-            this.instances.height = undefined;
-            general.getDataByDateToApex('/metrics/' + this.activeInstance + '/rating', this.from, this.to, this.activeInstance, this.group, this.confChartInstances).then(async (r) => {
-                if (r.total!==undefined && r.total > 0) {
-                    this.instances = r;
-                    console.log(r)
+        async drawCharts() {
+            let r = configurationsController.getChartModels(this.$route.name)
+            if (r.data.errors !== true) {
+                if (r.data.total > 0) {
+                    this.chartModels = r.data.results;
+                    let style = configurationsController.getChartStyles(this.$route.name)
+                    if (style.data.errors !== true) {
+                        this.chartStyle = null
+                        this.chartStyle = style.data.results;
+                    }
                 }
-            });
-        },
-        async refreshChart() {
-            await setInterval(() => {
-                if (this.instances.height!==undefined) {
-                    general.getNewDataByDateToApex('/metrics/' + this.activeInstance + '/rating', this.from, this.to, this.activeInstance, this.group, this.confChartInstances,this.instances.lastDate).then(async (r) => {
-                        if (r.total!==undefined && r.total > 0) {
-                            if(r.lastDate>this.instances.lastDate){
-                                this.instances.series = r.series;
-                                this.instances.lastDate = r.lastDate;
-                            }
-                        }
-                    });
-                }
-            }, 1000);
-        },
-        drawCharts() {
-            this.updateCharts()
+            } else {
+                this.chartModels = {};
+            }
         },
     }
 }

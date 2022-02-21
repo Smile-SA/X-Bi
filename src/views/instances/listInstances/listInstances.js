@@ -1,5 +1,5 @@
 import * as instance from "@/controller/instancesController";
-import tableAction from "../../../components/Layout/tableAction";
+import action from "@/components/tableAction/urlAction";
 
 export default {
     name: 'list-instances',
@@ -23,7 +23,7 @@ export default {
                     },
                     {
                         key: "Actions",
-                        component: tableAction
+                        component: action
                     }
                 ]
             }

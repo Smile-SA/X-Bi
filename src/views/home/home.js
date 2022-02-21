@@ -1,24 +1,17 @@
-import * as utils from '../../settings/utils'
-import * as configurationsController from "../../controller/configurationsController";
+import * as utils from '@/settings/utils'
+import * as configurationsController from "@/controller/configurationsController";
 
 export default {
-    components: {
-        Card: () => import('../../components/Layout/card'),
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
-        GroupBy: () => import ('../../components/Layout/group/index'),
-        DatePicker: () => import ('../../components/Layout/datePicker/index'),
-    },
+    components: {},
     data() {
         return {
             date: null,
-            lineChartNodes: null,
-            nameSpace: {},
-            node: {},
-            setQuery: '',
-            lineChartNamespaces: null,
             to: null,
             from: null,
+            node: {},
             group: 'Hour',
+            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
+            queryBegin:"",
             cardModels: {},
             chartModels: {},
             chartStyle: {},
@@ -74,6 +67,10 @@ export default {
             this.date = date
             await utils.refreshDate(this.date, this);
         },
+        async setGroup(event){
+            this.group = event.target.value;
+            this.setDate(this.date)
+        }
     },
     async beforeMount() {
         this.date = this.setDefaultDate(1)

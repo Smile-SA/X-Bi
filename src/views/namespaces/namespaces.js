@@ -1,28 +1,24 @@
-import * as utils from '../../settings/utils'
-import * as configurationsController from "../../controller/configurationsController";
+import * as utils from '@/settings/utils'
+import * as configurationsController from "@/controller/configurationsController";
 
 export default {
     components: {
-        Card: () => import('../../components/Layout/card'),
-        BarChart: () => import ('../../components/charts/charts.js/BarChart'),
-        ApexCharts: () => import ('../../components/charts/apexchart.js/apexcharts'),
-        GroupBy: () => import ('../../components/Layout/group/index'),
-        DatePicker: () => import ('../../components/Layout/datePicker/index'),
-        SelectOption: () => import ('../../components/Layout/selectOption/index'),
+
     },
     data() {
         return {
             group: 'Hour',
+            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
+            queryBegin:"",
+            to: null,
+            from: null,
             date: null,
-            barChartMetrics: {},
+            active: null,
             namespaces: null,
-            activeNamespace: null,
-            cardModels:{},
             cardStyle:{},
-            chartModels:{},
+            cardModels:{},
             chartStyle:{},
-            to: new Date().toISOString(),
-            from: new Date(new Date().setHours(new Date().getHours() - 1)).toISOString(),
+            chartModels:{}
         }
     },
     computed: {
@@ -46,21 +42,16 @@ export default {
     },
     methods: {
         showDatePicker() {
-            return this.activeNamespace !== null
+            return this.active !== null
         },
         showGroup() {
-            return this.activeNamespace !== null && this.date
+            return this.active !== null && this.date
         },
         async drawCards() {
             const r = configurationsController.getCardModels(this.$route.name)
             if (r.errors !== true) {
                 if (r.data.total > 0) {
                     this.cardModels = r.data.results
-                    if(this.activeNamespace!==null){
-                        await Object.keys(this.cardModels).map((item) => {
-                            this.cardModels[item].queryBegin = '/namespaces/' + this.activeNamespace;
-                        })
-                    }
                 }
             } else {
                 this.cardModels = {};
@@ -72,11 +63,6 @@ export default {
             if (r.data.errors !== true) {
                 if (r.data.total > 0) {
                     this.chartModels = r.data.results;
-                    if(this.activeNamespace!==null){
-                        await Object.keys(this.chartModels).map((item) => {
-                            this.chartModels[item].queryBegin = '/namespaces/' + this.activeNamespace;
-                        })
-                    }
                     let style = configurationsController.getChartStyles(this.$route.name)
                     if (style.data.errors !== true) {
                         this.chartStyle = null
@@ -88,7 +74,9 @@ export default {
             }
         },
         async setNamespaces(namespace) {
-            this.activeNamespace = namespace.target.value
+            this.active = namespace.target.value
+            this.queryBegin = '/namespaces/' + this.active;
+
             this.setDate(this.date)
         },
         async setDate(date) {
@@ -98,6 +86,10 @@ export default {
                 await utils.refreshDate(this.date, this);
             }
         },
+        async setGroup(event){
+            this.group = event.target.value;
+            this.setDate(this.date)
+        }
 
     },
     async beforeMount() {

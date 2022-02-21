@@ -1,6 +1,6 @@
-import {generateAPIUrl} from '../../settings/variables';
-import {logIn} from "../../controller/authController";
-import {goTo} from "../../settings/utils";
+import {generateAPIUrl} from '@/settings/variables';
+import {logIn} from "@/controller/authController";
+import {goTo} from "@/settings/utils";
 
 export default {
     name: 'login',
@@ -21,16 +21,15 @@ export default {
         loginUser(e) {
             this.showError = false;
             e.preventDefault();
-            // eslint-disable-next-line no-unused-vars
-            logIn(this.$refs.form.tenant.value,this.$refs.form.password.value).then((data) => {
-                    if (data.login){
-                        this.$refs.form.tenant.value = '';
-                        this.$refs.form.password.value = '';
-                        goTo('/',this);
-                    }else{
-                        this.message = data.message;
-                        this.showError = true;
-                    }
+            logIn(this.$refs.form.tenant.value, this.$refs.form.password.value).then((data) => {
+                if (data.login) {
+                    this.$refs.form.tenant.value = '';
+                    this.$refs.form.password.value = '';
+                    goTo('/', this);
+                } else {
+                    this.message = data.message;
+                    this.showError = true;
+                }
             });
         },
         password: function () {

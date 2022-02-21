@@ -35,13 +35,11 @@ export default {
         if (r.errors) {
           document.getElementById('value').style.display='none';
           this.message = r.message
-          //
         } else {
           if (r.data.total > 0) {
             this.cmValue = CodeMirror.fromTextArea(document.getElementById("value"), this.cmOption);
             this.cmValue.setValue(JSON.stringify(r.data.results, null, 2));
             this.cmValue.on('copy', (cm, e) => {
-              // ignore copy by codemirror.  and will copy by browser
               e.codemirrorIgnore = true;
             });
           }

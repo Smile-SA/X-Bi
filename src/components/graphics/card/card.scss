@@ -1,6 +1,6 @@
 .stat-card {
-  width:100%;
-  color:#ffffff;
+  width: 100%;
+  color: #ffffff;
   padding: 1rem;
   border-radius: .25rem;
   overflow: hidden;
@@ -8,18 +8,22 @@
   justify-content: space-between;
   transition: all 0.2s;
 }
+
 .stat-card :hover {
   cursor: pointer;
 }
-.stat-card .number,.stat-card .rating{
+
+.stat-card .number, .stat-card .rating {
   font-size: 2.25rem;
   opacity: 1;
 }
-.stat-card .date{
+
+.stat-card .date {
   font-size: 1.25rem;
   opacity: 1;
 }
-.stat-card  .label, {
+
+.stat-card .label, {
   font-size: 1rem;
   opacity: 0.7;
 }
@@ -28,15 +32,19 @@
   font-size: 3.5rem;
   opacity: 0.7;
 }
-.stat-card:hover i, .stat-card:hover .label,{
+
+.stat-card:hover i, .stat-card:hover .label, {
   opacity: 1;
 }
-.stat-card:hover .number, .stat-card:hover .date{
+
+.stat-card:hover .number, .stat-card:hover .date {
   opacity: 0.7;
 }
+
 .f-left {
   float: left;
 }
+
 .f-right {
   float: right;
 }

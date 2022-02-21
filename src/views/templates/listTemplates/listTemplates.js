@@ -1,5 +1,5 @@
 import * as template from "@/controller/templatesController";
-import tableAction from "../../../components/Layout/tableAction";
+import actions from "@/components/tableAction/urlAction";
 
 export default {
     name: 'list-templates',
@@ -23,7 +23,7 @@ export default {
                     },
                     {
                         key: "Actions",
-                        component: tableAction
+                        component: actions
                     }
                 ]
             }
@@ -43,7 +43,7 @@ export default {
         },
         Templates: async function () {
             await template.getTemplates().then((r) => {
-                console.log(r)
+                //console.log(r)
                 this.templatesNb = r.total;
                 let data = [];
                  Object.keys(r.results).map((item) => {

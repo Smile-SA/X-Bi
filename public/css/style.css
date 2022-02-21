@@ -17322,7 +17322,7 @@ code {
 .btn-outline-purple:hover, .btn-outline-purple:focus, .btn-outline-purple:active {
     background: -webkit-gradient(linear, left top, right top, from(#da8cff), to(#9a55ff));
     background: linear-gradient(to right, #da8cff, #9a55ff);
-    color: #000000;
+    color: #FFFFFF;
 }
 
 .btn-inverse-secondary {
