@@ -59,6 +59,29 @@ The project is launched by default on http://localhost:8080
 ### Monitoring Page
 ![monitoring](public/images/documentation/monitoring.gif "monitoring")
 
+### 5 - configuration of dashboard
+You can configure your dashboard with the charts and cards you want. There are two types of configuration :
+- On the configuration page
+- In the configuration file
+
+#### On the configuration page
+
+ - First you will select the view you want to configure. Then you will see the default configuration of cards and charts
+ ![list](public/images/documentation/list.png "monitoring")
+ - You have option to add or remove a model of cards or charts
+    - For add a card model click on  add card button
+   
+      ![addcard](public/images/documentation/addCard.png "monitoring")
+ Follow the instructions and fill in and save the form
+      ![addcardform](public/images/documentation/addcardform.png)
+
+    - To delete a card model, click the Delete button on the card row
+       ![deleteCard](public/images/documentation/deletecard.png)
+ You will have a deletion confirmation form and the deletion will be carried out according to your choice
+       ![](public/images/documentation/carddeleteofrm.png)
+   
+ The result of supression
+       ![](public/images/documentation/del.png)
 ## Contribute
 Simply open a pull request over the repository to describe your changes.
 
