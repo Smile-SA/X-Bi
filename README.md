@@ -50,9 +50,6 @@ yarn build
 ```
 The project is launched by default on http://localhost:8080
 ```
-### Connexion page
-![connexion](public/images/documentation/connexion.png "connexion")
-
 ### Home page
 ![home](public/images/documentation/home.png "home")
 
@@ -64,33 +61,40 @@ You can configure your dashboard with the charts and cards you want. There are t
 - On the configuration page
 - In the configuration file
 
-#### On the configuration page
+#### 5.1 On the configuration page
+First you will select the view you want to configure. Then you will see the default configuration of cards and charts
+ 
+![list](public/images/documentation/list.png "monitoring")
 
- - First you will select the view you want to configure. Then you will see the default configuration of cards and charts
- ![list](public/images/documentation/list.png "monitoring")
- - You have option to add or remove a model of cards or charts
-    - For add a card model click on  add card button
-   
-      ![addcard](public/images/documentation/addCard.png "monitoring")
- Follow the instructions and fill in and save the form
-      ![addcardform](public/images/documentation/addcardform.png)
+You have option to add or remove a model of cards or charts
 
-    - To delete a card model, click the Delete button on the card row
-       ![deleteCard](public/images/documentation/deletecard.png)
- You will have a deletion confirmation form and the deletion will be carried out according to your choice
-       ![](public/images/documentation/carddeleteofrm.png)
-   
- The result of supression
-       ![](public/images/documentation/del.png)
+   #### 5.1.1 Add a card model
+To add a new card model, you have to click the add card button on top of th card table
+
+![addcard](public/images/documentation/addCard.png "monitoring")
+
+You will see the card form, follow the instructions, complete and save the form to add a new form
+
+![addcardform](public/images/documentation/addcardform.png)
+
+#### 5.1.2 Delete a card model
+To delete a card model, you have to click the Delete button on the right of the card row
+
+![deleteCard](public/images/documentation/deletecard.png)
+
+Then you will have a deletion confirmation form and the model will be deleted according to your choice
+
+![](public/images/documentation/carddeleteofrm.png)
+
+#### 5.2 On the configuration file : 
+
 ## Contribute
 Simply open a pull request over the repository to describe your changes.
-
 ## Credits
 - Rnd Team @ Alter Way
 - Koku Ulrich GBLOKPO @koku-ulrich.gblokpo
 - Jonathan Rivalan (author) @JonRiv
 
 ## License
-
 
 Licensed under the Apache 2.0 license.
