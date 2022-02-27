@@ -1,18 +1,21 @@
 <nav class="sidebar sidebar-offcanvas" id="sidebar">
     <ul class="nav">
         <div v-for="item in menus">
-            <li v-if="item.children" class="nav-item pointer">
-                <a class="nav-link " data-bs-toggle="collapse"  aria-expanded="false" aria-controls="ui-basic"
+            <li v-if="item.children" class="nav-item nav-sub-item pointer">
+                <a  data-bs-toggle="collapse"
+                   v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'nav-link sub' : 'nav-link '"
+                   aria-expanded="false" aria-controls="ui-basic"
                    v-on:click="isActive[item.id] === true ? isActive[item.id] = false : isActive[item.id] = true">
                     <i v-bind:class="isActive[item.id] === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-right'"></i>
-                    <span class="menu-title">{{item.name}}</span>
+                    <span class="menu-title">{{ item.name }}</span>
                     <i :class="'mdi '+item.icon+' menu-icon'"></i>
                 </a>
-                <div class="collapse" v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'display-block' : 'display-none'">
+                <div v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'collapse display-block' : 'collapse display-none'">
                     <ul class="nav flex-column sub-menu">
-                        <router-link v-for="subItem in item.children"  class="pointer" :to="subItem.path" custom v-slot="{ navigate }">
+                        <router-link v-for="subItem in item.children" class="pointer" :to="subItem.path" custom
+                                     v-slot="{ navigate }">
                             <li v-bind:class="$route.name==subItem.name ? 'nav-item active' : 'nav-item '">
-                                <a  class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
                                     <i :class="'mdi '+subItem.icon+' float-right'"></i>
                                     <span class="sub-menu-title">{{ subItem.name }}</span>
                                 </a>
@@ -21,7 +24,7 @@
                     </ul>
                 </div>
             </li>
-            <router-link v-else  class="pointer"  :to="item.path" custom v-slot="{ navigate }">
+            <router-link v-else class="pointer" :to="item.path" custom v-slot="{ navigate }">
                 <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item '">
                     <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
                         <span class="menu-title">{{ item.name }}</span>

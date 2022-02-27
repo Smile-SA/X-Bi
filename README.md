@@ -64,11 +64,9 @@ yarn build
 The project is launched by default on http://localhost:8080
 ```
 ### Home page
-![home](public/images/documentation/home.png "home")
-
+![home](public/images/documentation/home.png)
 ### Monitoring Page
-![monitoring](public/images/documentation/monitoring.gif "monitoring")
-
+![monitoring](public/images/documentation/monitoring.gif)
 ### 5 - configuration of dashboard
 You can configure your dashboard with the charts and cards you want. There are two types of configuration :
 - On the configuration page

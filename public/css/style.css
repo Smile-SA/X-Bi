@@ -20078,7 +20078,7 @@ dl li {
     -ms-flex-align: center;
     align-items: center;
     white-space: nowrap;
-    padding: .6rem 0 .6rem 0;
+    padding: .4rem 0 .4rem 0;
     color: var(--bs-body-color);
     -webkit-transition-duration: 0.45s;
     transition-duration: 0.45s;
@@ -20266,6 +20266,7 @@ dl li {
     margin-bottom: 0;
     margin-top: 0;
     list-style: none;
+    padding: 0 0rem 0 1rem;
 }
 
 .sidebar .nav.sub-menu .nav-item {
@@ -20274,13 +20275,18 @@ dl li {
 
 .sidebar .nav.sub-menu .nav-item .nav-link {
     color: var(--bs-body-color);
-    padding: 0.5rem 2rem 0.5rem 2rem;
+    padding: 0.5rem 2rem 0.5rem 1rem;
     position: relative;
     font-size: 0.75rem;
-    line-height: 1;
+    line-height: 0.5;
     height: auto;
     border-top: 0;
 }
+
+.sidebar .nav .nav-item .nav-link.sub {
+    padding: 0.4rem 0 0.2rem 0;
+}
+
 
 .sidebar .nav.sub-menu .nav-item .nav-link i {
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;

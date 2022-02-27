@@ -64,7 +64,8 @@
           ],
           "styles": {
             "height": "400",
-            "font_size": "20px"
+            "font_size": "20px",
+            "display_by_row": "1"
           }
         }
       }
@@ -413,18 +414,15 @@
     },
     "card": {
       "schema": {
-        "type": "objet",
+        "type": "object",
         "properties": {
           "title": {
-            "description": "Card name",
             "type": "string"
           },
           "icon": {
-            "description": "Card icon class",
             "type": "string"
           },
           "color": {
-            "description": "Card color",
             "type": "string",
             "enum": [
               "primary",
@@ -435,24 +433,24 @@
             ]
           },
           "type": {
-            "description": "Card type",
             "type": "string",
             "enum": [
               "count",
               "sum",
-              "avg"
+              "avg",
+              "date"
             ]
           },
-          "key": {
-            "description": "Card value calculation key",
-            "type": "string"
-          },
           "query": {
-            "description": "Card query link",
             "type": "string"
           },
           "redirect": {
-            "description": "Card redirect link",
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "key": {
             "type": "string"
           }
         },
@@ -462,7 +460,8 @@
           "type",
           "icon",
           "query"
-        ]
+        ],
+        "additionalProperties": false
       },
       "form": {
         "fields": [

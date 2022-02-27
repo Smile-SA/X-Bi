@@ -67,11 +67,14 @@ export function getForm(structureType) {
     }
 }
 
-export function addCardModels(model, activeView) {
+export function addCardModel(model, activeView) {
     let r = controlModel(controls.card.schema, model);
     if (r.isValid) {
         views[activeView].structure.card.models.push(model);
         window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    }else{
+        console.log('ici')
+        console.log(r)
     }
 }
 

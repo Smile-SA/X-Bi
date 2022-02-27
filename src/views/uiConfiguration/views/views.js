@@ -172,9 +172,10 @@ export default {
                             "icon": document.getElementById("icon").value,
                             "color": document.getElementById("color").value,
                             "type": document.getElementById("type").value,
-                            "key": document.getElementById("key").value,
                             "query": document.getElementById("query").value,
                             "redirect": document.getElementById("redirect").value,
+                            "value": "",
+                            "key": document.getElementById("key").value,
                         }
                     ],
                     showCancelButton: true,
@@ -188,7 +189,7 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.addCardModels(result.value[0], this.activeView)
+                        configurationsController.addCardModel(result.value[0], this.activeView)
                     }
                 });
             }
