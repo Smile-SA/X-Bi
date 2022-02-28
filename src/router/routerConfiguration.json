@@ -103,7 +103,7 @@
       "children": {
         "router": {
           "id": "router",
-          "name": "router",
+          "name": "Router",
           "path": "/router",
           "icon": "mdi-chevron-right",
           "component": "views/uiConfiguration/example/index.vue",
@@ -113,9 +113,9 @@
           "requiresAuth": true
         },
         "views": {
-          "id": "vews",
-          "name": "vews",
-          "path": "/vews",
+          "id": "views",
+          "name": "Views",
+          "path": "/views",
           "icon": "mdi-chevron-right",
           "component": "views/uiConfiguration/views/index.vue",
           "description": "Views configuration",

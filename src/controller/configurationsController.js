@@ -72,9 +72,6 @@ export function addCardModel(model, activeView) {
     if (r.isValid) {
         views[activeView].structure.card.models.push(model);
         window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
-    }else{
-        console.log('ici')
-        console.log(r)
     }
 }
 
@@ -155,7 +152,6 @@ export function controlModel(schema, model) {
             isValid: true,
         }
     } else {
-        console.log(ajv.errors)
         r = {
             isValid: false, data: ajv.errors
         }

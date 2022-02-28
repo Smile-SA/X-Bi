@@ -3,7 +3,7 @@
     "Overall": {
       "title": "Overall",
       "type": "admin",
-      "structure":{
+      "structure": {
         "card": {
           "models": [
             {
@@ -73,7 +73,7 @@
     "Namespaces": {
       "title": "Namespaces",
       "type": "admin",
-      "structure":{
+      "structure": {
         "card": {
           "models": [
             {
@@ -132,7 +132,7 @@
     "Nodes": {
       "title": "Nodes",
       "type": "admin",
-      "structure":{
+      "structure": {
         "card": {
           "models": [
             {
@@ -191,7 +191,7 @@
     "Pods": {
       "title": "Pods",
       "type": "admin",
-      "structure":{
+      "structure": {
         "card": {
           "models": [
             {
@@ -250,7 +250,7 @@
     "Monitoring": {
       "title": "Monitoring",
       "type": "admin",
-      "structure":{
+      "structure": {
         "card": {
           "models": [],
           "styles": {}
@@ -299,25 +299,30 @@
             ]
           },
           "title": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "query": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "sort_id": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "time_id": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
+
           },
           "value_id": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "axis_type": {
             "type": "string",
             "enum": [
-              "datetime",
-              ""
+              "datetime"
             ]
           },
           "is_monitoring": {
@@ -417,10 +422,12 @@
         "type": "object",
         "properties": {
           "title": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "icon": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "color": {
             "type": "string",
@@ -442,7 +449,8 @@
             ]
           },
           "query": {
-            "type": "string"
+            "type": "string",
+            "minLength": 1
           },
           "redirect": {
             "type": "string"
@@ -470,7 +478,7 @@
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Card name"
+            "placeholder": "Card title"
           },
           {
             "model": "icon",

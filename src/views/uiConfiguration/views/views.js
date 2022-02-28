@@ -1,4 +1,4 @@
-import * as configurationsController from "@/controller/configurationsController";
+import * as configurationsController from "../../../controller/configurationsController";
 import action from "@/components/tableAction/sessionAction";
 import displayIcon from '@/components/tableAction/displayIcon';
 
@@ -158,16 +158,16 @@ export default {
             this.showCa = true
             this.showCh = false
             if (this.showCa == true) {
-                let div = document.createElement('div');
-                div.id = "cardGen"
-                let el = document.getElementById('cardForm');
+                let div = await document.createElement('div');
+                div.id = "card-Form"
+                let el = await document.getElementById('cardForm');
                 div.innerHTML = el.innerHTML;
                 this.showCa = false
                 await this.$swal({
                     text: "edit child",
                     html: div,
-                    preConfirm: () => [
-                        {
+                    preConfirm: () => {
+                        let data = {
                             "title": document.getElementById("title").value,
                             "icon": document.getElementById("icon").value,
                             "color": document.getElementById("color").value,
@@ -176,8 +176,22 @@ export default {
                             "redirect": document.getElementById("redirect").value,
                             "value": "",
                             "key": document.getElementById("key").value,
+                        }, controls = configurationsController.getControls()
+                        let r = configurationsController.controlModel(controls.card.schema, data);
+                        if (r.isValid === false) {
+                            $('#card-Form .wrapper.has-error').removeClass('has-error')
+                            let inputId = r.data[0].instancePath.replace("/", "")
+                            inputId = inputId.replace("_", "-")
+                            $('#card-Form .field-wrap #' + inputId).parent('div').addClass('has-error')
+                            $('#card-Form .field-wrap #' + inputId).focus();
+                            this.$swal.showValidationMessage(
+                                `${r.data[0].instancePath.replace("/", "")}: ${r.data[0].message}`
+                            )
+                        } else {
+                            $('card-Form .wrapper.has-error').removeClass('has-error')
+                            return data
                         }
-                    ],
+                    },
                     showCancelButton: true,
                     cancelButtonClass: 'btn btn-light',
                     cancelButtonText: "cancel",
@@ -189,7 +203,7 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.addCardModel(result.value[0], this.activeView)
+                        configurationsController.addCardModel(result.value, this.activeView)
                     }
                 });
             }
@@ -198,16 +212,16 @@ export default {
         async addChart() {
             this.showCh = true
             this.showCa = false
-            let div = document.createElement('div');
-            let el = document.getElementById('chartForm');
-            div.id = "chartGen"
+            let div = await document.createElement('div');
+            div.id = "chart-form"
+            let el = await document.getElementById('chartForm');
             div.innerHTML = el.innerHTML;
             this.showCh = false
             await this.$swal({
                 text: "edit child",
                 html: div,
-                preConfirm: () => [
-                    {
+                preConfirm: () => {
+                    let data = {
                         "type": document.getElementById("type").value,
                         "title": document.getElementById("title").value,
                         "query": document.getElementById("query").value,
@@ -216,8 +230,23 @@ export default {
                         "value_id": document.getElementById("value-id").value,
                         "axis_type": document.getElementById("axis-type").value,
                         "is_monitoring": document.getElementById("is-monitoring").checked
+                    }, controls = configurationsController.getControls()
+                    let r = configurationsController.controlModel(controls.chart.schema, data);
+                    if (r.isValid === false) {
+                        console.log(r)
+                        $('#chart-form .wrapper.has-error').removeClass('has-error')
+                        let inputId = r.data[0].instancePath.replace("/", "")
+                         inputId = inputId.replace("_", "-")
+                        $('#chart-form .field-wrap #' + inputId).parent('div').addClass('has-error')
+                        $('#chart-form .field-wrap #' + inputId).focus();
+                        this.$swal.showValidationMessage(
+                            `${r.data[0].instancePath.replace("/", "")}: ${r.data[0].message}`
+                        )
+                    } else {
+                        $('#chart-form .wrapper.has-error').removeClass('has-error')
+                        return data
                     }
-                ],
+                },
                 showCancelButton: true,
                 cancelButtonClass: 'btn btn-light',
                 cancelButtonText: "cancel",
@@ -228,7 +257,7 @@ export default {
                 showCloseButton: true,
             }).then((result) => {
                 if (result.isConfirmed === true) {
-                    configurationsController.addChartModel(result.value[0], this.activeView)
+                    configurationsController.addChartModel(result.value, this.activeView)
                 }
             });
         }
