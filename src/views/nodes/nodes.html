@@ -1,18 +1,27 @@
 <div class="row">
-
-    <select-option class="col-lg-4 col-md-4 m-b" :type="'select'" :label="'Select a node'" :placeholder="'Select a node'" :selectFunction="this.setNode" :selectData="nodes" ></select-option>
-    <select-option class="col-lg-4 col-md-4 m-b" :type="'date'" v-if="showDatePicker()" :label="'Select a date'"
-                   :selectFunction="setDate" :selectData="date"></select-option>
-    <select-option class="col-lg-4 col-md-4 m-b" :type="'group'" v-if="showGroup()" :label="'Group data by'"
-                   :placeholder="'Select a group'" :defaultData="group" :selectFunction="setGroup"
-                   :selectData="groupOptions"></select-option>
+    <div class="col-lg-2 col-md-2 ">
+        <div class="apex-box">
+            <h3 class="page-title">
+                <span v-on:click="go('/')" class="page-title-icon bg-gradient-primary text-white me-2"><i
+                        class="mdi mdi-home"></i></span> {{ $route.meta.description }}
+            </h3>
+        </div>
+    </div>
+    <div class="col-lg-10 col-md-10 ">
+        <div class="row ">
+            <select-option class="col-lg-4 col-md-4 m-b" :type="'select'" :label="'Select a node'" :placeholder="'Select a node'" :selectFunction="this.setNode" :selectData="nodes" ></select-option>
+            <select-option class="col-lg-4 col-md-4 m-b" :type="'date'" v-if="showDatePicker()" :label="'Select a date'"
+                           :selectFunction="setDate" :selectData="date"></select-option>
+            <select-option class="col-lg-4 col-md-4 m-b" :type="'group'" v-if="showGroup()" :label="'Group data by'"
+                           :placeholder="'Select a group'" :defaultData="group" :selectFunction="setGroup"
+                           :selectData="groupOptions"></select-option>
+        </div>
+    </div>
     <div class="col-lg-12 col-md-12 col-xs-12 m-b" v-if="Object.keys(this.cardModels).length>0">
-        <div class="apex-box pb-0">
             <div class="row">
                 <div class="col-lg-4 col-md-4 col-xl-4 m-b" v-for="item in this.cardModels">
                     <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"></Card>
                 </div>
-            </div>
         </div>
     </div>
     <div class="col-lg-12 col-md-12 col-xs-12" v-if="Object.keys(this.chartModels).length>0">

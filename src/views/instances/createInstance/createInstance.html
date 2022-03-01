@@ -14,37 +14,37 @@
                         <div class="row">
                             <div class="col-md-6">
                                 <div v-bind:class="[errors.name ? 'row form-group has-error' : 'row form-group ']">
-                                    <label class="col-md-2 col-lg-2 control-label pt-3">Name <small class="text-danger">*</small></label>
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 text-capitalize">Name <small class="text-danger">*</small></label>
                                     <div class="col-md-10 col-lg-10">
                                         <input type="text" id="name" name="name" v-on:input="checkName" v-model="name"
                                                class="form-control" placeholder="Enter the instance name">
-                                        <span class="help-block m-b-none text-danger">{{ errors.name }}</span>
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ errors.name }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div v-bind:class="[errors.template ? 'row form-group has-error' : 'row form-group ']">
-                                    <label class="col-md-2 col-lg-2 control-label pt-3 pe-0">Template <small class="text-danger">*</small></label>
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 pe-0 text-capitalize">Template <small class="text-danger">*</small></label>
                                     <div class="col-md-10 col-lg-10">
                                         <select class="form-control" v-model="template" name="template" id="template" v-on:change="getDynamicValues">
-                                            <option selected disabled> Select a template</option>
-                                            <option v-for="option in templatesList" v-bind:value="(option.template_name).replace('rating-rule-template-','')" v-bind:key="option.template_name">{{
+                                            <option class="text-capitalize" selected disabled> Select a template</option>
+                                            <option class="text-capitalize" v-for="option in templatesList" v-bind:value="(option.template_name).replace('rating-rule-template-','')" v-bind:key="option.template_name">{{
                                                     (option.template_name).replace('rating-rule-template-','')
                                                 }}
                                             </option>
                                         </select>
-                                        <span class="help-block m-b-none text-danger">{{ errors.template }}</span>
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ errors.template }}</span>
                                     </div>
                                 </div>
                             </div>
                             <div class="col-md-6" v-if="dynamicValues!==null" v-for="option in dynamicValues" >
                                 <div v-bind:class="[option.error ? 'row form-group has-error' : 'row form-group ']">
-                                    <label class="col-md-2 col-lg-2 control-label pt-3">{{ option.name }} <small
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 text-capitalize">{{ option.name }} <small
                                             class="text-danger">*</small></label>
                                     <div class="col-md-10 col-lg-10">
                                         <input type="text" :id="option.name" v-on:input="checkValues" :name="option.name" v-model="option.value"
                                                class="form-control" :placeholder="'Enter the '+option.name+' value'">
-                                        <span class="help-block m-b-none text-danger">{{ option.error }}</span>
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ option.error }}</span>
                                     </div>
                                 </div>
                             </div>

@@ -485,13 +485,13 @@
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Card icon"
+            "placeholder": "Card icon class"
           },
           {
             "model": "color",
             "type": "select",
             "required": true,
-            "placeholder": "Card color",
+            "placeholder": "Card color class",
             "values": [
               "primary",
               "success",

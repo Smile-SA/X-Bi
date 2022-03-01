@@ -58,7 +58,7 @@
       "name": "Monitoring",
       "icon": "mdi-chart-line",
       "component": "views/monitoring/index.vue",
-      "description": "Graph view of prometheus query",
+      "description": "Live data Monitoring",
       "display": true,
       "displayInMenu": true,
       "requiresAuth": true

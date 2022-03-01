@@ -1,38 +1,39 @@
-<div>
-    <div class="row">
-        <div class="col-md-4 m-b">
-            <div class="apex-box">
-                <div class="row">
-                    <div class="col-md-3 col-lg-3">
-                        <label class="p-2">Select a view</label>
-                    </div>
-                    <div class="col-md-9 col-lg-9">
-                        <select class=" form-control" v-on:change="this.setView">
-                            <option selected disabled> -- select a view --</option>
-                            <option v-for="option in views" >{{
-                                    option.title
-                                }}
-                            </option>
-                        </select>
-                    </div>
-                </div>
-            </div>
+<div class="row">
+    <div class="col-lg-2 m-b">
+        <div class="apex-box ">
+            <h3 class="page-title">
+                <span v-on:click="go('/')" class="page-title-icon bg-gradient-primary text-white me-2"><i
+                        class="mdi mdi-home"></i></span> {{ $route.meta.description }}
+            </h3>
         </div>
     </div>
 
+    <div class="col-lg-10 col-md-10">
+        <div class="row ">
+            <select-option class="col-lg-4 col-md-4 m-b" :type="'select'" :label="'Select a view'" :selectId="'title'"
+                           :placeholder="'Select a view'"
+                           :selectFunction="this.setView" :selectData="views"></select-option>
+        </div>
+    </div>
     <div class="col-12 grid-margin" v-if="this.activeView!==null">
         <div class="card">
             <div class="page-header card-header mb-0">
                 <h3 class="page-title">Card models tools</h3>
                 <div class="pull-right ">
-                    <a class="btn btn-sm btn-outline-primary" v-on:click="addCard" ><i class="mdi mdi-plus-box"></i> add card</a>
+                    <div class="row">
+                    </div>
+                    <a class="btn btn-sm btn-outline-primary" v-on:click="addCard"><i class="mdi mdi-plus-box"></i> add
+                        card</a>
                 </div>
             </div>
-            <div class="card-body"  v-if="Object.keys(this.card.models).length>0">
+            <div class="card-body" v-if="Object.keys(this.card.models).length>0">
                 <div class="table-responsive">
-                    <data-table v-bind="bindCards" />
+                    <data-table v-bind="bindCards"/>
                 </div>
             </div>
+        </div>
+        <div id="cardForm" style='display: none' v-if="this.showCa===true">
+            <vue-form-generator :schema="this.controls.card.form" :options="formOptions"></vue-form-generator>
         </div>
     </div>
 
@@ -51,11 +52,8 @@
                 </div>
             </div>
         </div>
-        <div id="cardForm" style='display: none' v-if="this.showCa===true">
-            <vue-form-generator :schema="this.controls.card.form" :options="formOptions"></vue-form-generator>
-        </div>
-        <div id="chartForm" style='display: none' v-if="this.showCh===true">
-            <vue-form-generator :schema="this.controls.chart.form" :options="formOptions"></vue-form-generator>
-        </div>
+    </div>
+    <div id="chartForm" style='display: none' v-if="this.showCh===true">
+        <vue-form-generator :schema="this.controls.chart.form" :options="formOptions"></vue-form-generator>
     </div>
 </div>

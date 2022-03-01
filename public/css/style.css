@@ -2235,8 +2235,8 @@
     --bs-gray-200: #e9ecef;
     --bs-gray-300: #dee2e6;
     --bs-gray-400: #ced4da;
-    --bs-gray-500: rgba(210, 216, 225, 0.25);
-    --bs-gray-550: rgba(210, 216, 225, 0.30);
+    --bs-gray-500: #f9f9f9;
+    --bs-gray-550: #f9f9f9;
     --bs-gray-600: #6c757d;
     --bs-gray-700: #495057;
     --bs-gray-800: #676a6c;
@@ -2898,7 +2898,7 @@ progress {
 }
 
 .row {
-    --bs-gutter-x: 1rem;
+    --bs-gutter-x: 0.7rem;
     --bs-gutter-y: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -15928,8 +15928,8 @@ code {
 
 /* Footer */
 .footer {
-    background: #f5f6f8;
-    border-top: 0.5px solid #e7dee9;
+    background: var(--bs-gray-550);
+    border-top: 0.5px solid var(--bs-gray-550);
     padding: 1rem 1rem;
     transition: all 0.25s ease;
     -moz-transition: all 0.25s ease;
@@ -20278,7 +20278,7 @@ dl li {
     padding: 0.5rem 2rem 0.5rem 1rem;
     position: relative;
     font-size: 0.75rem;
-    line-height: 0.5;
+    line-height: 0.3;
     height: auto;
     border-top: 0;
 }
@@ -20589,7 +20589,7 @@ dl li {
 
 .content-wrapper {
     background: var(--bs-gray-500);
-    padding: 1rem 1rem;
+    padding: 0.7rem 0.7rem;
     width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -20597,15 +20597,13 @@ dl li {
 }
 
 .apex-box {
-    -webkit-box-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
-    box-shadow: 0 0 13px 0 rgb(82 63 105 / 5%);
     background-color: #fff;
-    padding: 1rem;
-    border-radius: 0.15rem;
+    padding: 0.7rem;
+    border-radius: 0.25rem;
+    border: 1px solid var(--bs-gray-550)
 }
 
 /*# sourceMappingURL=style.css.map */
-
 
 /* MARGINS & PADDINGS */
 .p-xxs {
@@ -20861,7 +20859,7 @@ dl li {
 }
 
 .m-b {
-    margin-bottom: 1rem !important;
+    margin-bottom: 0.7rem !important;
 }
 
 .m-b-md {

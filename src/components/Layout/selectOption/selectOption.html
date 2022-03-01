@@ -1,18 +1,19 @@
 <div class="col-md-12">
     <div class="apex-box">
         <div class="row">
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-4 col-lg-4">
                 <label class="p-2">{{ label }}</label>
             </div>
-            <picker v-if="type==='date'" class="col-md-9 col-lg-9" v-model="selectData" i18n="EN" @selected="selectFunction"></picker>
-            <div class="col-md-9 col-lg-9" v-if="type==='select' || type==='group'">
+            <picker v-if="type==='date'" class="col-md-8 col-lg-8" v-model="selectData" i18n="EN"
+                    @selected="selectFunction"></picker>
+            <div class="col-md-8 col-lg-8" v-if="type==='select' || type==='group'">
                 <select class=" form-control" v-on:change="selectFunction">
                     <option selected disabled> -- {{ placeholder }} --</option>
                     <option v-for="option in selectData"
                             :selected="option===defaultData"
-                            v-bind:value="option.replace(replace,by)"
-                            v-bind:key="option.replace(replace,by)">{{
-                            option.replace(replace, by)
+                            v-bind:value="selectId!=null ? option[selectId].replace(replace, by) : option.replace(replace, by)"
+                            v-bind:key="selectId!=null ? option[selectId].replace(replace, by) : option.replace(replace, by)">{{
+                            selectId != null ? option[selectId].replace(replace, by) : option.replace(replace, by)
                         }}
                     </option>
                 </select>
