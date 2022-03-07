@@ -16,93 +16,15 @@ export default {
             cardColors: ["primary", "success", "warning", "danger", "dark"],
             card: [],
             chart: [],
+            structure: {},
+            tableData: {},
             controls: {},
-            showCh: false,
-            showCa: false,
+            showForm: {
+                card: false,
+                chart: false,
+            },
             formOptions: {
                 validateAfterChanged: true
-            }
-        }
-    },
-    computed: {
-        bindCards() {
-            return {
-                data: this.card.models,
-                showDownloadButton: false,
-                columns: [
-                    {
-                        key: "title",
-                        title: "Title"
-                    },
-                    {
-                        key: "icon",
-                        component: displayIcon
-                    },
-                    {
-                        key: "type",
-                        title: "Type"
-                    },
-                    {
-                        key: "query",
-                        title: "Query link"
-                    },
-                    {
-                        key: "key",
-                        title: "query key"
-                    },
-                    {
-                        key: "redirect",
-                        title: "Redirect after click"
-                    },
-                    {
-                        key: "Actions",
-                        component: action
-                    }
-                ]
-            }
-        },
-        bindCharts() {
-            return {
-                data: this.chart.models,
-                showDownloadButton: false,
-                columns: [
-                    {
-                        key: "title",
-                        title: "Chart title"
-                    },
-                    {
-                        key: "type",
-                        title: "Chart type"
-                    },
-                    {
-                        key: "query",
-                        title: "Chart query link"
-                    },
-                    {
-                        key: "sort_id",
-                        title: "Chart sort id"
-                    },
-                    {
-                        key: "time_id",
-                        title: "Chart time id"
-                    },
-                    {
-                        key: "value_id",
-                        title: "Chart value id"
-                    },
-                    {
-                        key: "axis_type",
-                        title: "Chart type"
-                    },
-                    {
-                        key: "is_monitoring",
-                        title: "Chart monitoring"
-                    },
-                    {
-                        key: "Actions",
-                        component: action
-                    }
-                ]
             }
         }
     },
@@ -111,84 +33,116 @@ export default {
         this.getControls();
     },
     methods: {
-        async getCard(activeView) {
-            this.card = []
-            let r = configurationsController.getCard(activeView)
-            if (r.data.errors !== true) {
-                if (Object.keys(r.data).length > 0) {
-                    this.card = r.data.results;
-                    Object.keys(this.card.models).map((item) => {
-                        this.card.models[item].id = item
-                        this.card.models[item].viewName = activeView
-                        this.card.models[item].viewStructure = "card"
+        async bindModelsData() {
+            this.tableData = {};
+            if (Object.keys(this.structure).length > 0) {
+                await Object.keys(this.structure).map((structureType) => {
+                    this.tableData[structureType] = {
+                        data: this.structure[structureType].models,
+                        showDownloadButton: false,
+                        columns: [],
+                    }
+                    Object.keys( this.controls[structureType].schema.properties).map((properties) => {
+                        if (this.tableData[structureType] != undefined) {
+                            if (properties === 'icon') {
+                                this.tableData[structureType].columns.push({
+                                    key: properties,
+                                    component: displayIcon
+                                })
+                            } else {
+                                if (properties === 'value') {
+                                    // je ne fais rien
+                                } else {
+                                    this.tableData[structureType].columns.push({
+                                        key: properties,
+                                    })
+                                }
+                            }
+                        }
+                    })
+                    this.tableData[structureType].columns.push({
+                        key: "Actions",
+                        component: action
+                    })
+                });
+            }
+        },
+        async getStructure(activeView) {
+            this.structure = {}
+            let s = configurationsController.getStructure(activeView)
+            if (s.data.errors !== true) {
+                if (Object.keys(s.data).length > 0) {
+                    await Object.keys(s.data.results).map((structureType) => {
+                        Object.keys(s.data.results[structureType]).map((modelType) => {
+                            if (modelType === "models") {
+                                Object.keys(s.data.results[structureType][modelType]).map((item) => {
+                                    s.data.results[structureType][modelType][item].id = item
+                                    s.data.results[structureType][modelType][item].activeView = activeView
+                                    s.data.results[structureType][modelType][item].structureType = structureType
+                                });
+                            }
+                        });
                     });
+                    this.structure = s.data.results
                 }
             }
-
+            this.bindModelsData();
         },
-        async getChart(activeView) {
-            this.chart = []
-            let r = configurationsController.getChart(activeView)
-            if (r.data.errors !== true) {
-                if (r.data.total > 0) {
-                    this.chart = r.data.results;
-                    Object.keys(this.chart.models).map((item) => {
-                        this.chart.models[item].id = item
-                        this.chart.models[item].viewName = activeView
-                        this.chart.models[item].viewStructure = "chart"
-                    });
-                }
-            }
+        getControls() {
+            this.controls = configurationsController.getControls()
         },
-
         getViews() {
             this.views = configurationsController.getViews();
         },
         setView(view) {
             this.activeView = view.target.value;
-            this.getCard(this.activeView)
-            this.getChart(this.activeView)
+            this.getStructure(this.activeView)
+
         },
 
-        getControls() {
-            this.controls = configurationsController.getControls()
-        },
-
-        async addCard() {
-            this.showCa = true
-            this.showCh = false
-            if (this.showCa == true) {
+        async addModel(structureType) {
+            this.showForm = {
+                card: false,
+                chart: false,
+            }
+            this.showForm[structureType] = true
+            if (this.showForm[structureType] === true) {
                 let div = await document.createElement('div');
-                div.id = "card-Form"
-                let el = await document.getElementById('cardForm');
+                div.id = 'add-'+structureType + '-form'
+                let el = await document.getElementById('add'+structureType + 'form');
                 div.innerHTML = el.innerHTML;
-                this.showCa = false
+                this.showForm = {
+                    card: false,
+                    chart: false,
+                }
                 await this.$swal({
-                    text: "edit child",
+                    title: "Add " +structureType+ " form" ,
                     html: div,
                     preConfirm: () => {
-                        let data = {
-                            "title": document.getElementById("title").value,
-                            "icon": document.getElementById("icon").value,
-                            "color": document.getElementById("color").value,
-                            "type": document.getElementById("type").value,
-                            "query": document.getElementById("query").value,
-                            "redirect": document.getElementById("redirect").value,
-                            "value": "",
-                            "key": document.getElementById("key").value,
-                        }, controls = configurationsController.getControls()
-                        let r = configurationsController.controlModel(controls.card.schema, data);
+                        let data = {}, controls = configurationsController.getControls();
+                        Object.keys(controls[structureType].schema.properties).map((key) => {
+                            if (key === 'value') {
+                                data[key] = ''
+                            } else {
+                                if(controls[structureType].schema.properties[key].type=== 'boolean'){
+                                    data[key] = document.getElementById(key.replace("_", "-")).checked
+                                }else{
+                                    data[key] = document.getElementById(key.replace("_", "-")).value
+                                }
+                            }
+                        })
+                        let  r = configurationsController.controlModel(controls[structureType].schema, data);
                         if (r.isValid === false) {
-                            $('#card-Form .wrapper.has-error').removeClass('has-error')
+                            $('#add-' + structureType + '-form .wrapper.has-error').removeClass('has-error')
                             let inputId = r.data[0].instancePath.replace("/", "")
                             inputId = inputId.replace("_", "-")
-                            $('#card-Form .field-wrap #' + inputId).parent('div').addClass('has-error')
-                            $('#card-Form .field-wrap #' + inputId).focus();
+                            $('#add-' + structureType+'-form .field-wrap #'+ inputId).parent('div').addClass('has-error')
+                            $('#add-' + structureType+'-form .field-wrap #'+ inputId).focus();
                             this.$swal.showValidationMessage(
                                 `${r.data[0].instancePath.replace("/", "")}: ${r.data[0].message}`
                             )
                         } else {
-                            $('card-Form .wrapper.has-error').removeClass('has-error')
+                            $('#add-' + structureType + '-form .wrapper.has-error').removeClass('has-error')
                             return data
                         }
                     },
@@ -203,65 +157,11 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.addCardModel(result.value, this.activeView)
+                        configurationsController.addModel(result.value, structureType, this.activeView)
                     }
                 });
-            }
 
+            }
         },
-        async addChart() {
-            this.showCh = true
-            this.showCa = false
-            let div = await document.createElement('div');
-            div.id = "chart-form"
-            let el = await document.getElementById('chartForm');
-            div.innerHTML = el.innerHTML;
-            this.showCh = false
-            await this.$swal({
-                text: "edit child",
-                html: div,
-                preConfirm: () => {
-                    let data = {
-                        "type": document.getElementById("type").value,
-                        "title": document.getElementById("title").value,
-                        "query": document.getElementById("query").value,
-                        "sort_id": document.getElementById("sort-id").value,
-                        "time_id": document.getElementById("time-id").value,
-                        "value_id": document.getElementById("value-id").value,
-                        "axis_type": document.getElementById("axis-type").value,
-                        "is_monitoring": document.getElementById("is-monitoring").checked
-                    }, controls = configurationsController.getControls()
-                    let r = configurationsController.controlModel(controls.chart.schema, data);
-                    if (r.isValid === false) {
-                        console.log(r)
-                        $('#chart-form .wrapper.has-error').removeClass('has-error')
-                        let inputId = r.data[0].instancePath.replace("/", "")
-                         inputId = inputId.replace("_", "-")
-                        $('#chart-form .field-wrap #' + inputId).parent('div').addClass('has-error')
-                        $('#chart-form .field-wrap #' + inputId).focus();
-                        this.$swal.showValidationMessage(
-                            `${r.data[0].instancePath.replace("/", "")}: ${r.data[0].message}`
-                        )
-                    } else {
-                        $('#chart-form .wrapper.has-error').removeClass('has-error')
-                        return data
-                    }
-                },
-                showCancelButton: true,
-                cancelButtonClass: 'btn btn-light',
-                cancelButtonText: "cancel",
-                showConfirmButton: true,
-                confirmButtonClass: 'btn btn-primary',
-                confirmButtonText: "Submit",
-                showLoaderOnConfirm: true,
-                showCloseButton: true,
-            }).then((result) => {
-                if (result.isConfirmed === true) {
-                    configurationsController.addChartModel(result.value, this.activeView)
-                }
-            });
-        }
     }
 }
-
-

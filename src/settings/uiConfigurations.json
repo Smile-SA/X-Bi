@@ -277,6 +277,125 @@
     }
   },
   "controls": {
+    "card": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "primary",
+              "success",
+              "warning",
+              "danger",
+              "dark"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "count",
+              "sum",
+              "avg",
+              "date"
+            ]
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "redirect": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          },
+          "key": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "color",
+          "type",
+          "icon",
+          "query"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card title"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "color",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card color class",
+            "values": [
+              "primary",
+              "success",
+              "warning",
+              "danger",
+              "dark"
+            ]
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "count",
+              "sum",
+              "avg",
+              "date"
+            ]
+          },
+          {
+            "model": "key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card value calculation key"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card query link"
+          },
+          {
+            "model": "redirect",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card redirect link"
+          }
+        ]
+      }
+    },
     "chart": {
       "schema": {
         "type": "object",
@@ -413,125 +532,6 @@
             "required": false,
             "placeholder": "Chart monitoring",
             "default": false
-          }
-        ]
-      }
-    },
-    "card": {
-      "schema": {
-        "type": "object",
-        "properties": {
-          "title": {
-            "type": "string",
-            "minLength": 1
-          },
-          "icon": {
-            "type": "string",
-            "minLength": 1
-          },
-          "color": {
-            "type": "string",
-            "enum": [
-              "primary",
-              "success",
-              "warning",
-              "danger",
-              "dark"
-            ]
-          },
-          "type": {
-            "type": "string",
-            "enum": [
-              "count",
-              "sum",
-              "avg",
-              "date"
-            ]
-          },
-          "query": {
-            "type": "string",
-            "minLength": 1
-          },
-          "redirect": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          },
-          "key": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "title",
-          "color",
-          "type",
-          "icon",
-          "query"
-        ],
-        "additionalProperties": false
-      },
-      "form": {
-        "fields": [
-          {
-            "model": "title",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Card title"
-          },
-          {
-            "model": "icon",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Card icon class"
-          },
-          {
-            "model": "color",
-            "type": "select",
-            "required": true,
-            "placeholder": "Card color class",
-            "values": [
-              "primary",
-              "success",
-              "warning",
-              "danger",
-              "dark"
-            ]
-          },
-          {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Card type",
-            "values": [
-              "count",
-              "sum",
-              "avg",
-              "date"
-            ]
-          },
-          {
-            "model": "key",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Card value calculation key"
-          },
-          {
-            "model": "query",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Card query link"
-          },
-          {
-            "model": "redirect",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Card redirect link"
           }
         ]
       }

@@ -2236,7 +2236,7 @@
     --bs-gray-300: #dee2e6;
     --bs-gray-400: #ced4da;
     --bs-gray-500: #f9f9f9;
-    --bs-gray-550: #f9f9f9;
+    --bs-gray-550: #ebebeb;
     --bs-gray-600: #6c757d;
     --bs-gray-700: #495057;
     --bs-gray-800: #676a6c;
@@ -18792,7 +18792,7 @@ code {
 
 /* Forms */
 .form-group {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .input-group-append,
@@ -20599,8 +20599,8 @@ dl li {
 .apex-box {
     background-color: #fff;
     padding: 0.7rem;
-    border-radius: 0.25rem;
-    border: 1px solid var(--bs-gray-550)
+    border-radius: 0.15rem;
+    box-shadow: 0 0 0.07rem 0 var(--bs-gray-550);
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -21303,7 +21303,8 @@ dl li {
     box-sizing: border-box;
     grid-template-columns:minmax(0, 100%);
     max-width: 100%;
-    padding: 0 0 1.25em;
+    min-width: 25rem;
+    padding: 0 0 1em;
     border: none;
     border-radius: 5px;
     background: #fff;
@@ -21321,7 +21322,6 @@ dl li {
 
 .swal2-title {
     position: relative;
-    max-width: 100%;
     margin: 0;
     padding: .5em 5em 0;
     color: inherit;
@@ -21339,8 +21339,7 @@ dl li {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    width: auto;
-    margin: 1.25em auto 0;
+    margin: auto;
     padding: 0
 }
 
@@ -21544,7 +21543,7 @@ dl li {
 .swal2-html-container {
     z-index: 1;
     justify-content: center;
-    margin: 1em 1.6em .3em;
+    margin: 1em 1em 0em;
     padding: 0;
     overflow: auto;
     color: inherit;

@@ -7,6 +7,21 @@ var controls = uiConfigurations.controls;
 const Ajv = require("ajv");
 const ajv = new Ajv();
 
+export function getStructure(activeView) {
+    let r = views[activeView].structure;
+    if (Object.keys(r).length > 0) {
+        return {
+            errors: false, data: {
+                total: Object.keys(r).length, results: r
+            }
+        }
+    } else {
+        return {
+            errors: true, data: null
+        }
+    }
+}
+
 export function getCard(activeView) {
     let r = views[activeView].structure.card;
     if (Object.keys(r).length > 0) {
@@ -67,14 +82,6 @@ export function getForm(structureType) {
     }
 }
 
-export function addCardModel(model, activeView) {
-    let r = controlModel(controls.card.schema, model);
-    if (r.isValid) {
-        views[activeView].structure.card.models.push(model);
-        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
-    }
-}
-
 export function getChart(activeView) {
     let r = views[activeView].structure.chart;
     if (Object.keys(r).length > 0) {
@@ -120,10 +127,25 @@ export function getChartStyles(activeView) {
     }
 }
 
-export function addChartModel(model, activeView) {
-    let r = controlModel(controls.chart.schema, model);
+export function addModel(model,structureType, activeView) {
+    let r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
-        views[activeView].structure.chart.models.push(model);
+        views[activeView].structure[structureType].models.push(model);
+        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    }
+}
+
+export function updateModel(model,id,structureType, activeView) {
+    let r = controlModel(controls[structureType].schema, model);
+    if (r.isValid) {
+        Object.keys(views[activeView].structure[structureType].models).map((modelID) => {
+             if(views[activeView].structure[structureType].models[modelID].id === id){
+                 Object.keys(model).map((key) => {
+                     views[activeView].structure[structureType].models[modelID][key].slice(0)
+                     views[activeView].structure[structureType].models[modelID][key] = model[key];
+                 })
+             }
+        })
         window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
     }
 }
@@ -157,31 +179,6 @@ export function controlModel(schema, model) {
         }
     }
     return r
-}
-
-export function clearViews() {
-    Object.keys(views).map((item) => {
-        Object.keys(views[item].structure.card.models).map((subItem) => {
-            if (views[item].structure.card.models[subItem].id !== undefined) {
-                delete views[item].structure.card.models[subItem].id
-            }
-            if (views[item].structure.card.models[subItem].viewName !== undefined) {
-                delete views[item].structure.card.models[subItem].viewName
-            }
-            if (views[item].structure.card.models[subItem].viewStructure !== undefined) {
-                delete views[item].structure.card.models[subItem].viewStructure
-            }
-            if (views[item].structure.card.models[subItem].that !== undefined) {
-                delete views[item].structure.card.models[subItem].that
-            }
-        });
-        Object.keys(views[item].structure.chart.models).map((subItem) => {
-            delete views[item].structure.chart.models[subItem].id
-            delete views[item].structure.chart.models[subItem].viewName
-            delete views[item].structure.chart.models[subItem].viewStructure
-            delete views[item].structure.chart.models[subItem].that
-        });
-    });
 }
 
 export async function deleteModel(activeView, structureType, id) {

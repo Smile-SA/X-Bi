@@ -7,7 +7,6 @@
             </h3>
         </div>
     </div>
-
     <div class="col-lg-10 col-md-10">
         <div class="row ">
             <select-option class="col-lg-4 col-md-4 m-b" :type="'select'" :label="'Select a view'" :selectId="'title'"
@@ -15,45 +14,24 @@
                            :selectFunction="this.setView" :selectData="views"></select-option>
         </div>
     </div>
-    <div class="col-12 grid-margin" v-if="this.activeView!==null">
+    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length>0" v-for="(item, id) in tableData" >
         <div class="card">
             <div class="page-header card-header mb-0">
-                <h3 class="page-title">Card models tools</h3>
-                <div class="pull-right ">
-                    <div class="row">
-                    </div>
-                    <a class="btn btn-sm btn-outline-primary" v-on:click="addCard"><i class="mdi mdi-plus-box"></i> add
-                        card</a>
+                <h3 class="page-title text-capitalize">{{ id}} models tools</h3>
+                <div class="pull-right">
+                    <a class="btn btn-sm btn-outline-primary text-capitalize"
+                       v-on:click="addModel(id)"><i class="mdi mdi-plus-box"></i> add
+                        {{ id }} </a>
                 </div>
             </div>
-            <div class="card-body" v-if="Object.keys(this.card.models).length>0">
-                <div class="table-responsive">
-                    <data-table v-bind="bindCards"/>
-                </div>
-            </div>
-        </div>
-        <div id="cardForm" style='display: none' v-if="this.showCa===true">
-            <vue-form-generator :schema="this.controls.card.form" :options="formOptions"></vue-form-generator>
-        </div>
-    </div>
-
-    <div class="col-12 grid-margin" v-if="this.activeView!==null">
-        <div class="card">
-            <div class="page-header card-header mb-0">
-                <h3 class="page-title">Chart models tools</h3>
-                <div class="pull-right ">
-                    <a class="btn btn-sm btn-outline-primary" v-on:click="addChart"><i class="mdi mdi-plus-box"></i> add
-                        charts</a>
-                </div>
-            </div>
-            <div class="card-body">
-                <div class="table-responsive">
-                    <data-table v-bind="bindCharts"/>
+            <div class="card-body" v-if="Object.keys(item).length>0">
+                <div class="table-responsive text-capitalize">
+                    <data-table v-bind="item"/>
                 </div>
             </div>
         </div>
-    </div>
-    <div id="chartForm" style='display: none' v-if="this.showCh===true">
-        <vue-form-generator :schema="this.controls.chart.form" :options="formOptions"></vue-form-generator>
+        <div v-bind:id="'add'+id+'form'" v-if="showForm[id]===true">
+            <vue-form-generator :schema="controls[id].form"  :options="formOptions"></vue-form-generator>
+        </div>
     </div>
 </div>

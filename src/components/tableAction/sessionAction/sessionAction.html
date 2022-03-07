@@ -1,4 +1,7 @@
 <div>
-<!--    <button v-on:click="updateModel" type="button" class="btn btn-sm btn-outline-purple m-r-xs"><i class="mdi mdi mdi-edi"></i> Update</button>-->
+    <button v-on:click="updateModel(data.structureType)" type="button" class="btn btn-sm btn-outline-purple m-r-xs"><i class="mdi mdi mdi-edi"></i> Update</button>
     <button v-on:click="deleteModel" type="button" class="btn btn-sm btn-outline-danger "><i class="mdi mdi-trash-can"></i> Delete</button>
+    <div v-bind:id="'update'+data.structureType+'form'"  v-if="showForm===true">
+        <vue-form-generator :schema="controls[data.structureType].form" :model="data" :options="formOptions"></vue-form-generator>
+    </div>
 </div>

@@ -7,7 +7,7 @@
   display: flex;
   justify-content: space-between;
   transition: all 0.2s;
-  border: 1px solid var(--bs-gray-550)
+  box-shadow: 0 0 0.07rem 0 var(--bs-gray-550);
 }
 
 .stat-card :hover {
