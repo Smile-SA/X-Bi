@@ -60,9 +60,9 @@ export default {
       this.queryBegin = '/nodes/' + this.active;
       this.setDate(this.date)
     },
-    setDate(date) {
+    async setDate(date) {
       if(date!==null){
-        this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
+        await this.setModelsData()
         this.date = date;
         utils.refreshDate(date, this);
       }
@@ -70,6 +70,9 @@ export default {
     async setGroup(event){
       this.group = event.target.value;
       this.setDate(this.date)
+    },
+    setModelsData(){
+      this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
     }
   },
   async beforeMount() {

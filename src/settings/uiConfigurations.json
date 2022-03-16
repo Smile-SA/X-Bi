@@ -7,6 +7,7 @@
         "card": {
           "models": [
             {
+              "display_space": "1/3",
               "title": "Namespaces",
               "icon": "mdi mdi-share-variant",
               "color": "success",
@@ -17,6 +18,7 @@
               "key": ""
             },
             {
+              "display_space": "1/3",
               "title": "Pods",
               "icon": "mdi mdi-sitemap",
               "color": "primary",
@@ -27,6 +29,7 @@
               "key": ""
             },
             {
+              "display_space": "1/3",
               "title": "Nodes",
               "icon": "mdi mdi-server",
               "color": "warning",
@@ -42,6 +45,7 @@
         "chart": {
           "models": [
             {
+              "display_space": "1/2",
               "type": "line",
               "title": "Nodes rate (in Euros)",
               "query": "/nodes/rating",
@@ -52,6 +56,7 @@
               "is_monitoring": "false"
             },
             {
+              "display_space": "1/2",
               "type": "area",
               "title": "Namespaces Energy Efficiency",
               "query": "/namespaces/rating",
@@ -63,9 +68,8 @@
             }
           ],
           "styles": {
-            "height": "400",
-            "font_size": "20px",
-            "display_by_row": "1"
+            "height": "500",
+            "font_size": "20px"
           }
         }
       }
@@ -77,6 +81,7 @@
         "card": {
           "models": [
             {
+              "display_space": "1/3",
               "title": "Rating",
               "icon": "mdi mdi-currency-eur",
               "color": "danger",
@@ -87,6 +92,7 @@
               "key": "frame_price"
             },
             {
+              "display_space": "1/3",
               "title": "Pods",
               "icon": "mdi mdi-sitemap",
               "color": "primary",
@@ -97,6 +103,7 @@
               "key": ""
             },
             {
+              "display_space": "1/3",
               "title": "Nodes",
               "icon": "mdi mdi-server",
               "color": "warning",
@@ -112,6 +119,7 @@
         "chart": {
           "models": [
             {
+              "display_space": "2/2",
               "type": "area",
               "title": "Metrics rate (in Euros)",
               "query": "/rating",
@@ -136,6 +144,7 @@
         "card": {
           "models": [
             {
+              "display_space": "1/3",
               "title": "Rating",
               "icon": "mdi mdi-currency-eur",
               "color": "danger",
@@ -146,6 +155,7 @@
               "key": "frame_price"
             },
             {
+              "display_space": "1/3",
               "title": "Pods",
               "icon": "mdi mdi-sitemap",
               "color": "primary",
@@ -156,6 +166,7 @@
               "key": ""
             },
             {
+              "display_space": "1/3",
               "title": "Namespaces",
               "icon": "mdi mdi-share-variant",
               "color": "success",
@@ -171,6 +182,7 @@
         "chart": {
           "models": [
             {
+              "display_space": "2/2",
               "type": "bar",
               "title": "Nodes metrics rate (in Euros)",
               "query": "/rating",
@@ -195,6 +207,7 @@
         "card": {
           "models": [
             {
+              "display_space": "1/3",
               "title": "Rating",
               "icon": "mdi mdi-currency-eur",
               "color": "danger",
@@ -205,6 +218,7 @@
               "key": "frame_price"
             },
             {
+              "display_space": "1/3",
               "title": "Nodes",
               "icon": "mdi mdi-server",
               "color": "warning",
@@ -215,6 +229,7 @@
               "key": ""
             },
             {
+              "display_space": "1/3",
               "title": "Namespaces",
               "icon": "mdi mdi-share-variant",
               "color": "success",
@@ -230,6 +245,7 @@
         "chart": {
           "models": [
             {
+              "display_space": "2/2",
               "type": "line",
               "title": "Pod metrics rate (in Euros)",
               "query": "/rating",
@@ -258,6 +274,7 @@
         "chart": {
           "models": [
             {
+              "display_space": "2/2",
               "type": "area",
               "title": "Nodes rate (in Euros)",
               "query": "/rating",
@@ -281,6 +298,14 @@
       "schema": {
         "type": "object",
         "properties": {
+          "display_space": {
+            "type": "string",
+            "enum": [
+              "1/3",
+              "2/3",
+              "3/3"
+            ]
+          },
           "title": {
             "type": "string",
             "minLength": 1
@@ -333,6 +358,17 @@
       },
       "form": {
         "fields": [
+          {
+            "model": "display_space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Display space per row",
+            "values": [
+              "1/3",
+              "2/3",
+              "3/3"
+            ]
+          },
           {
             "model": "title",
             "type": "input",
@@ -400,6 +436,13 @@
       "schema": {
         "type": "object",
         "properties": {
+          "display_space": {
+            "type": "string",
+            "enum": [
+              "1/2",
+              "2/2"
+            ]
+          },
           "type": {
             "type": "string",
             "enum": [
@@ -432,7 +475,6 @@
           "time_id": {
             "type": "string",
             "minLength": 1
-
           },
           "value_id": {
             "type": "string",
@@ -462,6 +504,16 @@
       },
       "form": {
         "fields": [
+          {
+            "model": "display_space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Display space per row",
+            "values": [
+              "1/2",
+              "2/2"
+            ]
+          },
           {
             "model": "type",
             "type": "select",

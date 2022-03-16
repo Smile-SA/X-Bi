@@ -74,21 +74,24 @@ export default {
             }
         },
         async setNamespaces(namespace) {
-            this.active = namespace.target.value
+            this.active = namespace.target.value;
             this.queryBegin = '/namespaces/' + this.active;
-
             this.setDate(this.date)
         },
         async setDate(date) {
             if (date) {
-                this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
-                this.date = date
+                await this.setModelsData();
+                this.date = date;
                 await utils.refreshDate(this.date, this);
             }
         },
         async setGroup(event){
             this.group = event.target.value;
             this.setDate(this.date)
+        },
+
+        setModelsData(){
+             this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
         }
 
     },

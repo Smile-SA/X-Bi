@@ -18,7 +18,8 @@ export function getChildrenRoutes() {
                         name: children[item].children[subItem].name,
                         meta: {
                             description: children[item].children[subItem].description,
-                            requiresAuth: children[item].children[subItem].requiresAuth
+                            requiresAuth: children[item].children[subItem].requiresAuth,
+                            icon: children[item].children[subItem].icon
                         },
                     })
                 }
@@ -30,7 +31,10 @@ export function getChildrenRoutes() {
                     alias: children[item].alias,
                     component: loadView(children[item].component),
                     name: children[item].name,
-                    meta: {description: children[item].description, requiresAuth: children[item].requiresAuth},
+                    meta: {description: children[item].description, requiresAuth: children[item].requiresAuth,
+                        icon: children[item].icon
+
+                    },
                 })
             }
         }

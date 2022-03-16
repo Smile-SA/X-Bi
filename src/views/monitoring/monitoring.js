@@ -27,9 +27,6 @@ export default {
     beforeMount() {
         this.getInstances();
     },
-    async mounted() {
-         //await this.refreshChart();
-    },
     methods: {
         async getInstances() {
             await instance.getInstances().then((data) => {

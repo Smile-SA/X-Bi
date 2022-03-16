@@ -14,7 +14,7 @@ const routes = [
         path: defaultRoutes.path,
         component: () => import('../components/Layout/container/index.vue'),
         name: defaultRoutes.name,
-        meta: {  description: defaultRoutes.description, requiresAuth: defaultRoutes.requiresAuth },
+        meta: {  description: defaultRoutes.description, requiresAuth: defaultRoutes.requiresAuth ,icon:defaultRoutes.icon},
         children: controller.getChildrenRoutes()
     },
     {

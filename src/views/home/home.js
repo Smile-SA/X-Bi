@@ -63,13 +63,16 @@ export default {
             return {start: n, end: a}
         },
         async setDate(date) {
-            this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
+            await this.setModelsData()
             this.date = date
             await utils.refreshDate(this.date, this);
         },
         async setGroup(event){
             this.group = event.target.value;
             this.setDate(this.date)
+        },
+        setModelsData(){
+            this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
         }
     },
     async beforeMount() {

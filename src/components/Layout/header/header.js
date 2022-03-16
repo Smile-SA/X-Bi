@@ -14,14 +14,29 @@ export default {
   created() {
 
   },
-  computed: {},
-  mounted() {
+  computed: {
 
+  },
+  mounted() {
   },
   methods: {
     logoutUser() {
       logOut();
     },
+    reduceMenu(){
+      if ($( "body" ).hasClass('sidebar-icon-only')) {
+        $( "body" ).removeClass( 'sidebar-icon-only');
+      } else {
+        $( "body" ).addClass( 'sidebar-icon-only');
+      }
+    },
+    showMenu(){
+      if ($( ".sidebar.sidebar-offcanvas" ).hasClass('active')) {
+        $( ".sidebar.sidebar-offcanvas" ).removeClass( 'active');
+      } else {
+        $( ".sidebar.sidebar-offcanvas" ).addClass( 'active');
+      }
+    }
   }
 }
 

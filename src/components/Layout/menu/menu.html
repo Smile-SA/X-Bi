@@ -1,37 +1,56 @@
-<nav class="sidebar sidebar-offcanvas" id="sidebar">
-    <ul class="nav">
-        <div v-for="item in menus">
-            <li v-if="item.children" class="nav-item nav-sub-item pointer">
-                <a  data-bs-toggle="collapse"
-                   v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'nav-link sub' : 'nav-link '"
-                   aria-expanded="false" aria-controls="ui-basic"
-                   v-on:click="isActive[item.id] === true ? isActive[item.id] = false : isActive[item.id] = true">
-                    <i v-bind:class="isActive[item.id] === true ? 'mdi mdi-chevron-down' : 'mdi mdi-chevron-right'"></i>
-                    <span class="menu-title">{{ item.name }}</span>
-                    <i :class="'mdi '+item.icon+' menu-icon'"></i>
+<div>
+    <nav class="sidebar sidebar-offcanvas " id="sidebar">
+        <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center bg-primary nav-height">
+            <a class="navbar-brand brand-logo" >
+                <img src="../../../../public/img/X-Bi_-_logo.png" class="img-responsive">
+            </a>
+            <a class="navbar-brand brand-logo-mini"><img src="../../../../public/img/X-Bi_-_logo.png" alt="logo" /></a>
+        </div>
+        <ul class="nav">
+            <li class="nav-item nav-profile">
+                <a href="#" class="nav-link">
+                    <div class="nav-profile-image">
+                        <img v-if='this.image !== ""' :src="image" alt="image">
+                        <span class="availability-status online"></span>
+                        <!--change to offline or busy as needed-->
+                    </div>
+                    <div class="nav-profile-text d-flex flex-column">
+                        <span class="font-weight-bold mb-2 text-capitalize">{{ tenant }}</span>
+                        <span class="text-secondary text-small">{{ email }}</span>
+                    </div>
                 </a>
-                <div v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'collapse display-block' : 'collapse display-none'">
-                    <ul class="nav flex-column sub-menu">
-                        <router-link v-for="subItem in item.children" class="pointer" :to="subItem.path" custom
-                                     v-slot="{ navigate }">
-                            <li v-bind:class="$route.name==subItem.name ? 'nav-item active' : 'nav-item '">
-                                <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                                    <i :class="'mdi '+subItem.icon+' float-right'"></i>
-                                    <span class="sub-menu-title">{{ subItem.name }}</span>
-                                </a>
-                            </li>
-                        </router-link>
-                    </ul>
-                </div>
             </li>
-            <router-link v-else class="pointer" :to="item.path" custom v-slot="{ navigate }">
-                <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item '">
-                    <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+            <div v-for="item in menus">
+                <li v-if="item.children" class="nav-item nav-sub-item pointer">
+                    <a data-bs-toggle="collapse" :href="'#'+item.id" aria-expanded="false" :aria-controls="'#'+item.id"
+                       v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'nav-link sub' : 'nav-link '">
+                        <i class="menu-arrow"></i>
                         <span class="menu-title">{{ item.name }}</span>
                         <i :class="'mdi '+item.icon+' menu-icon'"></i>
                     </a>
+                    <div class="collapse" :id="item.id">
+                        <ul class="nav flex-column sub-menu">
+                            <router-link v-for="subItem in item.children" class="pointer" :to="subItem.path" custom
+                                         v-slot="{ navigate }">
+                                <li v-bind:class="$route.name==subItem.name ? 'nav-item active' : 'nav-item '">
+                                    <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                                        <i :class="'mdi '+subItem.icon+' float-right'"></i>
+                                        <span class="sub-menu-title">{{ subItem.name }}</span>
+                                    </a>
+                                </li>
+                            </router-link>
+                        </ul>
+                    </div>
                 </li>
-            </router-link>
-        </div>
-    </ul>
-</nav>
+                <router-link v-else class="pointer" :to="item.path" custom v-slot="{ navigate }">
+                    <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item'">
+                        <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                            <span class="menu-title">{{ item.name }}</span>
+                            <i :class="'mdi '+item.icon+' menu-icon'"></i>
+                        </a>
+                    </li>
+                </router-link>
+            </div>
+        </ul>
+    </nav>
+</div>

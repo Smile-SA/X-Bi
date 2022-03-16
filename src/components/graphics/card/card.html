@@ -1,5 +1,4 @@
-<div v-if="configuration !== undefined" :class="'stat-card bg-gradient-'+configuration.color+' pointer'"
-     @click="redirectCard()">
+<div v-if="configuration !== undefined" :class="'stat-card bg-gradient-'+configuration.color+' pointer'" @click="redirectCard()">
     <div class="icon">
         <i v-if="configuration.icon!=undefined" v-bind:class="'fa ' + configuration.icon+' f-left'"></i>
     </div>

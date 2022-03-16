@@ -1,3 +1,22 @@
-.header {
+.nav-header {
+  transform: translateY(calc(-100%));
+  transition: transform .4s cubic-bezier(.4, 0, .2, 1) .2s;
+}
+.nav-container {
+  height: 0.3rem;
+  transition: height .4s;
+}
+.nav-container:hover {
+  height: 60px;
+  transition: height .4s;
+}
 
+
+.nav-container:hover .nav-header {
+  transform: translateX(0);
+  transition-delay: 0s;
+}
+
+.nav-header {
+  position: relative;
 }

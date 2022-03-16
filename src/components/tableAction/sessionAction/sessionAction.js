@@ -57,10 +57,8 @@ export default {
             if (this.showForm === true) {
                 let div = await document.createElement('div');
                 div.id = 'update-' + structureType + '-form'
-                let el = await document.getElementById('update' + structureType + 'form');
+                div.innerHTML = await document.getElementById('update' + structureType + 'form').innerHTML;
                 this.showForm = false;
-                div.innerHTML = el.innerHTML;
-                await el.remove();
                 await this.$swal({
                     title: "Update " + structureType + " form",
                     html: div,

@@ -6,16 +6,11 @@ import * as utils from "../../../settings/utils";
 export default {
     name: "Card",
     props: ['configuration', 'from', 'to','queryBegin'],
-    watch: {},
     data() {
         return {
             timer: '',
             value: '-',
         }
-    },
-    computed: {},
-    mounted() {
-        this.getData();
     },
     methods: {
         async getData() {
@@ -89,5 +84,8 @@ export default {
         //     this.$forceUpdate()
         //   })
         // },
+    },
+    mounted() {
+        this.getData();
     },
 }

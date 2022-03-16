@@ -127,7 +127,7 @@ export function getChartStyles(activeView) {
     }
 }
 
-export function addModel(model,structureType, activeView) {
+export function addModel(model, structureType, activeView) {
     let r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
         views[activeView].structure[structureType].models.push(model);
@@ -135,16 +135,15 @@ export function addModel(model,structureType, activeView) {
     }
 }
 
-export function updateModel(model,id,structureType, activeView) {
+export async function updateModel(model, id, structureType, activeView) {
     let r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
-        Object.keys(views[activeView].structure[structureType].models).map((modelID) => {
-             if(views[activeView].structure[structureType].models[modelID].id === id){
-                 Object.keys(model).map((key) => {
-                     views[activeView].structure[structureType].models[modelID][key].slice(0)
-                     views[activeView].structure[structureType].models[modelID][key] = model[key];
-                 })
-             }
+        await Object.keys(views[activeView].structure[structureType].models).map((modelID) => {
+            if (views[activeView].structure[structureType].models[modelID].id === id) {
+                Object.keys(model).map((key) => {
+                    views[activeView].structure[structureType].models[modelID][key] = model[key];
+                })
+            }
         })
         window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
     }

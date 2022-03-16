@@ -7,7 +7,7 @@ import AppComponent from './app/index.vue';
 import VueFormGenerator from 'vue-form-generator'
 import VueApexCharts from 'vue-apexcharts'
 import card from './components/graphics/card';
-import ApexCharts from '@/components/graphics/apexchart.js/apexcharts';
+import ApexCharts from '@/components/graphics/apexcharts';
 import selectOption from '@/components/Layout/selectOption';
 Vue.component("VueApexCharts", VueApexCharts);
 Vue.component("selectOption", selectOption);

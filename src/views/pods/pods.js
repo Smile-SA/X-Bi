@@ -78,16 +78,19 @@ export default {
                 this.chartModels = {};
             }
         },
-        setDate(date) {
+        async setDate(date) {
             if(date!==null){
-                this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
+                await this.setModelsData();
                 this.date = date;
                 utils.refreshDate(date, this);
             }
         },
         async setGroup(event){
             this.group = event.target.value;
-            this.setDate(this.date)
+            await this.setDate(this.date)
+        },
+        setModelsData(){
+            this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
         }
     },
     async beforeMount() {

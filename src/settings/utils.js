@@ -204,6 +204,7 @@ export function getURL(data, that) {
 }
 
 export async function refreshDate(date, that) {
+
     if (date !== null && date !== undefined) {
         that.from = date.start.toISOString().split('.')[0] + '.000Z'
         if (date.end === null || date.start === date.end) {
@@ -213,14 +214,16 @@ export async function refreshDate(date, that) {
         that.to = date.end.toISOString().split('.')[0] + '.000Z'
         that.to = that.to.replace('T', ' ')
         that.from = that.from.replace('T', ' ')
-
     }
+
     if (that.drawCards) {
         await that.drawCards();
     }
+
     if (that.drawCharts) {
         await that.drawCharts();
     }
+
 }
 
 export async function get(url, that) {
@@ -325,13 +328,16 @@ export function createOption(config){
                 fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                 fontWeight: 0,
                 color: '#676a6c',
+                fontSize: '16px',
             },
         },
         legend: {
             fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+            horizontalAlign: 'left',
             fontWeight: 0,
             color: '#676a6c',
             fontSize: '14px',
+            position: 'bottom',
         }
     }
 }
