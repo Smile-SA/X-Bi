@@ -53,7 +53,7 @@
               "time_id": "frame_begin",
               "value_id": "frame_price",
               "axis_type": "datetime",
-              "is_monitoring": "false"
+              "is_monitoring": false
             },
             {
               "display_space": "1/2",
@@ -64,7 +64,7 @@
               "time_id": "frame_begin",
               "value_id": "frame_price",
               "axis_type": "datetime",
-              "is_monitoring": "false"
+              "is_monitoring": false
             }
           ],
           "styles": {
@@ -127,7 +127,7 @@
               "time_id": "frame_begin",
               "value_id": "frame_price",
               "axis_type": "datetime",
-              "is_monitoring": "false"
+              "is_monitoring": false
             }
           ],
           "styles": {
@@ -190,7 +190,7 @@
               "time_id": "frame_begin",
               "value_id": "frame_price",
               "axis_type": "datetime",
-              "is_monitoring": "false"
+              "is_monitoring": false
             }
           ],
           "styles": {
@@ -253,7 +253,7 @@
               "time_id": "frame_begin",
               "value_id": "frame_price",
               "axis_type": "datetime",
-              "is_monitoring": "false"
+              "is_monitoring": false
             }
           ],
           "styles": {
@@ -282,7 +282,7 @@
               "time_id": "frame_begin",
               "value_id": "price",
               "axis_type": "datetime",
-              "is_monitoring": "true"
+              "is_monitoring": true
             }
           ],
           "styles": {

@@ -122,16 +122,6 @@ export default {
             }
         },
         previewModel: async function (structureType) {
-            this.series = [
-                {
-                    name: 'series1',
-                    data: []
-                },
-                {
-                    name: 'series2',
-                    data: []
-                }
-            ]
             let div = await document.createElement('div');
             div.id = 'update-' + structureType + '-form'
             let value = 0
@@ -142,11 +132,22 @@ export default {
                 title: structureType + " preview",
                 html: div,
                 didOpen: () => {
+                    this.series = [
+                        {
+                            name: 'series1',
+                            data: []
+                        },
+                        {
+                            name: 'series2',
+                            data: []
+                        }
+                    ]
                     let options = utils.createOption(this.data)
                     options.series = this.series
                     options.chart.height = 400
                     let chart = new ApexCharts(div, options);
                     if (structureType === "chart") {
+                        console.log(this.data.is_monitoring)
                         chart.render();
                         if (this.data.is_monitoring === true) {
                             setInterval(() => {
