@@ -1,5 +1,5 @@
 import VueApexCharts from 'vue-apexcharts'
-import * as general from "@/controller/genaralController";
+import * as general from "../../../controller/genaralController";
 
 export default {
     name: 'apexCharts', components: {
@@ -11,15 +11,15 @@ export default {
     }, methods: {
         async getApexData() {
             this.data.height = undefined;
-            if (this.configuration.is_monitoring === 'false') {
-                await general.getDataByVariableAndDateToApex(this.configuration, this).then(async (r) => {
-                    if (r.total > 0) {
+            if (this.configuration.is_monitoring === 'true'){
+                general.getDataByDateToApex(this.configuration, this, this.name).then(async (r) => {
+                    if(r.total !== undefined && r.total > 0){
                         this.data = r;
                     }
                 });
             } else {
-                general.getDataByDateToApex(this.configuration, this, this.name).then(async (r) => {
-                    if (r.total !== undefined && r.total > 0) {
+                await general.getDataByVariableAndDateToApex(this.configuration, this).then(async (r) => {
+                    if (r.total > 0) {
                         this.data = r;
                     }
                 });
@@ -44,4 +44,3 @@ export default {
         this.refreshChart();
     },
 }
-

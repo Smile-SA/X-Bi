@@ -1,10 +1,7 @@
-import * as utils from '@/settings/utils'
-import * as configurationsController from "@/controller/configurationsController";
+import * as utils from '../../settings/utils'
 
 export default {
-    components: {
-
-    },
+    components: {},
     data() {
         return {
             confCardStart: {
@@ -27,16 +24,23 @@ export default {
             },
             group: 'Hour',
             groupOptions: ['Hour', 'Day', 'Month', 'Year'],
-            queryBegin:"",
+            queryBegin: "",
             to: null,
             from: null,
             date: null,
             active: null,
             pods: null,
-            cardStyle:{},
-            cardModels:{},
-            chartStyle:{},
-            chartModels:{}
+            structure: {
+                card: {
+                    models: {},
+                    styles: {}
+                },
+                chart: {
+                    models: {},
+                    styles: {}
+                }
+
+            }
         }
     },
     computed: {},
@@ -52,45 +56,29 @@ export default {
             this.queryBegin = '/pods/' + this.active;
             this.setDate(this.date)
         },
-        async drawCards() {
-            const r = configurationsController.getCardModels(this.$route.name)
-            if (r.errors !== true){
-                if (r.data.total > 0) {
-                    this.cardModels = r.data.results
-                }
-            } else {
-                this.cardModels = {};
-            }
-
-        },
-        async drawCharts() {
-            let r = configurationsController.getChartModels(this.$route.name)
-            if (r.data.errors !== true) {
-                if (r.data.total > 0) {
-                    this.chartModels = r.data.results;
-                    let style = configurationsController.getChartStyles(this.$route.name)
-                    if (style.data.errors !== true) {
-                        this.chartStyle = null
-                        this.chartStyle = style.data.results;
-                    }
-                }
-            } else {
-                this.chartModels = {};
-            }
-        },
         async setDate(date) {
-            if(date!==null){
+            if (date !== null) {
                 await this.setModelsData();
                 this.date = date;
                 utils.refreshDate(date, this);
             }
         },
-        async setGroup(event){
+        async setGroup(event) {
             this.group = event.target.value;
             await this.setDate(this.date)
         },
-        setModelsData(){
-            this.cardModels = this.chartModels = this.chartStyle = this.cardStyle = {};
+        setModelsData() {
+            this.structure = {
+                card: {
+                    models: {},
+                    styles: {}
+                },
+                chart: {
+                    models: {},
+                    styles: {}
+                }
+
+            }
         }
     },
     async beforeMount() {

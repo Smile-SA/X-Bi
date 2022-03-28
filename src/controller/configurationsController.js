@@ -1,4 +1,9 @@
-var uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'));
+import * as uiConf from "../settings/uiConfigurations.json"
+
+var uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
+if(uiConfigurations === null){
+    uiConfigurations = uiConf
+}
 if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
@@ -133,6 +138,10 @@ export function addModel(model, structureType, activeView) {
         views[activeView].structure[structureType].models.push(model);
         window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
     }
+}
+
+export function save() {
+        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
 }
 
 export async function updateModel(model, id, structureType, activeView) {

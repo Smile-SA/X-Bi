@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import * as authController  from "@/controller/authController";
-import error404 from "@/views/error404/index.vue";
-import Login from "@/views/login/index.vue";
+import * as authController  from "../controller/authController";
+import error404 from "../views/error404/index.vue";
+import Login from "../views/login/index.vue";
 import * as controller from "../controller/routerController.js"
 const defaultRoutes = controller.getDefaultRoutes();
 const routes = [

@@ -1,4 +1,3 @@
-//import * as utils from  '../../../settings/utils'
 import {goTo} from "../../../settings/utils";
 import * as general from "../../../controller/genaralController";
 import * as utils from "../../../settings/utils";

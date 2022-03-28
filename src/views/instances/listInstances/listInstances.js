@@ -1,5 +1,5 @@
-import * as instance from "@/controller/instancesController";
-import action from "@/components/tableAction/urlAction";
+import * as instance from "../../../controller/instancesController";
+import action from "../../../components/tableAction/urlAction";
 
 export default {
     name: 'list-instances',

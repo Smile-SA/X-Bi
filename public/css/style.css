@@ -22685,3 +22685,59 @@ input[type="checkbox"]:checked:after{
 .apexcharts-toolbar {
     z-index: 0!important;
 }
+
+
+/* card*/
+.stat-card {
+    width: 100%;
+    color: #ffffff;
+    padding: 0.7rem;
+    border-radius: .25rem;
+    overflow: hidden;
+    display: flex;
+    justify-content: space-between;
+    transition: all 0.2s;
+    box-shadow: 0 0 0.07rem 0 var(--bs-gray-550);
+}
+
+.stat-card :hover {
+    cursor: pointer;
+}
+
+.stat-card .number, .stat-card .rating {
+    font-size: 2.25rem;
+    opacity: 1;
+}
+
+.stat-card .date {
+    font-size: 1.25rem;
+    opacity: 1;
+}
+
+.stat-card .label{
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+.stat-card i {
+    font-size: 3.5rem;
+    opacity: 0.7;
+}
+
+.stat-card:hover i, .stat-card:hover .label {
+    opacity: 1;
+}
+
+.stat-card:hover .number, .stat-card:hover .date {
+    opacity: 0.7;
+}
+
+.f-left {
+    float: left;
+}
+
+.f-right {
+    float: right;
+}
+
+/* card*/

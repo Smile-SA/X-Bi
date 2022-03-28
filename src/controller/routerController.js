@@ -1,7 +1,7 @@
-import * as routes from "@/router/routerConfiguration.json"
+import * as routes from "../router/routerConfiguration.json"
 
 export function loadView(view) {
-    return () => import(/* webpackChunkName: "view-[request]" */ `@/${view}`)
+    return () => import(/* webpackChunkName: "view-[request]" */ `../${view}`)
 }
 
 export function getChildrenRoutes() {
@@ -72,8 +72,6 @@ export function getJsonData() {
 
 export function setDisplay(id, displayValue) {
     console.log(id + displayValue)
-
-
 }
 
 export function getDefaultRoutes() {

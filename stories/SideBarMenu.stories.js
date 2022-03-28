@@ -1,7 +1,7 @@
 import { action } from '@storybook/addon-actions';
 window.jQuery = require('jquery');
 window.$ = require('jquery');
-import SidebarMenu from '../src/components/partials/SidebarMenu';
+import SidebarMenu from '../src/components/Layout/menu';
 import StoryRouter from "storybook-vue-router";
 import {routes} from "./routes";
 

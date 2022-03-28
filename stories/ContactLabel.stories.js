@@ -1,4 +1,4 @@
-import ContactLabel from '../src/components/partials/ContactLabel';
+import ContactLabel from '../src/components/Layout/contactLabel';
 import {
     withKnobs,
     text,

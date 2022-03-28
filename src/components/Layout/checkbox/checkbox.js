@@ -18,7 +18,6 @@ export default {
       Display(){
         router.setDisplay(this.data.id,this.isDisplay);
       }
-
   }
 }
 

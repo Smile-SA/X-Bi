@@ -1,4 +1,4 @@
-import PieChart from '../src/components/charts/PieChart';
+import PieChart from '../src/components/graphics/charts.js/PieChart';
 import {
     withKnobs,
     object,

@@ -1,5 +1,5 @@
-import * as template from "@/controller/templatesController";
-import actions from "@/components/tableAction/urlAction";
+import * as template from "../../../controller/templatesController";
+import actions from "../../../components/tableAction/urlAction";
 
 export default {
     name: 'list-templates',

@@ -1,4 +1,4 @@
-import LineChart from '../src/components/charts/LineChart';
+import LineChart from '../src/components/graphics/charts.js/LineChart';
 import {
     withKnobs,
     object,

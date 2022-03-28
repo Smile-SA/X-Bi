@@ -1,4 +1,4 @@
-import Card from '../src/components/card/index.vue';
+import Card from '../src/components/graphics/card/index.vue';
 import {
     withKnobs,
     object,
@@ -29,10 +29,10 @@ export default {
     )]
 };
 const defaultCardValue = {
-    label: 'label',
+    title: 'label',
     value: 15,
-    color: "blue",
-    icon: "fas fa-address-book",
+    color: "primary",
+    icon: "mdi mdi-plus",
     link: "/home"
 }
 export const CardComponent = () => ({

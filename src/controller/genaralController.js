@@ -1,9 +1,7 @@
 import axios from "axios";
 import {generateAPIUrl} from "../settings/variables";
 import * as utils from "../settings/utils";
-
 const api = generateAPIUrl();
-
 export function generalDelete(deleteUrl, name, id) {
     const Params = new FormData();
     Params.append(name, id);
@@ -15,7 +13,6 @@ export function generalDelete(deleteUrl, name, id) {
         return false
     });
 }
-
 export async function getDataByVariableAndDateToApex(config, that) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     let url = api + that.queryBegin + config.query + queryDate;
@@ -56,7 +53,6 @@ export async function getDataByVariableAndDateToApex(config, that) {
         return false
     });
 }
-// eslint-disable-next-line no-unused-vars
 export async function getDataByDateToApex(config, that,name) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     let url = api + that.queryBegin + config.query + queryDate;
@@ -89,13 +85,11 @@ export async function getDataByDateToApex(config, that,name) {
         return false
     });
 }
-
 export async function getJsonData(url) {
     return await axios.get(api + url).then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(errors => {
-        console.log(errors)
         return {
             total: 0
         }

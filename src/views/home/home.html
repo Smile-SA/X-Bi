@@ -18,18 +18,17 @@
                            :selectData="groupOptions"></select-option>
         </div>
     </div>
-    <div class=" col-12" v-if="Object.keys(this.cardModels).length>0">
+    <div class=" col-12" v-if="Object.keys(structure.card.models).length>0">
         <div class="row">
-            <div class="col-sm-4 m-b" v-for="item in this.cardModels"
-                 :class="item.display_space === '1/3' ? 'col-sm-4 m-b' : item.display_space === '2/3' ? 'col-sm-8 m-b' : 'col-sm-12 m-b'">
+            <div v-for="item in structure.card.models" :class="item.display_space === '1/3' ? 'col-sm-4 m-b' : item.display_space === '2/3' ? 'col-sm-8 m-b' : 'col-sm-12 m-b'">
                 <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"></Card>
             </div>
         </div>
     </div>
-    <div class="col-12" v-if="Object.keys(this.chartModels).length>0">
+    <div class="col-12" v-if="Object.keys(structure.chart.models).length>0">
         <div class="row">
-            <div v-for="item in this.chartModels" :class="item.display_space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
-                <apex-charts :configuration="item" :queryBegin="queryBegin" :from="from" :styles="chartStyle" :to="to" :group="group"></apex-charts>
+            <div v-for="item in structure.chart.models" :class="item.display_space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
+                <apex-charts :configuration="item" :queryBegin="queryBegin" :from="from" :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
             </div>
         </div>
     </div>

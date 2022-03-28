@@ -1,9 +1,6 @@
 import * as configurationsController from "../../../controller/configurationsController";
-import Vue from 'vue'
-
-Vue.component('my-component', {
-    template: '<div>A custom component!</div>'
-})
+import * as utils from "../../../settings/utils";
+import ApexCharts from 'apexcharts'
 
 export default {
     name: 'session-action',
@@ -18,6 +15,8 @@ export default {
             form: {},
             showForm: false,
             controls: {},
+            isModalVisible: false,
+            series: [],
         }
     },
     computed: {},
@@ -27,7 +26,7 @@ export default {
         getControls() {
             this.controls = configurationsController.getControls()
         },
-        deleteModel(e) {
+        async deleteModel(e) {
             e.preventDefault();
             this.$swal({
                 title: 'Are you sure?',
@@ -63,11 +62,11 @@ export default {
                     title: "Update " + structureType + " form",
                     html: div,
                     didOpen: () => {
-                         Object.keys(this.data).map((key) => {
+                        Object.keys(this.data).map((key) => {
                             if (key === 'value') {
                                 // je ne fais rein
                             } else {
-                                if(this.controls[structureType].schema.properties[key]!==undefined){
+                                if (this.controls[structureType].schema.properties[key] !== undefined) {
                                     let inputId = (key.replace("/", "")).replace("_", "-")
                                     if (this.controls[structureType].schema.properties[key].type === 'boolean') {
                                         $('#update-' + structureType + '-form .field-wrap #' + inputId)[0].checked = this.data[key]
@@ -107,7 +106,7 @@ export default {
                     },
                     showCancelButton: true,
                     cancelButtonClass: 'btn btn-light',
-                    cancelButtonText: "cancel",
+                    cancelButtonText: "Cancel",
                     showConfirmButton: true,
                     confirmButtonClass: 'btn btn-primary',
                     confirmButtonText: "Update",
@@ -121,6 +120,73 @@ export default {
                 });
 
             }
+        },
+        previewModel: async function (structureType) {
+            this.series = [
+                {
+                    name: 'series1',
+                    data: []
+                },
+                {
+                    name: 'series2',
+                    data: []
+                }
+            ]
+            let div = await document.createElement('div');
+            div.id = 'update-' + structureType + '-form'
+            let value = 0
+            if (this.data.value != "") {
+                value = this.data.value
+            }
+            await this.$swal({
+                title: structureType + " preview",
+                html: div,
+                didOpen: () => {
+                    let options = utils.createOption(this.data)
+                    options.series = this.series
+                    options.chart.height = 400
+                    let chart = new ApexCharts(div, options);
+                    if (structureType === "chart") {
+                        chart.render();
+                        if (this.data.is_monitoring === true) {
+                            setInterval(() => {
+                                Object.keys(this.series).map((item) => {
+                                    this.series[item].data.push([Date.now(), Math.floor(Math.random() * (37 - 30) + 30)])
+                                });
+                                chart.updateSeries(this.series)
+                            }, 1000);
+                        } else {
+                            Object.keys(this.series).map((item) => {
+                                for (let step = 0; step <= 4; step++) {
+                                    this.series[item].data.push([Date.now() - (step * 24 * 60 * 60 * 1000), Math.floor(Math.random() * (37 - 30) + 30)])
+                                }
+                            });
+                            chart.updateSeries(this.series)
+                        }
+                    } else {
+                        if (structureType === "card") {
+                            div.innerHTML = '<div class="stat-card bg-gradient-' + this.data.color + ' pointer">\n' +
+                                '    <div class="icon">\n' +
+                                '        <i class="' + this.data.icon + ' f-left"></i>\n' +
+                                '    </div>\n' +
+                                '    <div class="content">\n' +
+                                '        <h2><strong class="' + this.data.type + ' f-right">' + value + '</strong></h2>\n' +
+                                '        <p class="mb-1 label f-right"><strong>' + this.data.title + '</strong></p>\n' +
+                                '    </div>\n' +
+                                '</div>'
+                        }
+                    }
+
+                },
+                showCancelButton: false,
+                showConfirmButton: false,
+                showLoaderOnConfirm: true,
+                showCloseButton: true,
+                // eslint-disable-next-line no-unused-vars
+            }).then((result) => {
+
+            });
+
         },
     }
 }

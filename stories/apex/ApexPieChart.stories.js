@@ -3,7 +3,7 @@ import {
     object,
 } from '@storybook/addon-knobs';
 
-import apexChartsComponent from "../../src/components/apexCharts";
+import apexChartsComponent from "../../src/components/graphics/apexcharts";
 
 export default {
     title: 'ApexCharts',

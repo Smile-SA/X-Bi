@@ -1,7 +1,6 @@
 import * as configurationsController from "../../../controller/configurationsController";
-import action from "@/components/tableAction/sessionAction";
-import displayIcon from '@/components/tableAction/displayIcon';
-
+import action from "../../../components/tableAction/sessionAction";
+import displayIcon from '../../../components/tableAction/displayIcon';
 export default {
     name: 'views',
     components: {},
@@ -99,7 +98,6 @@ export default {
             this.getStructure(this.activeView)
 
         },
-
         async addModel(structureType) {
             this.showForm = {
                 card: false,

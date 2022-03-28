@@ -19,17 +19,17 @@
                            :selectData="groupOptions"></select-option>
         </div>
     </div>
-    <div class="col-12" v-if="Object.keys(cardModels).length>0">
+    <div class="col-12" v-if="Object.keys(structure.card.models).length>0">
             <div class="row">
-                <div class="col-sm-4 m-b" v-for="item in cardModels">
+                <div class="col-sm-4 m-b" v-for="item in structure.card.models">
                     <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"></Card>
                 </div>
             </div>
     </div>
-    <div class="col-12" v-if="Object.keys(chartModels).length>0">
+    <div class="col-12" v-if="Object.keys(structure.chart.models).length>0">
         <div class="row">
-            <div class="m-b " v-for="item in chartModels">
-                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="chartStyle" :to="to"
+            <div class="m-b " v-for="item in structure.chart.models">
+                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="structure.chart.styles" :to="to"
                              :group="group"></apex-charts>
             </div>
         </div>

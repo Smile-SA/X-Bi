@@ -1,5 +1,5 @@
-import checkbox from "@/components/Layout/checkbox";
-import * as controller from "@/controller/routerController.js"
+import checkbox from "../../../components/Layout/checkbox";
+import * as controller from "../../../controller/routerController.js"
 
 
 export default {

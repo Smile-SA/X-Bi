@@ -1,5 +1,6 @@
-import DashLayout from '../src/components/DashLayout';
-import {storiesOf} from "@storybook/vue";
+//import DashLayout from '../src/components/DashLayout';
+import DashLayout from '../src/components/Layout/header';
+//import {storiesOf} from "@storybook/vue";
 import StoryRouter from 'storybook-vue-router';
 import {
     withKnobs,

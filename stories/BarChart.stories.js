@@ -1,4 +1,4 @@
-import BarChart from '../src/components/charts/BarChart';
+import BarChart from '../src/components/graphics/charts.js/BarChart';
 import {
     withKnobs,
     object,

@@ -1,7 +1,7 @@
-import { action } from '@storybook/addon-actions';
 import StoryRouter from 'storybook-vue-router';
 
-import Sidebar from '../src/components/partials/Sidebar';
+//import Sidebar from '../src/components/Layout/header/Sidebar';
+import Sidebar from '../src/components/Layout/header';
 import {routes} from "./routes";
 import {text, withKnobs} from "@storybook/addon-knobs";
 

@@ -1,7 +1,6 @@
 import * as instance from "../../controller/instancesController";
 
-import * as utils from '@/settings/utils'
-import * as configurationsController from "@/controller/configurationsController";
+import * as utils from '../../settings/utils'
 
 export default {
     name: 'monitoring',
@@ -56,21 +55,6 @@ export default {
         },
         showGroup() {
             return this.activeGroup !== null
-        },
-        async drawCharts() {
-            let r = configurationsController.getChartModels(this.$route.name)
-            if (r.data.errors !== true) {
-                if (r.data.total > 0) {
-                    this.chartModels = r.data.results;
-                    let style = configurationsController.getChartStyles(this.$route.name)
-                    if (style.data.errors !== true) {
-                        this.chartStyle = null
-                        this.chartStyle = style.data.results;
-                    }
-                }
-            } else {
-                this.chartModels = {};
-            }
         },
     }
 }

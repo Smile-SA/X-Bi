@@ -1,6 +1,6 @@
-import {generateAPIUrl} from '@/settings/variables';
-import {logIn} from "@/controller/authController";
-import {goTo} from "@/settings/utils";
+import {generateAPIUrl} from '../../settings/variables';
+import {logIn} from "../../controller/authController";
+import {goTo} from "../../settings/utils";
 
 export default {
     name: 'login',

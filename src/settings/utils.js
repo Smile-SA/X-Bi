@@ -1,3 +1,4 @@
+import * as configurationsController from "../controller/configurationsController";
 import {generateAPIUrl} from "./variables";
 
 const api = generateAPIUrl();
@@ -9,7 +10,6 @@ export function convertURLDateParameter(from, to) {
     to = to.replace('T', ' ')
     return `?start=${from}&end=${to}`
 }
-
 export function JSONToCSV(json) {
     const replacer = (key, value) => value === null ? '' : value
     const header = Object.keys(json[0])
@@ -17,7 +17,6 @@ export function JSONToCSV(json) {
     csv.unshift(header.join(','))
     return csv.join('\r\n')
 }
-
 export async function fetchTotal(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
     url = api + url + queryDate
@@ -31,7 +30,6 @@ export async function fetchTotal(url, that) {
         return 0
     }
 }
-
 export async function fetchData(url) {
     const response = await fetch(api + url, {
         credentials: 'include'
@@ -39,7 +37,6 @@ export async function fetchData(url) {
     const json = await response.json()
     return json.results;
 }
-
 export async function fetchDataAsJSON(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
     url = api + url + queryDate
@@ -52,7 +49,6 @@ export async function fetchDataAsJSON(url, that) {
     }
     return {total: json.total, results: json.results}
 }
-
 export async function downloadFile(url, filename, type) {
     const response = await fetch(api + url, {
         credentials: 'include'
@@ -76,14 +72,12 @@ export async function downloadFile(url, filename, type) {
     el.click()
     document.body.removeChild(el)
 }
-
 export function getPeriod(url) {
     let broken = api + url.split('?')[1].split('&')
     const from = broken[0].split('=')[1].replace(' ', 'T')
     const to = broken[1].split('=')[1].replace(' ', 'T')
     return `_${from}-${to}`
 }
-
 export async function generateColor(source) {
     const colors = {}
     for (const obj of source) {
@@ -91,7 +85,6 @@ export async function generateColor(source) {
     }
     return colors
 }
-
 export function getRandomColor() {
     const chartColors = [
         '#001f3f',
@@ -143,7 +136,6 @@ export function getRandomColor() {
     ]
     return chartColors[Math.floor(Math.random() * chartColors.length)]
 }
-
 export function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
@@ -152,7 +144,6 @@ export function hexToRgb(hex) {
         b: parseInt(result[3], 16)
     } : null;
 }
-
 export function groupBy(objectArray, property) {
     return objectArray.reduce(function (acc, obj) {
         const key = obj[property]
@@ -163,7 +154,6 @@ export function groupBy(objectArray, property) {
         return acc
     }, {})
 }
-
 export function getUnique(array) {
     var uniqueArray = [];
     // Loop through array values
@@ -176,7 +166,6 @@ export function getUnique(array) {
     }
     return uniqueArray;
 }
-
 export function groupByDate(array, group) {
     return array.reduce((groups, r) => {
         let date = r.frame_begin;
@@ -195,14 +184,12 @@ export function groupByDate(array, group) {
         return groups;
     }, {});
 }
-
 export function getURL(data, that) {
     const option = data.target.innerText
     const url = that.queryArray[that.selected]
     const filename = that.selected + getPeriod(url) + '.' + option.toLowerCase()
     downloadFile(url, filename, option)
 }
-
 export async function refreshDate(date, that) {
 
     if (date !== null && date !== undefined) {
@@ -216,30 +203,43 @@ export async function refreshDate(date, that) {
         that.from = that.from.replace('T', ' ')
     }
 
-    if (that.drawCards) {
-        await that.drawCards();
+    let r = configurationsController.getCardModels(that.$route.name)
+    if (r.data.errors !== true) {
+        if (r.data.total > 0) {
+            that.structure.card.models = r.data.results;
+        }
+    } else {
+        that.structure.card.models = {};
+        that.structure.card.styles = {};
     }
 
-    if (that.drawCharts) {
-        await that.drawCharts();
+    let c = configurationsController.getChartModels(that.$route.name)
+    if (c.data.errors !== true) {
+        if (c.data.total > 0) {
+            that.structure.chart.models = c.data.results;
+            let style = configurationsController.getChartStyles(that.$route.name)
+            if (style.data.errors !== true) {
+                that.structure.chart.styles = style.data.results;
+            }
+        }
+    } else {
+        that.structure.chart.models = {};
+        that.structure.chart.styles = {};
     }
 
 }
-
 export async function get(url, that) {
     return await fetchDataAsJSON(api + url, that);
 }
-
 export function goTo(route, that) {
     that.$router.push(route);
 }
-
-export function createSerie(data,config,serieName,boucle){
-    let min = 0, max = 0,series = [],lastDate=0,obj = []
-    if(boucle===1){
+export function createSerie(data, config, serieName, boucle) {
+    let min = 0, max = 0, series = [], lastDate = 0, obj = []
+    if (boucle === 1) {
         Object.keys(data).map((item) => {
             let date = new Date(data[item][config.time_id]).getTime();
-            if(date > lastDate){
+            if (date > lastDate) {
                 lastDate = date
             }
             const fixed = data[item][config.value_id].toFixed(5),
@@ -257,13 +257,13 @@ export function createSerie(data,config,serieName,boucle){
             data: obj
         });
     }
-    if(boucle >=3){
+    if (boucle >= 3) {
         Object.keys(data).map(item => {
             let obj = []
             Object.keys(data[item]).map((subItem) => {
                 Object.keys(data[item][subItem]).map((subSubItem) => {
                     let date = new Date(data[item][subItem][subSubItem][config.time_id]).getTime();
-                    if(date > lastDate){
+                    if (date > lastDate) {
                         lastDate = date
                     }
                     const fixed = data[item][subItem][subSubItem][config.value_id].toFixed(5),
@@ -283,13 +283,20 @@ export function createSerie(data,config,serieName,boucle){
             });
         })
     }
-    return {'series':series,'lastDate':lastDate};
+    return {'series': series, 'lastDate': lastDate};
 
 }
-export function createOption(config){
+export function createOption(config) {
     return {
         chart: {
-            id: config.id, type: config.type
+            id: config.id, type: config.type,
+            animations: {
+                enabled: true,
+                easing: 'linear',
+                dynamicAnimation: {
+                    speed: 1000
+                }
+            },
         },
         xaxis: {
             type: 'datetime',
@@ -340,4 +347,19 @@ export function createOption(config){
             position: 'bottom',
         }
     }
+}
+export function editTitleBox() {
+    setTimeout(() => {
+        if ($('#title-box').hasClass('col-md-2')) {
+            $('#title-box .apex-box .page-title .title').hide()
+            $('#title-box').removeClass('col-md-2');
+            $('#title-box').addClass('col-xxl-05 col-md-1 col-sm-2');
+            $('#title-box .apex-box .page-title .page-title-icon').removeClass('me-2')
+            $('#title-box .apex-box').addClass('text-center')
+        }
+        if ($('#input-box').hasClass('col-md-10')) {
+            $('#input-box').removeClass('col-md-10');
+            $('#input-box').addClass('col-xxl-11-5 col-md-11 col-sm-10');
+        }
+    }, 4000);
 }
