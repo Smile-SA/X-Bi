@@ -1,297 +1,426 @@
 {
   "views": {
-    "Overall": {
-      "title": "Overall",
-      "type": "admin",
-      "structure": {
-        "card": {
-          "models": [
-            {
-              "display_space": "1/3",
-              "title": "Namespaces",
-              "icon": "mdi mdi-share-variant",
-              "color": "success",
-              "type": "count",
-              "query": "/namespaces",
-              "redirect": "/namespaces",
-              "value": "",
-              "key": ""
-            },
-            {
-              "display_space": "1/3",
-              "title": "Pods",
-              "icon": "mdi mdi-sitemap",
-              "color": "primary",
-              "type": "count",
-              "query": "/pods",
-              "redirect": "/pods",
-              "value": "",
-              "key": ""
-            },
-            {
-              "display_space": "1/3",
-              "title": "Nodes",
-              "icon": "mdi mdi-server",
-              "color": "warning",
-              "type": "count",
-              "query": "/nodes",
-              "redirect": "/nodes",
-              "value": "",
-              "key": ""
-            }
-          ],
-          "styles": {}
-        },
-        "chart": {
-          "models": [
-            {
-              "display_space": "1/2",
-              "type": "line",
-              "title": "Nodes rate (in Euros)",
-              "query": "/nodes/rating",
-              "sort_id": "node",
-              "time_id": "frame_begin",
-              "value_id": "frame_price",
-              "axis_type": "datetime",
-              "is_monitoring": false
-            },
-            {
-              "display_space": "1/2",
-              "type": "area",
-              "title": "Namespaces Energy Efficiency",
-              "query": "/namespaces/rating",
-              "sort_id": "namespace",
-              "time_id": "frame_begin",
-              "value_id": "frame_price",
-              "axis_type": "datetime",
-              "is_monitoring": false
-            }
-          ],
-          "styles": {
-            "height": "500",
-            "font_size": "20px"
-          }
-        }
-      }
+    "default": {
+      "path": "/",
+      "icon": "fa-house-chimney-window",
+      "component": "Layout/container/index.vue",
+      "description": "Global infrastructure view",
+      "requiresAuth": true
     },
-    "Namespaces": {
-      "title": "Namespaces",
-      "type": "admin",
-      "structure": {
-        "card": {
-          "models": [
-            {
-              "display_space": "1/3",
-              "title": "Rating",
-              "icon": "mdi mdi-currency-eur",
-              "color": "danger",
-              "type": "sum",
-              "query": "/total_rating",
-              "redirect": "",
-              "value": "",
-              "key": "frame_price"
-            },
-            {
-              "display_space": "1/3",
-              "title": "Pods",
-              "icon": "mdi mdi-sitemap",
-              "color": "primary",
-              "type": "count",
-              "query": "/pods",
-              "redirect": "/pods",
-              "value": "",
-              "key": ""
-            },
-            {
-              "display_space": "1/3",
-              "title": "Nodes",
-              "icon": "mdi mdi-server",
-              "color": "warning",
-              "type": "count",
-              "query": "/nodes",
-              "redirect": "/nodes",
-              "value": "",
-              "key": ""
+    "static": [
+      {
+        "name": "UI Configuration",
+        "icon": "fa-tv",
+        "display": true,
+        "displayInMenu": true,
+        "path": "/ui",
+        "component": "views/uiConfiguration/views/index.vue",
+        "description": "Views configuration",
+        "requiresAuth": true
+      },
+      {
+        "name": "KPIs Configurations",
+        "icon": "fa-gear",
+        "display": true,
+        "displayInMenu": true,
+        "children": [
+          {
+            "name": "Templates",
+            "path": "/templates",
+            "icon": "fa-angle-right",
+            "component": "views/templates/listTemplates/index.vue",
+            "description": "View of templates",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true
+          },
+          {
+            "name": "Instances",
+            "path": "/instances",
+            "icon": "fa-angle-right",
+            "component": "views/instances/listInstances/index.vue",
+            "description": "View of instances",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true
+          }
+        ]
+      },
+      {
+        "name": "Structure",
+        "path": "/structure",
+        "icon": "fa-angle-right",
+        "component": "views/uiConfiguration/example/index.vue",
+        "description": "Router configuration",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Create instance",
+        "path": "/instances/create",
+        "icon": "fa-angle-right",
+        "component": "views/instances/createInstance/index.vue",
+        "description": "View of instance creation",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Display instance",
+        "path": "/instances/display/:id",
+        "icon": "fa-angle-right",
+        "component": "views/instances/displayInstance/index.vue",
+        "description": "Detailed of instance",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Create template",
+        "path": "/templates/create",
+        "icon": "fa-angle-right",
+        "component": "views/templates/createTemplate/index.vue",
+        "description": "View of template creation",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Display template",
+        "path": "/templates/display/:id",
+        "icon": "fa-angle-right",
+        "component": "views/templates/displayTemplate/index.vue",
+        "description": "Detailed of template",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      }
+    ],
+    "dynamic": [
+      {
+        "name": "Overall",
+        "path": "/",
+        "icon": "fa-house-chimney-window",
+        "description": "Home view",
+        "component": "views/home/index.vue",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "card": {
+            "models": [
+              {
+                "display_space": "1/3",
+                "title": "Namespaces",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "type": "count",
+                "query": "/namespaces",
+                "redirect": "/namespaces",
+                "value": "",
+                "key": ""
+              },
+              {
+                "display_space": "1/3",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "primary",
+                "type": "count",
+                "query": "/pods",
+                "redirect": "/pods",
+                "value": "",
+                "key": ""
+              },
+              {
+                "display_space": "1/3",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "warning",
+                "type": "count",
+                "query": "/nodes",
+                "redirect": "/nodes",
+                "value": "",
+                "key": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "display_space": "1/2",
+                "type": "line",
+                "title": "Nodes rate (in Euros)",
+                "query": "/nodes/rating",
+                "sort_id": "node",
+                "time_id": "frame_begin",
+                "value_id": "frame_price",
+                "axis_type": "datetime",
+                "is_monitoring": false
+              },
+              {
+                "display_space": "1/2",
+                "type": "area",
+                "title": "Namespaces Energy Efficiency",
+                "query": "/namespaces/rating",
+                "sort_id": "namespace",
+                "time_id": "frame_begin",
+                "value_id": "frame_price",
+                "axis_type": "datetime",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "500",
+              "font_size": "20px"
             }
-          ],
-          "styles": {}
-        },
-        "chart": {
-          "models": [
-            {
-              "display_space": "2/2",
-              "type": "area",
-              "title": "Metrics rate (in Euros)",
-              "query": "/rating",
-              "sort_id": "metric",
-              "time_id": "frame_begin",
-              "value_id": "frame_price",
-              "axis_type": "datetime",
-              "is_monitoring": false
+          }
+        }
+      },
+      {
+        "name": "Namespaces",
+        "path": "/namespaces",
+        "icon": "fa-diagram-project",
+        "description": "Detailed view of namespaces",
+        "component": "views/namespaces/index.vue",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "card": {
+            "models": [
+              {
+                "display_space": "1/3",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "type": "sum",
+                "query": "/total_rating",
+                "redirect": "",
+                "value": "",
+                "key": "frame_price"
+              },
+              {
+                "display_space": "1/3",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "primary",
+                "type": "count",
+                "query": "/pods",
+                "redirect": "/pods",
+                "value": "",
+                "key": ""
+              },
+              {
+                "display_space": "1/3",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "warning",
+                "type": "count",
+                "query": "/nodes",
+                "redirect": "/nodes",
+                "value": "",
+                "key": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "display_space": "2/2",
+                "type": "area",
+                "title": "Metrics rate (in Euros)",
+                "query": "/rating",
+                "sort_id": "metric",
+                "time_id": "frame_begin",
+                "value_id": "frame_price",
+                "axis_type": "datetime",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
             }
-          ],
-          "styles": {
-            "height": "400",
-            "font_size": "20px"
+          }
+        }
+      },
+      {
+        "name": "Nodes",
+        "path": "/nodes",
+        "icon": "fa-share-nodes",
+        "description": "Detailed view of nodes",
+        "component": "views/nodes/index.vue",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "card": {
+            "models": [
+              {
+                "display_space": "1/3",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "type": "sum",
+                "query": "/total_rating",
+                "redirect": "",
+                "value": "",
+                "key": "frame_price"
+              },
+              {
+                "display_space": "1/3",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "primary",
+                "type": "count",
+                "query": "/pods",
+                "redirect": "",
+                "value": "",
+                "key": ""
+              },
+              {
+                "display_space": "1/3",
+                "title": "Namespaces",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "type": "count",
+                "query": "/namespaces",
+                "redirect": "",
+                "value": "",
+                "key": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "display_space": "2/2",
+                "type": "bar",
+                "title": "Nodes metrics rate (in Euros)",
+                "query": "/rating",
+                "sort_id": "metric",
+                "time_id": "frame_begin",
+                "value_id": "frame_price",
+                "axis_type": "datetime",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Pods",
+        "path": "/pods",
+        "icon": "fa-sitemap",
+        "description": "Detailed view of pods",
+        "component": "views/pods/index.vue",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "card": {
+            "models": [
+              {
+                "display_space": "1/3",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "type": "sum",
+                "query": "/total_rating",
+                "redirect": "",
+                "value": "",
+                "key": "frame_price"
+              },
+              {
+                "display_space": "1/3",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "warning",
+                "type": "count",
+                "query": "/nodes",
+                "redirect": "",
+                "value": "",
+                "key": ""
+              },
+              {
+                "display_space": "1/3",
+                "title": "Namespaces",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "type": "count",
+                "query": "/namespaces",
+                "redirect": "",
+                "value": "",
+                "key": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "display_space": "2/2",
+                "type": "line",
+                "title": "Pod metrics rate (in Euros)",
+                "query": "/rating",
+                "sort_id": "metric",
+                "time_id": "frame_begin",
+                "value_id": "frame_price",
+                "axis_type": "datetime",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Monitoring",
+        "path": "/monitoring",
+        "icon": "fa-chart-simple",
+        "description": "Live data Monitoring",
+        "component": "views/monitoring/index.vue",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "card": {
+            "models": [],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "display_space": "2/2",
+                "type": "area",
+                "title": "Nodes rate (in Euros)",
+                "query": "/rating",
+                "sort_id": "instance",
+                "time_id": "frame_begin",
+                "value_id": "price",
+                "axis_type": "datetime",
+                "is_monitoring": true
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
           }
         }
       }
-    },
-    "Nodes": {
-      "title": "Nodes",
-      "type": "admin",
-      "structure": {
-        "card": {
-          "models": [
-            {
-              "display_space": "1/3",
-              "title": "Rating",
-              "icon": "mdi mdi-currency-eur",
-              "color": "danger",
-              "type": "sum",
-              "query": "/total_rating",
-              "redirect": "",
-              "value": "",
-              "key": "frame_price"
-            },
-            {
-              "display_space": "1/3",
-              "title": "Pods",
-              "icon": "mdi mdi-sitemap",
-              "color": "primary",
-              "type": "count",
-              "query": "/pods",
-              "redirect": "",
-              "value": "",
-              "key": ""
-            },
-            {
-              "display_space": "1/3",
-              "title": "Namespaces",
-              "icon": "mdi mdi-share-variant",
-              "color": "success",
-              "type": "count",
-              "query": "/namespaces",
-              "redirect": "",
-              "value": "",
-              "key": ""
-            }
-          ],
-          "styles": {}
-        },
-        "chart": {
-          "models": [
-            {
-              "display_space": "2/2",
-              "type": "bar",
-              "title": "Nodes metrics rate (in Euros)",
-              "query": "/rating",
-              "sort_id": "metric",
-              "time_id": "frame_begin",
-              "value_id": "frame_price",
-              "axis_type": "datetime",
-              "is_monitoring": false
-            }
-          ],
-          "styles": {
-            "height": "400",
-            "font_size": "20px"
-          }
-        }
-      }
-    },
-    "Pods": {
-      "title": "Pods",
-      "type": "admin",
-      "structure": {
-        "card": {
-          "models": [
-            {
-              "display_space": "1/3",
-              "title": "Rating",
-              "icon": "mdi mdi-currency-eur",
-              "color": "danger",
-              "type": "sum",
-              "query": "/total_rating",
-              "redirect": "",
-              "value": "",
-              "key": "frame_price"
-            },
-            {
-              "display_space": "1/3",
-              "title": "Nodes",
-              "icon": "mdi mdi-server",
-              "color": "warning",
-              "type": "count",
-              "query": "/nodes",
-              "redirect": "",
-              "value": "",
-              "key": ""
-            },
-            {
-              "display_space": "1/3",
-              "title": "Namespaces",
-              "icon": "mdi mdi-share-variant",
-              "color": "success",
-              "type": "count",
-              "query": "/namespaces",
-              "redirect": "",
-              "value": "",
-              "key": ""
-            }
-          ],
-          "styles": {}
-        },
-        "chart": {
-          "models": [
-            {
-              "display_space": "2/2",
-              "type": "line",
-              "title": "Pod metrics rate (in Euros)",
-              "query": "/rating",
-              "sort_id": "metric",
-              "time_id": "frame_begin",
-              "value_id": "frame_price",
-              "axis_type": "datetime",
-              "is_monitoring": false
-            }
-          ],
-          "styles": {
-            "height": "400",
-            "font_size": "20px"
-          }
-        }
-      }
-    },
-    "Monitoring": {
-      "title": "Monitoring",
-      "type": "admin",
-      "structure": {
-        "card": {
-          "models": [],
-          "styles": {}
-        },
-        "chart": {
-          "models": [
-            {
-              "display_space": "2/2",
-              "type": "area",
-              "title": "Nodes rate (in Euros)",
-              "query": "/rating",
-              "sort_id": "instance",
-              "time_id": "frame_begin",
-              "value_id": "price",
-              "axis_type": "datetime",
-              "is_monitoring": true
-            }
-          ],
-          "styles": {
-            "height": "400",
-            "font_size": "20px"
-          }
-        }
-      }
-    }
+    ]
   },
   "controls": {
     "card": {

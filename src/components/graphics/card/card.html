@@ -1,6 +1,6 @@
 <div v-if="configuration !== undefined" :class="'stat-card bg-gradient-'+configuration.color+' pointer'" @click="redirectCard()">
     <div class="icon">
-        <i v-if="configuration.icon!=undefined" v-bind:class="configuration.icon+' f-left'"></i>
+        <font-awesome-icon v-if="configuration.icon!=undefined" class="f-left" :icon="['fas',configuration.icon]"/>
     </div>
     <div class="content">
         <h2><strong v-bind:class="configuration.type+' f-right'">{{ configuration.value }}</strong></h2>

@@ -20,20 +20,19 @@
             </a>
         </li>
         <div v-for="item in menus">
-            <li v-if="item.children" class="nav-item nav-sub-item pointer">
-                <a data-bs-toggle="collapse" :href="'#'+item.id" aria-expanded="false" :aria-controls="'#'+item.id"
+            <li v-if="item.children!=undefined" class="nav-item nav-sub-item pointer">
+                <a data-bs-toggle="collapse" :href="'#'+item.name.replaceAll(' ','')" aria-expanded="false" :aria-controls="'#'+item.name.replaceAll(' ','')"
                    v-bind:class="isActive[item.id] === true || show[item.id] && show[item.id].indexOf($route.name)!== -1 ? 'nav-link sub' : 'nav-link '">
-                    <i class="menu-arrow"></i>
+                    <font-awesome-icon :icon="['fas','fa-angle-right']" />
                     <span class="menu-title">{{ item.name }}</span>
-                    <i :class="'mdi '+item.icon+' menu-icon'"></i>
+                    <font-awesome-icon :icon="['fas',item.icon]" />
                 </a>
-                <div class="collapse" :id="item.id">
+                <div class="collapse" :id="item.name.replaceAll(' ','')">
                     <ul class="nav flex-column sub-menu">
-                        <router-link v-for="subItem in item.children" class="pointer" :to="subItem.path" custom
-                                     v-slot="{ navigate }">
+                        <router-link v-for="subItem in item.children" class="pointer" :to="'/'+subItem.name" custom v-slot="{ navigate }">
                             <li v-bind:class="$route.name==subItem.name ? 'nav-item active' : 'nav-item '">
                                 <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
-                                    <i :class="'mdi '+subItem.icon+' float-right'"></i>
+                                    <font-awesome-icon class="float-right" :icon="['fas',subItem.icon]" />
                                     <span class="sub-menu-title">{{ subItem.name }}</span>
                                 </a>
                             </li>
@@ -43,9 +42,9 @@
             </li>
             <router-link v-else class="pointer" :to="item.path" custom v-slot="{ navigate }">
                 <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item'">
-                    <a class="nav-link" @click="navigate" @keypress.enter="navigate" role="link">
+                    <a class="nav-link menu-icon" @click="navigate" @keypress.enter="navigate" role="link">
                         <span class="menu-title">{{ item.name }}</span>
-                        <i :class="'mdi '+item.icon+' menu-icon'"></i>
+                        <font-awesome-icon class="menu-icon" :icon="['fas',item.icon]" />
                     </a>
                 </li>
             </router-link>

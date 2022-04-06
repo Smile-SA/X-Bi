@@ -9,6 +9,12 @@ import VueApexCharts from 'vue-apexcharts'
 import card from './components/graphics/card';
 import ApexCharts from './components/graphics/apexcharts';
 import selectOption from './components/Layout/selectOption';
+
+import {library} from '@fortawesome/fontawesome-svg-core';
+import {fas} from '@fortawesome/free-solid-svg-icons';
+import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome';
+
+library.add(fas);
 Vue.component("VueApexCharts", VueApexCharts);
 Vue.component("selectOption", selectOption);
 Vue.component("ApexCharts", ApexCharts);
@@ -17,6 +23,7 @@ Vue.component("DataTable", DataTable);
 Vue.component("vue-form-generator", VueFormGenerator.component);
 Vue.use(VueSweetalert2);
 Vue.component('Picker', VueRangedatePicker);
+Vue.component("font-awesome-icon", FontAwesomeIcon);
 Vue.config.productionTip = false
 Vue.config.devtools = false
 new Vue({
