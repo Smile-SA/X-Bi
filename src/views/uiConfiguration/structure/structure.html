@@ -2,18 +2,14 @@
     <div class="col-md-2 m-b" id="title-box">
         <div class="apex-box ">
             <h3 class="page-title ">
-                <span  class="page-title-icon bg-gradient-primary text-white me-2"> <i :class="'mdi '+$route.meta.icon"></i></span>
+                <span  class="page-title-icon bg-gradient-primary me-2">
+                    <font-awesome-icon class="text-white" :icon="['fas',$route.meta.icon]"/>
+                </span>
                 <span class="title">{{ $route.meta.description }}</span>
             </h3>
         </div>
     </div>
-    <div class="col-md-10" id="input-box">
-        <div class="row">
-            <select-option class="col-xxl-4 col-xl-4 col-lg-4 col-md-6 col-sm-6 m-b" :type="'select'" :label="'Select a view'" :selectId="'name'"
-                           :placeholder="'Select a view'"
-                           :selectFunction="this.setView" :selectData="views"></select-option>
-        </div>
-    </div>
+
     <div class="col-12 grid-margin" v-if="Object.keys(tableData).length>0" v-for="(item, id) in tableData" >
         <div class="card">
             <div class="page-header card-header mb-0">

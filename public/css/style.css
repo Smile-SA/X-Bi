@@ -20263,7 +20263,7 @@ dl li {
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.sidebar .nav .nav-item.active:hover > .nav-link i {
+.sidebar .nav .nav-item.active:hover > .nav-link svg {
     color: var(--bs-icon-bg);
 }
 

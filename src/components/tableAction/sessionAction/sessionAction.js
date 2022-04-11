@@ -21,12 +21,16 @@ export default {
     },
     computed: {},
     mounted() {
+
+    },
+    beforeMount() {
+        this.getControls()
     },
     methods: {
         getControls() {
             this.controls = configurationsController.getControls()
         },
-        async deleteModel(e) {
+        async deleted(e) {
             e.preventDefault();
             this.$swal({
                 title: 'Are you sure?',
@@ -40,18 +44,17 @@ export default {
                 showLoaderOnConfirm: true
             }).then((result) => {
                 if (result.value) {
-                    if (configurationsController.deleteModel(this.data.activeView, this.data.structureType, this.data.id)) {
+                    if (this.data.structureType === "view") {
+                        configurationsController.deleteDynamicsViews(this.data.name)
+                    } else if (configurationsController.deleteModel(this.data.activeView, this.data.structureType, this.data.id)) {
                         this.$swal('Deleted', 'You successfully deleted this file', 'success')
-                    } else {
-                        this.$swal('Cancelled', 'Please try again')
-                    }
+                    } else this.$swal('Cancelled', 'Please try again')
                 } else {
                     this.$swal('Cancelled', 'Your file is still intact', 'info')
                 }
             })
         },
-        async updateModel(structureType) {
-            await this.getControls()
+        async updated(structureType) {
             this.showForm = true
             if (this.showForm === true) {
                 let div = await document.createElement('div');
@@ -121,7 +124,7 @@ export default {
 
             }
         },
-        previewModel: async function (structureType) {
+        async previewed (structureType) {
             let div = await document.createElement('div');
             div.id = 'update-' + structureType + '-form'
             let value = 0
@@ -185,7 +188,6 @@ export default {
                 showCloseButton: true,
                 // eslint-disable-next-line no-unused-vars
             }).then((result) => {
-
             });
 
         },

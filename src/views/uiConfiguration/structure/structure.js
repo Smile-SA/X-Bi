@@ -4,13 +4,13 @@ import displayIcon from '../../../components/tableAction/displayIcon';
 export default {
   name: 'structure',
   components: {},
-  props: [],
+  props: ['id'],
   data() {
     return {
       uiConfigurations: JSON.parse(window.sessionStorage.getItem('uiConfigurations')),
       cardConfigurations: JSON.parse(window.sessionStorage.getItem('uiConfigurations')),
       views: [],
-      activeView: null,
+      activeView: this.id,
       cardTypes: ["number", "date"],
       cardColors: ["primary", "success", "warning", "danger", "dark"],
       card: [],
@@ -28,8 +28,12 @@ export default {
     }
   },
   mounted() {
+    this.getStructure(this.activeView)
     this.getViews();
     this.getControls();
+  },
+  async beforeMount(){
+    this.activeView = this.$route.params.id;
   },
   methods: {
     async bindModelsData() {
@@ -92,11 +96,6 @@ export default {
     },
     getViews() {
       this.views = configurationsController.getViews();
-    },
-    setView(view) {
-      this.activeView = view.target.value;
-      this.getStructure(this.activeView)
-
     },
     async addModel(structureType) {
       this.showForm = {

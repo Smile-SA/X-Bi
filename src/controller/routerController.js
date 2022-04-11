@@ -96,7 +96,7 @@ export function getChildren() {
     return data;
 }
 
-export async function setDynamicViewProperty(name, value,property) {
+export async function setDynamicViewProperty(name,value,property) {
     await Object.keys(dynamicViews).map((key) => {
         if(dynamicViews[key].name === name){
             dynamicViews[key][property]=value;

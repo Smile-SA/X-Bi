@@ -231,9 +231,11 @@ export async function refreshDate(date, that) {
 export async function get(url, that) {
     return await fetchDataAsJSON(api + url, that);
 }
+
 export function goTo(route, that) {
     that.$router.push(route);
 }
+
 export function createSerie(data, config, serieName, boucle) {
     let min = 0, max = 0, series = [], lastDate = 0, obj = []
     if (boucle === 1) {
@@ -284,8 +286,8 @@ export function createSerie(data, config, serieName, boucle) {
         })
     }
     return {'series': series, 'lastDate': lastDate};
-
 }
+
 export function createOption(config) {
     return {
         chart: {
@@ -348,6 +350,7 @@ export function createOption(config) {
         }
     }
 }
+
 export function editTitleBox() {
     setTimeout(() => {
         if ($('#title-box').hasClass('col-md-2')) {

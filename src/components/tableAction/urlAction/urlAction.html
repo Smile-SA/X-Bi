@@ -1,14 +1,14 @@
 <center :ref="data.id">
     <router-link v-if="data.isDisplayed" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
-        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
-                class="mdi mdi-eye"></i> Display</a>
+        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
+            <font-awesome-icon :icon="['fas','fa-eye']"/> Display</a>
     </router-link>
     <router-link v-if="data.isUpdated" :to="data.url+'/update/'+data.id" custom v-slot="{ navigate }">
-        <a class="btn btn-sm btn-outline-secondary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
-                class="mdi mdi-edit"></i> Update</a>
+        <a class="btn btn-sm btn-outline-purple m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
+             <font-awesome-icon :icon="['fas','fa-pen-to-square']"/> Update</a>
     </router-link>
-    <button v-if="data.isDeleted" v-on:click="submitDeleteForm" type="button" class="btn btn-sm btn-outline-danger "><i
-            class="mdi mdi-trash-can"></i> Delete
+    <button v-if="data.isDeleted" v-on:click="submitDeleteForm" type="button" class="btn btn-sm btn-outline-danger ">
+        <font-awesome-icon :icon="['fas','fa-trash-can']"/> Delete
     </button>
 </center>
 

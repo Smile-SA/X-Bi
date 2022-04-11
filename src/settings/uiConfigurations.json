@@ -48,9 +48,9 @@
       },
       {
         "name": "Structure",
-        "path": "/structure",
+        "path": "/structure/display/:id",
         "icon": "fa-angle-right",
-        "component": "views/uiConfiguration/example/index.vue",
+        "component": "views/uiConfiguration/structure/index.vue",
         "description": "Router configuration",
         "display": true,
         "displayInMenu": false,
@@ -712,6 +712,82 @@
             "type": "switch",
             "required": false,
             "placeholder": "Chart monitoring",
+            "default": false
+          }
+        ]
+      }
+    },
+    "view": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "component": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "sort_id",
+          "time_id",
+          "value_id",
+          "axis_type",
+          "is_monitoring"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "name",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view name"
+          },
+          {
+            "model": "description",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view description"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "component",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view component"
+          },
+          {
+            "model": "display",
+            "type": "switch",
+            "required": false,
+            "placeholder": "Display view",
             "default": false
           }
         ]

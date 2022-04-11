@@ -1,9 +1,9 @@
 import displayView from "../../../components/tableAction/edit/editViewsDisplay";
-import requiresAuth from "../../../components/tableAction/edit/editRequires";
 import editName from "../../../components/tableAction/edit/editName";
 import editDescription from "../../../components/tableAction/edit/editDescription";
-import editIcon from "../../../components/tableAction/edit/editIcon";
+import editIcon from "../../../components/tableAction/displayIcon";
 import * as controller from "../../../controller/routerController.js"
+import actions from "../../../components/tableAction/sessionAction";
 
 export default {
     name: 'views',
@@ -38,14 +38,13 @@ export default {
                         component: editIcon,
                     },
                     {
-                        key: "requiresAuth",
-                        title: "Requires authentication",
-                        component: requiresAuth
-                    },
-                    {
                         key: "display",
                         title: "Display",
                         component: displayView
+                    },
+                    {
+                        title: "Structures",
+                        component: actions
                     }
                 ]
             }
@@ -53,9 +52,26 @@ export default {
     },
     methods: {
         Templates() {
-            let children = controller.getChildren()
-            Object.keys(children).map((item) => {
-                this.dynamicViews.push(children[item])
+            let views = controller.getChildren()
+            Object.keys(views).map((item) => {
+                let d = {
+                    'id': views[item].name,
+                    'name': views[item].name,
+                    'component': views[item].component,
+                    'description': views[item].description,
+                    'display': views[item].display,
+                    'icon': views[item].icon,
+                    'structureType':'view',
+                    'url': '/structure',
+                    'deleteTagIndex': '4',
+                    'colspan': '',
+                    'deleteParam': '',
+                    'isDisplayed': true,
+                    'isPreviewed': false,
+                    'isUpdated': true,
+                    'isDeleted': true,
+                }
+                this.dynamicViews.push(d)
             });
         },
 

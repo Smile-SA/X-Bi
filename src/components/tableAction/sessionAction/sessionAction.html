@@ -1,15 +1,20 @@
 <div>
-    <button v-on:click="previewModel(data.structureType)" type="button" class="btn btn-sm btn-outline-behance m-r-xs"><i
-            class="mdi mdi mdi-edi"></i> Preview
+    <router-link v-if="data.isDisplayed" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
+        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
+            <font-awesome-icon :icon="['fas','fa-eye']"/> Display</a>
+    </router-link>
+    <button v-if="data.isPreviewed" v-on:click="previewed(data.structureType)" type="button" class="btn btn-sm btn-outline-behance m-r-xs">
+        <font-awesome-icon :icon="['fas','fa-eye']"/>
+        Preview
     </button>
-    <button v-on:click="updateModel(data.structureType)" type="button" class="btn btn-sm btn-outline-purple m-r-xs"><i
-            class="mdi mdi mdi-edi"></i> Update
+    <button v-if="data.isUpdated" v-on:click="updated(data.structureType)" type="button" class="btn btn-sm btn-outline-purple m-r-xs">
+        <font-awesome-icon :icon="['fas','fa-pen-to-square']"/>
+        Update
     </button>
-    <button v-on:click="deleteModel" type="button" class="btn btn-sm btn-outline-danger "><i
-            class="mdi mdi-trash-can"></i> Delete
+    <button v-if="data.isDeleted" v-on:click="deleted" type="button" class="btn btn-sm btn-outline-danger ">
+        <font-awesome-icon :icon="['fas','fa-trash-can']"/> Delete
     </button>
     <div v-bind:id="'update'+data.structureType+'form'" v-if="showForm===true">
-        <vue-form-generator :schema="controls[data.structureType].form" :model="data"
-                            :options="formOptions"></vue-form-generator>
+        <vue-form-generator :schema="controls[data.structureType].form" :model="data" :options="formOptions"></vue-form-generator>
     </div>
 </div>
