@@ -1,4 +1,5 @@
-import * as router from "../../../../controller/routerController";
+import * as configurationsController  from "../../../../controller/configurationsController";
+
 export default {
   name: 'edit-views-display',
 
@@ -17,7 +18,7 @@ export default {
   },
   methods: {
     setDisplay(){
-      router.setDynamicViewProperty(this.data.name,this.isDisplay,'display');
+      configurationsController.setDynamicViewProperty(this.data.name,this.isDisplay,'display');
     }
   }
 }

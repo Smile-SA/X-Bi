@@ -103,17 +103,38 @@
         "path": "/",
         "icon": "fa-house-chimney-window",
         "description": "Home view",
-        "component": "views/home/index.vue",
+        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
+          "select": {
+            "models": [
+              {
+                "type": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "query": "",
+                "query_name": "",
+                "default_data": ""
+              },
+              {
+                "type": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "query": "",
+                "query_name": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
           "card": {
             "models": [
               {
                 "display_space": "1/3",
                 "title": "Namespaces",
-                "icon": "fa-share-nodes",
+                "icon": "fa-diagram-project",
                 "color": "success",
                 "type": "count",
                 "query": "/namespaces",
@@ -183,11 +204,40 @@
         "path": "/namespaces",
         "icon": "fa-diagram-project",
         "description": "Detailed view of namespaces",
-        "component": "views/namespaces/index.vue",
+        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
+          "select": {
+            "models": [
+              {
+                "type": "dynamic",
+                "title": "Namespace",
+                "placeholder": "Select namespace",
+                "query": "/namespaces",
+                "query_name": "namespace",
+                "default_data": ""
+              },
+              {
+                "type": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "query": "",
+                "query_name": "",
+                "default_data": ""
+              },
+              {
+                "type": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "query": "",
+                "query_name": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
           "card": {
             "models": [
               {
@@ -252,11 +302,40 @@
         "path": "/nodes",
         "icon": "fa-share-nodes",
         "description": "Detailed view of nodes",
-        "component": "views/nodes/index.vue",
+        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
+          "select": {
+            "models": [
+              {
+                "type": "dynamic",
+                "title": "Node",
+                "placeholder": "Select node",
+                "query": "/nodes",
+                "query_name": "node",
+                "default_data": ""
+              },
+              {
+                "type": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "query": "",
+                "query_name": "",
+                "default_data": ""
+              },
+              {
+                "type": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "query": "",
+                "query_name": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
           "card": {
             "models": [
               {
@@ -284,7 +363,7 @@
               {
                 "display_space": "1/3",
                 "title": "Namespaces",
-                "icon": "fa-share-nodes",
+                "icon": "fa-diagram-project",
                 "color": "success",
                 "type": "count",
                 "query": "/namespaces",
@@ -321,11 +400,40 @@
         "path": "/pods",
         "icon": "fa-sitemap",
         "description": "Detailed view of pods",
-        "component": "views/pods/index.vue",
+        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
+          "select": {
+            "models": [
+              {
+                "type": "dynamic",
+                "title": "Pod",
+                "placeholder": "Select pod",
+                "query": "/pods",
+                "query_name": "pod",
+                "default_data": ""
+              },
+              {
+                "type": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "query": "",
+                "query_name": "",
+                "default_data": ""
+              },
+              {
+                "type": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "query": "",
+                "query_name": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
           "card": {
             "models": [
               {
@@ -353,7 +461,7 @@
               {
                 "display_space": "1/3",
                 "title": "Namespaces",
-                "icon": "fa-share-nodes",
+                "icon": "fa-diagram-project",
                 "color": "success",
                 "type": "count",
                 "query": "/namespaces",
@@ -711,8 +819,99 @@
             "model": "is_monitoring",
             "type": "switch",
             "required": false,
-            "placeholder": "Chart monitoring",
+            "label": "Chart monitoring",
             "default": false
+          }
+        ]
+      }
+    },
+    "select": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": [
+              "date",
+              "group",
+              "dynamic"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "placeholder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0
+          },
+          "query_name": {
+            "type": "string",
+            "minLength": 0
+          },
+          "default_data": {
+            "type": "string",
+            "minLength": 0
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "default_data"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Select type",
+            "values": [
+              "date",
+              "group",
+              "dynamic"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Select title"
+          },
+          {
+            "model": "placeholder",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Select placeholder"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Select query link"
+          },{
+            "model": "query_name",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "query data name to show in input"
+          },
+          {
+            "model": "default_data",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Default data"
           }
         ]
       }
@@ -725,11 +924,11 @@
             "type": "string",
             "minLength": 1
           },
-          "icon": {
+          "description": {
             "type": "string",
             "minLength": 1
           },
-          "description": {
+          "icon": {
             "type": "string",
             "minLength": 1
           },
@@ -739,17 +938,32 @@
           },
           "display": {
             "type": "boolean"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "displayInMenu": {
+            "type": "boolean",
+            "default": true
+          },
+          "requiresAuth": {
+            "type": "boolean",
+            "default": true
+          },
+          "structure": {
+            "type": "object"
           }
         },
         "required": [
-          "type",
-          "title",
-          "query",
-          "sort_id",
-          "time_id",
-          "value_id",
-          "axis_type",
-          "is_monitoring"
+          "name",
+          "description",
+          "icon",
+          "component",
+          "display",
+          "path",
+          "displayInMenu",
+          "requiresAuth"
         ],
         "additionalProperties": false
       },
@@ -787,7 +1001,7 @@
             "model": "display",
             "type": "switch",
             "required": false,
-            "placeholder": "Display view",
+            "label": "Display",
             "default": false
           }
         ]

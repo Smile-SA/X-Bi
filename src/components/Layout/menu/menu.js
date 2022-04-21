@@ -1,4 +1,4 @@
-import * as controller from "../../../controller/routerController.js"
+import * as configurationsController from "../../../controller/configurationsController.js"
 import {generateAPIUrl} from "../../../settings/variables";
 export default {
   name: 'menu-layout',
@@ -22,7 +22,7 @@ export default {
   },
   methods: {
     getMenus(){
-      this.menus = controller.getMenus();
+      this.menus = configurationsController.getMenus();
     },
     async sunMenu(){
       let a = {},s={};

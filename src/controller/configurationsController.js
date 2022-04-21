@@ -1,13 +1,15 @@
 import * as uiConf from "../settings/uiConfigurations.json"
 
 var uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
-if(uiConfigurations === null){
+if (uiConfigurations === null) {
     uiConfigurations = uiConf
 }
 if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
+
 var dynamics = uiConfigurations.views.dynamic;
+var statics = uiConfigurations.views.static;
 var controls = uiConfigurations.controls;
 const Ajv = require("ajv");
 const ajv = new Ajv();
@@ -17,9 +19,9 @@ export function getConfig() {
 }
 
 export function getStructure(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure;
         }
     })
@@ -34,14 +36,13 @@ export function getStructure(activeView) {
             errors: true, data: null
         }
     }
-
 }
 
 export function getCard(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
-             r = dynamics[key].structure.card;
+        if (dynamics[key].name === activeView) {
+            r = dynamics[key].structure.card;
         }
     })
     if (Object.keys(r).length > 0) {
@@ -58,9 +59,9 @@ export function getCard(activeView) {
 }
 
 export function getCardModels(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure.card.models;
         }
     })
@@ -77,10 +78,30 @@ export function getCardModels(activeView) {
     }
 }
 
-export function getCardStyles(activeView) {
-    let r ;
+export function getSelectModels(activeView) {
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
+            r = dynamics[key].structure.select.models;
+        }
+    })
+    if (Object.keys(r).length > 0) {
+        return {
+            errors: false, data: {
+                total: Object.keys(r).length, results: r
+            }
+        }
+    } else {
+        return {
+            errors: true, data: null
+        }
+    }
+}
+
+export function getCardStyles(activeView) {
+    let r;
+    Object.keys(dynamics).map((key) => {
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure.card.styles;
         }
     })
@@ -113,9 +134,9 @@ export function getForm(structureType) {
 }
 
 export function getChart(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure.chart;
         }
     })
@@ -133,9 +154,9 @@ export function getChart(activeView) {
 }
 
 export function getChartModels(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure.chart.models;
         }
     })
@@ -153,9 +174,9 @@ export function getChartModels(activeView) {
 }
 
 export function getChartStyles(activeView) {
-    let r ;
+    let r;
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             r = dynamics[key].structure.chart.styles;
         }
     })
@@ -172,27 +193,37 @@ export function getChartStyles(activeView) {
     }
 }
 
-export function addModel(model, structureType, activeView) {
+export async function addModel(model, structureType, activeView) {
     let r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
-        Object.keys(dynamics).map((key) => {
-            if(dynamics[key].name === activeView){
+        await Object.keys(dynamics).map((key) => {
+            if (dynamics[key].name === activeView) {
                 dynamics[key].structure[structureType].models.push(model);
+                save();
+
             }
         })
-        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    }
+}
+
+export async function addDynamicView(model, structureType) {
+    let r = controlModel(controls[structureType].schema, model);
+    if (r.isValid) {
+        await dynamics.push(model);
+        await save();
     }
 }
 
 export function save() {
-        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'));
 }
 
 export async function updateModel(model, id, structureType, activeView) {
     let r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
         await Object.keys(dynamics).map((key) => {
-            if(dynamics[key].name === activeView){
+            if (dynamics[key].name === activeView) {
                 Object.keys(dynamics[key].structure[structureType].models).map((modelID) => {
                     if (dynamics[key].structure[structureType].models[modelID].id === id) {
                         Object.keys(model).map((item) => {
@@ -202,10 +233,24 @@ export async function updateModel(model, id, structureType, activeView) {
                 })
             }
         })
-
-        window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
     }
+    save();
+}
 
+export async function updateDynamicView(model, viewName, structureType) {
+    let r = controlModel(controls[structureType].schema, model);
+    if (r.isValid) {
+        await Object.keys(dynamics).map((key) => {
+            if (dynamics[key].name === viewName) {
+                Object.keys(dynamics[key]).map((modelID) => {
+                    if (model[modelID] != undefined) {
+                        dynamics[key][modelID] = model[modelID];
+                        save();
+                    }
+                })
+            }
+        })
+    }
 }
 
 export function getChartForm() {
@@ -216,8 +261,18 @@ export function getChartSchema() {
     return controls.chart.schema
 }
 
-export function getdynamics() {
-    return dynamics
+export function getDynamicViews() {
+    if (Object.keys(dynamics).length > 0) {
+        return {
+            errors: false, data: {
+                total: Object.keys(dynamics).length, results: dynamics
+            }
+        }
+    } else {
+        return {
+            errors: true, data: null
+        }
+    }
 }
 
 export function getControls() {
@@ -241,29 +296,29 @@ export function controlModel(schema, model) {
 
 export async function deleteModel(activeView, structureType, id) {
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             if (dynamics[key].structure[structureType].models[id] !== undefined) {
                 dynamics[key].structure[structureType].models.splice(id, 1);
-                window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+                save();
             }
         }
     })
 }
 
 export async function deleteDynamicsViews(activeViewName) {
-    let i=0;
+    let i = 0;
     Object.keys(dynamics).map((key) => {
-            if(dynamics[key].name === activeViewName){
-                dynamics.splice(i, 1);
-                this.save();
-            }
-            i+=1;
+        if (dynamics[key].name === activeViewName) {
+            dynamics.splice(i, 1);
+            save();
+        }
+        i += 1;
     })
 }
 
 export async function getModelToUpdate(activeView, structureType, id) {
     Object.keys(dynamics).map((key) => {
-        if(dynamics[key].name === activeView){
+        if (dynamics[key].name === activeView) {
             if (dynamics[key].structure[structureType].models[id] !== undefined) {
                 return {
                     errors: false, data: {
@@ -280,5 +335,31 @@ export async function getModelToUpdate(activeView, structureType, id) {
 
 }
 
+export function getMenus() {
+    let data = []
+    Object.keys(dynamics).map((item) => {
+        if (dynamics[item].display === true) {
+            if (dynamics[item].displayInMenu === true) {
+                data.push(dynamics[item])
+            }
+        }
+    });
+    Object.keys(statics).map((item) => {
+        if (statics[item].display === true) {
+            if (statics[item].displayInMenu === true) {
+                data.push(statics[item])
+            }
+        }
+    });
+    return data
+}
 
+export async function setDynamicViewProperty(name, value, property) {
+    await Object.keys(dynamics).map((key) => {
+        if (dynamics[key].name === name) {
+            dynamics[key][property] = value;
+            save();
+        }
+    })
+}
 

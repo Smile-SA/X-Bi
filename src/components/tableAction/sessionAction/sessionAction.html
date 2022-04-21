@@ -1,7 +1,7 @@
-<div>
+<div class="session-action">
     <router-link v-if="data.isDisplayed" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
         <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
-            <font-awesome-icon :icon="['fas','fa-eye']"/> Display</a>
+            <font-awesome-icon :icon="['fas','fa-eye']"/> Structure</a>
     </router-link>
     <button v-if="data.isPreviewed" v-on:click="previewed(data.structureType)" type="button" class="btn btn-sm btn-outline-behance m-r-xs">
         <font-awesome-icon :icon="['fas','fa-eye']"/>

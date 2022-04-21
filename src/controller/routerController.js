@@ -1,13 +1,8 @@
 import * as controller from "../controller/configurationsController.js"
 let conf = controller.getConfig();
-let dynamicViews
-if(conf.views.dynamic!=undefined){
-    dynamicViews = conf.views.dynamic
-}
 export function loadView(view) {
     return () => import(/* webpackChunkName: "view-[request]" */ `../${view}`)
 }
-
 export function getChildrenRoutes() {
     let data = []
     let dynamic = conf.views.dynamic;
@@ -60,72 +55,7 @@ export function getChildrenRoutes() {
     });
     return data
 }
-
-export function getHomeInConf() {
-    let views = conf.views;
-    Object.keys(views).map((item) => {
-        if (views[item].isHomePage === true) {
-            if (views[item].display === true) {
-                return {
-                    path: views[item].path,
-                    component: loadView(views[item].component),
-                    name: (views[item].name).replaceAll(' ',""),
-                    meta: {
-                        description: views[item].description,
-                        requiresAuth: views[item].requiresAuth,
-                        icon: views[item].icon
-                    },
-                }
-            }
-        }
-    });
-}
-
-export function getChildren() {
-    let data = [];
-    let children = conf.views.dynamic;
-    Object.keys(children).map((item) => {
-        if (children[item].children) {
-            Object.keys(children[item].children).map((subItem) => {
-                    data.push(children[item].children[subItem])
-            });
-        } else {
-                data.push(children[item])
-        }
-    });
-    return data;
-}
-
-export async function setDynamicViewProperty(name,value,property) {
-    await Object.keys(dynamicViews).map((key) => {
-        if(dynamicViews[key].name === name){
-            dynamicViews[key][property]=value;
-            controller.save();
-        }
-    })
-}
-
 export function getDefaultRoutes() {
     return conf.views.default
 }
 
-export function getMenus() {
-    let data = []
-    let dynamic = conf.views.dynamic;
-    let statics = conf.views.static;
-    Object.keys(dynamic).map((item) => {
-        if (dynamic[item].display === true) {
-            if (dynamic[item].displayInMenu === true) {
-                data.push(dynamic[item])
-            }
-        }
-    });
-    Object.keys(statics).map((item) => {
-        if (statics[item].display === true) {
-            if (statics[item].displayInMenu === true) {
-                data.push(statics[item])
-            }
-        }
-    });
-    return data
-}

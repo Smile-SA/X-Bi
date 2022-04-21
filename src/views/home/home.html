@@ -9,15 +9,16 @@
             </h3>
         </div>
     </div>
-    <div class="col-md-10" id="input-box">
+    <div class="col-md-10" id="input-box" v-if="Object.keys(structure.select.models).length>0">
         <div class="row">
-            <select-option class="col-lg-4 col-md-6 col-sm-6 m-b " :type="'date'" :label="'Select a date'"
-                           :selectFunction="setDate"
-                           :selectData="date"></select-option>
-
-            <select-option class="col-lg-4 col-md-6 col-sm-6 m-b " :type="'group'" :label="'Group data by'"
-                           :placeholder="'Select a group'" :defaultData="group" :selectFunction="setGroup"
-                           :selectData="groupOptions"></select-option>
+            <select-option v-for="item in structure.select.models" class="col-lg-4 col-md-6 col-sm-6 m-b "
+                           :type="item.type"
+                           :label="item.title"
+                           :defaultData="item.default_data"
+                           :placeholder="item.placeholder"
+                           :selectFunction="item.type === 'date' ?  setDate : item.type === 'group' ?  setGroup : ''"
+                           :selectData="item.type === 'date' ?  date : item.type === 'group' ?  groupOptions : ''" >
+            </select-option>
         </div>
     </div>
     <div class=" col-12" v-if="Object.keys(structure.card.models).length>0">

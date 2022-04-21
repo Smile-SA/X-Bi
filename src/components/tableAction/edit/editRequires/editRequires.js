@@ -1,4 +1,4 @@
-import * as router from "../../../../controller/routerController";
+import * as configurationsController  from "../../../../controller/configurationsController";
 
 export default {
   name: 'edit-requires',
@@ -16,7 +16,7 @@ export default {
   },
   methods: {
     setRequiresAuth() {
-      router.setDynamicViewProperty(this.data.name, this.isRequires, 'requiresAuth');
+      configurationsController.setDynamicViewProperty(this.data.name, this.isRequires, 'requiresAuth');
     }
   }
 }

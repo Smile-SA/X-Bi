@@ -1,6 +1,6 @@
 import * as configurationsController from "../controller/configurationsController";
 import {generateAPIUrl} from "./variables";
-
+// import $ from 'jquery';
 const api = generateAPIUrl();
 
 export function convertURLDateParameter(from, to) {
@@ -203,10 +203,10 @@ export async function refreshDate(date, that) {
         that.from = that.from.replace('T', ' ')
     }
 
-    let r = configurationsController.getCardModels(that.$route.name)
-    if (r.data.errors !== true) {
-        if (r.data.total > 0) {
-            that.structure.card.models = r.data.results;
+    let s = configurationsController.getCardModels(that.$route.name)
+    if (s.data.errors !== true) {
+        if (s.data.total > 0) {
+            that.structure.card.models = s.data.results;
         }
     } else {
         that.structure.card.models = {};

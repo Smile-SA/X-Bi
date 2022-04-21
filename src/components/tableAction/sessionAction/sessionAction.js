@@ -1,6 +1,7 @@
 import * as configurationsController from "../../../controller/configurationsController";
 import * as utils from "../../../settings/utils";
-import ApexCharts from 'apexcharts'
+import ApexCharts from 'apexcharts';
+import $ from 'jquery';
 
 export default {
     name: 'session-action',
@@ -66,11 +67,9 @@ export default {
                     html: div,
                     didOpen: () => {
                         Object.keys(this.data).map((key) => {
-                            if (key === 'value') {
-                                // je ne fais rein
-                            } else {
+                            let inputId = (key.replace("/", "")).replace("_", "-")
+                            if($('#update-' + structureType + '-form .field-wrap #' + inputId)[0]){
                                 if (this.controls[structureType].schema.properties[key] !== undefined) {
-                                    let inputId = (key.replace("/", "")).replace("_", "-")
                                     if (this.controls[structureType].schema.properties[key].type === 'boolean') {
                                         $('#update-' + structureType + '-form .field-wrap #' + inputId)[0].checked = this.data[key]
                                     } else {
@@ -83,16 +82,21 @@ export default {
                     preConfirm: () => {
                         let data = {};
                         Object.keys(this.controls[structureType].schema.properties).map((key) => {
-                            if (key === 'value') {
-                                data[key] = ''
-                            } else {
+                            if(document.getElementById(key.replace("_", "-"))){
                                 if (this.controls[structureType].schema.properties[key].type === 'boolean') {
                                     data[key] = document.getElementById(key.replace("_", "-")).checked
                                 } else {
                                     data[key] = document.getElementById(key.replace("_", "-")).value
                                 }
+                            }else{
+                                if(this.data[key]!==undefined){
+                                    data[key] = this.data[key]
+                                }
                             }
                         })
+                        if(data.path){
+                            data.path = '/'+data.name.replace(' ',"")
+                        }
                         let r = configurationsController.controlModel(this.controls[structureType].schema, data);
                         if (r.isValid === false) {
                             $('#update-' + structureType + '-form .wrapper.has-error').removeClass('has-error')
@@ -118,13 +122,15 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.updateModel(result.value, this.data.id, structureType, this.data.activeView)
+                        if (this.data.structureType === 'view') {
+                            configurationsController.updateDynamicView(result.value, this.data.name, structureType)
+                        } else configurationsController.updateModel(result.value, this.data.id, structureType, this.data.activeView)
                     }
                 });
 
             }
         },
-        async previewed (structureType) {
+        async previewed(structureType) {
             let div = await document.createElement('div');
             div.id = 'update-' + structureType + '-form'
             let value = 0

@@ -12,6 +12,10 @@ export default {
             groupOptions: ['Hour', 'Day', 'Month', 'Year'],
             queryBegin: "",
             structure: {
+                select: {
+                    models: {},
+                    styles: {}
+                },
                 card: {
                     models: {},
                     styles: {}
@@ -53,6 +57,10 @@ export default {
         },
         setModelsData() {
             this.structure = {
+                select: {
+                    models: {},
+                    styles: {}
+                },
                 card: {
                     models: {},
                     styles: {}
