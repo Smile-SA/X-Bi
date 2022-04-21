@@ -25,7 +25,7 @@ export function getStructure(activeView) {
             r = dynamics[key].structure;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -45,7 +45,7 @@ export function getCard(activeView) {
             r = dynamics[key].structure.card;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -65,7 +65,7 @@ export function getCardModels(activeView) {
             r = dynamics[key].structure.card.models;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -85,7 +85,7 @@ export function getSelectModels(activeView) {
             r = dynamics[key].structure.select.models;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -105,7 +105,7 @@ export function getCardStyles(activeView) {
             r = dynamics[key].structure.card.styles;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -120,7 +120,7 @@ export function getCardStyles(activeView) {
 
 export function getForm(structureType) {
     let r = controls[structureType].form
-    if (r !== undefined && Object.keys(r).length > 0) {
+    if (r !== undefined && r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -140,7 +140,7 @@ export function getChart(activeView) {
             r = dynamics[key].structure.chart;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r
@@ -160,7 +160,7 @@ export function getChartModels(activeView) {
             r = dynamics[key].structure.chart.models;
         }
     })
-    if (Object.keys(r).length > 0) {
+    if (r!=null || r!=undefined && Object.keys(r) && Object.keys(r).length > 0) {
         return {
             errors: false, data: {
                 total: Object.keys(r).length, results: r

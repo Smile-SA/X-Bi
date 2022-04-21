@@ -26,9 +26,9 @@ export default {
             }
         },
         async refreshChart() {
-            if (this.configuration.is_monitoring === 'true') {
+            if (this.configuration.is_monitoring === true) {
                 await setInterval(() => {
-                    if (this.data.height !== undefined) {
+                    if (this.data.height != undefined) {
                         general.getDataByDateToApex(this.configuration, this, this.name).then(async (r) => {
                             if (r.lastDate > this.data.lastDate) {
                                 this.data.series = r.series;

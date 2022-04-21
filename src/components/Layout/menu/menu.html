@@ -40,7 +40,9 @@
                     </ul>
                 </div>
             </li>
-            <router-link v-else class="pointer" :to="item.path" custom v-slot="{ navigate }">
+            <router-link v-else class="pointer" :to="{name:item.name, params:{
+                routeName : item.name
+            }}" custom v-slot="{ navigate }">
                 <li v-bind:class="$route.name==item.name ? 'nav-item active' : 'nav-item'">
                     <a class="nav-link menu-icon" @click="navigate" @keypress.enter="navigate" role="link">
                         <span class="menu-title">{{ item.name }}</span>

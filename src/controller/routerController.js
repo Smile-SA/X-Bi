@@ -1,8 +1,11 @@
 import * as controller from "../controller/configurationsController.js"
+
 let conf = controller.getConfig();
+
 export function loadView(view) {
     return () => import(/* webpackChunkName: "view-[request]" */ `../${view}`)
 }
+
 export function getChildrenRoutes() {
     let data = []
     let dynamic = conf.views.dynamic;
@@ -10,9 +13,10 @@ export function getChildrenRoutes() {
     Object.keys(dynamic).map((item) => {
         if (dynamic[item].display === true) {
             data.push({
-                path:dynamic[item].path,
-                component: loadView(dynamic[item].component),
+                path: dynamic[item].path,
+                components: {content : loadView(dynamic[item].component)},
                 name: dynamic[item].name,
+                props: { content: true},
                 meta: {
                     description: dynamic[item].description,
                     requiresAuth: dynamic[item].requiresAuth,
@@ -27,7 +31,8 @@ export function getChildrenRoutes() {
                 if (statics[item].children[subItem].display === true) {
                     data.push({
                         path: statics[item].children[subItem].path,
-                        component: loadView(statics[item].children[subItem].component),
+                        components: {content : loadView(statics[item].children[subItem].component)},
+                        props: { content: true},
                         name: statics[item].children[subItem].name,
                         meta: {
                             description: statics[item].children[subItem].description,
@@ -41,7 +46,8 @@ export function getChildrenRoutes() {
             if (statics[item].display === true) {
                 data.push({
                     path: statics[item].path,
-                    component: loadView(statics[item].component),
+                    components: {content : loadView(statics[item].component)},
+                    props: { content: true},
                     name: statics[item].name,
                     meta: {
                         description: statics[item].description,
@@ -55,6 +61,7 @@ export function getChildrenRoutes() {
     });
     return data
 }
+
 export function getDefaultRoutes() {
     return conf.views.default
 }

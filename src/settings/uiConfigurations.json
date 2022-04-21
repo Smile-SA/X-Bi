@@ -498,11 +498,40 @@
         "path": "/monitoring",
         "icon": "fa-chart-simple",
         "description": "Live data Monitoring",
-        "component": "views/monitoring/index.vue",
+        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
+          "select": {
+            "models": [
+              {
+                "type": "dynamic",
+                "title": "Instance",
+                "placeholder": "Select a instance",
+                "query": "/metrics",
+                "query_name": "metric",
+                "default_data": ""
+              },
+              {
+                "type": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "query": "",
+                "query_name": "",
+                "default_data": ""
+              },
+              {
+                "type": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "query": "",
+                "query_name": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
           "card": {
             "models": [],
             "styles": {}

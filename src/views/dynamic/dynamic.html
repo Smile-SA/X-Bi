@@ -5,7 +5,7 @@
                 <span class="page-title-icon bg-gradient-primary text-white">
                     <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
-                <span class="title">{{ $route.meta.description}}</span>
+                <span class="title">{{ $route.meta.description }}</span>
             </div>
         </div>
     </div>
@@ -15,6 +15,8 @@
                            v-if="(item.type === 'date' ? showDatePicker() : item.type === 'group' ? showGroup() : true) === true"
                            :type="item.type"
                            :label="item.title"
+                           :replace=undefined
+                           :by=undefined
                            :selectId=item.query_name
                            :defaultData="item.default_data"
                            :placeholder="item.placeholder"
@@ -34,8 +36,7 @@
         <div class="row">
             <div class="m-b " v-for="item in structure.chart.models">
                 <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin"
-                             :styles="structure.chart.styles" :to="to"
-                             :group="group"></apex-charts>
+                             :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
             </div>
         </div>
     </div>
