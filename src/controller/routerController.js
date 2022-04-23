@@ -1,5 +1,4 @@
 import * as controller from "../controller/configurationsController.js"
-
 let conf = controller.getConfig();
 
 export function loadView(view) {
@@ -8,19 +7,19 @@ export function loadView(view) {
 
 export function getChildrenRoutes() {
     let data = []
-    let dynamic = conf.views.dynamic;
-    let statics = conf.views.static;
-    Object.keys(dynamic).map((item) => {
-        if (dynamic[item].display === true) {
+    let dynamics = conf.views.dynamics;
+    let statics = conf.views.statics;
+    Object.keys(dynamics).map((item) => {
+        if (dynamics[item].display === true) {
             data.push({
-                path: dynamic[item].path,
-                components: {content : loadView(dynamic[item].component)},
-                name: dynamic[item].name,
+                path: dynamics[item].path,
+                components: {content : loadView('views/dynamic/index')},
+                name: dynamics[item].name,
                 props: { content: true},
                 meta: {
-                    description: dynamic[item].description,
-                    requiresAuth: dynamic[item].requiresAuth,
-                    icon: dynamic[item].icon
+                    description: dynamics[item].description,
+                    requiresAuth: dynamics[item].requiresAuth,
+                    icon: dynamics[item].icon
                 },
             })
         }

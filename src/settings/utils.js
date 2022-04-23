@@ -1,6 +1,6 @@
 import * as configurationsController from "../controller/configurationsController";
 import {generateAPIUrl} from "./variables";
-// import $ from 'jquery';
+import $ from 'jquery';
 const api = generateAPIUrl();
 
 export function convertURLDateParameter(from, to) {

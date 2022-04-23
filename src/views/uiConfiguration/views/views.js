@@ -2,7 +2,7 @@ import * as configurationsController from "../../../controller/configurationsCon
 import displayView from "../../../components/tableAction/edit/editViewsDisplay";
 import editIcon from "../../../components/tableAction/displayIcon";
 import actions from "../../../components/tableAction/sessionAction";
-
+import $ from 'jquery';
 export default {
     name: 'views',
     components: {},
@@ -27,21 +27,27 @@ export default {
         async getViews() {
             this.views = {}
             let s = configurationsController.getDynamicViews();
+            let bind = []
             if (s.data.errors !== true) {
                 if (Object.keys(s.data).length > 0) {
                     await Object.keys(s.data.results).map((key) => {
-                        s.data.results[key].id = s.data.results[key].name
-                        s.data.results[key].structureType = 'view'
-                        s.data.results[key].url = '/structure'
-                        s.data.results[key].deleteTagIndex = '4'
-                        s.data.results[key].colspan = ''
-                        s.data.results[key].deleteParam = ''
-                        s.data.results[key].isDisplayed = true
-                        s.data.results[key].isPreviewed = false
-                        s.data.results[key].isUpdated = true
-                        s.data.results[key].isDeleted = true
+                        bind[key] = {}
+                        Object.keys(s.data.results[key]).map((id) => {
+                            bind[key][id] = s.data.results[key][id];
+                        });
+                        bind[key].id = s.data.results[key].name
+                        bind[key].structureType = 'view'
+                        bind[key].url = '/structure'
+                        bind[key].deleteTagIndex = '4'
+                        bind[key].colspan = ''
+                        bind[key].deleteParam = ''
+                        bind[key].isDisplayed = true
+                        bind[key].isPreviewed = false
+                        bind[key].isUpdated = true
+                        bind[key].isDeleted = true
+                        bind[key].afterDeleteFunction = this.getViews
                     });
-                    this.views = s.data.results
+                    this.views = bind
                     this.bindData();
                 }
             }
@@ -104,9 +110,9 @@ export default {
                 await this.$swal({
                     title: "Add " + structureType + " form",
                     html: div,
-                     preConfirm: () => {
+                    preConfirm: () => {
                         let data = {}, controls = configurationsController.getControls();
-                         Object.keys(controls[structureType].schema.properties).map((key) => {
+                        Object.keys(controls[structureType].schema.properties).map((key) => {
                             if (key === 'value' || key === 'structure' || key === 'path' || key === 'displayInMenu' || key === 'requiresAuth') {
                                 data[key] = ''
                             } else {
@@ -117,26 +123,26 @@ export default {
                                 }
                             }
                         })
-                         data.path = data.name.replace(" ", "")
-                         data.displayInMenu = true
-                         data.requiresAuth = true
-                         data.structure = {
-                             "select": {
-                                 "models": [],
-                                 "styles": {}
-                             },
-                             "card": {
-                                 "models": [],
-                                 "styles": {}
-                             },
-                             "chart": {
-                                 "models": [],
-                                 "styles": {
-                                     "height": "500",
-                                     "font_size": "20px"
-                                 }
-                             }
-                         }
+                        data.path = data.name.replace(" ", "")
+                        data.displayInMenu = true
+                        data.requiresAuth = true
+                        data.structure = {
+                            "select": {
+                                "models": [],
+                                "styles": {}
+                            },
+                            "card": {
+                                "models": [],
+                                "styles": {}
+                            },
+                            "chart": {
+                                "models": [],
+                                "styles": {
+                                    "height": "500",
+                                    "font_size": "20px"
+                                }
+                            }
+                        }
                         let r = configurationsController.controlModel(controls[structureType].schema, data);
                         if (r.isValid === false) {
                             $('#add-' + structureType + '-form .wrapper.has-error').removeClass('has-error')
@@ -177,7 +183,6 @@ export default {
     mounted() {
 
     },
-
 }
 
 

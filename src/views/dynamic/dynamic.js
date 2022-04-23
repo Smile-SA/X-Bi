@@ -89,11 +89,13 @@ export default {
             return {start: n, end: a}
         },
         async getDynamicSelectData() {
+            let hasDynamicSelect = false
             this.select = {}
             await this.getStructureModelsData();
-            if (Object.keys(this.select.models).length > 0) {
+            if (this.select.models!=undefined && Object.keys(this.select.models).length > 0) {
                 await Object.keys(this.select.models).map((key) => {
                     if (this.select.models[key].type === 'dynamic') {
+                        hasDynamicSelect = true;
                         this.queryLink = this.select.models[key].query;
                         genaralController.getJsonData(this.select.models[key].query).then((r) => {
                             if (r.total > 0) {
@@ -104,6 +106,10 @@ export default {
                         })
                     }
                 })
+            }
+            console.log()
+            if(!hasDynamicSelect){
+                this.active = true;
             }
         }
     },

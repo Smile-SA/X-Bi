@@ -73,26 +73,35 @@ export default {
         async getStructure(activeView) {
             this.structure = {}
             let s = configurationsController.getStructure(activeView)
+            let bind = []
             if (s.data.errors !== true) {
                 if (Object.keys(s.data).length > 0) {
                     await Object.keys(s.data.results).map((structureType) => {
+                        bind[structureType] = []
                         Object.keys(s.data.results[structureType]).map((modelType) => {
                             if (modelType === "models") {
+                                bind[structureType][modelType] = []
                                 Object.keys(s.data.results[structureType][modelType]).map((item) => {
+                                    bind[structureType][modelType][item]={}
+                                    bind[structureType][modelType][item].isDeleted = true
+                                    bind[structureType][modelType][item].isUpdated = true
+                                    bind[structureType][modelType][item].id = item
+                                    bind[structureType][modelType][item].value = '0'
+                                    bind[structureType][modelType][item].activeView = activeView
+                                    bind[structureType][modelType][item].structureType = structureType
+                                    bind[structureType][modelType][item].updateFunction = this.getStructure
+                                    bind[structureType][modelType][item].afterDeleteFunction = this.getStructure
+                                    Object.keys(s.data.results[structureType][modelType][item]).map((id) => {
+                                        bind[structureType][modelType][item][id] = s.data.results[structureType][modelType][item][id];
+                                    });
                                     if (structureType === 'select') {
-                                        s.data.results[structureType][modelType][item].isPreviewed = false
-                                    } else s.data.results[structureType][modelType][item].isPreviewed = true
-                                    s.data.results[structureType][modelType][item].isDeleted = true
-                                    s.data.results[structureType][modelType][item].isUpdated = true
-                                    s.data.results[structureType][modelType][item].id = item
-                                    s.data.results[structureType][modelType][item].value = '0'
-                                    s.data.results[structureType][modelType][item].activeView = activeView
-                                    s.data.results[structureType][modelType][item].structureType = structureType
+                                        bind[structureType][modelType][item].isPreviewed = false
+                                    } else bind[structureType][modelType][item].isPreviewed = true
                                 });
                             }
                         });
                     });
-                    this.structure = s.data.results
+                    this.structure = bind
                 }
             }
             this.bindModelsData();
@@ -102,6 +111,7 @@ export default {
         },
         async addModel(structureType) {
             this.showForm = {
+                select: false,
                 card: false,
                 chart: false,
             }
@@ -159,8 +169,11 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.addModel(result.value, structureType, this.activeView);
-                        this.getStructure(this.activeView);
+                        configurationsController.addModel(result.value, structureType, this.activeView).then(r=>{
+                            if(r==true){
+                                this.getStructure(this.activeView);
+                            }
+                        })
                     }
                 });
 

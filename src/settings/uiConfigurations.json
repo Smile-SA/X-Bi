@@ -7,7 +7,7 @@
       "description": "Global infrastructure view",
       "requiresAuth": true
     },
-    "static": [
+    "statics": [
       {
         "name": "UI Configuration",
         "icon": "fa-tv",
@@ -97,13 +97,12 @@
         "requiresAuth": true
       }
     ],
-    "dynamic": [
+    "dynamics": [
       {
         "name": "Overall",
         "path": "/",
         "icon": "fa-house-chimney-window",
         "description": "Home view",
-        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -204,7 +203,6 @@
         "path": "/namespaces",
         "icon": "fa-diagram-project",
         "description": "Detailed view of namespaces",
-        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -302,7 +300,6 @@
         "path": "/nodes",
         "icon": "fa-share-nodes",
         "description": "Detailed view of nodes",
-        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -400,7 +397,6 @@
         "path": "/pods",
         "icon": "fa-sitemap",
         "description": "Detailed view of pods",
-        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -498,7 +494,6 @@
         "path": "/monitoring",
         "icon": "fa-chart-simple",
         "description": "Live data Monitoring",
-        "component": "views/dynamic/index.vue",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -928,7 +923,8 @@
             "inputType": "text",
             "required": false,
             "placeholder": "Select query link"
-          },{
+          },
+          {
             "model": "query_name",
             "type": "input",
             "inputType": "text",
@@ -961,10 +957,6 @@
             "type": "string",
             "minLength": 1
           },
-          "component": {
-            "type": "string",
-            "minLength": 1
-          },
           "display": {
             "type": "boolean"
           },
@@ -988,7 +980,6 @@
           "name",
           "description",
           "icon",
-          "component",
           "display",
           "path",
           "displayInMenu",
@@ -1018,13 +1009,6 @@
             "inputType": "text",
             "required": true,
             "placeholder": "Enter card icon class"
-          },
-          {
-            "model": "component",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "view component"
           },
           {
             "model": "display",

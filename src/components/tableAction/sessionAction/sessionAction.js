@@ -45,11 +45,15 @@ export default {
                 showLoaderOnConfirm: true
             }).then((result) => {
                 if (result.value) {
-                    if (this.data.structureType === "view") {
-                        configurationsController.deleteDynamicsViews(this.data.name)
-                    } else if (configurationsController.deleteModel(this.data.activeView, this.data.structureType, this.data.id)) {
-                        this.$swal('Deleted', 'You successfully deleted this file', 'success')
-                    } else this.$swal('Cancelled', 'Please try again')
+                    configurationsController.deleteModel(this.data.activeView ? this.data.activeView : this.data.name, this.data.structureType, this.data.id).then(r => {
+                        if (r == true) {
+                            this.$swal('Deleted', 'You successfully deleted this file', 'success');
+                            if (this.data.afterDeleteFunction != undefined) {
+                                this.data.afterDeleteFunction(this.data.activeView)
+                            }
+
+                        } else this.$swal('Cancelled', 'Please try again')
+                    });
                 } else {
                     this.$swal('Cancelled', 'Your file is still intact', 'info')
                 }
@@ -68,7 +72,7 @@ export default {
                     didOpen: () => {
                         Object.keys(this.data).map((key) => {
                             let inputId = (key.replace("/", "")).replace("_", "-")
-                            if($('#update-' + structureType + '-form .field-wrap #' + inputId)[0]){
+                            if ($('#update-' + structureType + '-form .field-wrap #' + inputId)[0]) {
                                 if (this.controls[structureType].schema.properties[key] !== undefined) {
                                     if (this.controls[structureType].schema.properties[key].type === 'boolean') {
                                         $('#update-' + structureType + '-form .field-wrap #' + inputId)[0].checked = this.data[key]
@@ -82,20 +86,20 @@ export default {
                     preConfirm: () => {
                         let data = {};
                         Object.keys(this.controls[structureType].schema.properties).map((key) => {
-                            if(document.getElementById(key.replace("_", "-"))){
+                            if (document.getElementById(key.replace("_", "-"))) {
                                 if (this.controls[structureType].schema.properties[key].type === 'boolean') {
                                     data[key] = document.getElementById(key.replace("_", "-")).checked
                                 } else {
                                     data[key] = document.getElementById(key.replace("_", "-")).value
                                 }
-                            }else{
-                                if(this.data[key]!==undefined){
+                            } else {
+                                if (this.data[key] !== undefined) {
                                     data[key] = this.data[key]
                                 }
                             }
                         })
-                        if(data.path){
-                            data.path = '/'+data.name.replace(' ',"")
+                        if (data.path) {
+                            data.path = '/' + data.name.replace(' ', "")
                         }
                         let r = configurationsController.controlModel(this.controls[structureType].schema, data);
                         if (r.isValid === false) {
@@ -122,9 +126,20 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        if (this.data.structureType === 'view') {
-                            configurationsController.updateDynamicView(result.value, this.data.name, structureType)
-                        } else configurationsController.updateModel(result.value, this.data.id, structureType, this.data.activeView)
+                        configurationsController.updateModel(result.value, this.data.id ? this.data.id : null, structureType, this.data.activeView ? this.data.activeView : this.data.name).then(r => {
+                            if (r === true) {
+                                if (this.data.updateFunction != undefined) {
+                                    this.data.updateFunction(this.data.activeView)
+                                } else {
+                                    Object.keys(result.value).map((key) => {
+                                        if (this.data[key] != undefined) {
+                                            this.data[key] = result.value[key]
+                                        }
+                                    })
+                                }
+
+                            }
+                        })
                     }
                 });
 
@@ -156,7 +171,6 @@ export default {
                     options.chart.height = 400
                     let chart = new ApexCharts(div, options);
                     if (structureType === "chart") {
-                        console.log(this.data.is_monitoring)
                         chart.render();
                         if (this.data.is_monitoring === true) {
                             setInterval(() => {
