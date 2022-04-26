@@ -20237,6 +20237,7 @@ dl li {
     font-size: 0.875rem;
     line-height: 1;
     vertical-align: middle;
+    margin-right: 0.375rem;
 }
 
 .sidebar .nav .nav-item .nav-link .badge {
@@ -22733,8 +22734,8 @@ input[type="checkbox"]:checked:after{
 }
 
 .stat-card svg {
-    font-size: 3rem;
-    width: 3rem;
+    /*font-size: 3rem;*/
+    width: 3.5rem;
     height: 100%;
     opacity: 0.8;
 }

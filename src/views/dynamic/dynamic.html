@@ -3,7 +3,7 @@
         <div class="apex-box">
             <div class="page-title pt-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon  width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
                 <span class="title">{{ $route.meta.description }}</span>
             </div>
@@ -27,16 +27,15 @@
     </div>
     <div class="col-12" v-if="structure.card.models!=undefined && Object.keys(structure.card.models).length>0">
         <div class="row">
-            <div class="col-sm-4 m-b" v-for="item in structure.card.models">
+            <div class="col-sm-4 m-b" v-for="item in structure.card.models"  :class="item.display_space === '1/3' ? 'col-sm-4 m-b' : item.display_space === '2/3' ? 'col-sm-8 m-b' : item.display_space === '3/3' ? 'col-sm-12 m-b' : 'col-sm-4 m-b'">
                 <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"></Card>
             </div>
         </div>
     </div>
     <div class="col-12" v-if="structure.chart.models!=undefined &&  Object.keys(structure.chart.models).length>0">
         <div class="row">
-            <div class="m-b " v-for="item in structure.chart.models">
-                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin"
-                             :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
+            <div v-for="item in structure.chart.models" :class="item.display_space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
+                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
             </div>
         </div>
     </div>

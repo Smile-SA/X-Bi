@@ -1,7 +1,7 @@
-import * as configurationsController from "../../../controller/configurationsController";
-import displayView from "../../../components/tableAction/edit/editViewsDisplay";
-import editIcon from "../../../components/tableAction/displayIcon";
-import actions from "../../../components/tableAction/sessionAction";
+import * as configurationsController from "../../../../controller/configurationsController";
+import displayView from "../../../../components/tableAction/edit/editViewsDisplay";
+import editIcon from "../../../../components/tableAction/displayIcon";
+import actions from "../../../../components/tableAction/sessionAction";
 import $ from 'jquery';
 export default {
     name: 'views',
@@ -171,6 +171,7 @@ export default {
                     if (result.isConfirmed === true) {
                         configurationsController.addDynamicView(result.value, structureType);
                         this.getViews();
+                        this.$forceUpdate();
                     }
                 });
             }

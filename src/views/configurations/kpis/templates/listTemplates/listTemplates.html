@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-2 m-b" id="title-box">
         <div class="apex-box">
-            <div class="page-title p-2">
+            <div class="page-title pt-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon  width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
-                <span class="title">{{ $route.meta.description}}</span>
+                <span class="title">{{ $route.meta.description }}</span>
             </div>
         </div>
     </div>
@@ -14,7 +14,7 @@
             <div class="page-header card-header mb-0">
                 <h3 class="page-title">List of templates</h3>
                 <router-link to="/templates/create" custom v-slot="{ navigate }" class="pull-right ">
-                    <a class="btn btn-sm btn-outline-primary" @click="navigate" @keypress.enter="navigate" role="link"><i class="mdi mdi-plus-box"></i> Create template</a>
+                    <a class="btn btn-sm btn-outline-primary" @click="navigate" @keypress.enter="navigate" role="link"><font-awesome-icon :icon="['fas','fa-plus-square']"/> Create template</a>
                 </router-link>
             </div>
             <div class="card-body">

@@ -1,6 +1,6 @@
-import * as instance from "../../../controller/instancesController";
-import * as template from "../../../controller/templatesController";
-import * as utils from "../../../settings/utils";
+import * as instance from "../../../../../controller/instancesController";
+import * as template from "../../../../../controller/templatesController";
+import * as utils from "../../../../../settings/utils";
 
 export default {
     name: 'create-instance',

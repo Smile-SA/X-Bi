@@ -1,5 +1,5 @@
 import * as CodeMirror from "codemirror";
-import * as instance from "../../../controller/instancesController";
+import * as instance from "../../../../../controller/instancesController";
 export default {
   name: 'display-instance',
   components: {},

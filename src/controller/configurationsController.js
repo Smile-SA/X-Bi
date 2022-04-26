@@ -23,6 +23,7 @@ export async function save() {
     uiConfigurations.views.statics = statics
     uiConfigurations.controls = controls
     await window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+    uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 }
 
 export function getStructure(activeView) {

@@ -1,21 +1,22 @@
 <div class="row">
     <div class="col-md-2 m-b" id="title-box">
         <div class="apex-box">
-            <div class="page-title p-2">
+            <div class="page-title pt-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon  width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
-                <span class="title">{{ $route.meta.description}}</span>
+                <span class="title">{{ $route.meta.description }}</span>
             </div>
         </div>
     </div>
-    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length >=0 " v-for="(item, id) in tableData" >
+    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length>0" v-for="(item, id) in tableData" >
         <div class="card">
             <div class="page-header card-header mb-0">
-                <h3 class="page-title text-capitalize">List of dynamic views</h3>
+                <h3 class="page-title text-capitalize">{{ id}} models properties</h3>
                 <div class="pull-right">
                     <a class="btn btn-sm btn-outline-primary text-capitalize"
-                       v-on:click="addView(id)"><i class="mdi mdi-plus-box"></i> add {{ id }} </a>
+                       v-on:click="addModel(id)"><font-awesome-icon :icon="['fas','fa-plus-square']"/> add
+                        {{ id }} </a>
                 </div>
             </div>
             <div class="card-body" v-if="Object.keys(item).length>0">
@@ -28,5 +29,4 @@
             <vue-form-generator :schema="controls[id].form"  :options="formOptions"></vue-form-generator>
         </div>
     </div>
-
 </div>

@@ -44,6 +44,7 @@ export default {
     async beforeMount() {
         await this.getMenus();
         await this.sunMenu();
+        this.$forceUpdate();
     }
 }
 

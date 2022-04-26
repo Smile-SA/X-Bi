@@ -1,6 +1,6 @@
-import * as configurationsController from "../../../controller/configurationsController";
-import action from "../../../components/tableAction/sessionAction";
-import displayIcon from '../../../components/tableAction/displayIcon';
+import * as configurationsController from "../../../../controller/configurationsController";
+import action from "../../../../components/tableAction/sessionAction";
+import displayIcon from '../../../../components/tableAction/displayIcon';
 import $ from 'jquery';
 
 export default {
@@ -133,7 +133,10 @@ export default {
                         let data = {}, controls = configurationsController.getControls();
                         Object.keys(controls[structureType].schema.properties).map((key) => {
                             let doc = document.getElementById(key.replace("_", "-"))
-                            if (doc) {
+                            if(!doc){
+                                doc = document.getElementById(key.replace("_", "-"))
+                            }
+                            if(doc){
                                 if (controls[structureType].schema.properties[key].type === 'boolean') {
                                     data[key] = doc.checked
                                 } else {

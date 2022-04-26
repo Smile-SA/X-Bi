@@ -3,7 +3,7 @@
         <div class="apex-box">
             <div class="page-title p-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
                 <span class="title">{{ $route.meta.description}}</span>
             </div>
@@ -16,7 +16,7 @@
                     <h3 class="page-title">Template creation form. <small>(<span class="text-danger">* </span>is required fields)</small></h3>
                     <router-link to="/templates" custom v-slot="{ navigate }" class="pull-right ">
                         <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
-                            <i class="mdi mdi-format-list-triangle"></i> Templates list</a>
+                            <font-awesome-icon :icon="['fas','fa-list-ul']"/> Templates list</a>
                     </router-link>
                 </div>
                 <div class="card-body pb-0">

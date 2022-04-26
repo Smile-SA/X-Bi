@@ -1,11 +1,11 @@
 <div class="row">
     <div class="col-md-2 m-b" id="title-box">
         <div class="apex-box">
-            <div class="page-title p-2">
+            <div class="page-title pt-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon  width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
-                <span class="title">{{ $route.meta.description}}</span>
+                <span class="title">{{ $route.meta.description }}</span>
             </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
                 <h3 class="page-title">Instance creation form. <small>(<span class="text-danger">* </span>is required fields)</small></h3>
                 <router-link to="/instances" custom v-slot="{ navigate }" class="pull-right ">
                     <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
-                        <i class="mdi mdi-format-list-triangle"></i> Instances list</a>
+                        <font-awesome-icon :icon="['fas','fa-list-ul']"/>  Instances list</a>
                 </router-link>
             </div>
             <div class="card-body pb-0">
