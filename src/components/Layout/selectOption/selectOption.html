@@ -5,10 +5,10 @@
                 <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-6 col-sm-4">
                     <label class="p-2">{{ label }}</label>
                 </div>
-                <picker v-if="type==='date'" class="col-xxl-8 col-xl-7 col-lg-7 col-md-6 col-sm-8" v-model="selectData"
+                <picker v-if="type==='Date'" class="col-xxl-8 col-xl-7 col-lg-7 col-md-6 col-sm-8" v-model="selectData"
                         i18n="EN"
                         @selected="selectFunction"></picker>
-                <div class="col-xxl-8 col-xl-7 col-lg-7 col-md-6 col-sm-8" v-if="type==='dynamic' || type==='group'">
+                <div class="col-xxl-8 col-xl-7 col-lg-7 col-md-6 col-sm-8" v-if="type==='Dynamic' || type==='Group'">
                     <select class=" form-control" v-on:change="selectFunction">
                         <option selected disabled> -- {{ placeholder }} --</option>
                         <option v-for="(option,key) in selectData"

@@ -110,19 +110,19 @@
           "select": {
             "models": [
               {
-                "type": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
+                "type": "Date",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": ""
               },
               {
-                "type": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
+                "type": "Group",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": "Hour"
               }
             ],
@@ -131,37 +131,37 @@
           "card": {
             "models": [
               {
-                "display_space": "1/3",
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "success",
-                "type": "count",
-                "query": "/namespaces",
                 "redirect": "/namespaces",
-                "value": "",
-                "key": ""
+                "query": "/namespaces",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "primary",
-                "type": "count",
-                "query": "/pods",
                 "redirect": "/pods",
-                "value": "",
-                "key": ""
+                "query": "/pods",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "warning",
-                "type": "count",
-                "query": "/nodes",
                 "redirect": "/nodes",
-                "value": "",
-                "key": ""
+                "query": "/nodes",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               }
             ],
             "styles": {}
@@ -169,25 +169,25 @@
           "chart": {
             "models": [
               {
-                "display_space": "1/2",
-                "type": "line",
                 "title": "Nodes rate (in Euros)",
                 "query": "/nodes/rating",
-                "sort_id": "node",
-                "time_id": "frame_begin",
-                "value_id": "frame_price",
+                "query_key": "frame_price",
+                "sort_key": "node",
+                "time_key": "frame_begin",
+                "type": "line",
                 "axis_type": "datetime",
+                "display_space": "1/2",
                 "is_monitoring": false
               },
               {
-                "display_space": "1/2",
-                "type": "area",
                 "title": "Namespaces Energy Efficiency",
                 "query": "/namespaces/rating",
-                "sort_id": "namespace",
-                "time_id": "frame_begin",
-                "value_id": "frame_price",
+                "query_key": "frame_price",
+                "sort_key": "namespace",
+                "time_key": "frame_begin",
+                "type": "area",
                 "axis_type": "datetime",
+                "display_space": "1/2",
                 "is_monitoring": false
               }
             ],
@@ -210,27 +210,27 @@
           "select": {
             "models": [
               {
-                "type": "dynamic",
                 "title": "Namespace",
                 "placeholder": "Select namespace",
+                "type": "Dynamic",
                 "query": "/namespaces",
-                "query_name": "namespace",
+                "query_key": "namespace",
                 "default_data": ""
               },
               {
-                "type": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
+                "type": "Date",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": ""
               },
               {
-                "type": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
+                "type": "Group",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": "Hour"
               }
             ],
@@ -239,37 +239,37 @@
           "card": {
             "models": [
               {
-                "display_space": "1/3",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "danger",
-                "type": "sum",
-                "query": "/total_rating",
                 "redirect": "",
-                "value": "",
-                "key": "frame_price"
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "type": "sum",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "primary",
-                "type": "count",
-                "query": "/pods",
                 "redirect": "/pods",
-                "value": "",
-                "key": ""
+                "query": "/pods",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "warning",
-                "type": "count",
-                "query": "/nodes",
                 "redirect": "/nodes",
-                "value": "",
-                "key": ""
+                "query": "/nodes",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               }
             ],
             "styles": {}
@@ -277,14 +277,14 @@
           "chart": {
             "models": [
               {
-                "display_space": "2/2",
-                "type": "area",
                 "title": "Metrics rate (in Euros)",
                 "query": "/rating",
-                "sort_id": "metric",
-                "time_id": "frame_begin",
-                "value_id": "frame_price",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "area",
                 "axis_type": "datetime",
+                "display_space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -307,27 +307,27 @@
           "select": {
             "models": [
               {
-                "type": "dynamic",
                 "title": "Node",
                 "placeholder": "Select node",
+                "type": "Dynamic",
                 "query": "/nodes",
-                "query_name": "node",
+                "query_key": "node",
                 "default_data": ""
               },
               {
-                "type": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
+                "type": "Date",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": ""
               },
               {
-                "type": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
+                "type": "Group",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": "Hour"
               }
             ],
@@ -336,37 +336,37 @@
           "card": {
             "models": [
               {
-                "display_space": "1/3",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "danger",
-                "type": "sum",
-                "query": "/total_rating",
                 "redirect": "",
-                "value": "",
-                "key": "frame_price"
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "type": "sum",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "primary",
-                "type": "count",
-                "query": "/pods",
                 "redirect": "",
-                "value": "",
-                "key": ""
+                "query": "/pods",
+                "query_key": "",
+                "display_space": "1/3",
+                "type": "count",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "success",
-                "type": "count",
-                "query": "/namespaces",
                 "redirect": "",
-                "value": "",
-                "key": ""
+                "query": "/namespaces",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               }
             ],
             "styles": {}
@@ -374,15 +374,15 @@
           "chart": {
             "models": [
               {
-                "display_space": "2/2",
-                "type": "bar",
                 "title": "Nodes metrics rate (in Euros)",
                 "query": "/rating",
-                "sort_id": "metric",
-                "time_id": "frame_begin",
-                "value_id": "frame_price",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
                 "axis_type": "datetime",
-                "is_monitoring": false
+                "is_monitoring": false,
+                "display_space": "2/2"
               }
             ],
             "styles": {
@@ -404,27 +404,27 @@
           "select": {
             "models": [
               {
-                "type": "dynamic",
                 "title": "Pod",
                 "placeholder": "Select pod",
+                "type": "Dynamic",
                 "query": "/pods",
-                "query_name": "pod",
+                "query_key": "pod",
                 "default_data": ""
               },
               {
-                "type": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
+                "type": "Date",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": ""
               },
               {
-                "type": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
+                "type": "Group",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": "Hour"
               }
             ],
@@ -433,37 +433,37 @@
           "card": {
             "models": [
               {
-                "display_space": "1/3",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "danger",
-                "type": "sum",
-                "query": "/total_rating",
                 "redirect": "",
-                "value": "",
-                "key": "frame_price"
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "type": "sum",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "warning",
-                "type": "count",
-                "query": "/nodes",
                 "redirect": "",
-                "value": "",
-                "key": ""
+                "query": "/nodes",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               },
               {
-                "display_space": "1/3",
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "success",
-                "type": "count",
-                "query": "/namespaces",
                 "redirect": "",
-                "value": "",
-                "key": ""
+                "query": "/namespaces",
+                "query_key": "",
+                "type": "count",
+                "display_space": "1/3",
+                "value": ""
               }
             ],
             "styles": {}
@@ -471,14 +471,14 @@
           "chart": {
             "models": [
               {
-                "display_space": "2/2",
-                "type": "line",
                 "title": "Pod metrics rate (in Euros)",
                 "query": "/rating",
-                "sort_id": "metric",
-                "time_id": "frame_begin",
-                "value_id": "frame_price",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "line",
                 "axis_type": "datetime",
+                "display_space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -501,27 +501,27 @@
           "select": {
             "models": [
               {
-                "type": "dynamic",
                 "title": "Instance",
                 "placeholder": "Select a instance",
+                "type": "Dynamic",
                 "query": "/metrics",
-                "query_name": "metric",
+                "query_key": "metric",
                 "default_data": ""
               },
               {
-                "type": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
+                "type": "Date",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": ""
               },
               {
-                "type": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
+                "type": "Group",
                 "query": "",
-                "query_name": "",
+                "query_key": "",
                 "default_data": "Hour"
               }
             ],
@@ -534,14 +534,14 @@
           "chart": {
             "models": [
               {
-                "display_space": "2/2",
-                "type": "area",
                 "title": "Nodes rate (in Euros)",
                 "query": "/rating",
-                "sort_id": "instance",
-                "time_id": "frame_begin",
-                "value_id": "price",
+                "query_key": "price",
+                "sort_key": "instance",
+                "time_key": "frame_begin",
+                "type": "area",
                 "axis_type": "datetime",
+                "display_space": "2/2",
                 "is_monitoring": true
               }
             ],
@@ -555,18 +555,102 @@
     ]
   },
   "controls": {
+    "select": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "placeholder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Date",
+              "Group",
+              "Dynamic"
+            ]
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 0
+          },
+          "default_data": {
+            "type": "string",
+            "minLength": 0
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "default_data"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Title"
+          },
+          {
+            "model": "placeholder",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Placeholder"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Type",
+            "values": [
+              "Date",
+              "Dynamic",
+              "Group"
+            ]
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query data key to show in input"
+          },
+          {
+            "model": "default_data",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Default data"
+          }
+        ]
+      }
+    },
     "card": {
       "schema": {
         "type": "object",
         "properties": {
-          "display_space": {
-            "type": "string",
-            "enum": [
-              "1/3",
-              "2/3",
-              "3/3"
-            ]
-          },
           "title": {
             "type": "string",
             "minLength": 1
@@ -585,51 +669,48 @@
               "dark"
             ]
           },
+          "redirect": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string"
+          },
           "type": {
             "type": "string",
             "enum": [
               "count",
               "sum",
               "avg",
-              "date"
+              "Date"
             ]
           },
-          "query": {
+          "display_space": {
             "type": "string",
-            "minLength": 1
-          },
-          "redirect": {
-            "type": "string"
-          },
-          "value": {
-            "type": "string"
-          },
-          "key": {
-            "type": "string"
-          }
-        },
-        "required": [
-          "title",
-          "color",
-          "type",
-          "icon",
-          "query"
-        ],
-        "additionalProperties": false
-      },
-      "form": {
-        "fields": [
-          {
-            "model": "display_space",
-            "type": "select",
-            "required": true,
-            "placeholder": "Display space per row",
-            "values": [
+            "enum": [
               "1/3",
               "2/3",
               "3/3"
             ]
           },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "icon",
+          "color",
+          "query",
+          "type"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
           {
             "model": "title",
             "type": "input",
@@ -658,23 +739,11 @@
             ]
           },
           {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Card type",
-            "values": [
-              "count",
-              "sum",
-              "avg",
-              "date"
-            ]
-          },
-          {
-            "model": "key",
+            "model": "redirect",
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Card value calculation key"
+            "placeholder": "Card redirect link"
           },
           {
             "model": "query",
@@ -684,11 +753,34 @@
             "placeholder": "Card query link"
           },
           {
-            "model": "redirect",
+            "model": "query_key",
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Card redirect link"
+            "placeholder": "Card value calculation key"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "count",
+              "sum",
+              "avg",
+              "Date"
+            ]
+          },
+          {
+            "model": "display_space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Display space per row",
+            "values": [
+              "1/3",
+              "2/3",
+              "3/3"
+            ]
           }
         ]
       }
@@ -697,12 +789,25 @@
       "schema": {
         "type": "object",
         "properties": {
-          "display_space": {
+          "title": {
             "type": "string",
-            "enum": [
-              "1/2",
-              "2/2"
-            ]
+            "minLength": 1
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sort_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "time_key": {
+            "type": "string",
+            "minLength": 1
           },
           "type": {
             "type": "string",
@@ -721,30 +826,17 @@
               "scatter"
             ]
           },
-          "title": {
-            "type": "string",
-            "minLength": 1
-          },
-          "query": {
-            "type": "string",
-            "minLength": 1
-          },
-          "sort_id": {
-            "type": "string",
-            "minLength": 1
-          },
-          "time_id": {
-            "type": "string",
-            "minLength": 1
-          },
-          "value_id": {
-            "type": "string",
-            "minLength": 1
-          },
           "axis_type": {
             "type": "string",
             "enum": [
               "datetime"
+            ]
+          },
+          "display_space": {
+            "type": "string",
+            "enum": [
+              "1/2",
+              "2/2"
             ]
           },
           "is_monitoring": {
@@ -752,49 +844,20 @@
           }
         },
         "required": [
-          "type",
           "title",
           "query",
-          "sort_id",
-          "time_id",
-          "value_id",
+          "query_key",
+          "sort_key",
+          "time_key",
+          "type",
           "axis_type",
+          "display_space",
           "is_monitoring"
         ],
         "additionalProperties": false
       },
       "form": {
         "fields": [
-          {
-            "model": "display_space",
-            "type": "select",
-            "required": true,
-            "placeholder": "Display space per row",
-            "values": [
-              "1/2",
-              "2/2"
-            ]
-          },
-          {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Chart type",
-            "values": [
-              "area",
-              "bar",
-              "bubble",
-              "candlestick",
-              "donut",
-              "heatmap",
-              "histogram",
-              "line",
-              "pie",
-              "radar",
-              "radialBar",
-              "scatter"
-            ]
-          },
           {
             "model": "title",
             "type": "input",
@@ -810,25 +873,45 @@
             "placeholder": "Chart query link"
           },
           {
-            "model": "sort_id",
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart value id"
+          },
+          {
+            "model": "sort_key",
             "type": "input",
             "inputType": "text",
             "required": true,
             "placeholder": "Chart sort id"
           },
           {
-            "model": "time_id",
+            "model": "time_key",
             "type": "input",
             "inputType": "text",
             "required": true,
             "placeholder": "Chart time id"
           },
           {
-            "model": "value_id",
-            "type": "input",
-            "inputType": "text",
+            "model": "type",
+            "type": "select",
             "required": true,
-            "placeholder": "Chart value id"
+            "placeholder": "Chart type",
+            "values": [
+              "area",
+              "bar",
+              "bubble",
+              "candlestick",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "pie",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
           },
           {
             "model": "axis_type",
@@ -840,6 +923,16 @@
             ]
           },
           {
+            "model": "display_space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Display space per row",
+            "values": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          {
             "model": "is_monitoring",
             "type": "switch",
             "required": false,
@@ -848,98 +941,6 @@
             "multi": true,
             "textOn": "True",
             "textOff": "False"
-          }
-        ]
-      }
-    },
-    "select": {
-      "schema": {
-        "type": "object",
-        "properties": {
-          "type": {
-            "type": "string",
-            "enum": [
-              "date",
-              "group",
-              "dynamic"
-            ]
-          },
-          "title": {
-            "type": "string",
-            "minLength": 1
-          },
-          "placeholder": {
-            "type": "string",
-            "minLength": 1
-          },
-          "query": {
-            "type": "string",
-            "minLength": 0
-          },
-          "query_name": {
-            "type": "string",
-            "minLength": 0
-          },
-          "default_data": {
-            "type": "string",
-            "minLength": 0
-          }
-        },
-        "required": [
-          "type",
-          "title",
-          "query",
-          "default_data"
-        ],
-        "additionalProperties": false
-      },
-      "form": {
-        "fields": [
-          {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Select type",
-            "values": [
-              "date",
-              "group",
-              "dynamic"
-            ]
-          },
-          {
-            "model": "title",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Select title"
-          },
-          {
-            "model": "placeholder",
-            "type": "input",
-            "inputType": "text",
-            "required": true,
-            "placeholder": "Select placeholder"
-          },
-          {
-            "model": "query",
-            "type": "input",
-            "inputType": "text",
-            "required": false,
-            "placeholder": "Select query link"
-          },
-          {
-            "model": "query_name",
-            "type": "input",
-            "inputType": "text",
-            "required": false,
-            "placeholder": "query data name to show in input"
-          },
-          {
-            "model": "default_data",
-            "type": "input",
-            "inputType": "text",
-            "required": false,
-            "placeholder": "Default data"
           }
         ]
       }

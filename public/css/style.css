@@ -3243,7 +3243,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4.5%;
+        width: 4%
     }
 
     .col-sm-1 {
@@ -3327,7 +3327,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 95.5%;
+        width: 96%
     }
 
     .col-sm-12 {
@@ -3520,7 +3520,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4.5%;
+        width: 4%
     }
 
     .col-md-2 {
@@ -3589,7 +3589,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 95.5%;
+        width: 96%
     }
 
     .col-md-11 {
@@ -3782,7 +3782,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4.5%;
+        width: 4%
     }
 
     .col-lg-1 {
@@ -3866,7 +3866,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 95.5%;
+        width: 96%
     }
 
     .col-lg-12 {
@@ -4052,7 +4052,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4.5%;
+        width: 4%
     }
 
     .col-xl-1 {
@@ -4135,7 +4135,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 95.5%;
+        width: 96%
     }
 
     .col-xl-12 {
@@ -4328,7 +4328,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4.5%;
+        width: 4%
     }
 
     .col-xxl-2 {
@@ -4405,7 +4405,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 95.5%;
+        width: 96%
     }
 
     .col-xxl-12 {
@@ -15997,7 +15997,7 @@ code {
     display: inline; /* the default for span */
     width: 100px;
     height: 100px;
-    padding: 0.5rem;
+    padding: 0.4rem;
     border-radius: 0.15rem;
     -webkit-box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
     box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
@@ -22735,7 +22735,7 @@ input[type="checkbox"]:checked:after{
 
 .stat-card svg {
     /*font-size: 3rem;*/
-    width: 3.5rem;
+    /*width: 3.5rem;*/
     height: 100%;
     opacity: 0.8;
 }

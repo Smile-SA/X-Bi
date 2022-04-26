@@ -3,7 +3,7 @@
         <div class="apex-box">
             <div class="page-title pt-2">
                 <span class="page-title-icon bg-gradient-primary text-white">
-                    <font-awesome-icon  width="24" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    <font-awesome-icon  width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
                 </span>
                 <span class="title">{{ $route.meta.description }}</span>
             </div>
@@ -12,16 +12,16 @@
     <div class="col-md-10" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
         <div class="row">
             <select-option v-for="(item,keys) in select.models" class="col-lg-4 col-md-6 col-sm-6 m-b"
-                           v-if="(item.type === 'date' ? showDatePicker() : item.type === 'group' ? showGroup() : true) === true"
+                           v-if="(item.type === 'Date' ? showDatePicker() : item.type === 'Group' ? showGroup() : true) === true"
                            :type="item.type"
                            :label="item.title"
                            :replace=undefined
                            :by=undefined
-                           :selectId=item.query_name
+                           :selectId=item.query_key
                            :defaultData="item.default_data"
                            :placeholder="item.placeholder"
-                           :selectFunction="item.type === 'date' ?  setDate : item.type === 'group' ?  setGroup : item.type === 'dynamic' ? setDynamicDataSelect : ''"
-                           :selectData="item.type === 'date' ?  date : item.type === 'group' ? groupOptions : item.type === 'dynamic' ?  dynamicData : '' ">
+                           :selectFunction="item.type === 'Date' ?  setDate : item.type === 'Group' ?  setGroup : item.type === 'Dynamic' ? setDynamicDataSelect : ''"
+                           :selectData="item.type === 'Date' ?  date : item.type === 'Group' ? groupOptions : item.type === 'Dynamic' ?  dynamicData : '' ">
             </select-option>
         </div>
     </div>

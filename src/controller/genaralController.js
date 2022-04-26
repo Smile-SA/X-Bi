@@ -20,22 +20,22 @@ export async function getDataByVariableAndDateToApex(config, that) {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
-            let data = utils.groupBy(r.data.results, config.sort_id);
+            let data = utils.groupBy(r.data.results, config.sort_key);
             Object.keys(data).map((item) => {
                 data[item] = utils.groupByDate(data[item], that.group);
                 Object.keys(data[item]).map((subItem) => {
                     data[item][subItem] = data[item][subItem].reduce(function (r, a) {
-                        if (!r[a[config.sort_id]]) {
-                            r[a[config.sort_id]] = {
-                                label: config.sort_id,
-                                value: a[config.sort_id],
-                                [config.value_id]: 0,
+                        if (!r[a[config.sort_key]]) {
+                            r[a[config.sort_key]] = {
+                                label: config.sort_key,
+                                value: a[config.sort_key],
+                                [config.query_key]: 0,
                                 length: 0
                             };
                         }
-                        r[a[config.sort_id]][config.value_id] += a[config.value_id];
-                        r[a[config.sort_id]][config.time_id] = subItem;
-                        r[a[config.sort_id]].length += +1;
+                        r[a[config.sort_key]][config.query_key] += a[config.query_key];
+                        r[a[config.sort_key]][config.time_key] = subItem;
+                        r[a[config.sort_key]].length += +1;
                         return r;
                     }, Object.create(null));
                 });
@@ -63,11 +63,11 @@ export async function getDataByDateToApex(config, that,name) {
             let data = utils.groupByDate(r.data.results, that.group);
             Object.keys(data).map((item) => {
                 data[item] = data[item].reduce(function (r, a) {
-                    if (r[config.value_id] === undefined) {
-                        r = {[config.value_id]: 0, length: 0};
+                    if (r[config.query_key] === undefined) {
+                        r = {[config.query_key]: 0, length: 0};
                     }
-                    r[config.value_id] += a[config.value_id];
-                    r[config.time_id] = item;
+                    r[config.query_key] += a[config.query_key];
+                    r[config.time_key] = item;
                     r.length += +1;
                     return r;
                 }, Object.create(null));

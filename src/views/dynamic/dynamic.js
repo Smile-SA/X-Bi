@@ -114,7 +114,7 @@ export default {
         }
     },
     beforeMount() {
-        this.active = this.date = null
+        this.active = this.date = null;
         this.getDynamicSelectData();
         this.setModelsData();
         if (this.$route.name === 'Overall') {
@@ -125,9 +125,10 @@ export default {
     },
     watch: {
         // eslint-disable-next-line no-unused-vars
-        $route(to, from) {
-            this.getDynamicSelectData();
-            this.setModelsData();
+        async $route(to, from) {
+            this.active = this.date = null;
+            await this.getDynamicSelectData();
+            await this.setModelsData();
             if (this.$route.name === 'Overall') {
                 this.date = this.setDefaultDate(1)
                 this.setDate(this.date);

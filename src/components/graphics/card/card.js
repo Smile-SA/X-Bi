@@ -42,8 +42,8 @@ export default {
             await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then( (r) => {
                 if (r.total > 0) {
                     this.configuration.value = (r.results.length === 1) ?
-                        r.results[0][this.configuration.key].toFixed(2) :
-                        r.results.map(item => item[this.configuration.key]).reduce((a, b) => a + b, 0).toFixed(2)
+                        r.results[0][this.configuration.query_key].toFixed(2) :
+                        r.results.map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
                     this.$forceUpdate()
                 } else {
                     this.configuration.value = 0;
