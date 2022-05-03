@@ -1,9 +1,26 @@
-<div v-if="configuration !== undefined" :class="'stat-card bg-gradient-'+configuration.color+' pointer'" @click="redirectCard()">
-    <div class="icon">
-        <font-awesome-icon v-if="configuration.icon!=undefined" class="f-left" :icon="['fas',configuration.icon]"/>
+<div>
+    <div v-if="configuration !== undefined && configuration.type === 'default'" :class="'stat-card bg-gradient-'+configuration.color+' pointer'" @click="redirectCard()">
+        <div class="icon">
+            <font-awesome-icon v-if="configuration.icon!=undefined" class="f-left" :icon="['fas',configuration.icon]"/>
+        </div>
+        <div class="content">
+            <h2><strong v-bind:class="configuration.type+' f-right'">{{ configuration.value }}</strong></h2>
+            <p class="mb-1 label f-right"><strong>{{ configuration.title }}</strong></p>
+        </div>
     </div>
-    <div class="content">
-        <h2><strong v-bind:class="configuration.type+' f-right'">{{ configuration.value }}</strong></h2>
-        <p class="mb-1 label f-right"><strong>{{ configuration.title }}</strong></p>
+    <div v-if="configuration !== undefined && configuration.type === 'line'" :class="'pointer xbi spark-line '+configuration.color" @click="redirectCard()">
+        <div class="row">
+            <div class="col-md-12">
+                <apexcharts :ref="configuration.id" :options="sparkLine.options" :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
+            </div>
+        </div>
     </div>
+<!--    <div v-if="configuration !== undefined" :class="'pointer xbi xbi-area '+configuration.color"-->
+<!--         @click="redirectCard()">-->
+<!--        <div class="row">-->
+<!--            <div class="col-md-12">-->
+<!--                <apexcharts :ref="sparkArea[configuration.color].chart.id" :options="sparkArea[configuration.color]" :series="sparkArea[configuration.color].chart.series" :height="sparkArea[configuration.color].chart.height"></apexcharts>-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>

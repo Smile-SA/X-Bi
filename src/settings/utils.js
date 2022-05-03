@@ -166,9 +166,9 @@ export function getUnique(array) {
     }
     return uniqueArray;
 }
-export function groupByDate(array, group) {
+export function groupByDate(array, group,key) {
     return array.reduce((groups, r) => {
-        let date = r.frame_begin;
+        let date = r[key];
         let da = date.split(', ')[1].split(' ');
         if (group === 'Day') {
             date = da[0] + ' ' + da[1] + ' ' + da[2];
@@ -348,6 +348,67 @@ export function createOption(config) {
             fontSize: '14px',
             position: 'bottom',
         }
+    }
+}
+export function createSparkOption(config,nombre) {
+    return {
+        chart: {
+            id: config.id,
+            type: 'line',
+            sparkline: {
+                enabled: true
+            },
+            group: 'sparklines',
+            animations: {
+                enabled: true,
+                easing: 'linear',
+                dynamicAnimation: {
+                    speed: 1000
+                }
+            },
+        },
+        stroke: {
+            curve: 'smooth'
+        },
+        markers: {
+            size: 0
+        },
+        tooltip: {
+            fixed: {
+                enabled: true,
+                position: 'right'
+            },
+            x: {
+                show: false
+            }
+        },
+        title: {
+            text: nombre,
+            offsetX: 5,
+            offsetY: 20,
+            align: 'left',
+            style: {
+                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 'bold',
+                color: '#676a6c',
+                fontSize: '1.5rem',
+                align: 'left'
+            },
+        },
+        subtitle: {
+            text: config.title,
+            offsetX: 5,
+            offsetY: 45,
+            align: 'left',
+            style: {
+                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
+                fontWeight: 0,
+                color: '#676a6c',
+                fontSize: '1rem',
+                align: 'left'
+            },
+        },
+        colors: ['var(--bs-'+config.color+')']
     }
 }
 

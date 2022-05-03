@@ -136,9 +136,10 @@
                 "color": "success",
                 "redirect": "/namespaces",
                 "query": "/namespaces",
-                "query_key": "",
-                "type": "count",
-                "display_space": "1/3",
+                "query_key": "namespace",
+                "type": "line",
+                "method": "count",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -148,8 +149,9 @@
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
-                "type": "count",
-                "display_space": "1/3",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -159,8 +161,21 @@
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "count",
-                "display_space": "1/3",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "purple",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
                 "value": ""
               }
             ],
@@ -246,7 +261,7 @@
                 "query": "/total_rating",
                 "query_key": "frame_price",
                 "type": "sum",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -257,7 +272,7 @@
                 "query": "/pods",
                 "query_key": "",
                 "type": "count",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -268,7 +283,7 @@
                 "query": "/nodes",
                 "query_key": "",
                 "type": "count",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               }
             ],
@@ -343,7 +358,7 @@
                 "query": "/total_rating",
                 "query_key": "frame_price",
                 "type": "sum",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -353,7 +368,7 @@
                 "redirect": "",
                 "query": "/pods",
                 "query_key": "",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "type": "count",
                 "value": ""
               },
@@ -365,7 +380,7 @@
                 "query": "/namespaces",
                 "query_key": "",
                 "type": "count",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               }
             ],
@@ -440,7 +455,7 @@
                 "query": "/total_rating",
                 "query_key": "frame_price",
                 "type": "sum",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -451,7 +466,7 @@
                 "query": "/nodes",
                 "query_key": "",
                 "type": "count",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               },
               {
@@ -462,7 +477,7 @@
                 "query": "/namespaces",
                 "query_key": "",
                 "type": "count",
-                "display_space": "1/3",
+                "display_space": "1/4",
                 "value": ""
               }
             ],
@@ -679,7 +694,7 @@
           "query_key": {
             "type": "string"
           },
-          "type": {
+          "method": {
             "type": "string",
             "enum": [
               "count",
@@ -688,12 +703,21 @@
               "Date"
             ]
           },
+          "type": {
+            "type": "string",
+            "enum": [
+              "default",
+              "line",
+              "area"
+            ]
+          },
           "display_space": {
             "type": "string",
             "enum": [
-              "1/3",
-              "2/3",
-              "3/3"
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
             ]
           },
           "value": {
@@ -705,6 +729,7 @@
           "icon",
           "color",
           "query",
+          "method",
           "type"
         ],
         "additionalProperties": false
@@ -757,13 +782,13 @@
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Card value calculation key"
+            "placeholder": "Card calculation key"
           },
           {
-            "model": "type",
+            "model": "method",
             "type": "select",
             "required": true,
-            "placeholder": "Card type",
+            "placeholder": "Card calculation method",
             "values": [
               "count",
               "sum",
@@ -772,14 +797,26 @@
             ]
           },
           {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "default",
+              "line",
+              "area"
+            ]
+          },
+          {
             "model": "display_space",
             "type": "select",
             "required": true,
             "placeholder": "Display space per row",
             "values": [
-              "1/3",
-              "2/3",
-              "3/3"
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
             ]
           }
         ]

@@ -2215,7 +2215,6 @@
 :root {
     --bs-blue: #5E50F9;
     --bs-indigo: #6610f2;
-    --bs-purple: #6a008a;
     --bs-pink: #E91E63;
     --bs-red: #dc3545;
     --bs-orange: #f2a654;
@@ -2241,20 +2240,20 @@
     --bs-gray-700: #495057;
     --bs-gray-800: #676a6c;
     --bs-gray-900: #676a6c;
-    --bs-purple: #b66dff;
+    --bs-purple: #734CEA;
     --bs-secondary: #c3bdbd;
-    --bs-success: #1bcfb4;
-    --bs-primary: #00bcfd;
+    --bs-success: #34bfa3;
+    --bs-primary: #00c5dc;
     --bs-warning: #febc3b;
-    --bs-danger: #fe7c96;
+    --bs-danger: #f4516c;
     --bs-light: #f8f9fa;
     --bs-dark: #3e4b5b;
-    --bs-purple-rgb: 13, 110, 253;
+    --bs-purple-rgb: 115, 76, 234;
     --bs-secondary-rgb: 108, 117, 125;
-    --bs-success-rgb: 25, 135, 84;
-    --bs-primary-rgb: 0, 150, 217;
-    --bs-warning-rgb: 255, 193, 7;
-    --bs-danger-rgb: 220, 53, 69;
+    --bs-success-rgb: 52,191,163;
+    --bs-primary-rgb: 0, 197, 220;
+    --bs-warning-rgb: 254, 188, 59;
+    --bs-danger-rgb: 244, 81, 108;
     --bs-light-rgb: 248, 249, 250;
     --bs-dark-rgb: 33, 37, 41;
     --bs-white-rgb: 255, 255, 255;
@@ -2904,7 +2903,7 @@ progress {
 }
 
 .row {
-    --bs-gutter-x: 0.7rem;
+    --bs-gutter-x: 1.25rem;
     --bs-gutter-y: 0;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -3243,7 +3242,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4%
+        width: 4.5%
     }
 
     .col-sm-1 {
@@ -3327,7 +3326,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 96%
+        width: 95.5%
     }
 
     .col-sm-12 {
@@ -3520,7 +3519,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4%
+        width: 4.5%
     }
 
     .col-md-2 {
@@ -3589,7 +3588,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 96%
+        width: 95.5%
     }
 
     .col-md-11 {
@@ -3782,7 +3781,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4%
+        width: 4.5%
     }
 
     .col-lg-1 {
@@ -3866,7 +3865,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 96%
+        width: 95.5%
     }
 
     .col-lg-12 {
@@ -4052,7 +4051,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4%
+        width: 4.5%
     }
 
     .col-xl-1 {
@@ -4135,7 +4134,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 96%
+        width: 95.5%
     }
 
     .col-xl-12 {
@@ -4328,7 +4327,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 4%
+        width: 4.5%
     }
 
     .col-xxl-2 {
@@ -4405,7 +4404,7 @@ progress {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
         flex: 0 0 auto;
-        width: 96%
+        width: 95.5%
     }
 
     .col-xxl-12 {
@@ -4810,8 +4809,8 @@ progress {
     background-color: #fff;
     border-color: #86b7fe;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .form-control::-webkit-date-and-time-value {
@@ -5033,8 +5032,8 @@ textarea.form-control-lg {
 .form-select:focus {
     border-color: #86b7fe;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .form-select[multiple], .form-select[size]:not([size="1"]) {
@@ -5112,8 +5111,8 @@ textarea.form-control-lg {
 .form-check-input:focus {
     border-color: #86b7fe;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .form-check-input:checked {
@@ -5209,12 +5208,12 @@ textarea.form-control-lg {
 }
 
 .form-range:focus::-webkit-slider-thumb {
-    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .form-range::-moz-focus-outer {
@@ -5523,7 +5522,7 @@ textarea.form-control-lg {
     margin-top: .1rem;
     font-size: 0.875rem;
     color: #fff;
-    background-color: rgba(25, 135, 84, 0.9);
+    background-color: rgba(52,191,163, 0.9);
     border-radius: 0.25rem;
 }
 
@@ -5545,8 +5544,8 @@ textarea.form-control-lg {
 
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
     border-color: #198754;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
 }
 
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
@@ -5567,8 +5566,8 @@ textarea.form-control-lg {
 
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
     border-color: #198754;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
 }
 
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
@@ -5580,8 +5579,8 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(25, 135, 84, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
@@ -5622,7 +5621,7 @@ textarea.form-control-lg {
     margin-top: .1rem;
     font-size: 0.875rem;
     color: #fff;
-    background-color: rgba(220, 53, 69, 0.9);
+    background-color: rgba(244, 81, 108, 0.9);
     border-radius: 0.25rem;
 }
 
@@ -5644,8 +5643,8 @@ textarea.form-control-lg {
 
 .was-validated .form-control:invalid:focus, .form-control.is-invalid:focus {
     border-color: #dc3545;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
 }
 
 .was-validated textarea.form-control:invalid, textarea.form-control.is-invalid {
@@ -5666,8 +5665,8 @@ textarea.form-control-lg {
 
 .was-validated .form-select:invalid:focus, .form-select.is-invalid:focus {
     border-color: #dc3545;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
 }
 
 .was-validated .form-check-input:invalid, .form-check-input.is-invalid {
@@ -5679,8 +5678,8 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-check-input:invalid:focus, .form-check-input.is-invalid:focus {
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(244, 81, 108, 0.25);
 }
 
 .was-validated .form-check-input:invalid ~ .form-check-label, .form-check-input.is-invalid ~ .form-check-label {
@@ -5740,8 +5739,8 @@ textarea.form-control-lg {
 
 .btn-check:focus + .btn, .btn:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .btn:disabled, .btn.disabled,
@@ -7970,8 +7969,8 @@ fieldset:disabled .btn {
     z-index: 3;
     border-color: #86b7fe;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .accordion-header {
@@ -8105,8 +8104,8 @@ fieldset:disabled .btn {
     color: var(--bs-primary);
     background-color: #e9ecef;
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
 }
 
 .page-item:not(:first-child) .page-link {
@@ -8808,8 +8807,8 @@ fieldset:disabled .btn {
 
 .btn-close:focus {
     outline: 0;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(115, 76, 234, 0.25);
     opacity: 1;
 }
 
@@ -16074,7 +16073,7 @@ code {
 }
 
 .img-responsive- {
-    height: 100% !important;
+    height: auto;
 }
 
 .img-lg {
@@ -20678,7 +20677,7 @@ dl li {
 
 .content-wrapper {
     background: var(--bs-gray-500);
-    padding: 0.7rem 0.7rem 0rem 0.7rem;
+    padding: 1rem 1.25rem 0rem 1.25rem;
     width: 100%;
     -webkit-box-flex: 1;
     -ms-flex-positive: 1;
@@ -20948,7 +20947,7 @@ dl li {
 }
 
 .m-b {
-    margin-bottom: 0.7rem !important;
+    margin-bottom: 1.25rem !important;
 }
 
 .m-b-md {
@@ -22705,7 +22704,7 @@ input[type="checkbox"]:checked:after{
 .stat-card {
     width: 100%;
     color: #ffffff;
-    padding: 0.7rem;
+    padding: 1rem;
     border-radius: .25rem;
     overflow: hidden;
     display: flex;
