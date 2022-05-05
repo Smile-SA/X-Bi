@@ -2213,23 +2213,34 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-    --bs-blue: #5E50F9;
+    --bs-blue: #1236d4;
+    --bs-blue-rgb: 18, 54, 212;
     --bs-indigo: #6610f2;
-    --bs-pink: #E91E63;
-    --bs-red: #dc3545;
-    --bs-orange: #f2a654;
-    --bs-yellow: #f6e84e;
-    --bs-green: #46c35f;
-    --bs-teal: #58d8a3;
+    --bs-indigo-rgb: 102, 16, 242;
+    --bs-pink: #ff006c;
+    --bs-pink-rgb: 255, 0, 108;
+    --bs-red: #6d1212;
+    --bs-red-rgb: 109, 18, 18;
+    --bs-orange: #F39C12;
+    --bs-orange-rgb: 243, 156, 18;
+    --bs-yellow: #F1C40F;
+    --bs-yellow-rgb: 241, 196, 15;
+    --bs-green: rgba(31, 212, 104, 0.88);
+    --bs-green-rgb: 39, 93, 43;
+    --bs-teal: #045b62;
+    --bs-teal-rgb: 4, 91, 98;
     --bs-cyan: #57c7d4;
+    --bs-cyan-rgb: 87, 199, 212;
     --bs-primary-gradient: #6fbfdf;
     --bs-white: #ffffff;
+    --bs-white-rgb: 255, 255, 255;
     --bs-gray: #434a54;
     --bs-gray-light: #aab2bd;
     --bs-gray-lighter: #e8eff4;
     --bs-gray-lightest: #e6e9ed;
     --bs-gray-dark: #0f1531;
     --bs-black: #000000;
+    --bs-black-rgb: 0, 0, 0;
     --bs-gray-100: var(--bs-light);
     --bs-gray-200: #e9ecef;
     --bs-gray-300: #dee2e6;
@@ -2241,23 +2252,21 @@
     --bs-gray-800: #676a6c;
     --bs-gray-900: #676a6c;
     --bs-purple: #734CEA;
-    --bs-secondary: #c3bdbd;
-    --bs-success: #34bfa3;
-    --bs-primary: #00c5dc;
-    --bs-warning: #febc3b;
-    --bs-danger: #f4516c;
-    --bs-light: #f8f9fa;
-    --bs-dark: #3e4b5b;
     --bs-purple-rgb: 115, 76, 234;
+    --bs-secondary: #DCE6EC;
     --bs-secondary-rgb: 108, 117, 125;
-    --bs-success-rgb: 52,191,163;
+    --bs-success: #34bfa3;
+    --bs-success-rgb: 52, 191, 163;
+    --bs-primary: #00c5dc;
     --bs-primary-rgb: 0, 197, 220;
+    --bs-warning: #febc3b;
     --bs-warning-rgb: 254, 188, 59;
+    --bs-danger: #f4516c;
     --bs-danger-rgb: 244, 81, 108;
+    --bs-light: #f8f9fa;
     --bs-light-rgb: 248, 249, 250;
+    --bs-dark: #3e4b5b;
     --bs-dark-rgb: 33, 37, 41;
-    --bs-white-rgb: 255, 255, 255;
-    --bs-black-rgb: 0, 0, 0;
     --bs-body-color-rgb: 52, 58, 64;
     --bs-body-bg-rgb: 255, 255, 255;
     --bs-font-sans-serif: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
@@ -2278,20 +2287,25 @@
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
 }
-.bg-500{
+
+.bg-500 {
     background: var(--bs-gray-500);
 }
+
 @media (prefers-reduced-motion: no-preference) {
     :root {
         scroll-behavior: smooth;
     }
 }
+
 * {
     transition: height .4s;
 }
+
 * {
     transition: width .4s;
 }
+
 body {
     margin: 0;
     font-family: var(--bs-body-font-family);
@@ -3584,6 +3598,7 @@ progress {
         flex: 0 0 auto;
         width: 83.33333%;
     }
+
     .col-md-11-5 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -4130,6 +4145,7 @@ progress {
         flex: 0 0 auto;
         width: 91.66667%;
     }
+
     .col-xl-11-5 {
         -webkit-box-flex: 0;
         -ms-flex: 0 0 auto;
@@ -5522,7 +5538,7 @@ textarea.form-control-lg {
     margin-top: .1rem;
     font-size: 0.875rem;
     color: #fff;
-    background-color: rgba(52,191,163, 0.9);
+    background-color: rgba(52, 191, 163, 0.9);
     border-radius: 0.25rem;
 }
 
@@ -5544,8 +5560,8 @@ textarea.form-control-lg {
 
 .was-validated .form-control:valid:focus, .form-control.is-valid:focus {
     border-color: #198754;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
 }
 
 .was-validated textarea.form-control:valid, textarea.form-control.is-valid {
@@ -5566,8 +5582,8 @@ textarea.form-control-lg {
 
 .was-validated .form-select:valid:focus, .form-select.is-valid:focus {
     border-color: #198754;
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
 }
 
 .was-validated .form-check-input:valid, .form-check-input.is-valid {
@@ -5579,8 +5595,8 @@ textarea.form-control-lg {
 }
 
 .was-validated .form-check-input:valid:focus, .form-check-input.is-valid:focus {
-    -webkit-box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
-    box-shadow: 0 0 0 0.25rem rgba(52,191,163, 0.25);
+    -webkit-box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
+    box-shadow: 0 0 0 0.25rem rgba(52, 191, 163, 0.25);
 }
 
 .was-validated .form-check-input:valid ~ .form-check-label, .form-check-input.is-valid ~ .form-check-label {
@@ -11503,6 +11519,56 @@ fieldset:disabled .btn {
     --bs-text-opacity: 1;
 }
 
+.bg-blue {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-blue-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-cyan {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-cyan-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-dark {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-danger {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-green {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-green-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-indigo {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-indigo-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-light {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-orange {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-orange-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-pink {
+    --bs-bg-opacity: 1;
+    background-color: rgba(var(--bs-pink-rgb), var(--bs-bg-opacity)) !important;
+}
+
+.bg-primary {
+    --bs-bg-opacity: 1;
+    background-color: var(--bs-primary-gradient) !important;
+}
+
 .bg-purple {
     --bs-bg-opacity: 1;
     background-color: rgba(var(--bs-purple-rgb), var(--bs-bg-opacity)) !important;
@@ -11518,9 +11584,9 @@ fieldset:disabled .btn {
     background-color: rgba(var(--bs-success-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-primary {
+.bg-teal {
     --bs-bg-opacity: 1;
-    background-color: var(--bs-primary-gradient) !important;
+    background-color: rgba(var(--bs-teal-rgb), var(--bs-bg-opacity)) !important;
 }
 
 .bg-warning {
@@ -11528,20 +11594,11 @@ fieldset:disabled .btn {
     background-color: rgba(var(--bs-warning-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-danger {
+.bg-yellow {
     --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-danger-rgb), var(--bs-bg-opacity)) !important;
+    background-color: rgba(var(--bs-yellow-rgb), var(--bs-bg-opacity)) !important;
 }
 
-.bg-light {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-light-rgb), var(--bs-bg-opacity)) !important;
-}
-
-.bg-dark {
-    --bs-bg-opacity: 1;
-    background-color: rgba(var(--bs-dark-rgb), var(--bs-bg-opacity)) !important;
-}
 
 .bg-black {
     --bs-bg-opacity: 1;
@@ -15977,6 +16034,7 @@ code {
     border: 0;
     margin-bottom: 0;
 }
+
 #title-box .page-title {
     height: 34px;
 }
@@ -16001,6 +16059,7 @@ code {
     -webkit-box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
     box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
 }
+
 .page-title .title {
     display: inline;
     padding: 5px;
@@ -16287,9 +16346,63 @@ code {
     height: 6px;
 }
 
+.bg-gradient-blue {
+    background: -webkit-gradient(linear, left top, right top, from(rgb(18, 109, 212)), to(var(--bs-blue))) !important;
+    background: linear-gradient(to right, rgb(18, 109, 212), var(--bs-blue)) !important;
+}
+
+.bg-gradient-cyan {
+    background: -webkit-gradient(linear, left top, right top, from(rgba(87, 212, 187, 0.9)), to(var(--bs-cyan))) !important;
+    background: linear-gradient(to right, rgba(87, 212, 187, 0.9), var(--bs-cyan)) !important;
+}
+
+.bg-gradient-dark {
+    background: linear-gradient(89deg, #5e7188, var(--bs-dark)) !important;
+}
+
+.bg-gradient-danger {
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
+    background: linear-gradient(to right, #ffbf96, #fe7096) !important;
+}
+
+.bg-gradient-green {
+    background: -webkit-gradient(linear, left top, right top, from(#58d41f), to(var(--bs-green))) !important;
+    background: linear-gradient(to right, #58d41f, var(--bs-green)) !important;
+}
+
+.bg-gradient-indigo {
+    background: -webkit-gradient(linear, left top, right top, from(rgb(74, 54, 216)), to(var(--bs-indigo))) !important;
+    background: linear-gradient(to right, rgb(74, 54, 216), var(--bs-indigo)) !important;
+}
+
+.bg-gradient-light {
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9)) !important;
+    background: linear-gradient(to bottom, #f4f4f4, #e4e4e9) !important;
+}
+
+.bg-gradient-orange {
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-orange))) !important;
+    background: linear-gradient(to right, #ffbf96, var(--bs-orange)) !important;
+}
+
+.bg-gradient-pink {
+    background: -webkit-gradient(linear, left top, right top, from(#d296ff), to(var(--bs-pink))) !important;
+    background: linear-gradient(to right, #d296ff, var(--bs-pink)) !important;
+}
+
+.bg-gradient-primary {
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary))) !important;
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%) !important;
+}
+
 .bg-gradient-purple {
     background: -webkit-gradient(linear, left top, right top, from(#5515d19e), to(#5515d1)) !important;
     background: linear-gradient(to right, #5515d19e, #5515d1) !important;
+}
+
+.bg-gradient-red {
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-red))) !important;
+    background: linear-gradient(to right, #ffbf96, var(--bs-red)) !important;
 }
 
 .bg-gradient-secondary {
@@ -16302,29 +16415,21 @@ code {
     background: linear-gradient(to right, #84d9d2, #07cdae) !important;
 }
 
-.bg-gradient-primary {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary))) !important;
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%) !important;
+.bg-gradient-teal {
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-teal))) !important;
+    background: linear-gradient(to right, #84d9d2, var(--bs-teal)) !important;
 }
 
 .bg-gradient-warning {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b)) !important;
-    background: linear-gradient(to right, #f6e384, #febc3b) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning))) !important;
+    background: linear-gradient(to right, #f6e384, var(--bs-warning)) !important;
 }
 
-.bg-gradient-danger {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
-    background: linear-gradient(to right, #ffbf96, #fe7096) !important;
+.bg-gradient-yellow {
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-yellow))) !important;
+    background: linear-gradient(to right, #f6e384, var(--bs-yellow)) !important;
 }
 
-.bg-gradient-light {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9)) !important;
-    background: linear-gradient(to bottom, #f4f4f4, #e4e4e9) !important;
-}
-
-.bg-gradient-dark {
-    background: linear-gradient(89deg, #5e7188, var(--bs-dark)) !important;
-}
 
 /* Demo Styles */
 .template-demo .slider-wrap {
@@ -16884,14 +16989,14 @@ code {
 }
 
 .badge-gradient-primary {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
     color: var(--bs-white);
 }
 
 .badge-gradient-warning {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
     color: var(--bs-white);
 }
 
@@ -17562,8 +17667,8 @@ code {
 }
 
 .btn-outline-primary:hover, .btn-outline-primary:focus, .btn-outline-primary:active {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
     color: var(--bs-white);
 }
 
@@ -17614,8 +17719,8 @@ code {
 }
 
 .btn-outline-warning:hover, .btn-outline-warning:focus, .btn-outline-warning:active {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
     color: #000000;
 }
 
@@ -17661,13 +17766,13 @@ code {
 }
 
 .btn-danger:not(.btn-light):focus, .btn-danger:not(.btn-light):active {
-    background: var(--bs-danger)!important;
-    border-color: var(--bs-danger)!important;
+    background: var(--bs-danger) !important;
+    border-color: var(--bs-danger) !important;
 }
 
 .btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096))!important;
-    background: linear-gradient(to right, #ffbf96, #fe7096)!important;
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(#fe7096)) !important;
+    background: linear-gradient(to right, #ffbf96, #fe7096) !important;
     color: var(--bs-white);
 }
 
@@ -17854,8 +17959,8 @@ code {
 }
 
 .btn-gradient-primary {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
     border: 0;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
@@ -17863,8 +17968,8 @@ code {
 
 .btn-gradient-primary:not([disabled]):not(.disabled):active, .btn-gradient-primary:not([disabled]):not(.disabled).active,
 .show > .btn-gradient-primary.dropdown-toggle {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
 }
 
 .btn-gradient-primary:hover {
@@ -17880,8 +17985,8 @@ code {
 }
 
 .btn-gradient-warning {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
     border: 0;
     -webkit-transition: opacity 0.3s ease;
     transition: opacity 0.3s ease;
@@ -17889,8 +17994,8 @@ code {
 
 .btn-gradient-warning:not([disabled]):not(.disabled):active, .btn-gradient-warning:not([disabled]):not(.disabled).active,
 .show > .btn-gradient-warning.dropdown-toggle {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
 }
 
 .btn-gradient-warning:hover {
@@ -18794,8 +18899,8 @@ code {
 
 .form-check-primary.form-check label input[type="checkbox"]:checked + .input-helper:before,
 .form-check-primary.form-check label input[type="radio"]:checked + .input-helper:before {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
 }
 
 .form-check-warning.form-check label input[type="checkbox"] + .input-helper:before,
@@ -18805,8 +18910,8 @@ code {
 
 .form-check-warning.form-check label input[type="checkbox"]:checked + .input-helper:before,
 .form-check-warning.form-check label input[type="radio"]:checked + .input-helper:before {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
 }
 
 .form-check-danger.form-check label input[type="checkbox"] + .input-helper:before,
@@ -19119,13 +19224,13 @@ dl li {
 }
 
 .gradient-bullet-list li:nth-child(2):before {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
 }
 
 .gradient-bullet-list li:nth-child(3):before {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
 }
 
 .gradient-bullet-list li:nth-child(4):before {
@@ -19522,7 +19627,7 @@ dl li {
 }
 
 .nav-height {
-    height:60px;
+    height: 60px;
 }
 
 .navbar .navbar-brand {
@@ -19994,8 +20099,8 @@ dl li {
 }
 
 .navbar.navbar-primary .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from( var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
-    background: linear-gradient(to right,  var(--bs-primary-gradient), var(--bs-primary) 99%);
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%);
     color: var(--bs-white);
 }
 
@@ -20020,8 +20125,8 @@ dl li {
 }
 
 .navbar.navbar-warning .navbar-menu-wrapper {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(#febc3b));
-    background: linear-gradient(to right, #f6e384, #febc3b);
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right, #f6e384, var(--bs-warning));
     color: var(--bs-white);
 }
 
@@ -20193,12 +20298,12 @@ dl li {
     vertical-align: middle;
 }
 
-.sidebar .nav .nav-item .nav-link svg{
+.sidebar .nav .nav-item .nav-link svg {
     line-height: 1;
     color: var(--bs-icon-bg);
 }
 
-.sidebar .nav .nav-item.active .nav-link svg{
+.sidebar .nav .nav-item.active .nav-link svg {
     line-height: 1;
     color: var(--bs-white);
 }
@@ -20248,7 +20353,7 @@ dl li {
     content: "\f140";
 }
 
-.sidebar .nav .nav-item.active  {
+.sidebar .nav .nav-item.active {
     background: var(--bs-primary-gradient);
     -webkit-box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
     box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
@@ -20282,7 +20387,7 @@ dl li {
     font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
-.sidebar .nav .nav-item:hover{
+.sidebar .nav .nav-item:hover {
     background: var(--bs-gray-550);
     color: var(--bs-body-color);
     -webkit-box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0);
@@ -20688,7 +20793,7 @@ dl li {
     background-color: #fff;
     padding: 0.7rem;
     border-radius: 0.15rem;
-    box-shadow: 0px 1px 15px 1px rgb(69 65 78 / 8%)
+    box-shadow: 0px 1px 22px -10px rgba(96, 125, 139, 0.55);
 }
 
 /*# sourceMappingURL=style.css.map */
@@ -21049,6 +21154,10 @@ dl li {
 
 .has-error .control-label {
     color: #dc3545;
+}
+
+.display-flex {
+    display: flex;
 }
 
 .display-none {
@@ -21421,7 +21530,7 @@ dl li {
 }
 
 .swal2-actions {
-    display: block!important;
+    display: block !important;
     z-index: 1;
     box-sizing: border-box;
     flex-wrap: wrap;
@@ -21477,7 +21586,7 @@ dl li {
     background-color: var(--bs-danger);
     color: #fff;
     float: right;
-    font-size:.875rem;
+    font-size: .875rem;
 }
 
 .swal2-styled.btn-danger.swal2-confirm:focus {
@@ -21491,12 +21600,13 @@ dl li {
     background-color: var(--bs-primary);
     color: #fff;
     float: right;
-    font-size:.875rem;
+    font-size: .875rem;
 }
 
 .swal2-styled.btn-primary.swal2-confirm:focus {
     box-shadow: 0 0 0 3px rgba(30, 170, 225, 0.53)
 }
+
 .swal2-styled.btn-light.swal2-confirm {
     border: 0;
     border-radius: .25em;
@@ -21504,7 +21614,7 @@ dl li {
     background-color: var(--bs-light);
     color: #fff;
     float: right;
-    font-size:.875rem;
+    font-size: .875rem;
 }
 
 .swal2-styled.btn-light.swal2-confirm:focus {
@@ -21517,7 +21627,7 @@ dl li {
     background: initial;
     background-color: #6e7881;
     color: #fff;
-    font-size:.875em;
+    font-size: .875em;
 }
 
 .swal2-styled.swal2-confirm:focus {
@@ -21541,7 +21651,7 @@ dl li {
     border-radius: .25em;
     background: initial;
     background-color: #6e7881;
-    font-size:.875em;
+    font-size: .875em;
     color: #fff;
 }
 
@@ -22654,7 +22764,7 @@ body.swal2-toast-shown .swal2-container.swal2-bottom-end, body.swal2-toast-shown
 
 /*checkbox input*/
 
-input[type="checkbox"]{
+input[type="checkbox"] {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
@@ -22669,19 +22779,19 @@ input[type="checkbox"]{
     transition: all .2s ease-in-out;
 }
 
-input[type="checkbox"].primary:checked{
+input[type="checkbox"].primary:checked {
     background: var(--bs-primary);
 }
 
-input[type="checkbox"]:after{
+input[type="checkbox"]:after {
     position: absolute;
     content: "";
     width: 1.5em;
     height: 1.5em;
     border-radius: 50%;
     background: #fff;
-    -webkit-box-shadow: 0 0 .25em rgba(0,0,0,.3);
-    box-shadow: 0 0 .25em rgba(0,0,0,.3);
+    -webkit-box-shadow: 0 0 .25em rgba(0, 0, 0, .3);
+    box-shadow: 0 0 .25em rgba(0, 0, 0, .3);
     -webkit-transform: scale(.7);
     transform: scale(.7);
     left: 0;
@@ -22689,62 +22799,12 @@ input[type="checkbox"]:after{
     transition: all .2s ease-in-out;
 }
 
-input[type="checkbox"]:checked:after{
+input[type="checkbox"]:checked:after {
     left: calc(100% - 1.5em);
 }
 
 .apexcharts-toolbar {
-    z-index: 0!important;
-}
-
-
-
-
-/* card*/
-.stat-card {
-    width: 100%;
-    color: #ffffff;
-    padding: 1rem;
-    border-radius: .25rem;
-    overflow: hidden;
-    display: flex;
-    justify-content: space-between;
-    transition: all 0.2s;
-    box-shadow: 0 0 0.07rem 0 var(--bs-gray-550);
-}
-
-.stat-card :hover {
-    cursor: pointer;
-}
-
-.stat-card .number, .stat-card .rating {
-    font-size: 2.25rem;
-    opacity: 1;
-}
-
-.stat-card .date {
-    font-size: 1.25rem;
-    opacity: 1;
-}
-
-.stat-card .label{
-    font-size: 1rem;
-    opacity: 0.8;
-}
-
-.stat-card svg {
-    /*font-size: 3rem;*/
-    /*width: 3.5rem;*/
-    height: 100%;
-    opacity: 0.8;
-}
-
-.stat-card:hover svg, .stat-card:hover .label {
-    opacity: 1;
-}
-
-.stat-card:hover .number, .stat-card:hover .date {
-    opacity: 0.8;
+    z-index: 0 !important;
 }
 
 .f-left {
@@ -22755,10 +22815,7 @@ input[type="checkbox"]:checked:after{
     float: right;
 }
 
-/* card*/
-
 /* conf*/
-
 .edit-conf {
     background-color: transparent;
     border-color: transparent;
@@ -22770,4 +22827,5 @@ input[type="checkbox"]:checked:after{
     --bs-table-accent-bg: var(--bs-table-striped-bg);
     color: var(--bs-table-striped-color);
 }
+
 /* conf*/

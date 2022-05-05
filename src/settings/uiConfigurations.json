@@ -137,7 +137,7 @@
                 "redirect": "/namespaces",
                 "query": "/namespaces",
                 "query_key": "namespace",
-                "type": "line",
+                "type": "area",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -145,7 +145,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "primary",
+                "color": "success",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
@@ -157,19 +157,19 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "warning",
+                "color": "primary",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "default",
+                "type": "line",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
               },
               {
-                "title": "Nodes",
+                "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "purple",
+                "color": "primary",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -260,7 +260,8 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "type": "sum",
+                "type": "default",
+                "method": "sum",
                 "display_space": "1/4",
                 "value": ""
               },
@@ -271,7 +272,8 @@
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
-                "type": "count",
+                "type": "default",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               },
@@ -282,7 +284,20 @@
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "count",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "type": "default",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               }
@@ -357,7 +372,8 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "type": "sum",
+                "type": "default",
+                "method": "sum",
                 "display_space": "1/4",
                 "value": ""
               },
@@ -369,17 +385,31 @@
                 "query": "/pods",
                 "query_key": "",
                 "display_space": "1/4",
-                "type": "count",
+                "type": "default",
+                "method": "count",
                 "value": ""
               },
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "success",
+                "color": "warning",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
-                "type": "count",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "type": "default",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               }
@@ -454,29 +484,44 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "type": "sum",
+                "type": "default",
+                "method": "sum",
                 "display_space": "1/4",
                 "value": ""
               },
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "warning",
+                "color": "primary",
                 "redirect": "",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "count",
+                "type": "default",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               },
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "success",
+                "color": "warning",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
-                "type": "count",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "type": "default",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               }
@@ -677,11 +722,23 @@
           "color": {
             "type": "string",
             "enum": [
-              "primary",
-              "success",
-              "warning",
+              "blue",
+              "cyan",
+              "dark",
               "danger",
-              "dark"
+              "green",
+              "indigo",
+              "light",
+              "orange",
+              "pink",
+              "primary",
+              "purple",
+              "red",
+              "secondary",
+              "success",
+              "teal",
+              "warning",
+              "yellow"
             ]
           },
           "redirect": {
@@ -756,11 +813,23 @@
             "required": true,
             "placeholder": "Card color class",
             "values": [
-              "primary",
-              "success",
-              "warning",
+              "blue",
+              "cyan",
+              "dark",
               "danger",
-              "dark"
+              "green",
+              "indigo",
+              "light",
+              "orange",
+              "pink",
+              "primary",
+              "purple",
+              "red",
+              "secondary",
+              "success",
+              "teal",
+              "warning",
+              "yellow"
             ]
           },
           {

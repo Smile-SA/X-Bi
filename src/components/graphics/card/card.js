@@ -20,7 +20,7 @@ export default {
                         id: 'sparkArea1',
                         group: 'sparklines',
                         type: 'area',
-                        height: 120,
+                        height: 65,
                         sparkline: {
                             enabled: true
                         },
@@ -58,164 +58,8 @@ export default {
                             cssClass: 'apexcharts-yaxis-title'
                         }
                     },
-                    subtitle: {
-                        text: 'Profits',
-                        offsetX: 30,
-                        style: {
-                            fontSize: '14px',
-                            cssClass: 'apexcharts-yaxis-title'
-                        }
-                    },
                     colors: ['var(--bs-primary)']
                 },
-                success: {
-                    chart: {
-                        id: 'sparkline1',
-                        type: 'line',
-                        height: 120,
-                        sparkline: {
-                            enabled: true
-                        },
-                        group: 'sparklines',
-                        series: [{
-                            name: 'purple',
-                            data: [15, 75, 47, 65, 14, 32, 19, 54, 44, 61]
-                        }],
-                    },
-                    stroke: {
-                        curve: 'smooth'
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    tooltip: {
-                        fixed: {
-                            enabled: true,
-                            position: 'right'
-                        },
-                        x: {
-                            show: false
-                        }
-                    },
-                    title: {
-                        text: '439',
-                        style: {
-                            fontSize: '20px'
-                        }
-                    },
-                    colors: ['var(--bs-success)']
-                },
-                warning: {
-                    chart: {
-                        id: 'sparkline1',
-                        type: 'line',
-                        height: 120,
-                        sparkline: {
-                            enabled: true
-                        },
-                        group: 'sparklines',
-                        series: [{
-                            name: 'purple',
-                            data: [47, 45, 74, 32, 56, 31, 44, 33, 45, 19]
-                        }],
-                    },
-                    stroke: {
-                        curve: 'smooth'
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    tooltip: {
-                        fixed: {
-                            enabled: true,
-                            position: 'right'
-                        },
-                        x: {
-                            show: false
-                        }
-                    },
-                    title: {
-                        text: '439',
-                        style: {
-                            fontSize: '20px'
-                        }
-                    },
-                    colors: ['var(--bs-warning)']
-                },
-                danger: {
-                    chart: {
-                        id: 'sparkline1',
-                        type: 'line',
-                        height: 120,
-                        sparkline: {
-                            enabled: true
-                        },
-                        group: 'sparklines',
-                        series: [{
-                            name: 'purple',
-                            data: [12, 14, 2, 47, 32, 44, 14, 55, 41, 69]
-                        }],
-                    },
-                    stroke: {
-                        curve: 'smooth'
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    tooltip: {
-                        fixed: {
-                            enabled: true,
-                            position: 'right'
-                        },
-                        x: {
-                            show: false
-                        }
-                    },
-                    title: {
-                        text: '439',
-                        style: {
-                            fontSize: '20px'
-                        }
-                    },
-                    colors: ['var(--bs-danger)']
-                },
-                purple: {
-                    chart: {
-                        id: 'sparkline1',
-                        type: 'line',
-                        height: 120,
-                        sparkline: {
-                            enabled: true
-                        },
-                        group: 'sparklines',
-                        series: [{
-                            name: 'purple',
-                            data: [12, 14, 2, 47, 32, 44, 14, 55, 41, 69]
-                        }],
-                    },
-                    stroke: {
-                        curve: 'smooth'
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    tooltip: {
-                        fixed: {
-                            enabled: true,
-                            position: 'right'
-                        },
-                        x: {
-                            show: false
-                        }
-                    },
-                    title: {
-                        text: '439',
-                        style: {
-                            fontSize: '20px'
-                        }
-                    },
-                    colors: ['var(--bs-purple)']
-                }
             }
         }
     },
@@ -252,7 +96,16 @@ export default {
                         }
                     });
                     break;
+                case "area":
+                    this.sparkLine.height = undefined;
+                    await general.getSparkCardData(this.configuration, this).then(async (r) => {
+                        if (r.total > 0) {
+                            this.sparkLine = r;
+                        }
+                    });
+                    break;
             }
+            this.configuration.value = (this.configuration.value).toString()
         },
 
         async setQueryData() {
@@ -290,7 +143,7 @@ export default {
         //   })
         // },
     },
-    mounted() {
+    beforeMount() {
         this.getData(this.configuration.method);
     },
 }

@@ -1,6 +1,7 @@
 import * as configurationsController from "../controller/configurationsController";
 import {generateAPIUrl} from "./variables";
 import $ from 'jquery';
+
 const api = generateAPIUrl();
 
 export function convertURLDateParameter(from, to) {
@@ -10,6 +11,7 @@ export function convertURLDateParameter(from, to) {
     to = to.replace('T', ' ')
     return `?start=${from}&end=${to}`
 }
+
 export function JSONToCSV(json) {
     const replacer = (key, value) => value === null ? '' : value
     const header = Object.keys(json[0])
@@ -17,6 +19,7 @@ export function JSONToCSV(json) {
     csv.unshift(header.join(','))
     return csv.join('\r\n')
 }
+
 export async function fetchTotal(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
     url = api + url + queryDate
@@ -30,6 +33,7 @@ export async function fetchTotal(url, that) {
         return 0
     }
 }
+
 export async function fetchData(url) {
     const response = await fetch(api + url, {
         credentials: 'include'
@@ -37,6 +41,7 @@ export async function fetchData(url) {
     const json = await response.json()
     return json.results;
 }
+
 export async function fetchDataAsJSON(url, that) {
     const queryDate = convertURLDateParameter(that.from, that.to)
     url = api + url + queryDate
@@ -49,6 +54,7 @@ export async function fetchDataAsJSON(url, that) {
     }
     return {total: json.total, results: json.results}
 }
+
 export async function downloadFile(url, filename, type) {
     const response = await fetch(api + url, {
         credentials: 'include'
@@ -72,12 +78,14 @@ export async function downloadFile(url, filename, type) {
     el.click()
     document.body.removeChild(el)
 }
+
 export function getPeriod(url) {
     let broken = api + url.split('?')[1].split('&')
     const from = broken[0].split('=')[1].replace(' ', 'T')
     const to = broken[1].split('=')[1].replace(' ', 'T')
     return `_${from}-${to}`
 }
+
 export async function generateColor(source) {
     const colors = {}
     for (const obj of source) {
@@ -85,6 +93,7 @@ export async function generateColor(source) {
     }
     return colors
 }
+
 export function getRandomColor() {
     const chartColors = [
         '#001f3f',
@@ -136,6 +145,7 @@ export function getRandomColor() {
     ]
     return chartColors[Math.floor(Math.random() * chartColors.length)]
 }
+
 export function hexToRgb(hex) {
     const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
     return result ? {
@@ -144,6 +154,7 @@ export function hexToRgb(hex) {
         b: parseInt(result[3], 16)
     } : null;
 }
+
 export function groupBy(objectArray, property) {
     return objectArray.reduce(function (acc, obj) {
         const key = obj[property]
@@ -154,6 +165,7 @@ export function groupBy(objectArray, property) {
         return acc
     }, {})
 }
+
 export function getUnique(array) {
     var uniqueArray = [];
     // Loop through array values
@@ -166,7 +178,8 @@ export function getUnique(array) {
     }
     return uniqueArray;
 }
-export function groupByDate(array, group,key) {
+
+export function groupByDate(array, group, key) {
     return array.reduce((groups, r) => {
         let date = r[key];
         let da = date.split(', ')[1].split(' ');
@@ -184,12 +197,14 @@ export function groupByDate(array, group,key) {
         return groups;
     }, {});
 }
+
 export function getURL(data, that) {
     const option = data.target.innerText
     const url = that.queryArray[that.selected]
     const filename = that.selected + getPeriod(url) + '.' + option.toLowerCase()
     downloadFile(url, filename, option)
 }
+
 export async function refreshDate(date, that) {
 
     if (date !== null && date !== undefined) {
@@ -228,6 +243,7 @@ export async function refreshDate(date, that) {
     }
 
 }
+
 export async function get(url, that) {
     return await fetchDataAsJSON(api + url, that);
 }
@@ -350,11 +366,32 @@ export function createOption(config) {
         }
     }
 }
-export function createSparkOption(config,nombre) {
-    return {
+
+export function createSparkOption(config) {
+    let colors = {
+        "blue": "#1236d4",
+        "cyan": "#045b62",
+        "dark": "#3e4b5b",
+        "danger": "#f4516c",
+        "green": "#275d2b",
+        "indigo": "#6610f2",
+        "light": "#f8f9fa",
+        "orange": "#f2a654",
+        "pink": "#ff006c",
+        "primary": "#00c5dc",
+        "purple": "#734CEA",
+        "red": "#6d1212",
+        "secondary": "#DCE6EC",
+        "success": "#34bfa3",
+        "teal": "#58d8a3",
+        "warning": "#febc3b",
+        "yellow": "#f6e84e",
+    }
+    let data = {
         chart: {
             id: config.id,
-            type: 'line',
+            type: config.type,
+            height: 80,
             sparkline: {
                 enabled: true
             },
@@ -363,7 +400,7 @@ export function createSparkOption(config,nombre) {
                 enabled: true,
                 easing: 'linear',
                 dynamicAnimation: {
-                    speed: 1000
+                    speed: 500
                 }
             },
         },
@@ -382,34 +419,15 @@ export function createSparkOption(config,nombre) {
                 show: false
             }
         },
-        title: {
-            text: nombre,
-            offsetX: 5,
-            offsetY: 20,
-            align: 'left',
-            style: {
-                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontWeight: 'bold',
-                color: '#676a6c',
-                fontSize: '1.5rem',
-                align: 'left'
-            },
-        },
-        subtitle: {
-            text: config.title,
-            offsetX: 5,
-            offsetY: 45,
-            align: 'left',
-            style: {
-                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontWeight: 0,
-                color: '#676a6c',
-                fontSize: '1rem',
-                align: 'left'
-            },
-        },
-        colors: ['var(--bs-'+config.color+')']
+        colors: [colors[config.color]],
     }
+    if (config.type === 'area') {
+
+        data.stroke= {
+            curve: 'straight'
+        }
+    }
+    return data
 }
 
 export function editTitleBox() {

@@ -1,26 +1,21 @@
 <div>
-    <div v-if="configuration !== undefined && configuration.type === 'default'" :class="'stat-card bg-gradient-'+configuration.color+' pointer'" @click="redirectCard()">
-        <div class="icon">
-            <font-awesome-icon v-if="configuration.icon!=undefined" class="f-left" :icon="['fas',configuration.icon]"/>
-        </div>
-        <div class="content">
-            <h2><strong v-bind:class="configuration.type+' f-right'">{{ configuration.value }}</strong></h2>
-            <p class="mb-1 label f-right"><strong>{{ configuration.title }}</strong></p>
-        </div>
-    </div>
-    <div v-if="configuration !== undefined && configuration.type === 'line'" :class="'pointer xbi spark-line '+configuration.color" @click="redirectCard()">
-        <div class="row">
-            <div class="col-md-12">
-                <apexcharts :ref="configuration.id" :options="sparkLine.options" :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
+    <div class="xbi" v-if="configuration !== undefined " @click="redirectCard()">
+        <div :class="configuration.type === 'default' ? 'display-flex text-white spark-card pointer p-3 bg-gradient-'+configuration.color : ' display-flex spark-card pointer p-3  '+configuration.color">
+            <div :class="configuration.type === 'default' ? 'chart p-2' : 'chart '">
+                <apexcharts v-if="Object.keys(sparkLine).length>0" class="center" :ref="configuration.id" :options="sparkLine.options" :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
+                <font-awesome-icon v-if=" configuration.type === 'default'" class=" f-left "
+                                   :icon="['fas',configuration.icon]"/>
+            </div>
+            <div class="content">
+                <p>
+                    <strong :class="configuration.type+' number f-right'">{{
+                            Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value
+                        }}</strong>
+                    <br>
+                    <span class="label f-right mb-1">{{ configuration.title }}</span>
+                </p>
+
             </div>
         </div>
     </div>
-<!--    <div v-if="configuration !== undefined" :class="'pointer xbi xbi-area '+configuration.color"-->
-<!--         @click="redirectCard()">-->
-<!--        <div class="row">-->
-<!--            <div class="col-md-12">-->
-<!--                <apexcharts :ref="sparkArea[configuration.color].chart.id" :options="sparkArea[configuration.color]" :series="sparkArea[configuration.color].chart.series" :height="sparkArea[configuration.color].chart.height"></apexcharts>-->
-<!--            </div>-->
-<!--        </div>-->
-<!--    </div>-->
 </div>

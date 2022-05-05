@@ -94,7 +94,7 @@ export default {
             await this.getStructureModelsData();
             if (this.select.models!=undefined && Object.keys(this.select.models).length > 0) {
                 await Object.keys(this.select.models).map((key) => {
-                    if (this.select.models[key].type === 'dynamic') {
+                    if (this.select.models[key].type === 'Dynamic') {
                         hasDynamicSelect = true;
                         this.queryLink = this.select.models[key].query;
                         genaralController.getJsonData(this.select.models[key].query).then((r) => {

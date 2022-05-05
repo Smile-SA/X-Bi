@@ -37,5 +37,6 @@ import "@andresouzaabreu/vue-data-table/dist/DataTable.css";
 import '../public/vendors/mdi/css/materialdesignicons.min.css';
 import '../public/vendors/css/vendor.bundle.base.css';
 import '../public/css/style.css';
+import '../public/css/sass.scss';
 import 'codemirror/mode/javascript/javascript.js';
 
