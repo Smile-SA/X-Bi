@@ -1,5 +1,5 @@
 <center :ref="data.id">
-    <router-link v-if="data.isDisplayed" :to="data.url+'/display/'+data.id" custom v-slot="{ navigate }">
+    <router-link v-if="data.isDisplayed" :to="data.url+'/'+data.id" custom v-slot="{ navigate }">
         <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
             <font-awesome-icon :icon="['fas','fa-eye']"/> Display</a>
     </router-link>

@@ -20,8 +20,6 @@ export default {
         }
     },
     computed: {},
-    mounted() {
-    },
     methods: {
         getMenus() {
             this.menus = configurationsController.getMenus();
@@ -41,7 +39,7 @@ export default {
             this.show = s;
         }
     },
-    async beforeMount() {
+    async mounted() {
         await this.getMenus();
         await this.sunMenu();
         this.$forceUpdate();

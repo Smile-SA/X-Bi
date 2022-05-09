@@ -10,7 +10,7 @@
                 <p>
                     <strong :class="configuration.type+' number f-right'">{{
                             Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value
-                        }}</strong>
+                        }} {{configuration.unit}}</strong>
                     <br>
                     <span class="label f-right mb-1">{{ configuration.title }}</span>
                 </p>

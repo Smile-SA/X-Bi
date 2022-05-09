@@ -48,7 +48,7 @@
       },
       {
         "name": "Structure",
-        "path": "/structure/display/:id",
+        "path": "/ui/structures/:id",
         "icon": "fa-angle-right",
         "component": "views/configurations/ui/structure/index.vue",
         "description": "Router configuration",
@@ -68,7 +68,7 @@
       },
       {
         "name": "Display instance",
-        "path": "/instances/display/:id",
+        "path": "/instances/:id",
         "icon": "fa-angle-right",
         "component": "views/configurations/kpis/instances/displayInstance/index.vue",
         "description": "Detailed of instance",
@@ -88,7 +88,7 @@
       },
       {
         "name": "Display template",
-        "path": "/templates/display/:id",
+        "path": "/templates/:id",
         "icon": "fa-angle-right",
         "component": "views/configurations/kpis/templates/displayTemplate/index.vue",
         "description": "Detailed of template",
@@ -137,6 +137,7 @@
                 "redirect": "/namespaces",
                 "query": "/namespaces",
                 "query_key": "namespace",
+                "unit": "",
                 "type": "area",
                 "method": "count",
                 "display_space": "1/4",
@@ -149,6 +150,7 @@
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -173,6 +175,7 @@
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -260,6 +263,7 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
+                "unit": "",
                 "type": "default",
                 "method": "sum",
                 "display_space": "1/4",
@@ -272,6 +276,7 @@
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -284,6 +289,7 @@
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -296,6 +302,7 @@
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -372,6 +379,7 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
+                "unit": "",
                 "type": "default",
                 "method": "sum",
                 "display_space": "1/4",
@@ -384,6 +392,7 @@
                 "redirect": "",
                 "query": "/pods",
                 "query_key": "",
+                "unit": "",
                 "display_space": "1/4",
                 "type": "default",
                 "method": "count",
@@ -396,6 +405,7 @@
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -408,6 +418,7 @@
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -484,6 +495,7 @@
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
+                "unit": "",
                 "type": "default",
                 "method": "sum",
                 "display_space": "1/4",
@@ -496,6 +508,7 @@
                 "redirect": "",
                 "query": "/nodes",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -508,6 +521,7 @@
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -520,6 +534,7 @@
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -779,6 +794,9 @@
           },
           "value": {
             "type": "string"
+          },
+          "unit": {
+            "type": "string"
           }
         },
         "required": [
@@ -852,6 +870,13 @@
             "inputType": "text",
             "required": true,
             "placeholder": "Card calculation key"
+          },
+          {
+            "model": "unit",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Enter the unit of the result value"
           },
           {
             "model": "method",
@@ -983,21 +1008,21 @@
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Chart value id"
+            "placeholder": "Chart query key"
           },
           {
             "model": "sort_key",
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Chart sort id"
+            "placeholder": "Chart sort key"
           },
           {
             "model": "time_key",
             "type": "input",
             "inputType": "text",
             "required": true,
-            "placeholder": "Chart time id"
+            "placeholder": "Chart time key"
           },
           {
             "model": "type",
@@ -1022,7 +1047,8 @@
           {
             "model": "axis_type",
             "type": "select",
-            "required": false,
+            "required": true,
+            "default": "datetime",
             "placeholder": "Chart type",
             "values": [
               "datetime"

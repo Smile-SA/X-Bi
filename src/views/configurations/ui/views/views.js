@@ -37,7 +37,7 @@ export default {
                         });
                         bind[key].id = s.data.results[key].name
                         bind[key].structureType = 'view'
-                        bind[key].url = '/structure'
+                        bind[key].url = '/ui/structures'
                         bind[key].deleteTagIndex = '4'
                         bind[key].colspan = ''
                         bind[key].deleteParam = ''
