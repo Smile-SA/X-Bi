@@ -43,7 +43,7 @@ export async function getDataByVariableAndDateToApex(config, that) {
             let cs = utils.createSerie(data, config, null, 3)
             r.data.series = cs.series
             r.data.lastDate = cs.lastDate
-            r.data.options = utils.createOption(config);
+            r.data.options = utils.createOption(config, cs.labels, cs.colors);
             r.data.height = that.styles.height;
             delete r.data.results;
             return r.data;
@@ -60,6 +60,7 @@ export async function getDataByDateToApex(config, that,name) {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
+
             let data = utils.groupByDate(r.data.results, that.group,config.time_key);
             Object.keys(data).map((item) => {
                 data[item] = data[item].reduce(function (r, a) {
@@ -78,6 +79,7 @@ export async function getDataByDateToApex(config, that,name) {
             r.data.options = utils.createOption(config);
             r.data.height = that.styles.height;
             delete r.data.results;
+            console.log(data)
             return r.data;
         }
         // eslint-disable-next-line no-unused-vars

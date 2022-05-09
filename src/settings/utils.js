@@ -253,7 +253,7 @@ export function goTo(route, that) {
 }
 
 export function createSerie(data, config, serieName, boucle) {
-    let min = 0, max = 0, series = [], lastDate = 0, obj = []
+    let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = []
     if (boucle === 1) {
         Object.keys(data).map((item) => {
             let date = new Date(data[item][config.time_key]).getTime();
@@ -300,12 +300,37 @@ export function createSerie(data, config, serieName, boucle) {
                 data: obj
             });
         })
+        // eslint-disable-next-line no-unused-vars
+        let newSeries = []
+        if (["pie", "polarArea", "radar", "radialBar"].includes(config.type)) {
+            Object.keys(series).map(serie => {
+                let x = (series[serie].data.map(item => item[1]).reduce((acc, amount) => parseFloat(acc) + parseFloat(amount))).toFixed(2);
+                series[serie].data = x
+                newSeries.push(x)
+                labels.push(series[serie].name)
+                if ((config.title).includes('efficiency')) {
+                    if (x <= 30) {
+                        colors.push('#FF4560D8')
+                    }
+                    if (x > 30) {
+                        colors.push('#FF9800FF')
+                    }
+                    if (x > 50) {
+                        colors.push('#ffcc00')
+                    }
+                    if (x > 70) {
+                        colors.push('#00E396D8')
+                    }
+                }else colors.push(getRandomColor())
+            })
+            series = newSeries;
+        }
     }
-    return {'series': series, 'lastDate': lastDate};
+    return {'series': series, 'labels': labels, 'colors': colors, 'lastDate': lastDate};
 }
 
-export function createOption(config) {
-    return {
+export function createOption(config, labels, colors) {
+    let data = {
         chart: {
             id: config.id, type: config.type,
             animations: {
@@ -335,6 +360,7 @@ export function createOption(config) {
             },
         },
         labels: {
+            enabled: false,
             style: {
                 fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
                 fontWeight: 0,
@@ -365,6 +391,14 @@ export function createOption(config) {
             position: 'bottom',
         }
     }
+    if (Object.keys(labels).length > 0) {
+        data.labels = labels
+    }
+    if (Object.keys(colors).length > 0) {
+        data.colors = colors
+    }
+    return data
+
 }
 
 export function createSparkOption(config) {
@@ -391,7 +425,6 @@ export function createSparkOption(config) {
         chart: {
             id: config.id,
             type: config.type,
-            height: 80,
             sparkline: {
                 enabled: true
             },
@@ -400,7 +433,7 @@ export function createSparkOption(config) {
                 enabled: true,
                 easing: 'linear',
                 dynamicAnimation: {
-                    speed: 500
+                    speed: 1000
                 }
             },
         },
