@@ -187,12 +187,12 @@
           "chart": {
             "models": [
               {
-                "title": "Nodes rate (in Euros)",
+                "title": "Nodes rate (in Euros) ",
                 "query": "/nodes/rating",
                 "query_key": "frame_price",
                 "sort_key": "node",
                 "time_key": "frame_begin",
-                "type": "pie",
+                "type": "polarArea",
                 "axis_type": "datetime",
                 "display_space": "1/2",
                 "is_monitoring": false
@@ -951,7 +951,7 @@
               "heatmap",
               "histogram",
               "line",
-              "pie",
+              "polarArea",
               "radar",
               "radialBar",
               "scatter"
@@ -1038,7 +1038,7 @@
               "heatmap",
               "histogram",
               "line",
-              "pie",
+              "polarArea",
               "radar",
               "radialBar",
               "scatter"
