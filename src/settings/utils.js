@@ -425,7 +425,7 @@ export function createSparkOption(config) {
         chart: {
             id: config.id,
             type: config.type,
-            height:80,
+            height:65,
             sparkline: {
                 enabled: true
             },

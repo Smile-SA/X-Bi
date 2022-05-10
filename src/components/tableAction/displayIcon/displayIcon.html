@@ -1,4 +1,3 @@
 <div class="display-icon">
-    <font-awesome-icon :icon="['fas',data.icon]" :class="'text-primary fs-5 text-'+data.color"/>
+    <font-awesome-icon :icon="['fas',data.icon]" :class=" data.color ? 'fs-5 text-'+data.color : 'fs-5 text-primary'"/>
 </div>
-

@@ -36,7 +36,7 @@
                                 <div v-bind:class="[errors.template ? 'row form-group has-error' : 'row form-group ']">
                                     <label class="col-md-2 col-lg-2 control-label pt-3 pe-0 text-capitalize">Template <small class="text-danger">*</small></label>
                                     <div class="col-md-10 col-lg-10">
-                                        <select class="form-control" v-model="template" name="template" id="template" v-on:change="getDynamicValues">
+                                        <select class="form-control" v-model="template" name="template" id="template" v-on:change="setDynamicValues">
                                             <option class="text-capitalize" selected disabled> Select a template</option>
                                             <option class="text-capitalize" v-for="option in templatesList" v-bind:value="(option.template_name).replace('rating-rule-template-','')" v-bind:key="option.template_name">{{
                                                     (option.template_name).replace('rating-rule-template-','')

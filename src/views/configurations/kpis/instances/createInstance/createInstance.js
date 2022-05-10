@@ -29,8 +29,10 @@ export default {
         this.getTemplates();
     },
     methods: {
-        async getDynamicValues(options) {
-            let value = options.target.value;
+        async setDynamicValues(options) {
+            this.getDynamicsData(options.target.value)
+        },
+        async getDynamicsData(value){
             this.dynamicValues = [];
             await template.getTemplate(value).then((r) => {
                 if (r.data.total > 0) {
@@ -115,23 +117,26 @@ export default {
             this.checkAllForm();
             if (Object.keys(this.errors).length === 0) {
                 this.errors = {};
-                let values = this.dynamicValues
-                values.push({
+                let data = this.dynamicValues
+                data.push({
                     'name': 'metric_name',
-                    'value': this.name
+                    'value': (this.name).replaceAll(' ','')
                 })
-                values.push({
+                data.push({
                     'name': 'template_name',
-                    'value': (this.template).replace('rating-rule-template-', '')
+                    'value': (this.template).replaceAll('rating-rule-template-', '')
                 })
-                instance.addInstance(values).then((r) => {
+                instance.addInstance(data).then((r) => {
                     if (r.errors) {
-                        this.errors.submit = true
+                        this.errors.submit = true;
+                        this.dynamicValues=null;
+                        this.errors.name = r.message.replaceAll(' ','').split('"reason":"').pop().split('"')[0].replace(/[A-Z]/g, ' $&').trim();
+                        this.getDynamicsData(this.template)
                     } else {
                         this.resetForm();
                         this.errors.submit = false
+                        this.message = r.message
                     }
-                    this.message = r.message
                 });
             }
         },

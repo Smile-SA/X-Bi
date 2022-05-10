@@ -133,12 +133,12 @@
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "success",
+                "color": "danger",
                 "redirect": "/namespaces",
                 "query": "/namespaces",
                 "query_key": "namespace",
                 "unit": "",
-                "type": "area",
+                "type": "default",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -146,7 +146,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "success",
+                "color": "primary",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
@@ -159,7 +159,7 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "primary",
+                "color": "success",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
@@ -171,7 +171,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "primary",
+                "color": "success",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -192,7 +192,7 @@
                 "query_key": "frame_price",
                 "sort_key": "node",
                 "time_key": "frame_begin",
-                "type": "polarArea",
+                "type": "area",
                 "axis_type": "datetime",
                 "display_space": "1/2",
                 "is_monitoring": false
