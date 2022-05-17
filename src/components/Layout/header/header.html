@@ -1,27 +1,27 @@
 <div class="nav-container">
-<nav class="navbar nav-height nav-header bg-gradient-primary p-0">
+<nav class="navbar nav-height nav-header bg-white p-0">
     <div class="navbar-menu-wrapper d-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" @click="reduceMenu()" type="button" data-toggle="minimize">
-            <font-awesome-icon class="text-white" :icon="['fas','fa-bars']"/>
+            <font-awesome-icon class="text-primary" :icon="['fas','fa-bars']"/>
         </button>
         <ul class="navbar-nav navbar-nav-right">
             <li class="nav-item nav-profile dropdown">
-                <a class="nav-link dropdown-toggle text-white pointer" v-on:click="dropDownEvent()" data-bs-toggle="dropdown">
+                <a class="nav-link dropdown-toggle text-primary pointer" v-on:click="dropDownEvent()" data-bs-toggle="dropdown">
                     <div class="nav-profile-img">
                         <img v-if='this.image !== ""' :src="image"  alt="image">
                         <span class="availability-status online"></span>
                     </div>
-                    <div class="nav-profile-text text-white">
-                        <p class="mb-1 text-white">{{ "Signed in as " + tenant }}</p>
+                    <div class="nav-profile-text ">
+                        <p class="mb-1 ">{{ "Signed in as " + tenant }}</p>
                     </div>
                 </a>
-                <div :class=" drop ? 'dropdown-menu navbar-dropdown show' : 'dropdown-menu navbar-dropdown'" >
+                <div :class=" drop ? 'dropdown-menu navbar-dropdown show text-primary' : 'dropdown-menu navbar-dropdown text-primary'" >
                     <a class="dropdown-item ">
-                        <font-awesome-icon class="me-2 text-success" :icon="['fas','fa-at']"/>
+                        <font-awesome-icon class="me-2 " :icon="['fas','fa-at']"/>
                         {{ email }} </a>
                     <div class="dropdown-divider"></div>
-                    <a class="dropdown-item" v-on:click="logoutUser" >
-                        <font-awesome-icon class="me-2 text-primary" :icon="['fas','fa-power-off']"/>
+                    <a class="dropdown-item" v-on:click="logoutUser">
+                        <font-awesome-icon class="me-2 text-danger" :icon="['fas','fa-power-off']"/>
                         Sign out </a>
                 </div>
             </li>

@@ -14,53 +14,6 @@ export default {
             timer: '',
             value: '-',
             sparkLine: {},
-            sparkArea: {
-                primary: {
-                    chart: {
-                        id: 'sparkArea1',
-                        group: 'sparklines',
-                        type: 'area',
-                        height: 65,
-                        sparkline: {
-                            enabled: true
-                        },
-                        series: [{
-                            name: 'purple',
-                            data: [15, 75, 47, 65, 14, 32, 19, 54, 44, 61]
-                        }],
-                    },
-                    yaxis: {
-                        min: 0
-                    },
-                    stroke: {
-                        curve: 'straight'
-                    },
-                    fill: {
-                        opacity: 1,
-                    },
-                    markers: {
-                        size: 0
-                    },
-                    tooltip: {
-                        fixed: {
-                            enabled: true,
-                            position: 'right'
-                        },
-                        x: {
-                            show: false
-                        }
-                    },
-                    title: {
-                        text: '$135,965',
-                        offsetX: 30,
-                        style: {
-                            fontSize: '20px',
-                            cssClass: 'apexcharts-yaxis-title'
-                        }
-                    },
-                    colors: ['var(--bs-primary)']
-                },
-            }
         }
     },
     methods: {
@@ -68,7 +21,7 @@ export default {
         async getData() {
             await this.setQueryData();
             switch (this.configuration.type) {
-                case "default":
+                case "gradient":
                     await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
@@ -88,15 +41,16 @@ export default {
                         }
                     });
                     break;
-                case "line":
+                case "spark":
                     this.sparkLine.height = undefined;
                     await general.getSparkCardData(this.configuration, this).then(async (r) => {
                         if (r.total > 0) {
                             this.sparkLine = r;
+                            this.sparkLine.options.chart.type = "line";
                         }
                     });
                     break;
-                case "area":
+                case "default":
                     this.sparkLine.height = undefined;
                     await general.getSparkCardData(this.configuration, this).then(async (r) => {
                         if (r.total > 0) {

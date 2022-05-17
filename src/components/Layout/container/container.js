@@ -4,7 +4,8 @@ export default {
   name: 'container',
   components: {
     SideMenu: () => import('../menu/index.vue'),
-    HeaderLayout: () => import('../header/index.vue')
+    HeaderLayout: () => import('../header/index.vue'),
+    PageFooter: () => import('../pagefooter/index.vue')
   },
   props: ['displayName', 'email'],
   data: function () {

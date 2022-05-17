@@ -284,7 +284,7 @@ export function createSerie(data, config, serieName, boucle) {
                     if (date > lastDate) {
                         lastDate = date
                     }
-                    const fixed = data[item][subItem][subSubItem][config.query_key].toFixed(5),
+                    const fixed = data[item][subItem][subSubItem][config.query_key].toFixed(3),
                         minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
                     if (min === 0 || minTmp < min) {
                         min = minTmp
@@ -321,7 +321,7 @@ export function createSerie(data, config, serieName, boucle) {
                     if (x > 70) {
                         colors.push('#00E396D8')
                     }
-                }else colors.push(getRandomColor())
+                } else colors.push(getRandomColor())
             })
             series = newSeries;
         }
@@ -343,28 +343,28 @@ export function createOption(config, labels, colors) {
         },
         xaxis: {
             type: 'datetime',
-            style: {
-                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontWeight: 0,
-                color: '#676a6c',
+            labels: {
+                style: {
+                    fontFamily: 'var(--bs-body-font-family)',
+                    color: 'var(--bs-body-color)',
+                    fontSize: '11px'
+                },
             },
         },
         yaxis: {
             labels: {
                 style: {
-                    fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                    fontWeight: 0,
-                    color: '#676a6c',
-                    fontSize: '12px'
+                    fontFamily: 'var(--bs-body-font-family)',
+                    color: 'var(--bs-body-color)',
+                    fontSize: '11px'
                 },
             },
         },
         labels: {
             enabled: false,
             style: {
-                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontWeight: 0,
-                color: '#676a6c',
+                fontFamily: 'var(--bs-body-font-family)',
+                color: 'var(--bs-body-color)'
             },
         },
         dataLabels: {
@@ -376,19 +376,20 @@ export function createOption(config, labels, colors) {
         title: {
             text: config.title,
             style: {
-                fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
-                fontWeight: 0,
-                color: '#676a6c',
-                fontSize: '16px',
+                fontFamily: 'var(--bs-body-font-family)',
+                color: 'var(--bs-body-color)',
+                fontSize: '14px',
             },
         },
         legend: {
-            fontFamily: "open sans,Helvetica Neue, Helvetica, Arial, sans-serif",
             horizontalAlign: 'left',
-            fontWeight: 0,
-            color: '#676a6c',
-            fontSize: '14px',
             position: 'bottom',
+            fontSize: '12px',
+            fontFamily: 'var(--bs-body-font-family)',
+            labels: {
+                colors: 'var(--bs-body-color)',
+
+            },
         }
     }
     if (Object.keys(labels).length > 0) {
@@ -425,7 +426,7 @@ export function createSparkOption(config) {
         chart: {
             id: config.id,
             type: config.type,
-            height:65,
+            height: 50,
             sparkline: {
                 enabled: true
             },
@@ -457,7 +458,7 @@ export function createSparkOption(config) {
     }
     if (config.type === 'area') {
 
-        data.stroke= {
+        data.stroke = {
             curve: 'straight'
         }
     }

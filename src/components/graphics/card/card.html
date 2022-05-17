@@ -1,21 +1,45 @@
 <div>
     <div class="xbi" v-if="configuration !== undefined " @click="redirectCard()">
-        <div :class="configuration.type === 'default' ? 'display-flex text-white spark-card pointer p-3 bg-gradient-'+configuration.color : ' display-flex spark-card pointer p-3  '+configuration.color">
-            <div :class="configuration.type === 'default' ? 'chart p-2' : 'chart '">
-                <apexcharts v-if="Object.keys(sparkLine).length>0" class="center" :ref="configuration.id" :options="sparkLine.options" :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
-                <font-awesome-icon v-if=" configuration.type === 'default'" class=" f-left "
-                                   :icon="['fas',configuration.icon]"/>
-            </div>
+        <div :class="configuration.type==='default'? 'display-flex text-white spark-card pointer p-3  bg-gradient-'+configuration.color : 'display-flex spark-card pointer p-3'">
             <div class="content">
-                <p>
-                    <strong :class="configuration.type+' number f-right'">{{
-                            Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value
-                        }} {{configuration.unit}}</strong>
-                    <br>
-                    <span class="label f-right mb-1">{{ configuration.title }}</span>
-                </p>
-
+                <h3 class="font-weight-bolder mb-0 text-lg">
+                    {{ Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value }}
+                    <span class="text-success text-sm font-weight-bolder">{{ configuration.unit }}</span>
+                </h3>
+                <h6 class="text-sm mb-0 text-capitalize font-weight-bold">{{ configuration.title }}</h6>
             </div>
+            <div class="text-end p-1">
+                <div v-if=" configuration.type != 'spark'" :class="configuration.type==='gradient' ?
+                     ' icon-card icon-shape text-center center border-radius-md shadow bg-gradient-'+configuration.color:
+                     ' icon-card text-center border-radius-md'">
+                    <font-awesome-icon class="opacity-10 text-lg text-white h-100"  :icon="['fas',configuration.icon]"/>
+                </div>
+                <apexcharts v-if="Object.keys(sparkLine).length>0 && configuration.type==='spark'" class=" ps-4 ps-4 center" :ref="configuration.id"
+                            :options="sparkLine.options" :series="sparkLine.series"
+                            :height="sparkLine.height"></apexcharts>
+            </div>
+
         </div>
     </div>
+<!--    <div class="xbi" v-if="configuration !== undefined " @click="redirectCard()">-->
+<!--        <div :class="configuration.type === 'default' ? 'display-flex text-white spark-card pointer p-3 bg-gradient-'+configuration.color : ' display-flex spark-card pointer p-3  '+configuration.color">-->
+<!--            <div :class="configuration.type === 'default' ? 'chart p-2' : 'chart '">-->
+<!--                <apexcharts v-if="Object.keys(sparkLine).length>0" class="center" :ref="configuration.id"-->
+<!--                            :options="sparkLine.options" :series="sparkLine.series"-->
+<!--                            :height="sparkLine.height"></apexcharts>-->
+<!--                <font-awesome-icon v-if=" configuration.type === 'default'" class=" f-left "-->
+<!--                                   :icon="['fas',configuration.icon]"/>-->
+<!--            </div>-->
+<!--            <div class="content">-->
+<!--                <p>-->
+<!--                    <strong :class="configuration.type+' number f-right'">{{-->
+<!--                            Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value-->
+<!--                        }} {{ configuration.unit }}</strong>-->
+<!--                    <br>-->
+<!--                    <span class="label f-right mb-1">{{ configuration.title }}</span>-->
+<!--                </p>-->
+
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
 </div>

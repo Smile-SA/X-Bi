@@ -76,3 +76,28 @@ svg{
   height: 1.05rem;
   width: 1.05rem;
 }
+
+.nav-link .icon svg{
+  padding: 10px;
+  color: var(--bs-icon-bg);
+}
+
+
+
+.icon-shape {
+  width: 48px;
+  height: 48px;
+  background-position: 50%;
+  border-radius: 0.75rem;
+}
+
+.icon {
+  display: inline-block;
+  color: var(--bs-dark);
+  height: 1em;
+  width: 1em;
+}
+.icon {
+  fill: currentColor;
+  stroke: none;
+}
