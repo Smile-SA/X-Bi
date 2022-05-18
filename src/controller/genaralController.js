@@ -79,7 +79,6 @@ export async function getDataByDateToApex(config, that,name) {
             r.data.options = utils.createOption(config);
             r.data.height = that.styles.height;
             delete r.data.results;
-            console.log(data)
             return r.data;
         }
         // eslint-disable-next-line no-unused-vars

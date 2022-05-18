@@ -8,8 +8,8 @@
         </a>
     </div>
     <ul class="nav">
-        <li class="nav-item nav-profile">
-            <a class="nav-link pointer">
+        <div class="nav-profile m-4 ">
+            <div class="pointer d-flex ms-2 me-2 ">
                 <div class="nav-profile-image">
                     <img v-if='this.image !== ""' :src="image" alt="image">
                     <span class="availability-status online"></span>
@@ -19,22 +19,19 @@
                     <span class="font-weight-bold mb-2 text-capitalize">{{ tenant }}</span>
                     <span class=" text-small">{{ email }}</span>
                 </div>
-            </a>
-        </li>
+            </div>
+        </div>
         <div v-for="item in menus">
             <div v-if="item.children!=undefined" class="">
                 <li class="nav-item">
-                    <h6 class="d-flex nowrap align-items-center m-3 mb-2 mt-2">
+                    <h6 class="d-flex nowrap align-items-center m-3 mb-1 mt-2">
                         <div class="icon icon-shape icon-md  border-radius-lg  text-center d-flex align-items-center justify-content-center">
                             <font-awesome-icon class="menu-icon text-primary" :icon="['fas',item.icon]"/>
                         </div>
-                        <span class="sub-menu-title text-uppercase font-weight-bolder text-primary">{{
-                                item.name
-                            }}</span>
+                        <span class="sub-menu-title text-uppercase font-weight-bolder text-primary">{{item.name}}</span>
                     </h6>
                 </li>
-                <router-link v-for="subItem in item.children" class="pointer" :to="'/'+subItem.name" custom
-                             v-slot="{ navigate }">
+                <router-link v-for="subItem in item.children" class="pointer" :to="'/'+subItem.name" custom v-slot="{ navigate }">
                     <li v-bind:class="$route.name==subItem.name || $route.path.includes((subItem.name).toLowerCase()) || ($route.path.includes((subItem.path).toLowerCase()) && subItem.path!='' && subItem.path!='/') ? 'nav-item active' : 'nav-item '">
                         <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
                            role="link">
@@ -59,20 +56,24 @@
                 </li>
             </router-link>
         </div>
-        <div class="sidenav-footer mx-2 pt-2 ms-2 me-2 text-white ">
-            <div class="bg-primary border-radius-lg  card-body text-start">
-                <div class="align-items-center justify-content-center docs-icon">
-                    <div class="icon p-3 mb-2  bg-white shadow  d-flex  align-items-center justify-content-center border-radius-lg">
-                        <font-awesome-icon class=" text-primary text-gradient text-lg " :icon="['fas','fa-info']"/>
-                    </div>
+        <div class="sidenav-footer nav-item mt-2 ">
+            <div class="nav-link menu-icon border-radius-md display-block bg-primary text-white border-radius-lg">
+                <div class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" text-primary text-gradient text-lg " :icon="['fas','fa-info']"/>
                 </div>
-                <div class="docs-info">
+                <div class="docs-info ms-2 me-2 mt-2">
                     <h6>Need help?</h6>
                     <p class="font-weight-bold">Please check our docs</p>
                     <a href="" target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
                 </div>
             </div>
-            <a class="btn btn-outline-danger mt-3 w-100" href="">Sign out</a>
+            <a class="nav-link mt-3 btn btn-outline-danger menu-icon border-radius-md border-radius-lg" role="link"
+               v-on:click="logoutUser">
+                <div class="border-danger icon bg-white icon-shape icon-md shadow border-radius-lg text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class="menu-icon text-danger" :icon="['fas','fa-power-off']"/>
+                </div>
+                <span class="menu-title ms-1 ">Sign out</span>
+            </a>
         </div>
     </ul>
 </nav>

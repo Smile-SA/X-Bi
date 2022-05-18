@@ -31,6 +31,11 @@ new Vue({
     render: h => h(AppComponent)
 }).$mount('#app');
 
+import 'font-awesome/css/font-awesome.css'
+import 'font-awesome/css/font-awesome.min.css'
+import 'font-awesome/css/font-awesome.css.map'
+import 'font-awesome/scss/font-awesome.scss'
+
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/eclipse.css';
 import "@andresouzaabreu/vue-data-table/dist/DataTable.css";

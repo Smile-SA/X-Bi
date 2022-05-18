@@ -11,7 +11,7 @@ export default {
     }, methods: {
         async getApexData() {
             this.data.height = undefined;
-            if (this.configuration.monitoring === true){
+            if (this.configuration.is_monitoring === true || this.configuration.is_monitoring === 'true'){
                 general.getDataByDateToApex(this.configuration, this, this.name).then(async (r) => {
                     if(r.total !== undefined && r.total > 0){
                         this.data = r;
@@ -26,7 +26,7 @@ export default {
             }
         },
         async refreshChart() {
-            if (this.configuration.monitoring === true) {
+            if (this.configuration.is_monitoring === true || this.configuration.is_monitoring === 'true') {
                 await setInterval(() => {
                     if (this.data.height != undefined) {
                         general.getDataByDateToApex(this.configuration, this, this.name).then(async (r) => {

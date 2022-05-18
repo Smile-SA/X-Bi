@@ -189,15 +189,25 @@ export default {
                         }
                     } else {
                         if (structureType === "card") {
-                            div.innerHTML = '<div class="stat-card bg-gradient-' + this.data.color + ' pointer">\n' +
-                                '    <div class="icon">\n' +
-                                '        <i class="' + this.data.icon + ' f-left"></i>\n' +
-                                '    </div>\n' +
-                                '    <div class="content">\n' +
-                                '        <h2><strong class="' + this.data.type + ' f-right">' + value + '</strong></h2>\n' +
-                                '        <p class="mb-1 label f-right"><strong>' + this.data.title + '</strong></p>\n' +
-                                '    </div>\n' +
-                                '</div>'
+                            if(this.data.unit===undefined){
+                                this.data.unit = ''
+                            }
+                            div.innerHTML ='    <div class="xbi">\n' +
+                                '        <div class="display-flex text-white spark-card pointer p-3  bg-gradient-'+this.data.color+'">\n' +
+                                '            <div class="content">\n' +
+                                '                <h3 class="font-weight-bolder mb-0 text-lg">'+value+
+                                '                    <span class="text-success text-sm font-weight-bolder">'+this.data.unit +'</span>\n' +
+                                '                </h3>\n' +
+                                '                <h6 class="text-sm mb-0 text-capitalize font-weight-bold">'+this.data.title+'</h6>\n' +
+                                '            </div>\n' +
+                                '            <div class="text-end p-1">\n' +
+                                '                <div class="icon-card text-center border-radius-md">\n' +
+                                '                    <i style="font-size: 3rem;" class="opacity-10 text-lg text-white h-100 fa-solid fas fa-duotone fa '+this.data.icon+'"></i>\n' +
+                                '                </div>\n' +
+                                '            </div>\n' +
+                                '        </div>\n' +
+                                '    </div>'
+
                         }
                     }
 

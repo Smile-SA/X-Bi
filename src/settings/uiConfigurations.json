@@ -146,7 +146,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "primary",
+                "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
@@ -159,11 +159,11 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "success",
+                "color": "warning",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "gradient",
+                "type": "default",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -176,7 +176,7 @@
                 "query": "/metrics",
                 "query_key": "metric",
                 "unit": "",
-                "type": "spark",
+                "type": "default",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -272,7 +272,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "primary",
+                "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
@@ -388,7 +388,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "primary",
+                "color": "blue",
                 "redirect": "",
                 "query": "/pods",
                 "query_key": "",

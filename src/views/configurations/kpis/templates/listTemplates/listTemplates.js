@@ -50,7 +50,7 @@ export default {
                      let d = {
                          'name': r.results[item].template_name,
                          'url': '/templates',
-                         'deleteTagIndex': 4,
+                         'deleteTagIndex': 3,
                          'colspan': 2,
                          'deleteParam': 'query_name',
                          'id': (r.results[item].template_name).replace('rating-rule-template-', ''),

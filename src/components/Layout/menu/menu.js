@@ -2,6 +2,7 @@ import * as configurationsController from "../../../controller/configurationsCon
 
 var uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 import {generateAPIUrl} from "../../../settings/variables";
+import {logOut} from "../../../controller/authController";
 
 export default {
     name: 'menu-layout',
@@ -37,7 +38,10 @@ export default {
             });
             this.isActive = a;
             this.show = s;
-        }
+        },
+        logoutUser() {
+            logOut();
+        },
     },
     async mounted() {
         await this.getMenus();

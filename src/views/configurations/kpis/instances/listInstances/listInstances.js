@@ -42,7 +42,7 @@ export default {
                     this.instancesList.push({
                         'name': data.results[item],
                         'url': '/instances',
-                        'deleteTagIndex': 4,
+                        'deleteTagIndex': 3,
                         'colspan': 2,
                         'deleteParam': 'metric_name',
                         'id': data.results[item].replace('rating-rule-instance-', ''),

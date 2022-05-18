@@ -392,10 +392,10 @@ export function createOption(config, labels, colors) {
             },
         }
     }
-    if (Object.keys(labels).length > 0) {
+    if (labels!=null && Object.keys(labels).length > 0) {
         data.labels = labels
     }
-    if (Object.keys(colors).length > 0) {
+    if (colors!=null && Object.keys(colors).length > 0) {
         data.colors = colors
     }
     return data
