@@ -60,13 +60,13 @@ $base-font-weight: $regular;
 $base-line-height: 1.6em;
 
 // Colors
-$black: #000000;
+$black: #344767;
 $dark-gray: rgba($black, 0.8);
-$gray: rgba($black, 0.6);
+$gray: #67748e;
 $light-gray: rgba($black, 0.4);
 $lighter-gray: rgba($black, 0.2);
-$white: #FFFFFF;
-$accent: #1eaae1;
+$white: #f8f9fa;
+$accent: #344767;
 
 // Form Settings
 $max-width: 600px;
@@ -88,7 +88,7 @@ $gutters: 24px;
   position: relative;
   background: $white;
   width: $max-width;
-  border-radius: 4px;
+  border-radius: 0.75rem;
   box-shadow: 0 0 30px rgba($black, .1);
   box-sizing: border-box;
   margin: 100px auto 10px;
@@ -148,9 +148,9 @@ $gutters: 24px;
     }
 
     input {
-      background: rgba($black, 0.1);
+      background-color: rgba($black, 0.1);
       border: 0;
-      border-radius: 4px;
+      border-radius: 0.75rem;
       box-sizing: border-box;
       color: $gray;
       font-family: inherit;
@@ -177,7 +177,7 @@ $gutters: 24px;
       background: $accent;
       width: 100%;
       border: 0;
-      border-radius: 4px;
+      border-radius: 0.75rem;
       padding: 12px 20px;
       color: $white;
       font-family: inherit;
@@ -219,7 +219,7 @@ $gutters: 24px;
         left: calc(100% - 1.5em);
       }
       input[type="checkbox"].primary:checked{
-        background: #1eaae1;
+        background: #344767;
       }
     }
 
