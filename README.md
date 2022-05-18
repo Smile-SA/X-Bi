@@ -8,6 +8,7 @@ Project is created with:
 ```
  - Vue.js
  - ajv.js
+ - JsonSchema
  - Storybook
 ```
 
@@ -20,7 +21,7 @@ Note: X-BI uses yarn commands, but npm will also work. You can compare yarn and 
 
 ## Getting Started
 ### 1 - Access project file
-There are three ways to access the project file on git :
+ There are three ways to access the project file on git :
 ```
 - Clone with SSH (link : https://git@git.rnd.alterway.fr:overboard/5gbiller/rating-operator-api.git)
 - Clone with HTTPS (link : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api.git)
@@ -75,14 +76,14 @@ You can configure your dashboard with the charts and cards you want. There are t
 #### 5.1 On the configuration page
 First you will select the view you want to configure. Then you will see the default configuration of cards and charts.
 
-![list](public/images/documentation/list.png "monitoring")
+![list](public/images/documentation/configuration.gif )
 
 You have option to add or remove a model of cards or charts.
 
 #### 5.1.1 Add a model
 Example : To add a new card model, you have to click the add card button on top of th card table.
 
-![addcard](public/images/documentation/addCard.png "monitoring")
+![addcard](public/images/documentation/addCard.png)
 
 You will see the card form, follow the instructions, complete and save the form to add a new form.
 
