@@ -33,13 +33,12 @@ new Vue({
 
 import 'font-awesome/css/font-awesome.css'
 import 'font-awesome/css/font-awesome.min.css'
-import 'font-awesome/scss/font-awesome.scss'
 import 'codemirror/lib/codemirror.css';
 import 'codemirror/theme/eclipse.css';
 import "@andresouzaabreu/vue-data-table/dist/DataTable.css";
+import 'codemirror/mode/javascript/javascript.js';
 import '../public/vendors/mdi/css/materialdesignicons.min.css';
 import '../public/vendors/css/vendor.bundle.base.css';
 import '../public/css/style.css';
 import '../public/css/sass.scss';
-import 'codemirror/mode/javascript/javascript.js';
 
