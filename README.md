@@ -4,10 +4,10 @@ X-BI allows its users to access BI informations they can customise and interact 
 
 ### Tech / Framework used
 Project is created with:
- > - Vue.js
- > - ajv.js
- > - JsonSchema
- > - Storybook
+> - Vue.js
+> - ajv.js
+> - JsonSchema
+> - Storybook
 
 ### Before installation X-BI install your API
 Api is used as the communication interface between the components, you need a data source to feed x-bi. For the example you can use the rating-operator API, follow this link to install it.
@@ -51,7 +51,7 @@ Run the project use yan :
 >yarn serve
 
 Alternatively, you can build the project in static directory for production :
->yarn build 
+>yarn build
 
 #### You just successfully run X-BI!
 The project is launched by default on http://localhost:8080
@@ -64,39 +64,40 @@ The project is launched by default on http://localhost:8080
 
 ### 5 - configuration of dashboard
 The configuration of your own dashboard is possible. There are two types of configuration :
-- On the configuration page 
+- On the configuration page
 - In the configuration file
 
 - #### 5.1 On the configuration page
-  - ##### 5.1.1 Add a view
-    Once on the configuration page, you will click on the Add view button, you will have a view addition form which will open on the screen then you will fill in the requested information, then you save the form.
-    <br/><br/>
-    ![](public/images/documentation/createView.gif)
+    - ##### 5.1.1 Add a view
+      Once on the configuration page, you will click on the Add view button, you will have a view addition form which will open on the screen then you will fill in the requested information, then you save the form.
+      <br/><br/>
+      ![](public/images/documentation/createView.gif)
 
-  - ##### 5.1.2 Add a view structure
+    - ##### 5.1.2 Add a view structure
       A view is structured in three elements:
-      - Select button
-      - Cards
-      - Charts
+        - Select button
+        - Cards
+        - Charts
 
       To configure the structure of a view you will click on the structure button on the line of sight you want to configure.
       Once on the structure page, you will see the table of view structure elements and click on the top right button ``` Add(name of strucutre element) ``` on the table of elements you want to add and save the requested information.
-      - ###### 5.1.2.1 Add Select button
-  
+        - ###### 5.1.2.1 Add Select button
+
       ![](public/images/documentation/createSelect.gif)
 
-      - ###### 5.1.2.1 Add Card
+        - ###### 5.1.2.1 Add Card
       ![](public/images/documentation/createCard.gif)
 
-      - ###### 5.1.2.1 Add Chart
+        - ###### 5.1.2.1 Add Chart
       ![](public/images/documentation/createChart.gif)
-  
-  - ##### 5.1.2 Edit a view structure
-  To modify an element whether it is a view or the structure of the element of a view, you will click on the update button and then modify the values that you want to modify.
-You may get errors on the screen if the value does not respect the checks defined in the configuration controls.
 
-  - ##### 5.1.2 delete a view structure
-  You may get errors on the screen if the value does not respect the checks defined in the configuration files.
+    - ##### 5.1.2 Edit a view structure
+  To modify an element whether it is a view or the structure of the element of a view, you will click on the update button and then modify the values that you want to modify.
+
+    - ##### 5.1.3 delete a view structure
+  To delete an element whether it is a view or an element of its structure, you will click on the delete button of the object you wish to delete. Then you validate or not your operation
+
+##### NB: You may get errors on the screen if the value does not respect the checks defined in the configuration files.
 
 #### 5.2 In the configuration file
 ##### Prerequisites
@@ -105,18 +106,18 @@ You may get errors on the screen if the value does not respect the checks define
 > Know vue-form-generator schema form : https://github.com/vue-generators/vue-form-generator
 
 In the configuration json file you have :
-  - views  
-  - and controls
+- views
+- and controls
 
-  - ##### 5.2.1 Configuration controls
-    In controls, you have 4 items
-    - view 
+- ##### 5.2.1 Configuration controls
+  In controls, you have 4 items
+    - view
     - select
     - card
     - chart
-  
-    In each you have the ```schema``` which corresponds to the ajv.js schema and form which corresponds to the ```form``` generator of vue-form-generator.
-    
+
+  In each you have the ```schema``` which corresponds to the ajv.js schema and form which corresponds to the ```form``` generator of vue-form-generator.
+
 ``` 
 {
   "views": {...},
@@ -157,7 +158,7 @@ In the configuration json file you have :
 In the ```schema``` you can define the id of your fields, the type, the size... of your configuration elements.
 In the ```form``` fields, for each schema field, you will first bind the schema name to the form element model, then you can define if the element is a simple input, a switch, a select, the possible values, the name, the text of the placeholder ....
 
-  - ##### 5.2.2 Configuration view structure
+- ##### 5.2.2 Configuration view structure
 
     - ##### 5.2.2.1 Add a model
 
@@ -197,7 +198,7 @@ In Json file Go To ``` views > dynamics > ``` add a new element in the items res
 To know the expected variables in the models, their importance and their data types ...
 You have to go to the controls and depending on the models either card charts views or select you will look in the data of the schema.
 
-  - ##### 5.2.2.2 Delete model
+- ##### 5.2.2.2 Delete model
 To delete a model of chart or card, simply delete a field from its models.
 
 Go to ``` views > namespaces > structure > chart > models ``` or ``` views > namespaces > structure > card > models ``` and delete one field.
