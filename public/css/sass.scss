@@ -1,6 +1,6 @@
 .xbi .spark-card {
   width: 100%;
-  height: 5.5rem;
+  height: 7rem;
   background: var(--bs-white);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -89,8 +89,8 @@
   height: 100%;
 }
 
-.xbi .spark-card .number,.stat-spark-card-line .rating  {
-  font-size: 1.5rem;
+.xbi .spark-card .number, .stat-spark-card-line .rating {
+  font-size: 1.8rem;
   opacity: 1;
 }
 
@@ -106,26 +106,41 @@
   opacity: 0.8;
 }
 
-.xbi :hover .chart svg, .xbi :hover .label ,.xbi .apexcharts-title-text, .xbi .apexcharts-subtitle-text  {
+.xbi :hover .chart svg, .xbi :hover .label, .xbi .apexcharts-title-text, .xbi .apexcharts-subtitle-text {
   opacity: 1;
 }
 
- .xbi :hover .date {
+.xbi :hover .date {
   opacity: 0.8;
 }
 
- .xbi .content{
-   margin-top: auto;
-   margin-bottom: auto;
- }
-
-.icon-card {
-  width: 48px;
-  height: 48px;
-  border-radius: 0.75rem;
+.xbi .content {
+  margin-top: auto;
+  margin-bottom: auto;
 }
 
-.icon-card.icon-shape svg,.icon-card.icon-shape i {
+.xbi .icon-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.icon-card {
+  width: 58px;
+  height: 58px;
+}
+
+.icon-card.icon-shape svg, .icon-card.icon-shape i {
   width: 24px;
   height: 24px;
+}
+
+.xbi .multi-icon{
+  display: flex;
+}
+
+.xbi .multi-icon svg {
+  padding-right: 0.5rem;
+  height: 1rem!important;
+  width: 1rem!important;
 }
