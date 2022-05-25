@@ -11499,6 +11499,51 @@ fieldset:disabled .btn {
     color: rgba(255, 255, 255, 0.5) !important;
 }
 
+.text-white-55 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.55) !important;
+}
+
+.text-white-60 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+.text-white-65 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.65) !important;
+}
+
+.text-white-70 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.70) !important;
+}
+
+.text-white-75 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.text-white-80 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.text-white-85 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.80) !important;
+}
+
+.text-white-90 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.90) !important;
+}
+
+.text-white-95 {
+    --bs-text-opacity: 1;
+    color: rgba(255, 255, 255, 0.95) !important;
+}
+
 .text-reset {
     --bs-text-opacity: 1;
     color: inherit !important;
@@ -21219,9 +21264,26 @@ dl li {
     animation-fill-mode: both;
     display: none !important;
 }
-
+.display-inline {
+    display: inline !important;
+    -webkit-animation-name: dropdownAnimation;
+    animation-name: dropdownAnimation;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
 .display-block {
     display: block !important;
+    -webkit-animation-name: dropdownAnimation;
+    animation-name: dropdownAnimation;
+    -webkit-animation-duration: 0.25s;
+    animation-duration: 0.25s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+.display-grid {
+    display: grid !important;
     -webkit-animation-name: dropdownAnimation;
     animation-name: dropdownAnimation;
     -webkit-animation-duration: 0.25s;

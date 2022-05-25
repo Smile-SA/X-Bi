@@ -1,24 +1,40 @@
 <div class="xbi" v-if="configuration !== undefined " @click="redirectCard()">
     <div :class="configuration.type==='default'? 'display-flex text-white spark-card pointer p-3  bg-gradient-'+configuration.color : 'display-flex spark-card pointer p-3'">
-        <div class="content">
+        <div class="content-2">
             <div v-if=" configuration.type != 'spark'" :class="configuration.type==='gradient' ?
                      ' icon-card icon-shape text-center center border-radius-md shadow bg-gradient-'+configuration.color:
                      ' icon-card text-center border-radius-md'">
-                <font-awesome-icon class="text-white h-100" :icon="['fas',configuration.icon]"/>
+                <font-awesome-icon class="text-white-80 h-100" :icon="['fas',configuration.icon]"/>
             </div>
             <apexcharts v-if="Object.keys(sparkLine).length>0 && configuration.type==='spark'"
                         class=" ps-4 ps-4 center" :ref="configuration.id" :options="sparkLine.options"
                         :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
         </div>
-        <div class="content text-end">
-                <span class="display-block font-weight-bold h2 mb-0 ">{{ Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value }}
-                    <small class="text-success text-sm font-weight-bolder">{{ configuration.unit }}</small>
-                </span>
-            <span class="text-sm mb-0  text-capitalize font-weight-bold h5">{{ configuration.title }}</span>
-            <div class="multi-icon">
-                <font-awesome-icon class="text-white h-100" :icon="['fas',configuration.icon]"/>
-                <font-awesome-icon class="text-white h-100" :icon="['fas',configuration.icon]"/>
-                <font-awesome-icon class="text-white h-100" :icon="['fas',configuration.icon]"/>
+        <div class="content-2">
+            <div class="display-block text-white">
+                <div class="font-weight-bold text-end h1 mb-0 pb-0">{{
+                        Object.keys(sparkLine).length > 0 ? sparkLine.total : configuration.value
+                    }}
+                    <small class="ms-1 ">{{ configuration.unit }}</small>
+                    <small class="font-weight-bold text-capitalize h4">{{ configuration.title }}</small>
+                </div>
+                <div class="multi-icon float-end text-center pt-2">
+                    <div class="icon ms-2 ">
+                        <font-awesome-icon class="text-white-95" :icon="['fas','fa-down-long']"/>
+                        <br>
+                        <small class="font-weight-bold">Today</small>
+                    </div>
+                    <div class="icon ms-2 ">
+                        <font-awesome-icon class="text-white-75" :icon="['fas','fa-arrow-down-wide-short']"/>
+                        <br>
+                        <small class="font-weight-bold">24h</small>
+                    </div>
+                    <div class="icon ms-2 ">
+                        <font-awesome-icon class="text-white-55" :icon="['fas','fa-arrow-up-wide-short']"/>
+                        <br>
+                        <small class="font-weight-bold">48h</small>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
