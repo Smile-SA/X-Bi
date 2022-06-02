@@ -133,7 +133,7 @@
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "red",
+                "color": "danger",
                 "redirect": "/namespaces",
                 "query": "/namespaces",
                 "query_key": "namespace",
@@ -159,7 +159,7 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "yellow",
+                "color": "warning",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
@@ -171,7 +171,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "green",
+                "color": "success",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -219,16 +219,24 @@
         }
       },
       {
-        "name": "Power",
-        "path": "/power",
-        "icon": "fa-house-chimney-window",
-        "description": "Power view ",
+        "name": "Namespaces",
+        "path": "/namespaces",
+        "icon": "fa-diagram-project",
+        "description": "Detailed view of namespaces",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
         "structure": {
           "select": {
             "models": [
+              {
+                "title": "Namespace",
+                "placeholder": "Select namespace",
+                "type": "Dynamic",
+                "query": "/namespaces",
+                "query_key": "namespace",
+                "default_data": ""
+              },
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
@@ -251,256 +259,52 @@
           "card": {
             "models": [
               {
-                "title": "Host PU (Power Usage",
-                "icon": "fa-bolt-lightning",
-                "color": "red",
-                "redirect": "/pods",
-                "query": "/undefinded",
-                "query_key": "",
-                "unit": "Watts/h",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "redirect": "",
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "unit": "",
                 "type": "default",
-                "method": "count",
+                "method": "sum",
                 "display_space": "1/4",
-                "value": "200"
+                "value": ""
               },
               {
-                "title": "Promotheus PU (Power Usage)",
-                "icon": "fa-bolt-lightning",
+                "title": "Pods",
+                "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "/pods",
-                "query": "/undefinded",
+                "query": "/pods",
                 "query_key": "",
-                "unit": "Watts/h",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
-                "value": "6.2"
-
+                "value": ""
               },
               {
-                "title": "Scaphandre PU (Power Usage)",
-                "icon": "fa-bolt-lightning",
-                "color": "yellow",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "warning",
                 "redirect": "/nodes",
-                "query": "/undefinded",
+                "query": "/nodes",
                 "query_key": "",
-                "unit": "Watts",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
-                "value": "5"
-              }
-            ],
-            "styles": {}
-          },
-          "chart": {
-            "models": [
-              {
-                "title": "Pods Top power usage consumption (in Watts)",
-                "query": "/pods/rating",
-                "query_key": "frame_price",
-                "sort_key": "pod",
-                "time_key": "frame_begin",
-                "type": "polarArea",
-                "method": "top",
-                "axis_type": "datetime",
-                "display_space": "1/2",
-                "is_monitoring": false
+                "value": ""
               },
               {
-                "title": "Namespaces consumption power usage",
-                "query": "/namespaces/rating",
-                "query_key": "frame_price",
-                "sort_key": "namespace",
-                "time_key": "frame_begin",
-                "type": "area",
-                "method": "default",
-                "axis_type": "datetime",
-                "display_space": "1/2",
-                "is_monitoring": false
-              }
-            ],
-            "styles": {
-              "height": "400",
-              "font_size": "20px"
-            }
-          }
-        }
-      },
-      {
-        "name": "Carbon footprint",
-        "path": "/carbonfootprint",
-        "icon": "fa-house-chimney-window",
-        "description": "Carbon footprint view",
-        "display": true,
-        "displayInMenu": true,
-        "requiresAuth": true,
-        "structure": {
-          "select": {
-            "models": [
-              {
-                "title": "Select a date",
-                "placeholder": "Select a date",
-                "type": "Date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
-              },
-              {
-                "title": "Group data by",
-                "placeholder": "Select a group",
-                "type": "Group",
-                "query": "",
-                "query_key": "",
-                "default_data": "Hour"
-              }
-            ],
-            "styles": {}
-          },
-          "card": {
-            "models": [
-              {
-                "title": "Host CU (Carbon Usage)",
-                "icon": "fa-cloud",
-                "color": "purple",
-                "redirect": "",
-                "query": "/undefinded",
-                "query_key": "frame_price",
-                "unit": "Kg/h",
-                "type": "default",
-                "method": "sum",
-                "display_space": "1/4",
-                "value": "20"
-              },
-              {
-                "title": "Promotheus CU (Carbon Usage)",
-                "icon": "fa-cloud",
-                "color": "yellow",
-                "redirect": "",
-                "query": "/undefinded",
-                "query_key": "",
-                "unit": "Kg/h",
-                "display_space": "1/4",
-                "type": "default",
-                "method": "count",
-                "value": "0.62"
-              },
-              {
-                "title": "Scaphandre CU (Carbon Usage)",
-                "icon": "fa-cloud",
-                "color": "green",
-                "redirect": "",
-                "query": "/undefinded",
-                "query_key": "",
-                "unit": "Kg/h",
-                "type": "default",
-                "method": "count",
-                "display_space": "1/4",
-                "value": "0.5"
-              }
-            ],
-            "styles": {}
-          },
-          "chart": {
-            "models": [
-              {
-                "title": "Pods Top carbon usage consumption (in kg)",
-                "query": "/pods/rating",
-                "query_key": "frame_price",
-                "sort_key": "pod",
-                "time_key": "frame_begin",
-                "type": "scatter",
-                "method": "top",
-                "axis_type": "datetime",
-                "display_space": "1/2",
-                "is_monitoring": false
-              },
-              {
-                "title": "Namespaces carbon usage consumption (in kg)",
-                "query": "/namespaces/rating",
-                "query_key": "frame_price",
-                "sort_key": "namespace",
-                "time_key": "frame_begin",
-                "type": "bar",
-                "method": "default",
-                "axis_type": "datetime",
-                "display_space": "1/2",
-                "is_monitoring": false
-              }
-            ],
-            "styles": {
-              "height": "400",
-              "font_size": "20px"
-            }
-          }
-        }
-      },
-      {
-        "name": "Energy efficiency",
-        "path": "/energyefficiency",
-        "icon": "fa-house-chimney-window",
-        "description": "Energy efficiency view",
-        "display": true,
-        "displayInMenu": true,
-        "requiresAuth": true,
-        "structure": {
-          "select": {
-            "models": [
-              {
-                "title": "Select a date",
-                "placeholder": "Select a date",
-                "type": "Date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
-              },
-              {
-                "title": "Group data by",
-                "placeholder": "Select a group",
-                "type": "Group",
-                "query": "",
-                "query_key": "",
-                "default_data": "Hour"
-              }
-            ],
-            "styles": {}
-          },
-          "card": {
-            "models": [
-              {
-                "title": "CUE (Carbone Usage Efficiency)",
-                "icon": "fa-shoe-prints",
-                "color": "cyan",
-                "redirect": "",
-                "query": "/undefinded",
-                "query_key": "frame_price",
-                "unit": "%",
-                "type": "default",
-                "method": "sum",
-                "display_space": "1/4",
-                "value": "40"
-              },
-              {
-                "title": "Total PUE (Power Usage Efficiency)",
-                "icon": "fa-bolt-lightning",
-                "color": "green",
-                "redirect": "",
-                "query": "/undefinded",
-                "query_key": "",
-                "unit": "%",
-                "type": "default",
-                "method": "count",
-                "display_space": "1/4",
-                "value": "55"
-              },
-              {
-                "title": "Spend",
-                "icon": "fa-euro-sign",
-                "color": "red",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
                 "redirect": "",
                 "query": "/metrics",
-                "query_key": "",
-                "unit": "Euro(s)",
+                "query_key": "metric",
+                "unit": "",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -512,27 +316,249 @@
           "chart": {
             "models": [
               {
-                "title": "Namespaces energy efficiency rate (in Watts)",
-                "query": "/namespaces/rating",
+                "title": "Metrics rate (in Euros)",
+                "query": "/rating",
                 "query_key": "frame_price",
-                "sort_key": "namespace",
-                "time_key": "frame_begin",
-                "type": "radialBar",
-                "method": "top",
-                "axis_type": "datetime",
-                "display_space": "1/2",
-                "is_monitoring": false
-              },
-              {
-                "title": "Top Pods Energy Efficiency",
-                "query": "/pods/rating",
-                "query_key": "frame_price",
-                "sort_key": "pod",
+                "sort_key": "metric",
                 "time_key": "frame_begin",
                 "type": "area",
-                "method": "top",
+                "method": "default",
                 "axis_type": "datetime",
-                "display_space": "1/2",
+                "display_space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Nodes",
+        "path": "/nodes",
+        "icon": "fa-share-nodes",
+        "description": "Detailed view of nodes",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "title": "Node",
+                "placeholder": "Select node",
+                "type": "Dynamic",
+                "query": "/nodes",
+                "query_key": "node",
+                "default_data": ""
+              },
+              {
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "Date",
+                "query": "",
+                "query_key": "",
+                "default_data": ""
+              },
+              {
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "Group",
+                "query": "",
+                "query_key": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
+          "card": {
+            "models": [
+              {
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "redirect": "",
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "unit": "",
+                "type": "default",
+                "method": "sum",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "redirect": "",
+                "query": "/pods",
+                "query_key": "",
+                "unit": "",
+                "display_space": "1/4",
+                "type": "default",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "warning",
+                "redirect": "",
+                "query": "/namespaces",
+                "query_key": "",
+                "unit": "",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "unit": "",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes metrics rate (in Euros)",
+                "query": "/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
+                "method": "default",
+                "axis_type": "datetime",
+                "is_monitoring": false,
+                "display_space": "2/2"
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Pods",
+        "path": "/pods",
+        "icon": "fa-sitemap",
+        "description": "Detailed view of pods",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "title": "Pod",
+                "placeholder": "Select pod",
+                "type": "Dynamic",
+                "query": "/pods",
+                "query_key": "pod",
+                "default_data": ""
+              },
+              {
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "Date",
+                "query": "",
+                "query_key": "",
+                "default_data": ""
+              },
+              {
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "Group",
+                "query": "",
+                "query_key": "",
+                "default_data": "Hour"
+              }
+            ],
+            "styles": {}
+          },
+          "card": {
+            "models": [
+              {
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "danger",
+                "redirect": "",
+                "query": "/total_rating",
+                "query_key": "frame_price",
+                "unit": "",
+                "type": "default",
+                "method": "sum",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "primary",
+                "redirect": "",
+                "query": "/nodes",
+                "query_key": "",
+                "unit": "",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "warning",
+                "redirect": "",
+                "query": "/namespaces",
+                "query_key": "",
+                "unit": "",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              },
+              {
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "success",
+                "redirect": "",
+                "query": "/metrics",
+                "query_key": "metric",
+                "unit": "",
+                "type": "default",
+                "method": "count",
+                "display_space": "1/4",
+                "value": ""
+              }
+            ],
+            "styles": {}
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Pod metrics rate (in Euros)",
+                "query": "/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "line",
+                "method": "default",
+                "axis_type": "datetime",
+                "display_space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -590,7 +616,7 @@
               {
                 "title": "Nodes rate (in Euros)",
                 "query": "/rating",
-                "query_key": "frame_price",
+                "query_key": "price",
                 "sort_key": "instance",
                 "time_key": "frame_begin",
                 "type": "area",
@@ -1099,11 +1125,11 @@
               "scatter"
             ]
           },
-           {
-             "model": "method",
-             "type": "select",
-             "required": true,
-             "placeholder": "Chart method",
+          {
+            "model": "method",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart method",
             "values": [
               "default",
               "top",
