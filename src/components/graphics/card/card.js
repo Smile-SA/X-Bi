@@ -37,7 +37,7 @@ export default {
                             }
                             this.$forceUpdate()
                         } else {
-                            this.configuration.value = 0;
+                            //this.configuration.value = 0;
                             this.$forceUpdate()
                         }
                     });

@@ -114,7 +114,7 @@ export async function getSparkCardData(config, that,name) {
                 name: config.title,
                 data: [25, 66, 41, 59, 25, 44, 12, 36, 9, 21]
             }],
-            r.data.options = utils.createSparkOption(config,r.data.total);
+                r.data.options = utils.createSparkOption(config,r.data.total);
             r.data.height = r.data.options.chart.height;
             delete r.data.results;
             return r.data;

@@ -277,14 +277,14 @@ export function createSerie(data, config, serieName, boucle) {
     }
     if (boucle >= 3) {
         Object.keys(data).map(item => {
-            let obj = []
+            let obj = [], cal = 0;
             Object.keys(data[item]).map((subItem) => {
                 Object.keys(data[item][subItem]).map((subSubItem) => {
                     let date = new Date(data[item][subItem][subSubItem][config.time_key]).getTime();
                     if (date > lastDate) {
                         lastDate = date
                     }
-                    const fixed = data[item][subItem][subSubItem][config.query_key].toFixed(3),
+                    const fixed = data[item][subItem][subSubItem][config.query_key].toFixed(5),
                         minTmp = Math.min(fixed), maxTmp = Math.max(fixed)
                     if (min === 0 || minTmp < min) {
                         min = minTmp
@@ -292,14 +292,26 @@ export function createSerie(data, config, serieName, boucle) {
                     if (max === 0 || maxTmp > max) {
                         max = maxTmp
                     }
-                    obj.push([date, fixed])
+                    cal = fixed;
+                    if ((config.method).includes('top')) {
+                        if (fixed > 0.05) {
+                            obj.push([date, fixed])
+                        }
+                    } else obj.push([date, fixed])
                 });
             });
-            series.push({
+            if ((config.method).includes('top')) {
+                if (cal > 0.06) {
+                    series.push({
+                        name: item,
+                        data: obj
+                    });
+                }
+            } else series.push({
                 name: item,
                 data: obj
             });
-        })
+        });
         // eslint-disable-next-line no-unused-vars
         let newSeries = []
         if (["pie", "polarArea", "radar", "radialBar"].includes(config.type)) {
@@ -309,19 +321,16 @@ export function createSerie(data, config, serieName, boucle) {
                 newSeries.push(x)
                 labels.push(series[serie].name)
                 if ((config.title).includes('efficiency')) {
-                    if (x <= 30) {
-                        colors.push('#FF4560D8')
+                    if (parseInt(x) > 70) {
+                        colors.push('var(--bs-green)')
+                    }else if (parseInt(x) > 50) {
+                        colors.push('var(--bs-yellow)')
+                    }else if (parseInt(x) > 30) {
+                        colors.push('var(--bs-orange)')
+                    }else if (parseInt(x) <= 30) {
+                        colors.push('var(--bs-red)')
                     }
-                    if (x > 30) {
-                        colors.push('#FF9800FF')
-                    }
-                    if (x > 50) {
-                        colors.push('#ffcc00')
-                    }
-                    if (x > 70) {
-                        colors.push('#00E396D8')
-                    }
-                } else colors.push(getRandomColor())
+                }
             })
             series = newSeries;
         }
