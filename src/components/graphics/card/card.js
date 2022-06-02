@@ -21,7 +21,8 @@ export default {
         async getData() {
             await this.setQueryData();
             switch (this.configuration.type) {
-                case "gradient":
+                case"default" :
+                case"multi-icon":
                     await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
@@ -47,14 +48,6 @@ export default {
                         if (r.total > 0) {
                             this.sparkLine = r;
                             this.sparkLine.options.chart.type = "line";
-                        }
-                    });
-                    break;
-                case "default":
-                    this.sparkLine.height = undefined;
-                    await general.getSparkCardData(this.configuration, this).then(async (r) => {
-                        if (r.total > 0) {
-                            this.sparkLine = r;
                         }
                     });
                     break;

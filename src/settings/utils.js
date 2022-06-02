@@ -404,23 +404,17 @@ export function createOption(config, labels, colors) {
 
 export function createSparkOption(config) {
     let colors = {
-        "blue": "#1236d4",
-        "cyan": "#045b62",
-        "dark": "#3e4b5b",
-        "danger": "#f4516c",
-        "green": "#275d2b",
-        "indigo": "#6610f2",
-        "light": "#f8f9fa",
-        "orange": "#f2a654",
-        "pink": "#ff006c",
-        "primary": "#00c5dc",
-        "purple": "#734CEA",
-        "red": "#6d1212",
-        "secondary": "#DCE6EC",
-        "success": "#34bfa3",
-        "teal": "#58d8a3",
-        "warning": "#febc3b",
-        "yellow": "#f6e84e",
+        "blue": "var(--bs-blue)",
+        "cyan": "var(--bs-cyan)",
+        "dark": "var(--bs-dark)",
+        "green": "var(--bs-green)",
+        "indigo": "var(--bs-indigo)",
+        "orange": "var(--bs-orange)",
+        "pink": "var(--bs-pink)",
+        "purple": "var(--bs-purple)",
+        "red": "var(--bs-red)",
+        "white": "var(--bs-icon-bg)",
+        "yellow": "var(--bs-yellow)"
     }
     let data = {
         chart: {

@@ -2213,24 +2213,20 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/main/LICENSE)
  */
 :root {
-    --bs-blue: #00c5dc;
-    --bs-blue-rgb: 111, 191, 223;
+    --bs-blue: #0779be;
+    --bs-blue-rgb: 79, 149, 191;
     --bs-indigo: #6610f2;
     --bs-indigo-rgb: 102, 16, 242;
     --bs-pink: #ff006c;
     --bs-pink-rgb: 255, 0, 108;
-    --bs-red: #6d1212;
-    --bs-red-rgb: 109, 18, 18;
     --bs-orange: #F39C12;
     --bs-orange-rgb: 243, 156, 18;
-    --bs-yellow: #f8ac59;
-    --bs-yellow-rgb: 241, 196, 15;
-    --bs-green: rgba(31, 212, 104, 0.88);
-    --bs-green-rgb: 39, 93, 43;
+    --bs-green: #1bcfb4;
+    --bs-green-rgb:  52, 191, 163;
     --bs-teal: #045b62;
     --bs-teal-rgb: 4, 91, 98;
-    --bs-cyan: #57c7d4;
-    --bs-cyan-rgb: 87, 199, 212;
+    --bs-cyan: #00c5dc;
+    --bs-cyan-rgb: 111, 191, 223;
     --bs-primary-gradient: rgba(58, 79, 116, 0.85);
     --bs-white: #f8f9fa;
     --bs-blanc: #ffffff;
@@ -2263,8 +2259,12 @@
     --bs-primary-rgb: 52, 71, 103;
     --bs-warning: #f8be59;
     --bs-warning-rgb: 254, 188, 59;
+    --bs-yellow: #f8be59;
+    --bs-yellow-rgb: 254, 188, 59;
     --bs-danger: #fe7c96;
     --bs-danger-rgb: 244, 81, 108;
+    --bs-red: #fe7c96;
+    --bs-red-rgb: 244, 81, 108;
     --bs-light: var(--bs-white);
     --bs-light-rgb: 248, 249, 250;
     --bs-dark: #344767;
@@ -2445,7 +2445,7 @@ strong {
 }
 
 small, .small {
-    font-size: 0.875em;
+    font-size: 0.775em;
 }
 
 mark, .mark {
@@ -10315,8 +10315,40 @@ fieldset:disabled .btn {
     opacity: 0.5 !important;
 }
 
+.opacity-55 {
+    opacity: 0.55 !important;
+}
+
+.opacity-60 {
+    opacity: 0.6 !important;
+}
+
+.opacity-65 {
+    opacity: 0.65 !important;
+}
+
+.opacity-70 {
+    opacity: 0.70 !important;
+}
+
 .opacity-75 {
     opacity: 0.75 !important;
+}
+
+.opacity-80 {
+    opacity: 0.80 !important;
+}
+
+.opacity-85 {
+    opacity: 0.85 !important;
+}
+
+.opacity-90 {
+    opacity: 0.90 !important;
+}
+
+.opacity-95 {
+    opacity: 0.95 !important;
 }
 
 .opacity-100 {
@@ -11355,7 +11387,7 @@ fieldset:disabled .btn {
 }
 
 .fw-bold {
-    font-weight: 700 !important;
+    font-weight: 900 !important;
 }
 
 .fw-bolder {
@@ -16397,8 +16429,8 @@ code {
 }
 
 .bg-gradient-cyan {
-    background: -webkit-gradient(linear, left top, right top, from(rgba(87, 212, 187, 0.9)), to(var(--bs-cyan))) !important;
-    background: linear-gradient(to right, rgba(87, 212, 187, 0.9), var(--bs-cyan)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(var(--bs-cyan-rgb))), to(var(--bs-cyan))) !important;
+    background: linear-gradient(to right, rgb(var(--bs-cyan-rgb)), var(--bs-cyan)) !important;
 }
 
 .bg-gradient-dark {
@@ -16411,8 +16443,8 @@ code {
 }
 
 .bg-gradient-green {
-    background: -webkit-gradient(linear, left top, right top, from(#58d41f), to(var(--bs-green))) !important;
-    background: linear-gradient(to right, #58d41f, var(--bs-green)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-green))) !important;
+    background: linear-gradient(to right, #84d9d2, var(--bs-green)) !important;
 }
 
 .bg-gradient-indigo {

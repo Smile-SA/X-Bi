@@ -133,11 +133,11 @@
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "danger",
+                "color": "red",
                 "redirect": "/namespaces",
                 "query": "/namespaces",
                 "query_key": "namespace",
-                "unit": "",
+                "unit": "%",
                 "type": "default",
                 "method": "count",
                 "display_space": "1/4",
@@ -151,7 +151,7 @@
                 "query": "/pods",
                 "query_key": "",
                 "unit": "",
-                "type": "default",
+                "type": "multi-icon",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -159,11 +159,11 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "warning",
+                "color": "green",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "default",
+                "type": "multi-icon",
                 "method": "count",
                 "display_space": "1/4",
                 "value": ""
@@ -171,7 +171,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "success",
+                "color": "yellow",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -259,7 +259,7 @@
               {
                 "title": "Rating",
                 "icon": "fa-euro-sign",
-                "color": "danger",
+                "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
@@ -272,7 +272,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "blue",
+                "color": "cyan",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
@@ -285,7 +285,7 @@
               {
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
-                "color": "warning",
+                "color": "yellow",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
@@ -298,7 +298,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "success",
+                "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -375,7 +375,7 @@
               {
                 "title": "Rating",
                 "icon": "fa-euro-sign",
-                "color": "danger",
+                "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
@@ -388,7 +388,7 @@
               {
                 "title": "Pods",
                 "icon": "fa-sitemap",
-                "color": "blue",
+                "color": "cyan",
                 "redirect": "",
                 "query": "/pods",
                 "query_key": "",
@@ -401,7 +401,7 @@
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "warning",
+                "color": "yellow",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
@@ -414,7 +414,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "success",
+                "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -491,7 +491,7 @@
               {
                 "title": "Rating",
                 "icon": "fa-euro-sign",
-                "color": "danger",
+                "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
@@ -517,7 +517,7 @@
               {
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
-                "color": "warning",
+                "color": "yellow",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
@@ -530,7 +530,7 @@
               {
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
-                "color": "success",
+                "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
@@ -817,22 +817,15 @@
             "type": "string",
             "enum": [
               "blue",
-              "cyan",
               "dark",
-              "danger",
+              "red",
               "green",
               "indigo",
-              "light",
               "orange",
               "pink",
-              "primary",
               "purple",
-              "red",
-              "secondary",
-              "success",
-              "teal",
-              "warning",
-              "yellow"
+              "yellow",
+              "white"
             ]
           },
           "redirect": {
@@ -858,8 +851,8 @@
             "type": "string",
             "enum": [
               "default",
-              "gradient",
-              "spark"
+              "spark",
+              "multi-icon"
             ]
           },
           "display_space": {
@@ -913,19 +906,13 @@
               "blue",
               "cyan",
               "dark",
-              "danger",
               "green",
               "indigo",
-              "light",
               "orange",
               "pink",
-              "primary",
               "purple",
               "red",
-              "secondary",
-              "success",
-              "teal",
-              "warning",
+              "white",
               "yellow"
             ]
           },
@@ -976,8 +963,8 @@
             "placeholder": "Card type",
             "values": [
               "default",
-              "gradient",
-              "spark"
+              "spark",
+              "multi-icon"
             ]
           },
           {
