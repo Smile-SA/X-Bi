@@ -1,4 +1,5 @@
 import * as utils from '../../../settings/utils'
+import {getJsonData} from "../../../controller/genaralController";
 
 export default {
   name: 'container',
@@ -34,7 +35,7 @@ export default {
     },
     async getTenant() {
       const url = `/current`
-      this.user = await utils.fetchData(url)
+      this.user = await getJsonData(url)
     },
 
   },

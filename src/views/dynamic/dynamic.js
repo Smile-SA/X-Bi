@@ -1,4 +1,4 @@
-import * as utils from '../../settings/utils'
+
 import * as configurationsController from "../../controller/configurationsController";
 import * as genaralController from "../../controller/genaralController";
 
@@ -47,7 +47,7 @@ export default {
             if (date) {
                 this.date = date;
                 await this.setModelsData();
-                await utils.refreshDate(this.date, this);
+                await configurationsController.refreshDate(this.date, this);
             }
         },
         async setGroup(event) {

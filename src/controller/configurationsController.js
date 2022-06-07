@@ -228,7 +228,7 @@ export async function addDynamicView(model, structureType) {
 export async function updateModel(model, id, structureType, activeView) {
     let update = false, r = controlModel(controls[structureType].schema, model);
     if (r.isValid) {
-        if(structureType==='view'){
+        if (structureType === 'view') {
             await Object.keys(dynamics).map((key) => {
                 if (dynamics[key].name === activeView) {
                     console.log('ici')
@@ -240,7 +240,7 @@ export async function updateModel(model, id, structureType, activeView) {
                     })
                 }
             })
-        }else {
+        } else {
             await Object.keys(dynamics).map((key) => {
                 if (dynamics[key].name === activeView) {
                     Object.keys(dynamics[key].structure[structureType].models).map((modelID) => {
@@ -304,7 +304,7 @@ export function controlModel(schema, model) {
 
 export async function deleteModel(activeView, structureType, id) {
     let deleted = false
-    if(structureType==='view'){
+    if (structureType === 'view') {
         let i = 0;
         Object.keys(dynamics).map((key) => {
             if (dynamics[key].name === activeView) {
@@ -313,7 +313,7 @@ export async function deleteModel(activeView, structureType, id) {
             }
             i += 1;
         })
-    }else {
+    } else {
         Object.keys(dynamics).map((key) => {
             if (dynamics[key].name === activeView) {
                 if (dynamics[key].structure[structureType].models[id] !== undefined) {
@@ -373,5 +373,44 @@ export async function setDynamicViewProperty(name, value, property) {
         }
     })
     await save();
+}
+
+export async function refreshDate(date, that) {
+
+    if (date !== null && date !== undefined) {
+        that.from = date.start.toISOString().split('.')[0] + '.000Z'
+        if (date.end === null || date.start === date.end) {
+            date.end = new Date(that.from)
+            date.end.setDate(date.end.getDate() + 1)
+        }
+        that.to = date.end.toISOString().split('.')[0] + '.000Z'
+        that.to = that.to.replace('T', ' ')
+        that.from = that.from.replace('T', ' ')
+    }
+
+    let s = getCardModels(that.$route.name)
+    if (s.data.errors !== true) {
+        if (s.data.total > 0) {
+            that.structure.card.models = s.data.results;
+        }
+    } else {
+        that.structure.card.models = {};
+        that.structure.card.styles = {};
+    }
+
+    let c = getChartModels(that.$route.name)
+    if (c.data.errors !== true) {
+        if (c.data.total > 0) {
+            that.structure.chart.models = c.data.results;
+            let style = getChartStyles(that.$route.name)
+            if (style.data.errors !== true) {
+                that.structure.chart.styles = style.data.results;
+            }
+        }
+    } else {
+        that.structure.chart.models = {};
+        that.structure.chart.styles = {};
+    }
+
 }
 

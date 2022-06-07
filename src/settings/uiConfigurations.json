@@ -169,15 +169,15 @@
                 "value": ""
               },
               {
-                "title": "Metrics",
+                "title": "Accuracy",
                 "icon": "fa-share-nodes",
                 "color": "success",
                 "redirect": "",
-                "query": "/metrics",
-                "query_key": "metric",
+                "query": "/forecast/prom",
+                "query_key": "now",
                 "unit": "",
                 "type": "default",
-                "method": "count",
+                "method": "lstm",
                 "display_space": "1/4",
                 "value": ""
               }
@@ -847,10 +847,11 @@
           "method": {
             "type": "string",
             "enum": [
-              "count",
-              "sum",
               "avg",
-              "Date"
+              "count",
+              "date",
+              "lstm",
+              "sum"
             ]
           },
           "type": {
@@ -956,10 +957,11 @@
             "required": true,
             "placeholder": "Card calculation method",
             "values": [
-              "count",
-              "sum",
               "avg",
-              "Date"
+              "count",
+              "date",
+              "lstm",
+              "sum"
             ]
           },
           {

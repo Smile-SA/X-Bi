@@ -23,7 +23,7 @@ export default {
             switch (this.configuration.type) {
                 case"default" :
                 case"multi-icon":
-                    await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery).then((r) => {
+                    await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery,this.configuration.method).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "count":
@@ -56,7 +56,9 @@ export default {
         },
 
         async setQueryData() {
-            this.setQuery = await utils.convertURLDateParameter(this.from, this.to)
+            if(this.configuration.method!='lstm'){
+                this.setQuery = await utils.convertURLDateParameter(this.from, this.to)
+            }else this.setQuery="";
             return this.setQuery;
         },
         redirectCard() {

@@ -1,3 +1,5 @@
+import axios from "axios";
+
 export const generateAPIUrl = () => {
     if (window._env_===undefined || window._env_.RATING_API_URL === undefined) {
         return 'http://localhost:5012'
@@ -8,6 +10,24 @@ export const generateAPIUrl = () => {
     } else {
         return `${window.location.href.split('#')[0]}${window._env_.RATING_API_URL}`
     }
+}
+
+export const generateLstmUrl= () => {
+    return 'http://localhost:5000'
+}
+
+export const ratingOperatorInstanceRequest=() => {
+    const instance = axios.create({
+        baseURL: generateAPIUrl()
+    });
+    return instance;
+}
+
+export const lstmInstanceRequest=() => {
+    const instance = axios.create({
+        baseURL: generateLstmUrl()
+    });
+    return instance;
 }
 
 export const generatePromUrl = () => {
