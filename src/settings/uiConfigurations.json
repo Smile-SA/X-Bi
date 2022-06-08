@@ -169,15 +169,15 @@
                 "value": ""
               },
               {
-                "title": "Accuracy",
+                "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "success",
                 "redirect": "",
-                "query": "/forecast/prom",
-                "query_key": "now",
+                "query": "/metrics",
+                "query_key": "metric",
                 "unit": "",
                 "type": "default",
-                "method": "lstm",
+                "method": "count",
                 "display_space": "1/4",
                 "value": ""
               }
@@ -850,7 +850,6 @@
               "avg",
               "count",
               "date",
-              "lstm",
               "sum"
             ]
           },
@@ -960,7 +959,6 @@
               "avg",
               "count",
               "date",
-              "lstm",
               "sum"
             ]
           },

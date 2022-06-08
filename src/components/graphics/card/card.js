@@ -33,10 +33,6 @@ export default {
                                         r.results[0][this.configuration.query_key].toFixed(2) :
                                         r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
                                     break;
-                                case "lstm":
-                                    console.log('ici')
-                                    console.log(r)
-                                    break;
                             }
                             this.$forceUpdate()
                         } else {

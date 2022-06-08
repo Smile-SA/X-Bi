@@ -1,5 +1,4 @@
 import {
-    lstmInstanceRequest,
     ratingOperatorInstanceRequest
 } from "../settings/variables";
 import * as utils from "../settings/utils";
@@ -130,12 +129,9 @@ export async function getSparkCardData(config, that) {
     });
 }
 
+// eslint-disable-next-line no-unused-vars
 export async function getJsonData(url, method) {
-    let request = ratingOperatorInstanceRequest();
-    if (method === 'lstm') {
-        request = lstmInstanceRequest();
-    }
-    return await request.get(url).then(async (r) => {
+    return await roRequest.get(url).then(async (r) => {
         if (r.data.total) {
             return {total: r.data.total, results: r.data.results};
         } else return {total: (r.data).length, results: r.data.results};
