@@ -1,42 +1,46 @@
-<div class="xbi" v-if="configuration !== undefined " @click="redirectCard()">
-    <div class="display-flex xbi-card pointer p-3" :class="configuration.type!='spark' ? 'bg-gradient-'+configuration.color : configuration.color">
-        <div class="card-content">
-            <div class="icon-card text-center border-radius-md center" v-if="configuration.type!='spark'" >
-                <font-awesome-icon class="h-100" :icon="['fas',configuration.icon]"/>
-            </div>
-            <apexcharts v-if="Object.keys(sparkLine).length>0 && configuration.type==='spark'"
-                        class="pe-4 center" :ref="configuration.id" :options="sparkLine.options"
-                        :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
-        </div>
-        <div class="text-content">
-            <div :class="'display-block '+configuration.type">
-                <div class="text-end mb-0 pb-0">
-                    <span class="value h3">{{
-                            configuration.type === 'spark' ?  sparkLine.total : configuration.value
-                        }}
-                        <small v-if=" configuration.unit!=null || configuration.unit!=''" class="unit">{{configuration.unit}}</small>
-                    </span>
-                    <br class="p-0 m-0" v-if="configuration.type!='multi-icon'">
-                    <span class=" text-capitalize h5 label"> {{ configuration.title }}</span>
+<router-link class="pointer" :to="configuration.redirect" custom v-slot="{ navigate }">
+    <div class="xbi" v-if="configuration !== undefined " @click="navigate" @keypress.enter="navigate" role="link">
+        <div class="display-flex xbi-card pointer p-3"
+             :class="configuration.type!='spark' ? 'bg-gradient-'+configuration.color : configuration.color">
+            <div class="card-content">
+                <div class="icon-card text-center border-radius-md center" v-if="configuration.type!='spark'">
+                    <font-awesome-icon class="h-100" :icon="['fas',configuration.icon]"/>
                 </div>
-                <div v-if="configuration.type==='multi-icon'" class="multi-icon d-flex float-end text-center ">
-                    <div class="icon">
-                        <font-awesome-icon class="opacity-100" :icon="['fas','fa-down-long']"/>
-                        <br>
-                        <small>Today</small>
+                <apexcharts v-if="Object.keys(sparkLine).length>0 && configuration.type==='spark'"
+                            class="pe-4 center" :ref="configuration.id" :options="sparkLine.options"
+                            :series="sparkLine.series" :height="sparkLine.height"></apexcharts>
+            </div>
+            <div class="text-content">
+                <div :class="'display-block '+configuration.type">
+                    <div class="text-end mb-0 pb-0">
+                    <span class="value h3">{{
+                            configuration.type === 'spark' ? sparkLine.total : configuration.value
+                        }}
+                        <small v-if=" configuration.unit!=null || configuration.unit!=''"
+                               class="unit">{{ configuration.unit }}</small>
+                    </span>
+                        <br class="p-0 m-0" v-if="configuration.type!='multi-icon'">
+                        <span class=" text-capitalize h5 label"> {{ configuration.title }}</span>
                     </div>
-                    <div class="icon ms-2">
-                        <font-awesome-icon class="opacity-85" :icon="['fas','fa-arrow-down-wide-short']"/>
-                        <br>
-                        <small >24h</small>
-                    </div>
-                    <div class="icon ms-2">
-                        <font-awesome-icon class="opacity-50" :icon="['fas','fa-arrow-up-wide-short']"/>
-                        <br>
-                        <small>48h</small>
+                    <div v-if="configuration.type==='multi-icon'" class="multi-icon d-flex float-end text-center ">
+                        <div class="icon">
+                            <font-awesome-icon class="opacity-100" :icon="['fas','fa-down-long']"/>
+                            <br>
+                            <small>Today</small>
+                        </div>
+                        <div class="icon ms-2">
+                            <font-awesome-icon class="opacity-85" :icon="['fas','fa-arrow-down-wide-short']"/>
+                            <br>
+                            <small>24h</small>
+                        </div>
+                        <div class="icon ms-2">
+                            <font-awesome-icon class="opacity-50" :icon="['fas','fa-arrow-up-wide-short']"/>
+                            <br>
+                            <small>48h</small>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
+</router-link>

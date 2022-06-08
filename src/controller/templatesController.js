@@ -1,10 +1,8 @@
-import axios from "axios";
-import {generateAPIUrl} from "../settings/variables";
-
-const api = generateAPIUrl();
+import {ratingOperatorInstanceRequest} from "../settings/variables";
+const roRequest = ratingOperatorInstanceRequest();
 
 export function getTemplates() {
-    return axios.get(api + '/templates/list').then(async (r) => {
+    return roRequest.get( '/templates/list').then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
@@ -25,7 +23,7 @@ export function addTemplate(query_name, query_group, query_template, query_varia
     } else {
         Params.append("query_variables", query_variables);
     }
-    return axios.post(api + '/templates/add', Params).then(async (r) => {
+    return roRequest.post( '/templates/add', Params).then(async (r) => {
         return {
             errors: false,
             message: r.data
@@ -41,8 +39,8 @@ export function addTemplate(query_name, query_group, query_template, query_varia
 export function defaultValue(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.get(api + '/templates/get?query_name=' + query_name).then(async (r) => {
-        if(r.data.results.spec.admin !== undefined){
+    return roRequest.get( '/templates/get?query_name=' + query_name).then(async (r) => {
+        if (r.data.results.spec.admin !== undefined) {
             return r.data.results.spec.admin;
         }
         return false
@@ -57,7 +55,7 @@ export function defaultValue(query_name) {
 export function getTemplate(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.get(api + '/templates/get?query_name=' + query_name).then(async (r) => {
+    return roRequest.get( '/templates/get?query_name=' + query_name).then(async (r) => {
         return {
             errors: false,
             data: r.data
@@ -73,7 +71,7 @@ export function getTemplate(query_name) {
 export function deleteTemplate(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.post(api + '/templates/delete', Params).then(async (r) => {
+    return roRequest.post( '/templates/delete', Params).then(async (r) => {
         return {
             errors: false,
             message: !!r.data

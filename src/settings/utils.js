@@ -103,10 +103,6 @@ export function groupByDate(array, group, key) {
     }, {});
 }
 
-export function goTo(route, that) {
-    that.$router.push(route);
-}
-
 export function createSerie(data, config, serieName, boucle) {
     let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = []
     if (boucle === 1) {

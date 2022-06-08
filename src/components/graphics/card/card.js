@@ -1,4 +1,3 @@
-import {goTo} from "../../../settings/utils";
 import * as general from "../../../controller/genaralController";
 import * as utils from "../../../settings/utils";
 import VueApexCharts from 'vue-apexcharts'
@@ -32,7 +31,11 @@ export default {
                                 case "sum":
                                     this.configuration.value = (r.results.length === 1) ?
                                         r.results[0][this.configuration.query_key].toFixed(2) :
-                                        r.results.map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
+                                        r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
+                                    break;
+                                case "lstm":
+                                    console.log('ici')
+                                    console.log(r)
                                     break;
                             }
                             this.$forceUpdate()
@@ -60,11 +63,6 @@ export default {
                 this.setQuery = await utils.convertURLDateParameter(this.from, this.to)
             }else this.setQuery="";
             return this.setQuery;
-        },
-        redirectCard() {
-            if (this.configuration.redirect !== '/') {
-                goTo(this.configuration.redirect, this)
-            }
         },
 
         // cardFetch() {

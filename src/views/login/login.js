@@ -1,23 +1,14 @@
 import {generateAPIUrl} from '../../settings/variables';
 import {logIn} from "../../controller/authController";
-import {goTo} from "../../settings/utils";
 
 export default {
-    name: 'login',
-    components: {},
-    props: [],
-    data() {
+    name: 'login', components: {}, props: [], data() {
         return {
-            api: generateAPIUrl(),
-            message: "",
-            showError: false,
+            api: generateAPIUrl(), message: "", showError: false,
         }
-    },
-    computed: {},
-    mounted() {
+    }, computed: {}, mounted() {
 
-    },
-    methods: {
+    }, methods: {
         loginUser(e) {
             this.showError = false;
             e.preventDefault();
@@ -25,20 +16,17 @@ export default {
                 if (data.login) {
                     this.$refs.form.tenant.value = '';
                     this.$refs.form.password.value = '';
-                    goTo('/', this);
+                    this.$router.push('/');
                 } else {
                     this.message = data.message;
                     this.showError = true;
                 }
             });
-        },
-        password: function () {
+        }, password: function () {
             return (`${this.api}/password`)
-        },
-        login: function () {
+        }, login: function () {
             return (`${this.api}/login_user`)
-        },
-        signup: function () {
+        }, signup: function () {
             return (`${this.api}/signup`)
         }
     }

@@ -3,7 +3,6 @@ import {
     ratingOperatorInstanceRequest
 } from "../settings/variables";
 import * as utils from "../settings/utils";
-import {convertURLDateParameter} from "../settings/utils";
 
 const roRequest = ratingOperatorInstanceRequest();
 
@@ -93,8 +92,7 @@ export async function getDataByDateToApex(config, that, name) {
     });
 }
 
-// eslint-disable-next-line no-unused-vars
-export async function getSparkCardData(config, that, name) {
+export async function getSparkCardData(config, that) {
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     let url = that.queryBegin + config.query + queryDate;
     return await roRequest.get(url).then(async (r) => {
@@ -138,23 +136,11 @@ export async function getJsonData(url, method) {
         request = lstmInstanceRequest();
     }
     return await request.get(url).then(async (r) => {
-        return r.data;
+        if (r.data.total) {
+            return {total: r.data.total, results: r.data.results};
+        } else return {total: (r.data).length, results: r.data.results};
         // eslint-disable-next-line no-unused-vars
     }).catch(errors => {
-        return {
-            total: 0
-        }
-    });
-}
-
-export async function fetchDataAsJSON(url, that) {
-    //const queryDate =
-    const response = await roRequest.get(url + convertURLDateParameter(that.from, that.to), {
-        credentials: 'include'
-    })
-    const json = await response.json()
-    if (json.total === 0) {
         return {total: 0, results: null}
-    }
-    return {total: json.total, results: json.results}
+    });
 }

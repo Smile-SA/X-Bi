@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const generateAPIUrl = () => {
-    if (window._env_===undefined || window._env_.RATING_API_URL === undefined) {
+    if (window._env_ === undefined || window._env_.RATING_API_URL === undefined) {
         return 'http://localhost:5012'
     } else if (window._env_.RATING_API_URL.startsWith('http')) {
         return window._env_.RATING_API_URL
@@ -12,26 +12,33 @@ export const generateAPIUrl = () => {
     }
 }
 
-export const generateLstmUrl= () => {
+export const generateLstmUrl = () => {
     return 'http://localhost:5000'
 }
 
-export const ratingOperatorInstanceRequest=() => {
+export const ratingOperatorInstanceRequest = () => {
     const instance = axios.create({
         baseURL: generateAPIUrl()
     });
+    instance.defaults.headers.get['Content-Type'] = 'application/json';
     return instance;
 }
 
-export const lstmInstanceRequest=() => {
+export const lstmInstanceRequest = () => {
     const instance = axios.create({
-        baseURL: generateLstmUrl()
+        baseURL: generateLstmUrl(),
+        headers: {
+            get: {        // can be common or any other method
+                "Content-Type": "application/json",
+                'Access-Control-Allow-Headers' : 'Authorization,Content-Type,Accept,Origin'
+            }
+        }
     });
     return instance;
 }
 
 export const generatePromUrl = () => {
-    if (window._env_===undefined || window._env_.PROMETHEUS_API_URL === undefined) {
+    if (window._env_ === undefined || window._env_.PROMETHEUS_API_URL === undefined) {
         return 'http://localhost:9090/api/v1'
     } else if (window._env_.PROMETHEUS_API_URL.startsWith('http')) {
         return `${window._env_.PROMETHEUS_API_URL}/api/v1`

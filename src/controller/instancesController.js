@@ -1,8 +1,9 @@
-import axios from "axios";
-import {generateAPIUrl} from "../settings/variables";
-const api = generateAPIUrl();
+import {ratingOperatorInstanceRequest} from "../settings/variables";
+
+const roRequest = ratingOperatorInstanceRequest();
+
 export function getInstances() {
-    return axios.get(api + '/instances/list').then(async (r) => {
+    return roRequest.get('/instances/list').then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
@@ -19,29 +20,29 @@ export function addInstance(values) {
         Params.append(values[item].name, values[item].value)
     })
 
-    return axios.post(api + '/instances/add',Params).then(async (r) => {
+    return roRequest.post('/instances/add', Params).then(async (r) => {
         return {
-            errors :false,
-            message : r.data
+            errors: false,
+            message: r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }
 
 export function getInstance(metric_name) {
-    return axios.get(api + '/instances/get?metric_name='+metric_name).then(async (r) => {
+    return roRequest.get('/instances/get?metric_name=' + metric_name).then(async (r) => {
         return {
-            errors :false,
-            data : r.data
+            errors: false,
+            data: r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }
@@ -49,15 +50,15 @@ export function getInstance(metric_name) {
 export function deleteInstance(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.post(api + '/instances/delete',Params).then(async (r) => {
+    return roRequest.post('/instances/delete', Params).then(async (r) => {
         return {
-            errors :false,
-            message : !!r.data
+            errors: false,
+            message: !!r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }

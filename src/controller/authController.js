@@ -1,41 +1,41 @@
-import {generateAPIUrl} from "../settings/variables";
-import axios from "axios";
+import {ratingOperatorInstanceRequest} from "../settings/variables";
 import * as uiConfigurations from "../settings/uiConfigurations.json"
 
-export async function checkConnectionWithAPI(){
+const roRequest = ratingOperatorInstanceRequest();
+
+export async function checkConnectionWithAPI() {
     // eslint-disable-next-line no-unused-vars
-    axios.get(generateAPIUrl()).catch(error => {
+    roRequest.get('').catch(error => {
         logOut();
     });
 }
 
-export async function logIn(tenant,password){
+export async function logIn(tenant, password) {
     const User = new FormData();
     User.append("tenant", tenant);
     User.append("password", password);
     // eslint-disable-next-line no-unused-vars
-    return axios.post(generateAPIUrl()+`/login_user`, User).then(async (r) => {
-        if (r.data.login===true){
+    return roRequest.post('/login_user', User).then(async (r) => {
+        if (r.data.login === true) {
             window.sessionStorage.setItem('isLogin', r.data.login);
             window.sessionStorage.setItem('tenant', tenant);
             window.sessionStorage.setItem('timestamp', Date.now());
             window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
             return r.data;
-        }else{
+        } else {
             deleteSession();
             return {
-                login : r.data.login,
-                message : 'There was an error ! Please try again'
+                login: r.data.login,
+                message: 'There was an error ! Please try again'
             };
         }
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
         deleteSession();
         return {
-            login : false,
-            message : 'Check your internet connection and try again !'
+            login: false,
+            message: 'Check your internet connection and try again !'
         };
-
     });
 }
 

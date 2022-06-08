@@ -1,4 +1,5 @@
 import * as controller from "../controller/configurationsController.js"
+
 let conf = controller.getConfig();
 
 export function loadView(view) {
@@ -13,9 +14,9 @@ export function getChildrenRoutes() {
         if (dynamics[item].display === true) {
             data.push({
                 path: dynamics[item].path,
-                components: {content : loadView('views/dynamic/index')},
+                components: {content: loadView('views/dynamic/index')},
                 name: dynamics[item].name,
-                props: { content: true},
+                props: {content: true},
                 meta: {
                     description: dynamics[item].description,
                     requiresAuth: dynamics[item].requiresAuth,
@@ -30,8 +31,8 @@ export function getChildrenRoutes() {
                 if (statics[item].children[subItem].display === true) {
                     data.push({
                         path: statics[item].children[subItem].path,
-                        components: {content : loadView(statics[item].children[subItem].component)},
-                        props: { content: true},
+                        components: {content: loadView(statics[item].children[subItem].component)},
+                        props: {content: true},
                         name: statics[item].children[subItem].name,
                         meta: {
                             description: statics[item].children[subItem].description,
@@ -45,8 +46,8 @@ export function getChildrenRoutes() {
             if (statics[item].display === true) {
                 data.push({
                     path: statics[item].path,
-                    components: {content : loadView(statics[item].component)},
-                    props: { content: true},
+                    components: {content: loadView(statics[item].component)},
+                    props: {content: true},
                     name: statics[item].name,
                     meta: {
                         description: statics[item].description,

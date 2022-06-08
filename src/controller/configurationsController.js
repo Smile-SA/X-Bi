@@ -7,12 +7,9 @@ if (uiConfigurations === null) {
 if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
-
-let dynamics = uiConfigurations.views.dynamics;
-let statics = uiConfigurations.views.statics;
-let controls = uiConfigurations.controls;
-const Ajv = require("ajv");
-const ajv = new Ajv();
+let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics,
+    controls = uiConfigurations.controls;
+const Ajv = require("ajv"), ajv = new Ajv();
 
 export function getConfig() {
     return uiConfigurations;
@@ -223,7 +220,6 @@ export async function addDynamicView(model, structureType) {
     }
     await save();
 }
-
 
 export async function updateModel(model, id, structureType, activeView) {
     let update = false, r = controlModel(controls[structureType].schema, model);

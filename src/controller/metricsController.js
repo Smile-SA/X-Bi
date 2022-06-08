@@ -1,8 +1,10 @@
-import axios from "axios";
-import {generateAPIUrl} from "../settings/variables";
-const api = generateAPIUrl();
+import {ratingOperatorInstanceRequest} from "../settings/variables";
+
+const roRequest = ratingOperatorInstanceRequest();
+
+
 export function getMetrics() {
-    return axios.get(api + '/metrics').then(async (r) => {
+    return roRequest.get('/metrics').then(async (r) => {
         let data = []
         Object.keys(r.data).map((item) => {
             Object.keys(r.data[item]).map((subItem) => {
@@ -26,29 +28,29 @@ export function addMetric(values) {
         Params.append(values[item].name, values[item].value)
     })
 
-    return axios.post(api + '/metrics/add',Params).then(async (r) => {
+    return roRequest.post('/metrics/add', Params).then(async (r) => {
         return {
-            errors :false,
-            message : r.data
+            errors: false,
+            message: r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }
 
 export function getMetric(metric_name) {
-    return axios.get(api + '/metrics/get?metric_name='+metric_name).then(async (r) => {
+    return roRequest.get('/metrics/get?metric_name=' + metric_name).then(async (r) => {
         return {
-            errors :false,
-            data : r.data
+            errors: false,
+            data: r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }
@@ -56,15 +58,15 @@ export function getMetric(metric_name) {
 export function deleteMetric(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return axios.post(api + '/metrics/delete',Params).then(async (r) => {
+    return roRequest.post('/metrics/delete', Params).then(async (r) => {
         return {
-            errors :false,
-            message : !!r.data
+            errors: false,
+            message: !!r.data
         }
     }).catch(errors => {
         return {
-            errors : true,
-            message : errors.response.data
+            errors: true,
+            message: errors.response.data
         };
     });
 }
