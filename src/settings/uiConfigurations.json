@@ -857,7 +857,6 @@
             "type": "string",
             "enum": [
               "default",
-              "spark",
               "multi-icon"
             ]
           },
@@ -969,7 +968,6 @@
             "placeholder": "Card type",
             "values": [
               "default",
-              "spark",
               "multi-icon"
             ]
           },

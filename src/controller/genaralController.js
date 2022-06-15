@@ -91,43 +91,6 @@ export async function getDataByDateToApex(config, that, name) {
     });
 }
 
-export async function getSparkCardData(config, that) {
-    const queryDate = utils.convertURLDateParameter(that.from, that.to)
-    let url = that.queryBegin + config.query + queryDate;
-    return await roRequest.get(url).then(async (r) => {
-        if (r.data.total <= 0) {
-            return {total: 0, results: null}
-        } else if (r.data.total > 0) {
-            /*let data = utils.groupByDate(r.data.results, that.group,config.query_key);
-            Object.keys(data).map((item) => {
-                data[item] = data[item].reduce(function (r, a) {
-                    if (r[config.query_key] === undefined) {
-                        r = {[config.query_key]: 0, length: 0};
-                    }
-                    r[config.query_key] += a[config.query_key];
-                    r[config.time_key] = item;
-                    r.length += +1;
-                    return r;
-                }, Object.create(null));
-            });
-            let cs = utils.createSerie(data, config, name, 1)
-            r.data.series = cs.series
-
-            r.data.lastDate = cs.lastDate*/
-            r.data.series = [{
-                name: config.title,
-                data: [25, 66, 41, 59, 25, 44, 12, 36, 9, 21]
-            }],
-                r.data.options = utils.createSparkOption(config, r.data.total);
-            r.data.height = r.data.options.chart.height;
-            delete r.data.results;
-            return r.data;
-        }
-        // eslint-disable-next-line no-unused-vars
-    }).catch(errors => {
-        return false
-    });
-}
 
 // eslint-disable-next-line no-unused-vars
 export async function getJsonData(url, method) {

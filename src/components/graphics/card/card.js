@@ -12,7 +12,6 @@ export default {
         return {
             timer: '',
             value: '-',
-            sparkLine: {},
         }
     },
     methods: {
@@ -29,7 +28,7 @@ export default {
                                     this.configuration.value = r.total;
                                     break;
                                 case "sum":
-                                    this.configuration.value = (r.results.length === 1) ?
+                                    this.configuration.value = (r.results.length >= 1) ?
                                         r.results[0][this.configuration.query_key].toFixed(2) :
                                         r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
                                     break;
@@ -38,15 +37,6 @@ export default {
                         } else {
                             this.configuration.value = 0;
                             this.$forceUpdate()
-                        }
-                    });
-                    break;
-                case "spark":
-                    this.sparkLine.height = undefined;
-                    await general.getSparkCardData(this.configuration, this).then(async (r) => {
-                        if (r.total > 0) {
-                            this.sparkLine = r;
-                            this.sparkLine.options.chart.type = "line";
                         }
                     });
                     break;
