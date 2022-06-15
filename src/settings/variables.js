@@ -26,13 +26,7 @@ export const ratingOperatorInstanceRequest = () => {
 
 export const lstmInstanceRequest = () => {
     const instance = axios.create({
-        baseURL: generateLstmUrl(),
-        headers: {
-            get: {        // can be common or any other method
-                "Content-Type": "application/json",
-                'Access-Control-Allow-Headers' : 'Authorization,Content-Type,Accept,Origin'
-            }
-        }
+        baseURL: generateLstmUrl()
     });
     return instance;
 }

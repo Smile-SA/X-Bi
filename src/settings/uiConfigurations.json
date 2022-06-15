@@ -850,6 +850,7 @@
               "avg",
               "count",
               "date",
+              "lstm",
               "sum"
             ]
           },
@@ -958,6 +959,7 @@
               "avg",
               "count",
               "date",
+              "lstm",
               "sum"
             ]
           },

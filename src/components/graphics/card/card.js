@@ -12,6 +12,7 @@ export default {
         return {
             timer: '',
             value: '-',
+            lstm:{}
         }
     },
     methods: {
@@ -21,6 +22,7 @@ export default {
             switch (this.configuration.type) {
                 case"default" :
                 case"multi-icon":
+                    this.lstm = {}
                     await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery,this.configuration.method).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
@@ -32,6 +34,12 @@ export default {
                                         r.results[0][this.configuration.query_key].toFixed(2) :
                                         r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
                                     break;
+                                case "lstm":
+                                    this.configuration.value = (r.results[this.configuration.query_key]).toFixed(2)
+                                    this.configuration.icon = 'fa-arrow-'+(r.results.trend).toLowerCase()
+                                    this.lstm = r.results
+                                    break;
+
                             }
                             this.$forceUpdate()
                         } else {

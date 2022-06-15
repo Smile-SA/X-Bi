@@ -1,7 +1,6 @@
 <router-link class="pointer" :to="configuration.redirect" custom v-slot="{ navigate }">
     <div class="xbi" v-if="configuration !== undefined " @click="navigate" @keypress.enter="navigate" role="link">
-        <div class="display-flex xbi-card pointer p-3"
-             :class="'bg-gradient-'+configuration.color">
+        <div class="display-flex xbi-card pointer p-3" :class="'bg-gradient-'+configuration.color">
             <div class="card-content">
                 <div class="icon-card text-center border-radius-md center">
                     <font-awesome-icon class="h-100" :icon="['fas',configuration.icon]"/>
@@ -19,23 +18,32 @@
                         <br class="p-0 m-0" v-if="configuration.type!='multi-icon'">
                         <span class=" text-capitalize h5 label"> {{ configuration.title }}</span>
                     </div>
-                    <div v-if="configuration.type==='multi-icon'" class="multi-icon d-flex float-end text-center ">
+                    <div v-if="configuration.type==='multi-icon' && configuration.method==='lstm' && Object.keys(lstm).length>0 "
+                         class="multi-icon d-flex float-end text-center ">
                         <div class="icon">
-                            <font-awesome-icon class="opacity-100" :icon="['fas','fa-down-long']"/>
+                            <small><strong>Now</strong></small>
                             <br>
-                            <small>Today</small>
+                            <small v-if="lstm.today">{{  lstm.today.toFixed(2) }}
+                                <font-awesome-icon class="opacity-85" :icon="['fas',configuration.icon]"/>
+                            </small>
                         </div>
                         <div class="icon ms-2">
-                            <font-awesome-icon class="opacity-85" :icon="['fas','fa-arrow-down-wide-short']"/>
+                            <small><strong>24h</strong></small>
                             <br>
-                            <small>24h</small>
+                            <small v-if="lstm.tomorrow">{{ lstm.tomorrow.toFixed(2) }}
+                                <font-awesome-icon class="opacity-75" :icon="['fas',lstm.tomorrow > lstm.today ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
+                            </small>
+
                         </div>
                         <div class="icon ms-2">
-                            <font-awesome-icon class="opacity-50" :icon="['fas','fa-arrow-up-wide-short']"/>
+                            <small><strong>48h</strong></small>
                             <br>
-                            <small>48h</small>
+                            <small v-if="lstm.after_tomorrow">{{ lstm.after_tomorrow.toFixed(2) }}
+                                <font-awesome-icon class="opacity-60" :icon="['fas',lstm.after_tomorrow > lstm.tomorrow ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
+                            </small>
                         </div>
                     </div>
+
                 </div>
             </div>
         </div>
