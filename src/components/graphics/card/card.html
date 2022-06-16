@@ -9,21 +9,20 @@
             <div class="text-content">
                 <div :class="'display-block '+configuration.type">
                     <div class="text-end mb-0 pb-0">
-                    <span class="value h3">{{
-                             configuration.value
-                        }}
-                        <small v-if=" configuration.unit!=null || configuration.unit!=''"
-                               class="unit">{{ configuration.unit }}</small>
+                    <span>
+                        <span class="value h2">{{ configuration.value }}</span>
+                        <span v-if=" configuration.unit!=null || configuration.unit!=undefined || configuration.unit!=''"
+                              class="unit"> {{configuration.unit }}</span>
                     </span>
                         <br class="p-0 m-0" v-if="configuration.type!='multi-icon'">
-                        <span class=" text-capitalize h5 label"> {{ configuration.title }}</span>
+                        <span class=" text-capitalize label h5"> {{ configuration.title }}</span>
                     </div>
                     <div v-if="configuration.type==='multi-icon' && configuration.method==='lstm' && Object.keys(lstm).length>0 "
                          class="multi-icon d-flex float-end text-center ">
                         <div class="icon">
                             <small><strong>Now</strong></small>
                             <br>
-                            <small v-if="lstm.today">{{  lstm.today.toFixed(2) }}
+                            <small v-if="lstm.today">{{ lstm.today.toFixed(2) }}
                                 <font-awesome-icon class="opacity-85" :icon="['fas',configuration.icon]"/>
                             </small>
                         </div>
@@ -31,7 +30,8 @@
                             <small><strong>24h</strong></small>
                             <br>
                             <small v-if="lstm.tomorrow">{{ lstm.tomorrow.toFixed(2) }}
-                                <font-awesome-icon class="opacity-75" :icon="['fas',lstm.tomorrow > lstm.today ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
+                                <font-awesome-icon class="opacity-75"
+                                                   :icon="['fas',lstm.tomorrow > lstm.today ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
                             </small>
 
                         </div>
@@ -39,7 +39,8 @@
                             <small><strong>48h</strong></small>
                             <br>
                             <small v-if="lstm.after_tomorrow">{{ lstm.after_tomorrow.toFixed(2) }}
-                                <font-awesome-icon class="opacity-60" :icon="['fas',lstm.after_tomorrow > lstm.tomorrow ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
+                                <font-awesome-icon class="opacity-60"
+                                                   :icon="['fas',lstm.after_tomorrow > lstm.tomorrow ? 'fa-arrow-up-wide-short':'fa-arrow-down-wide-short']"/>
                             </small>
                         </div>
                     </div>

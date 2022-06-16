@@ -95,12 +95,12 @@
 
       .value {
         opacity: 0.8;
-        font-weight: 900;
+        font-weight: 800;
       }
 
       .label, .unit, .sub-label {
-        opacity: 0.8;
-        font-weight: 600;
+        opacity: 0.75;
+        font-weight: 550;
       }
 
       .default, .multi-icon {
@@ -124,8 +124,8 @@
 
     .text-content {
       .value {
-        opacity: 0.8;
-        font-weight: 900;
+        opacity: 1 !important;
+        font-weight: 900 !important;
       }
 
       .label, .value, .unit, .sub-label {
