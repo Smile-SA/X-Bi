@@ -137,12 +137,10 @@ export default {
                                         }
                                     })
                                 }
-
                             }
                         })
                     }
                 });
-
             }
         },
         async previewed(structureType) {
@@ -189,28 +187,26 @@ export default {
                         }
                     } else {
                         if (structureType === "card") {
-                            if(this.data.unit===undefined){
+                            if (this.data.unit === undefined) {
                                 this.data.unit = ''
                             }
-                            div.innerHTML ='    <div class="xbi">\n' +
-                                '        <div class="display-flex text-white spark-card pointer p-3  bg-gradient-'+this.data.color+'">\n' +
+                            div.innerHTML = '<div class="xbi">\n' +
+                                '        <div class="display-flex text-white spark-card pointer p-3  bg-gradient-' + this.data.color + '">\n' +
                                 '            <div class="content">\n' +
-                                '                <h3 class="font-weight-bolder mb-0 text-lg">'+value+
-                                '                    <span class="text-success text-sm font-weight-bolder">'+this.data.unit +'</span>\n' +
+                                '                <h3 class="font-weight-bolder mb-0 text-lg">' + value +
+                                '                    <span class="text-success text-sm font-weight-bolder">' + this.data.unit + '</span>\n' +
                                 '                </h3>\n' +
-                                '                <h6 class="text-sm mb-0 text-capitalize font-weight-bold">'+this.data.title+'</h6>\n' +
+                                '                <h6 class="text-sm mb-0 text-capitalize font-weight-bold">' + this.data.title + '</h6>\n' +
                                 '            </div>\n' +
                                 '            <div class="text-end p-1">\n' +
                                 '                <div class="icon-card text-center border-radius-md">\n' +
-                                '                    <i style="font-size: 3rem;" class="opacity-10 text-lg text-white h-100 fa-solid fas fa-duotone fa '+this.data.icon+'"></i>\n' +
+                                '                    <i style="font-size: 3rem;" class=" fa ' + this.data.icon + '"></i>\n' +
                                 '                </div>\n' +
                                 '            </div>\n' +
                                 '        </div>\n' +
                                 '    </div>'
-
                         }
                     }
-
                 },
                 showCancelButton: false,
                 showConfirmButton: false,
@@ -219,7 +215,6 @@ export default {
                 // eslint-disable-next-line no-unused-vars
             }).then((result) => {
             });
-
         },
     }
 }

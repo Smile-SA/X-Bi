@@ -11461,6 +11461,7 @@ fieldset:disabled .btn {
 }
 
 /* rtl:end:remove */
+
 .text-purple, .list-wrapper .completed .remove {
     --bs-text-opacity: 1;
     color: rgba(var(--bs-purple-rgb), var(--bs-text-opacity)) !important;
@@ -11471,9 +11472,54 @@ fieldset:disabled .btn {
     color: rgba(var(--bs-secondary-rgb), var(--bs-text-opacity)) !important;
 }
 
+.text-blue {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-blue-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-cyan {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-cyan-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-green {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-green-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-indigo {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-indigo-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-orange {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-orange-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-pink {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-pink-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-purple {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-purple-rgb), var(--bs-text-opacity)) !important;
+}
+
 .text-success {
     --bs-text-opacity: 1;
     color: rgba(var(--bs-success-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-red {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-red-rgb), var(--bs-text-opacity)) !important;
+}
+
+.text-yellow {
+    --bs-text-opacity: 1;
+    color: rgba(var(--bs-yellow-rgb), var(--bs-text-opacity)) !important;
 }
 
 .text-primary {
@@ -11596,7 +11642,6 @@ fieldset:disabled .btn {
 .text-opacity-100 {
     --bs-text-opacity: 1;
 }
-
 .bg-blue {
     --bs-bg-opacity: 1;
     background: rgba(var(--bs-blue-rgb), var(--bs-bg-opacity)) !important;
