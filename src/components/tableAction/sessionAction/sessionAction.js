@@ -191,20 +191,28 @@ export default {
                                 this.data.unit = ''
                             }
                             div.innerHTML = '<div class="xbi">\n' +
-                                '        <div class="display-flex text-white spark-card pointer p-3  bg-gradient-' + this.data.color + '">\n' +
-                                '            <div class="content">\n' +
-                                '                <h3 class="font-weight-bolder mb-0 text-lg">' + value +
-                                '                    <span class="text-success text-sm font-weight-bolder">' + this.data.unit + '</span>\n' +
-                                '                </h3>\n' +
-                                '                <h6 class="text-sm mb-0 text-capitalize font-weight-bold">' + this.data.title + '</h6>\n' +
+                                '    <div class="xbi" @click="navigate" @keypress.enter="navigate" role="link">\n' +
+                                '        <div class="display-flex xbi-card pointer p-3 bg-gradient-' + this.data.color + '">\n' +
+                                '            <div class="card-content">\n' +
+                                '                <div class="icon-card text-center border-radius-md center">\n' +
+                                '                    <i style="font-size: 3rem;" class="h-100 fas fa fa-angle-right ' + this.data.icon + '"></i>\n' +
+                                '                </div>\n' +
                                 '            </div>\n' +
-                                '            <div class="text-end p-1">\n' +
-                                '                <div class="icon-card text-center border-radius-md">\n' +
-                                '                    <i style="font-size: 3rem;" class=" fa ' + this.data.icon + '"></i>\n' +
+                                '            <div class="text-content">\n' +
+                                '                <div class="display-block ' + this.data.type + '">\n' +
+                                '                    <div class="text-end mb-0 pb-0">\n' +
+                                '                    <span>\n' +
+                                '                        <span class="value h2">' + value + '</span>\n' +
+                                '                        <span v-if=" configuration.unit!=null || this.data.unit!=undefined || this.data.unit!=\'\'"\n' +
+                                '                              class="unit"> ' + this.data.unit + '</span>\n' +
+                                '                    </span>\n' +
+                                '                        <br class="p-0 m-0" v-if="configuration.type!=\'multi-icon\'">\n' +
+                                '                        <span class=" text-capitalize label h5"> ' + this.data.title + '</span>\n' +
+                                '                    </div>\n' +
                                 '                </div>\n' +
                                 '            </div>\n' +
                                 '        </div>\n' +
-                                '    </div>'
+                                '    </div>\n';
                         }
                     }
                 },
