@@ -20,7 +20,6 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "@vue/cli-service": "~4.5.0",
-    "Font-Awesome": "FortAwesome/Font-Awesome",
     "ajv": "^8.10.0",
     "apexcharts": "^3.33.2",
     "axios": "^0.24.0",
@@ -47,7 +46,9 @@
     "vue-sweetalert2": "^5.0.2",
     "vuex": "^3.1.1",
     "yaml": "^1.7.0",
-    "yamljs": "^0.3.0"
+    "yamljs": "^0.3.0",
+    "downloadjs": "^1.4.7",
+    "node-sass": "^4.12.0"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
