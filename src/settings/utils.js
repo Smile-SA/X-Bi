@@ -57,7 +57,7 @@ export function groupByDate(array, group, key) {
 }
 
 export function createSerie(data, config, serieName, boucle) {
-    let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = []
+    let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = [], dataLabel = false,total=0;
     if (boucle === 1) {
         Object.keys(data).map((item) => {
             let date = new Date(data[item][config.time_key]).getTime();
@@ -96,38 +96,42 @@ export function createSerie(data, config, serieName, boucle) {
                     }
                     cal = fixed;
                     if ((config.method).includes('top')) {
-                        if (fixed > 0.05) {
+                        if (fixed > 0.06) {
                             obj.push([date, fixed])
                         }
-                    } else obj.push([date, fixed])
+                    } else {
+                        obj.push([date, fixed])
+                    }
                 });
             });
             if ((config.method).includes('top')) {
                 if (cal > 0.06) {
                     series.push({
-                        name: item, data: obj
+                        name: item.replaceAll('-', ' '), data: obj
                     });
                 }
             } else series.push({
-                name: item, data: obj
+                name: item.replaceAll('-', ' '), data: obj
             });
         });
         // eslint-disable-next-line no-unused-vars
         let newSeries = []
-        if (["pie", "polarArea", "radar", "radialBar"].includes(config.type)) {
+        if (["polarArea", "radar", "radialBar", "donut"].includes(config.type)) {
+            dataLabel = true;
             Object.keys(series).map(serie => {
                 let x = (series[serie].data.map(item => item[1]).reduce((acc, amount) => parseFloat(acc) + parseFloat(amount))).toFixed(2);
-                series[serie].data = x
-                newSeries.push(x)
+                series[serie].data = parseFloat(x)
+                total = total + parseFloat(x)
+                newSeries.push(parseFloat(x))
                 labels.push(series[serie].name)
                 if ((config.title).includes('efficiency')) {
-                    if (parseInt(x) > 70) {
+                    if (parseFloat(x) > 70) {
                         colors.push('var(--bs-green)')
-                    } else if (parseInt(x) > 50) {
+                    } else if (parseFloat(x) > 50) {
                         colors.push('var(--bs-yellow)')
-                    } else if (parseInt(x) > 30) {
+                    } else if (parseFloat(x) > 30) {
                         colors.push('var(--bs-orange)')
-                    } else if (parseInt(x) <= 30) {
+                    } else if (parseFloat(x) <= 30) {
                         colors.push('var(--bs-red)')
                     }
                 }
@@ -135,10 +139,26 @@ export function createSerie(data, config, serieName, boucle) {
             series = newSeries;
         }
     }
-    return {'series': series, 'labels': labels, 'colors': colors, 'lastDate': lastDate};
+    return {'series': series, 'labels': labels, 'colors': colors, 'lastDate': lastDate, 'dataLabel': dataLabel,'total':total};
 }
 
-export function createOption(config, labels, colors) {
+export function generateData(baseval, count, yrange) {
+    var i = 0;
+    var series = [];
+    while (i < count) {
+        //var x =Math.floor(Math.random() * (750 - 1 + 1)) + 1;;
+        var y =
+            Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
+        var z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
+
+        series.push([baseval, y, z]);
+        baseval += 86400000;
+        i++;
+    }
+    return series;
+}
+
+export function createOption(config, labels, colors, dataLabel,total) {
     let data = {
         chart: {
             id: config.id, type: config.type, animations: {
@@ -146,31 +166,41 @@ export function createOption(config, labels, colors) {
                     speed: 1000
                 }
             },
-        }, xaxis: {
-            type: 'datetime', labels: {
+        },
+        dataLabels: {
+            enabled: dataLabel
+        },
+        xaxis: {
+            type: 'datetime',
+            tickAmount: 12,
+            labels: {
+                rotate: 0,
                 style: {
                     fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
                 },
             },
-        }, yaxis: {
+        },
+        yaxis: {
             labels: {
                 style: {
                     fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
                 },
             },
-        }, labels: {
+        },
+        labels: {
             enabled: false, style: {
                 fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)'
             },
-        }, dataLabels: {
-            enabled: false
-        }, stroke: {
+        },
+        stroke: {
             curve: 'smooth'
-        }, title: {
+        },
+        title: {
             text: config.title, style: {
                 fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '14px',
             },
-        }, legend: {
+        },
+        legend: {
             horizontalAlign: 'left',
             position: 'bottom',
             fontSize: '12px',
@@ -179,6 +209,35 @@ export function createOption(config, labels, colors) {
                 colors: 'var(--bs-body-color)',
 
             },
+        },
+        responsive: [
+            {
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: "bottom"
+                    }
+                }
+            }
+        ],
+
+    }
+    if (total != null && total > 0) {
+        data.plotOptions = {
+            radialBar : {
+                dataLabels :{
+                    total : {
+                        show: true,
+                        label: "Total",
+                        formatter: function () {
+                            return total + '%'
+                        }
+                    }
+                }
+            }
         }
     }
     if (labels != null && Object.keys(labels).length > 0) {

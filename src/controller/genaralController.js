@@ -49,7 +49,7 @@ export async function getDataByVariableAndDateToApex(config, that) {
             let cs = utils.createSerie(data, config, null, 3)
             r.data.series = cs.series
             r.data.lastDate = cs.lastDate
-            r.data.options = utils.createOption(config, cs.labels, cs.colors);
+            r.data.options = utils.createOption(config, cs.labels, cs.colors,cs.dataLabel,cs.total);
             r.data.height = that.styles.height;
             delete r.data.results;
             return r.data;
