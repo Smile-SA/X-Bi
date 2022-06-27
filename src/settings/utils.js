@@ -223,6 +223,10 @@ export function createOption(config, labels, colors, dataLabel,total) {
                 }
             }
         ],
+        theme: {
+            mode: 'light',
+            palette: 'palette1',
+        }
 
     }
     if (total != null && total > 0) {

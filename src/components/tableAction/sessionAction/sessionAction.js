@@ -171,19 +171,43 @@ export default {
                     if (structureType === "chart") {
                         chart.render();
                         if (this.data.is_monitoring === true) {
+                            this.series = []
                             setInterval(() => {
-                                Object.keys(this.series).map((item) => {
-                                    this.series[item].data.push([Date.now(), Math.floor(Math.random() * (37 - 30) + 30)])
-                                });
+                                if (["polarArea", "radar", "radialBar", "donut"].includes(this.data.type)) {
+                                    this.options = {
+                                        chart: {
+                                            type:this.data.type
+                                        },
+                                        labels: ["Team A", "Team B", "Team C", "Team D"],
+                                    }
+                                    chart.updateOptions(this.options)
+                                    this.series.push(Math.floor(Math.random() * (37 - 30) + 30));
+                                    chart.updateSeries(this.series)
+                                }else {
+                                    Object.keys(this.series).map((item) => {
+                                        this.series[item].data.push([Date.now(), Math.floor(Math.random() * (37 - 30) + 30)])
+                                    });
+                                }
                                 chart.updateSeries(this.series)
                             }, 1000);
                         } else {
-                            Object.keys(this.series).map((item) => {
-                                for (let step = 0; step <= 4; step++) {
-                                    this.series[item].data.push([Date.now() - (step * 24 * 60 * 60 * 1000), Math.floor(Math.random() * (37 - 30) + 30)])
+                            if (["polarArea", "radar", "radialBar", "donut"].includes(this.data.type)) {
+                                this.options = {
+                                    chart: {
+                                        type:this.data.type
+                                    },
+                                    labels: ["Team A", "Team B", "Team C", "Team D"],
                                 }
-                            });
-                            chart.updateSeries(this.series)
+                                chart.updateOptions(this.options)
+                                chart.updateSeries([Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30)])
+                            } else {
+                                Object.keys(this.series).map((item) => {
+                                    for (let step = 0; step <= 4; step++) {
+                                        this.series[item].data.push([Date.now() - (step * 24 * 60 * 60 * 1000), Math.floor(Math.random() * (37 - 30) + 30)])
+                                    }
+                                });
+                                chart.updateSeries(this.series)
+                            }
                         }
                     } else {
                         if (structureType === "card") {

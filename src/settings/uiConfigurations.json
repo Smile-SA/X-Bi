@@ -192,7 +192,7 @@
                 "query_key": "frame_price",
                 "sort_key": "node",
                 "time_key": "frame_begin",
-                "type": "radialBar",
+                "type": "area",
                 "method": "default",
                 "axis_type": "datetime",
                 "display_space": "1/2",
