@@ -1,13 +1,11 @@
 <div class="row">
     <div class="col-md-2 m-b" id="title-box">
-        <div class="apex-box">
-            <div class="page-title pt-2">
-                <span class="page-title-icon bg-primary shadow text-white">
-                    <font-awesome-icon  width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
-                </span>
+        <div class="apex-box ">
+            <h3 class="page-title ">
+                <span  class="page-title-icon bg-gradient-primary text-white me-2"> <i :class="'mdi '+$route.meta.icon"></i></span>
                 <span class="title">{{ $route.meta.description }}</span>
-            </div>
-        </div>SS
+            </h3>
+        </div>
     </div>
     <div class="grid-margin">
         <div class="card">
@@ -16,10 +14,11 @@
 
                 <div class="pull-right">
                     <router-link to="/templates/create" custom v-slot="{ navigate }" class="pull-right ">
-                        <a class="btn btn-sm btn-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><font-awesome-icon :icon="['fas','fa-plus-square']"/> Create template</a>
+                        <a class="btn btn-sm btn-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i class="mdi mdi-plus-box"></i> Create template</a>
                     </router-link>
                     <router-link to="/templates" custom v-slot="{ navigate }" class="pull-right ">
-                        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><font-awesome-icon :icon="['fas','fa-list-ul']"/> Templates list</a>
+                        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link"><i
+                                class="mdi mdi-view-list"></i> Templates list</a>
                     </router-link>
                 </div>
             </div>
@@ -38,4 +37,3 @@
         </div>
     </div>
 </div>
-

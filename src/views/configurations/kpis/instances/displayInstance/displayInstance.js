@@ -1,4 +1,3 @@
-import * as CodeMirror from "codemirror";
 import * as instance from "../../../../../controller/instancesController";
 export default {
   name: 'display-instance',
@@ -36,13 +35,13 @@ export default {
           document.getElementById('value').style.display='none';
           this.message = r.message
         } else {
-          if (r.data.total > 0) {
-            this.cmValue = CodeMirror.fromTextArea(document.getElementById("value"), this.cmOption);
-            this.cmValue.setValue(JSON.stringify(r.data.results, null, 2));
-            this.cmValue.on('copy', (cm, e) => {
-              e.codemirrorIgnore = true;
-            });
-          }
+          // if (r.data.total > 0) {
+          //   this.cmValue = CodeMirror.fromTextArea(document.getElementById("value"), this.cmOption);
+          //   this.cmValue.setValue(JSON.stringify(r.data.results, null, 2));
+          //   this.cmValue.on('copy', (cm, e) => {
+          //     e.codemirrorIgnore = true;
+          //   });
+          // }
         }
       });
     },

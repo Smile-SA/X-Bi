@@ -13,20 +13,12 @@ import card from './components/graphics/card';
 import ApexCharts from './components/graphics/apexcharts';
 import selectOption from './components/Layout/selectOption';
 
-
 /* import fontawesome */
 import {library} from '@fortawesome/fontawesome-svg-core'
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 import {fas} from '@fortawesome/free-solid-svg-icons'
 
-/* import used css */
-import '@fortawesome/fontawesome-free/css/all.css'
-import '@fortawesome/fontawesome-free/js/all.js'
-import "@andresouzaabreu/vue-data-table/dist/DataTable.css";
-import '../public/vendors/mdi/css/materialdesignicons.min.css';
-import '../public/vendors/css/vendor.bundle.base.css';
-import '../public/css/style.css';
-import '../public/css/sass.scss';
+
 
 /* add icons to the library */
 library.add(fas)
@@ -50,6 +42,16 @@ new Vue({
     router,
     render: h => h(AppComponent)
 }).$mount('#app');
+/* import used css */
 
+import 'codemirror/lib/codemirror.css';
+import 'codemirror/theme/eclipse.css';
+import '@fortawesome/fontawesome-free/css/all.css'
+import "@andresouzaabreu/vue-data-table/dist/DataTable.css";
+import '../public/vendors/mdi/css/materialdesignicons.min.css';
+import '../public/vendors/css/vendor.bundle.base.css';
+import '../public/css/style.css';
+import '../public/css/sass.scss';
 
-
+import 'codemirror/mode/javascript/javascript.js';
+import '@fortawesome/fontawesome-free/js/all.js'

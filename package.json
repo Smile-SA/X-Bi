@@ -20,6 +20,7 @@
     "@fortawesome/free-solid-svg-icons": "^6.1.1",
     "@fortawesome/vue-fontawesome": "^2.0.6",
     "@vue/cli-service": "~4.5.0",
+    "add": "^2.0.6",
     "ajv": "^8.10.0",
     "apexcharts": "^3.33.2",
     "axios": "^0.24.0",
@@ -27,6 +28,7 @@
     "codemirror": "^5.64.0",
     "core-js": "^3.6.5",
     "dateformat": "^3.0.3",
+    "downloadjs": "^1.4.7",
     "font-awesome": "^4.7.0",
     "hideseek": "^0.8.0",
     "highlight.js": "^9.15.10",
@@ -37,6 +39,7 @@
     "sass-loader": "^8.0.0",
     "vue": "^2.6.10",
     "vue-apexcharts": "^1.6.2",
+    "vue-codemirror": "^5.64.0",
     "vue-context": "^4.0.3",
     "vue-form-generator": "^2.3.4",
     "vue-highlight.js": "^3.1.0",
@@ -47,8 +50,7 @@
     "vuex": "^3.1.1",
     "yaml": "^1.7.0",
     "yamljs": "^0.3.0",
-    "downloadjs": "^1.4.7",
-    "node-sass": "^4.12.0"
+    "yarn": "^1.22.19"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",
