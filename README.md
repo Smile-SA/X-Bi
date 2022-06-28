@@ -59,7 +59,7 @@ The project is launched by default on http://localhost:8080
 - #### Home page
 ![home](public/images/documentation/home.png)
 
-- #### Monitoring Page
+- #### Monitoring Chart
 ![monitoring](public/images/documentation/monitoring.gif)
 
 ### 5 - configuration of dashboard

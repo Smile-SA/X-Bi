@@ -321,7 +321,7 @@
                 "query_key": "frame_price",
                 "sort_key": "metric",
                 "time_key": "frame_begin",
-                "type": "area",
+                "type": "bar",
                 "method": "default",
                 "axis_type": "datetime",
                 "display_space": "2/2",
