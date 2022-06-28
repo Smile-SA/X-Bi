@@ -58,22 +58,21 @@
         </div>
         <div class="sidenav-footer nav-item mt-2 ">
             <div class="nav-link menu-icon border-radius-md display-block bg-primary text-white border-radius-lg">
-                <div class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
-                    <font-awesome-icon class=" text-primary text-gradient text-lg " :icon="['fas','fa-info']"/>
-                </div>
+                <a href="" class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" text-primary text-primary text-lg " :icon="['fas','fa-info']"/>
+                </a>
                 <div class="docs-info ms-2 me-2 mt-2">
                     <h6>Need help?</h6>
                     <p class="font-weight-bold">Please check our docs</p>
                     <a href="" target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
                 </div>
             </div>
-            <a class="nav-link mt-3 btn btn-outline-danger menu-icon border-radius-md border-radius-lg" role="link"
-               v-on:click="logoutUser">
-                <div class="border-danger icon bg-white icon-shape icon-md shadow border-radius-lg text-center ms-2 me-2 d-flex align-items-center justify-content-center">
-                    <font-awesome-icon class="menu-icon text-danger" :icon="['fas','fa-power-off']"/>
+            <div class="nav-link mt-2 btn btn-outline-danger menu-icon border-radius-md border-radius-lg logout" role="link" v-on:click="logoutUser">
+                <div class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-info']"/>
                 </div>
                 <span class="menu-title ms-1 ">Sign out</span>
-            </a>
+            </div>
         </div>
     </ul>
 </nav>

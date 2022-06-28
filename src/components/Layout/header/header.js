@@ -1,3 +1,4 @@
+import $ from 'jquery';
 import {logOut} from "../../../controller/authController";
 export default {
   name: 'header-layout',

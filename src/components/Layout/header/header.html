@@ -1,10 +1,13 @@
 <div class="nav-container">
 <nav class="navbar nav-height nav-header bg-white p-0">
-    <div class="navbar-menu-wrapper d-flex align-items-stretch">
+    <div class="navbar-menu-wrapper d-inline-flex align-items-stretch">
         <button class="navbar-toggler navbar-toggler align-self-center" @click="reduceMenu()" type="button" data-toggle="minimize">
             <font-awesome-icon class="text-primary" :icon="['fas','fa-bars']"/>
         </button>
-        <ul class="navbar-nav navbar-nav-right">
+        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" @click="showMenu()" type="button" data-toggle="offcanvas">
+            <font-awesome-icon class="text-primary" :icon="['fas','fa-bars']"/>
+        </button>
+        <ul class="navbar-nav navbar-nav-right ">
             <li class="nav-item nav-profile dropdown">
                 <a class="nav-link dropdown-toggle text-primary pointer" v-on:click="dropDownEvent()" data-bs-toggle="dropdown">
                     <div class="nav-profile-img">
@@ -26,9 +29,6 @@
                 </div>
             </li>
         </ul>
-        <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" @click="showMenu()" type="button" data-toggle="offcanvas">
-            <font-awesome-icon class="text-white" :icon="['fas','fa-bars']"/>
-        </button>
     </div>
 </nav>
 </div>
