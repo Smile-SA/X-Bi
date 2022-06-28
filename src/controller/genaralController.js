@@ -61,6 +61,7 @@ export async function getDataByVariableAndDateToApex(config, that) {
 }
 
 export async function getDataByDateToApex(config, that, name) {
+
     const queryDate = utils.convertURLDateParameter(that.from, that.to)
     let url = that.queryBegin + config.query + queryDate;
     return await roRequest.get(url).then(async (r) => {
