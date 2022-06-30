@@ -22,9 +22,9 @@ X-BI uses yarn commands, but npm will also work. You can compare yarn and npm co
 ### 1 - Access project file
 There are three ways to access the project file on git :
 
-> - Clone with SSH (link : https://git@git.rnd.alterway.fr:overboard/5gbiller/rating-operator-api.git)
-> - Clone with HTTPS (link : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api.git)
-> - Or download on git (link : https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api)
+> - Clone with SSH (link : git@git.rnd.alterway.fr:overboard/x-bi/x-bi.git)
+> - Clone with HTTPS (link : https://git.rnd.alterway.fr/overboard/x-bi/x-bi.git)
+> - Or download on git (link : https://git.rnd.alterway.fr/overboard/x-bi/x-bi)
 
 ### 2 - Install dependencies
 Install X-BI using yarn, open your command prompt from the main directory of the clone directory and write this command:
