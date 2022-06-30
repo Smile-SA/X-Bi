@@ -1,5 +1,6 @@
  # X-BI
 X-BI allows its users to access BI informations they can customise and interact with.
+
 ![presentation](public/images/documentation/presentation.gif "presentation")
 
 ### Tech / Framework used
