@@ -38,12 +38,14 @@ export default {
                 if (r.data.total > 0) {
                     let valuesInit = utils.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
                     Object.keys(valuesInit).map((item) => {
-                        this.dynamicValues.push({
-                                'name': valuesInit[item],
-                                'value': '',
-                                'error': ''
-                            }
-                        )
+                        if(valuesInit[item].replace(/[^a-z0-9]+/gi,' ')===valuesInit[item]){
+                            this.dynamicValues.push({
+                                    'name': valuesInit[item],
+                                    'value': '',
+                                    'error': ''
+                                }
+                            )
+                        }
                     });
                 }
             });
@@ -106,9 +108,9 @@ export default {
             this.checkAllValues();
         },
         resetForm() {
+            this.dynamicValues = [];
             this.errors = {};
             this.name = this.message = '';
-            this.dynamicValues = [];
         },
         async submitForm(e) {
             e.preventDefault();
@@ -117,7 +119,13 @@ export default {
             this.checkAllForm();
             if (Object.keys(this.errors).length === 0) {
                 this.errors = {};
-                let data = this.dynamicValues
+                let data = [];
+                Object.keys(this.dynamicValues).map((key) => {
+                        data.push({
+                            'name': this.dynamicValues[key].name,
+                            'value': this.dynamicValues[key].value
+                        })
+                })
                 data.push({
                     'name': 'metric_name',
                     'value': (this.name).replaceAll(' ','')
@@ -129,7 +137,6 @@ export default {
                 instance.addInstance(data).then((r) => {
                     if (r.errors) {
                         this.errors.submit = true;
-                        this.dynamicValues=null;
                         this.errors.name = r.message.replaceAll(' ','').split('"reason":"').pop().split('"')[0].replace(/[A-Z]/g, ' $&').trim();
                         this.getDynamicsData(this.template)
                     } else {
