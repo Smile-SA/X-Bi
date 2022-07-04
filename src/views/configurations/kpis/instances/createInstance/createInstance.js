@@ -109,6 +109,7 @@ export default {
         },
         resetForm() {
             this.dynamicValues = [];
+            this.template = ''
             this.errors = {};
             this.name = this.message = '';
         },
@@ -121,10 +122,10 @@ export default {
                 this.errors = {};
                 let data = [];
                 Object.keys(this.dynamicValues).map((key) => {
-                        data.push({
-                            'name': this.dynamicValues[key].name,
-                            'value': this.dynamicValues[key].value
-                        })
+                    data.push({
+                        'name': this.dynamicValues[key].name,
+                        'value': this.dynamicValues[key].value
+                    })
                 })
                 data.push({
                     'name': 'metric_name',
@@ -149,6 +150,3 @@ export default {
         },
     }
 }
-
-
-
