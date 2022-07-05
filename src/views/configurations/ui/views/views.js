@@ -170,8 +170,9 @@ export default {
                 }).then((result) => {
                     if (result.isConfirmed === true) {
                         configurationsController.addDynamicView(result.value, structureType);
+                        configurationsController.save();
                         this.getViews();
-                        this.$forceUpdate();
+                        this.$router.go(this.$router.currentRoute)
                     }
                 });
             }
@@ -180,9 +181,6 @@ export default {
     async beforeMount() {
         this.getViews();
         this.getControls('view');
-    },
-    mounted() {
-
     },
 }
 

@@ -51,6 +51,9 @@ export default {
                             if (this.data.afterDeleteFunction != undefined) {
                                 this.data.afterDeleteFunction(this.data.activeView)
                             }
+                            if(this.data.activeView ==='view'){
+                                this.$router.go(this.$router.currentRoute)
+                            }
 
                         } else this.$swal('Cancelled', 'Please try again')
                     });
@@ -128,7 +131,7 @@ export default {
                     if (result.isConfirmed === true) {
                         configurationsController.updateModel(result.value, this.data.id ? this.data.id : null, structureType, this.data.activeView ? this.data.activeView : this.data.name).then(r => {
                             if (r === true) {
-                                if (this.data.updateFunction != undefined) {
+                                if (this.data.updateFunction !== undefined) {
                                     this.data.updateFunction(this.data.activeView)
                                 } else {
                                     Object.keys(result.value).map((key) => {
@@ -137,8 +140,12 @@ export default {
                                         }
                                     })
                                 }
+                                if(this.data.activeView ==='view'){
+                                    this.$router.go(this.$router.currentRoute)
+                                }
                             }
                         })
+
                     }
                 });
             }

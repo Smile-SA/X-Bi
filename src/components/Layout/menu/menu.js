@@ -20,8 +20,8 @@ export default {
     },
     computed: {},
     methods: {
-        getMenus() {
-            this.menus = configurationsController.getMenus();
+        async getMenus() {
+              this.menus = await configurationsController.getMenus();
         },
         async sunMenu() {
             let a = {}, s = {};
@@ -41,7 +41,7 @@ export default {
             logOut();
         },
     },
-    async mounted() {
+    async beforeMount() {
         await this.getMenus();
         await this.sunMenu();
         this.$forceUpdate();

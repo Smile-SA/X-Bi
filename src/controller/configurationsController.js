@@ -227,9 +227,8 @@ export async function updateModel(model, id, structureType, activeView) {
         if (structureType === 'view') {
             await Object.keys(dynamics).map((key) => {
                 if (dynamics[key].name === activeView) {
-                    console.log('ici')
                     Object.keys(dynamics[key]).map((modelID) => {
-                        if (model[modelID] != undefined) {
+                        if (model[modelID] !== undefined) {
                             dynamics[key][modelID] = model[modelID];
                             update = true
                         }
@@ -343,16 +342,16 @@ export async function getModelToUpdate(activeView, structureType, id) {
 
 }
 
-export function getMenus() {
+export async function getMenus() {
     let data = []
-    Object.keys(dynamics).map((item) => {
+    await Object.keys(dynamics).map((item) => {
         if (dynamics[item].display === true) {
             if (dynamics[item].displayInMenu === true) {
                 data.push(dynamics[item])
             }
         }
     });
-    Object.keys(statics).map((item) => {
+    await Object.keys(statics).map((item) => {
         if (statics[item].display === true) {
             if (statics[item].displayInMenu === true) {
                 data.push(statics[item])
