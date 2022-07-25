@@ -135,6 +135,21 @@
               {
                 "space": "1/4",
                 "type": "default",
+                "title": "Namespace",
+                "icon": "fa-diagram-project",
+                "color": "red",
+                "redirect": "/namespaces",
+                "query": "/namespaces",
+                "query_key": "",
+                "sort_key": "",
+                "time_key": "",
+                "method": "count",
+                "unit": "",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
@@ -145,21 +160,6 @@
                 "time_key": "",
                 "method": "count",
                 "unit": "",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "chart",
-                "title": "Rating",
-                "icon": "fa-diagram-project",
-                "color": "red",
-                "redirect": "/nodes",
-                "query": "/nodes/rating",
-                "query_key": "frame_price",
-                "sort_key": "node",
-                "time_key": "frame_begin",
-                "method": "count",
-                "unit": "€",
                 "value": ""
               },
               {
