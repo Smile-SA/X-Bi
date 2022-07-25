@@ -387,6 +387,10 @@ export async function refreshDate(date, that) {
     if (s.data.errors !== true) {
         if (s.data.total > 0) {
             that.structure.card.models = s.data.results;
+            let style = getCardStyles(that.$route.name)
+            if (style.data.errors !== true) {
+                that.structure.card.styles = style.data.results;
+            }
         }
     } else {
         that.structure.card.models = {};

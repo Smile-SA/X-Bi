@@ -1,44 +1,44 @@
 .xbi {
 
-  .xbi-card.blue {
-    border-bottom: 0.23rem solid var(--bs-blue);
-  }
-
-  .xbi-card.cyan {
-    border-bottom: 0.23rem solid var(--bs-cyan);
-  }
-
-  .xbi-card.dark {
-    border-bottom: 0.23rem solid var(--bs-dark);
-  }
-
-  .xbi-card.green {
-    border-bottom: 0.23rem solid var(--bs-green);
-  }
-
-  .xbi-card.indigo {
-    border-bottom: 0.23rem solid var(--bs-indigo)
-  }
-
-  .xbi-card.purple {
-    border-bottom: 0.23rem solid var(--bs-purple)
-  }
-
-  .xbi-card.orange {
-    border-bottom: 0.23rem solid var(--bs-orange)
-  }
-
-  .xbi-card.pink {
-    border-bottom: 0.23rem solid var(--bs-pink)
-  }
-
-  .xbi-card.red {
-    border-bottom: 0.23rem solid var(--bs-red)
-  }
-
-  .xbi-card.yellow {
-    border-bottom: 0.23rem solid var(--bs-yellow)
-  }
+  //.xbi-card.blue {
+  //  border-bottom: 0.23rem solid var(--bs-blue);
+  //}
+  //
+  //.xbi-card.cyan {
+  //  border-bottom: 0.23rem solid var(--bs-cyan);
+  //}
+  //
+  //.xbi-card.dark {
+  //  border-bottom: 0.23rem solid var(--bs-dark);
+  //}
+  //
+  //.xbi-card.green {
+  //  border-bottom: 0.23rem solid var(--bs-green);
+  //}
+  //
+  //.xbi-card.indigo {
+  //  border-bottom: 0.23rem solid var(--bs-indigo)
+  //}
+  //
+  //.xbi-card.purple {
+  //  border-bottom: 0.23rem solid var(--bs-purple)
+  //}
+  //
+  //.xbi-card.orange {
+  //  border-bottom: 0.23rem solid var(--bs-orange)
+  //}
+  //
+  //.xbi-card.pink {
+  //  border-bottom: 0.23rem solid var(--bs-pink)
+  //}
+  //
+  //.xbi-card.red {
+  //  border-bottom: 0.23rem solid var(--bs-red)
+  //}
+  //
+  //.xbi-card.yellow {
+  //  border-bottom: 0.23rem solid var(--bs-yellow)
+  //}
 
   .xbi-card.bg-gradient-white {
     border-bottom: 0.23rem solid var(--bs-white);
@@ -85,6 +85,9 @@
           opacity: 0.8;
         }
 
+      }
+      .chart-card {
+        width: 80%;
       }
     }
 

@@ -57,7 +57,7 @@ export function groupByDate(array, group, key) {
 }
 
 export function createSerie(data, config, serieName, boucle) {
-    let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = [], dataLabel = false,total=0;
+    let min = 0, max = 0, series = [], colors = [], labels = [], lastDate = 0, obj = [], dataLabel = false, total = 0;
     if (boucle === 1) {
         Object.keys(data).map((item) => {
             let date = new Date(data[item][config.time_key]).getTime();
@@ -139,7 +139,14 @@ export function createSerie(data, config, serieName, boucle) {
             series = newSeries;
         }
     }
-    return {'series': series, 'labels': labels, 'colors': colors, 'lastDate': lastDate, 'dataLabel': dataLabel,'total':total};
+    return {
+        'series': series,
+        'labels': labels,
+        'colors': colors,
+        'lastDate': lastDate,
+        'dataLabel': dataLabel,
+        'total': total
+    };
 }
 
 export function generateData(baseval, count, yrange) {
@@ -158,99 +165,134 @@ export function generateData(baseval, count, yrange) {
     return series;
 }
 
-export function createOption(config, labels, colors, dataLabel,total) {
-    let data = {
-        chart: {
-            id: config.id, type: config.type, animations: {
-                enabled: true, easing: 'linear', dynamicAnimation: {
-                    speed: 1000
+export function createOption(config, labels, colors, dataLabel, total) {
+    if (config.type === 'chart') {
+        let data = {
+            chart: {
+                id: config.id,
+                type: 'area',
+                sparkline: {
+                    enabled: true
+                },
+                group: 'sparklines',
+                animations: {
+                    enabled: true,
+                    easing: 'linear',
+                    dynamicAnimation: {
+                        speed: 1000
+                    }
+                },
+            }, stroke: {
+                curve: 'smooth'
+            }, markers: {
+                size: 0
+            }, tooltip: {
+                fixed: {
+                    enabled: true, position: 'right'
+                }, x: {
+                    show: false
                 }
             },
-        },
-        dataLabels: {
-            enabled: dataLabel
-        },
-        xaxis: {
-            type: 'datetime',
-            tickAmount: 12,
-            labels: {
-                rotate: 0,
-                style: {
-                    fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
+        }
+        data.stroke = {
+            curve: 'straight'
+        }
+        return data
+    } else {
+        let data = {
+            chart: {
+                id: config.id, type: config.type, animations: {
+                    enabled: true, easing: 'linear', dynamicAnimation: {
+                        speed: 1000
+                    }
                 },
             },
-        },
-        yaxis: {
-            labels: {
-                style: {
-                    fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
-                },
+            dataLabels: {
+                enabled: dataLabel
             },
-        },
-        labels: {
-            enabled: false, style: {
-                fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)'
-            },
-        },
-        stroke: {
-            curve: 'smooth'
-        },
-        title: {
-            text: config.title, style: {
-                fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '14px',
-            },
-        },
-        legend: {
-            horizontalAlign: 'left',
-            position: 'bottom',
-            fontSize: '12px',
-            fontFamily: 'var(--bs-body-font-family)',
-            labels: {
-                colors: 'var(--bs-body-color)',
-
-            },
-        },
-        responsive: [
-            {
-                breakpoint: 480,
-                options: {
-                    chart: {
-                        width: 200
+            xaxis: {
+                type: 'datetime',
+                tickAmount: 12,
+                labels: {
+                    rotate: 0,
+                    style: {
+                        fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
                     },
-                    legend: {
-                        position: "bottom"
+                },
+            },
+            yaxis: {
+                labels: {
+                    style: {
+                        fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '11px'
+                    },
+                },
+            },
+            labels: {
+                enabled: false, style: {
+                    fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)'
+                },
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            title: {
+                text: config.title, style: {
+                    fontFamily: 'var(--bs-body-font-family)', color: 'var(--bs-body-color)', fontSize: '14px',
+                },
+            },
+            legend: {
+                horizontalAlign: 'left',
+                position: 'bottom',
+                fontSize: '12px',
+                fontFamily: 'var(--bs-body-font-family)',
+                labels: {
+                    colors: 'var(--bs-body-color)',
+
+                },
+            },
+            responsive: [
+                {
+                    breakpoint: 480,
+                    options: {
+                        chart: {
+                            width: 200
+                        },
+                        legend: {
+                            position: "bottom"
+                        }
                     }
                 }
+            ],
+            theme: {
+                mode: 'light',
+                palette: 'palette1',
             }
-        ],
-        theme: {
-            mode: 'light',
-            palette: 'palette1',
-        }
 
-    }
-    if (total != null && total > 0) {
-        data.plotOptions = {
-            radialBar : {
-                dataLabels :{
-                    total : {
-                        show: true,
-                        label: "Total",
-                        formatter: function () {
-                            return total + '%'
+        }
+        if (total != null && total > 0) {
+            data.plotOptions = {
+                radialBar: {
+                    dataLabels: {
+                        total: {
+                            show: true,
+                            label: "Total",
+                            formatter: function () {
+                                return total + '%'
+                            }
                         }
                     }
                 }
             }
         }
+        if (labels != null && Object.keys(labels).length > 0) {
+            data.labels = labels
+        }
+        if (colors != null && Object.keys(colors).length > 0) {
+            data.colors = colors
+        }
+        return data
     }
-    if (labels != null && Object.keys(labels).length > 0) {
-        data.labels = labels
-    }
-    if (colors != null && Object.keys(colors).length > 0) {
-        data.colors = colors
-    }
-    return data
+
 
 }
 

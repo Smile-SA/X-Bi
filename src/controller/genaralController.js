@@ -46,9 +46,13 @@ export async function getDataByVariableAndDateToApex(config, that) {
                     }, Object.create(null));
                 });
             });
+
             let cs = utils.createSerie(data, config, null, 3)
+
+
             r.data.series = cs.series
             r.data.lastDate = cs.lastDate
+
             r.data.options = utils.createOption(config, cs.labels, cs.colors,cs.dataLabel,cs.total);
             r.data.height = that.styles.height;
             delete r.data.results;
@@ -94,6 +98,8 @@ export async function getDataByDateToApex(config, that, name) {
         return false
     });
 }
+
+
 
 // eslint-disable-next-line no-unused-vars
 export async function getJsonData(url, method) {

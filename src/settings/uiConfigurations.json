@@ -126,63 +126,76 @@
                 "default_data": "Hour"
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "card": {
             "models": [
               {
-                "title": "Namespaces",
-                "icon": "fa-diagram-project",
-                "color": "red",
-                "redirect": "/namespaces",
-                "query": "/namespaces",
-                "query_key": "namespace",
-                "unit": "",
+                "space": "1/4",
                 "type": "default",
-                "method": "count",
-                "display_space": "1/4",
-                "value": ""
-              },
-              {
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "chart",
+                "title": "Rating",
+                "icon": "fa-diagram-project",
+                "color": "red",
+                "redirect": "/nodes",
+                "query": "/nodes/rating",
+                "query_key": "frame_price",
+                "sort_key": "node",
+                "time_key": "frame_begin",
+                "method": "count",
+                "unit": "€",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "yellow",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "chart": {
             "models": [
@@ -194,8 +207,7 @@
                 "time_key": "frame_begin",
                 "type": "area",
                 "method": "default",
-                "axis_type": "datetime",
-                "display_space": "1/2",
+                "space": "1/2",
                 "is_monitoring": false
               },
               {
@@ -206,8 +218,7 @@
                 "time_key": "frame_begin",
                 "type": "area",
                 "method": "default",
-                "axis_type": "datetime",
-                "display_space": "1/2",
+                "space": "1/2",
                 "is_monitoring": false
               }
             ],
@@ -254,64 +265,76 @@
                 "default_data": "Hour"
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "card": {
             "models": [
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "avg",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "yellow",
                 "redirect": "/nodes",
                 "query": "/nodes",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "chart": {
             "models": [
@@ -323,8 +346,7 @@
                 "time_key": "frame_begin",
                 "type": "bar",
                 "method": "default",
-                "axis_type": "datetime",
-                "display_space": "2/2",
+                "space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -371,64 +393,76 @@
                 "default_data": "Hour"
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "card": {
             "models": [
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "sum",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "",
                 "query": "/pods",
                 "query_key": "",
-                "unit": "",
-                "display_space": "1/4",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "chart": {
             "models": [
@@ -440,9 +474,8 @@
                 "time_key": "frame_begin",
                 "type": "bar",
                 "method": "default",
-                "axis_type": "datetime",
                 "is_monitoring": false,
-                "display_space": "2/2"
+                "space": "2/2"
               }
             ],
             "styles": {
@@ -488,64 +521,76 @@
                 "default_data": "Hour"
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "card": {
             "models": [
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
                 "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "sum",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "primary",
                 "redirect": "",
                 "query": "/nodes",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
                 "redirect": "",
                 "query": "/namespaces",
                 "query_key": "",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               },
               {
+                "space": "1/4",
+                "type": "default",
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
                 "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "unit": "",
-                "type": "default",
+                "sort_key": "",
+                "time_key": "",
                 "method": "count",
-                "display_space": "1/4",
+                "unit": "",
                 "value": ""
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "chart": {
             "models": [
@@ -557,8 +602,7 @@
                 "time_key": "frame_begin",
                 "type": "line",
                 "method": "default",
-                "axis_type": "datetime",
-                "display_space": "2/2",
+                "space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -605,11 +649,15 @@
                 "default_data": "Hour"
               }
             ],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "card": {
             "models": [],
-            "styles": {}
+            "styles": {
+              "height": "60"
+            }
           },
           "chart": {
             "models": [
@@ -621,8 +669,7 @@
                 "time_key": "frame_begin",
                 "type": "area",
                 "method": "default",
-                "axis_type": "datetime",
-                "display_space": "2/2",
+                "space": "2/2",
                 "is_monitoring": true
               }
             ],
@@ -811,6 +858,23 @@
       "schema": {
         "type": "object",
         "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
           "title": {
             "type": "string",
             "minLength": 1
@@ -844,6 +908,12 @@
           "query_key": {
             "type": "string"
           },
+          "sort_key": {
+            "type": "string"
+          },
+          "time_key": {
+            "type": "string"
+          },
           "method": {
             "type": "string",
             "enum": [
@@ -853,26 +923,10 @@
               "sum"
             ]
           },
-          "type": {
-            "type": "string",
-            "enum": [
-              "default",
-              "multi-icon"
-            ]
-          },
-          "display_space": {
-            "type": "string",
-            "enum": [
-              "1/4",
-              "2/4",
-              "3/4",
-              "4/4"
-            ]
-          },
-          "value": {
+          "unit": {
             "type": "string"
           },
-          "unit": {
+          "value": {
             "type": "string"
           }
         },
@@ -888,6 +942,29 @@
       },
       "form": {
         "fields": [
+          {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
           {
             "model": "title",
             "type": "input",
@@ -925,7 +1002,7 @@
             "model": "redirect",
             "type": "input",
             "inputType": "text",
-            "required": true,
+            "required": false,
             "placeholder": "Card redirect link"
           },
           {
@@ -939,15 +1016,22 @@
             "model": "query_key",
             "type": "input",
             "inputType": "text",
-            "required": true,
-            "placeholder": "Card calculation key"
+            "required": false,
+            "placeholder": "Card value calculation key"
           },
           {
-            "model": "unit",
+            "model": "sort_key",
             "type": "input",
             "inputType": "text",
             "required": false,
-            "placeholder": "Enter the unit of the result value"
+            "placeholder": "Card sort key"
+          },
+          {
+            "model": "time_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card time key"
           },
           {
             "model": "method",
@@ -962,26 +1046,11 @@
             ]
           },
           {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Card type",
-            "values": [
-              "default",
-              "multi-icon"
-            ]
-          },
-          {
-            "model": "display_space",
-            "type": "select",
-            "required": true,
-            "placeholder": "Display space per row",
-            "values": [
-              "1/4",
-              "2/4",
-              "3/4",
-              "4/4"
-            ]
+            "model": "unit",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Enter the unit of the result value"
           }
         ]
       }
@@ -990,6 +1059,13 @@
       "schema": {
         "type": "object",
         "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/2",
+              "2/2"
+            ]
+          },
           "title": {
             "type": "string",
             "minLength": 1
@@ -1033,19 +1109,6 @@
               "down"
             ]
           },
-          "axis_type": {
-            "type": "string",
-            "enum": [
-              "datetime"
-            ]
-          },
-          "display_space": {
-            "type": "string",
-            "enum": [
-              "1/2",
-              "2/2"
-            ]
-          },
           "is_monitoring": {
             "type": "boolean"
           }
@@ -1058,8 +1121,7 @@
           "time_key",
           "type",
           "method",
-          "axis_type",
-          "display_space",
+          "space",
           "is_monitoring"
         ],
         "additionalProperties": false
@@ -1067,11 +1129,39 @@
       "form": {
         "fields": [
           {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          {
             "model": "title",
             "type": "input",
             "inputType": "text",
             "required": true,
             "placeholder": "Chart title"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart type",
+            "values": [
+              "area",
+              "bar",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "polarArea",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
           },
           {
             "model": "query",
@@ -1102,52 +1192,15 @@
             "placeholder": "Chart time key"
           },
           {
-            "model": "type",
-            "type": "select",
-            "required": true,
-            "placeholder": "Chart type",
-            "values": [
-              "area",
-              "bar",
-              "donut",
-              "heatmap",
-              "histogram",
-              "line",
-              "polarArea",
-              "radar",
-              "radialBar",
-              "scatter"
-            ]
-          },
-          {
             "model": "method",
             "type": "select",
             "required": true,
             "placeholder": "Chart method",
+            "label": "Chart method",
             "values": [
               "default",
               "top",
               "down"
-            ]
-          },
-          {
-            "model": "axis_type",
-            "type": "select",
-            "required": true,
-            "default": "datetime",
-            "placeholder": "Chart type",
-            "values": [
-              "datetime"
-            ]
-          },
-          {
-            "model": "display_space",
-            "type": "select",
-            "required": true,
-            "placeholder": "Display space per row",
-            "values": [
-              "1/2",
-              "2/2"
             ]
           },
           {
