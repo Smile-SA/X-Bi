@@ -11,9 +11,10 @@ Project is created with:
 > - Storybook
 
 ### Before installation X-BI install your API
-Api is used as the communication interface between the components, you need a data source to feed x-bi. For the example you can use the rating-operator API, follow this link to install it.
-
+The API is used as a communication interface between components, you need a data source to feed x-bi. For the example you can use rating-operator or X-BI-test-data API, follow these links to install them.
 >https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api
+
+>https://git.rnd.alterway.fr/overboard/x-bi/x-bi-test-data
 
 ### Note:
 X-BI uses yarn commands, but npm will also work. You can compare yarn and npm commands in the yarn docs.
