@@ -1,6 +1,6 @@
 import * as configurationsController from "../../../../controller/configurationsController";
-import displayView from "../../../../components/tableAction/edit/editViewsDisplay";
-import editIcon from "../../../../components/tableAction/displayIcon";
+import editViewsDisplay from "../../../../components/tableAction/edit/editViewsDisplay";
+import displayIcon from "../../../../components/tableAction/displayIcon";
 import actions from "../../../../components/tableAction/sessionAction";
 import $ from 'jquery';
 export default {
@@ -76,12 +76,12 @@ export default {
                     {
                         key: "icon",
                         title: "icon",
-                        component: editIcon,
+                        component: displayIcon,
                     },
                     {
                         key: "display",
                         title: "Display",
-                        component: displayView
+                        component: editViewsDisplay
                     },
                     {
                         title: "Actions",
@@ -167,12 +167,15 @@ export default {
                     showLoaderOnConfirm: true,
                     showCloseButton: true,
                     // eslint-disable-next-line no-unused-vars
-                }).then((result) => {
-                    if (result.isConfirmed === true) {
-                        configurationsController.addDynamicView(result.value, structureType);
-                        configurationsController.save();
-                        this.getViews();
-                        this.$router.go(this.$router.currentRoute)
+                }).then((r) => {
+                    if (r.isConfirmed === true) {
+                        if(configurationsController.addDynamicView(r.value, structureType) && configurationsController.save()){
+                            this.getViews();
+                            // eslint-disable-next-line no-unused-vars
+                            this.$swal('Updated', 'You successfully updated your configuration', 'success').then((r) => {
+                                this.$router.go(this.$router.currentRoute)
+                            });
+                        }
                     }
                 });
             }

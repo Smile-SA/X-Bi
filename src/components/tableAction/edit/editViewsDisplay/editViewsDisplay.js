@@ -18,7 +18,9 @@ export default {
   },
   methods: {
     setDisplay(){
-      configurationsController.setDynamicViewProperty(this.data.name,this.isDisplay,'display');
+      if(configurationsController.setDynamicViewProperty(this.data.name,this.isDisplay,'display')){
+        this.$router.go(this.$router.currentRoute)
+      }
     }
   }
 }

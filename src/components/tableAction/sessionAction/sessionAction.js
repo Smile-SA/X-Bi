@@ -12,6 +12,7 @@ export default {
             formOptions: {
                 validateAfterChanged: true
             },
+            structure : this.data.structureType,
             model: {},
             form: {},
             showForm: false,
@@ -47,23 +48,25 @@ export default {
                 if (result.value) {
                     configurationsController.deleteModel(this.data.activeView ? this.data.activeView : this.data.name, this.data.structureType, this.data.id).then(r => {
                         if (r == true) {
-                            this.$swal('Deleted', 'You successfully deleted this file', 'success');
                             if (this.data.afterDeleteFunction != undefined) {
                                 this.data.afterDeleteFunction(this.data.activeView)
                             }
-                            if(this.data.activeView ==='view'){
-                                this.$router.go(this.$router.currentRoute)
-                            }
-
+                            // eslint-disable-next-line no-unused-vars
+                            this.$swal('Deleted', 'You successfully deleted this file', 'success').then((r) => {
+                                if (this.structure === "view") {
+                                    this.$router.go(this.$router.currentRoute)
+                                }
+                            });
                         } else this.$swal('Cancelled', 'Please try again')
                     });
+
                 } else {
                     this.$swal('Cancelled', 'Your file is still intact', 'info')
                 }
             })
         },
         async updated(structureType) {
-            this.showForm = true
+            this.showForm = true;
             if (this.showForm === true) {
                 let div = await document.createElement('div');
                 div.id = 'update-' + structureType + '-form'
@@ -140,10 +143,13 @@ export default {
                                         }
                                     })
                                 }
-                                if(this.data.activeView ==='view'){
-                                    this.$router.go(this.$router.currentRoute)
-                                }
-                            }
+                                // eslint-disable-next-line no-unused-vars
+                                this.$swal('Updated', 'You successfully updated your configuration', 'success').then((r) => {
+                                    if (this.structure === "view") {
+                                        this.$router.go(this.$router.currentRoute)
+                                    }
+                                });
+                            }else this.$swal('Cancelled', 'Please try again')
                         })
 
                     }
@@ -183,14 +189,14 @@ export default {
                                 if (["polarArea", "radar", "radialBar", "donut"].includes(this.data.type)) {
                                     this.options = {
                                         chart: {
-                                            type:this.data.type
+                                            type: this.data.type
                                         },
                                         labels: ["Team A", "Team B", "Team C", "Team D"],
                                     }
                                     chart.updateOptions(this.options)
                                     this.series.push(Math.floor(Math.random() * (37 - 30) + 30));
                                     chart.updateSeries(this.series)
-                                }else {
+                                } else {
                                     Object.keys(this.series).map((item) => {
                                         this.series[item].data.push([Date.now(), Math.floor(Math.random() * (37 - 30) + 30)])
                                     });
@@ -201,12 +207,12 @@ export default {
                             if (["polarArea", "radar", "radialBar", "donut"].includes(this.data.type)) {
                                 this.options = {
                                     chart: {
-                                        type:this.data.type
+                                        type: this.data.type
                                     },
                                     labels: ["Team A", "Team B", "Team C", "Team D"],
                                 }
                                 chart.updateOptions(this.options)
-                                chart.updateSeries([Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30),Math.floor(Math.random() * (37 - 30) + 30)])
+                                chart.updateSeries([Math.floor(Math.random() * (37 - 30) + 30), Math.floor(Math.random() * (37 - 30) + 30), Math.floor(Math.random() * (37 - 30) + 30), Math.floor(Math.random() * (37 - 30) + 30)])
                             } else {
                                 Object.keys(this.series).map((item) => {
                                     for (let step = 0; step <= 4; step++) {
