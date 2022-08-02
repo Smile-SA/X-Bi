@@ -1,17 +1,19 @@
 <div class="row">
-    <div class="col-md-2 m-b" id="title-box">
+    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
         <div class="apex-box">
-            <div class="page-title pt-2 ">
-                <span class="page-title-icon bg-primary shadow text-white">
-                    <font-awesome-icon  width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
-                </span>
-                <span class="title">{{ $route.meta.description }}</span>
+            <div class="display-flex ">
+                <div class="page-title pt-2 ps-1">
+                    <div class="page-title-icon bg-primary shadow text-white">
+                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    </div>
+                </div>
+                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
             </div>
         </div>
     </div>
-    <div class="col-md-10" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
+    <div  :class="hover ? 'col-sm-9' : 'col-sm-11-5'" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
         <div class="row">
-            <select-option v-for="(item,keys) in select.models" class="col-lg-4 col-md-6 col-sm-6 m-b"
+            <select-option v-for="(item,keys) in select.models" class="col-sm-4 m-b"
                            v-if="(item.type === 'Date' ? showDatePicker() : item.type === 'Group' ? showGroup() : true) === true"
                            :type="item.type"
                            :label="item.title"
@@ -27,15 +29,19 @@
     </div>
     <div class="col-12" v-if="structure.card.models!=undefined && Object.keys(structure.card.models).length>0">
         <div class="row">
-            <div  v-for="item in structure.card.models"  :class="item.space === '1/4' ? 'col-sm-3 m-b' : item.space === '2/4' ? 'col-sm-6 m-b' : item.space === '3/4' ? 'col-sm-9 m-b' : item.space === '4/4' ? 'col-sm-12 m-b' : 'col-sm-4 m-b'">
-                <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to" :styles="structure.card.styles"></Card>
+            <div v-for="item in structure.card.models"
+                 :class="item.space === '1/4' ? 'col-sm-3 m-b' : item.space === '2/4' ? 'col-sm-6 m-b' : item.space === '3/4' ? 'col-sm-9 m-b' : item.space === '4/4' ? 'col-sm-12 m-b' : 'col-sm-4 m-b'">
+                <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"
+                      :styles="structure.card.styles"></Card>
             </div>
         </div>
     </div>
     <div class="col-12" v-if="structure.chart.models!=undefined &&  Object.keys(structure.chart.models).length>0">
         <div class="row">
-            <div v-for="item in structure.chart.models" :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
-                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
+            <div v-for="item in structure.chart.models"
+                 :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
+                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin"
+                             :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
             </div>
         </div>
     </div>

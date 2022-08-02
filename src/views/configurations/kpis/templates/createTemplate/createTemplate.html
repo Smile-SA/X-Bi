@@ -1,11 +1,13 @@
 <div class="row">
-    <div class="col-md-2 m-b" id="title-box">
+    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
         <div class="apex-box">
-            <div class="page-title p-2">
-                <span class="page-title-icon bg-primary shadow text-white">
-                    <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
-                </span>
-                <span class="title">{{ $route.meta.description}}</span>
+            <div class="display-flex ">
+                <div class="page-title pt-2 ps-1">
+                    <div class="page-title-icon bg-primary shadow text-white">
+                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    </div>
+                </div>
+                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
             </div>
         </div>
     </div>

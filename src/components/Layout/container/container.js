@@ -1,4 +1,3 @@
-import * as utils from '../../../settings/utils'
 import {getJsonData} from "../../../controller/genaralController";
 
 export default {
@@ -40,10 +39,5 @@ export default {
   },
   mounted() {
     this.getTenant();
-  },
-  updated(){
-    this.$nextTick(()=>{
-      utils.editTitleBox();
-    })
   }
 }

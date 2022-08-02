@@ -2,7 +2,7 @@ import * as configurationsController from "../../../../controller/configurations
 import editViewsDisplay from "../../../../components/tableAction/edit/editViewsDisplay";
 import displayIcon from "../../../../components/tableAction/displayIcon";
 import actions from "../../../../components/tableAction/sessionAction";
-import $ from 'jquery';
+import * as utils from "../../../../settings/utils";
 export default {
     name: 'views',
     components: {},
@@ -12,6 +12,7 @@ export default {
             templatesNb: 0,
             tableData: {},
             views: {},
+            hover:true,
             controls: {},
             showForm: {
                 select: false,
@@ -184,6 +185,7 @@ export default {
     async beforeMount() {
         this.getViews();
         this.getControls('view');
+        utils.titleBoxRender(this)
     },
 }
 

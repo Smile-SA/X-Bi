@@ -1,7 +1,7 @@
 import * as configurationsController from "../../../../controller/configurationsController";
 import action from "../../../../components/tableAction/sessionAction";
 import displayIcon from '../../../../components/tableAction/displayIcon';
-import $ from 'jquery';
+import * as utils from "../../../../settings/utils";
 
 export default {
     name: 'structure',
@@ -14,6 +14,7 @@ export default {
             activeView: this.$route.params.id,
             cardTypes: ["number", "date"],
             cardColors: ["primary", "success", "warning", "danger", "dark"],
+            hover: true,
             card: [],
             chart: [],
             structure: {},
@@ -28,14 +29,6 @@ export default {
                 validateAfterChanged: true
             }
         }
-    },
-    mounted() {
-
-    },
-    async beforeMount() {
-        this.activeView = this.$route.params.id;
-        this.getStructure(this.activeView)
-        this.getControls();
     },
     methods: {
         async bindModelsData() {
@@ -182,6 +175,12 @@ export default {
 
             }
         },
-    }
+    },
+    async beforeMount() {
+        this.activeView = this.$route.params.id;
+        this.getStructure(this.activeView)
+        this.getControls();
+        utils.titleBoxRender(this)
+    },
 }
 

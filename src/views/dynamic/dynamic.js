@@ -1,6 +1,6 @@
-
 import * as configurationsController from "../../controller/configurationsController";
 import * as genaralController from "../../controller/genaralController";
+import * as utils from "../../settings/utils";
 
 export default {
     data() {
@@ -11,6 +11,7 @@ export default {
             to: null,
             from: null,
             date: null,
+            hover: true,
             queryLink: '',
             active: null,
             dynamicData: [],
@@ -27,7 +28,6 @@ export default {
                     models: {},
                     styles: {}
                 }
-
             }
         }
     },
@@ -92,7 +92,7 @@ export default {
             let hasDynamicSelect = false
             this.select = {}
             await this.getStructureModelsData();
-            if (this.select.models!=undefined && Object.keys(this.select.models).length > 0) {
+            if (this.select.models != undefined && Object.keys(this.select.models).length > 0) {
                 await Object.keys(this.select.models).map((key) => {
                     if (this.select.models[key].type === 'Dynamic') {
                         hasDynamicSelect = true;
@@ -100,18 +100,18 @@ export default {
                         genaralController.getJsonData(this.select.models[key].query).then((r) => {
                             if (r.total > 0) {
                                 this.dynamicData = r.results
-                            }else{
-                                this.dynamicData=[]
+                            } else {
+                                this.dynamicData = []
                             }
                         })
                     }
                 })
             }
             console.log()
-            if(!hasDynamicSelect){
+            if (!hasDynamicSelect) {
                 this.active = true;
             }
-        }
+        },
     },
     beforeMount() {
         this.active = this.date = null;
@@ -122,10 +122,12 @@ export default {
             this.setDate(this.date);
             this.active = 'active';
         }
+        utils.titleBoxRender(this)
     },
     watch: {
         // eslint-disable-next-line no-unused-vars
         async $route(to, from) {
+            utils.titleBoxRender(this)
             this.active = this.date = null;
             await this.getDynamicSelectData();
             await this.setModelsData();

@@ -1,5 +1,6 @@
 import * as CodeMirror from "codemirror";
 import * as template from "../../../../../controller/templatesController";
+import * as utils from "../../../../../settings/utils";
 export default {
     name: 'display-template',
     components: {},
@@ -10,6 +11,7 @@ export default {
             value: '',
             message:'',
             cmValue: '',
+            hover: true,
             cmOption: {
                 tabSize: 4,
                 mode: 'text/javascript',
@@ -20,11 +22,8 @@ export default {
             }
         }
     },
-    computed: {},
-    mounted() {
-
-    },
     async beforeMount(){
+        utils.titleBoxRender(this)
         this.id = this.$route.params.id;
         this.display();
     },

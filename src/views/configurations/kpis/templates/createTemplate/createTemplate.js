@@ -1,5 +1,6 @@
 import * as CodeMirror from "codemirror";
 import * as template from "../../../../../controller/templatesController";
+import * as utils from "../../../../../settings/utils";
 export default {
     name: 'create-template',
     components: {
@@ -15,6 +16,7 @@ export default {
             variables: '',
             CmQuery:'',
             CmVariables:'',
+            hover: true,
             cmOption: {
                 tabSize: 4,
                 mode: 'text/javascript',
@@ -24,10 +26,8 @@ export default {
             }
         }
     },
-    computed: {
-
-    },
-    mounted() {
+    async beforeMount(){
+        utils.titleBoxRender(this)
         this.CmVariables = CodeMirror.fromTextArea(document.getElementById("variables"),this.cmOption)
         this.CmVariables.on("change", that=>{
             this.variable = that.getValue();
@@ -37,9 +37,6 @@ export default {
             this.query = that.getValue();
             this.checkQuery();
         });
-    },
-    async beforeMount(){
-
     },
     methods: {
         resetForm() {

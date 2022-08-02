@@ -1,5 +1,3 @@
-import $ from 'jquery';
-
 export function convertURLDateParameter(from, to) {
     from = (from !== null) ? from : new Date(new Date().setHours(new Date().getHours() - 1)).toISOString()
     to = (to !== null) ? to : new Date().toISOString()
@@ -340,18 +338,11 @@ export function createSparkOption(config) {
     return data
 }
 
-export function editTitleBox() {
-    setTimeout(() => {
-        if ($('#title-box').hasClass('col-md-2')) {
-            $('#title-box .apex-box .page-title .title').hide()
-            $('#title-box').removeClass('col-md-2');
-            $('#title-box').addClass('col-xxl-05 col-md-1 col-sm-2');
-            $('#title-box .apex-box .page-title .page-title-icon').removeClass('me-2')
-            $('#title-box .apex-box').addClass('text-center')
-        }
-        if ($('#input-box').hasClass('col-md-10')) {
-            $('#input-box').removeClass('col-md-10');
-            $('#input-box').addClass('col-xxl-11-5 col-md-11 col-sm-10');
-        }
-    }, 4000);
+export function titleBoxRender(that) {
+    that.hover = true;
+    if (that.hover === true) {
+        setTimeout(() => {
+            that.hover = false
+        }, 2000);
+    }
 }

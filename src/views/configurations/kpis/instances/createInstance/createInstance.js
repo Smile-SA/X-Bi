@@ -12,6 +12,7 @@ export default {
             message: '',
             name: '',
             template: '',
+            hover: true,
             templatesList: {},
             dynamicValues: [{
                 'name': 'timeframe',
@@ -22,23 +23,17 @@ export default {
         }
     },
     computed: {},
-    mounted() {
-
-    },
-    async beforeMount() {
-        this.getTemplates();
-    },
     methods: {
         async setDynamicValues(options) {
             this.getDynamicsData(options.target.value)
         },
-        async getDynamicsData(value){
+        async getDynamicsData(value) {
             this.dynamicValues = [];
             await template.getTemplate(value).then((r) => {
                 if (r.data.total > 0) {
                     let valuesInit = utils.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
                     Object.keys(valuesInit).map((item) => {
-                        if(valuesInit[item].replace(/[^a-z0-9]+/gi,' ')===valuesInit[item]){
+                        if (valuesInit[item].replace(/[^a-z0-9]+/gi, ' ') === valuesInit[item]) {
                             this.dynamicValues.push({
                                     'name': valuesInit[item],
                                     'value': '',
@@ -59,7 +54,7 @@ export default {
             this.templatesList = {}
             template.getTemplates().then((r) => {
                 this.templatesNb = r.total;
-                if(r.total>0){
+                if (r.total > 0) {
                     this.templatesList = r.results;
                 }
             });
@@ -129,7 +124,7 @@ export default {
                 })
                 data.push({
                     'name': 'metric_name',
-                    'value': (this.name).replaceAll(' ','')
+                    'value': (this.name).replaceAll(' ', '')
                 })
                 data.push({
                     'name': 'template_name',
@@ -138,7 +133,7 @@ export default {
                 instance.addInstance(data).then((r) => {
                     if (r.errors) {
                         this.errors.submit = true;
-                        this.errors.name = r.message.replaceAll(' ','').split('"reason":"').pop().split('"')[0].replace(/[A-Z]/g, ' $&').trim();
+                        this.errors.name = r.message.replaceAll(' ', '').split('"reason":"').pop().split('"')[0].replace(/[A-Z]/g, ' $&').trim();
                         this.getDynamicsData(this.template)
                     } else {
                         this.resetForm();
@@ -148,5 +143,9 @@ export default {
                 });
             }
         },
+    },
+    async beforeMount() {
+        utils.titleBoxRender(this)
+        this.getTemplates();
     }
 }

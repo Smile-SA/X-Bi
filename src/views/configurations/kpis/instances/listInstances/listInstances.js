@@ -1,5 +1,6 @@
 import * as instance from "../../../../../controller/instancesController";
 import action from "../../../../../components/tableAction/urlAction";
+import * as utils from "../../../../../settings/utils";
 
 export default {
     name: 'list-instances',
@@ -7,6 +8,7 @@ export default {
     props: [],
     data() {
         return {
+            hover: true,
             instancesList: [],
             instanceNb: 0,
         }
@@ -29,11 +31,6 @@ export default {
             }
         }
     },
-    mounted() {
-    },
-    async beforeMount() {
-        this.Instances();
-    },
     methods: {
         Instances() {
             instance.getInstances().then((data) => {
@@ -54,6 +51,10 @@ export default {
                 });
             });
         },
+    },
+    async beforeMount() {
+        utils.titleBoxRender(this)
+        this.Instances();
     }
 }
 
