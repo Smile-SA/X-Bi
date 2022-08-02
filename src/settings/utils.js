@@ -343,6 +343,6 @@ export function titleBoxRender(that) {
     if (that.hover === true) {
         setTimeout(() => {
             that.hover = false
-        }, 2000);
+        }, 10000);
     }
 }
