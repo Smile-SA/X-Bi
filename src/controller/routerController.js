@@ -3,7 +3,7 @@ import * as controller from "../controller/configurationsController.js"
 let conf = controller.getConfig();
 
 export function loadView(view) {
-    return () => import(/* webpackChunkName: "view-[request]" */ `../${view}`)
+    return () => import( `../${view}`)
 }
 
 export function getChildrenRoutes() {

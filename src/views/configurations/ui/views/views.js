@@ -3,16 +3,60 @@ import editViewsDisplay from "../../../../components/tableAction/edit/editViewsD
 import displayIcon from "../../../../components/tableAction/displayIcon";
 import actions from "../../../../components/tableAction/sessionAction";
 import * as utils from "../../../../settings/utils";
+import viewForm from "../../../../components/forms/viewForm";
+import $ from "jquery";
 export default {
     name: 'views',
-    components: {},
+    components: {viewForm},
     props: [],
     data() {
         return {
             templatesNb: 0,
             tableData: {},
             views: {},
-            hover:true,
+            values: {},
+            schema: [
+                {
+                    "type": "text",
+                    "name": "name",
+                    "placeholder": "Enter view name",
+                    "validation": "required|min:4,length",
+                },
+                {
+                    "type": "text",
+                    "name": "description",
+                    "placeholder": "Enter view description",
+                    "validation": "required",
+
+                },
+                {
+                    "type": "text",
+                    "name": "icon",
+                    "placeholder": "Enter card icon class",
+                    "validation": "required",
+                },
+                {
+                    "type": "checkbox",
+                    "name": "display",
+                    "label": "view display",
+                },
+                {
+                    "type": "text",
+                    "name": "icon",
+                    "placeholder": "Enter card icon class",
+                    "validation": "required",
+                },
+                {
+                    "type": "checkbox",
+                    "name": "display",
+                    "label": "view display",
+                },
+                {
+                    "name":"Submit",
+                    "type": 'submit',
+                },
+            ],
+            hover: true,
             controls: {},
             showForm: {
                 select: false,
@@ -170,7 +214,7 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((r) => {
                     if (r.isConfirmed === true) {
-                        if(configurationsController.addDynamicView(r.value, structureType) && configurationsController.save()){
+                        if (configurationsController.addDynamicView(r.value, structureType) && configurationsController.save()) {
                             this.getViews();
                             // eslint-disable-next-line no-unused-vars
                             this.$swal('Updated', 'You successfully updated your configuration', 'success').then((r) => {

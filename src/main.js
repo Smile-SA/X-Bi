@@ -4,8 +4,10 @@ import router from './router';
 import VueSweetalert2 from 'vue-sweetalert2';
 import DataTable from "@andresouzaabreu/vue-data-table";
 import VueRangedatePicker from 'vue-rangedate-picker';
-import VueFormGenerator from 'vue-form-generator'
-import VueApexCharts from 'vue-apexcharts'
+import VueFormGenerator from 'vue-form-generator';
+import VueFormulate from '@braid/vue-formulate';
+import VueApexCharts from 'vue-apexcharts';
+import VModal from "vue-js-modal";
 
 /* import used components */
 import AppComponent from './app/index.vue';
@@ -36,6 +38,8 @@ Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 /* add use library to vue*/
 Vue.use(VueSweetalert2);
+Vue.use(VueFormulate);
+Vue.use(VModal)
 Vue.config.productionTip = false
 Vue.config.devtools = false
 new Vue({
@@ -52,6 +56,8 @@ import '../public/vendors/mdi/css/materialdesignicons.min.css';
 import '../public/vendors/css/vendor.bundle.base.css';
 import '../public/css/style.css';
 import '../public/css/sass.scss';
+import '../public/css/vueFormulate.scss';
+
 
 import 'codemirror/mode/javascript/javascript.js';
 import '@fortawesome/fontawesome-free/js/all.js'

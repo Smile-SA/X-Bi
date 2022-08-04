@@ -14,6 +14,8 @@
   },
   "dependencies": {
     "@andresouzaabreu/vue-data-table": "^3.2.2",
+    "@braid/vue-formulate": "^2.5.3",
+    "@formschema/native": "^2.0.0-beta.7",
     "@fortawesome/fontawesome-free": "^6.1.1",
     "@fortawesome/fontawesome-free-solid": "^5.0.13",
     "@fortawesome/fontawesome-svg-core": "^6.1.1",

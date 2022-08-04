@@ -732,6 +732,7 @@
         "additionalProperties": false
       },
       "form": {
+        "legend": "User Details",
         "fields": [
           {
             "model": "name",
@@ -760,6 +761,9 @@
             "required": false,
             "label": "Display",
             "default": false
+          },
+          {
+            "inputType": "submit"
           }
         ]
       }
@@ -1218,5 +1222,250 @@
         ]
       }
     }
+  },
+  "form": {
+    "view": [
+      {
+        "component": "h3",
+        "children": "Student registration"
+      },
+      {
+        "type": "text",
+        "name": "name",
+        "placeholder": "Enter view name",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "type": "text",
+        "name": "description",
+        "placeholder": "Enter view description",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter view icon class",
+        "validation": "required"
+      },
+      {
+        "type": "checkbox",
+        "name": "display",
+        "label": "view display",
+        "value": false
+      },
+      {
+        "name": "submit",
+        "type": "submit"
+      }
+    ],
+    "select": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter select title",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "placeholder",
+        "placeholder": "Enter title placeholder",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select type",
+        "options": {
+          "date": "Date",
+          "dynamic": "Dynamic",
+          "group": "Group"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "value": "",
+        "conditionFields": {
+          "id": "type",
+          "values": ["dynamic"],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key to show in input",
+        "value": "",
+        "conditionFields": {
+          "id": "type",
+          "values": ["dynamic"],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "default_data",
+        "placeholder": "Select default data",
+        "options": {
+          "hour": "hour",
+          "day": "day",
+          "month": "month",
+          "year": "year"
+        },
+        "value": "",
+        "conditionFields": {
+          "id": "type",
+          "values": "group",
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "name": "submit",
+        "type": "submit"
+      }
+    ],
+    "card": [
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/4":"1/4",
+          "2/4":"2/4",
+          "3/4":"3/4",
+          "4/4":"4/4"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter card title",
+        "validation": "required|min:1,length|max:20,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "redirect",
+        "placeholder": "Enter redirect link"
+      },
+
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select card type",
+        "options": {
+          "chart": "chart",
+          "default": "default",
+          "multi-icon": "multi-icon"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "color",
+        "placeholder": "Select card color",
+        "conditionFields": {
+          "id": "type",
+          "values": ["default"],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter card icon class",
+        "conditionFields": {
+          "id": "type",
+          "values": ["default"],
+          "validation": "required"
+        }
+      },
+
+
+
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "conditionFields": {
+          "id": "type",
+          "values": ["chart"],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "conditionFields": {
+          "id": "type",
+          "values": ["chart"],
+          "validation": "required"
+        }
+      },
+
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "avg":"avg",
+          "count": "count",
+          "lstm": "lstm",
+          "sum": "sum"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "unit",
+        "placeholder": "Enter value unit",
+        "conditionFields": {
+          "id": "type",
+          "values": ["default","multi-icon"],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "name": "submit",
+        "type": "submit"
+      }
+    ]
   }
 }
