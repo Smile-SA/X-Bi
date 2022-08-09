@@ -1,6 +1,6 @@
 import * as configurationsController from "../../../../controller/configurationsController";
-import viewDisplay from "../../../../components/tableAction/displayCheckBox";
-import displayIcon from "../../../../components/tableAction/displayIcon";
+import viewDisplay from "../../../../components/uiForms/displayCheckBox";
+import displayIcon from "../../../../components/layout/displayIcon";
 import actions from "../../../../components/tableAction/sessionAction";
 import * as utils from "../../../../settings/utils";
 //this.$router.go(this.$router.currentRoute)

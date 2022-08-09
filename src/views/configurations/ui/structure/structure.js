@@ -1,6 +1,6 @@
 import * as configurationsController from "../../../../controller/configurationsController";
 import action from "../../../../components/tableAction/sessionAction";
-import displayIcon from '../../../../components/tableAction/displayIcon';
+import displayIcon from '../../../../components/layout/displayIcon';
 import * as utils from "../../../../settings/utils";
 
 export default {

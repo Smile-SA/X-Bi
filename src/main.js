@@ -13,10 +13,10 @@ import VModal from "vue-js-modal";
 import AppComponent from './app/index.vue';
 import card from './components/graphics/card';
 import ApexCharts from './components/graphics/apexcharts';
-import selectOption from './components/Layout/selectOption';
-import addForm from "./components/forms/add";
-import editForm from "./components/forms/edit";
-import deleteForm from "./components/forms/delete";
+import selectOption from './components/layout/selectOption';
+import addForm from "./components/uiForms/add";
+import editForm from "./components/uiForms/edit";
+import deleteForm from "./components/uiForms/delete";
 
 /* import fontawesome */
 import {library} from '@fortawesome/fontawesome-svg-core'
