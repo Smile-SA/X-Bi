@@ -23236,96 +23236,11 @@ li.calendar_days_selected, .calendar-btn-apply {
     color: var(--bs-primary) !important;
 }
 
-/*.formulate-input {*/
-/*    margin-bottom: 1rem;*/
-/*}*/
-
-/*.formulate-input input {*/
-/*    display: block;*/
-/*    width: 100%;*/
-/*    padding: 0.5rem 1em;*/
-/*    font-size: 0.875rem;*/
-/*    font-weight: 400;*/
-/*    line-height: 1rem;*/
-/*    color: var(--bs-gray-800) !important;*/
-/*    background: var(--bs-white);*/
-/*    background-clip: padding-box;*/
-/*    border: 1px solid #ced4da;*/
-/*    -webkit-appearance: none;*/
-/*    -moz-appearance: none;*/
-/*    appearance: none;*/
-/*    transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;*/
-/*    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-/*    border-radius: 0.75rem;*/
-/*}*/
-
-/*.formulate-input .formulate-input-errors {*/
-/*    list-style-type: none;*/
-/*    padding: 0;*/
-/*    margin: 0;*/
-/*}*/
-
-/*.formulate-input .formulate-input-error {*/
-/*    color: #c73c58;*/
-/*    font-size: 0.99em;*/
-/*    font-weight: 400;*/
-/*    line-height: 1.5;*/
-/*    padding: 0rem 1em;*/
-/*    margin-bottom: 0.25em;*/
-/*    text-align : left;*/
-/*}*/
-
-/*.formulate-input button {*/
-/*    border: 0;*/
-/*    border-radius: 0.25em;*/
-/*    background: initial;*/
-/*    background: var(--bs-primary);*/
-/*    color: #fff;*/
-/*    float: right;*/
-/*    font-size: .875rem;*/
-/*    margin: 0.3125em;*/
-/*    padding: 0.625em 1.1em;*/
-/*    transition: box-shadow .1s;*/
-/*    box-shadow: 0 0 0 3px transparent;*/
-/*    font-weight: 500;*/
-/*    line-height: 1;*/
-/*    font-family: "open sans", "Helvetica Neue", Helvetica, Arial, sans-serif;*/
-/*    text-align: center;*/
-/*    text-decoration: none;*/
-/*    vertical-align: middle;*/
-/*}*/
-
-/*.formulate-form h3 {*/
-/*    position: relative;*/
-/*    margin: 0;*/
-/*    padding: 0em 5em 1em;*/
-/*    color: inherit;*/
-/*    font-size: 1.375em;*/
-/*    font-weight: 600;*/
-/*    text-align: center;*/
-/*    text-transform: none;*/
-/*    word-wrap: break-word;*/
-/*}*/
-
-/*.formulate-form {*/
-/*    z-index: 1;*/
-/*    justify-content: center;*/
-/*    margin: 1.5rem;*/
-/*    padding: 0;*/
-/*    overflow: auto;*/
-/*    color: inherit;*/
-/*    font-size: 1em;*/
-/*    line-height: normal;*/
-/*    text-align: center;*/
-/*    word-wrap: break-word;*/
-/*    word-break: break-word;*/
-/*}*/
-
 .vm--modal {
     min-width: 173.5px;
 }
 
-/*.formulate-input[data-classification=box] .formulate-input-wrapper {*/
-/*    display: flex;*/
-/*    align-items: center;*/
-/*}*/
+.vue-dialog-button.danger:active{
+    background-color: var(--bs-danger);
+    color : var(--bs-blanc)!important;
+}

@@ -1,0 +1,15 @@
+<div class="normal-case tracking-normal">
+    <a @click.prevent="show" class="btn btn-sm btn-outline-danger text-capitalize">
+        <font-awesome-icon class="me-1" :icon="['fas','fa-trash-can']"/>
+        Delete</a>
+    <modal height="auto" width="18%" :name="'delete-view-'+structureType+modelId" :resizable="true" :dialog="true">
+        <div class="text-center p-3">
+            <h3>Are you sure ?</h3>
+            <p class="text-center">You can't revert your action</p>
+        </div>
+        <div class="vue-dialog-buttons">
+            <button type="button" class="vue-dialog-button" @click.prevent="hide" style="flex: 1 1 33.3333%;">Cancel</button>
+            <button type="button" class="vue-dialog-button danger text-danger" @click.prevent="deleted" style="flex: 1 1 33.3333%;">Delete</button>
+        </div>
+    </modal>
+</div>

@@ -400,6 +400,10 @@
   //position: relative;
 }
 
+input[type="checkbox"]:checked {
+  background: var(--bs-primary);
+}
+
 .formulate-input[data-classification='box'] .formulate-input-element-decorator::before {
   //content: '';
   display: block;
@@ -430,7 +434,7 @@
 }
 
 .formulate-input[data-classification='box'] .formulate-input-element input[type="checkbox"]:checked ~ .formulate-input-element-decorator::before {
-  //background-color: var(--bs-primary);
+  background-color: var(--bs-primary)!important;
   //mask-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M8.76,56.2c-6.38-6.34,3.26-16,9.64-9.69L38,65.88,80.56,23.29c6.38-6.38,16.07,3.32,9.69,9.69L42.84,80.37a6.83,6.83,0,0,1-9.65,0Z"/></svg>');
 }
 

@@ -16,9 +16,7 @@
             <div class="page-header card-header mb-0">
                 <h3 class="page-title text-capitalize">{{ id}} models properties</h3>
                 <div class="pull-right">
-                    <a class="btn btn-sm btn-outline-primary text-capitalize"
-                       v-on:click="addModel(id)"><font-awesome-icon :icon="['fas','fa-plus-square']"/> add
-                        {{ id }} </a>
+                    <add-form :structureType="id" :refreshFunction="getStructure" :viewId="viewId" ></add-form>
                 </div>
             </div>
             <div class="card-body" v-if="Object.keys(item).length>0">

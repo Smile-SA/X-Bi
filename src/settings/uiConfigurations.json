@@ -112,7 +112,7 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "Date",
+                "type": "date",
                 "query": "",
                 "query_key": "",
                 "default_data": ""
@@ -120,10 +120,10 @@
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
-                "type": "Group",
+                "type": "group",
                 "query": "",
                 "query_key": "",
-                "default_data": "Hour"
+                "default_data": "hour"
               }
             ],
             "styles": {
@@ -243,7 +243,7 @@
               {
                 "title": "Namespace",
                 "placeholder": "Select namespace",
-                "type": "Dynamic",
+                "type": "dynamic",
                 "query": "/namespaces",
                 "query_key": "namespace",
                 "default_data": ""
@@ -251,7 +251,7 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "Date",
+                "type": "date",
                 "query": "",
                 "query_key": "",
                 "default_data": ""
@@ -259,10 +259,10 @@
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
-                "type": "Group",
+                "type": "group",
                 "query": "",
                 "query_key": "",
-                "default_data": "Hour"
+                "default_data": "hour"
               }
             ],
             "styles": {
@@ -371,7 +371,7 @@
               {
                 "title": "Node",
                 "placeholder": "Select node",
-                "type": "Dynamic",
+                "type": "dynamic",
                 "query": "/nodes",
                 "query_key": "node",
                 "default_data": ""
@@ -379,7 +379,7 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "Date",
+                "type": "date",
                 "query": "",
                 "query_key": "",
                 "default_data": ""
@@ -387,10 +387,10 @@
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
-                "type": "Group",
+                "type": "group",
                 "query": "",
                 "query_key": "",
-                "default_data": "Hour"
+                "default_data": "hour"
               }
             ],
             "styles": {
@@ -499,7 +499,7 @@
               {
                 "title": "Pod",
                 "placeholder": "Select pod",
-                "type": "Dynamic",
+                "type": "dynamic",
                 "query": "/pods",
                 "query_key": "pod",
                 "default_data": ""
@@ -507,7 +507,7 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "Date",
+                "type": "date",
                 "query": "",
                 "query_key": "",
                 "default_data": ""
@@ -515,10 +515,10 @@
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
-                "type": "Group",
+                "type": "group",
                 "query": "",
                 "query_key": "",
-                "default_data": "Hour"
+                "default_data": "hour"
               }
             ],
             "styles": {
@@ -627,7 +627,7 @@
               {
                 "title": "Instance",
                 "placeholder": "Select a instance",
-                "type": "Dynamic",
+                "type": "dynamic",
                 "query": "/metrics",
                 "query_key": "metric",
                 "default_data": ""
@@ -635,7 +635,7 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "Date",
+                "type": "date",
                 "query": "",
                 "query_key": "",
                 "default_data": ""
@@ -643,10 +643,10 @@
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
-                "type": "Group",
+                "type": "group",
                 "query": "",
                 "query_key": "",
-                "default_data": "Hour"
+                "default_data": "hour"
               }
             ],
             "styles": {
@@ -1223,39 +1223,53 @@
       }
     }
   },
-  "form": {
+  "forms": {
     "view": [
       {
-        "component": "h3",
-        "children": "Student registration"
-      },
-      {
+        "component": "FormulateInput",
         "type": "text",
         "name": "name",
         "placeholder": "Enter view name",
         "validation": "required|min:1,length|max:22,length"
       },
       {
+        "component": "FormulateInput",
         "type": "text",
         "name": "description",
         "placeholder": "Enter view description",
         "validation": "required|min:1,length|max:40,length"
       },
       {
+        "component": "FormulateInput",
         "type": "text",
         "name": "icon",
         "placeholder": "Enter view icon class",
         "validation": "required"
       },
       {
+        "component": "FormulateInput",
         "type": "checkbox",
         "name": "display",
         "label": "view display",
         "value": false
       },
       {
-        "name": "submit",
-        "type": "submit"
+        "type": "text",
+        "name": "path"
+      },
+      {
+        "type": "text",
+        "name": "displayInMenu",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "requiresAuth",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "structure"
       }
     ],
     "select": [
@@ -1294,7 +1308,9 @@
         "value": "",
         "conditionFields": {
           "id": "type",
-          "values": ["dynamic"],
+          "values": [
+            "dynamic"
+          ],
           "validation": "required|min:1,length"
         }
       },
@@ -1306,7 +1322,9 @@
         "value": "",
         "conditionFields": {
           "id": "type",
-          "values": ["dynamic"],
+          "values": [
+            "dynamic"
+          ],
           "validation": "required|min:1,length"
         }
       },
@@ -1327,11 +1345,6 @@
           "values": "group",
           "validation": "required"
         }
-      },
-      {
-        "component": "FormulateInput",
-        "name": "submit",
-        "type": "submit"
       }
     ],
     "card": [
@@ -1341,10 +1354,10 @@
         "name": "space",
         "placeholder": "Select the space per row",
         "options": {
-          "1/4":"1/4",
-          "2/4":"2/4",
-          "3/4":"3/4",
-          "4/4":"4/4"
+          "1/4": "1/4",
+          "2/4": "2/4",
+          "3/4": "3/4",
+          "4/4": "4/4"
         },
         "validation": "required"
       },
@@ -1361,7 +1374,6 @@
         "name": "redirect",
         "placeholder": "Enter redirect link"
       },
-
       {
         "component": "FormulateInput",
         "type": "text",
@@ -1396,7 +1408,9 @@
         "placeholder": "Select card color",
         "conditionFields": {
           "id": "type",
-          "values": ["default"],
+          "values": [
+            "default"
+          ],
           "validation": "required"
         }
       },
@@ -1407,13 +1421,12 @@
         "placeholder": "Enter card icon class",
         "conditionFields": {
           "id": "type",
-          "values": ["default"],
+          "values": [
+            "default"
+          ],
           "validation": "required"
         }
       },
-
-
-
       {
         "component": "FormulateInput",
         "type": "text",
@@ -1421,7 +1434,9 @@
         "placeholder": "Enter sort key",
         "conditionFields": {
           "id": "type",
-          "values": ["chart"],
+          "values": [
+            "chart"
+          ],
           "validation": "required"
         }
       },
@@ -1432,18 +1447,19 @@
         "placeholder": "Enter time key",
         "conditionFields": {
           "id": "type",
-          "values": ["chart"],
+          "values": [
+            "chart"
+          ],
           "validation": "required"
         }
       },
-
       {
         "component": "FormulateInput",
         "type": "select",
         "name": "method",
         "placeholder": "Select calculation method",
         "options": {
-          "avg":"avg",
+          "avg": "avg",
           "count": "count",
           "lstm": "lstm",
           "sum": "sum"
@@ -1457,14 +1473,101 @@
         "placeholder": "Enter value unit",
         "conditionFields": {
           "id": "type",
-          "values": ["default","multi-icon"],
+          "values": [
+            "default",
+            "multi-icon"
+          ],
           "validation": "required"
         }
       },
       {
+        "type": "text",
+        "name": "value"
+      }
+    ],
+    "chart": [
+      {
         "component": "FormulateInput",
-        "name": "submit",
-        "type": "submit"
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/2": "1/2",
+          "2/2": "2/2"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter chart title",
+        "validation": "required|min:1,length|max:99,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select chart type",
+        "options": {
+          "area": "area",
+          "bar": "bar",
+          "donut": "donut",
+          "heatmap": "heatmap",
+          "histogram": "histogram",
+          "line": "line",
+          "polarArea": "polarArea",
+          "radar": "radar",
+          "radialBar": "radialBar",
+          "scatter": "scatter"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "default": "default",
+          "top": "top",
+          "down": "down"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "checkbox",
+        "name": "is_monitoring",
+        "label": "Is monitoring"
       }
     ]
   }

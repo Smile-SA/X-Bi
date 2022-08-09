@@ -11,14 +11,12 @@
             </div>
         </div>
     </div>
-    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length >=0 " v-for="(item, id) in tableData" >
-        <div class="card">
+    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length >=0 " v-for="(item, id) in tableData">
+        <div class="card" >
             <div class="page-header card-header mb-0">
                 <h3 class="page-title text-capitalize">List of dynamic views</h3>
                 <div class="pull-right">
-                    <view-form :id="id" ></view-form>
-                    <a class="btn btn-sm btn-outline-primary text-capitalize"
-                       v-on:click="addView(id)"><font-awesome-icon :icon="['fas','fa-plus-square']"/> add {{ id }} </a>
+                    <add-form :structureType="id" :refreshFunction="getViews"></add-form>
                 </div>
             </div>
             <div class="card-body" v-if="Object.keys(item).length>0">
@@ -26,9 +24,6 @@
                     <data-table v-bind="item"/>
                 </div>
             </div>
-        </div>
-        <div v-bind:id="'add'+id+'form'" v-if="showForm[id]===true">
-            <vue-form-generator :schema="controls[id].form"  :options="formOptions"></vue-form-generator>
         </div>
     </div>
 </div>

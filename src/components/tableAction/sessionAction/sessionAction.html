@@ -1,5 +1,5 @@
-<div class="session-action">
-    <router-link v-if="data.isDisplayed" :to="data.url+'/'+data.id" custom v-slot="{ navigate }">
+<div class="session-action display-flex">
+    <router-link v-if="data.isDisplayed" :to="data.url+'/'+data.viewId" custom v-slot="{ navigate }">
         <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
             <font-awesome-icon :icon="['fas','fa-eye']"/> Structure</a>
     </router-link>
@@ -7,14 +7,6 @@
         <font-awesome-icon :icon="['fas','fa-eye']"/>
         Preview
     </button>
-    <button v-if="data.isUpdated" v-on:click="updated(data.structureType)" type="button" class="btn btn-sm btn-outline-purple m-r-xs">
-        <font-awesome-icon :icon="['fas','fa-pen-to-square']"/>
-        Update
-    </button>
-    <button v-if="data.isDeleted" v-on:click="deleted" type="button" class="btn btn-sm btn-outline-danger ">
-        <font-awesome-icon :icon="['fas','fa-trash-can']"/> Delete
-    </button>
-    <div v-bind:id="'update'+data.structureType+'form'" v-if="showForm===true">
-        <vue-form-generator :schema="controls[data.structureType].form" :model="data" :options="formOptions"></vue-form-generator>
-    </div>
+    <edit-form   class="m-r-xs" v-if="data.isUpdated" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId" ></edit-form>
+    <delete-form class="m-r-xs" v-if="data.isDeleted" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></delete-form>
 </div>

@@ -1,44 +1,42 @@
 import * as configurationsController from "../../../controller/configurationsController";
-import FormSchema from '@formschema/native';
 
 export default {
-    name: 'view-form',
-    components: {FormSchema},
-    props: ['structureType','refreshModels','activeView'],
+    name: 'add',
+    props: ['structureType', 'refreshFunction', 'viewId'],
     data() {
         return {
             schema: [],
-            model: {},
+            addModel: {},
             controls: {},
         }
     },
     computed: {},
     methods: {
-        getFormSchema(structureType) {
-            let r = configurationsController.getForm(structureType);
-            if (Object.keys(r.data).length > 0) {
-                this.schema = r.data.results
+        getFormSchema() {
+            let data = configurationsController.getForm(this.structureType);
+            if (Object.keys(data).length > 0) {
+                this.schema = data
             }
         },
-        show() {
-            this.$modal.show('view-'+this.structureType);
+        async show() {
+            this.getFormSchema();
+            this.$modal.show('view-add' + this.structureType);
         },
         hide() {
-            this.$modal.hide('view-'+this.structureType);
+            this.$modal.hide('view-add' + this.structureType);
         },
         reset() {
-            this.$formulate.reset('form')
+            this.$formulate.reset('add-form'+ this.structureType)
         },
         cancel() {
             this.reset();
             this.hide()
         },
         submitForm(structureType) {
-            if(structureType === 'view'){
-                this.model.path = this.model.name.replace(" ", "")
-                this.model.displayInMenu = true
-                this.model.requiresAuth = true
-                this.model.structure = {
+            if (structureType === 'view') {
+                this.addModel.path = this.addModel.name.replace(" ", "")
+                this.addModel.requiresAuth = true
+                this.addModel.structure = {
                     "select": {
                         "models": [],
                         "styles": {}
@@ -56,19 +54,19 @@ export default {
                     }
                 }
             }
-            let r = configurationsController.addModel(structureType, this.model,this.activeView);
-            if(r.data.results === true){
+            if (configurationsController.addModel(structureType, this.addModel, this.viewId) === true) {
+                this.refreshFunction();
                 this.reset();
-                this.refreshModels()
             }
         },
-        updateValidationrequired() {
+        showInput(input) {
+            let show = input.conditionFields ? input.conditionFields.values.includes(this.addModel[input.conditionFields.id]) ? true : false : true;
             Object.keys(this.schema).map((key) => {
                 if (this.schema[key].condition != undefined && this.schema[key].condition === true) {
                     Object.keys(this.schema).map((id) => {
                         if (this.schema[id].conditionFields != undefined) {
                             if (this.schema[id].conditionFields.id === this.schema[key].name) {
-                                if (this.schema[id].conditionFields.values.includes(this.model[this.schema[key].name])) {
+                                if (this.schema[id].conditionFields.values.includes(this.addModel[this.schema[key].name])) {
                                     this.schema[id].validation = this.schema[id].conditionFields.validation
                                 } else {
                                     this.schema[id].validation = ''
@@ -78,14 +76,10 @@ export default {
                     });
                 }
             });
-        },
-        showInput(input) {
-            this.updateValidationrequired();
-            return input.conditionFields ? input.conditionFields.values.includes(this.model[input.conditionFields.id]) ? true : false : true
+            return show;
         },
     },
     beforeMount() {
-        this.getFormSchema(this.structureType);
     }
 }
 

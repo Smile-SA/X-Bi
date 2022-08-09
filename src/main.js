@@ -14,6 +14,9 @@ import AppComponent from './app/index.vue';
 import card from './components/graphics/card';
 import ApexCharts from './components/graphics/apexcharts';
 import selectOption from './components/Layout/selectOption';
+import addForm from "./components/forms/add";
+import editForm from "./components/forms/edit";
+import deleteForm from "./components/forms/delete";
 
 /* import fontawesome */
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -31,6 +34,9 @@ Vue.component("VueApexCharts", VueApexCharts);
 Vue.component("selectOption", selectOption);
 Vue.component("ApexCharts", ApexCharts);
 Vue.component("Card", card);
+Vue.component("addForm", addForm);
+Vue.component("editForm", editForm);
+Vue.component("deleteForm", deleteForm);
 Vue.component("DataTable", DataTable);
 Vue.component("vue-form-generator", VueFormGenerator.component);
 Vue.component('Picker', VueRangedatePicker);

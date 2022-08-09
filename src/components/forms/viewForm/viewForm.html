@@ -1,24 +1,18 @@
 <div class="normal-case tracking-normal">
     <a @click.prevent="show" class="btn btn-sm btn-outline-primary text-capitalize">
         <font-awesome-icon :icon="['fas','fa-plus-square']"/>
-        add {{ id }}</a>
-    <modal name="view-form" height="auto" :resizable="true" width="25%">
+        add {{ structureType }}</a>
+    <modal :name="'view-'+structureType" height="auto" :resizable="true" width="25%">
         <div class="modal-body">
             <slot name="body">
-                <FormulateForm name="form" v-model="model" @submit="add()">
-                    <h3>{{ 'add ' + id + ' form' }}</h3>
+                <FormulateForm name="form" v-model="model" @submit="submitForm(structureType)">
+                    <h3>{{ 'add ' + structureType + ' form' }}</h3>
                     <component v-for="input in schema"
                                :is="input.component" :key="input.name" v-bind="input"
                                v-show="showInput(input)">
                     </component>
-                    <FormulateInput type="button" label="Reset" data-ghost @click="reset"/>
+                    <FormulateInput type="button" label="Reset" data-ghost @click="cancel"/>
                 </FormulateForm>
-                <p>
-                    {{ model }}
-                </p>
-                <!--                <p v-for="input in schema">-->
-                <!--                    {{input.validation}}-->
-                <!--                </p>-->
             </slot>
         </div>
     </modal>

@@ -11,7 +11,7 @@ export default {
         return {
             uiConfigurations: JSON.parse(window.sessionStorage.getItem('uiConfigurations')),
             cardConfigurations: JSON.parse(window.sessionStorage.getItem('uiConfigurations')),
-            activeView: this.$route.params.id,
+            viewId: this.$route.params.id,
             cardTypes: ["number", "date"],
             cardColors: ["primary", "success", "warning", "danger", "dark"],
             hover: true,
@@ -36,9 +36,7 @@ export default {
             if (Object.keys(this.structure).length > 0) {
                 await Object.keys(this.structure).map((structureType) => {
                     this.tableData[structureType] = {
-                        data: this.structure[structureType].models,
-                        showDownloadButton: false,
-                        columns: [],
+                        data: this.structure[structureType].models, showDownloadButton: false, columns: [],
                     }
                     Object.keys(this.controls[structureType].schema.properties).map((properties) => {
                         if (this.tableData[structureType] != undefined) {
@@ -63,40 +61,37 @@ export default {
                 });
             }
         },
-        async getStructure(activeView) {
+        async getStructure() {
             this.structure = {}
-            let s = configurationsController.getStructure(activeView)
-            let bind = []
-            if (s.data.errors !== true) {
-                if (Object.keys(s.data).length > 0) {
-                    await Object.keys(s.data.results).map((structureType) => {
-                        bind[structureType] = []
-                        Object.keys(s.data.results[structureType]).map((modelType) => {
+            let data = configurationsController.getStructure(this.viewId)
+            let table = [];
+            if (Object.keys(data).length > 0) {
+                    await Object.keys(data).map((structureType) => {
+                        table[structureType] = []
+                        Object.keys(data[structureType]).map((modelType) => {
                             if (modelType === "models") {
-                                bind[structureType][modelType] = []
-                                Object.keys(s.data.results[structureType][modelType]).map((item) => {
-                                    bind[structureType][modelType][item]={}
-                                    bind[structureType][modelType][item].isDeleted = true
-                                    bind[structureType][modelType][item].isUpdated = true
-                                    bind[structureType][modelType][item].id = item
-                                    bind[structureType][modelType][item].value = '0'
-                                    bind[structureType][modelType][item].activeView = activeView
-                                    bind[structureType][modelType][item].structureType = structureType
-                                    bind[structureType][modelType][item].updateFunction = this.getStructure
-                                    bind[structureType][modelType][item].afterDeleteFunction = this.getStructure
-                                    Object.keys(s.data.results[structureType][modelType][item]).map((id) => {
-                                        bind[structureType][modelType][item][id] = s.data.results[structureType][modelType][item][id];
+                                table[structureType][modelType] = [];
+                                Object.keys(data[structureType][modelType]).map((item) => {
+                                    table[structureType][modelType][item]={}
+                                    table[structureType][modelType][item].isDeleted = true
+                                    table[structureType][modelType][item].isUpdated = true
+                                    table[structureType][modelType][item].modelId = item
+                                    table[structureType][modelType][item].value = '0'
+                                    table[structureType][modelType][item].viewId = this.viewId
+                                    table[structureType][modelType][item].structureType = structureType
+                                    table[structureType][modelType][item].refreshFunction = this.getStructure
+                                    Object.keys(data[structureType][modelType][item]).map((id) => {
+                                        table[structureType][modelType][item][id] = data[structureType][modelType][item][id];
                                     });
                                     if (structureType === 'select') {
-                                        bind[structureType][modelType][item].isPreviewed = false
-                                    } else bind[structureType][modelType][item].isPreviewed = true
+                                        table[structureType][modelType][item].isPreviewed = false
+                                    } else table[structureType][modelType][item].isPreviewed = true
                                 });
                             }
                         });
                     });
-                    this.structure = bind
+                    this.structure = table
                 }
-            }
             this.bindModelsData();
         },
         getControls() {
@@ -165,9 +160,9 @@ export default {
                     // eslint-disable-next-line no-unused-vars
                 }).then((result) => {
                     if (result.isConfirmed === true) {
-                        configurationsController.addModel(result.value, structureType, this.activeView).then(r=>{
+                        configurationsController.addModel(result.value, structureType, this.viewId).then(r=>{
                             if(r==true){
-                                this.getStructure(this.activeView);
+                                this.getStructure();
                             }
                         })
                     }
@@ -177,8 +172,8 @@ export default {
         },
     },
     async beforeMount() {
-        this.activeView = this.$route.params.id;
-        this.getStructure(this.activeView)
+        this.viewId = this.$route.params.id;
+        this.getStructure();
         this.getControls();
         utils.titleBoxRender(this)
     },
