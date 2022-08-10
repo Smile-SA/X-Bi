@@ -5,8 +5,8 @@ import * as utils from "../../settings/utils";
 export default {
     data() {
         return {
-            group: 'Hour',
-            groupOptions: ['Hour', 'Day', 'Month', 'Year'],
+            group: 'hour',
+            groupOptions: ['hour', 'day', 'month', 'year'],
             queryBegin: "",
             to: null,
             from: null,
@@ -94,7 +94,7 @@ export default {
             await this.getStructureModelsData();
             if (this.select.models != undefined && Object.keys(this.select.models).length > 0) {
                 await Object.keys(this.select.models).map((key) => {
-                    if (this.select.models[key].type === 'Dynamic') {
+                    if (this.select.models[key].type === 'dynamic') {
                         hasDynamicSelect = true;
                         this.queryLink = this.select.models[key].query;
                         genaralController.getJsonData(this.select.models[key].query).then((r) => {

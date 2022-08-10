@@ -39,11 +39,11 @@ export function groupByDate(array, group, key) {
     return array.reduce((groups, r) => {
         let date = r[key];
         let da = date.split(', ')[1].split(' ');
-        if (group === 'Day') {
+        if (group === 'day') {
             date = da[0] + ' ' + da[1] + ' ' + da[2];
-        } else if (group === 'Month') {
+        } else if (group === 'month') {
             date = da[1] + ' ' + da[2];
-        } else if (group === 'Year') {
+        } else if (group === 'year') {
             date = da[2];
         }
         if (!groups[date]) {

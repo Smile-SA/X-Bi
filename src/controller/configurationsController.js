@@ -7,8 +7,7 @@ if (uiConfigurations === null) {
 if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
-let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics,
-    controls = uiConfigurations.controls, forms = uiConfigurations.forms;
+let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics, forms = uiConfigurations.forms;
 const Ajv = require("ajv"), ajv = new Ajv();
 
 export function getConfig() {
@@ -18,7 +17,6 @@ export function getConfig() {
 export async function save() {
     uiConfigurations.views.dynamics = dynamics
     uiConfigurations.views.statics = statics
-    uiConfigurations.controls = controls
     await window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
     uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 }
@@ -106,21 +104,6 @@ export function getCardStyles(activeView) {
         }
     }
 }
-
-// export function getForm(structureType) {
-//     let r = controls[structureType].form
-//     if (r !== undefined && r != null || r != undefined && Object.keys(r) && Object.keys(r).length > 0) {
-//         return {
-//             errors: false, data: {
-//                 total: Object.keys(r).length, results: r
-//             }
-//         }
-//     } else {
-//         return {
-//             errors: true, data: null
-//         }
-//     }
-// }
 
 export function getChart(activeView) {
     let r;
@@ -214,71 +197,6 @@ export function editModel(structureType, viewId, model, modelId,) {
     return update;
 }
 
-export async function addModels(model, structureType, activeView) {
-    let update = false, r = controlModel(controls[structureType].schema, model);
-    if (r.isValid) {
-        await Object.keys(dynamics).map((key) => {
-            if (dynamics[key].name === activeView) {
-                dynamics[key].structure[structureType].models.push(model);
-                update = true;
-            }
-        })
-    }
-    await save();
-    return update;
-}
-
-export async function addDynamicView(model, structureType) {
-    let r = controlModel(controls[structureType].schema, model);
-    if (r.isValid) {
-        await dynamics.push(model);
-    }
-    await save();
-}
-
-export async function updateModel(model, id, structureType, activeView) {
-    let update = false, r = controlModel(controls[structureType].schema, model);
-    if (r.isValid) {
-        if (structureType === 'view') {
-            await Object.keys(dynamics).map((key) => {
-                if (dynamics[key].name === activeView) {
-                    Object.keys(dynamics[key]).map((modelID) => {
-                        if (model[modelID] !== undefined) {
-                            dynamics[key][modelID] = model[modelID];
-                            update = true
-                        }
-                    })
-                }
-            })
-        } else {
-            await Object.keys(dynamics).map((key) => {
-                if (dynamics[key].name === activeView) {
-                    Object.keys(dynamics[key].structure[structureType].models).map((modelID) => {
-                        if (modelID === id) {
-                            Object.keys(model).map((item) => {
-                                if (dynamics[key].structure[structureType].models[modelID][item] != undefined) {
-                                    dynamics[key].structure[structureType].models[modelID][item] = model[item];
-                                    update = true
-                                }
-                            })
-                        }
-                    })
-                }
-            })
-        }
-    }
-    await save();
-    return update
-}
-
-export function getChartForm() {
-    return controls.chart.form
-}
-
-export function getChartSchema() {
-    return controls.chart.schema
-}
-
 export function getDynamicViews() {
     return dynamics
 }
@@ -314,10 +232,6 @@ export function getForms() {
 
 export function getForm(structureType) {
     return forms[structureType];
-}
-
-export function getControls() {
-    return controls
 }
 
 export function controlModel(schema, model) {
