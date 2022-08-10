@@ -40,8 +40,8 @@
         <div class="row">
             <div v-for="item in structure.chart.models"
                  :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
-                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin"
-                             :styles="structure.chart.styles" :to="to" :group="group"></apex-charts>
+                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="structure.chart.styles" :to="to" :group="group">
+                </apex-charts>
             </div>
         </div>
     </div>

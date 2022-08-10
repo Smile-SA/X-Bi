@@ -17,6 +17,7 @@ import selectOption from './components/layout/selectOption';
 import addForm from "./components/uiForms/add";
 import editForm from "./components/uiForms/edit";
 import deleteForm from "./components/uiForms/delete";
+import previewForm from "./components/uiForms/preview";
 
 /* import fontawesome */
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -36,6 +37,7 @@ Vue.component("ApexCharts", ApexCharts);
 Vue.component("Card", card);
 Vue.component("addForm", addForm);
 Vue.component("editForm", editForm);
+Vue.component("previewForm", previewForm);
 Vue.component("deleteForm", deleteForm);
 Vue.component("DataTable", DataTable);
 Vue.component("vue-form-generator", VueFormGenerator.component);

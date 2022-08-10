@@ -3,10 +3,7 @@
         <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
             <font-awesome-icon :icon="['fas','fa-eye']"/> Structure</a>
     </router-link>
-    <button v-if="data.isPreviewed" v-on:click="previewed(data.structureType)" type="button" class="btn btn-sm btn-outline-behance m-r-xs">
-        <font-awesome-icon :icon="['fas','fa-eye']"/>
-        Preview
-    </button>
-    <edit-form   class="m-r-xs" v-if="data.isUpdated" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId" ></edit-form>
-    <delete-form class="m-r-xs" v-if="data.isDeleted" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></delete-form>
+    <preview-form   class="m-r-xs" v-if="data.isPreviewed" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></preview-form>
+    <edit-form      class="m-r-xs" v-if="data.isUpdated" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId" ></edit-form>
+    <delete-form    class="m-r-xs" v-if="data.isDeleted" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></delete-form>
 </div>

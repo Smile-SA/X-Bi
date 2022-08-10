@@ -10,27 +10,44 @@ export default {
             controls: {},
         }
     },
-    computed: {},
+    computed: {
+        lookModel () {return this.model}
+    },
     methods: {
+        show() {
+            this.getFormSchema();
+            this.$modal.show('view-add' + this.structureType);
+        },
+        cancel() {
+            this.$formulate.reset('add-form'+ this.structureType)
+            this.$modal.hide('view-add' + this.structureType);
+        },
         getFormSchema() {
             let data = configurationsController.getForm(this.structureType);
             if (Object.keys(data).length > 0) {
                 this.schema = data
             }
         },
-        async show() {
-            this.getFormSchema();
-            this.$modal.show('view-add' + this.structureType);
+        showInput(input) {
+            let show = input.conditionFields ? input.conditionFields.values.includes(this.addModel[input.conditionFields.id]) ? true : false : true;
+            return show;
         },
-        hide() {
-            this.$modal.hide('view-add' + this.structureType);
-        },
-        reset() {
-            this.$formulate.reset('add-form'+ this.structureType)
-        },
-        cancel() {
-            this.reset();
-            this.hide()
+        updateValidation(){
+            Object.keys(this.schema).map((key) => {
+                if (this.schema[key].condition != undefined && this.schema[key].condition === true) {
+                    Object.keys(this.schema).map((id) => {
+                        if (this.schema[id].conditionFields != undefined) {
+                            if (this.schema[id].conditionFields.id === this.schema[key].name) {
+                                if (this.schema[id].conditionFields.values.includes(this.addModel[this.schema[key].name])) {
+                                    this.schema[id].validation = this.schema[id].conditionFields.validation
+                                } else {
+                                    this.schema[id].validation = ''
+                                }
+                            }
+                        }
+                    });
+                }
+            });
         },
         submitForm(structureType) {
             if (structureType === 'view') {
@@ -59,28 +76,12 @@ export default {
                 this.reset();
             }
         },
-        showInput(input) {
-            let show = input.conditionFields ? input.conditionFields.values.includes(this.addModel[input.conditionFields.id]) ? true : false : true;
-            Object.keys(this.schema).map((key) => {
-                if (this.schema[key].condition != undefined && this.schema[key].condition === true) {
-                    Object.keys(this.schema).map((id) => {
-                        if (this.schema[id].conditionFields != undefined) {
-                            if (this.schema[id].conditionFields.id === this.schema[key].name) {
-                                if (this.schema[id].conditionFields.values.includes(this.addModel[this.schema[key].name])) {
-                                    this.schema[id].validation = this.schema[id].conditionFields.validation
-                                } else {
-                                    this.schema[id].validation = ''
-                                }
-                            }
-                        }
-                    });
-                }
-            });
-            return show;
-        },
     },
-    beforeMount() {
-    }
+    watch: {
+        lookModel() {
+            this.updateValidation()
+        }
+    },
 }
 
 

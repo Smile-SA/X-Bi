@@ -1476,8 +1476,7 @@
           "values": [
             "default",
             "multi-icon"
-          ],
-          "validation": "required"
+          ]
         }
       },
       {

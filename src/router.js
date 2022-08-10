@@ -12,7 +12,7 @@ const routes = [
         // name: rConf.Configuration().default.name,
         // meta: {email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: true},
         path: '/',
-        component: () => import('./components/Layout/container/index.vue'),
+        component: () => import('./components/layout/container/index.vue'),
         id: defaultRoutes.name,
         name: defaultRoutes.name,
         props: { content: true},
