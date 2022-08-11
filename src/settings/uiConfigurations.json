@@ -766,7 +766,7 @@
         "placeholder": "Enter query link",
         "value": "",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "dynamic"
           ],
@@ -780,7 +780,7 @@
         "placeholder": "Enter query key to show in input",
         "value": "",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "dynamic"
           ],
@@ -800,8 +800,10 @@
         },
         "value": "",
         "conditionFields": {
-          "id": "type",
-          "values": "group",
+          "name": "type",
+          "values": [
+            "group"
+          ],
           "validation": "required"
         }
       }
@@ -866,7 +868,7 @@
         "name": "color",
         "placeholder": "Select card color",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "default"
           ],
@@ -879,7 +881,7 @@
         "name": "icon",
         "placeholder": "Enter card icon class",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "default"
           ],
@@ -892,7 +894,7 @@
         "name": "sort_key",
         "placeholder": "Enter sort key",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "chart"
           ],
@@ -905,7 +907,7 @@
         "name": "time_key",
         "placeholder": "Enter time key",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "chart"
           ],
@@ -931,7 +933,7 @@
         "name": "unit",
         "placeholder": "Enter value unit",
         "conditionFields": {
-          "id": "type",
+          "name": "type",
           "values": [
             "default",
             "multi-icon"
@@ -1030,3 +1032,4 @@
     ]
   }
 }
+

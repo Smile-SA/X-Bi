@@ -7,7 +7,8 @@ if (uiConfigurations === null) {
 if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
-let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics, forms = uiConfigurations.forms;
+let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics,
+    forms = uiConfigurations.forms;
 const Ajv = require("ajv"), ajv = new Ajv();
 
 export function getConfig() {
@@ -103,6 +104,28 @@ export function getCardStyles(activeView) {
             errors: true, data: null
         }
     }
+}
+
+export function updateValidation(schema, model) {
+    Object.keys(schema).map((key) => {
+        if (schema[key].condition != undefined && schema[key].condition === true) {
+            Object.keys(schema).map((id) => {
+                if (schema[id].conditionFields != undefined) {
+                    if (schema[id].conditionFields.name === schema[key].name) {
+                        if (schema[id].conditionFields.values.includes(model[schema[key].name])) {
+                            schema[id].validation = schema[id].conditionFields.validation
+                        } else {
+                            schema[id].validation = ''
+                        }
+                    }
+                }
+            });
+        }
+    });
+}
+
+export function showInputInModel(input, model) {
+    return input.conditionFields ? input.conditionFields.values.includes(model[input.conditionFields.name]) ? true : false : true;
 }
 
 export function getChart(activeView) {
@@ -209,7 +232,6 @@ export function getDefaultModel(structureType, viewId, modelId) {
     }
 }
 
-// eslint-disable-next-line no-unused-vars
 export function getModel(structureType, viewId, modelId) {
     let defaultModel = getDefaultModel(structureType, viewId, modelId)
     let form = this.getForm(structureType)

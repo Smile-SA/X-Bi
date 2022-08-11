@@ -6,7 +6,7 @@ export default {
     data() {
         return {
             schema: [],
-            addModel: {},
+            model: {},
             controls: {},
         }
     },
@@ -29,31 +29,13 @@ export default {
             }
         },
         showInput(input) {
-            let show = input.conditionFields ? input.conditionFields.values.includes(this.addModel[input.conditionFields.id]) ? true : false : true;
-            return show;
-        },
-        updateValidation(){
-            Object.keys(this.schema).map((key) => {
-                if (this.schema[key].condition != undefined && this.schema[key].condition === true) {
-                    Object.keys(this.schema).map((id) => {
-                        if (this.schema[id].conditionFields != undefined) {
-                            if (this.schema[id].conditionFields.id === this.schema[key].name) {
-                                if (this.schema[id].conditionFields.values.includes(this.addModel[this.schema[key].name])) {
-                                    this.schema[id].validation = this.schema[id].conditionFields.validation
-                                } else {
-                                    this.schema[id].validation = ''
-                                }
-                            }
-                        }
-                    });
-                }
-            });
+            return configurationsController.showInputInModel(input,this.model);
         },
         submitForm(structureType) {
             if (structureType === 'view') {
-                this.addModel.path = this.addModel.name.replace(" ", "")
-                this.addModel.requiresAuth = true
-                this.addModel.structure = {
+                this.model.path = this.model.name.replace(" ", "")
+                this.model.requiresAuth = true
+                this.model.structure = {
                     "select": {
                         "models": [],
                         "styles": {}
@@ -71,15 +53,15 @@ export default {
                     }
                 }
             }
-            if (configurationsController.addModel(structureType, this.addModel, this.viewId) === true) {
+            if (configurationsController.addModel(structureType, this.model, this.viewId) === true) {
                 this.refreshFunction();
-                this.reset();
+                this.$formulate.reset('add-form'+ this.structureType)
             }
         },
     },
     watch: {
         lookModel() {
-            this.updateValidation()
+            configurationsController.updateValidation(this.schema, this.model);
         }
     },
 }

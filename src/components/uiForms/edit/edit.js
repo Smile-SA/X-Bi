@@ -31,25 +31,7 @@ export default {
             }
         },
         showInput(input) {
-            let show = input.conditionFields ? input.conditionFields.values.includes(this.model[input.conditionFields.id]) ? true : false : true;
-            return show;
-        },
-        updateValidation() {
-            Object.keys(this.schema).map((key) => {
-                if (this.schema[key].condition != undefined && this.schema[key].condition === true) {
-                    Object.keys(this.schema).map((id) => {
-                        if (this.schema[id].conditionFields != undefined) {
-                            if (this.schema[id].conditionFields.id === this.schema[key].name) {
-                                if (this.schema[id].conditionFields.values.includes(this.model[this.schema[key].name])) {
-                                    this.schema[id].validation = this.schema[id].conditionFields.validation
-                                } else {
-                                    this.schema[id].validation = ''
-                                }
-                            }
-                        }
-                    });
-                }
-            });
+            return configurationsController.showInputInModel(input,this.model);
         },
         submitForm(structureType) {
             if (structureType === 'view') {
@@ -69,7 +51,7 @@ export default {
     },
     watch: {
         lookModel() {
-            this.updateValidation()
+            configurationsController.updateValidation(this.schema, this.model);
         }
     },
     beforeMount() {
