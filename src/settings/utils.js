@@ -339,10 +339,10 @@ export function createSparkOption(config) {
 }
 
 export function titleBoxRender(that) {
-    that.hover = true;
-    if (that.hover === true) {
-        setTimeout(() => {
-            that.hover = false
-        }, 10000);
-    }
+     that.hover = true;
+    // if (that.hover === true) {
+    //     setTimeout(() => {
+    //         that.hover = false
+    //     }, 10000);
+    // }
 }

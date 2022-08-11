@@ -25,7 +25,7 @@
             <div v-if="item.children!=undefined" class="">
                 <li class="nav-item">
                     <h6 class="d-flex nowrap align-items-center m-3 mb-1 mt-2">
-                        <div class="icon icon-shape icon-md  border-radius-lg  text-center d-flex align-items-center justify-content-center">
+                        <div class="icon    border-radius-md  text-center d-flex align-items-center justify-content-center">
                             <font-awesome-icon class="menu-icon text-primary" :icon="['fas',item.icon]"/>
                         </div>
                         <span class="sub-menu-title text-uppercase font-weight-bolder text-primary">{{item.name}}</span>
@@ -35,7 +35,7 @@
                     <li v-bind:class="$route.name==subItem.name || $route.path.includes((subItem.name).toLowerCase()) || ($route.path.includes((subItem.path).toLowerCase()) && subItem.path!='' && subItem.path!='/') ? 'nav-item active' : 'nav-item '">
                         <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
                            role="link">
-                            <div class="icon icon-shape icon-md shadow border-radius-lg  text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                            <div class="icon   shadow border-radius-md  text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                                 <font-awesome-icon class="menu-icon" :icon="['fas',subItem.icon]"/>
                             </div>
                             <span class="menu-title ms-1">{{ subItem.name }}</span>
@@ -48,7 +48,7 @@
                 <li v-bind:class="$route.name==item.name || $route.path.includes((item.name).toLowerCase()) || ($route.path.includes((item.path).toLowerCase()) && item.path!='' && item.path!='/' )? 'nav-item active' : 'nav-item'">
                     <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
                        role="link">
-                        <div class="icon icon-shape icon-md shadow border-radius-lg  text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                        <div class="icon   shadow border-radius-md  text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                             <font-awesome-icon class="menu-icon" :icon="['fas',item.icon]"/>
                         </div>
                         <span class="menu-title ms-1">{{ item.name }}</span>
@@ -57,8 +57,8 @@
             </router-link>
         </div>
         <div class="sidenav-footer nav-item mt-2 ">
-            <div class="nav-link menu-icon border-radius-md display-block bg-primary text-white border-radius-lg">
-                <a href="" class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+            <div class="nav-link menu-icon border-radius-md display-block bg-primary text-white border-radius-md">
+                <a href="" class="icon icon-shape  shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                     <font-awesome-icon class=" text-primary text-primary text-lg " :icon="['fas','fa-info']"/>
                 </a>
                 <div class="docs-info ms-2 me-2 mt-2">
@@ -67,8 +67,8 @@
                     <a href="" target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
                 </div>
             </div>
-            <div class="nav-link mt-2 btn btn-outline-danger menu-icon border-radius-md border-radius-lg logout" role="link" v-on:click="logoutUser">
-                <div class="icon icon-shape icon-md shadow border-radius-lg bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+            <div class="nav-link mt-2 btn btn-outline-danger menu-icon border-radius-md border-radius-md logout" role="link" v-on:click="logoutUser">
+                <div class="icon icon-shape  shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                     <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-info']"/>
                 </div>
                 <span class="menu-title ms-1 ">Sign out</span>

@@ -125,8 +125,7 @@ export default {
         utils.titleBoxRender(this)
     },
     watch: {
-        // eslint-disable-next-line no-unused-vars
-        async $route(to, from) {
+        async $route() {
             utils.titleBoxRender(this)
             this.active = this.date = null;
             await this.getDynamicSelectData();
