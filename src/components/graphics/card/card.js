@@ -1,5 +1,4 @@
 import * as general from "../../../controller/genaralController";
-import * as utils from "../../../settings/utils";
 import VueApexCharts from 'vue-apexcharts'
 
 export default {
@@ -96,7 +95,7 @@ export default {
 
         async setQueryData() {
             if (this.configuration.method != 'lstm') {
-                this.setQuery = await utils.convertURLDateParameter(this.from, this.to)
+                this.setQuery = await general.convertURLDateParameter(this.from, this.to)
             } else this.setQuery = "";
             return this.setQuery;
         },

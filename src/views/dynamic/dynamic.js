@@ -1,6 +1,7 @@
 import * as configurationsController from "../../controller/configurationsController";
 import * as genaralController from "../../controller/genaralController";
-import * as utils from "../../settings/utils";
+import * as general from "../../controller/genaralController";
+
 
 export default {
     data() {
@@ -117,16 +118,16 @@ export default {
         this.active = this.date = null;
         this.getDynamicSelectData();
         this.setModelsData();
-        //if (this.$route.name === 'Overall') {
+        if (this.$route.name === 'Overall') {
             this.date = this.setDefaultDate(1)
             this.setDate(this.date);
             this.active = 'active';
-        //}
-        utils.titleBoxRender(this)
+        }
+        general.titleBoxRender(this)
     },
     watch: {
         async $route() {
-            utils.titleBoxRender(this)
+            general.titleBoxRender(this)
             this.active = this.date = null;
             await this.getDynamicSelectData();
             await this.setModelsData();

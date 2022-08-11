@@ -1,5 +1,6 @@
 import * as configurationsController from "../../../controller/configurationsController";
-import * as utils from "../../../settings/utils";
+import * as chartController from "../../../controller/chartController";
+
 import VueApexCharts from 'vue-apexcharts'
 
 export default {
@@ -42,7 +43,7 @@ export default {
         },
         drawChart() {
             this.shows.chart = true;
-            this.options = utils.createOption(this.model)
+            this.options = chartController.createOption(this.model)
             this.options.series = [
                 {
                     name: 'series1',

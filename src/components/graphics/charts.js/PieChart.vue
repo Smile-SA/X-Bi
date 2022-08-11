@@ -9,7 +9,7 @@
 
 <script>
     import BaseChart from "./BaseChart";
-    import * as utils from "../../../settings/utils";
+    import * as chartController from "../../../controller/chartController";
     import Chart from "chart.js";
 
     export default {
@@ -18,7 +18,7 @@
         props: ['idL', 'height', 'configuration', 'dataS'],
         methods: {
             graphConfiguration(response, c) {
-                let dataset = utils.groupBy(response, c.sort)
+                let dataset = chartController.groupBy(response, c.sort)
                 const labels = [...Object.keys(dataset)]
                 const colors = [...Object.keys(dataset)].map((item) => c.colors[item])
                 dataset = [...Object.values(dataset)].map((item) => item.length)

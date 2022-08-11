@@ -1,6 +1,6 @@
 import * as instance from "../../../../../controller/instancesController";
 import action from "../../../../../components/tableAction/urlAction";
-import * as utils from "../../../../../settings/utils";
+import * as general from "../../../../../controller/genaralController";
 
 export default {
     name: 'list-instances',
@@ -53,7 +53,7 @@ export default {
         },
     },
     async beforeMount() {
-        utils.titleBoxRender(this)
+        general.titleBoxRender(this)
         this.Instances();
     }
 }

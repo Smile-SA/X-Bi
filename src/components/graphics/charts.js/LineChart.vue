@@ -9,7 +9,7 @@
 
 <script>
     import BaseChart from "./BaseChart";
-    import * as utils from "../../../settings/utils";
+    import * as chartController from "../../../controller/chartController";
 
     export default {
         name: "LineChart",
@@ -19,7 +19,7 @@
             graphConfiguration(response, c) {
                 const graph = []
 
-                const dataset = utils.groupBy(response, c.sort)
+                const dataset = chartController.groupBy(response, c.sort)
 
                 const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 

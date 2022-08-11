@@ -1,6 +1,7 @@
 import * as CodeMirror from "codemirror";
 import * as template from "../../../../../controller/templatesController";
-import * as utils from "../../../../../settings/utils";
+import * as general from "../../../../../controller/genaralController";
+
 export default {
     name: 'display-template',
     components: {},
@@ -23,7 +24,7 @@ export default {
         }
     },
     async beforeMount(){
-        utils.titleBoxRender(this)
+        general.titleBoxRender(this)
         this.id = this.$route.params.id;
         this.display();
     },

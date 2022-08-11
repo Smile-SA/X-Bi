@@ -1,7 +1,7 @@
 import * as configurationsController from "../../../../controller/configurationsController";
 import action from "../../../../components/tableAction/sessionAction";
 import displayIcon from '../../../../components/layout/displayIcon';
-import * as utils from "../../../../settings/utils";
+import * as general from "../../../../controller/genaralController";
 
 export default {
     name: 'structure',
@@ -77,7 +77,7 @@ export default {
     },
     async beforeMount() {
         this.getStructure();
-        utils.titleBoxRender(this)
+        general.titleBoxRender(this)
     },
 }
 

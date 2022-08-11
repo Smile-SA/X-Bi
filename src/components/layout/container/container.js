@@ -1,4 +1,4 @@
-import {getJsonData} from "../../../controller/genaralController";
+import * as general from "../../../controller/genaralController";
 
 export default {
   name: 'container',
@@ -33,7 +33,7 @@ export default {
     },
     async getTenant() {
       const url = `/current`
-      this.user = await getJsonData(url)
+      this.user = await general.getJsonData(url)
     },
 
   },

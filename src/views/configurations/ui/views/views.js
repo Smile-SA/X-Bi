@@ -2,7 +2,8 @@ import * as configurationsController from "../../../../controller/configurations
 import viewDisplay from "../../../../components/uiForms/displayCheckBox";
 import displayIcon from "../../../../components/layout/displayIcon";
 import actions from "../../../../components/tableAction/sessionAction";
-import * as utils from "../../../../settings/utils";
+import * as general from "../../../../controller/genaralController";
+
 //this.$router.go(this.$router.currentRoute)
 
 export default {
@@ -82,7 +83,7 @@ export default {
     },
     async beforeMount() {
         this.getViews();
-        utils.titleBoxRender(this)
+        general.titleBoxRender(this)
     },
 }
 

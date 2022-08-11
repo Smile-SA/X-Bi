@@ -1,6 +1,8 @@
 import * as instance from "../../../../../controller/instancesController";
 import * as template from "../../../../../controller/templatesController";
-import * as utils from "../../../../../settings/utils";
+import * as chartController from "../../../../../controller/chartController";
+import * as general from "../../../../../controller/genaralController";
+
 
 export default {
     name: 'create-instance',
@@ -31,7 +33,7 @@ export default {
             this.dynamicValues = [];
             await template.getTemplate(value).then((r) => {
                 if (r.data.total > 0) {
-                    let valuesInit = utils.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
+                    let valuesInit = chartController.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
                     Object.keys(valuesInit).map((item) => {
                         if (valuesInit[item].replace(/[^a-z0-9]+/gi, ' ') === valuesInit[item]) {
                             this.dynamicValues.push({
@@ -145,7 +147,7 @@ export default {
         },
     },
     async beforeMount() {
-        utils.titleBoxRender(this)
+        general.titleBoxRender(this)
         this.getTemplates();
     }
 }

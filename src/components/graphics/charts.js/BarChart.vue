@@ -9,7 +9,7 @@
 
 <script>
     import BaseChart from "./BaseChart";
-    import * as utils from "../../../settings/utils";
+    import * as chartController from "../../../controller/chartController";
 
     export default {
         name: "BarChart",
@@ -20,7 +20,7 @@
                 const ctx = document.getElementById(c.id).getContext('2d')
 
                 const graph = []
-                const dataset = utils.groupBy(response, c.sort)
+                const dataset = chartController.groupBy(response, c.sort)
                 const labels = dataset[Object.keys(dataset)[0]].map(item => item[c.labels.time])
 
                 labels.forEach((item, count) => {

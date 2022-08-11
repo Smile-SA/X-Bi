@@ -1,16 +1,3 @@
-export function convertURLDateParameter(from, to) {
-    from = (from !== null) ? from : new Date(new Date().setHours(new Date().getHours() - 1)).toISOString()
-    to = (to !== null) ? to : new Date().toISOString()
-    from = from.replace('T', ' ')
-    to = to.replace('T', ' ')
-    return `?start=${from}&end=${to}`
-}
-
-export function getRandomColor() {
-    const chartColors = ['#001f3f', '#10375E', '#173A5E', '#93231D', '#173D5E', '#490B29', '#842D57', '#84512D', '#7F441A', '#a70446', '#7C123D', '#960A42', '#4F6B84', '#3b898d', '#9E511A', '#164F87', '#32415c', '#2C3C5B', '#511714', '#4D6087', '#324C63', '#d2d6de', '#b5bbc8', '#265149', '#538389', '#2D5459', '#4b93b0', '#66A0B7', '#771914', '#701611', '#385C6B', '#377275', '#2E5B50', '#a83d48', '#8E3039', '#842932', '#601F26', '#CC7B41', '#1C4D60', '#1F4B6B', '#1F6B5E', '#77143C', '#771458', '#6D1A42', '#9E351A', '#c26929']
-    return chartColors[Math.floor(Math.random() * chartColors.length)]
-}
-
 export function groupBy(objectArray, property) {
     return objectArray.reduce(function (acc, obj) {
         const key = obj[property]
@@ -145,22 +132,6 @@ export function createSerie(data, config, serieName, boucle) {
         'dataLabel': dataLabel,
         'total': total
     };
-}
-
-export function generateData(baseval, count, yrange) {
-    var i = 0;
-    var series = [];
-    while (i < count) {
-        //var x =Math.floor(Math.random() * (750 - 1 + 1)) + 1;;
-        var y =
-            Math.floor(Math.random() * (yrange.max - yrange.min + 1)) + yrange.min;
-        var z = Math.floor(Math.random() * (75 - 15 + 1)) + 15;
-
-        series.push([baseval, y, z]);
-        baseval += 86400000;
-        i++;
-    }
-    return series;
 }
 
 export function createOption(config, labels, colors, dataLabel, total) {
@@ -336,13 +307,4 @@ export function createSparkOption(config) {
         }
     }
     return data
-}
-
-export function titleBoxRender(that) {
-     that.hover = true;
-    // if (that.hover === true) {
-    //     setTimeout(() => {
-    //         that.hover = false
-    //     }, 10000);
-    // }
 }
