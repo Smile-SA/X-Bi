@@ -35,6 +35,7 @@ export default {
             if (structureType === 'view') {
                 this.model.path = this.model.name.replace(" ", "")
                 this.model.requiresAuth = true
+                this.model.displayInMenu = true
                 this.model.structure = {
                     "select": {
                         "models": [],
@@ -56,6 +57,9 @@ export default {
             if (configurationsController.addModel(structureType, this.model, this.viewId) === true) {
                 this.refreshFunction();
                 this.$formulate.reset('add-form'+ this.structureType)
+                if(structureType ==='view'){
+                    this.$router.go(this.$router.currentRoute)
+                }
             }
         },
     },

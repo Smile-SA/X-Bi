@@ -40,6 +40,9 @@ export default {
             if (configurationsController.editModel(structureType, this.viewId, this.model, this.modelId) === true) {
                 this.refreshFunction();
                 this.$modal.hide('edit-modal-' + this.structureType + this.modelId);
+                if(structureType ==='view'){
+                    this.$router.go(this.$router.currentRoute)
+                }
             }
         },
         getFormSchema(structureType) {

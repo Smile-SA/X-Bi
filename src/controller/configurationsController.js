@@ -11,6 +11,10 @@ let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views
     forms = uiConfigurations.forms;
 const Ajv = require("ajv"), ajv = new Ajv();
 
+export function getDynamics(){
+    return dynamics
+}
+
 export function getConfig() {
     return uiConfigurations;
 }

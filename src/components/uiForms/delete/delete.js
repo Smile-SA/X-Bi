@@ -23,6 +23,9 @@ export default {
             if (configurationsController.deleteModel(this.structureType, this.modelId, this.viewId) === true) {
                 this.refreshFunction()
                 this.hide();
+                if(this.structureType ==='view'){
+                    this.$router.go(this.$router.currentRoute)
+                }
             }
         }
     },
