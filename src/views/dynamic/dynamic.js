@@ -131,11 +131,11 @@ export default {
             this.active = this.date = null;
             await this.getDynamicSelectData();
             await this.setModelsData();
-           // if (this.$route.name === 'Overall') {
+            if (this.$route.name === 'Overall') {
                 this.date = this.setDefaultDate(1)
                 this.setDate(this.date);
                 this.active = 'active';
-            //}
+            }
         }
     },
 }

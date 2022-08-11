@@ -112,17 +112,12 @@
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
+                "type": "date"
               },
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
-                "query": "",
-                "query_key": "",
                 "default_data": "hour"
               }
             ],
@@ -140,11 +135,7 @@
                 "color": "red",
                 "redirect": "/namespaces",
                 "query": "/namespaces",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -155,11 +146,7 @@
                 "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -170,11 +157,7 @@
                 "color": "yellow",
                 "redirect": "/nodes",
                 "query": "/nodes",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -183,13 +166,9 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               }
             ],
@@ -245,23 +224,17 @@
                 "placeholder": "Select namespace",
                 "type": "dynamic",
                 "query": "/namespaces",
-                "query_key": "namespace",
-                "default_data": ""
+                "query_key": "namespace"
               },
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
+                "type": "date"
               },
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
-                "query": "",
-                "query_key": "",
                 "default_data": "hour"
               }
             ],
@@ -277,13 +250,9 @@
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
-                "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "sort_key": "",
-                "time_key": "",
                 "method": "avg",
-                "unit": "",
                 "value": ""
               },
               {
@@ -294,11 +263,7 @@
                 "color": "blue",
                 "redirect": "/pods",
                 "query": "/pods",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -309,11 +274,7 @@
                 "color": "yellow",
                 "redirect": "/nodes",
                 "query": "/nodes",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -322,13 +283,9 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               }
             ],
@@ -373,23 +330,17 @@
                 "placeholder": "Select node",
                 "type": "dynamic",
                 "query": "/nodes",
-                "query_key": "node",
-                "default_data": ""
+                "query_key": "node"
               },
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
+                "type": "date"
               },
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
-                "query": "",
-                "query_key": "",
                 "default_data": "hour"
               }
             ],
@@ -401,17 +352,13 @@
             "models": [
               {
                 "space": "1/4",
-                "type": "default",
+                "type": "chart",
                 "title": "Rating",
-                "icon": "fa-euro-sign",
-                "color": "red",
-                "redirect": "",
-                "query": "/total_rating",
+                "query": "/rating",
                 "query_key": "frame_price",
-                "sort_key": "",
-                "time_key": "",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
                 "method": "sum",
-                "unit": "",
                 "value": ""
               },
               {
@@ -420,13 +367,8 @@
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
-                "redirect": "",
                 "query": "/pods",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -435,13 +377,8 @@
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
-                "redirect": "",
                 "query": "/namespaces",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -450,13 +387,9 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               }
             ],
@@ -501,23 +434,17 @@
                 "placeholder": "Select pod",
                 "type": "dynamic",
                 "query": "/pods",
-                "query_key": "pod",
-                "default_data": ""
+                "query_key": "pod"
               },
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
+                "type": "date"
               },
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
-                "query": "",
-                "query_key": "",
                 "default_data": "hour"
               }
             ],
@@ -533,13 +460,9 @@
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
-                "redirect": "",
                 "query": "/total_rating",
                 "query_key": "frame_price",
-                "sort_key": "",
-                "time_key": "",
                 "method": "sum",
-                "unit": "",
                 "value": ""
               },
               {
@@ -548,13 +471,8 @@
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "primary",
-                "redirect": "",
                 "query": "/nodes",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -563,13 +481,8 @@
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
-                "redirect": "",
                 "query": "/namespaces",
-                "query_key": "",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               },
               {
@@ -578,13 +491,9 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "redirect": "",
                 "query": "/metrics",
                 "query_key": "metric",
-                "sort_key": "",
-                "time_key": "",
                 "method": "count",
-                "unit": "",
                 "value": ""
               }
             ],
@@ -629,23 +538,17 @@
                 "placeholder": "Select a instance",
                 "type": "dynamic",
                 "query": "/metrics",
-                "query_key": "metric",
-                "default_data": ""
+                "query_key": "metric"
               },
               {
                 "title": "Select a date",
                 "placeholder": "Select a date",
-                "type": "date",
-                "query": "",
-                "query_key": "",
-                "default_data": ""
+                "type": "date"
               },
               {
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
-                "query": "",
-                "query_key": "",
                 "default_data": "hour"
               }
             ],
@@ -764,7 +667,6 @@
         "type": "text",
         "name": "query",
         "placeholder": "Enter query link",
-        "value": "",
         "conditionFields": {
           "name": "type",
           "values": [
@@ -778,7 +680,6 @@
         "type": "text",
         "name": "query_key",
         "placeholder": "Enter query key to show in input",
-        "value": "",
         "conditionFields": {
           "name": "type",
           "values": [
@@ -798,7 +699,6 @@
           "month": "month",
           "year": "year"
         },
-        "value": "",
         "conditionFields": {
           "name": "type",
           "values": [

@@ -7,7 +7,7 @@ export default {
     components: {
         apexcharts: VueApexCharts,
     },
-    props: ['configuration', 'from', 'to', 'queryBegin','styles'],
+    props: ['configuration', 'from', 'to', 'queryBegin', 'styles'],
     data() {
         return {
             timer: '',

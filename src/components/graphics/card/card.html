@@ -1,7 +1,7 @@
-<router-link class="pointer" :to="configuration.redirect" custom v-slot="{ navigate }">
+<router-link class="pointer" :to="configuration.redirect ? configuration.redirect : ''" custom v-slot="{ navigate }">
     <div class="xbi" v-if="configuration !== undefined " @click="navigate" @keypress.enter="navigate" role="link">
         <div class="display-flex xbi-card pointer p-3"
-             :class="configuration.type!='chart' ? 'bg-gradient-'+configuration.color : configuration.color">
+             :class="configuration.type!=='chart' ? 'bg-gradient-'+configuration.color : configuration.color">
             <div class="card-content">
                 <div class="icon-card text-center border-radius-md center" v-if="configuration.type!='chart'">
                     <font-awesome-icon class="h-100" :icon="['fas',configuration.icon]"/>
@@ -16,7 +16,7 @@
                     <div class="text-end mb-0 pb-0">
                     <span>
                         <span class="value h2">{{ configuration.value }}</span>
-                        <span v-if=" configuration.unit!=null || configuration.unit!=undefined || configuration.unit!=''"
+                        <span v-if=" configuration.unit!==null || configuration.unit!==undefined || configuration.unit!=''"
                               class="unit h4"> {{configuration.unit }}</span>
                     </span>
                         <br class="p-0 m-0" v-if="configuration.type!='multi-icon'">
