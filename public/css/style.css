@@ -2539,6 +2539,10 @@ img,
 svg {
     vertical-align: middle;
 }
+.svg-inline--fa{
+    height : 1em;
+    width : 1em
+}
 
 table {
     caption-side: bottom;
@@ -16176,6 +16180,7 @@ code {
 
 #title-box .page-title {
     height: 34.5px;
+    padding-top: 0.6rem!important;
 }
 
 .center {
@@ -16193,7 +16198,7 @@ code {
     display: inline; /* the default for span */
     width: 100px;
     height: 100px;
-    padding: 0.3rem;
+    padding: 0.35rem;
     border-radius: 0.5rem;
     -webkit-box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
     box-shadow: 1px 1px 5px 1px rgba(32, 174, 225, 0.20);
@@ -20766,6 +20771,10 @@ dl li {
     .sidebar-offcanvas.active {
         left: 0;
     }
+}
+
+@media screen and (max-width: 991px) {
+
 }
 
 /* Layouts */
