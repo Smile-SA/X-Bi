@@ -194,11 +194,14 @@ $gutters: 24px;
     }
 
     .form-remember {
-      font-size: 12px;
+      font-size: 14px;
       font-weight: $regular;
       letter-spacing: 0;
       text-transform: none;
-
+      span {
+        font-size: 14px;
+        font-weight: 500;
+      }
       input[type='checkbox'] {
         -webkit-appearance: none;
         -moz-appearance: none;
@@ -208,7 +211,7 @@ $gutters: 24px;
         background: #ddd;
         border-radius: 3em;
         position: relative;
-        top: 2px;
+        top: 5px;
         cursor: pointer;
         outline: none;
         -webkit-transition: all .2s ease-in-out;
@@ -225,8 +228,9 @@ $gutters: 24px;
 
     .form-recovery {
       color: $accent;
-      font-size: 12px;
+      font-size: 14px;
       text-decoration: none;
+      padding-top: 6px;
     }
   }
 

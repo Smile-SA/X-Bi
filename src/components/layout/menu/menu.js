@@ -2,6 +2,7 @@ import * as configurationsController from "../../../controller/configurationsCon
 
 var uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 import {logOut} from "../../../controller/authController";
+import $ from "jquery";
 
 export default {
     name: 'menu-layout',
@@ -39,6 +40,13 @@ export default {
         },
         logoutUser() {
             logOut();
+        },
+        reduceMenu(){
+            if ($( "body" ).hasClass('sidebar-icon-only')) {
+                $( "body" ).removeClass( 'sidebar-icon-only');
+            } else {
+                $( "body" ).addClass( 'sidebar-icon-only');
+            }
         },
     },
     async beforeMount() {
