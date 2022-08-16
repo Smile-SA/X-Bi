@@ -25,21 +25,21 @@
         <div v-for="item in menus">
             <div v-if="item.children!=undefined" class="">
                 <li class="nav-item">
-                    <h6 class="d-flex nowrap align-items-center m-3 mb-1 mt-2">
-                        <div class="icon border-radius-md text-center  me-2 d-flex align-items-center justify-content-center">
+                    <div class="sub-title menu-icon border-radius-md">
+                        <div class="icon border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                             <font-awesome-icon class="menu-icon text-primary" :icon="['fas',item.icon]"/>
                         </div>
-                        <span class="sub-menu-title text-uppercase font-weight-bolder text-primary">{{
+                        <span class="sub-menu-title ms-1 text-primary text-uppercase font-weight-bolder">{{
                                 item.name
                             }}</span>
-                    </h6>
+                    </div>
                 </li>
                 <router-link v-for="subItem in item.children" class="pointer" :to="'/'+subItem.name" custom
                              v-slot="{ navigate }">
                     <li v-bind:class="$route.name==subItem.name || $route.path.includes((subItem.name).toLowerCase()) || ($route.path.includes((subItem.path).toLowerCase()) && subItem.path!='' && subItem.path!='/') ? 'nav-item active' : 'nav-item '">
                         <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
                            role="link">
-                            <div class="icon   shadow border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                            <div class="icon shadow border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                                 <font-awesome-icon class="menu-icon" :icon="['fas',subItem.icon]"/>
                             </div>
                             <span class="menu-title ms-1">{{ subItem.name }}</span>
@@ -61,21 +61,20 @@
             </router-link>
         </div>
         <div class="sidenav-footer nav-item mt-2 ">
-            <div class="nav-link menu-icon border-radius-md display-block bg-primary text-white border-radius-md">
-                <a href=""
-                   class="icon icon-shape shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
-                    <font-awesome-icon class=" text-primary text-primary text-lg " :icon="['fas','fa-info']"/>
-                </a>
+            <div class="nav-link menu-icon display-block bg-primary text-white border-radius-md">
+                <div class="icon icon-shape border-radius-md shadow bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" menu-icon text-primary text-lg " :icon="['fas','fa-info']"/>
+                </div>
                 <div class="docs-info ms-2 me-2 mt-2">
                     <h6>Need help?</h6>
                     <p class="font-weight-bold">Please check our docs</p>
-                    <a href="" target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
+                    <a target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
                 </div>
             </div>
-            <div class="nav-link mt-2 btn btn-outline-danger menu-icon border-radius-md border-radius-md logout"
+            <div class="nav-link mt-2 btn btn-outline-danger menu-icon   logout"
                  role="link" v-on:click="logoutUser">
-                <div class="icon   shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
-                    <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-info']"/>
+                <div class="icon shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-power-off']"/>
                 </div>
                 <span class="menu-title ms-1 ">Sign out</span>
             </div>

@@ -77,7 +77,7 @@ svg{
   width : 1em
 }
 
-.nav-link .icon svg{
+.nav-link .icon svg,.sub-title .icon svg{
   padding: 0.35rem;
   color: var(--bs-icon-bg);
 }
@@ -85,8 +85,8 @@ svg{
 
 
 .icon-shape {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.7rem;
+  height: 1.7rem;
   background-position: 50%;
   border-radius: 0.5rem;
 }

@@ -20460,8 +20460,8 @@ dl li {
     margin-left: auto;
 }
 
-.rtl .sidebar .nav .nav-item .nav-link svg.menu-icon {
-    margin-left: 0;
+ .sidebar .nav .nav-item .nav-link svg.menu-icon {
+     margin-left: auto;
     margin-right: auto;
 }
 
@@ -21051,6 +21051,15 @@ dl li {
     background: var(--bs-white);
 }
 
+.sub-title {
+    padding:0.5rem!important;
+    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    transition-duration: 0.45s;
+    transition-property: color;
+    -webkit-transition-property: color;
+}
 /*# sourceMappingURL=style.css.map */
 
 /* MARGINS & PADDINGS */
