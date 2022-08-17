@@ -14,13 +14,13 @@
     <div  :class="hover ? 'col-sm-9' : 'col-sm-11-5'" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
         <div class="row">
             <select-option v-for="(item,keys) in select.models" class="col-sm-4 m-b"
-                           v-if="(item.type === 'Date' ? showDatePicker() : item.type === 'group' ? showGroup() : true) === true"
+                           v-if="(item.type === 'Date' ? showDatePicker() : item.type === 'group' ? showGroup() : item.type === 'dynamic' ? setDynamicDataSelectId(item.id) : true )=== true"
                            :type="item.type"
                            :label="item.title"
                            :replace=undefined
                            :by=undefined
                            :selectId=item.query_key
-                           :defaultData="item.default_data"
+                           :defaultData="item.type === 'Date' ? this.date : item.default_data"
                            :placeholder="item.placeholder"
                            :selectFunction="item.type === 'date' ?  setDate : item.type === 'group' ?  setGroup : item.type === 'dynamic' ? setDynamicDataSelect : ''"
                            :selectData="item.type === 'date' ?  date : item.type === 'group' ? groupOptions : item.type === 'dynamic' ?  dynamicData : '' ">
@@ -31,7 +31,7 @@
         <div class="row">
             <div v-for="item in structure.card.models"
                  :class="item.space === '1/4' ? 'col-sm-3 m-b' : item.space === '2/4' ? 'col-sm-6 m-b' : item.space === '3/4' ? 'col-sm-9 m-b' : item.space === '4/4' ? 'col-sm-12 m-b' : 'col-sm-4 m-b'">
-                <Card :configuration="item" :queryBegin="queryBegin" :from="from" :to="to"
+                <Card :configuration="item" :queryData="queryData"
                       :styles="structure.card.styles"></Card>
             </div>
         </div>
@@ -40,7 +40,7 @@
         <div class="row">
             <div v-for="item in structure.chart.models"
                  :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
-                <apex-charts :configuration="item" :from="from" :queryBegin="queryBegin" :styles="structure.chart.styles" :to="to" :group="group">
+                <apex-charts :configuration="item" :queryData="queryData" :styles="structure.chart.styles" :group="group">
                 </apex-charts>
             </div>
         </div>

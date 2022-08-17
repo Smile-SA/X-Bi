@@ -345,6 +345,8 @@ export async function refreshDate(date, that) {
         that.to = that.to.replace('T', ' ')
         that.from = that.from.replace('T', ' ')
     }
+    that.queryData['start'] = that.from;
+    that.queryData['end'] = that.to;
 
     let s = getCardModels(that.$route.name)
     if (s.data.errors !== true) {

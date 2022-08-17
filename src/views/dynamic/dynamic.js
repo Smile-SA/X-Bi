@@ -8,8 +8,9 @@ export default {
         return {
             group: 'hour',
             groupOptions: ['hour', 'day', 'month', 'year'],
-            queryBegin: "",
+            queryData: {},
             to: null,
+            dynamicDataSelectId:'',
             from: null,
             date: null,
             hover: true,
@@ -33,6 +34,10 @@ export default {
         }
     },
     methods: {
+        setDynamicDataSelectId(id){
+            this.dynamicDataSelectId = id;
+            return true
+        },
         showDatePicker() {
             return this.active !== null
         },
@@ -41,7 +46,7 @@ export default {
         },
         async setDynamicDataSelect(input) {
             this.active = input.target.value;
-            this.queryBegin = this.queryLink + '/' + this.active;
+            this.queryData[this.dynamicDataSelectId] = this.active;
             this.setDate(this.date);
         },
         async setDate(date) {
@@ -74,6 +79,15 @@ export default {
             } else {
                 this.select.models = {};
                 this.select.styles = {};
+            }
+        },
+        todayFunction () {
+            const n = new Date()
+            const startToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 1, 0, 0)
+            const endToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 0, 23, 59)
+            return {
+                    start: startToday,
+                    end: endToday
             }
         },
         setDefaultDate(jour, month, year) {
@@ -115,11 +129,12 @@ export default {
         },
     },
     beforeMount() {
+        this.queryData = {};
         this.active = this.date = null;
         this.getDynamicSelectData();
         this.setModelsData();
         if (this.$route.name === 'Overall') {
-            this.date = this.setDefaultDate(1)
+            this.date = this.todayFunction()
             this.setDate(this.date);
             this.active = 'active';
         }
@@ -127,12 +142,13 @@ export default {
     },
     watch: {
         async $route() {
+            this.queryData = {};
             general.titleBoxRender(this)
             this.active = this.date = null;
             await this.getDynamicSelectData();
             await this.setModelsData();
-            if (this.$route.name === 'Overall') {
-                this.date = this.setDefaultDate(1)
+            if (this.$route.name === 'Cities') {
+                this.date = this.todayFunction()
                 this.setDate(this.date);
                 this.active = 'active';
             }

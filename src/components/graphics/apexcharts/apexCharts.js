@@ -4,7 +4,7 @@ import * as general from "../../../controller/genaralController";
 export default {
     name: 'apexCharts', components: {
         apexcharts: VueApexCharts,
-    }, props: ['configuration', 'styles', 'from', 'to', 'group', 'queryBegin', 'name'], data() {
+    }, props: ['configuration', 'styles',  'group', 'queryData', 'name'], data() {
         return {
             data: {},
         }
@@ -18,7 +18,7 @@ export default {
                     }
                 });
             } else {
-                await general.getDataByVariableAndDateToApex(this.configuration, this).then(async (r) => {
+                await general.getDataByVariableAndDateToApex(this.configuration,this.queryData,this).then(async (r) => {
                     if (r.total > 0) {
                         this.data = r;
                     }

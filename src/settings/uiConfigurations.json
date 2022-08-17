@@ -99,10 +99,10 @@
     ],
     "dynamics": [
       {
-        "name": "Overall",
+        "name": "Cities",
         "path": "/",
         "icon": "fa-house-chimney-window",
-        "description": "Home view",
+        "description": "Cities view",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -110,11 +110,13 @@
           "select": {
             "models": [
               {
+                "id": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
                 "type": "date"
               },
               {
+                "id": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
@@ -130,45 +132,46 @@
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Namespace",
-                "icon": "fa-diagram-project",
+                "title": "Cities",
+                "icon": "fa-city",
                 "color": "red",
-                "redirect": "/namespaces",
-                "query": "/namespaces",
+                "redirect": "/city",
+                "query": "/cities",
                 "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Pods",
-                "icon": "fa-sitemap",
+                "title": "Areas",
+                "icon": "fa-map",
                 "color": "blue",
-                "redirect": "/pods",
-                "query": "/pods",
-                "method": "count",
-                "value": ""
+                "query": "/cities",
+                "query_key": "area",
+                "method": "sum",
+                "value": "",
+                "unit": "km²"
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Nodes",
-                "icon": "fa-share-nodes",
+                "title": "Inhabitants",
+                "icon": "fa-people-roof",
                 "color": "yellow",
-                "redirect": "/nodes",
-                "query": "/nodes",
-                "method": "count",
+                "query": "/cities",
+                "query_key": "inhabitants",
+                "method": "sum",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Metrics",
-                "icon": "fa-share-nodes",
+                "title": "Devices",
+                "icon": "fa-person-digging",
                 "color": "green",
-                "query": "/metrics",
-                "query_key": "metric",
-                "method": "count",
+                "query": "/cities",
+                "query_key": "device",
+                "method": "sum",
                 "value": ""
               }
             ],
@@ -179,25 +182,14 @@
           "chart": {
             "models": [
               {
-                "title": "Nodes rate (in Euros) ",
-                "query": "/nodes/rating",
-                "query_key": "frame_price",
-                "sort_key": "node",
-                "time_key": "frame_begin",
+                "title": "Device uses by city",
+                "query": "/devices",
+                "query_key": "device",
+                "sort_key": "city",
+                "time_key": "date",
                 "type": "area",
                 "method": "default",
-                "space": "1/2",
-                "is_monitoring": false
-              },
-              {
-                "title": "Namespaces Energy Efficiency",
-                "query": "/namespaces/rating",
-                "query_key": "frame_price",
-                "sort_key": "namespace",
-                "time_key": "frame_begin",
-                "type": "area",
-                "method": "default",
-                "space": "1/2",
+                "space": "2/2",
                 "is_monitoring": false
               }
             ],
@@ -209,10 +201,10 @@
         }
       },
       {
-        "name": "Namespaces",
-        "path": "/namespaces",
-        "icon": "fa-diagram-project",
-        "description": "Detailed view of namespaces",
+        "name": "City",
+        "path": "/city",
+        "icon": "fa-tree-city",
+        "description": "Detailed view of city information",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -220,18 +212,21 @@
           "select": {
             "models": [
               {
-                "title": "Namespace",
-                "placeholder": "Select namespace",
+                "id": "city",
+                "title": "City",
+                "placeholder": "Select city",
                 "type": "dynamic",
-                "query": "/namespaces",
-                "query_key": "namespace"
+                "query": "/cities",
+                "query_key": "city"
               },
               {
+                "id": "date",
                 "title": "Select a date",
                 "placeholder": "Select a date",
                 "type": "date"
               },
               {
+                "id": "group",
                 "title": "Group data by",
                 "placeholder": "Select a group",
                 "type": "group",
@@ -247,254 +242,47 @@
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Rating",
-                "icon": "fa-euro-sign",
+                "title": "Cities",
+                "icon": "fa-city",
                 "color": "red",
-                "query": "/total_rating",
-                "query_key": "frame_price",
-                "method": "avg",
+                "redirect": "/city",
+                "query": "/cities",
+                "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Pods",
-                "icon": "fa-sitemap",
+                "title": "Areas",
+                "icon": "fa-map",
                 "color": "blue",
-                "redirect": "/pods",
-                "query": "/pods",
-                "method": "count",
-                "value": ""
+                "query": "/cities",
+                "query_key": "area",
+                "method": "sum",
+                "value": "",
+                "unit": "km²"
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Nodes",
-                "icon": "fa-share-nodes",
+                "title": "Inhabitants",
+                "icon": "fa-people-roof",
                 "color": "yellow",
-                "redirect": "/nodes",
-                "query": "/nodes",
-                "method": "count",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Metrics",
-                "icon": "fa-share-nodes",
-                "color": "green",
-                "query": "/metrics",
-                "query_key": "metric",
-                "method": "count",
-                "value": ""
-              }
-            ],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "chart": {
-            "models": [
-              {
-                "title": "Metrics rate (in Euros)",
-                "query": "/rating",
-                "query_key": "frame_price",
-                "sort_key": "metric",
-                "time_key": "frame_begin",
-                "type": "bar",
-                "method": "default",
-                "space": "2/2",
-                "is_monitoring": false
-              }
-            ],
-            "styles": {
-              "height": "400",
-              "font_size": "20px"
-            }
-          }
-        }
-      },
-      {
-        "name": "Nodes",
-        "path": "/nodes",
-        "icon": "fa-share-nodes",
-        "description": "Detailed view of nodes",
-        "display": true,
-        "displayInMenu": true,
-        "requiresAuth": true,
-        "structure": {
-          "select": {
-            "models": [
-              {
-                "title": "Node",
-                "placeholder": "Select node",
-                "type": "dynamic",
-                "query": "/nodes",
-                "query_key": "node"
-              },
-              {
-                "title": "Select a date",
-                "placeholder": "Select a date",
-                "type": "date"
-              },
-              {
-                "title": "Group data by",
-                "placeholder": "Select a group",
-                "type": "group",
-                "default_data": "hour"
-              }
-            ],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "card": {
-            "models": [
-              {
-                "space": "1/4",
-                "type": "chart",
-                "title": "Rating",
-                "query": "/rating",
-                "query_key": "frame_price",
-                "sort_key": "metric",
-                "time_key": "frame_begin",
+                "query": "/cities",
+                "query_key": "inhabitants",
                 "method": "sum",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Pods",
-                "icon": "fa-sitemap",
-                "color": "blue",
-                "query": "/pods",
-                "method": "count",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Namespaces",
-                "icon": "fa-diagram-project",
-                "color": "yellow",
-                "query": "/namespaces",
-                "method": "count",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Metrics",
-                "icon": "fa-share-nodes",
+                "title": "Devices",
+                "icon": "fa-person-digging",
                 "color": "green",
-                "query": "/metrics",
-                "query_key": "metric",
-                "method": "count",
-                "value": ""
-              }
-            ],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "chart": {
-            "models": [
-              {
-                "title": "Nodes metrics rate (in Euros)",
-                "query": "/rating",
-                "query_key": "frame_price",
-                "sort_key": "metric",
-                "time_key": "frame_begin",
-                "type": "bar",
-                "method": "default",
-                "is_monitoring": false,
-                "space": "2/2"
-              }
-            ],
-            "styles": {
-              "height": "400",
-              "font_size": "20px"
-            }
-          }
-        }
-      },
-      {
-        "name": "Pods",
-        "path": "/pods",
-        "icon": "fa-sitemap",
-        "description": "Detailed view of pods",
-        "display": true,
-        "displayInMenu": true,
-        "requiresAuth": true,
-        "structure": {
-          "select": {
-            "models": [
-              {
-                "title": "Pod",
-                "placeholder": "Select pod",
-                "type": "dynamic",
-                "query": "/pods",
-                "query_key": "pod"
-              },
-              {
-                "title": "Select a date",
-                "placeholder": "Select a date",
-                "type": "date"
-              },
-              {
-                "title": "Group data by",
-                "placeholder": "Select a group",
-                "type": "group",
-                "default_data": "hour"
-              }
-            ],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "card": {
-            "models": [
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Rating",
-                "icon": "fa-euro-sign",
-                "color": "red",
-                "query": "/total_rating",
-                "query_key": "frame_price",
+                "query": "/cities",
+                "query_key": "device",
                 "method": "sum",
                 "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Nodes",
-                "icon": "fa-share-nodes",
-                "color": "primary",
-                "query": "/nodes",
-                "method": "count",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Namespaces",
-                "icon": "fa-diagram-project",
-                "color": "yellow",
-                "query": "/namespaces",
-                "method": "count",
-                "value": ""
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Metrics",
-                "icon": "fa-share-nodes",
-                "color": "green",
-                "query": "/metrics",
-                "query_key": "metric",
-                "method": "count",
-                "value": ""
               }
             ],
             "styles": {
@@ -504,76 +292,15 @@
           "chart": {
             "models": [
               {
-                "title": "Pod metrics rate (in Euros)",
-                "query": "/rating",
-                "query_key": "frame_price",
-                "sort_key": "metric",
-                "time_key": "frame_begin",
-                "type": "line",
-                "method": "default",
-                "space": "2/2",
-                "is_monitoring": false
-              }
-            ],
-            "styles": {
-              "height": "400",
-              "font_size": "20px"
-            }
-          }
-        }
-      },
-      {
-        "name": "Monitoring",
-        "path": "/monitoring",
-        "icon": "fa-chart-simple",
-        "description": "Live data Monitoring",
-        "display": true,
-        "displayInMenu": true,
-        "requiresAuth": true,
-        "structure": {
-          "select": {
-            "models": [
-              {
-                "title": "Instance",
-                "placeholder": "Select a instance",
-                "type": "dynamic",
-                "query": "/metrics",
-                "query_key": "metric"
-              },
-              {
-                "title": "Select a date",
-                "placeholder": "Select a date",
-                "type": "date"
-              },
-              {
-                "title": "Group data by",
-                "placeholder": "Select a group",
-                "type": "group",
-                "default_data": "hour"
-              }
-            ],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "card": {
-            "models": [],
-            "styles": {
-              "height": "60"
-            }
-          },
-          "chart": {
-            "models": [
-              {
-                "title": "Nodes rate (in Euros)",
-                "query": "/rating",
-                "query_key": "price",
-                "sort_key": "instance",
-                "time_key": "frame_begin",
+                "title": "Device uses by city",
+                "query": "/devices",
+                "query_key": "device",
+                "sort_key": "city",
+                "time_key": "date",
                 "type": "area",
                 "method": "default",
                 "space": "2/2",
-                "is_monitoring": true
+                "is_monitoring": false
               }
             ],
             "styles": {
@@ -584,6 +311,541 @@
         }
       }
     ]
+  },
+  "controls": {
+    "view": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "displayInMenu": {
+            "type": "boolean",
+            "default": true
+          },
+          "requiresAuth": {
+            "type": "boolean",
+            "default": true
+          },
+          "structure": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "icon",
+          "display",
+          "path",
+          "displayInMenu",
+          "requiresAuth"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "name",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view name"
+          },
+          {
+            "model": "description",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view description"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "display",
+            "type": "switch",
+            "required": false,
+            "label": "Display",
+            "default": false
+          }
+        ]
+      }
+    },
+    "select": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "placeholder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Date",
+              "Group",
+              "Dynamic"
+            ]
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 0
+          },
+          "default_data": {
+            "type": "string",
+            "minLength": 0
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "default_data"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Title"
+          },
+          {
+            "model": "placeholder",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Placeholder"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Type",
+            "values": [
+              "Date",
+              "Dynamic",
+              "Group"
+            ]
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query data key to show in input"
+          },
+          {
+            "model": "default_data",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Default data"
+          }
+        ]
+      }
+    },
+    "card": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "blue",
+              "dark",
+              "red",
+              "green",
+              "indigo",
+              "orange",
+              "pink",
+              "purple",
+              "yellow",
+              "white"
+            ]
+          },
+          "redirect": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string"
+          },
+          "sort_key": {
+            "type": "string"
+          },
+          "time_key": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "avg",
+              "count",
+              "lstm",
+              "sum"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "icon",
+          "color",
+          "query",
+          "method",
+          "type"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card title"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "color",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card color class",
+            "values": [
+              "blue",
+              "cyan",
+              "dark",
+              "green",
+              "indigo",
+              "orange",
+              "pink",
+              "purple",
+              "red",
+              "white",
+              "yellow"
+            ]
+          },
+          {
+            "model": "redirect",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card redirect link"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card value calculation key"
+          },
+          {
+            "model": "sort_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card sort key"
+          },
+          {
+            "model": "time_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card time key"
+          },
+          {
+            "model": "method",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card calculation method",
+            "values": [
+              "avg",
+              "count",
+              "lstm",
+              "sum"
+            ]
+          },
+          {
+            "model": "unit",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Enter the unit of the result value"
+          }
+        ]
+      }
+    },
+    "chart": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sort_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "time_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "area",
+              "bar",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "polarArea",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "default",
+              "top",
+              "down"
+            ]
+          },
+          "is_monitoring": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "title",
+          "query",
+          "query_key",
+          "sort_key",
+          "time_key",
+          "type",
+          "method",
+          "space",
+          "is_monitoring"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart title"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart type",
+            "values": [
+              "area",
+              "bar",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "polarArea",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart query key"
+          },
+          {
+            "model": "sort_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart sort key"
+          },
+          {
+            "model": "time_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart time key"
+          },
+          {
+            "model": "method",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart method",
+            "label": "Chart method",
+            "values": [
+              "default",
+              "top",
+              "down"
+            ]
+          },
+          {
+            "model": "is_monitoring",
+            "type": "switch",
+            "required": false,
+            "label": "Is monitoring",
+            "default": false,
+            "multi": true,
+            "textOn": "True",
+            "textOff": "False"
+          }
+        ]
+      }
+    }
   },
   "forms": {
     "view": [
@@ -635,6 +897,13 @@
       }
     ],
     "select": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "id",
+        "placeholder": "Enter select id",
+        "validation": "required|min:1,length|max:22,length"
+      },
       {
         "component": "FormulateInput",
         "type": "text",
@@ -932,4 +1201,6 @@
     ]
   }
 }
+
+
 

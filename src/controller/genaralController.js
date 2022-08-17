@@ -14,12 +14,12 @@ export function generalDelete(deleteUrl, name, id) {
     });
 }
 
-export async function getJsonData(url, method) {
+export async function getJsonData(url,queryData, method) {
     let request = roRequest;
     if (method && method === 'lstm') {
         request = lstRequest;
     }
-    return await request.get(url).then(async (r) => {
+    return await request.get(url,{params:queryData}).then(async (r) => {
         if (r.data.total) {
             return {total: r.data.total, results: r.data.results};
         } else return {total: Object.keys(r.data).length, results: r.data.results ? r.data.results : r.data};
@@ -46,10 +46,8 @@ export function titleBoxRender(that) {
     }
 }
 
-export async function getDataByVariableAndDateToApex(config, that) {
-    const queryDate = convertURLDateParameter(that.from, that.to)
-    let url = that.queryBegin + config.query + queryDate;
-    return roRequest.get(url).then(async (r) => {
+export async function getDataByVariableAndDateToApex(config,queryData,that) {
+    return roRequest.get(config.query,{params:queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
@@ -92,9 +90,9 @@ export async function getDataByVariableAndDateToApex(config, that) {
 }
 
 export async function getDataByDateToApex(config, that, name) {
-
-    const queryDate = convertURLDateParameter(that.from, that.to)
-    let url = that.queryBegin + config.query + queryDate;
+     // that.queryData +
+    const queryData = convertURLDateParameter(that.from, that.to)
+    let url = config.query + queryData;
     return await roRequest.get(url).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}

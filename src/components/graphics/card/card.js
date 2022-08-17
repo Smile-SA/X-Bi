@@ -6,7 +6,7 @@ export default {
     components: {
         apexcharts: VueApexCharts,
     },
-    props: ['configuration', 'from', 'to', 'queryBegin', 'styles'],
+    props: ['configuration', 'queryData', 'styles'],
     data() {
         return {
             timer: '',
@@ -16,14 +16,13 @@ export default {
         }
     },
     methods: {
-
         async getData() {
-            await this.setQueryData();
             switch (this.configuration.type) {
                 case"default" :
                 case"multi-icon":
                     this.lstm = {}
-                    await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery, this.configuration.method).then((r) => {
+                    await general.getJsonData(this.configuration.query,this.queryData,this.configuration.method)
+                        .then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "avg":
@@ -32,7 +31,7 @@ export default {
                                         .toFixed(2)
                                     break;
                                 case "count":
-                                    this.configuration.value = r.total;
+                                    this.configuration.value = r.results.length;
                                     break;
                                 case "lstm":
                                     this.configuration.value = (r.results[this.configuration.query_key]).toFixed(2)
@@ -40,9 +39,9 @@ export default {
                                     this.lstm = r.results
                                     break;
                                 case "sum":
-                                    this.configuration.value = (r.results.length >= 1) ?
-                                        r.results[0][this.configuration.query_key].toFixed(2) :
-                                        r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
+                                    this.configuration.value = (r.results.length <= 1) ?
+                                        parseFloat(r.results[0][this.configuration.query_key]) :
+                                        r.results.map(item => parseFloat(item[this.configuration.query_key])).reduce((a, b) => a + b, 0).toFixed(0)
                                     break;
                             }
                             this.$forceUpdate()
@@ -60,7 +59,7 @@ export default {
                             this.sparkLine.options.chart.type = "line";
                         }
                     });
-                    await general.getJsonData(this.queryBegin + this.configuration.query + this.setQuery, this.configuration.method).then((r) => {
+                    await general.getJsonData( this.configuration.query ,this.queryData , this.configuration.method).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "avg":
@@ -92,15 +91,6 @@ export default {
             }
             this.configuration.value = (this.configuration.value).toString()
         },
-
-        async setQueryData() {
-            if (this.configuration.method != 'lstm') {
-                this.setQuery = await general.convertURLDateParameter(this.from, this.to)
-            } else this.setQuery = "";
-            return this.setQuery;
-        },
-
-
     },
     beforeMount() {
         this.getData(this.configuration.method);
