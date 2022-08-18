@@ -1,17 +1,6 @@
 <div class="row">
-    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
-        <div class="apex-box">
-            <div class="display-flex ">
-                <div class="page-title pt-2 ps-1-5">
-                    <div class="page-title-icon bg-primary shadow text-white">
-                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
-                    </div>
-                </div>
-                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
-            </div>
-        </div>
-    </div>
-    <div  :class="hover ? 'col-sm-9' : 'col-sm-11-5'" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
+    <title-box :hover="hover" :icon="$route.meta.icon" :description="$route.meta.description"></title-box>
+    <div :class="hover ? 'col-sm-9' : 'col-sm-11-5'" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
         <div class="row">
             <select-option v-for="(item,keys) in select.models" class="col-sm-4 m-b"
                            v-if="(item.type === 'Date' ? showDatePicker() : item.type === 'group' ? showGroup() : item.type === 'dynamic' ? setDynamicDataSelectId(item.id) : true )=== true"
@@ -38,8 +27,7 @@
     </div>
     <div class="col-12" v-if="structure.chart.models!=undefined &&  Object.keys(structure.chart.models).length>0">
         <div class="row">
-            <div v-for="item in structure.chart.models"
-                 :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
+            <div v-for="item in structure.chart.models" :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
                 <apex-charts :configuration="item" :queryData="queryData" :styles="structure.chart.styles" :group="group">
                 </apex-charts>
             </div>

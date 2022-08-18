@@ -1,4 +1,4 @@
-import * as controller from "../controller/configurationsController.js"
+import * as controller from "./configurationsController.js"
 
 let conf = controller.getConfig();
 

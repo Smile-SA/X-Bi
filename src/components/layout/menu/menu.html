@@ -12,13 +12,13 @@
         <div class="nav-profile ms-3 me-4 mt-3 mb-3 ">
             <div class="pointer d-flex ms-2 me-2 ">
                 <div class="nav-profile-image">
-                    <img v-if='this.image !== ""' :src="image" alt="image" class="img-center">
+                    <img v-if='user.image !== ""' :src="user.image" alt="image" class="img-center">
                     <span class="availability-status online"></span>
                     <!--change to offline or busy as needed-->
                 </div>
                 <div class="nav-profile-text d-flex flex-column mt-1">
-                    <span class="font-weight-bold mb-1 text-capitalize   ">{{ tenant }}</span>
-                    <span class=" text-small">{{ email }}</span>
+                    <span class="font-weight-bold mb-1 text-capitalize">{{ user.username }}</span>
+                    <span class=" text-small">{{ user.email }}</span>
                 </div>
             </div>
         </div>
@@ -61,17 +61,18 @@
             </router-link>
         </div>
         <div class="sidenav-footer nav-item mt-2 ">
-            <div class="nav-link menu-icon display-block bg-primary text-white border-radius-md">
+            <a class="nav-link menu-icon display-block bg-primary text-white border-radius-md" target="_blank" :href="xBiInfo.documentationUrl">
                 <div class="icon icon-shape border-radius-md shadow bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                     <font-awesome-icon class=" menu-icon text-primary text-lg " :icon="['fas','fa-info']"/>
                 </div>
                 <div class="docs-info ms-2 me-2 mt-2">
                     <h6>Need help?</h6>
                     <p class="font-weight-bold">Please check our docs</p>
-                    <a target="_blank" class="btn btn-outline-white  w-100 ">Documentation</a>
+                    <a target="_blank" :href="xBiInfo.documentationUrl" class="btn btn-outline-white  w-100 ">Documentation</a>
                 </div>
-            </div>
-            <div class="nav-link mt-2 btn btn-outline-danger menu-icon   logout"
+            </a>
+
+            <div class="nav-link mt-2 btn btn-outline-danger menu-icon logout"
                  role="link" v-on:click="logoutUser">
                 <div class="icon shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
                     <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-power-off']"/>

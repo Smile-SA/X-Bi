@@ -17949,7 +17949,7 @@ code {
 .btn-outline-danger:hover, .btn-outline-danger:focus, .btn-outline-danger:active {
     background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-danger))) !important;
     background: linear-gradient(to right, #ffbf96, var(--bs-danger)) !important;
-    color: var(--bs-white);
+    color: var(--bs-white)!important;
 }
 
 .btn-inverse-light {

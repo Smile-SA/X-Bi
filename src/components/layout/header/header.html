@@ -10,17 +10,17 @@
                     <a class="nav-link dropdown-toggle text-primary pointer" v-on:click="dropDownEvent()"
                        data-bs-toggle="dropdown">
                         <div class="nav-profile-img">
-                            <img v-if='this.image !== ""' :src="image" alt="image">
+                            <img v-if='user.image !== ""' :src="user.image" alt="image">
                             <span class="availability-status online"></span>
                         </div>
                         <div class="nav-profile-text ">
-                            <p class="mb-1 ">{{ "Signed in as " + tenant }}</p>
+                            <p class="mb-1 ">{{ "Signed in as " + user.username }}</p>
                         </div>
                     </a>
                     <div :class=" drop ? 'dropdown-menu navbar-dropdown show text-primary' : 'dropdown-menu navbar-dropdown text-primary'">
                         <a class="dropdown-item ">
                             <font-awesome-icon class="me-2 " :icon="['fas','fa-at']"/>
-                            {{ email }} </a>
+                            {{ user.email }} </a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" v-on:click="logoutUser">
                             <font-awesome-icon class="me-2 text-danger" :icon="['fas','fa-power-off']"/>

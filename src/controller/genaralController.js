@@ -1,12 +1,11 @@
-import * as variables from "../settings/variables";
-const roRequest = variables.ratingOperatorInstanceRequest();
-const lstRequest = variables.lstmInstanceRequest();
- import * as chartController from "../controller/chartController"
+import * as chartController from "../controller/chartController";
+import axios from "axios";
+
 
 export function generalDelete(deleteUrl, name, id) {
     const Params = new FormData();
     Params.append(name, id);
-    return roRequest.post(deleteUrl, Params).then(async (r) => {
+    return axios.post(deleteUrl, Params).then(async (r) => {
         return !!r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(errors => {
@@ -14,12 +13,8 @@ export function generalDelete(deleteUrl, name, id) {
     });
 }
 
-export async function getJsonData(url,queryData, method) {
-    let request = roRequest;
-    if (method && method === 'lstm') {
-        request = lstRequest;
-    }
-    return await request.get(url,{params:queryData}).then(async (r) => {
+export async function getJsonData(url,queryData) {
+    return await axios.get(url,{params:queryData}).then(async (r) => {
         if (r.data.total) {
             return {total: r.data.total, results: r.data.results};
         } else return {total: Object.keys(r.data).length, results: r.data.results ? r.data.results : r.data};
@@ -47,7 +42,7 @@ export function titleBoxRender(that) {
 }
 
 export async function getDataByVariableAndDateToApex(config,queryData,that) {
-    return roRequest.get(config.query,{params:queryData}).then(async (r) => {
+    return axios.get(config.query,{params:queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
@@ -93,7 +88,7 @@ export async function getDataByDateToApex(config, that, name) {
      // that.queryData +
     const queryData = convertURLDateParameter(that.from, that.to)
     let url = config.query + queryData;
-    return await roRequest.get(url).then(async (r) => {
+    return await axios.get(url).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {

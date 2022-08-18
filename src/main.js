@@ -13,11 +13,12 @@ import VModal from "vue-js-modal";
 import AppComponent from './app/index.vue';
 import card from './components/graphics/card';
 import ApexCharts from './components/graphics/apexcharts';
-import selectOption from './components/layout/selectOption';
+import selectOption from './components/action/selectOption';
 import addForm from "./components/uiForms/add";
 import editForm from "./components/uiForms/edit";
 import deleteForm from "./components/uiForms/delete";
 import previewForm from "./components/uiForms/preview";
+import titleBox from "./components/layout/titleBox";
 
 /* import fontawesome */
 import {library} from '@fortawesome/fontawesome-svg-core'
@@ -34,6 +35,7 @@ Vue.component('font-awesome-icon', FontAwesomeIcon)
 Vue.component("VueApexCharts", VueApexCharts);
 Vue.component("selectOption", selectOption);
 Vue.component("ApexCharts", ApexCharts);
+Vue.component("titleBox", titleBox);
 Vue.component("Card", card);
 Vue.component("addForm", addForm);
 Vue.component("editForm", editForm);
@@ -65,7 +67,5 @@ import '../public/vendors/css/vendor.bundle.base.css';
 import '../public/css/style.css';
 import '../public/css/sass.scss';
 import '../public/css/vueFormulate.scss';
-
-
 import 'codemirror/mode/javascript/javascript.js';
 import '@fortawesome/fontawesome-free/js/all.js'

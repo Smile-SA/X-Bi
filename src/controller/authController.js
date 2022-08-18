@@ -1,26 +1,26 @@
-import {ratingOperatorInstanceRequest} from "../settings/variables";
-import * as uiConfigurations from "../settings/uiConfigurations.json"
-
-const roRequest = ratingOperatorInstanceRequest();
+import * as uiConfigurations from "../uiConfigurations.json"
+import axios from "axios";
+let apiInfo = uiConfigurations.apiInfo;
 
 export async function checkConnectionWithAPI() {
     // eslint-disable-next-line no-unused-vars
-    roRequest.get('').catch(error => {
+    axios.get(apiInfo.url).catch(error => {
         logOut();
     });
 }
 
-export async function logIn(tenant, password) {
+export async function logIn(username, password) {
     const User = new FormData();
-    User.append("tenant", tenant);
+    User.append("username", username);
     User.append("password", password);
     // eslint-disable-next-line no-unused-vars
-    return roRequest.post('/login_user', User).then(async (r) => {
+    return axios.post(apiInfo.login, User).then(async (r) => {
         if (r.data.login === true) {
             window.sessionStorage.setItem('isLogin', r.data.login);
-            window.sessionStorage.setItem('tenant', tenant);
+            window.sessionStorage.setItem('user', JSON.stringify(r.data.user));
             window.sessionStorage.setItem('timestamp', Date.now());
             window.sessionStorage.setItem('uiConfigurations', JSON.stringify(uiConfigurations));
+            r.data.redirectAfterLogin = apiInfo.redirectAfterLogin
             return r.data;
         } else {
             deleteSession();
@@ -47,5 +47,5 @@ export async function deleteSession() {
 export async function logOut() {
     window.sessionStorage.clear();
     window.localStorage.clear();
-    window.location.href = '/login';
+    window.location.href = apiInfo.redirectAfterLogout;
 }

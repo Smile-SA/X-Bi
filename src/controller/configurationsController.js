@@ -1,4 +1,4 @@
-import * as uiConf from "../settings/uiConfigurations.json"
+import * as uiConf from "../uiConfigurations.json"
 
 let uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 if (uiConfigurations === null) {
@@ -8,11 +8,19 @@ if (uiConfigurations.default !== undefined) {
     uiConfigurations = uiConfigurations.default;
 }
 let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views.statics,
-    forms = uiConfigurations.forms;
+    forms = uiConfigurations.forms,
+    apiInfo = uiConfigurations.apiInfo,
+    xBiInfo = uiConfigurations.xBiInfo
 const Ajv = require("ajv"), ajv = new Ajv();
 
 export function getDynamics(){
     return dynamics
+}
+export function getApiInfo(){
+    return apiInfo
+}
+export function getXBiInfo(){
+    return xBiInfo
 }
 
 export function getConfig() {

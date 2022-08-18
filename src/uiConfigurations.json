@@ -1,0 +1,1163 @@
+{
+  "apiInfo": {
+    "url": "http://localhost:5012/",
+    "login": "http://localhost:5012/login_user",
+    "logout": "http://localhost:5012/login_user",
+    "password": "http://localhost:5012/password",
+    "redirectAfterLogin": "/",
+    "redirectAfterLogout": "/login"
+  },
+  "xBiInfo": {
+    "name": "X-BI",
+    "documentationUrl": "https://git.rnd.alterway.fr/overboard/x-bi/x-bi/-/blob/main/README.md"
+  },
+  "views": {
+    "default": {
+      "path": "/",
+      "icon": "fa-house-chimney-window",
+      "component": "Layout/container/index.vue",
+      "description": "Global infrastructure view",
+      "requiresAuth": true
+    },
+    "statics": [
+      {
+        "name": "Views configuration",
+        "icon": "fa-tv",
+        "display": true,
+        "displayInMenu": true,
+        "path": "/views",
+        "component": "views/uiConfigurations/views/index.vue",
+        "description": "Views configuration",
+        "requiresAuth": true
+      },
+      {
+        "name": "Views structure",
+        "path": "views/:id",
+        "icon": "fa-angle-right",
+        "component": "views/uiConfigurations/structure/index.vue",
+        "description": "View structure configurations",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      }
+    ],
+    "dynamics": [
+      {
+        "name": "Cities",
+        "path": "/",
+        "icon": "fa-house-chimney-window",
+        "description": "Cities view",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Cities",
+                "icon": "fa-city",
+                "color": "red",
+                "redirect": "/city",
+                "query": "http://localhost:5012/cities",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Areas",
+                "icon": "fa-map",
+                "color": "blue",
+                "query": "http://localhost:5012/cities",
+                "query_key": "area",
+                "method": "sum",
+                "value": "",
+                "unit": "km²"
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Inhabitants",
+                "icon": "fa-people-roof",
+                "color": "yellow",
+                "query": "http://localhost:5012/cities",
+                "query_key": "inhabitants",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Devices",
+                "icon": "fa-person-digging",
+                "color": "green",
+                "query": "http://localhost:5012/cities",
+                "query_key": "device",
+                "method": "sum",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Device uses by city",
+                "query": "http://localhost:5012/devices",
+                "query_key": "device",
+                "sort_key": "city",
+                "time_key": "date",
+                "type": "area",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "500",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "City",
+        "path": "/city",
+        "icon": "fa-tree-city",
+        "description": "Detailed view of city information",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "city",
+                "title": "City",
+                "placeholder": "Select city",
+                "type": "dynamic",
+                "query": "http://localhost:5012/cities",
+                "query_key": "city"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Cities",
+                "icon": "fa-city",
+                "color": "red",
+                "redirect": "/city",
+                "query": "http://localhost:5012/cities",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Areas",
+                "icon": "fa-map",
+                "color": "blue",
+                "query": "http://localhost:5012/cities",
+                "query_key": "area",
+                "method": "sum",
+                "value": "",
+                "unit": "km²"
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Inhabitants",
+                "icon": "fa-people-roof",
+                "color": "yellow",
+                "query": "http://localhost:5012/cities",
+                "query_key": "inhabitants",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Devices",
+                "icon": "fa-person-digging",
+                "color": "green",
+                "query": "http://localhost:5012/cities",
+                "query_key": "device",
+                "method": "sum",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Device uses by city",
+                "query": "http://localhost:5012/devices",
+                "query_key": "device",
+                "sort_key": "city",
+                "time_key": "date",
+                "type": "area",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "controls": {
+    "view": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "minLength": 1
+          },
+          "description": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "display": {
+            "type": "boolean"
+          },
+          "path": {
+            "type": "string",
+            "minLength": 1
+          },
+          "displayInMenu": {
+            "type": "boolean",
+            "default": true
+          },
+          "requiresAuth": {
+            "type": "boolean",
+            "default": true
+          },
+          "structure": {
+            "type": "object"
+          }
+        },
+        "required": [
+          "name",
+          "description",
+          "icon",
+          "display",
+          "path",
+          "displayInMenu",
+          "requiresAuth"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "name",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view name"
+          },
+          {
+            "model": "description",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "view description"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "display",
+            "type": "switch",
+            "required": false,
+            "label": "Display",
+            "default": false
+          }
+        ]
+      }
+    },
+    "select": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "placeholder": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "Date",
+              "Group",
+              "Dynamic"
+            ]
+          },
+          "query": {
+            "type": "string",
+            "minLength": 0
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 0
+          },
+          "default_data": {
+            "type": "string",
+            "minLength": 0
+          }
+        },
+        "required": [
+          "type",
+          "title",
+          "query",
+          "default_data"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Title"
+          },
+          {
+            "model": "placeholder",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Placeholder"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Type",
+            "values": [
+              "Date",
+              "Dynamic",
+              "Group"
+            ]
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Query data key to show in input"
+          },
+          {
+            "model": "default_data",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Default data"
+          }
+        ]
+      }
+    },
+    "card": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1
+          },
+          "color": {
+            "type": "string",
+            "enum": [
+              "blue",
+              "dark",
+              "red",
+              "green",
+              "indigo",
+              "orange",
+              "pink",
+              "purple",
+              "yellow",
+              "white"
+            ]
+          },
+          "redirect": {
+            "type": "string"
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string"
+          },
+          "sort_key": {
+            "type": "string"
+          },
+          "time_key": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "avg",
+              "count",
+              "lstm",
+              "sum"
+            ]
+          },
+          "unit": {
+            "type": "string"
+          },
+          "value": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "title",
+          "icon",
+          "color",
+          "query",
+          "method",
+          "type"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/4",
+              "2/4",
+              "3/4",
+              "4/4"
+            ]
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card type",
+            "values": [
+              "chart",
+              "default",
+              "multi-icon"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card title"
+          },
+          {
+            "model": "icon",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Enter card icon class"
+          },
+          {
+            "model": "color",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card color class",
+            "values": [
+              "blue",
+              "cyan",
+              "dark",
+              "green",
+              "indigo",
+              "orange",
+              "pink",
+              "purple",
+              "red",
+              "white",
+              "yellow"
+            ]
+          },
+          {
+            "model": "redirect",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card redirect link"
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Card query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card value calculation key"
+          },
+          {
+            "model": "sort_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card sort key"
+          },
+          {
+            "model": "time_key",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Card time key"
+          },
+          {
+            "model": "method",
+            "type": "select",
+            "required": true,
+            "placeholder": "Card calculation method",
+            "values": [
+              "avg",
+              "count",
+              "lstm",
+              "sum"
+            ]
+          },
+          {
+            "model": "unit",
+            "type": "input",
+            "inputType": "text",
+            "required": false,
+            "placeholder": "Enter the unit of the result value"
+          }
+        ]
+      }
+    },
+    "chart": {
+      "schema": {
+        "type": "object",
+        "properties": {
+          "space": {
+            "type": "string",
+            "enum": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query": {
+            "type": "string",
+            "minLength": 1
+          },
+          "query_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "sort_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "time_key": {
+            "type": "string",
+            "minLength": 1
+          },
+          "type": {
+            "type": "string",
+            "enum": [
+              "area",
+              "bar",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "polarArea",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "default",
+              "top",
+              "down"
+            ]
+          },
+          "is_monitoring": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "title",
+          "query",
+          "query_key",
+          "sort_key",
+          "time_key",
+          "type",
+          "method",
+          "space",
+          "is_monitoring"
+        ],
+        "additionalProperties": false
+      },
+      "form": {
+        "fields": [
+          {
+            "model": "space",
+            "type": "select",
+            "required": true,
+            "placeholder": "Space per row",
+            "values": [
+              "1/2",
+              "2/2"
+            ]
+          },
+          {
+            "model": "title",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart title"
+          },
+          {
+            "model": "type",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart type",
+            "values": [
+              "area",
+              "bar",
+              "donut",
+              "heatmap",
+              "histogram",
+              "line",
+              "polarArea",
+              "radar",
+              "radialBar",
+              "scatter"
+            ]
+          },
+          {
+            "model": "query",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart query link"
+          },
+          {
+            "model": "query_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart query key"
+          },
+          {
+            "model": "sort_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart sort key"
+          },
+          {
+            "model": "time_key",
+            "type": "input",
+            "inputType": "text",
+            "required": true,
+            "placeholder": "Chart time key"
+          },
+          {
+            "model": "method",
+            "type": "select",
+            "required": true,
+            "placeholder": "Chart method",
+            "label": "Chart method",
+            "values": [
+              "default",
+              "top",
+              "down"
+            ]
+          },
+          {
+            "model": "is_monitoring",
+            "type": "switch",
+            "required": false,
+            "label": "Is monitoring",
+            "default": false,
+            "multi": true,
+            "textOn": "True",
+            "textOff": "False"
+          }
+        ]
+      }
+    }
+  },
+  "forms": {
+    "view": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "name",
+        "placeholder": "Enter view name",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "description",
+        "placeholder": "Enter view description",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter view icon class",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "checkbox",
+        "name": "display",
+        "label": "view display",
+        "value": false
+      },
+      {
+        "type": "text",
+        "name": "path"
+      },
+      {
+        "type": "text",
+        "name": "displayInMenu",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "requiresAuth",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "structure"
+      }
+    ],
+    "select": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "id",
+        "placeholder": "Enter select id",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter select title",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "placeholder",
+        "placeholder": "Enter title placeholder",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select type",
+        "options": {
+          "date": "Date",
+          "dynamic": "Dynamic",
+          "group": "Group"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "dynamic"
+          ],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key to show in input",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "dynamic"
+          ],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "default_data",
+        "placeholder": "Select default data",
+        "options": {
+          "hour": "hour",
+          "day": "day",
+          "month": "month",
+          "year": "year"
+        },
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "group"
+          ],
+          "validation": "required"
+        }
+      }
+    ],
+    "card": [
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/4": "1/4",
+          "2/4": "2/4",
+          "3/4": "3/4",
+          "4/4": "4/4"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter card title",
+        "validation": "required|min:1,length|max:20,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "redirect",
+        "placeholder": "Enter redirect link"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select card type",
+        "options": {
+          "chart": "chart",
+          "default": "default",
+          "multi-icon": "multi-icon"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "color",
+        "options": {
+          "blue": "blue",
+          "cyan": "cyan",
+          "dark": "dark",
+          "green": "green",
+          "indigo": "indigo",
+          "orange": "orange",
+          "pink": "pink",
+          "purple": "purple",
+          "red": "red",
+          "white": "white",
+          "yellow": "yellow"
+        },
+        "placeholder": "Select card color",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter card icon class",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "chart"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "chart"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "avg": "avg",
+          "count": "count",
+          "lstm": "lstm",
+          "sum": "sum"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "unit",
+        "placeholder": "Enter value unit",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default",
+            "multi-icon"
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "name": "value"
+      }
+    ],
+    "chart": [
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/2": "1/2",
+          "2/2": "2/2"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter chart title",
+        "validation": "required|min:1,length|max:99,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select chart type",
+        "options": {
+          "area": "area",
+          "bar": "bar",
+          "donut": "donut",
+          "heatmap": "heatmap",
+          "histogram": "histogram",
+          "line": "line",
+          "polarArea": "polarArea",
+          "radar": "radar",
+          "radialBar": "radialBar",
+          "scatter": "scatter"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "default": "default",
+          "top": "top",
+          "down": "down"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "checkbox",
+        "name": "is_monitoring",
+        "label": "Is monitoring"
+      }
+    ]
+  }
+}
+
+
+

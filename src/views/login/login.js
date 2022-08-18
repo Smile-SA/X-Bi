@@ -1,10 +1,13 @@
-import {generateAPIUrl} from '../../settings/variables';
 import {logIn} from "../../controller/authController";
-
+import * as uiConfigurations from "../../uiConfigurations.json";
+let apiInfo = uiConfigurations.apiInfo;
 export default {
-    name: 'login', components: {}, props: [], data() {
+    name: 'login',
+    components: {},
+    props: [],
+    data() {
         return {
-            api: generateAPIUrl(), message: "", showError: false,
+            message: "", showError: false,
         }
     }, computed: {}, mounted() {
 
@@ -12,22 +15,18 @@ export default {
         loginUser(e) {
             this.showError = false;
             e.preventDefault();
-            logIn(this.$refs.form.tenant.value, this.$refs.form.password.value).then((data) => {
+            logIn(this.$refs.form.username.value, this.$refs.form.password.value).then((data) => {
                 if (data.login) {
-                    this.$refs.form.tenant.value = '';
+                    this.$refs.form.username.value = '';
                     this.$refs.form.password.value = '';
-                    this.$router.push('/');
+                    this.$router.push(apiInfo.redirectAfterLogin);
                 } else {
                     this.message = data.message;
                     this.showError = true;
                 }
             });
         }, password: function () {
-            return (`${this.api}/password`)
-        }, login: function () {
-            return (`${this.api}/login_user`)
-        }, signup: function () {
-            return (`${this.api}/signup`)
+            return (apiInfo.password)
         }
     }
 }
