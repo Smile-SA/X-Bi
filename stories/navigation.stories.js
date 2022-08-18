@@ -1,14 +1,16 @@
-window.jQuery = require('jquery');
-window.$ = require('jquery');
-import MenuLayout from '../src/components/layout/menu';
-import HeaderLayout from '../src/components/layout/header';
+import menuLayout from '../src/components/layout/menu';
+import headerLayout from '../src/components/layout/header';
 import footerLayout from '../src/components/layout/footerLayout';
-import TitleBoxLayout from '../src/components/layout/titleBox';
-import {object} from "@storybook/addon-knobs";
+import titleBoxLayout from '../src/components/layout/titleBox';
+import {object, withKnobs} from "@storybook/addon-knobs";
 import * as configurationsController from "../src/controller/configurationsController";
+import StoryRouter from "storybook-vue-router";
 
 export default {
-    title: 'Navigation'
+    title: 'Navigation',
+    decorators: [withKnobs, StoryRouter(
+        {},
+    )]
 };
 
 export const SideMenu = () => ({
@@ -24,7 +26,7 @@ export const SideMenu = () => ({
         menus: {
             type: Array,
             default: object('menus', [
-                    {
+                {
                     description: "Cities view",
                     display: true,
                     displayInMenu: true,
@@ -34,7 +36,7 @@ export const SideMenu = () => ({
                     requiresAuth: true,
                     structure: Object
                 },
-                    {
+                {
                     description: "Detailed view of city information",
                     display: true,
                     displayInMenu: true,
@@ -44,7 +46,7 @@ export const SideMenu = () => ({
                     requiresAuth: true,
                     structure: Object
                 }
-                ])
+            ])
         },
         xBiInfo: {
             type: Object,
@@ -54,9 +56,9 @@ export const SideMenu = () => ({
         show: {},
     },
 
-    components: {MenuLayout},
+    components: {menuLayout},
     template: '<div>' +
-        '<MenuLayout  :user="user" :xBiInfo="xBiInfo" :menus="null" :isActive="isActive" :show="show" ></MenuLayout>' +
+        '<menuLayout :menus="menus" :user="user" :xBiInfo="xBiInfo"  :isActive="isActive" :show="show" ></menuLayout>' +
         '</div>',
     methods: {},
 });
@@ -72,7 +74,7 @@ export const Header = () => ({
         },
     },
 
-    components: {HeaderLayout},
+    components: {headerLayout},
     template: '<div>' +
         '<header-layout :user="user"></header-layout>' +
         '</div>',
@@ -117,9 +119,9 @@ export const TitleBox = () => ({
             default: object('hover',true)
         },
     },
-    components: {TitleBoxLayout},
+    components: {titleBoxLayout},
     template: '<div class="container-sm m-0 ms-2 p-3">' +
-        '<TitleBoxLayout :hover="hover" :icon="icon" :description="description"></TitleBoxLayout>' +
+        '<titleBoxLayout :hover="hover" :icon="icon" :description="description"></titleBoxLayout>' +
         '</div>',
     methods: {},
 });
