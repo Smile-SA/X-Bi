@@ -15,6 +15,7 @@ export default {
             date: null,
             hover: true,
             queryLink: '',
+            additionalUrl: '',
             active: null,
             dynamicData: [],
             select: {
@@ -34,19 +35,17 @@ export default {
         }
     },
     methods: {
-        setDynamicDataSelectId(id){
-            this.dynamicDataSelectId = id;
-            return true
-        },
         showDatePicker() {
             return this.active !== null
         },
         showGroup() {
-            return this.active !== null && this.date !== null
+            return this.date !== null && this.active !== null
         },
-        async setDynamicDataSelect(input) {
+        // eslint-disable-next-line no-unused-vars
+        async setDynamicDataSelect(input,id) {
+            //this.queryData[id] = this.active;
+            this.additionalUrl=id+'/'+this.active;
             this.active = input.target.value;
-            this.queryData[this.dynamicDataSelectId] = this.active;
             this.setDate(this.date);
         },
         async setDate(date) {
@@ -104,6 +103,7 @@ export default {
             return {start: n, end: a}
         },
         async getDynamicSelectData() {
+            this.active = null;
             let hasDynamicSelect = false
             this.select = {}
             await this.getStructureModelsData();
@@ -112,7 +112,7 @@ export default {
                     if (this.select.models[key].type === 'dynamic') {
                         hasDynamicSelect = true;
                         this.queryLink = this.select.models[key].query;
-                        genaralController.getJsonData(this.select.models[key].query).then((r) => {
+                        genaralController.getJsonData(this.select.models[key]).then((r) => {
                             if (r.total > 0) {
                                 this.dynamicData = r.results
                             } else {
@@ -122,35 +122,36 @@ export default {
                     }
                 })
             }
-            console.log()
             if (!hasDynamicSelect) {
                 this.active = true;
             }
         },
     },
     beforeMount() {
+        this.active = null;
+        this.date = null;
         this.queryData = {};
-        this.active = this.date = null;
-        this.getDynamicSelectData();
         this.setModelsData();
+        this.getDynamicSelectData();
+        general.titleBoxRender(this)
         if (this.$route.name === 'Overall') {
+            this.active = '';
             this.date = this.todayFunction()
             this.setDate(this.date);
-            this.active = 'active';
         }
-        general.titleBoxRender(this)
     },
     watch: {
-        async $route() {
+        $route() {
+            this.active = null;
+            this.date = null;
             this.queryData = {};
             general.titleBoxRender(this)
-            this.active = this.date = null;
-            await this.getDynamicSelectData();
-            await this.setModelsData();
-            if (this.$route.name === 'Cities') {
+            this.getDynamicSelectData();
+            this.setModelsData();
+            if (this.$route.name === 'Overall') {
+                this.active = '';
                 this.date = this.todayFunction()
                 this.setDate(this.date);
-                this.active = 'active';
             }
         }
     },

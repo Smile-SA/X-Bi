@@ -6,7 +6,7 @@ export default {
     components: {
         apexcharts: VueApexCharts,
     },
-    props: ['configuration', 'queryData', 'styles'],
+    props: ['configuration', 'queryData', 'styles','additionalUrl','group'],
     data() {
         return {
             timer: '',
@@ -21,14 +21,15 @@ export default {
                 case"default" :
                 case"multi-icon":
                     this.lstm = {}
-                    await general.getJsonData(this.configuration.query,this.queryData,this.configuration.method)
+                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData,this.configuration.method)
                         .then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "avg":
-                                    this.configuration.value = (r.results.map(item => item[this.configuration.query_key])
+
+                                    this.configuration.value = (r.results.length > 0) ? (r.results.map(item => item[this.configuration.query_key])
                                         .reduce((a, b) => a + b) / r.results.length)
-                                        .toFixed(2)
+                                        .toFixed(2) : 0
                                     break;
                                 case "count":
                                     this.configuration.value = r.results.length;
@@ -39,9 +40,9 @@ export default {
                                     this.lstm = r.results
                                     break;
                                 case "sum":
-                                    this.configuration.value = (r.results.length <= 1) ?
-                                        parseFloat(r.results[0][this.configuration.query_key]) :
-                                        r.results.map(item => parseFloat(item[this.configuration.query_key])).reduce((a, b) => a + b, 0).toFixed(0)
+                                    this.configuration.value = (r.results.length < 1) ?
+                                        parseFloat(r.results[0][this.configuration.query_key]) : (r.results.length > 1) ?
+                                    r.results.map(item => parseFloat(item[this.configuration.query_key])).reduce((a, b) => a + b, 0).toFixed(0) : 0
                                     break;
                             }
                             this.$forceUpdate()
@@ -53,19 +54,20 @@ export default {
                     break;
                 case "chart":
                     this.sparkLine.height = undefined;
-                    await general.getDataByVariableAndDateToApex(this.configuration, this).then(async (r) => {
+                    await general.getDataByVariableAndDateToApex(this.configuration,this.additionalUrl,this.queryData, this.group,this.styles,).then(async (r) => {
                         if (r.total > 0) {
                             this.sparkLine = r;
                             this.sparkLine.options.chart.type = "line";
                         }
                     });
-                    await general.getJsonData( this.configuration.query ,this.queryData , this.configuration.method).then((r) => {
+                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData , this.configuration.method).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "avg":
-                                    this.configuration.value = (r.results.map(item => item[this.configuration.query_key])
+
+                                    this.configuration.value = (r.results.length > 0) ? (r.results.map(item => item[this.configuration.query_key])
                                         .reduce((a, b) => a + b) / r.results.length)
-                                        .toFixed(2)
+                                        .toFixed(2) : 0
                                     break;
                                 case "count":
                                     this.configuration.value = r.total;
@@ -76,9 +78,9 @@ export default {
                                     this.lstm = r.results
                                     break;
                                 case "sum":
-                                    this.configuration.value = (r.results.length >= 1) ?
-                                        r.results[0][this.configuration.query_key].toFixed(2) :
-                                        r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2)
+                                    this.configuration.value = (r.results.length < 1) ?
+                                        r.results[0][this.configuration.query_key].toFixed(2) : (r.results.length > 1) ?
+                                            r.results[0].map(item => item[this.configuration.query_key]).reduce((a, b) => a + b, 0).toFixed(2) : 0
                                     break;
                             }
                             this.$forceUpdate()

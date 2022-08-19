@@ -13,7 +13,13 @@ export function generalDelete(deleteUrl, name, id) {
     });
 }
 
-export async function getJsonData(url,queryData) {
+export async function getJsonData(config,additionalUrl,queryData) {
+    let url = config.query
+    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+        var parser = document.createElement('a');
+        parser.href = config.query;
+        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+    }
     return await axios.get(url,{params:queryData}).then(async (r) => {
         if (r.data.total) {
             return {total: r.data.total, results: r.data.results};
@@ -41,14 +47,20 @@ export function titleBoxRender(that) {
     }
 }
 
-export async function getDataByVariableAndDateToApex(config,queryData,that) {
-    return axios.get(config.query,{params:queryData}).then(async (r) => {
+export async function getDataByVariableAndDateToApex(config,additionalUrl,queryData,group,styles) {
+    let url = config.query
+    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+        var parser = document.createElement('a');
+        parser.href = config.query;
+        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+    }
+    return axios.get(url,{params:queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
             let data = chartController.groupBy(r.data.results, config.sort_key);
             Object.keys(data).map((item) => {
-                data[item] = chartController.groupByDate(data[item], that.group, config.time_key);
+                data[item] = chartController.groupByDate(data[item], group, config.time_key);
                 Object.keys(data[item]).map((subItem) => {
                     data[item][subItem] = data[item][subItem].reduce(function (r, a) {
                         if (!r[a[config.sort_key]]) {
@@ -74,7 +86,7 @@ export async function getDataByVariableAndDateToApex(config,queryData,that) {
             r.data.lastDate = cs.lastDate
 
             r.data.options = chartController.createOption(config, cs.labels, cs.colors, cs.dataLabel, cs.total);
-            r.data.height = that.styles.height;
+            r.data.height = styles.height;
             delete r.data.results;
             return r.data;
         }
@@ -84,16 +96,18 @@ export async function getDataByVariableAndDateToApex(config,queryData,that) {
     });
 }
 
-export async function getDataByDateToApex(config, that, name) {
-     // that.queryData +
-    const queryData = convertURLDateParameter(that.from, that.to)
-    let url = config.query + queryData;
-    return await axios.get(url).then(async (r) => {
+export async function getDataByDateToApex(config,additionalUrl,queryData,group,styles, name) {
+    let url = config.query
+    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+        var parser = document.createElement('a');
+        parser.href = config.query;
+        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+    }
+    return await axios.get(url,{params:queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
-
-            let data = chartController.groupByDate(r.data.results, that.group, config.time_key);
+            let data = chartController.groupByDate(r.data.results,group, config.time_key);
             Object.keys(data).map((item) => {
                 data[item] = data[item].reduce(function (r, a) {
                     if (r[config.query_key] === undefined) {
@@ -109,7 +123,7 @@ export async function getDataByDateToApex(config, that, name) {
             r.data.series = cs.series
             r.data.lastDate = cs.lastDate
             r.data.options = chartController.createOption(config);
-            r.data.height = that.styles.height;
+            r.data.height = styles.height;
             delete r.data.results;
             return r.data;
         }

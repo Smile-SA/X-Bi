@@ -2,7 +2,7 @@
 export default {
   name: 'title-box',
   components: {},
-  props: ['hover','icon','description'],
+  props: ['that','icon','description'],
   data () {
     return {
 

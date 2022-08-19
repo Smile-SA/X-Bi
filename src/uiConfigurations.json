@@ -31,6 +31,34 @@
         "requiresAuth": true
       },
       {
+        "name": "KPIs Configurations",
+        "icon": "fa-gear",
+        "display": true,
+        "displayInMenu": true,
+        "children": [
+          {
+            "name": "Templates",
+            "path": "/templates",
+            "icon": "fa-angle-right",
+            "component": "views/configurations/kpis/templates/listTemplates/index.vue",
+            "description": "View of templates",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true
+          },
+          {
+            "name": "Instances",
+            "path": "/instances",
+            "icon": "fa-angle-right",
+            "component": "views/configurations/kpis/instances/listInstances/index.vue",
+            "description": "View of instances",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true
+          }
+        ]
+      },
+      {
         "name": "Views structure",
         "path": "views/:id",
         "icon": "fa-angle-right",
@@ -39,14 +67,54 @@
         "display": true,
         "displayInMenu": false,
         "requiresAuth": true
+      },
+      {
+        "name": "Create instance",
+        "path": "/instances/create",
+        "icon": "fa-angle-right",
+        "component": "views/configurations/kpis/instances/createInstance/index.vue",
+        "description": "View of instance creation",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Display instance",
+        "path": "/instances/:id",
+        "icon": "fa-angle-right",
+        "component": "views/configurations/kpis/instances/displayInstance/index.vue",
+        "description": "Detailed of instance",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Create template",
+        "path": "/templates/create",
+        "icon": "fa-angle-right",
+        "component": "views/configurations/kpis/templates/createTemplate/index.vue",
+        "description": "View of template creation",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "Display template",
+        "path": "/templates/:id",
+        "icon": "fa-angle-right",
+        "component": "views/configurations/kpis/templates/displayTemplate/index.vue",
+        "description": "Detailed of template",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
       }
     ],
     "dynamics": [
       {
-        "name": "Cities",
+        "name": "Overall",
         "path": "/",
         "icon": "fa-house-chimney-window",
-        "description": "Cities view",
+        "description": "Home view",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -76,46 +144,45 @@
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Cities",
-                "icon": "fa-city",
+                "title": "Namespace",
+                "icon": "fa-diagram-project",
                 "color": "red",
-                "redirect": "/city",
-                "query": "http://localhost:5012/cities",
+                "redirect": "/namespaces",
+                "query": "http://localhost:5012/namespaces",
                 "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Areas",
-                "icon": "fa-map",
+                "title": "Pods",
+                "icon": "fa-sitemap",
                 "color": "blue",
-                "query": "http://localhost:5012/cities",
-                "query_key": "area",
-                "method": "sum",
-                "value": "",
-                "unit": "km²"
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Inhabitants",
-                "icon": "fa-people-roof",
-                "color": "yellow",
-                "query": "http://localhost:5012/cities",
-                "query_key": "inhabitants",
-                "method": "sum",
+                "redirect": "/pods",
+                "query": "http://localhost:5012/pods",
+                "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Devices",
-                "icon": "fa-person-digging",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "yellow",
+                "redirect": "/nodes",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/cities",
-                "query_key": "device",
-                "method": "sum",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
                 "value": ""
               }
             ],
@@ -126,14 +193,25 @@
           "chart": {
             "models": [
               {
-                "title": "Device uses by city",
-                "query": "http://localhost:5012/devices",
-                "query_key": "device",
-                "sort_key": "city",
-                "time_key": "date",
+                "title": "Nodes rate (in Euros) ",
+                "query": "http://localhost:5012/nodes/rating",
+                "query_key": "frame_price",
+                "sort_key": "node",
+                "time_key": "frame_begin",
                 "type": "area",
                 "method": "default",
-                "space": "2/2",
+                "space": "1/2",
+                "is_monitoring": false
+              },
+              {
+                "title": "Namespaces Energy Efficiency",
+                "query": "http://localhost:5012/namespaces/rating",
+                "query_key": "frame_price",
+                "sort_key": "namespace",
+                "time_key": "frame_begin",
+                "type": "area",
+                "method": "default",
+                "space": "1/2",
                 "is_monitoring": false
               }
             ],
@@ -145,10 +223,10 @@
         }
       },
       {
-        "name": "City",
-        "path": "/city",
-        "icon": "fa-tree-city",
-        "description": "Detailed view of city information",
+        "name": "Namespaces",
+        "path": "/namespaces",
+        "icon": "fa-diagram-project",
+        "description": "Detailed view of namespaces",
         "display": true,
         "displayInMenu": true,
         "requiresAuth": true,
@@ -156,12 +234,12 @@
           "select": {
             "models": [
               {
-                "id": "city",
-                "title": "City",
-                "placeholder": "Select city",
+                "id": "namespaces",
+                "title": "Namespace",
+                "placeholder": "Select namespace",
                 "type": "dynamic",
-                "query": "http://localhost:5012/cities",
-                "query_key": "city"
+                "query": "http://localhost:5012/namespaces",
+                "query_key": "namespace"
               },
               {
                 "id": "date",
@@ -186,46 +264,45 @@
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Cities",
-                "icon": "fa-city",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
                 "color": "red",
-                "redirect": "/city",
-                "query": "http://localhost:5012/cities",
+                "query": "http://localhost:5012/total_rating",
+                "query_key": "frame_price",
+                "method": "avg",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "redirect": "/pods",
+                "query": "http://localhost:5012/pods",
                 "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Areas",
-                "icon": "fa-map",
-                "color": "blue",
-                "query": "http://localhost:5012/cities",
-                "query_key": "area",
-                "method": "sum",
-                "value": "",
-                "unit": "km²"
-              },
-              {
-                "space": "1/4",
-                "type": "default",
-                "title": "Inhabitants",
-                "icon": "fa-people-roof",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
                 "color": "yellow",
-                "query": "http://localhost:5012/cities",
-                "query_key": "inhabitants",
-                "method": "sum",
+                "redirect": "/nodes",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
                 "value": ""
               },
               {
                 "space": "1/4",
                 "type": "default",
-                "title": "Devices",
-                "icon": "fa-person-digging",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/cities",
-                "query_key": "device",
-                "method": "sum",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
                 "value": ""
               }
             ],
@@ -236,15 +313,290 @@
           "chart": {
             "models": [
               {
-                "title": "Device uses by city",
-                "query": "http://localhost:5012/devices",
-                "query_key": "device",
-                "sort_key": "city",
-                "time_key": "date",
-                "type": "area",
+                "title": "Metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
                 "method": "default",
                 "space": "2/2",
                 "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Nodes",
+        "path": "/nodes",
+        "icon": "fa-share-nodes",
+        "description": "Detailed view of nodes",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "nodes",
+                "title": "Node",
+                "placeholder": "Select node",
+                "type": "dynamic",
+                "query": "http://localhost:5012/nodes",
+                "query_key": "node"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "chart",
+                "title": "Rating",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "query": "http://localhost:5012/pods",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "yellow",
+                "query": "http://localhost:5012/namespaces",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
+                "method": "default",
+                "is_monitoring": false,
+                "space": "2/2"
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Pods",
+        "path": "/pods",
+        "icon": "fa-sitemap",
+        "description": "Detailed view of pods",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "pods",
+                "title": "Pod",
+                "placeholder": "Select pod",
+                "type": "dynamic",
+                "query": "http://localhost:5012/pods",
+                "query_key": "pod"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "red",
+                "query": "http://localhost:5012/total_rating",
+                "query_key": "frame_price",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "primary",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "yellow",
+                "query": "http://localhost:5012/namespaces",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Pod metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "line",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Monitoring",
+        "path": "/monitoring",
+        "icon": "fa-chart-simple",
+        "description": "Live data Monitoring",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "title": "Instance",
+                "placeholder": "Select a instance",
+                "type": "dynamic",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric"
+              },
+              {
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "price",
+                "sort_key": "instance",
+                "time_key": "frame_begin",
+                "type": "area",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": true
               }
             ],
             "styles": {
@@ -1158,6 +1510,3 @@
     ]
   }
 }
-
-
-
