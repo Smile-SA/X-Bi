@@ -1,0 +1,80 @@
+<div class="row">
+    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
+        <div class="apex-box">
+            <div class="display-flex ">
+                <div class="page-title pt-2 ps-1-5">
+                    <div class="page-title-icon bg-primary shadow text-white">
+                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    </div>
+                </div>
+                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 grid-margin">
+        <form class="form-horizontal" v-on:submit="submitForm" v-on:reset="resetForm">
+        <div class="card">
+            <div class="page-header card-header mb-0">
+                <h3 class="page-title">Instance creation form. <small>(<span class="text-danger">* </span>is required fields)</small></h3>
+                <router-link to="/instances" custom v-slot="{ navigate }" class="pull-right ">
+                    <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
+                        <font-awesome-icon :icon="['fas','fa-list-ul']"/>  Instances list</a>
+                </router-link>
+            </div>
+            <div class="card-body pb-0">
+                <div class="ibox-content">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.name ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 text-capitalize">Name <small class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <input type="text" id="name" name="name" v-on:input="checkName" v-model="name"
+                                               class="form-control" placeholder="Enter the instance name">
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ errors.name }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div v-bind:class="[errors.template ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 pe-0 text-capitalize">Template <small class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <select class="form-control" v-model="template" name="template" id="template" v-on:change="setDynamicValues">
+                                            <option class="text-capitalize" selected disabled> Select a template</option>
+                                            <option class="text-capitalize" v-for="option in templatesList" v-bind:value="(option.template_name).replace('rating-rule-template-','')" v-bind:key="option.template_name">{{
+                                                    (option.template_name).replace('rating-rule-template-','')
+                                                }}
+                                            </option>
+                                        </select>
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ errors.template }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6" v-if="dynamicValues!==null" v-for="option in dynamicValues">
+                                <div v-bind:class="[option.error ? 'row form-group has-error' : 'row form-group ']">
+                                    <label class="col-md-2 col-lg-2 control-label pt-3 text-capitalize">{{ option.name }} <small
+                                            class="text-danger">*</small></label>
+                                    <div class="col-md-10 col-lg-10">
+                                        <input type="text" :id="option.name" v-on:input="checkValues" :name="option.name" v-model="option.value"
+                                               class="form-control" :placeholder="'Enter the '+option.name+' value'">
+                                        <span class="help-block m-b-none text-danger text-capitalize">{{ option.error }}</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12" v-if="message.length>0">
+                            <div  v-bind:class="[errors.submit ? 'alert alert-danger' : 'alert alert-success', 'desable']" role="alert">
+                                {{ message }}
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="page-header card-footer mb-0">
+                <button class="btn btn-secondary m-r-lg pull-left" type="reset">Cancel</button>
+                <button class="btn btn-primary pull-right" type="submit">Submit</button>
+            </div>
+        </div>
+        </form>
+
+    </div>
+</div>
+

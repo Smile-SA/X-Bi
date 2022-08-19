@@ -1,0 +1,29 @@
+<div class="row">
+    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
+        <div class="apex-box">
+            <div class="display-flex ">
+                <div class="page-title pt-2 ps-1-5">
+                    <div class="page-title-icon bg-primary shadow text-white">
+                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    </div>
+                </div>
+                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="page-header card-header mb-0">
+                <h3 class="page-title">List of templates</h3>
+                <router-link to="/templates/create" custom v-slot="{ navigate }" class="pull-right ">
+                    <a class="btn btn-sm btn-outline-primary" @click="navigate" @keypress.enter="navigate" role="link"><font-awesome-icon :icon="['fas','fa-plus-square']"/> Create template</a>
+                </router-link>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <data-table v-bind="bindings" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
