@@ -114,14 +114,14 @@ export const TitleBox = () => ({
             type: String,
             default: object('description','description of view')
         },
-        hover: {
-            type: Boolean,
-            default: object('hover',true)
+        that: {
+            type: Object,
+            default: object('that',{hover :true})
         },
     },
     components: {titleBoxLayout},
     template: '<div class="container-sm m-0 ms-2 p-3">' +
-        '<titleBoxLayout :hover="hover" :icon="icon" :description="description"></titleBoxLayout>' +
+        '<titleBoxLayout :that="that" :icon="icon" :description="description"></titleBoxLayout>' +
         '</div>',
     methods: {},
 });
