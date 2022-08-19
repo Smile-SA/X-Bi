@@ -37,7 +37,8 @@ export function getChildrenRoutes() {
                         meta: {
                             description: statics[item].children[subItem].description,
                             requiresAuth: statics[item].children[subItem].requiresAuth,
-                            icon: statics[item].children[subItem].icon
+                            icon: statics[item].children[subItem].icon,
+                            crud: statics[item].children[subItem].crud,
                         },
                     })
                 }
@@ -52,7 +53,8 @@ export function getChildrenRoutes() {
                     meta: {
                         description: statics[item].description,
                         requiresAuth: statics[item].requiresAuth,
-                        icon: statics[item].icon
+                        icon: statics[item].icon,
+                        crud: statics[item].crud,
                     },
                 })
             }

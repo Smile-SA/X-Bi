@@ -29,15 +29,15 @@ export default {
         showLoaderOnConfirm: true
       }).then((result) => {
         if (result.value) {
-          general.generalDelete(this.data.url + '/delete', this.data.deleteParam, this.data.id).then((r) => {
+          general.generalDelete(this.$route.meta.crud.delete.url, this.$route.meta.crud.delete.id, this.data.id).then((r) => {
             if (r === true) {
               tr.remove();
               if (children <= 1) {
                 tbody.innerHTML = '<tr><td colspan=' + this.data.colspan + '>No record found</td></tr>';
               }
-            }
+              this.$swal('Deleted', 'You successfully deleted this file', 'success')
+            }else this.$swal('Error', 'Please try again later', 'warning')
           });
-          this.$swal('Deleted', 'You successfully deleted this file', 'success')
         } else {
           this.$swal('Cancelled', 'Your file is still intact', 'info')
         }

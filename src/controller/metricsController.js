@@ -1,10 +1,6 @@
-import {ratingOperatorInstanceRequest} from "../settings/variables";
-
-const roRequest = ratingOperatorInstanceRequest();
-
-
+import axios from "axios"
 export function getMetrics() {
-    return roRequest.get('/metrics').then(async (r) => {
+    return axios.get('/metrics').then(async (r) => {
         let data = []
         Object.keys(r.data).map((item) => {
             Object.keys(r.data[item]).map((subItem) => {
@@ -28,7 +24,7 @@ export function addMetric(values) {
         Params.append(values[item].name, values[item].value)
     })
 
-    return roRequest.post('/metrics/add', Params).then(async (r) => {
+    return axios.post('/metrics/add', Params).then(async (r) => {
         return {
             errors: false,
             message: r.data
@@ -42,7 +38,7 @@ export function addMetric(values) {
 }
 
 export function getMetric(metric_name) {
-    return roRequest.get('/metrics/get?metric_name=' + metric_name).then(async (r) => {
+    return axios.get('/metrics/get?metric_name=' + metric_name).then(async (r) => {
         return {
             errors: false,
             data: r.data
@@ -58,7 +54,7 @@ export function getMetric(metric_name) {
 export function deleteMetric(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return roRequest.post('/metrics/delete', Params).then(async (r) => {
+    return axios.post('/metrics/delete', Params).then(async (r) => {
         return {
             errors: false,
             message: !!r.data

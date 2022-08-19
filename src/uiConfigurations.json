@@ -31,34 +31,6 @@
         "requiresAuth": true
       },
       {
-        "name": "KPIs Configurations",
-        "icon": "fa-gear",
-        "display": true,
-        "displayInMenu": true,
-        "children": [
-          {
-            "name": "Templates",
-            "path": "/templates",
-            "icon": "fa-angle-right",
-            "component": "views/configurations/kpis/templates/listTemplates/index.vue",
-            "description": "View of templates",
-            "display": true,
-            "displayInMenu": true,
-            "requiresAuth": true
-          },
-          {
-            "name": "Instances",
-            "path": "/instances",
-            "icon": "fa-angle-right",
-            "component": "views/configurations/kpis/instances/listInstances/index.vue",
-            "description": "View of instances",
-            "display": true,
-            "displayInMenu": true,
-            "requiresAuth": true
-          }
-        ]
-      },
-      {
         "name": "Views structure",
         "path": "views/:id",
         "icon": "fa-angle-right",
@@ -69,10 +41,75 @@
         "requiresAuth": true
       },
       {
+        "name": "KPIs Configurations",
+        "icon": "fa-gear",
+        "display": true,
+        "displayInMenu": true,
+        "children": [
+          {
+            "name": "Templates",
+            "path": "/templates",
+            "icon": "fa-angle-right",
+            "component": "views/dynamicConfigurations/index.vue",
+            "description": "View of templates",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true,
+            "crud": {
+              "list": {
+                "url": "http://localhost:5012/templates/list",
+                "id": "template_name",
+                "replace": "rating-rule-template-"
+              },
+              "show": {
+                "url": "http://localhost:5012/templates/get",
+                "id": "query_name"
+              },
+              "add": {
+                "url": "https://localhost:5012/templates/add",
+                "formID": "templates"
+              },
+              "delete": {
+                "url": "https://localhost:5012/templates/delete",
+                "id": "query_name"
+              }
+            }
+          },
+          {
+            "name": "Instances",
+            "path": "/instances",
+            "icon": "fa-angle-right",
+            "component": "views/dynamicConfigurations/index.vue",
+            "description": "View of instances",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true,
+            "crud": {
+              "list": {
+                "url": "http://localhost:5012/instances/list",
+                "replace": "rating-rule-instance-"
+              },
+              "show": {
+                "url": "http://localhost:5012/instances/get",
+                "id": "query_name"
+              },
+              "add": {
+                "url": "https://localhost:5012/instances/add",
+                "formID": "instances"
+              },
+              "delete": {
+                "url": "https://localhost:5012/instances/delete",
+                "id": "query_name"
+              }
+            }
+          }
+        ]
+      },
+      {
         "name": "Create instance",
         "path": "/instances/create",
         "icon": "fa-angle-right",
-        "component": "views/configurations/kpis/instances/createInstance/index.vue",
+        "component": "views/kpisConfigurations/instances/createInstance/index.vue",
         "description": "View of instance creation",
         "display": true,
         "displayInMenu": false,
@@ -82,7 +119,7 @@
         "name": "Display instance",
         "path": "/instances/:id",
         "icon": "fa-angle-right",
-        "component": "views/configurations/kpis/instances/displayInstance/index.vue",
+        "component": "views/kpisConfigurations/instances/displayInstance/index.vue",
         "description": "Detailed of instance",
         "display": true,
         "displayInMenu": false,
@@ -92,7 +129,7 @@
         "name": "Create template",
         "path": "/templates/create",
         "icon": "fa-angle-right",
-        "component": "views/configurations/kpis/templates/createTemplate/index.vue",
+        "component": "views/kpisConfigurations/templates/createTemplate/index.vue",
         "description": "View of template creation",
         "display": true,
         "displayInMenu": false,
@@ -102,7 +139,7 @@
         "name": "Display template",
         "path": "/templates/:id",
         "icon": "fa-angle-right",
-        "component": "views/configurations/kpis/templates/displayTemplate/index.vue",
+        "component": "views/kpisConfigurations/templates/displayTemplate/index.vue",
         "description": "Detailed of template",
         "display": true,
         "displayInMenu": false,

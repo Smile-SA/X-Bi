@@ -1,9 +1,0 @@
-<div class="session-action display-flex">
-    <router-link v-if="data.isDisplayed" :to="data.url+'/'+data.viewId" custom v-slot="{ navigate }">
-        <a class="btn btn-sm btn-outline-primary m-r-xs" @click="navigate" @keypress.enter="navigate" role="link">
-            <font-awesome-icon :icon="['fas','fa-eye']"/> Structure</a>
-    </router-link>
-    <preview-form   class="m-r-xs" v-if="data.isPreviewed" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></preview-form>
-    <edit-form      class="m-r-xs" v-if="data.isUpdated" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId" ></edit-form>
-    <delete-form    class="m-r-xs" v-if="data.isDeleted" :structureType="data.structureType" :refreshFunction="data.refreshFunction" :viewId="data.viewId" :modelId="data.modelId"></delete-form>
-</div>

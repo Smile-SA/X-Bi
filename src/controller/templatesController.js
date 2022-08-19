@@ -1,8 +1,6 @@
-import {ratingOperatorInstanceRequest} from "../settings/variables";
-const roRequest = ratingOperatorInstanceRequest();
-
+import axios from "axios"
 export function getTemplates() {
-    return roRequest.get( '/templates/list').then(async (r) => {
+    return axios.get( '/templates/list').then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
@@ -23,7 +21,7 @@ export function addTemplate(query_name, query_group, query_template, query_varia
     } else {
         Params.append("query_variables", query_variables);
     }
-    return roRequest.post( '/templates/add', Params).then(async (r) => {
+    return axios.post( '/templates/add', Params).then(async (r) => {
         return {
             errors: false,
             message: r.data
@@ -39,7 +37,7 @@ export function addTemplate(query_name, query_group, query_template, query_varia
 export function defaultValue(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return roRequest.get( '/templates/get?query_name=' + query_name).then(async (r) => {
+    return axios.get( '/templates/get?query_name=' + query_name).then(async (r) => {
         if (r.data.results.spec.admin !== undefined) {
             return r.data.results.spec.admin;
         }
@@ -55,7 +53,7 @@ export function defaultValue(query_name) {
 export function getTemplate(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return roRequest.get( '/templates/get?query_name=' + query_name).then(async (r) => {
+    return axios.get( '/templates/get?query_name=' + query_name).then(async (r) => {
         return {
             errors: false,
             data: r.data
@@ -71,7 +69,7 @@ export function getTemplate(query_name) {
 export function deleteTemplate(query_name) {
     const Params = new FormData();
     Params.append("query_name", query_name);
-    return roRequest.post( '/templates/delete', Params).then(async (r) => {
+    return axios.post( '/templates/delete', Params).then(async (r) => {
         return {
             errors: false,
             message: !!r.data

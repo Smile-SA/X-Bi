@@ -1,11 +1,25 @@
 import * as chartController from "../controller/chartController";
 import axios from "axios";
 
-
+export function get(url) {
+    return axios.get(url).then(async (r) => {
+        return r.data;
+        // eslint-disable-next-line no-unused-vars
+    }).catch(error => {
+        console.log('An error occurred while getting the instances! Please try later');
+        return {
+            "total": 0
+        };
+    });
+}
 export function generalDelete(deleteUrl, name, id) {
+    console.log(name)
+    console.log(id)
+
     const Params = new FormData();
     Params.append(name, id);
-    return axios.post(deleteUrl, Params).then(async (r) => {
+    return axios.post(deleteUrl, {params:Params}).then(async (r) => {
+        console.log(r.data)
         return !!r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(errors => {
