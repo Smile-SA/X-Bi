@@ -16,7 +16,6 @@ export function addInstance(values) {
     Object.keys(values).map((item) => {
         Params.append(values[item].name, values[item].value)
     })
-
     return axios.post('/instances/add', Params).then(async (r) => {
         return {
             errors: false,

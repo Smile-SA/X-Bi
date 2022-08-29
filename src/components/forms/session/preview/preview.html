@@ -1,0 +1,13 @@
+<div class="normal-case tracking-normal">
+    <a @click.prevent="show" class="btn btn-sm btn-outline-behance text-capitalize">
+        <font-awesome-icon class="me-1" :icon="['fas','fa-eye']"/>
+        preview</a>
+    <modal class="white-space-initial" :name="'preview-modal-'+structureType+modelId" height="auto" :resizable="true" width="25%">
+        <div class="modal-body">
+            <slot name="body">
+                <Card v-if="structureType==='card'" v-show="shows.card" :configuration="model" :queryBegin="'queryBegin'" :from="'from'" :to="'to'" :styles="'structure.card.styles'"></Card>
+                <apexcharts v-if="shows.chart===true" :ref="'chart-'+structureType+modelId" :options="options" :series="options.series" :height="options.chart.height"></apexcharts>
+            </slot>
+        </div>
+    </modal>
+</div>

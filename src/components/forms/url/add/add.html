@@ -1,0 +1,24 @@
+<div class="normal-case tracking-normal">
+    <a @click.prevent="show" class="btn btn-sm btn-outline-primary text-capitalize">
+        <font-awesome-icon :icon="['fas','fa-plus-square']"/>
+        add {{ structureType }}</a>
+    <modal  class="white-space-initial" :name="'view-add'+structureType" height="auto" :resizable="true" width="25%">
+        <div class="modal-body">
+            <slot name="body" v-if="showForm === true">
+                <FormulateForm :name="'add-form'+structureType" v-model="model" @submit="submitForm()">
+                    <h3>{{ 'add ' + structureType + ' form' }}</h3>
+                    <component v-for="input in form" :is="input.component" :key="input.name" v-bind="input"
+                               v-show="showInput(input)" @change="changeForm(input)"
+                    ></component>
+                    <FormulateInput type="submit" label="Submit"/>
+                    <FormulateInput type="button" label="Cancel" data-ghost @click="cancel"/>
+                </FormulateForm>
+            </slot>
+            <div class="col-md-12" v-if="message.length>0">
+                <div  v-bind:class="[errors.submit ? 'alert alert-danger' : 'alert alert-success', 'desable']" role="alert">
+                    {{ message }}
+                </div>
+            </div>
+        </div>
+    </modal>
+</div>

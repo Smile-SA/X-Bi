@@ -12,29 +12,94 @@ export function get(url) {
         };
     });
 }
-export function generalDelete(deleteUrl, name, id) {
-    console.log(name)
-    console.log(id)
 
-    const Params = new FormData();
-    Params.append(name, id);
-    return axios.post(deleteUrl, {params:Params}).then(async (r) => {
-        console.log(r.data)
-        return !!r.data;
+export function generalDelete(deleteUrl, name, id) {
+    const params = new FormData();
+    params.append(name, id);
+    return axios.post(deleteUrl, params).then(async (r) => {
+        if (r.data !== true) {
+            if (!!r.data === true) {
+                return {
+                    result: !!r.data,
+                    message: {
+                        title: 'Delete failed',
+                        description: r.data
+                    }
+                }
+            } else {
+                return {
+                    result: !!r.data,
+                    message: {
+                        title: 'Delete failed',
+                        description: 'An error occurred while deleting ! Please try later',
+                    }
+                }
+
+            }
+        } else {
+            return {
+                result: !!r.data,
+                message: {
+                    title: 'Successfully delete'
+                }
+            }
+        }
         // eslint-disable-next-line no-unused-vars
     }).catch(errors => {
-        return false
+        return {
+            result: false,
+            message: {
+                title: 'Delete failed',
+                description: 'An error occurred while deleting ! Please try later',
+            }
+        }
     });
 }
 
-export async function getJsonData(config,additionalUrl,queryData) {
+export function getById(deleteUrl, id, value) {
+    return axios.get(deleteUrl+'?'+id+'='+value).then(async (r) => {
+        return {
+            errors: false,
+            data: r.data
+        }
+    }).catch(errors => {
+        return {
+            errors: true,
+            message: errors.response.data
+        };
+    });
+}
+export function generalAdd(addUrl, model) {
+    const params = new FormData();
+    Object.keys(model).map((item) => {
+        if (item === 'query_variables' && model[item].trim() === '') {
+            //
+        } else {
+            params.append(item, model[item]);
+        }
+
+    })
+    return axios.post(addUrl,params).then(async (r) => {
+        return {
+            errors: false,
+            message: r.data
+        }
+    }).catch(errors => {
+        return {
+            errors: true,
+            message: errors.response.data
+        };
+    });
+}
+
+export async function getJsonData(config, additionalUrl, queryData) {
     let url = config.query
-    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+    if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
     }
-    return await axios.get(url,{params:queryData}).then(async (r) => {
+    return await axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total) {
             return {total: r.data.total, results: r.data.results};
         } else return {total: Object.keys(r.data).length, results: r.data.results ? r.data.results : r.data};
@@ -61,14 +126,14 @@ export function titleBoxRender(that) {
     }
 }
 
-export async function getDataByVariableAndDateToApex(config,additionalUrl,queryData,group,styles) {
+export async function getDataByVariableAndDateToApex(config, additionalUrl, queryData, group, styles) {
     let url = config.query
-    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+    if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
     }
-    return axios.get(url,{params:queryData}).then(async (r) => {
+    return axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
@@ -110,18 +175,18 @@ export async function getDataByVariableAndDateToApex(config,additionalUrl,queryD
     });
 }
 
-export async function getDataByDateToApex(config,additionalUrl,queryData,group,styles, name) {
+export async function getDataByDateToApex(config, additionalUrl, queryData, group, styles, name) {
     let url = config.query
-    if(additionalUrl!=='' && additionalUrl!==null && additionalUrl!==undefined) {
+    if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url =  parser.protocol +'//'+ parser.host +'/'+additionalUrl+parser.pathname
+        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
     }
-    return await axios.get(url,{params:queryData}).then(async (r) => {
+    return await axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
-            let data = chartController.groupByDate(r.data.results,group, config.time_key);
+            let data = chartController.groupByDate(r.data.results, group, config.time_key);
             Object.keys(data).map((item) => {
                 data[item] = data[item].reduce(function (r, a) {
                     if (r[config.query_key] === undefined) {

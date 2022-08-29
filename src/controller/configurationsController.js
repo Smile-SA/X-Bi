@@ -1,4 +1,6 @@
 import * as uiConf from "../uiConfigurations.json"
+import * as general from "./genaralController";
+import * as chartController from "./chartController";
 
 let uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
 if (uiConfigurations === null) {
@@ -118,6 +120,8 @@ export function getCardStyles(activeView) {
     }
 }
 
+// eslint-disable-next-line no-unused-vars
+
 export function updateValidation(schema, model) {
     Object.keys(schema).map((key) => {
         if (schema[key].condition != undefined && schema[key].condition === true) {
@@ -131,6 +135,56 @@ export function updateValidation(schema, model) {
                         }
                     }
                 }
+            });
+        }
+    });
+}
+export function dynamicInputs(schema,model) {
+//delete las dynamic input
+    Object.keys(schema).map((key) => {
+        if(schema[key]!==undefined && schema[key].isDynamic) {
+                schema.splice(key, 1)
+        }
+    })
+    //add dynamic input
+    Object.keys(schema).map((key) => {
+        if (schema[key].dynamicFields) {
+            // get dynamic data from url and id
+            general.getById(schema[key].dynamicFields.url, schema[key].dynamicFields.id, model[schema[key].name]).then((r) => {
+                if (r.data.total > 0) {
+                    // format data to select element in {}
+                    let valuesInit = chartController.getUnique(r.data.results.spec.query_template.match(/[^{}]+(?=})/g))
+                    Object.keys(valuesInit).map((item) => {
+                        // check if input did not existe
+                        let recherche = valuesInit[item].replace(/[^a-z0-9]+/gi, ' '),doChange = true
+                        Object.keys(schema).map((id) => {
+                            if(schema[id].name.includes(valuesInit[item]) ){
+                                doChange = false
+                            }
+                        })
+                        // add dynamic input to schema
+                        if ( doChange === true && valuesInit[item] === recherche) {
+                            schema.push({
+                                    "component": "FormulateInput",
+                                    "type": "text",
+                                    "name": valuesInit[item],
+                                    "placeholder": "Enter the " + valuesInit[item] + " value",
+                                    "validation": "required",
+                                    "isDynamic": true
+                                }
+                            )
+                        }
+                    });
+                }
+            });
+            // push default input to schema
+            schema.push({
+                "component": "FormulateInput",
+                "type": "text",
+                "name": "timeframe",
+                "placeholder": "Enter timeframe value",
+                "validation": "required",
+                "isDynamic": true
             });
         }
     });
@@ -265,6 +319,25 @@ export function getForms() {
 }
 
 export function getForm(structureType) {
+    let data = forms[structureType];
+    if (Object.keys(data).length > 0) {
+        Object.keys(data).map((key) => {
+            if (data[key].optionsData !== undefined) {
+                general.get(data[key].optionsData.url).then((r) => {
+                    data[key].options = {}
+                    Object.keys(r.results).map((item) => {
+                        let value, id;
+                        id = value = r.results[item][data[key].optionsData.id];
+                        id = id.replaceAll(data[key].optionsData.replaceInId, '')
+                        value = value.replace(data[key].optionsData.replaceInValue, '')
+                        data[key].options[id] = value
+                    });
+                });
+            }
+        });
+    }
+    forms[structureType] = data
+    save();
     return forms[structureType];
 }
 

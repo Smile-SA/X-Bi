@@ -26,7 +26,7 @@
         "display": true,
         "displayInMenu": true,
         "path": "/views",
-        "component": "views/uiConfigurations/views/index.vue",
+        "component": "views/configurations/ui/views/index.vue",
         "description": "Views configuration",
         "requiresAuth": true
       },
@@ -34,7 +34,7 @@
         "name": "Views structure",
         "path": "views/:id",
         "icon": "fa-angle-right",
-        "component": "views/uiConfigurations/structure/index.vue",
+        "component": "views/configurations/ui/structure/index.vue",
         "description": "View structure configurations",
         "display": true,
         "displayInMenu": false,
@@ -50,7 +50,7 @@
             "name": "Templates",
             "path": "/templates",
             "icon": "fa-angle-right",
-            "component": "views/dynamicConfigurations/index.vue",
+            "component": "views/configurations/kpi/index.vue",
             "description": "View of templates",
             "display": true,
             "displayInMenu": true,
@@ -66,11 +66,11 @@
                 "id": "query_name"
               },
               "add": {
-                "url": "https://localhost:5012/templates/add",
-                "formID": "templates"
+                "url": "http://localhost:5012/templates/add",
+                "formId": "template"
               },
               "delete": {
-                "url": "https://localhost:5012/templates/delete",
+                "url": "http://localhost:5012/templates/delete",
                 "id": "query_name"
               }
             }
@@ -79,7 +79,7 @@
             "name": "Instances",
             "path": "/instances",
             "icon": "fa-angle-right",
-            "component": "views/dynamicConfigurations/index.vue",
+            "component": "views/configurations/kpi/index.vue",
             "description": "View of instances",
             "display": true,
             "displayInMenu": true,
@@ -91,59 +91,19 @@
               },
               "show": {
                 "url": "http://localhost:5012/instances/get",
-                "id": "query_name"
+                "id": "metric_name"
               },
               "add": {
-                "url": "https://localhost:5012/instances/add",
-                "formID": "instances"
+                "url": "http://localhost:5012/instances/add",
+                "formId": "instance"
               },
               "delete": {
-                "url": "https://localhost:5012/instances/delete",
-                "id": "query_name"
+                "url": "http://localhost:5012/instances/delete",
+                "id": "metric_name"
               }
             }
           }
         ]
-      },
-      {
-        "name": "Create instance",
-        "path": "/instances/create",
-        "icon": "fa-angle-right",
-        "component": "views/kpisConfigurations/instances/createInstance/index.vue",
-        "description": "View of instance creation",
-        "display": true,
-        "displayInMenu": false,
-        "requiresAuth": true
-      },
-      {
-        "name": "Display instance",
-        "path": "/instances/:id",
-        "icon": "fa-angle-right",
-        "component": "views/kpisConfigurations/instances/displayInstance/index.vue",
-        "description": "Detailed of instance",
-        "display": true,
-        "displayInMenu": false,
-        "requiresAuth": true
-      },
-      {
-        "name": "Create template",
-        "path": "/templates/create",
-        "icon": "fa-angle-right",
-        "component": "views/kpisConfigurations/templates/createTemplate/index.vue",
-        "description": "View of template creation",
-        "display": true,
-        "displayInMenu": false,
-        "requiresAuth": true
-      },
-      {
-        "name": "Display template",
-        "path": "/templates/:id",
-        "icon": "fa-angle-right",
-        "component": "views/kpisConfigurations/templates/displayTemplate/index.vue",
-        "description": "Detailed of template",
-        "display": true,
-        "displayInMenu": false,
-        "requiresAuth": true
       }
     ],
     "dynamics": [
@@ -1227,6 +1187,65 @@
       {
         "type": "text",
         "name": "structure"
+      }
+    ],
+    "template": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_name",
+        "placeholder": "Enter template name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_group",
+        "placeholder": "Enter template group name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "textarea",
+        "name": "query_template",
+        "placeholder": "Enter template query",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "textarea",
+        "name": "query_variables",
+        "placeholder": "Enter template variables",
+        "validation": "required"
+      }
+    ],
+    "instance": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "metric_name",
+        "placeholder": "Enter metric name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "template_name",
+        "placeholder": "Select template name",
+        "options": {
+
+        },
+        "optionsData": {
+          "url": "http://localhost:5012/templates/list",
+          "id": "template_name",
+          "replaceInId": "rating-rule-template-",
+          "replaceInValue": "rating-rule-template-"
+        },
+        "dynamicFields": {
+          "url": "http://localhost:5012/templates/get",
+          "id": "query_name"
+        },
+        "validation": "required"
       }
     ],
     "select": [
