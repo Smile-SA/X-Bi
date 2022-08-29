@@ -10,7 +10,7 @@ export default {
             groupOptions: ['hour', 'day', 'month', 'year'],
             queryData: {},
             to: null,
-            dynamicDataSelectId:'',
+            dynamicDataSelectId: '',
             from: null,
             date: null,
             hover: true,
@@ -18,6 +18,7 @@ export default {
             additionalUrl: '',
             active: null,
             dynamicData: [],
+            apiInfo: undefined,
             select: {
                 models: {},
                 styles: {}
@@ -42,10 +43,14 @@ export default {
             return this.date !== null && this.active !== null
         },
         // eslint-disable-next-line no-unused-vars
-        async setDynamicDataSelect(input,id) {
-            //this.queryData[id] = this.active;
-            this.additionalUrl=id+'/'+this.active;
+        async setDynamicDataSelect(input, id) {
             this.active = input.target.value;
+            if (this.apiInfo.mode === "ro") {
+                this.additionalUrl = id + '/' + this.active;
+            } else {
+                this.additionalUrl=""
+                this.queryData[id] = this.active;
+            }
             this.setDate(this.date);
         },
         async setDate(date) {
@@ -80,13 +85,13 @@ export default {
                 this.select.styles = {};
             }
         },
-        todayFunction () {
+        todayFunction() {
             const n = new Date()
             const startToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() - 1, 0, 0)
             const endToday = new Date(n.getFullYear(), n.getMonth(), n.getDate() + 0, 23, 59)
             return {
-                    start: startToday,
-                    end: endToday
+                start: startToday,
+                end: endToday
             }
         },
         setDefaultDate(jour, month, year) {
@@ -131,7 +136,8 @@ export default {
         this.active = null;
         this.date = null;
         this.queryData = {};
-        this.setModelsData();
+        this.apiInfo = configurationsController.getApiInfo(),
+            this.setModelsData();
         this.getDynamicSelectData();
         general.titleBoxRender(this)
         if (this.$route.name === 'Overall') {
@@ -145,7 +151,8 @@ export default {
             this.active = null;
             this.date = null;
             this.queryData = {};
-            general.titleBoxRender(this)
+            this.apiInfo = configurationsController.getApiInfo(),
+                general.titleBoxRender(this)
             this.getDynamicSelectData();
             this.setModelsData();
             if (this.$route.name === 'Overall') {

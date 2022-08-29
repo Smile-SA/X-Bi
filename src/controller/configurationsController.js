@@ -13,7 +13,6 @@ let dynamics = uiConfigurations.views.dynamics, statics = uiConfigurations.views
     forms = uiConfigurations.forms,
     apiInfo = uiConfigurations.apiInfo,
     xBiInfo = uiConfigurations.xBiInfo
-const Ajv = require("ajv"), ajv = new Ajv();
 
 export function getDynamics(){
     return dynamics
@@ -341,20 +340,6 @@ export function getForm(structureType) {
     return forms[structureType];
 }
 
-export function controlModel(schema, model) {
-    const valid = ajv.validate(schema, model)
-    let r;
-    if (valid) {
-        r = {
-            isValid: true,
-        }
-    } else {
-        r = {
-            isValid: false, data: ajv.errors
-        }
-    }
-    return r
-}
 
 export function deleteModel(structureType, id, viewId) {
     let deleted = false
