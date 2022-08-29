@@ -1,8 +1,8 @@
 <div class="container-scroller">
+    <header-layout :user="user"></header-layout>
     <div class="container-fluid page-body-wrapper">
         <side-menu :xBiInfo="xBiInfo" :user="user" :menus="menus" :isActive="isActive" :show="show"></side-menu>
-        <div class="main-panel">
-            <header-layout :user="user"></header-layout>
+        <div class="container-fluid p-0">
             <div class="content-wrapper">
                 <router-view name="content"></router-view>
             </div>
@@ -10,3 +10,4 @@
         </div>
     </div>
 </div>
+

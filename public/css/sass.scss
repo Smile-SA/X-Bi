@@ -1,5 +1,5 @@
 .xbi {
-
+  transition: 0.5s;
   //.xbi-card.blue {
   //  border-bottom: 0.23rem solid var(--bs-blue);
   //}
@@ -57,10 +57,15 @@
           color: var(--bs-icon-bg) !important;
         }
       }
+
+      .value.h3, .unit.h5 {
+        transition: 0.5s;
+      }
     }
   }
 
   .xbi-card {
+    transition: 0.5s;
     width: 100%;
     height: 6rem;
     border-radius: 0.5rem;
@@ -75,8 +80,9 @@
       justify-content: center;
 
       .icon-card {
-        width: 3.5rem;
-        height: 3.5rem;
+        transition: 0.3s;
+        width: 2.6rem;
+        height: 2.6rem;
 
         svg, i {
           width: 3.5rem;
@@ -86,6 +92,7 @@
         }
 
       }
+
       .chart-card {
         width: 80%;
       }
@@ -97,11 +104,24 @@
       justify-content: center;
 
       .value {
+        transition: 0.3s;
         opacity: 0.8;
         font-weight: 800;
       }
 
-      .label, .unit, .sub-label {
+      .unit {
+        transition: 0.3s;
+        opacity: 0.75;
+        font-weight: 550;
+      }
+
+      .label {
+        transition: 0.3s;
+        opacity: 0.75;
+        font-weight: 550;
+      }
+
+      .label, .sub-label {
         opacity: 0.75;
         font-weight: 550;
       }
@@ -119,6 +139,9 @@
   :hover {
     .card-content {
       .icon-card {
+        width: 3.2rem;
+        height: 3.2rem;
+
         svg, i {
           opacity: 1 !important;
         }
@@ -126,11 +149,6 @@
     }
 
     .text-content {
-      .value {
-        opacity: 1 !important;
-        font-weight: 900 !important;
-      }
-
       .label, .value, .unit, .sub-label {
         opacity: 1 !important;
       }
@@ -201,10 +219,10 @@
 
 //
 
-.transition{
+.transition {
   transition: 0.3s;
 }
 
-.white-space-initial{
+.white-space-initial {
   white-space: initial;
 }

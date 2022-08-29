@@ -1,10 +1,8 @@
 /* import used libraries */
 import Vue from 'vue'
 import router from './router';
-import VueSweetalert2 from 'vue-sweetalert2';
 import DataTable from "@andresouzaabreu/vue-data-table";
 import VueRangedatePicker from 'vue-rangedate-picker';
-import VueFormGenerator from 'vue-form-generator';
 import VueFormulate from '@braid/vue-formulate';
 import VueApexCharts from 'vue-apexcharts';
 import VModal from "vue-js-modal";
@@ -34,12 +32,10 @@ Vue.component("ApexCharts", ApexCharts);
 Vue.component("titleBox", titleBox);
 Vue.component("Card", card);
 Vue.component("DataTable", DataTable);
-Vue.component("vue-form-generator", VueFormGenerator.component);
 Vue.component('Picker', VueRangedatePicker);
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
 /* add use library to vue*/
-Vue.use(VueSweetalert2);
 Vue.use(VueFormulate);
 Vue.use(VModal)
 Vue.config.productionTip = false

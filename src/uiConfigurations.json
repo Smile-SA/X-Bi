@@ -1232,9 +1232,7 @@
         "type": "select",
         "name": "template_name",
         "placeholder": "Select template name",
-        "options": {
-
-        },
+        "options": {},
         "optionsData": {
           "url": "http://localhost:5012/templates/list",
           "id": "template_name",

@@ -1,15 +1,6 @@
 <nav class="sidebar sidebar-offcanvas shadow-sm bg-500" id="sidebar">
-    <div class="text-center navbar-brand-wrapper d-flex align-items-center justify-content-center nav-height bg-white">
-        <a class="navbar-brand brand-logo ps-4">
-            <img src="../../../../public/img/X-Bi_-_logo.png" class="icon-responsive">
-        </a>
-        <button class="navbar-toggler navbar-toggler  align-self-center" @click="reduceMenu()" type="button"
-                data-toggle="minimize">
-            <font-awesome-icon class="text-primary " :icon="['fas','fa-bars']"/>
-        </button>
-    </div>
     <ul class="nav">
-        <div class="nav-profile ms-3 me-4 mt-3 mb-3 ">
+        <div class="nav-profile ms-3 me-3 mt-3 mb-2 ">
             <div class="pointer d-flex ms-2 me-2 ">
                 <div class="nav-profile-image">
                     <img v-if='user.image !== ""' :src="user.image" alt="image" class="img-center">
