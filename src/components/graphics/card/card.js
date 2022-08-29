@@ -21,7 +21,7 @@ export default {
                 case"default" :
                 case"multi-icon":
                     this.lstm = {}
-                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData,this.configuration.method)
+                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData)
                         .then((r) => {
                             if (r.total > 0) {
                             switch (this.configuration.method) {
@@ -39,7 +39,7 @@ export default {
                                     this.lstm = r.results
                                     break;
                                 case "sum":
-                                    this.configuration.value = (r.results.length <=0) ?
+                                    this.configuration.value = (r.results.length <=1) ?
                                         parseFloat(r.results[0][this.configuration.query_key]) : (r.results.length > 1) ?
                                     r.results.map(item => parseFloat(item[this.configuration.query_key])).reduce((a, b) => a + b, 0).toFixed(0) : 0
                                     break;
@@ -59,11 +59,10 @@ export default {
                             this.sparkLine.options.chart.type = "line";
                         }
                     });
-                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData , this.configuration.method).then((r) => {
+                    await general.getJsonData(this.configuration,this.additionalUrl,this.queryData ).then((r) => {
                         if (r.total > 0) {
                             switch (this.configuration.method) {
                                 case "avg":
-
                                     this.configuration.value = (r.results.length > 0) ? (r.results.map(item => item[this.configuration.query_key])
                                         .reduce((a, b) => a + b) / r.results.length)
                                         .toFixed(2) : 0
