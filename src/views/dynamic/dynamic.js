@@ -9,16 +9,16 @@ export default {
             group: 'hour',
             groupOptions: ['hour', 'day', 'month', 'year'],
             queryData: {},
-            to: null,
             dynamicDataSelectId: '',
-            from: null,
-            date: null,
-            hover: true,
             queryLink: '',
             additionalUrl: '',
+            to: null,
+            from: null,
+            date: null,
             active: null,
-            dynamicData: [],
+            hover: true,
             apiInfo: undefined,
+            dynamicData: [],
             select: {
                 models: {},
                 styles: {}
@@ -48,7 +48,7 @@ export default {
             if (this.apiInfo.mode === "ro") {
                 this.additionalUrl = id + '/' + this.active;
             } else {
-                this.additionalUrl=""
+                this.additionalUrl = ""
                 this.queryData[id] = this.active;
             }
             this.setDate(this.date);
@@ -133,12 +133,27 @@ export default {
         },
     },
     beforeMount() {
-        this.active = null;
-        this.date = null;
-        this.queryData = {};
-        this.apiInfo = configurationsController.getApiInfo(),
-            this.setModelsData();
-        this.getDynamicSelectData();
+        this.date = this.to = this.from = this.active = null
+        this.queryData = {}
+        this.dynamicData = []
+        this.hover = true, this.dynamicDataSelectId = this.queryLink = this.additionalUrl = ''
+        this.select = {
+            models: {},
+            styles: {}
+        }
+        this.structure = {
+            card: {
+                models: {},
+                styles: {}
+            },
+            chart: {
+                models: {},
+                styles: {}
+            }
+        }
+        this.apiInfo = configurationsController.getApiInfo()
+        this.setModelsData()
+        this.getDynamicSelectData()
         general.titleBoxRender(this)
         if (this.$route.name === 'Overall') {
             this.active = '';
@@ -148,11 +163,26 @@ export default {
     },
     watch: {
         $route() {
-            this.active = null;
-            this.date = null;
-            this.queryData = {};
-            this.apiInfo = configurationsController.getApiInfo(),
-                general.titleBoxRender(this)
+            this.date = this.to = this.from = this.active = null
+            this.queryData = {}
+            this.dynamicData = []
+            this.hover = true, this.dynamicDataSelectId = this.queryLink = this.additionalUrl = ''
+            this.select = {
+                models: {},
+                styles: {}
+            }
+            this.structure = {
+                card: {
+                    models: {},
+                    styles: {}
+                },
+                chart: {
+                    models: {},
+                    styles: {}
+                }
+            }
+            this.apiInfo = configurationsController.getApiInfo()
+            general.titleBoxRender(this)
             this.getDynamicSelectData();
             this.setModelsData();
             if (this.$route.name === 'Overall') {
