@@ -1,0 +1,1038 @@
+{
+  "apiInfo": {
+    "url": "http://localhost:5012/",
+    "login": "http://localhost:5012/login_user",
+    "logout": "http://localhost:5012/login_user",
+    "password": "http://localhost:5012/password",
+    "redirectAfterLogin": "/",
+    "redirectAfterLogout": "/login",
+    "mode": "ro"
+  },
+  "forms": {
+    "view": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "name",
+        "placeholder": "Enter view name",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "description",
+        "placeholder": "Enter view description",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter view icon class",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "checkbox",
+        "name": "display",
+        "label": "view display",
+        "value": false
+      },
+      {
+        "type": "text",
+        "name": "path"
+      },
+      {
+        "type": "text",
+        "name": "displayInMenu",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "requiresAuth",
+        "value": true
+      },
+      {
+        "type": "text",
+        "name": "structure"
+      }
+    ],
+    "select": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "id",
+        "placeholder": "Enter select id",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter select title",
+        "validation": "required|min:1,length|max:22,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "placeholder",
+        "placeholder": "Enter title placeholder",
+        "validation": "required|min:1,length|max:40,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select type",
+        "options": {
+          "date": "Date",
+          "dynamic": "Dynamic",
+          "group": "Group"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "dynamic"
+          ],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key to show in input",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "dynamic"
+          ],
+          "validation": "required|min:1,length"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "default_data",
+        "placeholder": "Select default data",
+        "options": {
+          "hour": "hour",
+          "day": "day",
+          "month": "month",
+          "year": "year"
+        },
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "group"
+          ],
+          "validation": "required"
+        }
+      }
+    ],
+    "card": [
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/4": "1/4",
+          "2/4": "2/4",
+          "3/4": "3/4",
+          "4/4": "4/4"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter card title",
+        "validation": "required|min:1,length|max:20,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "redirect",
+        "placeholder": "Enter redirect link"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select card type",
+        "options": {
+          "chart": "chart",
+          "default": "default",
+          "multi-icon": "multi-icon"
+        },
+        "validation": "required",
+        "condition": true
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "color",
+        "options": {
+          "blue": "blue",
+          "cyan": "cyan",
+          "dark": "dark",
+          "green": "green",
+          "indigo": "indigo",
+          "orange": "orange",
+          "pink": "pink",
+          "purple": "purple",
+          "red": "red",
+          "white": "white",
+          "yellow": "yellow"
+        },
+        "placeholder": "Select card color",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "icon",
+        "placeholder": "Enter card icon class",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "chart"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "chart"
+          ],
+          "validation": "required"
+        }
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "avg": "avg",
+          "count": "count",
+          "lstm": "lstm",
+          "sum": "sum"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "unit",
+        "placeholder": "Enter value unit",
+        "conditionFields": {
+          "name": "type",
+          "values": [
+            "default",
+            "multi-icon"
+          ]
+        }
+      },
+      {
+        "type": "text",
+        "name": "value"
+      }
+    ],
+    "chart": [
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "space",
+        "placeholder": "Select the space per row",
+        "options": {
+          "1/2": "1/2",
+          "2/2": "2/2"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "title",
+        "placeholder": "Enter chart title",
+        "validation": "required|min:1,length|max:99,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "type",
+        "placeholder": "Select chart type",
+        "options": {
+          "area": "area",
+          "bar": "bar",
+          "donut": "donut",
+          "heatmap": "heatmap",
+          "histogram": "histogram",
+          "line": "line",
+          "polarArea": "polarArea",
+          "radar": "radar",
+          "radialBar": "radialBar",
+          "scatter": "scatter"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query",
+        "placeholder": "Enter query link",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_key",
+        "placeholder": "Enter query key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "sort_key",
+        "placeholder": "Enter sort key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "time_key",
+        "placeholder": "Enter time key",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "method",
+        "placeholder": "Select calculation method",
+        "options": {
+          "default": "default",
+          "top": "top",
+          "down": "down"
+        },
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "checkbox",
+        "name": "is_monitoring",
+        "label": "Is monitoring"
+      }
+    ],
+    "template": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_name",
+        "placeholder": "Enter template name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "query_group",
+        "placeholder": "Enter template group name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "textarea",
+        "name": "query_template",
+        "placeholder": "Enter template query",
+        "validation": "required"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "textarea",
+        "name": "query_variables",
+        "placeholder": "Enter template variables",
+        "validation": "required"
+      }
+    ],
+    "instance": [
+      {
+        "component": "FormulateInput",
+        "type": "text",
+        "name": "metric_name",
+        "placeholder": "Enter metric name",
+        "validation": "required|min:1,length"
+      },
+      {
+        "component": "FormulateInput",
+        "type": "select",
+        "name": "template_name",
+        "placeholder": "Select template name",
+        "options": {},
+        "optionsData": {
+          "url": "http://localhost:5012/templates/list",
+          "id": "template_name",
+          "replaceInId": "rating-rule-template-",
+          "replaceInValue": "rating-rule-template-"
+        },
+        "dynamicFields": {
+          "url": "http://localhost:5012/templates/get",
+          "id": "query_name"
+        },
+        "validation": "required"
+      }
+    ]
+  },
+  "views": {
+    "default": {
+      "path": "/",
+      "icon": "fa-house-chimney-window",
+      "component": "Layout/container/index.vue",
+      "description": "Global infrastructure view",
+      "requiresAuth": true
+    },
+    "statics": [
+      {
+        "name": "Views configuration",
+        "icon": "fa-tv",
+        "display": true,
+        "displayInMenu": true,
+        "path": "/views",
+        "component": "views/configurations/ui/views/index.vue",
+        "description": "Views configuration",
+        "requiresAuth": true
+      },
+      {
+        "name": "Views structure",
+        "path": "views/:id",
+        "icon": "fa-angle-right",
+        "component": "views/configurations/ui/structure/index.vue",
+        "description": "View structure configurations",
+        "display": true,
+        "displayInMenu": false,
+        "requiresAuth": true
+      },
+      {
+        "name": "KPIs Configurations",
+        "icon": "fa-gear",
+        "display": true,
+        "displayInMenu": true,
+        "children": [
+          {
+            "name": "Templates",
+            "path": "/templates",
+            "icon": "fa-angle-right",
+            "component": "views/configurations/kpi/index.vue",
+            "description": "View of templates",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true,
+            "crud": {
+              "list": {
+                "url": "http://localhost:5012/templates/list",
+                "id": "template_name",
+                "replace": "rating-rule-template-"
+              },
+              "show": {
+                "url": "http://localhost:5012/templates/get",
+                "id": "query_name"
+              },
+              "add": {
+                "url": "http://localhost:5012/templates/add",
+                "formId": "template"
+              },
+              "delete": {
+                "url": "http://localhost:5012/templates/delete",
+                "id": "query_name"
+              }
+            }
+          },
+          {
+            "name": "Instances",
+            "path": "/instances",
+            "icon": "fa-angle-right",
+            "component": "views/configurations/kpi/index.vue",
+            "description": "View of instances",
+            "display": true,
+            "displayInMenu": true,
+            "requiresAuth": true,
+            "crud": {
+              "list": {
+                "url": "http://localhost:5012/instances/list",
+                "replace": "rating-rule-instance-"
+              },
+              "show": {
+                "url": "http://localhost:5012/instances/get",
+                "id": "metric_name"
+              },
+              "add": {
+                "url": "http://localhost:5012/instances/add",
+                "formId": "instance"
+              },
+              "delete": {
+                "url": "http://localhost:5012/instances/delete",
+                "id": "metric_name"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "dynamics": [
+      {
+        "name": "Overall",
+        "path": "/",
+        "icon": "fa-house-chimney-window",
+        "description": "Home view",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Namespace",
+                "icon": "fa-diagram-project",
+                "color": "red",
+                "redirect": "/namespaces",
+                "query": "http://localhost:5012/namespaces",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "redirect": "/pods",
+                "query": "http://localhost:5012/pods",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "yellow",
+                "redirect": "/nodes",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes rate (in Euros) ",
+                "query": "http://localhost:5012/nodes/rating",
+                "query_key": "frame_price",
+                "sort_key": "node",
+                "time_key": "frame_begin",
+                "type": "area",
+                "method": "default",
+                "space": "1/2",
+                "is_monitoring": false
+              },
+              {
+                "title": "Namespaces Energy Efficiency",
+                "query": "http://localhost:5012/namespaces/rating",
+                "query_key": "frame_price",
+                "sort_key": "namespace",
+                "time_key": "frame_begin",
+                "type": "area",
+                "method": "default",
+                "space": "1/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "500",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Namespaces",
+        "path": "/namespaces",
+        "icon": "fa-diagram-project",
+        "description": "Detailed view of namespaces",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "namespaces",
+                "title": "Namespace",
+                "placeholder": "Select namespace",
+                "type": "dynamic",
+                "query": "http://localhost:5012/namespaces",
+                "query_key": "namespace"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "red",
+                "query": "http://localhost:5012/total_rating",
+                "query_key": "frame_price",
+                "method": "avg",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "redirect": "/pods",
+                "query": "http://localhost:5012/pods",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "yellow",
+                "redirect": "/nodes",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Nodes",
+        "path": "/nodes",
+        "icon": "fa-share-nodes",
+        "description": "Detailed view of nodes",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "nodes",
+                "title": "Node",
+                "placeholder": "Select node",
+                "type": "dynamic",
+                "query": "http://localhost:5012/nodes",
+                "query_key": "node"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "chart",
+                "title": "Rating",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Pods",
+                "icon": "fa-sitemap",
+                "color": "blue",
+                "query": "http://localhost:5012/pods",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "yellow",
+                "query": "http://localhost:5012/namespaces",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "bar",
+                "method": "default",
+                "is_monitoring": false,
+                "space": "2/2"
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Pods",
+        "path": "/pods",
+        "icon": "fa-sitemap",
+        "description": "Detailed view of pods",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "pods",
+                "title": "Pod",
+                "placeholder": "Select pod",
+                "type": "dynamic",
+                "query": "http://localhost:5012/pods",
+                "query_key": "pod"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Rating",
+                "icon": "fa-euro-sign",
+                "color": "red",
+                "query": "http://localhost:5012/total_rating",
+                "query_key": "frame_price",
+                "method": "sum",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Nodes",
+                "icon": "fa-share-nodes",
+                "color": "primary",
+                "query": "http://localhost:5012/nodes",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Namespaces",
+                "icon": "fa-diagram-project",
+                "color": "yellow",
+                "query": "http://localhost:5012/namespaces",
+                "method": "count",
+                "value": ""
+              },
+              {
+                "space": "1/4",
+                "type": "default",
+                "title": "Metrics",
+                "icon": "fa-share-nodes",
+                "color": "green",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric",
+                "method": "count",
+                "value": ""
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Pod metrics rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "frame_price",
+                "sort_key": "metric",
+                "time_key": "frame_begin",
+                "type": "line",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": false
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      },
+      {
+        "name": "Monitoring",
+        "path": "/monitoring",
+        "icon": "fa-chart-simple",
+        "description": "Live data Monitoring",
+        "display": true,
+        "displayInMenu": true,
+        "requiresAuth": true,
+        "structure": {
+          "select": {
+            "models": [
+              {
+                "id": "metrics",
+                "title": "Instance",
+                "placeholder": "Select a instance",
+                "type": "dynamic",
+                "query": "http://localhost:5012/metrics",
+                "query_key": "metric"
+              },
+              {
+                "id": "date",
+                "title": "Select a date",
+                "placeholder": "Select a date",
+                "type": "date"
+              },
+              {
+                "id": "group",
+                "title": "Group data by",
+                "placeholder": "Select a group",
+                "type": "group",
+                "default_data": "hour"
+              }
+            ],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "card": {
+            "models": [],
+            "styles": {
+              "height": "60"
+            }
+          },
+          "chart": {
+            "models": [
+              {
+                "title": "Nodes rate (in Euros)",
+                "query": "http://localhost:5012/rating",
+                "query_key": "price",
+                "sort_key": "instance",
+                "time_key": "frame_begin",
+                "type": "area",
+                "method": "default",
+                "space": "2/2",
+                "is_monitoring": true
+              }
+            ],
+            "styles": {
+              "height": "400",
+              "font_size": "20px"
+            }
+          }
+        }
+      }
+    ]
+  },
+  "xBiInfo": {
+    "name": "X-BI",
+    "documentationUrl": "https://git.rnd.alterway.fr/overboard/x-bi/x-bi/-/blob/main/README.md"
+  }
+}
+
+
+

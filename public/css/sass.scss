@@ -1,0 +1,228 @@
+.xbi {
+  transition: 0.5s;
+  //.xbi-card.blue {
+  //  border-bottom: 0.23rem solid var(--bs-blue);
+  //}
+  //
+  //.xbi-card.cyan {
+  //  border-bottom: 0.23rem solid var(--bs-cyan);
+  //}
+  //
+  //.xbi-card.dark {
+  //  border-bottom: 0.23rem solid var(--bs-dark);
+  //}
+  //
+  //.xbi-card.green {
+  //  border-bottom: 0.23rem solid var(--bs-green);
+  //}
+  //
+  //.xbi-card.indigo {
+  //  border-bottom: 0.23rem solid var(--bs-indigo)
+  //}
+  //
+  //.xbi-card.purple {
+  //  border-bottom: 0.23rem solid var(--bs-purple)
+  //}
+  //
+  //.xbi-card.orange {
+  //  border-bottom: 0.23rem solid var(--bs-orange)
+  //}
+  //
+  //.xbi-card.pink {
+  //  border-bottom: 0.23rem solid var(--bs-pink)
+  //}
+  //
+  //.xbi-card.red {
+  //  border-bottom: 0.23rem solid var(--bs-red)
+  //}
+  //
+  //.xbi-card.yellow {
+  //  border-bottom: 0.23rem solid var(--bs-yellow)
+  //}
+
+  .xbi-card.bg-gradient-white {
+    border-bottom: 0.23rem solid var(--bs-white);
+
+    .card-content .icon-card {
+      svg, i {
+        color: var(--bs-icon-bg);
+      }
+    }
+
+    .text-content {
+      .default, .multi-icon {
+        color: var(--bs-body-color);
+
+        .multi-icon .icon svg {
+          color: var(--bs-icon-bg) !important;
+        }
+      }
+
+      .value.h3, .unit.h5 {
+        transition: 0.5s;
+      }
+    }
+  }
+
+  .xbi-card {
+    transition: 0.5s;
+    width: 100%;
+    height: 6rem;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    justify-content: space-between;
+    transition: all 0.2s;
+    box-shadow: 0px 0px 25px 9px #0000000C;
+
+    .card-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .icon-card {
+        transition: 0.3s;
+        width: 2.6rem;
+        height: 2.6rem;
+
+        svg, i {
+          width: 3.5rem;
+          height: 3.5rem;
+          color: var(--bs-white);
+          opacity: 0.8;
+        }
+
+      }
+
+      .chart-card {
+        width: 80%;
+      }
+    }
+
+    .text-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      .value {
+        transition: 0.3s;
+        opacity: 0.8;
+        font-weight: 800;
+      }
+
+      .unit {
+        transition: 0.3s;
+        opacity: 0.75;
+        font-weight: 550;
+      }
+
+      .label {
+        transition: 0.3s;
+        opacity: 0.75;
+        font-weight: 550;
+      }
+
+      .label, .sub-label {
+        opacity: 0.75;
+        font-weight: 550;
+      }
+
+      .default, .multi-icon {
+        color: rgba(255, 255, 255) !important;
+
+        .multi-icon .icon svg {
+          color: rgba(255, 255, 255) !important;
+        }
+      }
+    }
+  }
+
+  :hover {
+    .card-content {
+      .icon-card {
+        width: 3.2rem;
+        height: 3.2rem;
+
+        svg, i {
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    .text-content {
+      .label, .value, .unit, .sub-label {
+        opacity: 1 !important;
+      }
+    }
+
+  }
+}
+
+.xbi:hover {
+
+  .xbi-card.bg-gradient-blue {
+    background: var(--bs-blue) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-cyan {
+    background: var(--bs-cyan) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-dark {
+    background: var(--bs-dark) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-green {
+    background: var(--bs-green) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-indigo {
+    background: var(--bs-indigo) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-orange {
+    background: var(--bs-orange) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-pink {
+    background: var(--bs-pink) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-red {
+    background: var(--bs-red) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-purple {
+    background: var(--bs-purple) !important;
+    transition: width .0s;
+  }
+
+  .xbi-card.bg-gradient-yellow {
+    background: var(--bs-yellow) !important;
+    transition: width .0s;
+  }
+
+}
+
+.xbi .multi-icon svg {
+  height: 0.7rem !important;
+  width: 0.7rem !important;
+}
+
+
+//
+
+.transition {
+  transition: 0.3s;
+}
+
+.white-space-initial {
+  white-space: initial;
+}

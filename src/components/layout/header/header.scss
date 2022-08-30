@@ -1,0 +1,113 @@
+
+
+
+.sidebar .navbar-brand-wrapper .navbar-brand img{
+  width: calc(260px - 120px);
+  max-width: 100%;
+  height: 28px;
+  margin: auto;
+  vertical-align: middle;
+}
+
+.sidebar .navbar-brand-wrapper .navbar-brand {
+  font-size: 1.5rem;
+  line-height: 48px;
+  margin-right: 0;
+  padding: 0.25rem 0;
+  width: 100%;
+}
+
+.sidebar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+  display: none;
+}
+
+.sidebar .navbar-brand-wrapper .navbar-brand.brand-logo-mini img {
+  width: calc(70px - 30px);
+  max-width: 100%;
+  height: calc(70px - 30px);
+  margin: auto;
+}
+
+@media (max-width: 991px) {
+  .sidebar {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
+
+  .sidebar .navbar-brand-wrapper {
+    width: 75px;
+  }
+
+  .sidebar .navbar-brand-wrapper .navbar-brand.brand-logo {
+    display: none;
+  }
+
+  .sidebar .navbar-brand-wrapper .navbar-brand.brand-logo-mini {
+    display: inline-block;
+  }
+
+  .navbar-collapse {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    margin-top: 0.5rem;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .sidebar .navbar-brand-wrapper {
+    width: 55px;
+  }
+
+  .sidebar .navbar-brand-wrapper .brand-logo-mini {
+    padding-top: 0px;
+  }
+}
+@media (min-width: 992px) {
+  .sidebar-icon-only .sidebar .navbar-brand-wrapper .brand-logo-mini{
+    display: inline-block;
+  }
+  .sidebar-icon-only .sidebar .navbar-brand-wrapper .brand-logo {
+    display: none;
+  }
+}
+
+svg{
+  height : 1em;
+  width : 1em
+}
+
+.nav-link .icon svg,.sub-title .icon svg{
+  padding: 0.35rem;
+  color: var(--bs-icon-bg);
+}
+
+.icon-shape {
+  width: 1.7rem;
+  height: 1.7rem;
+  background-position: 50%;
+  border-radius: 0.5rem;
+}
+
+.icon {
+  display: inline-block;
+  color: var(--bs-dark);
+  //height: 1em;
+  //width: 1em;
+}
+.icon {
+  fill: currentColor;
+  stroke: none;
+}
+.icon-responsive{
+  float: left;
+  width: 45px !important;
+  height: 100% !important;
+}
+.img-center{
+  display: block;
+  margin: auto;
+}

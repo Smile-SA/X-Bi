@@ -1,0 +1,6 @@
+<div class="session-action display-flex">
+    <show-form class="m-r-xs" v-if="$route.meta.crud.show" :url="$route.meta.crud.show.url" :id="$route.meta.crud.show.id" :value="data.id" :refreshFunction="data.refreshFunction"></show-form>
+    <delete-form class="m-r-xs" v-if="$route.meta.crud.delete" :url="$route.meta.crud.delete.url" :id="$route.meta.crud.delete.id" :value="data.id" :refreshFunction="data.refreshFunction"></delete-form>
+</div>
+
+

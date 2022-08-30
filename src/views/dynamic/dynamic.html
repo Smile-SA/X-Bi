@@ -1,0 +1,37 @@
+<div class="row">
+    <title-box :that="this" :icon="$route.meta.icon" :description="$route.meta.description"></title-box>
+    <div :class="hover ? 'col-sm-9' : 'col-sm-11-5'" id="input-box" v-if="select.models!=undefined && Object.keys(select.models).length>0">
+        <div class="row">
+            <select-option v-for="(item,keys) in select.models" class="col-sm-4 m-b"
+                           v-if="(item.type === 'dynamic' ? true : item.type === 'date' ? showDatePicker() : item.type === 'group' ? showGroup() : false )===true "
+                           :type="item.type"
+                           :label="item.title"
+                           :replace=undefined
+                           :by=undefined
+                           :id="item.id"
+                           :selectId=item.query_key
+                           :defaultData="item.type === 'dynamic' ? '' : item.type === 'date' ? date : item.default_data"
+                           :placeholder="item.placeholder"
+                           :selectFunction="item.type === 'date' ?  setDate : item.type === 'group' ?  setGroup : item.type === 'dynamic' ? setDynamicDataSelect : ''"
+                           :selectData="item.type === 'date' ?  date : item.type === 'group' ? groupOptions : item.type === 'dynamic' ?  dynamicData : '' ">
+            </select-option>
+        </div>
+    </div>
+    <div class="col-12" v-if="structure.card.models!=undefined && Object.keys(structure.card.models).length>0">
+        <div class="row">
+            <div v-for="item in structure.card.models"
+                 :class="item.space === '1/4' ? 'col-sm-3 m-b' : item.space === '2/4' ? 'col-sm-6 m-b' : item.space === '3/4' ? 'col-sm-9 m-b' : item.space === '4/4' ? 'col-sm-12 m-b' : 'col-sm-4 m-b'">
+                <Card :configuration="item" :queryData="queryData" :additionalUrl="additionalUrl"
+                      :styles="structure.card.styles" :group="group"></Card>
+            </div>
+        </div>
+    </div>
+    <div class="col-12" v-if="structure.chart.models!=undefined &&  Object.keys(structure.chart.models).length>0">
+        <div class="row">
+            <div v-for="item in structure.chart.models" :class="item.space === '1/2' ? 'col-md-6 col-sm-12 m-b' : 'col-sm-12 m-b'">
+                <apex-charts :configuration="item" :queryData="queryData" :additionalUrl="additionalUrl" :styles="structure.chart.styles" :group="group">
+                </apex-charts>
+            </div>
+        </div>
+    </div>
+</div>

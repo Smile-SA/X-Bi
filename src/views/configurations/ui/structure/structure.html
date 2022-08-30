@@ -1,0 +1,29 @@
+<div class="row">
+    <div :class="hover ? 'col-sm-3 m-b' : 'col-sm-05 m-b'"  id="title-box" @mouseover="hover = true" @mouseleave="hover = false">
+        <div class="apex-box">
+            <div class="display-flex ">
+                <div class="page-title pt-2 ps-1-5">
+                    <div class="page-title-icon bg-primary shadow text-white">
+                        <font-awesome-icon width="16" height="24" class="text-white " :icon="['fas',$route.meta.icon]"/>
+                    </div>
+                </div>
+                <div class="page-title title pt-2 ms-2 p-0" id="box-title" :class="hover ? 'display-block' : 'display-none'" >{{ ($route.meta.description) }}</div>
+            </div>
+        </div>
+    </div>
+    <div class="col-12 grid-margin" v-if="Object.keys(tableData).length>0" v-for="(item, id) in tableData" >
+        <div class="card">
+            <div class="page-header card-header mb-0">
+                <h3 class="page-title text-capitalize">{{ id}} models properties</h3>
+                <div class="pull-right">
+                    <add-form :structureType="id" :refreshFunction="getStructure" :viewId="viewId" ></add-form>
+                </div>
+            </div>
+            <div class="card-body" v-if="Object.keys(item).length>0">
+                <div class="table-responsive text-capitalize">
+                    <data-table v-bind="item"/>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,17 @@
+<div class="row">
+    <title-box :that="this" :icon="$route.meta.icon" :description="$route.meta.description"></title-box>
+    <div class="col-12 grid-margin">
+        <div class="card">
+            <div class="page-header card-header mb-0">
+                <h3 class="page-title">{{ $route.name }} list</h3>
+                <add-form :structureType="$route.meta.crud.add.formId" :refreshFunction="getList" :url="$route.meta.crud.add.url"> </add-form>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <data-table v-bind="bindings" />
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

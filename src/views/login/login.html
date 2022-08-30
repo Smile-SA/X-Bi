@@ -1,0 +1,40 @@
+<section class="content">
+    <div class="form">
+        <div class="form-toggle"></div>
+        <div class="form-panel one">
+            <center>
+                <div class="img container">
+                    <img src="/img/X-Bi_-_logo.png" alt="Avatar" class="avatar">
+                </div>
+            </center>
+            <div class="form-header">
+                <h1 class="text-center">Account Login</h1>
+            </div>
+            <div class="form-content">
+                    <form ref="form" v-on:submit="loginUser">
+                        <div class="form-group">
+                            <label for="tenant">Username</label>
+                            <input type="text" id="username" name="username" required="required">
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" id="password" name="password" required="required">
+                        </div>
+                        <div class="form-group" v-if="showError" >
+                            <label class="text-danger">{{message}}</label>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-remember ">
+                                <input type="checkbox" class="primary " name="remember" id="remember">
+                                <span>Remember me</span>
+                            </label>
+                            <a class="form-recovery" v-bind:href='this.password()'>Forgot Password?</a>
+                        </div>
+                        <div class="form-group">
+                            <button type="submit">Log In</button>
+                        </div>
+                    </form>
+            </div>
+        </div>
+    </div>
+</section>

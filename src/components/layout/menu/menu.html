@@ -1,0 +1,75 @@
+<nav class="sidebar sidebar-offcanvas shadow-sm bg-500" id="sidebar">
+    <ul class="nav">
+        <div class="nav-profile ms-3 me-3 mt-3 mb-2 ">
+            <div class="pointer d-flex ms-2 me-2 ">
+                <div class="nav-profile-image">
+                    <img v-if='user.image !== ""' :src="user.image" alt="image" class="img-center">
+                    <span class="availability-status online"></span>
+                    <!--change to offline or busy as needed-->
+                </div>
+                <div class="nav-profile-text d-flex flex-column mt-1">
+                    <span class="font-weight-bold mb-1 text-capitalize">{{ user.username }}</span>
+                    <span class=" text-small">{{ user.email }}</span>
+                </div>
+            </div>
+        </div>
+        <div v-for="item in menus">
+            <div v-if="item.children!=undefined" class="">
+                <li class="nav-item">
+                    <div class="sub-title menu-icon border-radius-md">
+                        <div class="icon border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                            <font-awesome-icon class="menu-icon text-primary" :icon="['fas',item.icon]"/>
+                        </div>
+                        <span class="sub-menu-title ms-1 text-primary text-uppercase font-weight-bolder">{{
+                                item.name
+                            }}</span>
+                    </div>
+                </li>
+                <router-link v-for="subItem in item.children" class="pointer" :to="'/'+subItem.name" custom
+                             v-slot="{ navigate }">
+                    <li v-bind:class="$route.name==subItem.name || $route.path.includes((subItem.name).toLowerCase()) || ($route.path.includes((subItem.path).toLowerCase()) && subItem.path!='' && subItem.path!='/') ? 'nav-item active' : 'nav-item '">
+                        <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
+                           role="link">
+                            <div class="icon shadow border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                                <font-awesome-icon class="menu-icon" :icon="['fas',subItem.icon]"/>
+                            </div>
+                            <span class="menu-title ms-1">{{ subItem.name }}</span>
+                        </a>
+                    </li>
+                </router-link>
+            </div>
+            <router-link v-else class="pointer" :to="{name:item.name, params:{routeName : item.name}}" custom
+                         v-slot="{ navigate }">
+                <li v-bind:class="$route.name==item.name || $route.path.includes((item.name).toLowerCase()) || ($route.path.includes((item.path).toLowerCase()) && item.path!='' && item.path!='/' )? 'nav-item active' : 'nav-item'">
+                    <a class="nav-link menu-icon border-radius-md" @click="navigate" @keypress.enter="navigate"
+                       role="link">
+                        <div class="icon   shadow border-radius-md text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                            <font-awesome-icon class="menu-icon" :icon="['fas',item.icon]"/>
+                        </div>
+                        <span class="menu-title ms-1">{{ item.name }}</span>
+                    </a>
+                </li>
+            </router-link>
+        </div>
+        <div class="sidenav-footer nav-item mt-2 ">
+            <a class="nav-link menu-icon display-block bg-primary text-white border-radius-md" target="_blank" :href="xBiInfo.documentationUrl">
+                <div class="icon icon-shape border-radius-md shadow bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" menu-icon text-primary text-lg " :icon="['fas','fa-info']"/>
+                </div>
+                <div class="docs-info ms-2 me-2 mt-2">
+                    <h6>Need help?</h6>
+                    <p class="font-weight-bold">Please check our docs</p>
+                    <a target="_blank" :href="xBiInfo.documentationUrl" class="btn btn-outline-white  w-100 ">Documentation</a>
+                </div>
+            </a>
+
+            <div class="nav-link mt-2 btn btn-outline-danger menu-icon logout"
+                 role="link" v-on:click="logoutUser">
+                <div class="icon shadow border-radius-md bg-white text-center ms-2 me-2 d-flex align-items-center justify-content-center">
+                    <font-awesome-icon class=" menu-icon text-danger text-lg " :icon="['fas','fa-power-off']"/>
+                </div>
+                <span class="menu-title ms-1 ">Sign out</span>
+            </div>
+        </div>
+    </ul>
+</nav>

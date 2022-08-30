@@ -1,0 +1,13 @@
+<div class="normal-case tracking-normal">
+    <a @click.prevent="show" class="btn btn-sm btn-outline-behance text-capitalize">
+        <font-awesome-icon class="me-1" :icon="['fas','fa-eye']"/>
+        Show</a>
+    <modal class="white-space-initial" :name="'preview-modal-'+id+value" height="auto" :resizable="true" width="50%">
+        <div class="modal-body">
+            <slot name="body">
+                <h3 class="text-capitalize p-2">{{ value + ' ' + ' display' }}</h3>
+                <textarea readonly id="value" name="value" class="form-control"></textarea>
+            </slot>
+        </div>
+    </modal>
+</div>

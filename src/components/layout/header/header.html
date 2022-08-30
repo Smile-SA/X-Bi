@@ -1,0 +1,42 @@
+<div class="nav-container">
+    <nav class="navbar nav-height nav-header bg-white p-0">
+        <div class="navbar-menu-wrapper d-flex align-items-stretch">
+            <div class="header-sidebar align-items-center justify-content-center">
+                <a class="navbar-brand brand-logo f-left ps-4">
+                    <img src="../../../../public/img/X-Bi_-_logo.png" class="icon-responsive">
+                </a>
+                <button class=" navbar-toggler navbar-toggler f-right" @click="reduceMenu()" type="button"
+                        data-toggle="minimize">
+                    <font-awesome-icon class="text-primary " :icon="['fas','fa-bars']"/>
+                </button>
+            </div>
+
+            <button class="navbar-toggler navbar-toggler-right d-lg-none align-self-center" @click="showMenu()" type="button" data-toggle="offcanvas">
+                <font-awesome-icon class="text-primary" :icon="['fas','fa-bars']"/>
+            </button>
+            <ul class="navbar-nav navbar-nav-right ">
+                <li class="nav-item nav-profile dropdown">
+                    <a class="nav-link dropdown-toggle text-primary pointer" v-on:click="dropDownEvent()"
+                       data-bs-toggle="dropdown">
+                        <div class="nav-profile-img">
+                            <img v-if='user.image !== ""' :src="user.image" alt="image">
+                            <span class="availability-status online"></span>
+                        </div>
+                        <div class="nav-profile-text ">
+                            <p class="mb-1 ">{{ "Signed in as " + user.username }}</p>
+                        </div>
+                    </a>
+                    <div :class=" drop ? 'dropdown-menu navbar-dropdown show text-primary' : 'dropdown-menu navbar-dropdown text-primary'">
+                        <a class="dropdown-item ">
+                            <font-awesome-icon class="me-2 " :icon="['fas','fa-at']"/>
+                            {{ user.email }} </a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" v-on:click="logoutUser">
+                            <font-awesome-icon class="me-2 text-danger" :icon="['fas','fa-power-off']"/>
+                            Sign out </a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
