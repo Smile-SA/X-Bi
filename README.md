@@ -1,173 +1,231 @@
- # X-BI
-X-BI allows its users to access BI informations they can customise and interact with.
+# X-BI
 
-![presentation](public/images/documentation/presentation.gif "presentation")
+X-BI is a platform allowing access, interaction and personalization of BI information for a better dashboard
+configuration.
 
-### Tech / Framework used
+![presentation](public/img/documentation/presentation.gif)
+
+## Tech / Framework used
+
 Project is created with:
 > - Vue.js
-> - ajv.js
 > - JsonSchema
 > - Storybook
 
-### Before installation X-BI install your API
-The API is used as a communication interface between components, you need a data source to feed x-bi. For the example you can use rating-operator or X-BI-test-data API, follow these links to install them.
->https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api
-
->https://git.rnd.alterway.fr/overboard/x-bi/x-bi-test-data
-
-### Note:
-X-BI uses yarn commands, but npm will also work. You can compare yarn and npm commands in the yarn docs.
-
 ## Getting Started
 
-### 1 - Install dependencies
-Install X-BI using yarn, open your command prompt from the main directory of the clone directory and write this command:
->yarn install
+This project uses ```vue.js``` for build user interfaces, ```yarn``` as the dependency manager, ```storybook``` for
+component testing.
+X-BI uses yarn commands, but npm will also work. You can compare yarn and npm commands in the yarn docs.
 
-### 2 - Connect API to X-BI
-Open the file ```src/settings/variables.js```, in the function ```generateAPIUrl``` at line 3 you can set your api url,
-by default you have a ```http://localhost:5012```.
+#### 1. Install dependencies
+
+Install X-BI using yarn, open your command prompt from the main directory of the clone directory and write this command:
+> yarn install
+
+#### 2. Connect API to X-BI
+
+To use x-bi you will need an api. The API serves as a communication interface between the components, you need a data
+source to power x-bi. For the example, you can use
+the **[rating-operator](https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api)**
+or **[X-BI-test-data API](https://git.rnd.alterway.fr/overboard/x-bi/x-bi-test-data)**
+
+#### How to configure api information in x-bi?
+
+Open ```src/uiConfiguration.js``` file, look for ```apiInfo``` properties if you can't find it, you need to create it
+and follow this example to fill the api information:
+
 ```
-export const generateAPIUrl = () => {
-    if (window._env_===undefined || window._env_.RATING_API_URL === undefined) {
-        return 'http://localhost:5012'
-    } else if (window._env_.RATING_API_URL.startsWith('http')) {
-        return window._env_.RATING_API_URL
-    } else if (window._env_.RATING_API_URL.startsWith('localhost')) {
-        return `http://${window._env_.RATING_API_URL}`
-    } else {
-        return `${window.location.href.split('#')[0]}${window._env_.RATING_API_URL}`
-    }
+"apiInfo": {
+    "url": "http://localhost:5012/",
+    "login": "http://localhost:5012/login_user",
+    "logout": "http://localhost:5012/login_user",
+    "password": "http://localhost:5012/password",
+    "redirectAfterLogin": "/",
+    "redirectAfterLogout": "/login",
+    "mode": "default"
+  }
+```
+
+If you want to use rating operator api, you will need to change mode ```default``` to ```ro```
+
+#### 3. run X-BI
+
+> Run the project using yan ```yarn serve```, the project will be launched on http://localhost:8080
+>
+>For component testing used ```yarn storybook```, the project will be launched on http://localhost:6006
+>
+>Alternatively, you can build the project in static directory for production : ```yarn build```
+
+- #### Home page
+
+![home](public/img/documentation/home.png)
+
+- #### Monitoring Chart
+
+![monitoring](public/img/documentation/monitoring.gif)
+
+#### 4. configuration of dashboard
+
+The configuration of your own dashboard is possible. There are ```two types``` of
+configuration : ```on user interface``` and ```in configuration file```
+
+#### 4.1 On the configuration page
+
+- ##### 4.1.1 Add a view
+
+Go to ```views configuration``` page and follow this example to add your view
+
+![](public/img/documentation/createView.gif)
+
+- ##### 4.1.2 View structure
+
+A view is structured in three fields:
+> - Select button
+> - Cards
+> - Charts
+
+To configure the structure go to view list in ```views configuration``` page, then in the list click on the
+button ```structure``` of the view you want of a view that you want to configure. Once on the structure page, you will
+see the view structures table and click on the top right button ``` Add ... ``` on the table of elements you want to add
+and fill the requested information.
+
+- ##### 4.1.2.1 Add Select button
+
+![](public/img/documentation/createSelectButton.gif)
+
+- ##### 4.1.2.2 Add Card
+
+![](public/img/documentation/createCard.gif)
+
+- ##### 4.1.2.3 Add Chart
+
+![](public/img/documentation/createChart.gif)
+
+- ##### 4.1.3 Edit view or structure
+
+To edit an element, whether it is a view or its structure (selection, map, graphic), click on the edit button of the
+element line to be edited, then edit the values that you want and save.
+
+- ##### 4.1.4 delete a view structure
+
+To delete an element, whether it is a view or its structure (selection, map, graphic), click on the delete button of the
+element line to be deleted, Then you validate or not your action.
+
+##### Note : You may get errors if the value does not respect the checks defined in the configuration files.
+
+#### 4.2 In the configuration file
+
+In json configuration file you have properties:
+> - ```apiInfo``` : in apiInfo you have properties allowing you to connect authentication information to your api
+> - ```forms``` : in forms, you have many items, in each you have form fields which corresponds to the form schema of
+    vue-formulate form
+> - ```views``` : in views, you have statics (don't modify it if you don't understand all x-bi code) and dynamics
+    fields.
+> - ```xBiInfo``` : in xBiInfo, you have x-bi information
+
+##### Prerequisites
+
+> - Know **[json syntax](https://jsonformatter.curiousconcept.com)**
+> - Know **[vue-formulate](https://vueformulate.com)** schema form
+
+- ##### 4.2.1 Configuration forms
+
+Go to properties forms in ```src/uiConfiguration.json``` you will see many items : ```view```, ```select```, ```card```
+, ```chart```, ```...``` and add or edit your own configuration
+
+##### **Conditional fields configuration** :
+
+First, add item which contains the ```condition``` property to the form, this example based on select button form :
+
+``` 
+ {
+   "component": "FormulateInput",
+   "type": "select",
+   "name": "type",
+   "placeholder": "Select type",
+   "options": {
+     "date": "Date",
+     "dynamic": "Dynamic",
+     "group": "Group"
+   },
+   "validation": "required",
+   "condition": true
 }
 ```
 
-### 3 - run X-BI
-Run the project use yan :
->yarn serve
-
-Alternatively, you can build the project in static directory for production :
->yarn build
-
-#### You just successfully run X-BI!
-The project is launched by default on http://localhost:8080
-
-- #### Home page
-![home](public/images/documentation/home.png)
-
-- #### Monitoring Chart
-![monitoring](public/images/documentation/monitoring.gif)
-
-### 4 - configuration of dashboard
-The configuration of your own dashboard is possible. There are two types of configuration :
-- On the configuration page
-- In the configuration file
-
-- #### 4.1 On the configuration page
-    - ##### 4.1.1 Add a view
-      Once on the configuration page, you will click on the Add view button, you will have a view addition form which will open on the screen then you will fill in the requested information, then you save the form.
-      <br/><br/>
-      ![](public/images/documentation/createView.gif)
-
-    - ##### 4.1.2 Add a view structure
-      A view is structured in three elements:
-        - Select button
-        - Cards
-        - Charts
-
-      To configure the structure of a view you will click on the structure button on the line of sight you want to configure.
-      Once on the structure page, you will see the table of view structure elements and click on the top right button ``` Add(name of strucutre element) ``` on the table of elements you want to add and save the requested information.
-        - ###### 4.1.2.1 Add Select button
-
-      ![](public/images/documentation/createSelect.gif)
-
-        - ###### 4.1.2.1 Add Card
-      ![](public/images/documentation/createCard.gif)
-
-        - ###### 5.1.2.1 Add Chart
-      ![](public/images/documentation/createChart.gif)
-
-    - ##### 4.1.2 Edit a view structure
-  To modify an element whether it is a view or the structure of the element of a view, you will click on the update button and then modify the values that you want to modify.
-
-    - ##### 4.1.3 delete a view structure
-  To delete an element whether it is a view or an element of its structure, you will click on the delete button of the object you wish to delete. Then you validate or not your operation
-
-##### NB: You may get errors on the screen if the value does not respect the checks defined in the configuration files.
-
-#### 4.2 In the configuration file
-##### Prerequisites
-> Know json syntax
-> Know json schema syntax  : https://ajv.js.org/
-> Know vue-form-generator schema form : https://github.com/vue-generators/vue-form-generator
-
-In the configuration json file you have :
-- views
-- and controls
-
-- ##### 4.2.1 Configuration controls
-  In controls, you have 4 items
-    - view
-    - select
-    - card
-    - chart
-
-  In each you have the ```schema``` which corresponds to the ajv.js schema and form which corresponds to the ```form``` generator of vue-form-generator.
+Second, add fields with contains conditionField. ConditionField must contain properties :
+> - ```name``` which must be the name of the field that condition it. Here it's `type`, and
+> - ```values``` add the values for the condition
+> - ```validation``` see **[vue-formulate](https://vueformulate.com)** documentation to understand and fill the
+    validation value
 
 ``` 
 {
-  "views": {...},
-  "controls": {
-    "view": {
-      "schema":{
-        "type": "object",
-        "properties": {
-          "name": {
-            "type": "string",
-            "minLength": 1
-          },
-          "display": {
-            "type": "boolean"
-          }
-        }
-      },
-      "form":{
-        "form": {
-          "fields": [
-            {
-              "model": "title",
-              "type": "input",
-              "inputType": "text",
-              "required": true,
-              "placeholder": "Title"
-            },
-          ]
-        }
-      }
-    },
-    "select": {...},
-    "chart": {...},
-    "card": {...}
+  "component": "FormulateInput",
+  "type": "text",
+  "name": "query",
+  "placeholder": "Enter query link",
+  "conditionFields": {
+    "name": "type",
+    "values": [
+      "dynamic"
+    ],
+    "validation": "required|min:1,length"
   }
-}
+}, 
+{
+  "component": "FormulateInput",
+  "type": "select",
+  "name": "default_data",
+  "placeholder": "Select default data",
+  "options": {
+    "hour": "hour",
+    "day": "day",
+    "month": "month",
+    "year": "year"
+  },
+  "conditionFields": {
+    "name": "type",
+    "values": [
+      "group"
+    ],
+    "validation": "required"
+  }
+} 
 ```
-In the ```schema``` you can define the id of your fields, the type, the size... of your configuration elements.
-In the ```form``` fields, for each schema field, you will first bind the schema name to the form element model, then you can define if the element is a simple input, a switch, a select, the possible values, the name, the text of the placeholder ....
+
+##### **Dynamic select options configuration** :
+
+Just add the optionsData property and add your api link to it which returns the options values and the id of the item to
+display (example data:
+``` data: [{"name": "example1", "value":"value1},{"name": "example2", "value": "value2"}]```)
+
+```
+{
+ "component": "FormulateInput",
+ "type": "select",
+ "name": "template_name",
+ "placeholder": "Select template name",
+ "options": {},
+ "optionsData": {
+   "url": "http://localhost:5012/options",
+   "id": "name"
+ },
+ "validation": "required"
+}
+  ```
 
 - ##### 4.2.2 Configuration view structure
-
     - ##### 4.2.2.1 Add a model
 
-In configuration files, adding a view model and its structure is done in dynamic views.
-
-Example: Let's add a new model named example1 and configure its structure.
-In Json file Go To ``` views > dynamics > ``` add a new element in the items respecting the properties and the expected values.
+In configuration files, adding a view model and its structure is done in dynamic views. Let's add a new model named
+example and configure its structure.
+In Json file Go To ``` views > dynamics > ``` and add a new field in the items.
 
 ```
 {
   "views": {
-    "default": {...},
-    "statics": [...],
     "dynamics": [
       {
         "name": "Example1",
@@ -179,33 +237,35 @@ In Json file Go To ``` views > dynamics > ``` add a new element in the items res
         "requiresAuth": true,
         "structure": {...}
       },
-      {"name": "Overall"...},
-      {"name": "Namespaces"...}
+      ...
     ]
-  },
-  "controls": {
-    "view": {...},
-    "select": {...},
-    "card": {...},
-    "chart": {...}
   }
 }
 ```
-To know the expected variables in the models, their importance and their data types ...
-You have to go to the controls and depending on the models either card charts views or select you will look in the data of the schema.
+
+To know the expected variables in the models, their importance and their data types, validations ...
+You have to go to the forms look properties depending on the models either card charts views or select.
 
 - ##### 4.2.2.2 Delete model
-To delete a model of chart or card, simply delete a field from its models.
 
-Go to ``` views > namespaces > structure > chart > models ``` or ``` views > namespaces > structure > card > models ``` and delete one field.
+To delete a model of select, chart or card, simply delete a field from its models in the dynamics views structure.
+Go to 
+> - `views > synamics > viewName > structure > select > models`
+> - `views > synamics > viewName > structure > chart > models`
+> - `views > synamics > viewName > structure > card > models`
+
+and delete one field.
 
 ## Contribute
+
 Simply open a pull request over the repository to describe your changes.
 
 ## Credits
+
 - Rnd Team @ Alter Way,
 - Koku Ulrich GBLOKPO @koku-ulrich.gblokpo,
 - Jonathan Rivalan (author) @JonRiv.
 
 ## License
+
 Licensed under the Apache 2.0 license.
