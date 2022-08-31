@@ -25,18 +25,18 @@ Install X-BI using yarn, open your command prompt from the main directory of the
 
 #### 2. Connect API to X-BI
 
-To use x-bi you will need an api. The API serves as a communication interface between the components, you need a data
-source to power x-bi. For the example, you can use
+To use X-BI you will need an API. The API serves as a communication interface between the components, you need a data
+source to power X-BI. For the example, you can use
 the **[rating-operator](https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api)**
 or **[X-BI-test-data API](https://git.rnd.alterway.fr/overboard/x-bi/x-bi-test-data)**
 
-#### How to configure api information in x-bi?
+#### How to configure API information in X-BI?
 
 Open ```src/uiConfiguration.js``` file, look for ```apiInfo``` properties if you can't find it, you need to create it
 and follow this example to fill the api information:
 
 ```
-"apiInfo": {
+"APIInfo": {
     "url": "http://localhost:5012/",
     "login": "http://localhost:5012/login_user",
     "logout": "http://localhost:5012/login_user",
@@ -47,9 +47,9 @@ and follow this example to fill the api information:
   }
 ```
 
-If you want to use rating operator api, you will need to change mode ```default``` to ```ro```
+If you want to use rating operator API, you will need to change mode ```default``` to ```ro```
 
-#### 3. run X-BI
+#### 3. Run X-BI
 
 > Run the project using yan ```yarn serve```, the project will be launched on http://localhost:8080
 >
@@ -65,7 +65,7 @@ If you want to use rating operator api, you will need to change mode ```default`
 
 ![monitoring](public/img/documentation/monitoring.gif)
 
-#### 4. configuration of dashboard
+#### 4. Configuration of dashboard
 
 The configuration of your own dashboard is possible. There are ```two types``` of
 configuration : ```on user interface``` and ```in configuration file```
@@ -107,7 +107,7 @@ and fill the requested information.
 To edit an element, whether it is a view or its structure (selection, map, graphic), click on the edit button of the
 element line to be edited, then edit the values that you want and save.
 
-- ##### 4.1.4 delete a view structure
+- ##### 4.1.4 Delete a view structure
 
 To delete an element, whether it is a view or its structure (selection, map, graphic), click on the delete button of the
 element line to be deleted, Then you validate or not your action.
@@ -117,17 +117,18 @@ element line to be deleted, Then you validate or not your action.
 #### 4.2 In the configuration file
 
 In json configuration file you have properties:
-> - ```apiInfo``` : in apiInfo you have properties allowing you to connect authentication information to your api
+
+> - ```apiInfo``` : in apiInfo you have properties allowing you to connect authentication information to your API
 > - ```forms``` : in forms, you have many items, in each you have form fields which corresponds to the form schema of
     vue-formulate form
-> - ```views``` : in views, you have statics (don't modify it if you don't understand all x-bi code) and dynamics
+> - ```views``` : in views, you have statics (don't modify it if you don't understand all X-BI code) and dynamics
     fields.
-> - ```xBiInfo``` : in xBiInfo, you have x-bi information
+> - ```xBiInfo``` : in xBiInfo, you have X-BI information
 
 ##### Prerequisites
 
 > - Know **[json syntax](https://jsonformatter.curiousconcept.com)**
-> - Know **[vue-formulate](https://vueformulate.com)** schema form
+> - Know **[vue formulate](https://vueformulate.com)** schema form
 
 - ##### 4.2.1 Configuration forms
 
@@ -197,7 +198,7 @@ Second, add fields with contains conditionField. ConditionField must contain pro
 
 ##### **Dynamic select options configuration** :
 
-Just add the optionsData property and add your api link to it which returns the options values and the id of the item to
+Just add the optionsData property and add your API link to it which returns the options values and the id of the item to
 display (example data:
 ``` data: [{"name": "example1", "value":"value1},{"name": "example2", "value": "value2"}]```)
 
@@ -249,7 +250,7 @@ You have to go to the forms look properties depending on the models either card 
 - ##### 4.2.2.2 Delete model
 
 To delete a model of select, chart or card, simply delete a field from its models in the dynamics views structure.
-Go to 
+Go to
 > - `views > synamics > viewName > structure > select > models`
 > - `views > synamics > viewName > structure > chart > models`
 > - `views > synamics > viewName > structure > card > models`
@@ -262,7 +263,7 @@ Simply open a pull request over the repository to describe your changes.
 
 ## Credits
 
-- Rnd Team @ Alter Way,
+- Rnd Team @SMILE R&D,
 - Koku Ulrich GBLOKPO @koku-ulrich.gblokpo,
 - Jonathan Rivalan (author) @JonRiv.
 
