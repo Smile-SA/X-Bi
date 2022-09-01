@@ -16497,87 +16497,105 @@ code {
 }
 
 .bg-gradient-blue {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(var(--bs-blue-rgb))), to(var(--bs-blue))) !important;
-    background: linear-gradient(to right, rgb(var(--bs-blue-rgb)), var(--bs-blue)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(var(--bs-blue-rgb))), to(var(--bs-blue)));
+    background: linear-gradient(to right,rgb(var(--bs-blue-rgb)) 0%,var(--bs-blue) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-cyan {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(var(--bs-cyan-rgb))), to(var(--bs-cyan))) !important;
-    background: linear-gradient(to right, rgb(var(--bs-cyan-rgb)), var(--bs-cyan)) !important;
+    -webkit-appearance: none;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(var(--bs-cyan-rgb))), to(var(--bs-cyan)));
+    background: linear-gradient(to right,rgb(var(--bs-cyan-rgb)) 0%,var(--bs-cyan) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-dark {
-    background: linear-gradient(89deg, #5e7188, var(--bs-dark)) !important;
+    background: linear-gradient(to right,#5e7188 0%,var(--bs-dark) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-danger {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-danger))) !important;
-    background: linear-gradient(to right, #ffbf96, var(--bs-danger)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-danger)));
+    background: linear-gradient(to right,#ffbf96 0%,var(--bs-danger) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-green {
-    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-green))) !important;
-    background: linear-gradient(to right, #84d9d2, var(--bs-green)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-green)));
+    background: linear-gradient(to right,#84d9d2 0%,var(--bs-green) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-indigo {
-    background: -webkit-gradient(linear, left top, right top, from(rgb(74, 54, 216)), to(var(--bs-indigo))) !important;
-    background: linear-gradient(to right, rgb(74, 54, 216), var(--bs-indigo)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(rgb(74, 54, 216)), to(var(--bs-indigo)));
+    background: linear-gradient(to right,rgb(74, 54, 216) 0%,var(--bs-indigo) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-light {
-    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9)) !important;
-    background: linear-gradient(to bottom, #f4f4f4, #e4e4e9) !important;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f4f4f4), to(#e4e4e9));
+    background: linear-gradient(to right,#f4f4f4 0%,#e4e4e9 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-orange {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-orange))) !important;
-    background: linear-gradient(to right, #ffbf96, var(--bs-orange)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-orange)));
+    background: linear-gradient(to right,#ffbf96 0%,var(--bs-orange) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-pink {
-    background: -webkit-gradient(linear, left top, right top, from(#d296ff), to(var(--bs-pink))) !important;
-    background: linear-gradient(to right, #d296ff, var(--bs-pink)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#d296ff), to(var(--bs-pink)));
+    background: linear-gradient(to right,#d296ff 0%,var(--bs-pink) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-primary {
-    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary))) !important;
-    background: linear-gradient(to right, var(--bs-primary-gradient), var(--bs-primary) 99%) !important;
+    background: -webkit-gradient(linear, left top, right top, from(var(--bs-primary-gradient)), color-stop(99%, var(--bs-primary)));
+    background: linear-gradient(to right,var(--bs-primary-gradient) 0%,var(--bs-primary) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-purple {
-    background: -webkit-gradient(linear, left top, right top, from(#5515d19e), to(#5515d1)) !important;
-    background: linear-gradient(to right, #5515d19e, #5515d1) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#5515d19e), to(#5515d1)) ;
+    background: linear-gradient(to right,#5515d19e 0%,#5515d1 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-red {
-    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-red))) !important;
-    background: linear-gradient(to right, #ffbf96, var(--bs-red)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#ffbf96), to(var(--bs-red)));
+    background: linear-gradient(to right,#ffbf96 0%,var(--bs-red) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-secondary {
-    background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96)) !important;
-    background: linear-gradient(to right, #e7ebf0, #868e96) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#e7ebf0), to(#868e96));
+    background: linear-gradient(to right,#e7ebf0 0%,#868e96 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-success {
-    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(#07cdae)) !important;
-    background: linear-gradient(to right, #84d9d2, #07cdae) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-green)));
+    background: linear-gradient(to right,#84d9d2 0%,var(--bs-green) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-teal {
-    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-teal))) !important;
-    background: linear-gradient(to right, #84d9d2, var(--bs-teal)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#84d9d2), to(var(--bs-teal)));
+    background: linear-gradient(to right,#84d9d2 0%,var(--bs-teal) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-warning {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning))) !important;
-    background: linear-gradient(to right, #f6e384, var(--bs-warning)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-warning)));
+    background: linear-gradient(to right,#f6e384 0%,var(--bs-warning) 25%);
+    background-size: 500%;
 }
 
 .bg-gradient-yellow {
-    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-yellow))) !important;
-    background: linear-gradient(to right, #f6e384, var(--bs-yellow)) !important;
+    background: -webkit-gradient(linear, left top, right top, from(#f6e384), to(var(--bs-yellow)));
+    background: linear-gradient(to right,#f6e384 0%,var(--bs-yellow) 25%);
+    background-size: 500%;
 }
 
 

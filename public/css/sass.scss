@@ -1,44 +1,43 @@
 .xbi {
-  transition: 0.5s;
-  //.xbi-card.blue {
-  //  border-bottom: 0.23rem solid var(--bs-blue);
-  //}
-  //
-  //.xbi-card.cyan {
-  //  border-bottom: 0.23rem solid var(--bs-cyan);
-  //}
-  //
-  //.xbi-card.dark {
-  //  border-bottom: 0.23rem solid var(--bs-dark);
-  //}
-  //
-  //.xbi-card.green {
-  //  border-bottom: 0.23rem solid var(--bs-green);
-  //}
-  //
-  //.xbi-card.indigo {
-  //  border-bottom: 0.23rem solid var(--bs-indigo)
-  //}
-  //
-  //.xbi-card.purple {
-  //  border-bottom: 0.23rem solid var(--bs-purple)
-  //}
-  //
-  //.xbi-card.orange {
-  //  border-bottom: 0.23rem solid var(--bs-orange)
-  //}
-  //
-  //.xbi-card.pink {
-  //  border-bottom: 0.23rem solid var(--bs-pink)
-  //}
-  //
-  //.xbi-card.red {
-  //  border-bottom: 0.23rem solid var(--bs-red)
-  //}
-  //
-  //.xbi-card.yellow {
-  //  border-bottom: 0.23rem solid var(--bs-yellow)
-  //}
+  .xbi-card.blue {
+    border-bottom: 0.23rem solid var(--bs-blue);
+  }
+
+  .xbi-card-cyan {
+    border-bottom: 0.23rem solid var(--bs-cyan);
+  }
+
+  .xbi-card.dark {
+    border-bottom: 0.23rem solid var(--bs-dark);
+  }
+
+  .xbi-card.green {
+    border-bottom: 0.23rem solid var(--bs-green);
+  }
+
+  .xbi-card.indigo {
+    border-bottom: 0.23rem solid var(--bs-indigo)
+  }
+
+  .xbi-card.purple {
+    border-bottom: 0.23rem solid var(--bs-purple)
+  }
+
+  .xbi-card.orange {
+    border-bottom: 0.23rem solid var(--bs-orange)
+  }
+
+  .xbi-card.pink {
+    border-bottom: 0.23rem solid var(--bs-pink)
+  }
+
+  .xbi-card.red {
+    border-bottom: 0.23rem solid var(--bs-red)
+  }
+
+  .xbi-card.yellow {
+    border-bottom: 0.23rem solid var(--bs-yellow)
+  }
 
   .xbi-card.bg-gradient-white {
     border-bottom: 0.23rem solid var(--bs-white);
@@ -81,8 +80,8 @@
 
       .icon-card {
         transition: 0.3s;
-        width: 2.6rem;
-        height: 2.6rem;
+        width: 2.8rem;
+        height: 2.8rem;
 
         svg, i {
           width: 3.5rem;
@@ -153,71 +152,41 @@
         opacity: 1 !important;
       }
     }
-
   }
 }
 
-.xbi:hover {
+.xbi {
+  transition: 0.5s all ease;
 
-  .xbi-card.bg-gradient-blue {
-    background: var(--bs-blue) !important;
-    transition: width .0s;
+  .xbi-card.bg-gradient-cyan:hover, .xbi-card.bg-gradient-dark:hover,
+  .xbi-card.bg-gradient-blue:hover, .xbi-card.bg-gradient-green:hover,
+  .xbi-card.bg-gradient-indigo:hover, .xbi-card.bg-gradient-orange:hover,
+  .xbi-card.bg-gradient-pink:hover, .xbi-card.bg-gradient-red:hover,
+  .xbi-card.bg-gradient-purple:hover, .xbi-card.bg-gradient-yellow:hover {
+    animation-name: gradient;
+    -webkit-animation-name: gradient;
+    animation-duration: 3s;
+    -webkit-animation-duration: 3s;
+    animation-iteration-count: 1;
+    -webkit-animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards;
+    @keyframes gradient {
+      0% {
+        background-position: 0% 50%
+      }
+      100% {
+        background-position: 100%;
+
+      }
+    }
   }
-
-  .xbi-card.bg-gradient-cyan {
-    background: var(--bs-cyan) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-dark {
-    background: var(--bs-dark) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-green {
-    background: var(--bs-green) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-indigo {
-    background: var(--bs-indigo) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-orange {
-    background: var(--bs-orange) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-pink {
-    background: var(--bs-pink) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-red {
-    background: var(--bs-red) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-purple {
-    background: var(--bs-purple) !important;
-    transition: width .0s;
-  }
-
-  .xbi-card.bg-gradient-yellow {
-    background: var(--bs-yellow) !important;
-    transition: width .0s;
-  }
-
 }
 
 .xbi .multi-icon svg {
   height: 0.7rem !important;
   width: 0.7rem !important;
 }
-
-
-//
 
 .transition {
   transition: 0.3s;
