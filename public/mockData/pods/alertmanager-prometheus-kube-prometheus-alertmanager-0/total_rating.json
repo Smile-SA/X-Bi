@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "frame_price": 295.62,
+            "namespace": "monitoring",
+            "node": "Cloud-Computing-Node",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        }
+    ],
+    "total": 1
+}

@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "frame_price": 312.72,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        }
+    ],
+    "total": 1
+}

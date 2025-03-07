@@ -1,0 +1,1005 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 25 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.478704643726216,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.479236641978926,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.479392827401324,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 25 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.479430828184527,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.479499594432319,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.479803804091962,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.479972260953717,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.480152989254829,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.480345952977607,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.480559940438772,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 26 Feb 2025 23:10:47 GMT",
+            "frame_price": 0.480902989881961,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 00:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 01:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 02:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.48124660925215,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 04:10:47 GMT",
+            "frame_price": 0.481261868041213,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 05:10:47 GMT",
+            "frame_price": 0.481284586729788,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 06:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 07:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.481444111204055,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.481543128075318,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.481611614656329,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.481672821426286,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.481840305810371,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 22:10:48 GMT",
+            "frame_price": 0.482032292818103,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 27 Feb 2025 23:10:48 GMT",
+            "frame_price": 0.482077547988108,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 00:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 01:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 02:10:48 GMT",
+            "frame_price": 0.482337589364554,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 03:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 05:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 06:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 07:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 08:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 09:10:47 GMT",
+            "frame_price": 0.482764562147586,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 10:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 11:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 12:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 13:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.483176155376355,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Fri, 28 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 01:10:46 GMT",
+            "frame_price": 0.483345031738281,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 02:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 03:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 04:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.483639584419231,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 07:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 08:10:46 GMT",
+            "frame_price": 0.483801250886798,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 10:10:46 GMT",
+            "frame_price": 0.483900261401998,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 11:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 12:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 13:10:48 GMT",
+            "frame_price": 0.484067283912157,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 14:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 15:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 16:10:48 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 17:10:48 GMT",
+            "frame_price": 0.484252005939648,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 18:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 19:10:48 GMT",
+            "frame_price": 0.484388752402083,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 21:10:46 GMT",
+            "frame_price": 0.484481811523438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 22:10:46 GMT",
+            "frame_price": 0.484699930425685,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sat, 01 Mar 2025 23:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 00:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 01:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 02:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 03:10:46 GMT",
+            "frame_price": 0.484827919292371,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 04:10:46 GMT",
+            "frame_price": 0.484851322317084,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.484934571914228,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.485003452571158,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 07:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 08:10:48 GMT",
+            "frame_price": 0.485094592161425,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 09:10:48 GMT",
+            "frame_price": 0.485141512619989,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 10:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 11:10:48 GMT",
+            "frame_price": 0.48527654294536,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 12:10:48 GMT",
+            "frame_price": 0.485339287882611,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 13:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 14:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 15:10:48 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 17:10:46 GMT",
+            "frame_price": 0.485649286856488,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 18:10:46 GMT",
+            "frame_price": 0.485693855571667,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 19:10:46 GMT",
+            "frame_price": 0.485717131475117,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 20:10:46 GMT",
+            "frame_price": 0.48573268899915,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 21:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 22:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Sun, 02 Mar 2025 23:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 00:10:46 GMT",
+            "frame_price": 0.485816866581521,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 01:10:46 GMT",
+            "frame_price": 0.485839519590777,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 02:10:46 GMT",
+            "frame_price": 0.485938447477155,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 03:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 04:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.486074473585761,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 07:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 08:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.486304613922212,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 10:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 11:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 13:10:46 GMT",
+            "frame_price": 0.486520912871696,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 14:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 15:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 16:10:46 GMT",
+            "frame_price": 0.486722953052727,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 17:10:46 GMT",
+            "frame_price": 0.48680758827165,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 18:10:46 GMT",
+            "frame_price": 0.486860981321242,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 19:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 20:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 21:10:46 GMT",
+            "frame_price": 0.487029164872279,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 22:10:46 GMT",
+            "frame_price": 0.487097149324298,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 0.487326711258998,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 03:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 04:10:46 GMT",
+            "frame_price": 0.487410640954905,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.487675286239798,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 07:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 10:10:46 GMT",
+            "frame_price": 0.487670631482845,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 11:10:46 GMT",
+            "frame_price": 0.487731069169154,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 12:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 13:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 14:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 15:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 16:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 17:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 18:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 19:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 20:10:47 GMT",
+            "frame_price": 0.488269764593792,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 21:10:47 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 22:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 23:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 00:10:47 GMT",
+            "frame_price": 0.488570637320254,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 01:10:47 GMT",
+            "frame_price": 0.488593928054517,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 02:10:47 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 03:10:47 GMT",
+            "frame_price": 0.488698536142711,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.488873749499651,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 07:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 08:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 10:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 11:10:46 GMT",
+            "frame_price": 0.489020271587292,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 12:10:46 GMT",
+            "frame_price": 0.48909715029042,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 13:10:46 GMT",
+            "frame_price": 0.489165287287955,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 15:10:46 GMT",
+            "frame_price": 0.489219773580418,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 16:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 17:10:46 GMT",
+            "frame_price": 0.0163192749023438,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 18:10:46 GMT",
+            "frame_price": 0.489413457657026,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 19:10:46 GMT",
+            "frame_price": 0.489470571122279,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 20:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 21:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 22:10:46 GMT",
+            "frame_price": 0.0235061645507812,
+            "metric": "tenant_storage_use"
+        }
+    ],
+    "total": 200
+}

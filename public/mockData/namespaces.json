@@ -1,0 +1,17 @@
+{
+    "results": [
+        {
+            "namespace": "default",
+            "tenant_id": "default"
+        },
+        {
+            "namespace": "kube-system",
+            "tenant_id": "default"
+        },
+        {
+            "namespace": "monitoring",
+            "tenant_id": "default"
+        }
+    ],
+    "total": 3
+}

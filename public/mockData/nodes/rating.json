@@ -1,0 +1,195 @@
+{
+    "results": [
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 0.346582358680351,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 0.347748245090657,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 0.344259984355444,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 0.351194433959829,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 03:10:46 GMT",
+            "frame_price": 0.355614991565332,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 04:10:46 GMT",
+            "frame_price": 0.361821482161428,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 04:10:47 GMT",
+            "frame_price": 6.69217716415662e-12,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 05:10:47 GMT",
+            "frame_price": 0.340021614890925,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 06:10:47 GMT",
+            "frame_price": 0.348742729080106,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 07:10:47 GMT",
+            "frame_price": 0.348849452327055,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.348930444621285,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 10:10:46 GMT",
+            "frame_price": 0.352069798541428,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 11:10:46 GMT",
+            "frame_price": 0.338876799590239,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 12:10:46 GMT",
+            "frame_price": 0.339642230710865,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 13:10:46 GMT",
+            "frame_price": 0.346570833935578,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 14:10:46 GMT",
+            "frame_price": 0.342292158841456,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 15:10:46 GMT",
+            "frame_price": 0.352024540564736,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 16:10:46 GMT",
+            "frame_price": 0.355930894602004,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 17:10:46 GMT",
+            "frame_price": 0.352789305200764,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 18:10:46 GMT",
+            "frame_price": 0.343960075292024,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 19:10:48 GMT",
+            "frame_price": 0.341750356300644,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 20:10:48 GMT",
+            "frame_price": 0.350726635312365,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 21:10:48 GMT",
+            "frame_price": 0.354139049015328,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 22:10:48 GMT",
+            "frame_price": 0.352891949336847,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 23:10:48 GMT",
+            "frame_price": 0.337675737115958,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 00:10:48 GMT",
+            "frame_price": 0.335141891260314,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 01:10:48 GMT",
+            "frame_price": 0.340607682616689,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 02:10:48 GMT",
+            "frame_price": 0.343691770919831,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 03:10:48 GMT",
+            "frame_price": 0.340748875706459,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 05:10:46 GMT",
+            "frame_price": 0.341004546812379,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 06:10:46 GMT",
+            "frame_price": 0.342730164824116,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 07:10:46 GMT",
+            "frame_price": 0.343543133089312,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 08:10:46 GMT",
+            "frame_price": 0.344777827766634,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 09:10:46 GMT",
+            "frame_price": 0.348980701591457,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 10:10:46 GMT",
+            "frame_price": 0.347890902850321,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 11:10:46 GMT",
+            "frame_price": 0.342795111535586,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 12:10:46 GMT",
+            "frame_price": 0.341401314312037,
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "frame_begin": "Wed, 05 Mar 2025 13:10:46 GMT",
+            "frame_price": 0.351129783897724,
+            "node": "Distributed-Load-Node"
+        }
+    ],
+    "total": 38
+}

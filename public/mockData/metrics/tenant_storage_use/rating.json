@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.475242614746094
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.475508957099862
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.475951478932176
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.47611882348287
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476325781138133
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476363616663693
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476386712478684
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476409912109375
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476424827671025
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476447925604704
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476470623106402
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476493511289995
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.476947213437484
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.477500400686224
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.477782662859628
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.477895069837372
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.478445773984088
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.478507656615431
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.478902855438512
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.4795681382179
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.479606405955757
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.47969688451545
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.479757334913886
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.479818878555192
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480040423375506
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.48011693978303
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480330480201083
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480383625364211
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480444997391811
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480559870522077
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480398960426032
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.48060855478818
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480761651163861
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480807635162447
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.480958786582788
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481005211268422
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481036961922808
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481202755594081
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 11:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 12:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481452294635428
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 13:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 14:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 15:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 16:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 17:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 18:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 19:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481593873824586
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 20:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 21:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481662072264066
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 22:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 23:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481914689758691
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.48198284158704
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 03:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481975663472996
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 04:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.481990598102835
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 07:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 08:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 11:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 12:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482308835593967
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 13:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 14:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 15:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482615136398404
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 16:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482631348596947
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 17:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 18:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482700025859855
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 19:10:48 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 21:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482715606689453
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 22:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482752895593577
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 23:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482768669223759
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 00:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 01:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 02:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 03:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482956219699376
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 04:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.482997354021737
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 05:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483042640972058
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 06:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483103332900895
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 07:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483142005308109
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 08:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483248371907123
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 09:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483360609389848
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 10:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 11:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 12:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483530934934184
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 13:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483614709965887
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 14:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 15:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 16:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 17:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 18:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.483988444363531
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 19:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 20:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.484236739735178
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 21:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 22:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 23:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 00:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 01:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.484355757018653
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 03:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.484378814697266
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 04:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.48444892101505
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 05:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 06:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 07:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.484564463650641
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 08:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 09:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 10:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 11:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.484855185744167
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 13:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 14:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 15:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 16:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 17:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 18:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.48500791558687
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 19:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 20:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 21:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 22:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 23:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.485243903501469
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 00:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 01:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 02:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.485412385787477
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 03:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 04:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 05:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 06:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 07:10:47 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.485732862731544
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 09:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 10:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.485831902908372
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 11:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 12:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 13:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 14:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 15:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 16:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.0470123291015625
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 17:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 18:10:46 GMT",
+            "metric": "tenant_storage_use",
+            "node_count": 2,
+            "price": 0.039825439453125
+        }
+    ],
+    "total": 200
+}

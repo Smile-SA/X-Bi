@@ -1,5 +1,7 @@
 import * as configurationsController from "../../../../controller/configurationsController";
-import * as general from "../../../../controller/genaralController";
+import * as general from "../../../../controller/generalController";
+import * as uiConfigurations from "@/uiConfigurations.json"
+const apiInfo = uiConfigurations.apiInfo;
 
 export default {
     name: 'add',
@@ -26,7 +28,6 @@ export default {
             this.errors = {};
             this.message = '';
             this.form = await this.getForm();
-            console.log("form",this.form)
             this.showForm = true
             await this.$modal.show('view-add' + this.structureType);
         },
@@ -45,20 +46,26 @@ export default {
             return await configurationsController.showInputInModel(input, this.model);
         },
         submitForm() {
-            this.errors = {},
-                this.message = '',
-                // eslint-disable-next-line no-unused-vars
-                general.generalAdd(this.url, this.model).then((r) => {
-                    if (r.errors) {
-                        this.errors.submit = true;
-                    } else {
-                        this.deleteDynamicInput();
-                        this.$formulate.reset('add-form' + this.structureType);
-                        this.errors.submit = false;
-                    }
-                    this.refreshFunction();
-                    this.message = r.message;
-                });
+            if (apiInfo.dataType === 'static') {
+                this.$emit('itemAdded', this.model);
+                this.cancel();
+            }
+            else {
+                this.errors = {},
+                    this.message = '',
+                    // eslint-disable-next-line no-unused-vars
+                    general.generalAdd(this.url, this.model).then((r) => {
+                        if (r.errors) {
+                            this.errors.submit = true;
+                        } else {
+                            this.deleteDynamicInput();
+                            this.$formulate.reset('add-form' + this.structureType);
+                            this.errors.submit = false;
+                        }
+                        this.refreshFunction();
+                        this.message = r.message;
+                    });
+            }
         },
         deleteDynamicInput() {
             let tabDel = [];

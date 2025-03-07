@@ -1,0 +1,32 @@
+{
+    "results": [
+        {
+            "metric": "node_cost_simulation_aws_a1_large"
+        },
+        {
+            "metric": "node_cost_simulation_aws_a1_medium"
+        },
+        {
+            "metric": "node_cost_simulation_aws_a1_xlarge"
+        },
+        {
+            "metric": "node_cost_simulation_aws_m6g_large"
+        },
+        {
+            "metric": "node_cost_simulation_aws_t4g_micro"
+        },
+        {
+            "metric": "node_cost_simulation_aws_t4g_nano"
+        },
+        {
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "metric": "pods_usage_memory"
+        },
+        {
+            "metric": "tenant_storage_use"
+        }
+    ],
+    "total": 9
+}

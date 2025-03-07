@@ -1,12 +1,13 @@
 {
   "apiInfo": {
-    "url": "http://localhost:5012/",
-    "login": "http://localhost:5012/login_user",
-    "logout": "http://localhost:5012/login_user",
-    "password": "http://localhost:5012/password",
+    "url": "",
+    "login": "",
+    "logout": "",
+    "password": "",
     "redirectAfterLogin": "/",
-    "redirectAfterLogout": "/login",
-    "mode": "ro"
+    "redirectAfterLogout": "/X-Bi/login",
+    "mode": "ro",
+    "dataType": "static"
   },
   "forms": {
     "view": [
@@ -418,13 +419,13 @@
         "placeholder": "Select template name",
         "options": {},
         "optionsData": {
-          "url": "http://localhost:5012/templates/list",
+          "url": "/X-Bi/mockData/templates/list.json",
           "id": "template_name",
-          "replaceInId": "rating-rule-template-",
-          "replaceInValue": "rating-rule-template-"
+          "replaceInId": "",
+          "replaceInValue": ""
         },
         "dynamicFields": {
-          "url": "http://localhost:5012/templates/get",
+          "url": "/X-Bi/mockData/templates/get",
           "id": "query_name"
         },
         "validation": "required"
@@ -477,20 +478,18 @@
             "requiresAuth": true,
             "crud": {
               "list": {
-                "url": "http://localhost:5012/templates/list",
-                "id": "template_name",
-                "replace": "rating-rule-template-"
+                "url": "/X-Bi/mockData/templates/list.json"
               },
               "show": {
-                "url": "http://localhost:5012/templates/get",
+                "url": "/X-Bi/mockData/templates/get",
                 "id": "query_name"
               },
               "add": {
-                "url": "http://localhost:5012/templates/add",
+                "url": "",
                 "formId": "template"
               },
               "delete": {
-                "url": "http://localhost:5012/templates/delete",
+                "url": "",
                 "id": "query_name"
               }
             }
@@ -506,19 +505,18 @@
             "requiresAuth": true,
             "crud": {
               "list": {
-                "url": "http://localhost:5012/instances/list",
-                "replace": "rating-rule-instance-"
+                "url": "/X-Bi/mockData/instances/list.json"
               },
               "show": {
-                "url": "http://localhost:5012/instances/get",
-                "id": "metric_name"
+                "url": "/X-Bi/mockData/instances/get",
+                "id": "name"
               },
               "add": {
-                "url": "http://localhost:5012/instances/add",
+                "url": "",
                 "formId": "instance"
               },
               "delete": {
-                "url": "http://localhost:5012/instances/delete",
+                "url": "",
                 "id": "metric_name"
               }
             }
@@ -565,7 +563,7 @@
                 "icon": "fa-diagram-project",
                 "color": "red",
                 "redirect": "/namespaces",
-                "query": "http://localhost:5012/namespaces",
+                "query": "/X-Bi/mockData/namespaces.json",
                 "method": "count",
                 "value": ""
               },
@@ -576,7 +574,7 @@
                 "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "/pods",
-                "query": "http://localhost:5012/pods",
+                "query": "/X-Bi/mockData/pods.json",
                 "method": "count",
                 "value": ""
               },
@@ -587,7 +585,7 @@
                 "icon": "fa-share-nodes",
                 "color": "yellow",
                 "redirect": "/nodes",
-                "query": "http://localhost:5012/nodes",
+                "query": "/X-Bi/mockData/nodes.json",
                 "method": "count",
                 "value": ""
               },
@@ -597,7 +595,7 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/metrics",
+                "query": "/X-Bi/mockData/metrics.json",
                 "query_key": "metric",
                 "method": "count",
                 "value": ""
@@ -611,7 +609,7 @@
             "models": [
               {
                 "title": "Nodes rate (in Euros) ",
-                "query": "http://localhost:5012/nodes/rating",
+                "query": "/X-Bi/mockData/nodes/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "node",
                 "time_key": "frame_begin",
@@ -622,7 +620,7 @@
               },
               {
                 "title": "Namespaces Energy Efficiency",
-                "query": "http://localhost:5012/namespaces/rating",
+                "query": "/X-Bi/mockData/namespaces/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "namespace",
                 "time_key": "frame_begin",
@@ -655,7 +653,7 @@
                 "title": "Namespace",
                 "placeholder": "Select namespace",
                 "type": "dynamic",
-                "query": "http://localhost:5012/namespaces",
+                "query": "/X-Bi/mockData/selectFields/namespaces.json",
                 "query_key": "namespace"
               },
               {
@@ -684,7 +682,7 @@
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
-                "query": "http://localhost:5012/total_rating",
+                "query": "/total_rating.json",
                 "query_key": "frame_price",
                 "method": "avg",
                 "value": ""
@@ -696,7 +694,7 @@
                 "icon": "fa-sitemap",
                 "color": "blue",
                 "redirect": "/pods",
-                "query": "http://localhost:5012/pods",
+                "query": "/pods.json",
                 "method": "count",
                 "value": ""
               },
@@ -706,8 +704,8 @@
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "yellow",
-                "redirect": "/nodes",
-                "query": "http://localhost:5012/nodes",
+                "redirect": "/nodes.json",
+                "query": "/nodes.json",
                 "method": "count",
                 "value": ""
               },
@@ -717,7 +715,7 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/metrics",
+                "query": "/metrics.json",
                 "query_key": "metric",
                 "method": "count",
                 "value": ""
@@ -731,7 +729,7 @@
             "models": [
               {
                 "title": "Metrics rate (in Euros)",
-                "query": "http://localhost:5012/rating",
+                "query": "/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "metric",
                 "time_key": "frame_begin",
@@ -764,7 +762,7 @@
                 "title": "Node",
                 "placeholder": "Select node",
                 "type": "dynamic",
-                "query": "http://localhost:5012/nodes",
+                "query": "/X-Bi/mockData/selectFields/nodes.json",
                 "query_key": "node"
               },
               {
@@ -791,7 +789,7 @@
                 "space": "1/4",
                 "type": "chart",
                 "title": "Rating",
-                "query": "http://localhost:5012/rating",
+                "query": "/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "metric",
                 "time_key": "frame_begin",
@@ -804,7 +802,7 @@
                 "title": "Pods",
                 "icon": "fa-sitemap",
                 "color": "blue",
-                "query": "http://localhost:5012/pods",
+                "query": "/pods.json",
                 "method": "count",
                 "value": ""
               },
@@ -814,7 +812,7 @@
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
-                "query": "http://localhost:5012/namespaces",
+                "query": "/namespaces.json",
                 "method": "count",
                 "value": ""
               },
@@ -824,7 +822,7 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/metrics",
+                "query": "/metrics.json",
                 "query_key": "metric",
                 "method": "count",
                 "value": ""
@@ -838,7 +836,7 @@
             "models": [
               {
                 "title": "Nodes metrics rate (in Euros)",
-                "query": "http://localhost:5012/rating",
+                "query": "/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "metric",
                 "time_key": "frame_begin",
@@ -871,7 +869,7 @@
                 "title": "Pod",
                 "placeholder": "Select pod",
                 "type": "dynamic",
-                "query": "http://localhost:5012/pods",
+                "query": "/X-Bi/mockData/selectFields/pods.json",
                 "query_key": "pod"
               },
               {
@@ -900,7 +898,7 @@
                 "title": "Rating",
                 "icon": "fa-euro-sign",
                 "color": "red",
-                "query": "http://localhost:5012/total_rating",
+                "query": "/total_rating.json",
                 "query_key": "frame_price",
                 "method": "sum",
                 "value": ""
@@ -911,7 +909,7 @@
                 "title": "Nodes",
                 "icon": "fa-share-nodes",
                 "color": "primary",
-                "query": "http://localhost:5012/nodes",
+                "query": "/nodes.json",
                 "method": "count",
                 "value": ""
               },
@@ -921,7 +919,7 @@
                 "title": "Namespaces",
                 "icon": "fa-diagram-project",
                 "color": "yellow",
-                "query": "http://localhost:5012/namespaces",
+                "query": "/namespaces.json",
                 "method": "count",
                 "value": ""
               },
@@ -931,7 +929,7 @@
                 "title": "Metrics",
                 "icon": "fa-share-nodes",
                 "color": "green",
-                "query": "http://localhost:5012/metrics",
+                "query": "/metrics.json",
                 "query_key": "metric",
                 "method": "count",
                 "value": ""
@@ -945,7 +943,7 @@
             "models": [
               {
                 "title": "Pod metrics rate (in Euros)",
-                "query": "http://localhost:5012/rating",
+                "query": "/rating.json",
                 "query_key": "frame_price",
                 "sort_key": "metric",
                 "time_key": "frame_begin",
@@ -978,7 +976,7 @@
                 "title": "Instance",
                 "placeholder": "Select a instance",
                 "type": "dynamic",
-                "query": "http://localhost:5012/metrics",
+                "query": "/X-Bi/mockData/metrics.json",
                 "query_key": "metric"
               },
               {
@@ -1009,7 +1007,7 @@
             "models": [
               {
                 "title": "Nodes rate (in Euros)",
-                "query": "http://localhost:5012/rating",
+                "query": "/rating.json",
                 "query_key": "price",
                 "sort_key": "instance",
                 "time_key": "frame_begin",
@@ -1030,7 +1028,7 @@
   },
   "xBiInfo": {
     "name": "X-BI",
-    "documentationUrl": "https://git.rnd.alterway.fr/overboard/x-bi/x-bi/-/blob/main/README.md"
+    "documentationUrl": "https://github.com/Smile-SA/X-Bi/blob/dev/README.md"
   }
 }
 

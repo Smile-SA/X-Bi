@@ -1,5 +1,5 @@
 import VueApexCharts from 'vue-apexcharts'
-import * as general from "../../../controller/genaralController";
+import * as general from "../../../controller/generalController";
 
 export default {
     name: 'apexCharts', components: {
@@ -18,7 +18,7 @@ export default {
                     }
                 });
             } else {
-                await general.getDataByVariableAndDateToApex(this.configuration,this.additionalUrl,this.queryData, this.group,this.styles).then(async (r) => {
+                await general.getDataByVariableAndDateToApex(this.configuration,this.additionalUrl,this.queryData, this.group,this.styles, this.$route.name).then(async (r) => {
                     if (r.total > 0) {
                         this.data = r;
                     }

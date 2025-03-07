@@ -1,0 +1,75 @@
+{
+    "results": {
+        "apiVersion": "rating.smile.fr/v1",
+        "kind": "RatingRuleInstance",
+        "metadata": {
+            "annotations": {
+                "meta.helm.sh/release-name": "rating",
+                "meta.helm.sh/release-namespace": "rating"
+            },
+            "creationTimestamp": "2024-08-20T13:24:17Z",
+            "generation": 1,
+            "labels": {
+                "app.kubernetes.io/managed-by": "Helm"
+            },
+            "managedFields": [
+                {
+                    "apiVersion": "rating.smile.fr/v1",
+                    "fieldsType": "FieldsV1",
+                    "fieldsV1": {
+                        "f:metadata": {
+                            "f:annotations": {
+                                ".": {},
+                                "f:meta.helm.sh/release-name": {},
+                                "f:meta.helm.sh/release-namespace": {}
+                            },
+                            "f:labels": {
+                                ".": {},
+                                "f:app.kubernetes.io/managed-by": {}
+                            },
+                            "f:ownerReferences": {
+                                ".": {},
+                                "k:{\"uid\":\"44c38877-bfca-4310-8c0b-8ea24946871e\"}": {}
+                            }
+                        },
+                        "f:spec": {
+                            ".": {},
+                            "f:cpu": {},
+                            "f:memory": {},
+                            "f:metric": {},
+                            "f:name": {},
+                            "f:price": {},
+                            "f:timeframe": {}
+                        }
+                    },
+                    "manager": "Go-http-client",
+                    "operation": "Update",
+                    "time": "2024-08-20T13:24:17Z"
+                }
+            ],
+            "name": "rating-rule-instance-node-cost-simulation-aws-t4g-micro",
+            "namespace": "rating",
+            "ownerReferences": [
+                {
+                    "apiVersion": "charts.helm.k8s.io/v1",
+                    "blockOwnerDeletion": true,
+                    "controller": true,
+                    "kind": "Rating",
+                    "name": "rating",
+                    "uid": "44c38877-bfca-4310-8c0b-8ea24946871e"
+                }
+            ],
+            "resourceVersion": "2760",
+            "uid": "c871ae3d-1ce0-432b-8a29-f0e6b3adf409"
+        },
+        "spec": {
+            "cpu": "2",
+            "memory": "1",
+            "metric": "((ceil(sum(instance:node_memory_utilisation:ratio) * max(node_memory_MemTotal_bytes)/(1024*1024*1024)))/{memory} > (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum))) / {cpu} or (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum)))/{cpu}) * {price}",
+            "name": "node_cost_simulation_aws_t4g_micro",
+            "price": "0.0084",
+            "timeframe": "3600s"
+        }
+    },
+    "total": 1
+}

@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 2.454907142567163,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.582218927453853,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 3.080866013199687,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.8896728658298225,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.575920450057575,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.41879432031060126,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 1.9604056447925622,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.9505542499227129,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 3.5653645580470714,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.5404673588932729,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.1658257916942265,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.25754465114735425,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 1.0279379040464998,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.8264106096477135,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 2.999053296257632,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.08330874113204456,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 2.892360148911738,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.4221446427198843,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.788726099768422,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.4461422219284552,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 2.3497397501450736,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.7399875778195648,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 4.668114879467344,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.914936866770157,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.4409528236560911,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.43299097681827536,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 2.065354031409793,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.21607925752964818,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 3.0358635017227686,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.5207479193063129,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.6570489693334935,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.18502575704432367,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 2.8676889002470007,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.5167535812491815,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 1.8233610963356273,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.16611372846250272,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 4.450875269831077,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.4555383613235564,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 3.1736774486753774,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.9340869457229688,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 1.6064960489061053,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.004490343982763267,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 2.422926536337849,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.13998882425584513,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.8501872149302836,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.5441924943623593,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 4.96941052079816,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.2959664161234299,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 1.0054502049889547,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.5631756673441042,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.709207607176749,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.3151251308681515,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 1.8285822779516514,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.3806398419001751,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 3.6002329102022745,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.5891403332151408,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.064124819272018,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.05156747063853562,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 3.841869294579033,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 0.9549765875537741,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.6715631920015919,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.020249703528797403,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 2.820967862241278,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 0.13590928518409218,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 3.7507901913404105,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 0.6349307997502924,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 2.264640371901161,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.13116156352485775,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 1.109653959725,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.7593343086192459,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.1820760683149525,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.7482109613404129,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 1.609935100911155,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.3816025910632479,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 3.5955879366249444,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.052490810326669246,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 3.550912739363029,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.7634153942670079,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 4.969210347170563,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.708909694324307,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 3.705416895981638,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.9885605526486738,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 1.459054374298051,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.12190850478405513,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.10817546405352818,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.6375658184025201,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.7426318543356425,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.6454234272394688,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.09523900196413027,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.7220083591818391,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 2.611903682256819,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.23082733455642912,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.2786473578558546,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.8954492585907756,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.29184456253692304,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 3.4162396224881486,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.0834113289693521,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 4.8407574287169775,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "frame_price": 0.2537177365473102,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.2769104974025949,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "frame_price": 0.7997168909718677,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.053009182864608,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "frame_price": 0.39641206258038486,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 3.085798749294918,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "frame_price": 0.25881775970073084,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.26771415500986384,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "frame_price": 0.051017911629512414,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.5149418741897904,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "frame_price": 0.19610823942432853,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 2.6004229050614605,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "frame_price": 0.8528293879994093,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.8776434967157665,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "frame_price": 0.22281048433448047,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "frame_price": 4.792045878122559,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "frame_price": 0.028966044647644962,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:47 GMT",
+            "frame_price": 1.798053789526295,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.8102920744754716,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:47 GMT",
+            "frame_price": 1.9133925125720475,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.11276146130287379,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:47 GMT",
+            "frame_price": 2.6760381184588757,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.8285709925762799,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:47 GMT",
+            "frame_price": 3.747550181011905,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.40817415888334474,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:47 GMT",
+            "frame_price": 1.1623429789562256,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.9934538219527087,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:47 GMT",
+            "frame_price": 4.389078108152592,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.44719534207445477,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:47 GMT",
+            "frame_price": 3.4960729634264585,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.29368361709717195,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:47 GMT",
+            "frame_price": 3.9448917004917994,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.3843455168836547,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:47 GMT",
+            "frame_price": 2.2424130731235303,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.3784525917326025,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 1.7057390638454284,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.06044664643974196,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 3.057546477429418,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.940363334159648,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.24973534274166043,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.6616733470325511,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.8656385773106301,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.26018414258279154,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 3.8891784332508452,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.37187181158867233,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 3.306349630824478,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.7760740745992551,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.6665541552198329,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.37014683815847427,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.375549324089032,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.49076530495283466,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 1.7753367294793054,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.9994565065044869,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 2.9737587214198724,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.004415798343990973,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.6763337453626206,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.9473255653907686,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 1.0877823260905894,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.5452511676846568,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 3.67400586663178,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.3081855147236148,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 2.050596834189827,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.6159876266790834,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 2.6910546340924038,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.05666936699803404,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 3.3745909751349226,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.03538246978144044,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.11229612040617898,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.6390969376860558,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 4.211799766640558,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.363481421580401,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 3.925301587005785,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.4768487140065911,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 4.440370392294303,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.7527753533790738,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 3.9008265089594865,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.8608372040668788,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.6158018214071492,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.19316326951212437,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 1.278429290986276,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 0.16221849317772974,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 0.39115219600130313,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 0.6702069742959766,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 1.5991514512688065,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 0.818371674021318,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 2.193552814858265,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 0.13654643447715586,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 3.2779657594731173,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 0.19963523290663843,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 1.6877238514157755,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 0.5075759759680774,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 3.0435045349674974,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.546890447910551,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.776903920001691,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.4777428320548367,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 2.652325014614587,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.8245064237043207,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 1.697030668703402,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.46500503410671934,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 4.710099587117776,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.6144565471620591,
+            "metric": "pods_usage_memory",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "frame_price": 1.963214894942935,
+            "metric": "pods_usage_cpu",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        }
+    ],
+    "total": 200
+}

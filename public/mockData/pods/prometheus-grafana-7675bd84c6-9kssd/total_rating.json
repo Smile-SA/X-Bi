@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "frame_price": 8.04,
+            "namespace": "monitoring",
+            "node": "Distributed-Load-Node",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        }
+    ],
+    "total": 1
+}

@@ -1,12 +1,14 @@
 import * as chartController from "../controller/chartController";
 import axios from "axios";
+import * as uiConfigurations from "@/uiConfigurations.json"
+const apiInfo = uiConfigurations.apiInfo;
 
 export function get(url) {
     return axios.get(url).then(async (r) => {
         return r.data;
         // eslint-disable-next-line no-unused-vars
     }).catch(error => {
-        console.log('An error occurred while getting the instances! Please try later');
+        // console.log('An error occurred while getting the instances! Please try later');
         return {
             "total": 0
         };
@@ -40,7 +42,7 @@ export function generalDelete(deleteUrl, name, id) {
             return {
                 result: !!r.data,
                 message: {
-                    title: 'Successfully delete'
+                    title: 'Successfully deleted'
                 }
             }
         }
@@ -56,8 +58,12 @@ export function generalDelete(deleteUrl, name, id) {
     });
 }
 
-export function getById(deleteUrl, id, value) {
-    return axios.get(deleteUrl+'?'+id+'='+value).then(async (r) => {
+export function getById(url, id, value, isStatic) {
+    let fullUrl = url + '?' + id + '=' + value;
+    if (isStatic) {
+        fullUrl = url + '/' + value + '.json';
+    }
+    return axios.get(fullUrl).then(async (r) => {
         return {
             errors: false,
             data: r.data
@@ -97,7 +103,7 @@ export async function getJsonData(config, additionalUrl, queryData) {
     if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
+        url = parser.protocol + '//' + parser.host + (process.env.NODE_ENV === 'development' ? '' : '/') + additionalUrl + parser.pathname
     }
     return await axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total) {
@@ -126,17 +132,33 @@ export function titleBoxRender(that) {
     }
 }
 
-export async function getDataByVariableAndDateToApex(config, additionalUrl, queryData, group, styles) {
+export async function getDataByVariableAndDateToApex(config, additionalUrl, queryData, group, styles, routeName = null) {
     let url = config.query
     if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
+        url = parser.protocol + '//' + parser.host + (process.env.NODE_ENV === 'development' ? '' : '/') + additionalUrl + parser.pathname
     }
     return axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total <= 0) {
             return {total: 0, results: null}
         } else if (r.data.total > 0) {
+
+            if(apiInfo.dataType === 'static') {
+                if (routeName !== 'Overall') {
+                    r.data.results.map((item, index) => {
+                        const startDate = new Date(queryData.start);
+                        const endDate = new Date(queryData.end);
+                        const range = endDate - startDate;
+                        const step = range / (r.data.results.length + 1);
+                        const newDate = new Date(startDate.getTime() + step * (index + 1));
+                        // Adjust date
+                        item.frame_begin = newDate.toUTCString();
+                    });
+                }
+            }
+
+
             let data = chartController.groupBy(r.data.results, config.sort_key);
             Object.keys(data).map((item) => {
                 data[item] = chartController.groupByDate(data[item], group, config.time_key);
@@ -180,7 +202,7 @@ export async function getDataByDateToApex(config, additionalUrl, queryData, grou
     if (additionalUrl !== '' && additionalUrl !== null && additionalUrl !== undefined) {
         var parser = document.createElement('a');
         parser.href = config.query;
-        url = parser.protocol + '//' + parser.host + '/' + additionalUrl + parser.pathname
+        url = parser.protocol + '//' + parser.host + (process.env.NODE_ENV === 'development' ? '' : '/') + additionalUrl + parser.pathname
     }
     return await axios.get(url, {params: queryData}).then(async (r) => {
         if (r.data.total <= 0) {

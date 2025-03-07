@@ -6,7 +6,7 @@
         <div class="modal-body">
             <slot name="body">
                 <h3 class="text-capitalize p-2">{{ value + ' ' + ' display' }}</h3>
-                <textarea readonly id="value" name="value" class="form-control"></textarea>
+                <textarea ref="textAreaRef" readonly id="value" name="value" class="form-control"></textarea>
             </slot>
         </div>
     </modal>

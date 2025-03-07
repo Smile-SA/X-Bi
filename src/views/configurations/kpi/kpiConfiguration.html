@@ -4,7 +4,7 @@
         <div class="card">
             <div class="page-header card-header mb-0">
                 <h3 class="page-title">{{ $route.name }} list</h3>
-                <add-form :structureType="$route.meta.crud.add.formId" :refreshFunction="getList" :url="$route.meta.crud.add.url"> </add-form>
+                <add-form @itemAdded="itemAddedHandler" :structureType="$route.meta.crud.add.formId" :refreshFunction="getList" :url="$route.meta.crud.add.url"> </add-form>
             </div>
             <div class="card-body">
                 <div class="table-responsive">

@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.00109552544231946,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 9.21490416928628e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.00106984224199262,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 9.2142257870591e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.00108140332256167,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 9.21444156356567e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.00107328527433741,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 9.21474981571788e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.00111924095612987,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 9.21499175384596e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.00110484855658706,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 9.21207450552646e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.00108091810199935,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 9.20442746348239e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.00109944595614985,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 9.20625320344354e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.00107537274150526,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 9.22651139838968e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.00110015412223454,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 9.19920435256917e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.00110201447546385,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 9.17564421971688e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.0011582483749562,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 9.21355138594829e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.00104323228250943,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 9.22045941905033e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.00107183835674311,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 9.19255566076051e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.0010627004403826,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 9.18782063471226e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.00110264107526334,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 9.18774260483163e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.00108251029597431,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 9.18798932029964e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.00110404521318772,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 9.18809521799466e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.00107747493246373,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 9.18800911213525e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.00110866511426218,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 9.18765763643403e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.00108141265829149,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 9.18780823637854e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.00109334382161256,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 9.18806143537875e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.0011063582981522,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 9.18794655173523e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.00112391992161184,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 9.18769039533434e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.00109815574675756,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 9.18678270080536e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.00109510872327964,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 9.18162374273752e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.00105819390425026,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 9.17484026170454e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.00107866350028755,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 9.1436509449598e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.00108026443792917,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 9.14364332396567e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 0.00110395608133305,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 9.14361625237433e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.00107351794166519,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 9.14359065948352e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 0.00108322187021776,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 9.14405497139701e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 0.00108005869457648,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 9.14397455284658e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.00108097411180513,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 9.14354629847273e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.00113973579131515,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 9.17943276378801e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.0010874518083716,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 9.16135496939774e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.00106328321532535,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 9.16162966642625e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.00108397292375819,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 9.16186352857572e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.00108689208787277,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 9.16221420805353e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.00105420181091341,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 9.16227688219973e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.00106772016197186,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 9.16628177150799e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.00107051968010037,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 9.15293206464896e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.00110984437011347,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 9.14237630524871e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.00108421246549633,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 9.14239598333807e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.00110774819102756,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 9.14315046176072e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.00109304879024479,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 9.14226278655945e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.00106594375486835,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 9.14192746281593e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "frame_price": 9.14185568897551e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0010952048659541,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "frame_price": 9.1426015226883e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.00110026007545277,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "frame_price": 9.14185409652898e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.00110561864647797,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "frame_price": 9.14056489730667e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.00109372995869302,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "frame_price": 9.14054112435467e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.00109396998650444,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "frame_price": 9.14057581694015e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.00105820449243423,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "frame_price": 9.13965981893956e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.00107086113420417,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "frame_price": 9.13633274312695e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.00104655134404103,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "frame_price": 9.13143608375406e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.00108737900287249,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "frame_price": 9.13134485931639e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.00112053986474272,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "frame_price": 9.16157097339635e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:47 GMT",
+            "frame_price": 0.00106071882033582,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 9.17342673790642e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:47 GMT",
+            "frame_price": 0.00107706893191529,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 9.16108812085487e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:47 GMT",
+            "frame_price": 0.00107244970782896,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 9.14701669447319e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:47 GMT",
+            "frame_price": 0.00109310695385291,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 9.12791598067218e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:47 GMT",
+            "frame_price": 0.00108175974365444,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 9.12499270380447e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:47 GMT",
+            "frame_price": 0.00108423615627951,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 9.12490216184397e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:47 GMT",
+            "frame_price": 0.00107924793977398,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 9.12459868703157e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:47 GMT",
+            "frame_price": 0.00108565499985773,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 9.12484108014443e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:47 GMT",
+            "frame_price": 0.00107214923540021,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 9.12456911302428e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.00108592537163682,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 9.12464054562568e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.00110838012957586,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 9.12465897250719e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.00111698760285805,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 9.12479194179345e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.00107437923912967,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 9.12378164820836e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.00107525878611917,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 9.12415302949132e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.00106030377517705,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 9.14945029402929e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.00110027690260697,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 9.14957768975269e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0010852888971469,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 9.1493206233822e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.00107563382957691,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 9.15001982116058e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.00107984133695744,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 9.14955346181598e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.00108336601447964,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 9.14398763365703e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.00105416551044767,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 8.99122969663955e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.00111116111365775,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 9.00233587381304e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.0010912195023025,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 9.00310172685376e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.00106416453178008,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 8.99285353712855e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.00109414344592533,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 8.99340566109422e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.00104570748488598,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 8.99279996267708e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.00102979674152775,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 8.99723287886683e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.00107591758458851,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 8.99197712279919e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.00111359812124124,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 8.98530898039427e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.00104952692689372,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 8.98521968964166e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.00110075624200838,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 8.9848634366009e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 0.00108944204202574,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 8.98534685787285e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 0.00106573997452243,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 8.98502996101072e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 0.00107555182487922,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 8.98448534429316e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 0.00108085582541723,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 8.98478062938071e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 0.00110343564899781,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 8.98495420605383e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 0.00104438214074708,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 9.00032359011403e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0011029650191147,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 9.0118452820884e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.00108413565923951,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 9.01171072035553e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.00111914500513762,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 9.01163974273812e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.00108161231722461,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 9.01169343093593e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.00110595926958989,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 9.01273739339054e-14,
+            "metric": "pods_usage_memory",
+            "pod": "traefik-5fb479b77-zv4kn"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0010951117925834,
+            "metric": "pods_usage_cpu",
+            "pod": "traefik-5fb479b77-zv4kn"
+        }
+    ],
+    "total": 200
+}

@@ -1,0 +1,1005 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.241972486117958,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.263801793600958,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.244173116933928,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.264974665114631,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.243402868966138,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.264919279120403,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.245199440547415,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.263831913435203,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.243002546640481,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.263404813302034,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.24459173766876,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.26413848463861,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.244946757538541,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.265010334990141,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.244231099092518,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.264924886777851,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.244004216473364,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.265060896602276,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.239798317073257,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.263983811085572,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.231196130906429,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.262925722126698,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.231158980710347,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.26253175746934,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.239109897885828,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.264133912367132,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.242933495896193,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.262861634059221,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.24379175787052,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.261123376966479,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.245848644120385,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.261475585917956,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.243052899082759,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.261734593748899,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.24399070710041,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.260072026775716,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.243347307841085,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.259173098309121,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.244492726333446,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.257452651226046,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.246851010086491,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.25754479142993,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.243753498078022,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.257854207502848,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.244161935805301,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.256230615477505,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.245290433422471,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.25536319462111,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.245999994358962,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.254496368328462,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.247244530157694,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.25488350779901,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.248740913781451,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.256185741832798,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.242452386673288,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.257114971438125,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.243321749238485,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.256788328222731,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.256096085976642,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 0.242906312157225,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.256597562531575,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.242333724799227,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.256476138139723,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 0.242729353938776,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.256529382297526,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 0.243643078997501,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.258354553602291,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.241749731609051,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.259192140074926,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.243961451710578,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.259959493244434,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.244118598222732,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.260731558940749,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.244387813303536,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.260821249874915,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.243655118019371,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.244005217760459,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.260363868482326,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.243198555579428,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.26092314144178,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.244834561061767,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.26234494446209,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.245145679471937,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.264258472303632,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.246073774396475,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.266169599465721,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.245939492476679,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.265760769185526,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.243125445262314,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.265907641861779,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.241414970138062,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.267031077475992,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.242680378706291,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.266830416050571,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.242436835033012,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.264994376357577,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.242614970282942,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.264013820346362,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.242997355063371,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.26419713227231,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.24146534202859,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.265719850658158,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.24456406146863,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.26545366688942,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.24452384823886,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.265980696541298,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.244919075824123,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.266926820640548,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.248205251177239,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.268715268047418,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.246383542654841,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.266980043379786,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.265428299088512,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.245066778575054,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.263492414275608,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.246089070098159,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.264376213196454,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.248175583831913,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.264948748630803,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.24609832294927,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.263856516312823,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.242581711475948,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.263943603797817,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.243073755896866,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.26387454875407,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.243985624333447,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.263284993405374,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.244000594726327,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.261581209681115,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.245222011447006,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.262795109621591,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.245995072847126,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.240082264902047,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.263421553454368,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.243253224813992,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.262679317040679,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.24471941229803,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.26321285788542,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.244235845399708,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.263069872516229,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.245661765792785,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.263655177905162,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.246469591828526,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.264561910832116,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.244202184408139,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.26346281779437,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.244673645102285,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.261802223069965,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.24565725237992,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.261308084827413,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.246066291373607,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.260359470490049,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.249718989533334,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.259903270034496,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.233122996548154,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.260583847786143,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.224240926485044,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.260043662133894,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.218000160454726,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.258329533687272,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.217494852672921,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.255769958848448,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.217390165406604,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.253839561991289,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.220861386031504,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.252805700296755,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.21896390890932,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.252734620151622,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.213820686721898,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.251788409777014,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:47 GMT",
+            "frame_price": 0.214011721167139,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:47 GMT",
+            "frame_price": 0.251216633514305,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:47 GMT",
+            "frame_price": 0.219434424342719,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:47 GMT",
+            "frame_price": 0.250050691352661,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:47 GMT",
+            "frame_price": 0.2519568203607,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:47 GMT",
+            "frame_price": 0.248850269765065,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:47 GMT",
+            "frame_price": 0.251403226831122,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:47 GMT",
+            "frame_price": 0.249149637154844,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:47 GMT",
+            "frame_price": 0.24977241286142,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:47 GMT",
+            "frame_price": 0.250359270516134,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:47 GMT",
+            "frame_price": 0.24837801464279,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:47 GMT",
+            "frame_price": 0.251320443395912,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:47 GMT",
+            "frame_price": 0.249878557618141,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:47 GMT",
+            "frame_price": 0.250233094465559,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:47 GMT",
+            "frame_price": 0.249373933969952,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:47 GMT",
+            "frame_price": 0.250555406444829,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.248283771286167,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.252309638671814,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.245400685416302,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.253165054188428,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.246270034881932,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.253336251060099,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.247564356910342,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.252584675567137,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.248090575251483,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.251474691366678,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.246612847446528,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.251512269517239,
+            "metric": "node_cpu_memory_ratio_evolution"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.248424369701424,
+            "metric": "node_cpu_memory_ratio"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.250197786010291,
+            "metric": "node_cpu_memory_ratio_evolution"
+        }
+    ],
+    "total": 200
+}

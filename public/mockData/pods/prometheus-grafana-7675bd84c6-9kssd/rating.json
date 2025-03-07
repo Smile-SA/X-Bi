@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.0124732458229738,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 4.54556874752566e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.0122855864615526,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 4.54039728875314e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0126052671894566,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.54653171132462e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0127155582242654,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 4.54131320713134e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.012838377079935,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.54401156229939e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0126513037261168,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.54120840139964e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.0127126204828669,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 4.54085930299357e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.0125614451398538,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 4.55555708409886e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.0126628628147233,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 4.54558249943902e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0127428931744978,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 4.53195538839208e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.0126166725538368,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 4.53322742331576e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.0126810285064008,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 4.54258254627042e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.0127426332001356,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 4.53594458072754e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.0128270131194297,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 4.54109199355732e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.0126636720391621,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 4.54611116894193e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.0126399176391084,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 4.53759263777845e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.0127236269307145,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 4.53396498768122e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.0126438801439943,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 4.54256358478206e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.0127133192273568,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 4.54089081068595e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.0127142505311214,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 4.53720897190787e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.0127460746224595,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 4.54319536519855e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.0125957076391386,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 4.54296865768399e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.012622049759708,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 4.54005325205217e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.0125622425902764,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 4.54477067019161e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.0126145566479777,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 4.52459764838654e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0125063760796995,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.54251135253539e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0125508376248288,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 4.54052930257147e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0125842346540421,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.53250425921688e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0127968902643036,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.53057770601503e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 0.0127148506778974,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 4.52396518549289e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.0125086620312055,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 4.53003287317966e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 0.0123753682337496,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 4.53349123483477e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 0.0123750420137027,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 4.54511525287421e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.0129080884125542,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 4.52781825777282e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.0125072462549245,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 4.52772025406274e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.0129034133013745,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 4.53997286762562e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.0124043119255191,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 4.52886976159956e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.012752425181899,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 4.5414169322743e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.0124891394797034,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 4.52942482021665e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.0131103625928861,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 4.52935499143572e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.0124818207586394,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 4.52828275168007e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.0125620379996803,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 4.54397015868918e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.012653051673703,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 4.53408455766727e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.0129383566006367,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 4.51760021078597e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.0129097180867997,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 4.52054496293259e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.0125958897487827,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 4.5468135516134e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.0127143666080072,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 4.53552829245209e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "frame_price": 4.5454999310858e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0126912097552853,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "frame_price": 4.52617537617323e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0126448224912101,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "frame_price": 4.54452104282141e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0126895557773443,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "frame_price": 4.53386672235487e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0126938336080696,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "frame_price": 4.53443191575677e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.0125598235431085,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "frame_price": 4.53477920559838e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.0127673903879287,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "frame_price": 4.53640122614823e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.0125267437248886,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "frame_price": 4.53671635994444e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0123664115985976,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "frame_price": 4.54079145339625e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.0125729438757217,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "frame_price": 4.53216378277149e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.0126293735530784,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "frame_price": 4.54352946048323e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:47 GMT",
+            "frame_price": 0.0127631240392821,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 4.5332845580228e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:47 GMT",
+            "frame_price": 0.0128461020664561,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 4.53380710798111e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:47 GMT",
+            "frame_price": 0.0127645434181698,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 4.54551658352678e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:47 GMT",
+            "frame_price": 0.0126154724533549,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 4.54093517169677e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:47 GMT",
+            "frame_price": 0.0123713680396777,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 4.53650450768119e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:47 GMT",
+            "frame_price": 0.0128246124276823,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 4.52694753075259e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:47 GMT",
+            "frame_price": 0.0126688794980212,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 4.52648615349071e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:47 GMT",
+            "frame_price": 0.0127991863415777,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 4.5319115164899e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:47 GMT",
+            "frame_price": 0.0124451483199749,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 4.54584797165231e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.0126818101088129,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "frame_price": 4.53497480353235e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.0125466615020804,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "frame_price": 4.53205412007776e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.0124352418166807,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "frame_price": 4.53983787365729e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.0126971961482897,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "frame_price": 4.53665749629547e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.0126120883740922,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.52892366591502e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.0124713645613495,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "frame_price": 4.53345497255206e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0127315021287782,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.52533572460981e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0127285159732327,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.5319769091697e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.0127110341244186,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "frame_price": 4.5336256600722e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.0129057936928629,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "frame_price": 4.53609682999169e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0125535436399755,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "frame_price": 4.52846117394054e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.0125284072084693,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "frame_price": 4.50437447589005e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.0126796420632297,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "frame_price": 4.48432303737854e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.0128154292501386,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "frame_price": 4.48912333098583e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.0125941060304202,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "frame_price": 4.49683503773397e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.0124539257649855,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "frame_price": 4.49869401432937e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 0.0125634166184921,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "frame_price": 4.50293050223826e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.0125425975622554,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "frame_price": 4.48994286084974e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.0126328219135076,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "frame_price": 4.49543376439878e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.0127095306930185,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "frame_price": 4.50049907523466e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.012511994007479,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "frame_price": 4.49916176137742e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.0128817793789891,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "frame_price": 4.49475222002775e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 0.0128134618526763,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "frame_price": 4.49556887211332e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 0.0130140245608228,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "frame_price": 4.50106876161069e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 0.0127981312638679,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "frame_price": 4.49715741716192e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 0.0126082447142814,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "frame_price": 4.49936197740624e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 0.012788778373252,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "frame_price": 4.49392517154123e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 0.0125880030737363,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "frame_price": 4.49001850206053e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.0122726176776446,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.49185424031102e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0126370320912426,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.48325201470706e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.0125201784816637,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "frame_price": 4.49138602690368e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.0128487693695503,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "frame_price": 4.49005811985564e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.0128257311069628,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "frame_price": 4.49971238389339e-13,
+            "metric": "pods_usage_memory",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.0127543117588303,
+            "metric": "pods_usage_cpu",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        }
+    ],
+    "total": 200
+}

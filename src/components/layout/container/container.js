@@ -34,7 +34,8 @@ export default {
                     name: 'BLOG',
                     url: 'https://blog.smile.eu/fr/'
                 }
-            }
+            },
+            sidebarRendered: false
         }
     },
     computed: {
@@ -66,6 +67,9 @@ export default {
         changeloading() {
             this.$store.commit('TOGGLE_SEARCHING')
         },
+        handleSideMenuRendered() {
+            this.sidebarRendered = true;
+        }
 
     },
     async beforeMount() {

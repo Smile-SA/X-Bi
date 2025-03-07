@@ -2,7 +2,7 @@ import * as configurationsController from "../../../../controller/configurations
 import viewDisplay from "../../../../components/action/displayCheckBox";
 import displayIcon from "../../../../components/action/displayIcon";
 import actions from "../../../../components/action/sessionAction";
-import * as general from "../../../../controller/genaralController";
+import * as general from "../../../../controller/generalController";
 import addForm from "../../../../components/forms/session/add";
 //this.$router.go(this.$router.currentRoute)
 

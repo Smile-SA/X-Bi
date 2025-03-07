@@ -1,5 +1,5 @@
 import * as uiConf from "../uiConfigurations.json"
-import * as general from "./genaralController";
+import * as general from "./generalController";
 import * as chartController from "./chartController";
 
 let uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))
@@ -327,9 +327,18 @@ export function getForm(structureType) {
                     Object.keys(r.results).map((item) => {
                         let value, id;
                         id = value = r.results[item][data[key].optionsData.id];
-                        id = id.replaceAll(data[key].optionsData.replaceInId, '')
-                        value = value.replace(data[key].optionsData.replaceInValue, '')
-                        data[key].options[id] = value
+                        if (data[key].optionsData.replaceInId) {
+                            id = id.replaceAll(data[key].optionsData.replaceInId, '')
+                        }
+                        if (data[key].optionsData.replaceInValue) {
+                            value = value.replace(data[key].optionsData.replaceInValue, '')
+                        }
+                        if (!value) {
+                            data[key].options[r.results[item]] = r.results[item];
+                        }
+                        else {
+                            data[key].options[id] = value;
+                        }
                     });
                 });
             }

@@ -1,0 +1,35 @@
+{
+    "results": [
+        {
+            "frame_price": 304.3212210254896,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 304.3212210254896,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "local-path-provisioner-6795b5f9d8-4jbth"
+        },
+        {
+            "frame_price": 304.3212210254896,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "metrics-server-557ff575fb-g8pv4"
+        },
+        {
+            "frame_price": 304.3212210254896,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "svclb-traefik-ccab4045-2z6rg"
+        },
+        {
+            "frame_price": 304.3212210254896,
+            "namespace": "kube-system",
+            "node": "High-Performance-Node",
+            "pod": "traefik-5fb479b77-zv4kn"
+        }
+    ],
+    "total": 5
+}

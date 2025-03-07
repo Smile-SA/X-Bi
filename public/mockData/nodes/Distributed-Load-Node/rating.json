@@ -1,0 +1,1005 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.21740746508755682,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.321593242983514,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.6593879394931461,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.6921594448653845,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.7850267008364469,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.5331062544102281,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.9762987155641678,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.48206719892494765,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.8945391995747187,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 4.215179853429136,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.032001403568918896,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.9510449378718369,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 2.4081161619439473,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.4508581139801653,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.7723537448768765,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 4.688818619493053,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.8830530455568941,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.46811025113959803,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 2.675515481142826,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.45824283845569136,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.7677437333500705,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 2.586925750863424,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.49004188065511456,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.5356401727184619,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.3677975542850209,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.358818858892372,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.47957589653764443,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 2.0539237750183004,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.294989269416303,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.5082302841877473,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 1.3292315918254616,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.33905834744112706,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.1939910815188528,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 4.519092142631672,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.6003020179428837,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.23670378436031814,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 2.956749318028532,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.20839090581901587,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.4147982336795184,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.6669166621252021,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.45650377719736257,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.4420246071252596,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 1.3842536582738174,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.16117300033067106,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.6569897866236185,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 2.1892022746473128,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.34982305842340633,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.561029153890114,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 1.6385278244474366,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.5127114500982715,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.440292313729703,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.4664766138533527,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.5717402645558336,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.32180319347811404,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 3.793285493839927,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.46897410244864357,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.9680880671025298,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 1.4356021731037694,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.4770906886385946,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.1852868929505287,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.07289608699663885,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.8240125170703791,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.8832588434818662,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.9537857776225356,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.7331778946889835,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.9399296536138637,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 2.077011543964135,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.4128431023430894,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.6301573080530078,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 2.512781192254266,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.6316216589323036,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.6936076360400851,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 4.488663649976557,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.34387946701074257,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.3395202063023166,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 3.4070185585259303,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.723302037310734,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "frame_price": 0.9407567864096757,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 2.270966911975092,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.07495136169594319,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "frame_price": 0.7568050207552064,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.812397446736346,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.44253400273922483,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "frame_price": 0.9547778904688446,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 3.6231566887412017,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.0234835501432884,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "frame_price": 0.59000446299731,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.05333228254843436,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 4.317019152566768,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "frame_price": 0.6065780277858526,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.8542685047465151,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 3.7380999294487296,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "frame_price": 0.32687273177826914,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:46 GMT",
+            "frame_price": 0.7387594365696604,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 4.377998743634692,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "frame_price": 0.5630390407084569,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:46 GMT",
+            "frame_price": 0.6705248186547554,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 2.9429862954794785,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "frame_price": 0.12669254718501888,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:46 GMT",
+            "frame_price": 0.10180827081947053,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 1.925688592951108,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "frame_price": 0.7886552444779995,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:46 GMT",
+            "frame_price": 0.587005882166495,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 2.6254015271188305,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "frame_price": 0.11305034759695243,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:46 GMT",
+            "frame_price": 0.27352045318972773,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 4.433530997582186,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.8409683051061336,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:46 GMT",
+            "frame_price": 0.45114127117901104,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.9573659794158562,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.5599720241224235,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:46 GMT",
+            "frame_price": 0.8940902178828127,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 4.075391132078384,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.632246087103489,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.8488168428420717,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.17851050529479218,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "frame_price": 0.24387231127395292,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 3.6288861419617833,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.5056929620181507,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "frame_price": 0.15151835905343414,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 4.48547199859012,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.1136931024749297,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "frame_price": 0.26195403733083866,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 2.460708105730005,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.9379820595133721,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "frame_price": 0.6343156320539072,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 3.9050415660047824,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.9997448448518662,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "frame_price": 0.7796490779772653,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 2.3869771289411967,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.3819349838443147,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "frame_price": 0.03773177524303373,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 4.04989162274656,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.35021360187520467,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "frame_price": 0.46266804660995464,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 4.983311782012999,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.31726227347911085,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "frame_price": 0.22165865760247616,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.6196644674913443,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.8330802853454573,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "frame_price": 0.7586448233492313,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.5063602434582557,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 02:10:46 GMT",
+            "frame_price": 0.4668157343244468,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "frame_price": 4.841368202481685,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.5973917360226886,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:47 GMT",
+            "frame_price": 0.4774841168877211,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "frame_price": 1.6481993875820677,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "frame_price": 0.042301671833216314,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:47 GMT",
+            "frame_price": 0.32873070731979515,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "frame_price": 4.1247377122280025,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "frame_price": 0.0055599838457545125,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:47 GMT",
+            "frame_price": 0.3002709888919812,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "frame_price": 2.093844503458253,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "frame_price": 0.7647281755632016,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:47 GMT",
+            "frame_price": 0.531065247492688,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "frame_price": 0.9162154301882974,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "frame_price": 0.23637516312306506,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:47 GMT",
+            "frame_price": 0.5978480034510327,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "frame_price": 0.8210263017695407,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "frame_price": 0.9837701659959,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:47 GMT",
+            "frame_price": 0.7651853646136677,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "frame_price": 1.6326239231813233,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "frame_price": 0.8316386065309609,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:47 GMT",
+            "frame_price": 0.3178610606963763,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "frame_price": 3.3775270947511773,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "frame_price": 0.7932275788083656,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:47 GMT",
+            "frame_price": 0.8757289088442588,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "frame_price": 2.356295780294544,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "frame_price": 0.2993498836472692,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:47 GMT",
+            "frame_price": 0.31875257455908335,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "frame_price": 1.2051338714817084,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "frame_price": 0.962723684670121,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:47 GMT",
+            "frame_price": 0.018017388578849047,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:47 GMT",
+            "frame_price": 0.9799812752084003,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.6634280231782443,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:48 GMT",
+            "frame_price": 0.5052218561410295,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:47 GMT",
+            "frame_price": 4.814318937701316,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.36469425747899065,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:48 GMT",
+            "frame_price": 0.5602667500776741,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:47 GMT",
+            "frame_price": 4.00238759551311,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.27930295654001847,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:48 GMT",
+            "frame_price": 0.1266884408007396,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:47 GMT",
+            "frame_price": 3.983433647348277,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.3378556658877765,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:48 GMT",
+            "frame_price": 0.13775333706439263,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:47 GMT",
+            "frame_price": 1.8339390513897325,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.002224742536672597,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:48 GMT",
+            "frame_price": 0.3048694224557962,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:47 GMT",
+            "frame_price": 3.0919395779044168,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.9197725333271616,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:48 GMT",
+            "frame_price": 0.41436435243564973,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:47 GMT",
+            "frame_price": 0.669634722114254,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.672083532511381,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:48 GMT",
+            "frame_price": 0.5305748559100518,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:47 GMT",
+            "frame_price": 3.0286590401307034,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.13963249301747038,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:48 GMT",
+            "frame_price": 0.8788584882045991,
+            "metric": "tenant_storage_use"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:47 GMT",
+            "frame_price": 1.3365772533553277,
+            "metric": "pods_usage_cpu"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.7937458081299356,
+            "metric": "pods_usage_memory"
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:48 GMT",
+            "frame_price": 0.4089131243288584,
+            "metric": "tenant_storage_use"
+        }
+    ],
+    "total": 200
+}

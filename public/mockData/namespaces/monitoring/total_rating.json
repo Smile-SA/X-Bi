@@ -1,0 +1,47 @@
+{
+    "results": [
+        {
+            "frame_price": 219.28428972882759,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_price": 219.2842897288275,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_price": 219.28428972882752,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 219.28428972882759,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 219.2842897288275,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 219.2842897288275,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 219.2842897288275,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        }
+    ],
+    "total": 7
+}

@@ -3,6 +3,9 @@ import axios from "axios";
 let apiInfo = uiConfigurations.apiInfo;
 
 export async function checkConnectionWithAPI() {
+    if (apiInfo.dataType === 'static') {
+        return;
+    }
     // eslint-disable-next-line no-unused-vars
     axios.get(apiInfo.url).catch(error => {
         logOut();

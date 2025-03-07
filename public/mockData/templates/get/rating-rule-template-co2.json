@@ -1,0 +1,16 @@
+{
+  "results": {
+      "apiVersion": "rating.smile.fr/v1",
+      "kind": "RatingRuleTemplate",
+      "metadata": {
+        "name": "rating-rule-template-co2",
+        "namespace": "rating"
+      },
+      "spec": {
+        "query_name": "co2-emission",
+        "query_group": "carbon-tracking",
+        "query_template": "((ceil(sum(instance:node_memory_utilisation:ratio) * max(node_memory_MemTotal_bytes)/(1024*1024*1024)))/{memory} > (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum)))/{cpu} or (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum)))/{cpu}) * {co2_factor}"
+      }
+    },
+  "total": 1
+}

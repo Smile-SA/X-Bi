@@ -10,7 +10,7 @@ const routes = [
         // path: rConf.Configuration().default.path,
         // component: rConf.Configuration().default.component,
         // name: rConf.Configuration().default.name,
-        // meta: {email: 'rnd@alterway.fr', description: 'Global infrastructure view', requiresAuth: true},
+        // meta: {email: 'rnd@smile.fr', description: 'Global infrastructure view', requiresAuth: true},
         path: '/',
         component: () => import('./components/layout/container/index.vue'),
         id: defaultRoutes.name,
@@ -32,6 +32,7 @@ const routes = [
 
 const router = new Router({
     mode: 'history',
+    base: '/X-Bi',
     routes
 })
 

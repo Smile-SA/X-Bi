@@ -1,7 +1,7 @@
 import * as configurationsController from "../../../../controller/configurationsController";
 import action from "../../../../components/action/sessionAction";
 import displayIcon from '../../../../components/action/displayIcon';
-import * as general from "../../../../controller/genaralController";
+import * as general from "../../../../controller/generalController";
 import addForm from "../../../../components/forms/session/add";
 
 export default {
