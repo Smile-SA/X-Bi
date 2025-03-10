@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0663833657317397
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0672948139405706
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0665196820327672
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0671050402665911
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0657151485698403
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 15:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 16:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 17:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 18:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 19:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 20:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 21:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 22:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 23:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 12:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 13:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 14:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 15:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 16:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 17:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 18:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 07:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 08:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 09:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0579103721188546
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 10:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 12:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 13:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 14:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 15:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0578061302415983
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0588726048319898
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0579103721188546
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 03:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 04:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 05:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 06:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 07:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 08:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 09:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 10:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0578301860594267
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0667335115245751
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0672146278811427
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0673749999999985
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0658781935573437
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0629620938628145
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0595140933074133
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 23:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 00:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 01:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 02:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 03:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 04:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 05:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 06:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 07:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0577499999999988
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0638174118300458
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0647555887253527
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0618394890308234
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0599952096639809
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0611980005554
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0600753957234089
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0589527908914178
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.058712232713134
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 19:10:48 GMT",
+            "metric": "node_cost_simulation_aws_m6g_large",
+            "node_count": 1,
+            "price": 0.0583113024159943
+        }
+    ],
+    "total": 200
+}

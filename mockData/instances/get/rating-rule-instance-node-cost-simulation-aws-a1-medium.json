@@ -1,0 +1,75 @@
+{
+    "results": {
+        "apiVersion": "rating.smile.fr/v1",
+        "kind": "RatingRuleInstance",
+        "metadata": {
+            "annotations": {
+                "meta.helm.sh/release-name": "rating",
+                "meta.helm.sh/release-namespace": "rating"
+            },
+            "creationTimestamp": "2024-08-20T13:24:17Z",
+            "generation": 1,
+            "labels": {
+                "app.kubernetes.io/managed-by": "Helm"
+            },
+            "managedFields": [
+                {
+                    "apiVersion": "rating.smile.fr/v1",
+                    "fieldsType": "FieldsV1",
+                    "fieldsV1": {
+                        "f:metadata": {
+                            "f:annotations": {
+                                ".": {},
+                                "f:meta.helm.sh/release-name": {},
+                                "f:meta.helm.sh/release-namespace": {}
+                            },
+                            "f:labels": {
+                                ".": {},
+                                "f:app.kubernetes.io/managed-by": {}
+                            },
+                            "f:ownerReferences": {
+                                ".": {},
+                                "k:{\"uid\":\"59c93766-bfca-4310-8c0b-8ea24946871e\"}": {}
+                            }
+                        },
+                        "f:spec": {
+                            ".": {},
+                            "f:cpu": {},
+                            "f:memory": {},
+                            "f:metric": {},
+                            "f:name": {},
+                            "f:price": {},
+                            "f:timeframe": {}
+                        }
+                    },
+                    "manager": "Go-http-client",
+                    "operation": "Update",
+                    "time": "2024-08-20T13:24:17Z"
+                }
+            ],
+            "name": "rating-rule-instance-node-cost-simulation-aws-a1-medium",
+            "namespace": "rating",
+            "ownerReferences": [
+                {
+                    "apiVersion": "charts.helm.k8s.io/v1",
+                    "blockOwnerDeletion": true,
+                    "controller": true,
+                    "kind": "Rating",
+                    "name": "rating",
+                    "uid": "59c93766-bfca-4310-8c0b-8ea24946871e"
+                }
+            ],
+            "resourceVersion": "2756",
+            "uid": "aa0d098e-a469-472d-817a-7afd669e701b"
+        },
+        "spec": {
+            "cpu": "1",
+            "memory": "2",
+            "metric": "((ceil(sum(instance:node_memory_utilisation:ratio) * max(node_memory_MemTotal_bytes)/(1024*1024*1024)))/{memory} > (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum))) / {cpu} or (ceil(sum(instance:node_cpu:ratio) * max(instance:node_num_cpu:sum)))/{cpu}) * {price}",
+            "name": "node_cost_simulation_aws_a1_medium",
+            "price": "0.0255",
+            "timeframe": "3600s"
+        }
+    },
+    "total": 1
+}

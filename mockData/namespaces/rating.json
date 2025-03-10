@@ -1,0 +1,1005 @@
+{
+    "results": [
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.1,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.17,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.25,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.32,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.4,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.48,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.49,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.53,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.61,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.66,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.66,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.71,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.78,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.87,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.91,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.97,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 30.97,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.03,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.03,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.12,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.15,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.18,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.18,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.21,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.24,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.27,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.29,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.29,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.32,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.37,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.42,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.48,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.58,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.58,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.62,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.66,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.71,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.75,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.76,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.83,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.83,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.93,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.97,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 31.99,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.08,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.14,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.15,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.2,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.25,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 32.33,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.09,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.14,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.23,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.26,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.35,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.35,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.44,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.49,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.53,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Mon, 03 Mar 2025 23:10:47 GMT",
+            "frame_price": 50.53,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.53,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.6,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.66,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.68,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.69,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.71,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.74,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.82,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.88,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 50.94,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.01,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.05,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.07,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.08,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.1,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.1,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.15,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.24,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.27,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.31,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.4,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.47,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.49,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.49,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.56,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.6,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.64,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.7,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.78,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.84,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.84,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.88,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 51.93,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.01,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.04,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.13,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.14,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.17,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.26,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.31,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 52.4,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.03,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.1,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.15,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.18,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.22,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.25,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.26,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.32,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.4,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.49,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.57,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.58,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.6,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.7,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.7,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.79,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.86,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.92,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.93,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 00:10:46 GMT",
+            "frame_price": 1.99,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.04,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.09,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.14,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.19,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.28,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.29,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.38,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.45,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.48,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.5,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.56,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.63,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.64,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.74,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.78,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.85,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.94,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.97,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.98,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.03,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.13,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.16,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.16,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.24,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.25,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.34,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.36,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.43,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.52,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 3.59,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.08,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.09,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.14,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.19,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.28,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.36,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.4,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.47,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.52,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.62,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.65,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.72,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.8,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.84,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.91,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 1.97,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.05,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.14,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.14,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.23,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.26,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.29,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.38,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.44,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.45,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.52,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.62,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.7,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 01:10:46 GMT",
+            "frame_price": 2.72,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 2.81,
+            "namespace": "monitoring"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 2.89,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 2.96,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.06,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.09,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.09,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.14,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.14,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.18,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.26,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.34,
+            "namespace": "kube-system"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.4,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.42,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.43,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.5,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.56,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.66,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.73,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.78,
+            "namespace": "default"
+        },
+        {
+            "frame_begin": "Tue, 04 Mar 2025 02:10:46 GMT",
+            "frame_price": 3.8,
+            "namespace": "default"
+        }
+    ],
+    "total": 200
+}

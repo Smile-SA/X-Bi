@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "frame_price": 0.61,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        }
+    ],
+    "total": 1
+}

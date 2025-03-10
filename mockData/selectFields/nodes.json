@@ -1,0 +1,14 @@
+{
+    "results": [
+        {
+            "node": "High-Performance-Node"
+        },
+        {
+            "node": "Distributed-Load-Node"
+        },
+        {
+            "node": "Cloud-Computing-Node"
+        }
+    ],
+    "total": 3
+}

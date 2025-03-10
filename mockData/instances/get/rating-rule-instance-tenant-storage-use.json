@@ -1,0 +1,69 @@
+{
+    "results": {
+        "apiVersion": "rating.smile.fr/v1",
+        "kind": "RatingRuleInstance",
+        "metadata": {
+            "annotations": {
+                "meta.helm.sh/release-name": "rating",
+                "meta.helm.sh/release-namespace": "rating"
+            },
+            "creationTimestamp": "2024-08-20T13:24:17Z",
+            "generation": 1,
+            "labels": {
+                "app.kubernetes.io/managed-by": "Helm"
+            },
+            "managedFields": [
+                {
+                    "apiVersion": "rating.smile.fr/v1",
+                    "fieldsType": "FieldsV1",
+                    "fieldsV1": {
+                        "f:metadata": {
+                            "f:annotations": {
+                                ".": {},
+                                "f:meta.helm.sh/release-name": {},
+                                "f:meta.helm.sh/release-namespace": {}
+                            },
+                            "f:labels": {
+                                ".": {},
+                                "f:app.kubernetes.io/managed-by": {}
+                            },
+                            "f:ownerReferences": {
+                                ".": {},
+                                "k:{\"uid\":\"59c93766-bfca-4310-8c0b-8ea24946871e\"}": {}
+                            }
+                        },
+                        "f:spec": {
+                            ".": {},
+                            "f:metric": {},
+                            "f:name": {},
+                            "f:timeframe": {}
+                        }
+                    },
+                    "manager": "Go-http-client",
+                    "operation": "Update",
+                    "time": "2024-08-20T13:24:17Z"
+                }
+            ],
+            "name": "rating-rule-instance-tenant-storage-use",
+            "namespace": "rating",
+            "ownerReferences": [
+                {
+                    "apiVersion": "charts.helm.k8s.io/v1",
+                    "blockOwnerDeletion": true,
+                    "controller": true,
+                    "kind": "Rating",
+                    "name": "rating",
+                    "uid": "59c93766-bfca-4310-8c0b-8ea24946871e"
+                }
+            ],
+            "resourceVersion": "2715",
+            "uid": "b7411fd0-86e1-452b-be7d-c723543bb31c"
+        },
+        "spec": {
+            "metric": "(sum(kubelet_volume_stats_capacity_bytes) by (namespace, node, persistentvolumeclaim) - sum(kubelet_volume_stats_available_bytes) by (namespace, node, persistentvolumeclaim))/(1024*1024*1024)",
+            "name": "tenant_storage_use",
+            "timeframe": "3600s"
+        }
+    },
+    "total": 1
+}

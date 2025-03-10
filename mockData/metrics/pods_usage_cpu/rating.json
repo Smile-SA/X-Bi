@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.365176963208092
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364068201593222
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371488138142904
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373271123931661
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375320530512628
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370566219507973
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368642559797882
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367567453279187
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.362469716827418
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370035836243674
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364358376536262
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.360601405243225
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368330614476673
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.362090264141111
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371166489275102
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371787408351129
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366993493652496
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373927877535903
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36738646996522
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368155609881866
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379447166717956
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366897015255967
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370871994144186
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376586783556922
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377433656101426
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37181809198949
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.383134723389448
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368159087999753
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.363559474103576
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364347173956146
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366462781854716
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366929014114931
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375403429983983
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366885361054263
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366203789442605
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368172003367266
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373688519458924
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37059702889573
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36862758700044
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369492866668096
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369715232626744
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369836035440121
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.381184622454398
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379975267965844
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.358841506243737
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.357881507252869
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.358616920582334
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371507299459802
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370449686470276
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.365407661607988
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.361110710142151
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367440573470143
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370068543534356
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376082888022251
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377012300396025
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370880629446983
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 12:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369895094379497
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37430956482707
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376177861044137
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371370675759578
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371680884704926
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369846581921435
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366160050745808
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364222427793258
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367981372517425
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369871326321172
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366725848060793
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.362296998245185
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364040814646195
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.372861314999382
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374669441438334
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377506323005952
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374993437615178
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370530613666995
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371001639339139
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374719084063496
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.387166780724358
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364161511764743
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36483005979158
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367881154186524
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364636413174825
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374069861039201
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374433215186128
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373413887539156
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.372943050371587
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373945326029014
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366386656221749
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.378965124025407
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376179019615071
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367356089235115
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371894803888255
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.381541161769098
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371112554585583
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37362617181541
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.363272411037842
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364906456715788
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36435397235703
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36288189312895
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373564128717344
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369371153456523
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 11:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369696293682058
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 12:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36547366839671
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 13:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.365569783870801
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 14:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375888887095708
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 15:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371605754608906
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 16:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375452363105634
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 17:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373085709423577
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 18:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37169656466899
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 19:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373519448147131
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 20:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374278516648979
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 21:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.378857521964552
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 22:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.38069496453659
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 23:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366272847869797
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.35708325899583
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371446257395697
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375424993197972
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36967375775629
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374375281711468
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374012271946545
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 07:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364144876784604
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 08:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37789131189653
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377383143700641
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.382554804560793
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 11:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374434159555427
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 12:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370072444647148
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 13:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.380698737383698
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 14:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.372708494531231
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 15:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377037245278624
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 16:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.387536895646759
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 17:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367795674705674
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 18:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.364657935130267
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 19:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367018734174344
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 21:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373492045252165
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 22:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368926372490091
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 23:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.372477297842002
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 00:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369459414707593
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369380949568548
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.365484732325711
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 03:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374558850105853
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 04:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373953790852224
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 05:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375149763931243
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 06:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374877199381029
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 07:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374637046256143
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 08:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376886465101434
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 09:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373420226365477
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 10:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37943540473977
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 11:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.361413445429661
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 12:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366850719342385
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 13:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371150075449737
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 14:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367095600493371
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 15:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366413723152216
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 17:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366208475565014
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 18:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366089751928554
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 19:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.366561954562593
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 20:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37730970209411
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 21:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379586294173456
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 22:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375523613817065
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 23:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368082031064072
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 00:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370688643412179
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 01:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373031325687025
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 02:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.378552083763331
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 03:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369709379735601
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 04:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379626046898144
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 05:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367241780030471
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 06:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.367308999292351
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 07:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371244796380403
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 08:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370071830872268
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 09:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375449053503702
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 10:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.382868464351803
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 11:10:47 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370324486423949
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 13:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373475854223839
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 14:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370613607693443
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 15:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371826943256868
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 16:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375546156690101
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 17:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.37503558273863
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 18:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.372621652873444
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 19:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377416013016642
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 20:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.376713405783597
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 21:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379138524639238
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 22:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.392789109253104
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 23:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371066630769989
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 00:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.362601118818512
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 01:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.370443676699854
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 02:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.373324755793835
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 03:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36898370519543
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 04:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374326595361773
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 05:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.369220651319704
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 06:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368401387123836
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 07:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.378739633988502
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 09:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.3728884289005
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 10:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.374284852619076
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 11:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.3707497286551
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 12:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.368479400637798
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 13:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.377536264682825
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 14:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.378903430033542
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 15:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.379684004130617
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 16:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.375726513553172
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 17:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.371985023725109
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 18:10:46 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.363057928263752
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 19:10:48 GMT",
+            "metric": "pods_usage_cpu",
+            "node_count": 30,
+            "price": 0.36288874585962
+        }
+    ],
+    "total": 200
+}

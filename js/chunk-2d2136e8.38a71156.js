@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d2136e8"],{ad3b:function(e,o){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <div class="row">\n|     <title-box :that="this" :icon="$route.meta.icon" :description="$route.meta.description"></title-box>\n|     <div class="col-12 grid-margin">')}}]);
+//# sourceMappingURL=chunk-2d2136e8.38a71156.js.map

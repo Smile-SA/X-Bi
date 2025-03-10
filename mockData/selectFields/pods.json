@@ -1,0 +1,20 @@
+{
+    "results": [
+        {
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "pod": "csi-attacher-5ccdc968cb-l26cn"
+        },
+        {
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "pod": "traefik-5fb479b77-zv4kn"
+        }
+    ],
+    "total": 5
+}

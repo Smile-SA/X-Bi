@@ -1,0 +1,47 @@
+{
+    "results": [
+        {
+            "frame_price": 0.619633621165069,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
+        },
+        {
+            "frame_price": 8.04898892143943,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
+        },
+        {
+            "frame_price": 0.902031285853172,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "prometheus-kube-prometheus-operator-5b887f4558-jj86l"
+        },
+        {
+            "frame_price": 0.721725768376029,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "prometheus-kube-state-metrics-594cc48b85-4p2lb"
+        },
+        {
+            "frame_price": 151.105964403208,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "prometheus-prometheus-kube-prometheus-prometheus-0"
+        },
+        {
+            "frame_price": 3.72632899571604,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "prometheus-prometheus-node-exporter-pvks6"
+        },
+        {
+            "frame_price": 15.9371795654297,
+            "namespace": "monitoring",
+            "node": "rsp-deployments-2",
+            "pod": "unspecified"
+        }
+    ],
+    "total": 7
+}

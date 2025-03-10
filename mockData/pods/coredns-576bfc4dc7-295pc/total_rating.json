@@ -1,0 +1,11 @@
+{
+    "results": [
+        {
+            "frame_price": 2.88,
+            "namespace": "kube-system",
+            "node": "rsp-deployments-2",
+            "pod": "coredns-576bfc4dc7-295pc"
+        }
+    ],
+    "total": 1
+}

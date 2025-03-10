@@ -1,0 +1,8 @@
+{
+    "results": [
+        "rating-rule-template-energy",
+        "rating-rule-template-cloud-cost",
+        "rating-rule-template-co2"
+    ],
+    "total": 3
+}

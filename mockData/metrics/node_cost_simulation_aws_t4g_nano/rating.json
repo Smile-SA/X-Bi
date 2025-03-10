@@ -1,0 +1,1205 @@
+{
+    "results": [
+        {
+            "frame_begin": "Tue, 04 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 11:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 12:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 13:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 14:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 15:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 16:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 17:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 18:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 19:10:48 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 04 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 05 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Thu, 06 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0579345737295174
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587300194390425
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0580535406831418
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0585643987781149
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 20:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0573514023882239
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 21:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 22:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Fri, 07 Feb 2025 23:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 00:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 01:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 02:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 03:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 15:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 16:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 17:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 18:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 20:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 21:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 22:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sat, 08 Feb 2025 23:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 07:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 08:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 12:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 13:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 14:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 15:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 16:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 17:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 18:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Sun, 09 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 03:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 04:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 05:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 06:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 07:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 08:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 09:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0505399611219088
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 10:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 12:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 13:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 14:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 15:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0504489863926668
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.051379727853372
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0505399611219087
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Mon, 10 Feb 2025 23:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 00:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 01:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 02:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 03:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 04:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 05:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 06:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 07:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 08:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 09:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 10:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 11:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0504699805609535
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0582401555123557
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0586600388780872
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0587999999999977
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0574936961954998
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0549487364620922
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 19:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0519395723410149
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 20:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 21:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 22:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Tue, 11 Feb 2025 23:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 00:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 01:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 02:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 03:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 04:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 05:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 06:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 07:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 09:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 10:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0503999999999981
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 11:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0556951957789492
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 12:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0565139683421254
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 13:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0539690086087181
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 14:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0523594557067463
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 15:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0534091641210758
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 16:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0524294362677013
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 17:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0514497084143274
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 18:10:46 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0512397667314619
+        },
+        {
+            "frame_begin": "Wed, 12 Feb 2025 19:10:47 GMT",
+            "metric": "node_cost_simulation_aws_t4g_nano",
+            "node_count": 1,
+            "price": 0.0508898639266851
+        }
+    ],
+    "total": 200
+}

@@ -1,0 +1,14 @@
+{
+    "results": [
+        "rating-rule-instance-node-cost-simulation-aws-a1-large",
+        "rating-rule-instance-node-cost-simulation-aws-a1-medium",
+        "rating-rule-instance-node-cost-simulation-aws-a1-xlarge",
+        "rating-rule-instance-node-cost-simulation-aws-m6g-large",
+        "rating-rule-instance-node-cost-simulation-aws-t4g-micro",
+        "rating-rule-instance-node-cost-simulation-aws-t4g-nano",
+        "rating-rule-instance-pod-usage-cpu",
+        "rating-rule-instance-pod-usage-memory",
+        "rating-rule-instance-tenant-storage-use"
+    ],
+    "total": 9
+}

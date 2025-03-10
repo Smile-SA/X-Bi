@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d22db2c"],{f936:function(e,o){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <div>\n|     <input  type="checkbox" v-model="model.display"  v-on:change="setDisplay()" v-bind:checked="model.display" class="primary">\n| </div>')}}]);
+//# sourceMappingURL=chunk-2d22db2c.56c7ff81.js.map

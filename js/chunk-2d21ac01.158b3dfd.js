@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d21ac01"],{bd9b:function(e,t,a){"use strict";a.r(t),t["default"]={name:"select-option",components:{},props:["label","selectId","placeholder","selectFunction","selectData","replace","by","type","defaultData","id"],data(){return{defaultSelect:""}},computed:{setDate(){this.that.setDate(this.that.date)}},mounted(){},methods:{}}}}]);
+//# sourceMappingURL=chunk-2d21ac01.158b3dfd.js.map
