@@ -4,7 +4,7 @@
             "node": "10.1.76.25:9100"
         },
         {
-            "node": "rsp-deployments-2"
+            "node": "Distributed-Load-Node"
         },
         {
             "node": "unspecified"

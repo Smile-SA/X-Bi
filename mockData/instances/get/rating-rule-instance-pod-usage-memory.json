@@ -29,7 +29,7 @@
                             },
                             "f:ownerReferences": {
                                 ".": {},
-                                "k:{\"uid\":\"59c93766-bfca-4310-8c0b-8ea24946871e\"}": {}
+                                "k:{\"uid\":\"44c38877-bfca-4310-8c0b-8ea24946871e\"}": {}
                             }
                         },
                         "f:spec": {
@@ -53,7 +53,7 @@
                     "controller": true,
                     "kind": "Rating",
                     "name": "rating",
-                    "uid": "59c93766-bfca-4310-8c0b-8ea24946871e"
+                    "uid": "44c38877-bfca-4310-8c0b-8ea24946871e"
                 }
             ],
             "resourceVersion": "2738",

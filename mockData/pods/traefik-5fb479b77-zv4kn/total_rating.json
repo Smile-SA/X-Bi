@@ -3,7 +3,7 @@
         {
             "frame_price": 0.68,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "Distributed-Load-Node",
             "pod": "traefik-5fb479b77-zv4kn"
         }
     ],

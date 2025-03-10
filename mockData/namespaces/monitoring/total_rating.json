@@ -1,46 +1,46 @@
 {
     "results": [
         {
-            "frame_price": 0.619633621165069,
+            "frame_price": 219.28428972882759,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "alertmanager-prometheus-kube-prometheus-alertmanager-0"
-        },
-        {
-            "frame_price": 8.04898892143943,
-            "namespace": "monitoring",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "prometheus-grafana-7675bd84c6-9kssd"
         },
         {
-            "frame_price": 0.902031285853172,
+            "frame_price": 219.2842897288275,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "prometheus-kube-prometheus-operator-5b887f4558-jj86l"
+            "node": "High-Performance-Node",
+            "pod": "prometheus-grafana-7675bd84c6-9kssd"
         },
         {
-            "frame_price": 0.721725768376029,
+            "frame_price": 219.28428972882752,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "prometheus-kube-state-metrics-594cc48b85-4p2lb"
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
         },
         {
-            "frame_price": 151.105964403208,
+            "frame_price": 219.28428972882759,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "prometheus-prometheus-kube-prometheus-prometheus-0"
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
         },
         {
-            "frame_price": 3.72632899571604,
+            "frame_price": 219.2842897288275,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "prometheus-prometheus-node-exporter-pvks6"
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
         },
         {
-            "frame_price": 15.9371795654297,
+            "frame_price": 219.2842897288275,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
-            "pod": "unspecified"
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
+        },
+        {
+            "frame_price": 219.2842897288275,
+            "namespace": "monitoring",
+            "node": "High-Performance-Node",
+            "pod": "coredns-576bfc4dc7-295pc"
         }
     ],
     "total": 7

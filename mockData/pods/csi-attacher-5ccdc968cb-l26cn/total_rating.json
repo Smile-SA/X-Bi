@@ -3,7 +3,7 @@
         {
             "frame_price": 0.28,
             "namespace": "longhorn-system",
-            "node": "rsp-deployments-2",
+            "node": "Distributed-Load-Node",
             "pod": "csi-attacher-5ccdc968cb-l26cn"
         }
     ],

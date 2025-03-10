@@ -3,7 +3,7 @@
         {
             "frame_price": 8.04,
             "namespace": "monitoring",
-            "node": "rsp-deployments-2",
+            "node": "Distributed-Load-Node",
             "pod": "prometheus-grafana-7675bd84c6-9kssd"
         }
     ],

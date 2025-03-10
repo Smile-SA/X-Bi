@@ -1,33 +1,33 @@
 {
     "results": [
         {
-            "frame_price": 2.88933951510941,
+            "frame_price": 304.3212210254896,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "coredns-576bfc4dc7-295pc"
         },
         {
-            "frame_price": 0.139465347549596,
+            "frame_price": 304.3212210254896,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "local-path-provisioner-6795b5f9d8-4jbth"
         },
         {
-            "frame_price": 7.02399063036154,
+            "frame_price": 304.3212210254896,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "metrics-server-557ff575fb-g8pv4"
         },
         {
-            "frame_price": 2.91147937747075e-12,
+            "frame_price": 304.3212210254896,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "svclb-traefik-ccab4045-2z6rg"
         },
         {
-            "frame_price": 0.687495775414091,
+            "frame_price": 304.3212210254896,
             "namespace": "kube-system",
-            "node": "rsp-deployments-2",
+            "node": "High-Performance-Node",
             "pod": "traefik-5fb479b77-zv4kn"
         }
     ],
