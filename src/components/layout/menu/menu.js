@@ -20,5 +20,9 @@ export default {
     },
     async beforeMount() {
         this.$forceUpdate();
+    },
+    mounted() {
+        this.$emit('rendered');
     }
+
 }
