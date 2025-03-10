@@ -26,7 +26,6 @@ export default {
             this.errors = {};
             this.message = '';
             this.form = await this.getForm();
-            console.log("form",this.form)
             this.showForm = true
             await this.$modal.show('view-add' + this.structureType);
         },

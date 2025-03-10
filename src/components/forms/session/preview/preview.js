@@ -58,7 +58,6 @@ export default {
             if (this.model.is_monitoring === true) {
                 let series = []
                 if (["polarArea", "radar", "radialBar", "donut"].includes(this.model.type)) {
-                    console.log('ici')
                     this.options = {
                         chart: {
                             type: this.model.type

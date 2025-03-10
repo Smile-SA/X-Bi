@@ -1,7 +1,6 @@
 # X-BI
 
-X-BI is a platform allowing access, interaction and personalization of BI information for a better dashboard
-configuration.
+X-BI is a platform that allows access, interaction, and personalization of BI information for a better dashboard experience.
 
 ![presentation](public/img/documentation/presentation.gif)
 
@@ -14,26 +13,24 @@ Project is created with:
 
 ## Getting Started
 
-This project uses ```vue.js``` for build user interfaces, ```yarn``` as the dependency manager, ```storybook``` for
+This project uses ```Vue.js``` to build user interfaces, ```yarn``` as the dependency manager, ```storybook``` for
 component testing.
-X-BI uses yarn commands, but npm will also work. You can compare yarn and npm commands in the yarn docs.
+X-BI uses yarn commands. You can compare yarn and npm commands in the yarn docs.
 
 #### 1. Install dependencies
 
-Install X-BI using yarn, open your command prompt from the main directory of the clone directory and write this command:
+Install X-BI using yarn, open your command prompt in the main directory of the cloned repository and run this command:
 > yarn install
 
 #### 2. Connect API to X-BI
 
-To use X-BI you will need an API. The API serves as a communication interface between the components, you need a data
-source to power X-BI. For the example, you can use
-the **[rating-operator](https://git.rnd.alterway.fr/overboard/5gbiller/rating-operator-api)**
-or **[X-BI-test-data API](https://git.rnd.alterway.fr/overboard/x-bi/x-bi-test-data)**
+To use X-BI, you will need an API. The API serves as a communication interface between the components. You need a data source to power X-BI. For the example, you can use
+the **[rating-operator-api](https://github.com/Smile-SA/rating-operator-api)**
+or **[X-BI-test-data API](#)**
 
 #### How to configure API information in X-BI?
 
-Open ```src/uiConfiguration.js``` file, look for ```apiInfo``` properties if you can't find it, you need to create it
-and follow this example to fill the api information:
+Open ```src/uiConfiguration.js``` file, look for ```apiInfo``` properties. If you can't find it, create it and follow this example to configure the API details:
 
 ```
 "APIInfo": {
@@ -51,9 +48,9 @@ If you want to use rating operator API, you will need to change mode ```default`
 
 #### 3. Run X-BI
 
-> Run the project using yan ```yarn serve```, the project will be launched on http://localhost:8080
+> Run the project using ```yarn serve```, the project will start on http://localhost:8080
 >
->For component testing used ```yarn storybook```, the project will be launched on http://localhost:6006
+>For component testing used ```yarn storybook```, the project will start on http://localhost:6006
 >
 >Alternatively, you can build the project in static directory for production : ```yarn build```
 
@@ -67,10 +64,9 @@ If you want to use rating operator API, you will need to change mode ```default`
 
 #### 4. Configuration of dashboard
 
-The configuration of your own dashboard is possible. There are ```two types``` of
-configuration : ```on user interface``` and ```in configuration file```
+You can configure your own dashboard in two ways: via the user interface or through the configuration file.
 
-#### 4.1 On the configuration page
+#### 4.1 Via the configuration page
 
 - ##### 4.1.1 Add a view
 
@@ -80,15 +76,14 @@ Go to ```views configuration``` page and follow this example to add your view
 
 - ##### 4.1.2 View structure
 
-A view is structured in three fields:
+A view is structured into three fields:
 > - Select button
 > - Cards
 > - Charts
 
-To configure the structure go to view list in ```views configuration``` page, then in the list click on the
-button ```structure``` of the view you want of a view that you want to configure. Once on the structure page, you will
-see the view structures table and click on the top right button ``` Add ... ``` on the table of elements you want to add
-and fill the requested information.
+To configure the structure go to the View List in ```Views Configuration``` page. Click on the
+```Structure``` button next to the view you want to configure. Once on the structure page, you will
+see the view structures table and click on the top right button ``` Add ... ``` and fill the requested information.
 
 - ##### 4.1.2.1 Add Select button
 
@@ -109,35 +104,32 @@ element line to be edited, then edit the values that you want and save.
 
 - ##### 4.1.4 Delete a view structure
 
-To delete an element, whether it is a view or its structure (selection, map, graphic), click on the delete button of the
-element line to be deleted, Then you validate or not your action.
+To delete an element (view, selection button, card, or chart), click the Delete button next to it. Confirm or cancel the action when prompted.
 
 ##### Note : You may get errors if the value does not respect the checks defined in the configuration files.
 
-#### 4.2 In the configuration file
+#### 4.2 Via the configuration file
 
-In json configuration file you have properties:
+In the JSON configuration file you have the following properties:
 
-> - ```apiInfo``` : in apiInfo you have properties allowing you to connect authentication information to your API
-> - ```forms``` : in forms, you have many items, in each you have form fields which corresponds to the form schema of
-    vue-formulate form
-> - ```views``` : in views, you have statics (don't modify it if you don't understand all X-BI code) and dynamics
+> - ```apiInfo``` : API properties that enable authentication and other related configurations.
+> - ```forms``` : In forms, there are multiple items, each containing form fields that correspond to the form schema of a Vue Formulate form.
+> - ```views``` : In views, you have static fields (do not modify them if you do not understand the X-BI code) and dynamic fields.
     fields.
-> - ```xBiInfo``` : in xBiInfo, you have X-BI information
+> - ```xBiInfo``` : In xBiInfo, you have X-BI-related information.
 
 ##### Prerequisites
 
-> - Know **[json syntax](https://jsonformatter.curiousconcept.com)**
-> - Know **[vue formulate](https://vueformulate.com)** schema form
+> - Familiarity with [JSON syntax](https://jsonformatter.curiousconcept.com) is required.
+> - Familiarity with [Vue Formulate](https://vueformulate.com).
 
-- ##### 4.2.1 Configuration forms
+- ##### 4.2.1 Forms configuration 
 
-Go to properties forms in ```src/uiConfiguration.json``` you will see many items : ```view```, ```select```, ```card```
-, ```chart```, ```...``` and add or edit your own configuration
+In `src/uiConfiguration.json`, navigate to the forms property. You will find sections such as `view`, `select`, `card`, and `chart`. Add or edit your own configuration as needed.
 
 ##### **Conditional fields configuration** :
 
-First, add item which contains the ```condition``` property to the form, this example based on select button form :
+First, add an item containing the `condition` property to the form:
 
 ``` 
  {
@@ -155,11 +147,11 @@ First, add item which contains the ```condition``` property to the form, this ex
 }
 ```
 
-Second, add fields with contains conditionField. ConditionField must contain properties :
-> - ```name``` which must be the name of the field that condition it. Here it's `type`, and
-> - ```values``` add the values for the condition
-> - ```validation``` see **[vue-formulate](https://vueformulate.com)** documentation to understand and fill the
-    validation value
+Second, add fields inside the conditionFields property. The conditionFields property must include:
+
+> - `name`: The name of the field that the condition depends on. Here, it's type.
+> - `values`: The values for the condition.
+> - `validation`: Refer to the [Vue Formulate](https://vueformulate.com/) documentation to understand and fill in the validation values.
 
 ``` 
 {
@@ -198,9 +190,9 @@ Second, add fields with contains conditionField. ConditionField must contain pro
 
 ##### **Dynamic select options configuration** :
 
-Just add the optionsData property and add your API link to it which returns the options values and the id of the item to
-display (example data:
-``` data: [{"name": "example1", "value":"value1},{"name": "example2", "value": "value2"}]```)
+Just use the optionsData property and specify your API endpoint, which should return an array of options with their corresponding IDs, e.g.:
+
+``` data: [{"name": "example1", "value":"value1},{"name": "example2", "value": "value2"}]```
 
 ```
 {
@@ -217,12 +209,12 @@ display (example data:
 }
   ```
 
-- ##### 4.2.2 Configuration view structure
+- ##### 4.2.2 View structure configuration
     - ##### 4.2.2.1 Add a model
 
-In configuration files, adding a view model and its structure is done in dynamic views. Let's add a new model named
-example and configure its structure.
-In Json file Go To ``` views > dynamics > ``` and add a new field in the items.
+In the configuration file, adding a view model and its structure is done in dynamic views. Let's add a new model named
+`Example1` and configure its structure.
+In the JSON file go to ``` views > dynamics > ``` and add a new entry as follows:
 
 ```
 {
@@ -244,22 +236,26 @@ In Json file Go To ``` views > dynamics > ``` and add a new field in the items.
 }
 ```
 
-To know the expected variables in the models, their importance and their data types, validations ...
-You have to go to the forms look properties depending on the models either card charts views or select.
+To determine the expected variables in models, their importance, and their data types, go to the forms section and check the relevant properties (card, charts, views, or select).
 
 - ##### 4.2.2.2 Delete model
 
-To delete a model of select, chart or card, simply delete a field from its models in the dynamics views structure.
-Go to
-> - `views > synamics > viewName > structure > select > models`
-> - `views > synamics > viewName > structure > chart > models`
-> - `views > synamics > viewName > structure > card > models`
+To delete a model (select, chart, or card), remove its entry from the dynamic views structure.
+Go to:
+> - `views > dynamics > viewName > structure > select > models`
+> - `views > dynamics > viewName > structure > chart > models`
+> - `views > dynamics > viewName > structure > card > models`
 
-and delete one field.
+and delete a field.
+
+## Demo Environment
+You can explore X-BI by visiting the following [demo environment]( https://Smile-SA.github.io/x-bi). To access the dashboard, use the following credentials:
+  - Username: `admin`
+  - Password: `secret`
 
 ## Contribute
 
-Simply open a pull request over the repository to describe your changes.
+Simply open a pull request in the repository to describe your changes.
 
 ## Credits
 

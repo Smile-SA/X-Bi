@@ -40,7 +40,7 @@ export function generalDelete(deleteUrl, name, id) {
             return {
                 result: !!r.data,
                 message: {
-                    title: 'Successfully delete'
+                    title: 'Successfully deleted'
                 }
             }
         }
