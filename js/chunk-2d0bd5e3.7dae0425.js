@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0bd5e3"],{"2c62":function(e,o){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <div class="container-scroller">\n|     <header-layout :user="user"></header-layout>\n|     <div class="container-fluid page-body-wrapper">')}}]);
+//# sourceMappingURL=chunk-2d0bd5e3.7dae0425.js.map

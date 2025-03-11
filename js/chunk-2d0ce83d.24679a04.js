@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0ce83d"],{"607d":function(e,a){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <nav class="sidebar sidebar-offcanvas shadow-sm bg-500" id="sidebar">\n|     <ul class="nav">\n|         <div class="nav-profile ms-3 me-3 mt-3 mb-2 ">')}}]);
-//# sourceMappingURL=chunk-2d0ce83d.24679a04.js.map

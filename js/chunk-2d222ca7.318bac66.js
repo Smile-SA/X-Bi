@@ -1,0 +1,2 @@
+(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d222ca7"],{cfb0:function(e,o){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <div>\n|     <div class="col-md-12">\n|         <div class="apex-box">')}}]);
+//# sourceMappingURL=chunk-2d222ca7.318bac66.js.map

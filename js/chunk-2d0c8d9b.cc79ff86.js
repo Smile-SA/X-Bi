@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c8d9b"],{5747:function(e,o){throw new Error('Module parse failed: Unexpected token (1:0)\nYou may need an appropriate loader to handle this file type, currently no loaders are configured to process this file. See https://webpack.js.org/concepts#loaders\n> <section class="content">\n|     <div class="form">\n|         <div class="form-toggle"></div>')}}]);
-//# sourceMappingURL=chunk-2d0c8d9b.cc79ff86.js.map

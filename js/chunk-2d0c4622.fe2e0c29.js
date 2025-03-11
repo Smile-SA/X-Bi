@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c4622"],{"3b30":function(o,t,e){"use strict";e.r(t),t["default"]={name:"footer-layout",components:{},props:["footer"],data(){return{}},computed:{},mounted(){},methods:{}}}}]);
-//# sourceMappingURL=chunk-2d0c4622.fe2e0c29.js.map

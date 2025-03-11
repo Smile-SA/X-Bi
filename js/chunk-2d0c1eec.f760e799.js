@@ -1,2 +1,0 @@
-(window["webpackJsonp"]=window["webpackJsonp"]||[]).push([["chunk-2d0c1eec"],{"47c6":function(t,e,n){"use strict";n.r(e),e["default"]={name:"title-box",components:{},props:["that","icon","description"],data(){return{}},computed:{},mounted(){},methods:{}}}}]);
-//# sourceMappingURL=chunk-2d0c1eec.f760e799.js.map
