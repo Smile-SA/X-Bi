@@ -1,4 +1,4 @@
-import * as general from "../../../controller/genaralController";
+import * as general from "../../../controller/generalController";
 import VueApexCharts from 'vue-apexcharts'
 
 export default {

@@ -1,5 +1,5 @@
 import VueApexCharts from 'vue-apexcharts'
-import * as general from "../../../controller/genaralController";
+import * as general from "../../../controller/generalController";
 
 export default {
     name: 'apexCharts', components: {

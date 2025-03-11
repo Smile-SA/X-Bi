@@ -1,5 +1,5 @@
 import action from "../../../components/action/urlAction";
-import * as general from "../../../controller/genaralController";
+import * as general from "../../../controller/generalController";
 import addForm from "../../../components/forms/url/add";
 
 export default {

@@ -1,5 +1,5 @@
 //import $ from 'jquery';
-import * as general from "../../../../controller/genaralController";
+import * as general from "../../../../controller/generalController";
 
 export default {
     name: 'delete',

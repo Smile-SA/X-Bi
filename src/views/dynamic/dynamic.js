@@ -1,6 +1,6 @@
 import * as configurationsController from "../../controller/configurationsController";
-import * as genaralController from "../../controller/genaralController";
-import * as general from "../../controller/genaralController";
+import * as generalController from "../../controller/generalController";
+import * as general from "../../controller/generalController";
 
 
 export default {
@@ -117,7 +117,7 @@ export default {
                     if (this.select.models[key].type === 'dynamic') {
                         hasDynamicSelect = true;
                         this.queryLink = this.select.models[key].query;
-                        genaralController.getJsonData(this.select.models[key]).then((r) => {
+                        generalController.getJsonData(this.select.models[key]).then((r) => {
                             if (r.total > 0) {
                                 this.dynamicData = r.results
                             } else {

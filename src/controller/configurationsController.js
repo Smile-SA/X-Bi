@@ -1,5 +1,5 @@
 import * as uiConf from "../uiConfigurations.json"
-import * as general from "./genaralController";
+import * as general from "./generalController";
 import * as chartController from "./chartController";
 
 let uiConfigurations = JSON.parse(window.sessionStorage.getItem('uiConfigurations'))

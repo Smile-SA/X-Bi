@@ -1,5 +1,5 @@
 import * as configurationsController from "../../../../controller/configurationsController";
-import * as general from "../../../../controller/genaralController";
+import * as general from "../../../../controller/generalController";
 
 export default {
     name: 'add',
