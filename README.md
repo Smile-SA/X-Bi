@@ -249,7 +249,7 @@ Go to:
 and delete a field.
 
 ## Demo Environment
-You can explore X-BI by visiting the following [demo environment]( https://Smile-SA.github.io/x-bi). To access the dashboard, use the following credentials:
+You can explore X-BI by visiting the following [demo environment]( https://Smile-SA.github.io/X-Bi). To access the dashboard, use the following credentials:
   - Username: `admin`
   - Password: `secret`
 
