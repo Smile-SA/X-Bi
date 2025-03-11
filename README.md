@@ -25,9 +25,7 @@ Install X-BI using yarn, open your command prompt in the main directory of the c
 #### 2. Connect API to X-BI
 
 To use X-BI, you will need an API. The API serves as a communication interface between the components. You need a data source to power X-BI. For the example, you can use
-the **[rating-operator-api](https://github.com/Smile-SA/rating-operator-api)**
-or **[X-BI-test-data API](#)**
-
+the [Rating Operator API](https://github.com/Smile-SA/rating-operator-api).
 #### How to configure API information in X-BI?
 
 Open ```src/uiConfiguration.js``` file, look for ```apiInfo``` properties. If you can't find it, create it and follow this example to configure the API details:
@@ -247,6 +245,12 @@ Go to:
 > - `views > dynamics > viewName > structure > card > models`
 
 and delete a field.
+
+## Static data branch
+
+We used a dedicated `static-data-demo` branch to provide demonstration functionality with pre-loaded static data. 
+
+This branch is automatically deployed to GitHub Pages through our Gitlab CI/CD pipeline, making the demo instantly accessible online without requiring any data connections. 
 
 ## Demo Environment
 You can explore X-BI by visiting the following [demo environment]( https://Smile-SA.github.io/X-Bi). To access the dashboard, use the following credentials:
