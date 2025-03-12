@@ -1,13 +1,13 @@
 {
     "results": [
         {
-            "node": "10.1.76.25:9100"
+            "node": "High-Performance-Node"
         },
         {
             "node": "Distributed-Load-Node"
         },
         {
-            "node": "unspecified"
+            "node": "Cloud-Computing-Node"
         }
     ],
     "total": 3
