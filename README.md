@@ -263,9 +263,7 @@ Simply open a pull request in the repository to describe your changes.
 
 ## Credits
 
-- Rnd Team @SMILE R&D,
-- Koku Ulrich GBLOKPO @koku-ulrich.gblokpo,
-- Jonathan Rivalan (author) @JonRiv.
+- Rnd Team @SMILE R&D
 
 ## License
 
